@@ -20,17 +20,22 @@
     <button data-scene="signal"><span>1</span>Signal</button>
     <button data-scene="machine"><span>2</span>Machine</button>
     <button data-scene="question"><span>3</span>Question</button>
-    <button data-scene="rewind"><span>4</span>Rewind &amp; amplify</button>
+    <button data-scene="rewind"><span>4</span><i class="long">Rewind &amp; amplify</i><i class="short">Amplify</i></button>
     <button data-scene="answer"><span>5</span>Answer</button>
-    <button data-scene="hardware"><span>6</span>IBM hardware</button>
-    <button data-scene="impact"><span>7</span>Why it matters</button>
+    <button data-scene="hardware"><span>6</span><i class="long">IBM hardware</i><i class="short">Hardware</i></button>
+    <b class="nav-gap" aria-hidden="true" title="Follow-up research: light beyond the qubit"></b>
+    <button data-scene="photons"><span>7</span>Photons</button>
+    <button data-scene="lasers"><span>8</span>Lasers</button>
+    <button data-scene="chips"><span>9</span><i class="long">Chipmaking</i><i class="short">Chips</i></button>
+    <b class="nav-gap" aria-hidden="true"></b>
+    <button data-scene="impact"><span>0</span><i class="long">Why it matters</i><i class="short">Impact</i></button>
   </nav>
   <div class="top-tools">
     <div class="seg" role="group" aria-label="Explanation level">
       <button id="level-plain" aria-pressed="true" title="Plain-language captions (T)">Plain</button>
       <button id="level-tech" aria-pressed="false" title="Technical captions (T)">Technical</button>
     </div>
-    <button id="tour" class="ghost" title="Play all seven scenes (45 seconds)">▶ 45 s tour</button>
+    <button id="tour" class="ghost" title="Play all ten scenes (70 seconds)">▶ <i class="long">70 s tour</i><i class="short">Tour</i></button>
   </div>
 </header>
 
@@ -287,7 +292,120 @@ qc.measure(light, click[t]); qc.reset(light)</code></pre>
   </div>
 </section>
 
-<!-- ───────────────────────── 7 · IMPACT ───────────────────────── -->
+<!-- ───────────────────────── 7 · PHOTONS ───────────────────────── -->
+<section class="scene" id="photons" aria-labelledby="photons-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">Follow-up research · photon sources</p>
+    <h1 id="photons-title">Equally bright. <em>Not equally good.</em></h1>
+    <p class="lede plain">Photonic chips need photons that match. Two matching photons that meet at a beam splitter always leave together. A hidden environment that changes between them breaks that, and no single detector notices.</p>
+    <p class="lede tech">Hong–Ou–Mandel interference: coincidences occur with probability (1 − M)/2 for overlap M. A two-state charge trap shifts the emission frequency. Each one-photon marginal is unchanged; M falls only when the trap switches between the two photons.</p>
+  </div>
+  <div class="research-grid">
+    <div class="card research-main">
+      <div class="card-head"><p class="eyebrow">Two photons meet at a beam splitter</p>
+        <div class="seg" role="group" aria-label="Which source"><button id="ph-shared" aria-pressed="true">Source A · environment holds still</button><button id="ph-indep" aria-pressed="false">Source B · environment forgets</button></div></div>
+      <canvas id="photons-canvas" width="1180" height="560" aria-label="Animation: pairs of photons from one source meet at a beam splitter and reach two detectors. Matching photons leave together. Photons of different colour sometimes split, and both detectors click"></canvas>
+      <p class="hint" id="ph-note"></p>
+    </div>
+    <div class="research-side">
+      <div class="card">
+        <div class="chips-row"><span class="chip simulated">Simulated by us</span></div>
+        <p class="eyebrow">Same brightness · attempts that split the pair</p>
+        <div class="duo">
+          <div><small>Source A</small><b class="cyan" id="ph-a">0.0%</b><span id="ph-ma">photon overlap 1.00</span></div>
+          <div><small>Source B</small><b class="amber" id="ph-b">0.8%</b><span id="ph-mb">photon overlap 0.60</span></div>
+        </div>
+        <div class="fact"><small>The same two cases as circuits on IBM Marrakesh</small><b id="ph-ibm">0.81 <i>vs</i> 0.52</b><span id="ph-ibm-note">measured overlap · ideal 1.00 and 0.60</span></div>
+        <p class="hint plain">Both sources send as many photons, in the same mix of colours. Only the pairs tell them apart. It is the click record again: the memory shows in the pattern, not in the count.</p>
+        <p class="hint tech">Model: lifetime 1 ns, trap offsets two linewidths apart, <span id="ph-survival">20%</span> single-photon survival, ideal g⁽²⁾(0) = 0. The environment here is classical, so a hidden-Markov model is a fair competitor.</p>
+      </div>
+      <div class="card">
+        <div class="chips-row"><span class="chip published">Published data, reanalysed</span></div>
+        <p class="eyebrow">A real quantum dot · interference quality</p>
+        <div class="trio" id="ph-gaas"></div>
+        <p class="hint">Visibility of a GaAs quantum dot at three delays between photons. Data by Münzberg et al. (2022), CC BY 4.0. Our reanalysis of their histograms, not our measurement.</p>
+        <div class="fact"><small>Detector blind time · true coupling <span id="ph-truth">0.65</span></small><b><span class="amber" id="ph-dead0">0.069</span> → <span class="cyan" id="ph-dead1">0.706</span></b><span>fitted while ignoring it, then modelling it (simulated)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 8 · LASERS ───────────────────────── -->
+<section class="scene" id="lasers" aria-labelledby="lasers-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">Follow-up research · laser monitoring</p>
+    <h1 id="lasers-title">Is the laser drifting, <em>or the sensor?</em></h1>
+    <p class="lede plain">A laser’s colour shifts at a moment nobody knows, and a monitor has 32 seconds to catch it. Adding a quantum sensor, a cloud of 64 atoms, helped a little. A second ordinary reference helped far more.</p>
+    <p class="lede tech">Unknown-onset frequency-step detection on 128 s synthetic records at 698 nm. The atomic channel is a Ramsey sequence on 64 unentangled atoms with T<sub>2</sub> = 200 ms. Alarms are calibrated on held-out sessions; detection counts only within 32 s of the onset.</p>
+  </div>
+  <div class="research-grid">
+    <div class="card research-main">
+      <div class="card-head"><p class="eyebrow" id="ls-label">One 128-second record, replayed</p>
+        <div class="seg" role="group" aria-label="Scenario"><button id="ls-nominal" aria-pressed="true">Everything calibrated</button><button id="ls-short" aria-pressed="false">Atoms lose coherence</button><button id="ls-path" aria-pressed="false">The shared path drifts</button></div></div>
+      <canvas id="lasers-canvas" width="1180" height="560" aria-label="Animation: a laser feeds an ordinary frequency reference and a cloud of atoms. Its frequency steps at an unknown time and each monitor raises an alarm or misses it"></canvas>
+      <p class="hint" id="ls-note"></p>
+    </div>
+    <div class="research-side">
+      <div class="card">
+        <div class="chips-row"><span class="chip negative">Simulated by us · negative result</span></div>
+        <p class="eyebrow" id="ls-bars-title">Caught within 32 seconds</p>
+        <div class="meterline dim"><span>Ordinary reference</span><div class="track"><i id="ls-m-c"></i></div><b id="ls-v-c">—</b></div>
+        <div class="meterline violet"><span>Atoms alone</span><div class="track"><i id="ls-m-q"></i></div><b id="ls-v-q">—</b></div>
+        <div class="meterline cyan"><span>Reference + atoms</span><div class="track"><i id="ls-m-cq"></i></div><b id="ls-v-cq">—</b></div>
+        <div class="meterline amber"><span>Two references</span><div class="track"><i id="ls-m-cc"></i></div><b id="ls-v-cc">—</b></div>
+        <p class="note" id="ls-fa"></p>
+      </div>
+      <div class="card">
+        <div class="chips-row"><span class="chip measured">Ran on IBM hardware, as a circuit</span></div>
+        <p class="eyebrow">What the atoms respond to</p>
+        <table class="mini" id="ls-atomic"><thead><tr><th>Laser offset</th><th>Atoms excited, model</th><th>IBM Marrakesh</th></tr></thead><tbody></tbody></table>
+        <p class="hint plain">The atomic channel as a 4-qubit circuit. Superconducting qubits played the atoms: no atoms and no laser were measured.</p>
+        <p class="hint tech">Task and time are matched, not total apparatus: reference lasers, cooling and trapping are uncounted. Qubits emulated the atomic channel; a sensing benefit would not be a computing speedup.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 9 · CHIPMAKING ───────────────────────── -->
+<section class="scene" id="chips" aria-labelledby="chips-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">Follow-up research · chipmaking</p>
+    <h1 id="chips-title">Sharper lines, <em>paid for in photons.</em></h1>
+    <p class="lede plain">Chips are printed with light. In a resist that needs two photons at once, entangled pairs draw fine stripes with about twice the contrast of laser light. More cells print correctly, and it costs more photons.</p>
+    <p class="lede tech">Crossed 800 nm beams on a two-photon resist: the 400 nm harmonic appears for N = 2 NOON light and for phase-cycled laser light alike, with different contrast. Poisson activation events, a threshold of 20, loss, jitter, blur and a linear background. An assumed resist, not a material on the shelf.</p>
+  </div>
+  <div class="research-grid">
+    <div class="card research-main">
+      <div class="card-head"><p class="eyebrow" id="cp-label">Exposing a strip of resist</p>
+        <div class="seg" role="group" aria-label="Illumination"><button id="cp-noon" aria-pressed="true">Entangled pairs</button><button id="cp-cycled" aria-pressed="false">Laser, two shifted exposures</button><button id="cp-duty" aria-pressed="false">Laser, short pulses</button></div></div>
+      <canvas id="chips-canvas" width="1180" height="560" aria-label="Animation: an interference pattern of light exposes a row of resist cells. Cells that pass a threshold print. The printed row is compared with the target pattern"></canvas>
+      <p class="hint" id="cp-note"></p>
+    </div>
+    <div class="research-side">
+      <div class="card">
+        <div class="chips-row"><span class="chip simulated">Simulated by us · an assumed resist</span></div>
+        <table class="mini" id="cp-table"><thead><tr><th>Light</th><th>Cells right</th><th>All 20 right</th><th>Photons used</th></tr></thead><tbody></tbody></table>
+        <p class="hint plain">Pairs print the cleanest stripes and use the most light. With heavy loss, a leaky resist or an unreliable pair source, laser light wins.</p>
+        <p class="hint tech">Each row at its own best tested dose, so this is not one equal-dose operating point. 540,000 Poisson realizations. The pulsed laser is one explicit classical competitor, not an optimum over all illumination.</p>
+      </div>
+      <div class="card">
+        <div class="chips-row"><span class="chip proposed">Built and checked · too large to run</span></div>
+        <p class="eyebrow">Our rare-event question, at full size</p>
+        <div class="duo">
+          <div><small>Qubits needed</small><b class="amber" id="cp-qubits">389</b><span id="cp-device">the chip we used has 156</span></div>
+          <div><small>Two-qubit gates</small><b id="cp-gates">3.4 M</b><span id="cp-gates-note">upper bound · our best run used 58</span></div>
+        </div>
+        <p class="hint" id="cp-event"></p>
+      </div>
+      <div class="card">
+        <div class="fact"><small>Reading a phase instead · pairs alone pick the wrong half-turn</small><b class="amber" id="cp-branch">50.4%</b><span>of the time (simulated)</span></div>
+        <p class="hint" id="cp-phase"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 10 · IMPACT ───────────────────────── -->
 <section class="scene" id="impact" aria-labelledby="impact-title" hidden>
   <div class="scene-head">
     <p class="eyebrow">Who needs this, and what we can honestly say</p>
@@ -358,6 +476,7 @@ qc.measure(light, click[t]); qc.reset(light)</code></pre>
 </footer>
 
 <script src="engine.js"></script>
+<script src="research.js"></script>
 <script src="data.js"></script>
 <script src="app.js"></script>
 </body>

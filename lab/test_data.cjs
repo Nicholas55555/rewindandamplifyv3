@@ -139,7 +139,7 @@ test('The single-file Lab embeds exactly the current sources', () => {
   const single = path.join(ROOT, 'Rewind_Amplify_Lab.html');
   if (!fs.existsSync(single)) return;       // not built yet in a fresh checkout before lab/build.py runs
   const html = fs.readFileSync(single, 'utf8');
-  for (const name of ['engine.js', 'data.js', 'app.js', 'styles.css']) {
+  for (const name of ['engine.js', 'research.js', 'data.js', 'app.js', 'styles.css']) {
     const source = fs.readFileSync(path.join(__dirname, name), 'utf8').replace(/\r\n/g, '\n').replace(/<\/script/gi, '<\\/script');
     assert.ok(html.includes(source), `${name} is stale in Rewind_Amplify_Lab.html: run python lab/build.py`);
   }

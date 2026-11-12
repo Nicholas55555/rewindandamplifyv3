@@ -83,6 +83,117 @@ def o_future(row: dict) -> list:
     return row["observables"]["future_clicks_after_selected_click"]
 
 
+def research(src: Sources) -> dict:
+    """Saved results of the follow-up studies that the Lab's three research tabs quote. Copied, never recomputed."""
+    # --- photons: equal brightness, unequal interference; published GaAs data; detector dead time
+    dot = src.json(ROOT / "quantum_dot_bridge" / "results.json")
+    trap = dot["classical_trap_pair_comparison"]
+    shared, independent = trap[0], trap[-1]
+    assert shared["switch_probability_between_endpoints"] == 0 and independent["switch_probability_between_endpoints"] == 0.5
+    cases = {c["case"]: c for c in dot["benchmark_cases"]}
+    different = cases["differential_detuning"]
+    hom = src.json(ROOT / "quantum_dot_bridge" / "hom_analysis" / "results.json")
+    fits = ROOT / "qrsm_photon_poc" / "followup" / "inference_results"
+    ignored, aware = src.json(fits / "fixed_411101_dead1_fit0.json"), src.json(fits / "fixed_411101_dead1_fit1.json")
+    photons = {
+        "survival": shared["single_photon_survival_probability"],
+        "marginals": shared["each_single_photon_marginal_offset_probabilities"],
+        "overlap": {"shared": shared["conditional_overlap"], "independent": independent["conditional_overlap"]},
+        "coincidence_per_attempt": {"shared": shared["coincidence_probability_per_excitation_pair"],
+                                    "independent": independent["coincidence_probability_per_excitation_pair"]},
+        "overlap_when_different": different["conditional_overlap"],
+        "detuning_in_linewidths": different["differential_angular_detuning_per_s"] / dot["config"]["radiative_rate_per_s"],
+        "trap": [{"switch_probability": t["switch_probability_between_endpoints"], "overlap": t["conditional_overlap"],
+                  "coincidence_per_attempt": t["coincidence_probability_per_excitation_pair"]} for t in trap],
+        "benchmark": [{"case": c["case"], "overlap": c["conditional_overlap"],
+                       "coincidence_per_attempt": c["coincidence_probability_per_excitation_pair"]} for c in dot["benchmark_cases"]],
+        "gaas": [{"separation_ns": case["excitation_separation_ns"], "visibility": case["primary"]["corrected_visibility"],
+                  "interval95": mc["corrected"]["interval95"], "co_only": case["primary"]["co_only_corrected_visibility"]}
+                 for case, mc in zip(hom["cases"], hom["monte_carlo"]["cases"])],
+        "dead_time": {"ignored": ignored["joint_parameters"]["g_defect"], "modelled": aware["joint_parameters"]["g_defect"],
+                      "truth": aware["generator_parameters"]["g_defect"]},
+    }
+    assert photons["marginals"] == independent["each_single_photon_marginal_offset_probabilities"] == [0.5, 0.5]
+    families = src.json(CAMPAIGN / "results.json")["family_results"]
+    pairs = {row["name"]: row for row in families["dot_frozen"] if row["run"] == "dots_plain_v1"}
+    photons["on_ibm"] = {key: {"overlap": pairs[name]["observables"]["raw_swap_overlap_estimate"],
+                               "interval95": pairs[name]["observables"]["raw_swap_overlap_interval95"],
+                               "ideal": pairs[name]["observables"]["ideal_overlap"], "shots": pairs[name]["shots"],
+                               "two_qubit_gates": pairs[name]["native_two_qubit_gate_count"], "qubits": pairs[name]["logical_qubits"]}
+                         for key, name in (("shared", "frozen_pair_p0"), ("independent", "frozen_pair_p0.5"))}
+    assert photons["on_ibm"]["shared"]["ideal"] == photons["overlap"]["shared"]
+    assert photons["on_ibm"]["independent"]["ideal"] == photons["overlap"]["independent"]
+
+    # --- chipmaking: exposure quality against dose, phase inspection, and the size of the full spatial query
+    exposure = src.json(ROOT / "quantum_lithography_poc" / "exposure_followup" / "results.json")["cases"][1]
+    methods = {}
+    for key in ("noon", "phase_cycled", "phase_cycled_burst"):
+        best = exposure["methods"][key]["best_threshold_accuracy"]
+        methods[key] = {"cell_accuracy": best["guard_cell_accuracy"], "all_correct": best["all_guard_cells_correct_probability"],
+                        "photons": best["sample_incident_photons"]}
+    phase = src.json(ROOT / "quantum_lithography_poc" / "phase_inspection_followup" / "results.json")["cases"][1]
+    budget = phase["budgets"]["equal_sample_photons"]
+    spatial = src.json(ROOT / "finals-lithography" / "full_spatial_circuit" / "results.json")
+    coverage = src.json(CAMPAIGN / "coverage.json")
+    floor = spatial["circuits"][1]
+    assert floor["qubits"] == spatial["circuits"][3]["qubits"]
+    chips = {
+        "threshold_events": exposure["setup"]["threshold_events"],
+        "methods": methods,
+        "phase": {key: {"rmse_rad": budget[key]["global"]["rmse_full_2pi_rad"], "wrong_branch": budget[key]["global"]["wrong_pi_branch_rate"],
+                        "trials": budget[key]["global"]["repetitions"]} for key in ("coherent", "noon", "hybrid")},
+        "full_query": {
+            "cells": spatial["configuration"]["cells"], "qubits": floor["qubits"],
+            "count_qubits": floor["metadata"]["data_qubits"], "score_qubits": floor["metadata"]["score_qubits"],
+            "clean_qubits": floor["metadata"]["extra_clean_qubits"],
+            "cx_upper_bound": {k: spatial["explicit_synthesis_costs"][k]["complete_one_round_generic_cx_constructive_upper_bound"]
+                               for k in ("floor", "ceil")},
+            "event_probability": spatial["bounds"][0]["finite_capped_integer_lattice_cdf"],
+            "device_qubits": coverage["confirmed_device_qubits"],
+        },
+    }
+
+    # --- lasers: catching a frequency step at an unknown time, with and without an atomic sensor
+    sensor_dir = ROOT / "laser_sensor_viability" / "followup" / "main"
+    sensor = src.json(sensor_dir / "results.json")
+    traces = src.json(sensor_dir / "example_traces.json")
+    scenarios = {s["id"]: s for s in sensor["scenarios"]}
+    shown = {"nominal": "unseen_nominal_sessions", "short_coherence": "unseen_short_coherence",
+             "shared_path": "common_sampled_path_changes"}
+    monitors = ("classical", "quantum", "classical_quantum", "two_classical")
+    lasers = {"config": {k: sensor["config"][k] for k in ("wavelength_nm", "atoms", "pulse_s", "dark_s", "cycle_s", "cycles", "t1_s", "t2_s")},
+              "step_hz": abs(traces["unseen_nominal_sessions"]["amplitude_hz"]), "window_s": 32, "scenarios": {}}
+    for key, scenario_id in shown.items():
+        scenario, trace = scenarios[scenario_id], traces[scenario_id]
+        observed = list(zip(*trace["observations"]))            # photodiode, receiver, receiver (fusion), atoms, second receiver
+        lasers["scenarios"][key] = {
+            "id": scenario_id, "records": scenario["records_per_class"],
+            "monitors": {m: {"caught": scenario["methods"][m]["detection_within_32s"],
+                             "false_alarm": scenario["methods"][m]["false_alarm_rate"],
+                             "median_delay_s": scenario["methods"][m]["detected_only_delay_median_s"]} for m in monitors},
+            # one stored record of this scenario, rounded to 0.0001 Hz for display
+            "example": {
+                "onset_s": trace["onset_cycle"], "nuisance_onset_s": trace["nuisance_onset_cycle"], "step_hz": trace["amplitude_hz"],
+                "laser_hz": [round(v, 4) for v in trace["source_frequency_hz"]],
+                "path_hz": [round(v, 4) for v in trace["common_path_hz"]],
+                "receiver_hz": [round(v, 4) for v in observed[1]],
+                "atoms_hz": [round(v, 4) for v in observed[3]],
+                "atoms_excited": [round(v * sensor["config"]["atoms"]) for v in trace["atomic_excited_fraction"]],
+                "score_times_s": [trace["score_end_time_s"][0], trace["score_end_time_s"][-1]],
+                "scores": {m: [round(v / trace["thresholds"][m], 4) for v in trace["scores"][m]] for m in monitors},
+                "first_alarm_s": {m: trace["first_alarm_s"][m] for m in monitors},
+            },
+        }
+        assert len(trace["score_end_time_s"]) == len(trace["scores"]["classical"]) == 97
+    atomic = {row["name"]: row for row in families["atomic"]}
+    lasers["atomic_on_ibm"] = [{"detuning_hz": hz, "model": atomic[name]["observables"]["ideal_system_zero_probability"],
+                                "measured": atomic[name]["observables"]["raw_system_zero_probability"],
+                                "interval95": atomic[name]["observables"]["raw_system_zero_wilson95"], "shots": atomic[name]["shots"],
+                                "qubits": atomic[name]["logical_qubits"], "two_qubit_gates": atomic[name]["native_two_qubit_gate_count"]}
+                               for hz, name in ((-5, "atomic_d-5_Z"), (0, "atomic_d+0_Z"), (5, "atomic_d+5_Z"))]
+    return {"photons": photons, "lasers": lasers, "chips": chips}
+
+
 def build() -> bytes:
     src = Sources()
     summary = src.json(CAMPAIGN / "results.json")
@@ -166,6 +277,7 @@ def build() -> bytes:
     data["noise_model"]["after_click_step6"] = {
         row["circuit"]: {label: row[label]["later_click_rates"][2] for label in ("ideal", "calibration", "echo_scaled", "measured")}
         for row in study["after_click"]}
+    data["research"] = research(src)
     data["source_sha256"] = dict(sorted(src.seen.items()))
     body = json.dumps(data, separators=(",", ":"), sort_keys=True)
     text = ("// Generated by lab/make_data.py from the saved hardware analyses. Do not edit by hand.\n"

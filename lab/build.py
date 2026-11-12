@@ -1,6 +1,6 @@
 """Build or check Rewind_Amplify_Lab.html: the whole Lab as one offline file.
 
-The folder app in lab/ is the source. This inlines its stylesheet and three scripts unchanged, so the single
+The folder app in lab/ is the source. This inlines its stylesheet and four scripts unchanged, so the single
 file can be emailed, opened from a USB stick, or dropped on a presentation laptop with no server and no network.
 
     python lab/build.py            # rewrite Rewind_Amplify_Lab.html
@@ -21,7 +21,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 OUTPUT = ROOT / "Rewind_Amplify_Lab.html"
 REPO = "https://github.com/Nicholas55555/rewindandamplifyv3"
-SCRIPTS = ["engine.js", "data.js", "app.js"]
+SCRIPTS = ["engine.js", "research.js", "data.js", "app.js"]
 # A single file travels alone, so links that lean on the folder layout point at the repository instead.
 PORTABLE_LINKS = {
     'href="../laser-diagnostics-app/index.html"': f'href="{REPO}#research-explorer"',

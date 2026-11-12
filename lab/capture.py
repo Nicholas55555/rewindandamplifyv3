@@ -25,7 +25,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 MEDIA = ROOT / "media"
 PAGE = (HERE / "index.html").as_uri()
-SEED = 20261114
+SEED = 1114
 # scene, query string, and how long to let it run before the still is taken (milliseconds of Lab time)
 STILLS = [
     ("1-signal", "reveal=1&speed=1&runs=400", "signal", 4580),
@@ -34,7 +34,10 @@ STILLS = [
     ("4-rewind", "stage=4", "rewind", 300),
     ("5-answer", "", "answer", 300),
     ("6-hardware", "", "hardware", 1600),
-    ("7-impact", "", "impact", 300),
+    ("7-photons", "speed=4&source=independent", "photons", 7350),
+    ("8-lasers", "speed=4", "lasers", 6700),
+    ("9-chips", "speed=2", "chips", 2300),
+    ("10-impact", "", "impact", 300),
 ]
 
 
@@ -49,6 +52,12 @@ PANELS = [
     ("amplify-replay", "stage=4", "rewind", "#rewind .rewind-main", "true"),
     ("answer", "", "answer", "#answer .answer-grid > .card", "true"),
     ("hardware", "", "hardware", "#hardware .lanes", "LAB.hw.u >= 1"),
+    # the research tabs, in a window that gives each panel the 16:9 shape its slide wants
+    ("photons", "speed=4&source=independent", "photons", "#photons .research-main", "LAB.ph.split >= 2 && LAB.ph.u > 0.72 && LAB.ph.u < 0.8", (1600, 800)),
+    ("lasers", "speed=4", "lasers", "#lasers .research-main", "LAB.ls.t >= 128", (1600, 800)),
+    ("lasers-path", "speed=4&scenario=shared_path", "lasers", "#lasers .research-main", "LAB.ls.t >= 128", (1600, 800)),
+    ("chips", "speed=2", "chips", "#chips .research-main", "LAB.cp.shots >= 1 && LAB.cp.u >= 1", (1600, 800)),
+    ("chips-laser", "speed=2&light=phase_cycled", "chips", "#chips .research-main", "LAB.cp.shots >= 1 && LAB.cp.u >= 1", (1600, 800)),
 ]
 
 
@@ -103,17 +112,18 @@ def deck(args) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as p:
         b = browser(p)
-        context = b.new_context(viewport={"width": args.width, "height": args.height}, device_scale_factor=args.scale)
-        for name, query, scene, selector, ready in PANELS:
+        for name, query, scene, selector, ready, *window in PANELS:
             if args.only and args.only not in name:
                 continue
+            width, height = window[0] if window else (args.width, args.height)
+            context = b.new_context(viewport={"width": width, "height": height}, device_scale_factor=args.scale)
             page = open_page(context, query, scene)
             page.add_style_tag(content="label.check { visibility: hidden }")  # a tick box means nothing on a slide
             run(page, 400)
             page.evaluate("ready => { for (let i = 0; i < 6000 && !eval(ready); i++) LAB.tick(1000 / 60); }", ready)
             out = out_dir / f"{name}.png"
             page.locator(selector).first.screenshot(path=str(out))
-            page.close()
+            context.close()
             print(f"wrote {out.relative_to(ROOT)}")
         b.close()
 
@@ -169,8 +179,8 @@ def tour(args) -> None:
     with sync_playwright() as p:
         b = browser(p)
         context = b.new_context(viewport={"width": args.width, "height": args.height}, device_scale_factor=1)
-        page = open_page(context, "tour=1", "signal")
-        length = page.evaluate("LAB.tourLength()")
+        page = open_page(context, f"tour={args.kind}", "signal")
+        length = page.evaluate("kind => LAB.tourLength(kind)", args.kind)
         frames = int(round((length + args.tail) * args.fps))
         if args.music:  # fade the music out with the picture
             i = command.index("-af") + 1
@@ -213,7 +223,8 @@ def main() -> None:
     g.add_argument("--colors", type=int, default=96)
     g.add_argument("--output", default="lab-bench.gif")
     g.set_defaults(run=gif)
-    t = sub.add_parser("tour", help="the 45-second tour as an MP4")
+    t = sub.add_parser("tour", help="the tour as an MP4: all ten scenes (70 s), or --kind core for the 45-second version")
+    t.add_argument("--kind", choices=["full", "core"], default="full", help="full: ten scenes. core: without the three research tabs")
     t.add_argument("--width", type=int, default=1920)
     t.add_argument("--height", type=int, default=1080)
     t.add_argument("--fps", type=int, default=30)

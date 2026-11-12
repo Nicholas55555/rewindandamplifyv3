@@ -1,6 +1,6 @@
 """Open the Lab in a real browser and fail on anything broken.
 
-Loads the folder app and the single-file build from disk, visits all seven scenes at both caption levels, presses
+Loads the folder app and the single-file build from disk, visits all ten scenes at both caption levels, presses
 every control once, and checks that the numbers on screen are the ones the evidence supports. Any console error,
 uncaught exception or request to the network is a failure.
 
@@ -17,13 +17,16 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 PAGES = {"folder app": HERE / "index.html", "single file": ROOT / "Rewind_Amplify_Lab.html"}
-SCENES = ["signal", "machine", "question", "rewind", "answer", "hardware", "impact"]
+SCENES = ["signal", "machine", "question", "rewind", "answer", "hardware", "photons", "lasers", "chips", "impact"]
 # what must be on screen, taken from the evidence the tests already pin
 EXPECT = {
     "answer": {"#ans-none": "10.10%", "#ans-defect": "4.67%"},
     "hardware": {"#hw-local-rate": "76.90%", "#hw-full-rate": "69.26%", "#hw-tv-local": "0.118", "#hw-tv-full": "0.181",
                  "#hw-nm-local": "78.4%", "#hw-nm-full": "69.7%", "#hw-plain-rate": "6.74%"},
     "rewind": {"#amp-hit": "96.10%", "#amp-tv": "0.035", "#amp-gates": "58"},
+    "photons": {"#ph-a": "0.0%", "#ph-b": "0.8%", "#ph-dead0": "0.069", "#ph-dead1": "0.706"},
+    "lasers": {"#ls-v-c": "51.4%", "#ls-v-q": "7.7%", "#ls-v-cq": "58.0%", "#ls-v-cc": "98.0%"},
+    "chips": {"#cp-qubits": "389", "#cp-branch": "50.4%"},
 }
 
 
@@ -90,14 +93,39 @@ def check_page(context, label: str, path: Path) -> list[str]:
     for selector in ("#hw-first", "#hw-supp", "#hw-precision"):
         page.click(selector)
         page.evaluate(step)
-    for key in ("ArrowRight", "ArrowLeft", "t", "t", "r", "d", "d", "7", "1"):
+    # the research tabs: every switch once, and the numbers that must change with it
+    page.click('.scenes button[data-scene="photons"]')
+    for selector in ("#ph-indep", "#ph-shared", "#ph-indep"):
+        page.click(selector)
+        page.evaluate("for (let i = 0; i < 600; i++) LAB.tick(1000 / 30)")
+    if page.evaluate("LAB.ph.pairs < 5 || LAB.ph.a + LAB.ph.b !== 2 * LAB.ph.pairs"):
+        problems.append(f"{label}: the photon counters do not add up")
+    page.click('.scenes button[data-scene="lasers"]')
+    for selector, want in (("#ls-short", "47.3%"), ("#ls-path", "48.2%"), ("#ls-nominal", "58.0%")):
+        page.click(selector)
+        page.evaluate("for (let i = 0; i < 700; i++) LAB.tick(1000 / 30)")
+        got = page.locator("#ls-v-cq").inner_text().strip()
+        if got != want:
+            problems.append(f"{label}: lasers {selector} shows {got!r}, expected {want!r}")
+    page.click('.scenes button[data-scene="chips"]')
+    for selector in ("#cp-cycled", "#cp-duty", "#cp-noon"):
+        page.click(selector)
+        page.evaluate("for (let i = 0; i < 600; i++) LAB.tick(1000 / 30)")
+    if page.evaluate("LAB.cp.shots < 3 || LAB.cp.scored !== 20 * LAB.cp.shots"):
+        problems.append(f"{label}: the exposure tallies do not add up")
+    rows = page.locator("#cp-table tbody tr").all_inner_texts()
+    if len(rows) != 3 or "95.2%" not in rows[0] or "78.3%" not in rows[1] or "83.3%" not in rows[2]:
+        problems.append(f"{label}: the exposure table shows {rows}")
+    for key in ("ArrowRight", "ArrowLeft", "t", "t", "r", "d", "d", "7", "8", "9", "0", "1"):
         page.keyboard.press(key)
         page.evaluate(step)
+    if page.evaluate("[LAB.tourLength(), LAB.tourLength('core')].join()") != "70,45":
+        problems.append(f"{label}: the tours are not 70 and 45 seconds long")
     # the tour runs to its end and returns control
     page.click("#tour")
-    page.evaluate("for (let i = 0; i < 47 * 30; i++) LAB.tick(1000 / 30)")
+    page.evaluate("for (let i = 0; i < 71 * 30; i++) LAB.tick(1000 / 30)")
     if page.evaluate("LAB.state.tour !== null"):
-        problems.append(f"{label}: the tour did not finish in 46 seconds")
+        problems.append(f"{label}: the tour did not finish in 71 seconds")
     if page.evaluate("LAB.state.scene") != "impact":
         problems.append(f"{label}: the tour did not end on the last scene")
     page.close()

@@ -39,8 +39,8 @@ jobs:
           package-manager-cache: false
       - name: Check tracked publication scope and credential patterns
         run: python .github/scripts/check_publication.py
-      - name: Check the Lab engine against Qiskit, and its numbers against the saved hardware record
-        run: node --test lab/test_engine.cjs lab/test_data.cjs
+      - name: Check the Lab engine against Qiskit, and its numbers against the saved hardware and research records
+        run: node --test lab/test_engine.cjs lab/test_data.cjs lab/test_research.cjs
       - name: Verify the Lab data bundle and single-file Lab match their sources
         run: |
           python lab/make_data.py --check

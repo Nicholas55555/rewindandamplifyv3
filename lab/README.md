@@ -1,6 +1,6 @@
 # The Lab
 
-A live, exact simulation of the Rewind & Amplify model, in a browser. Open [`index.html`](index.html) in Chrome or Edge, or use the single file [`../Rewind_Amplify_Lab.html`](../Rewind_Amplify_Lab.html). Nothing to install, no server, no network.
+A live, exact simulation of the Rewind & Amplify model, in a browser, followed by three tabs that animate the follow-up research. Open [`index.html`](index.html) in Chrome or Edge, or use the single file [`../Rewind_Amplify_Lab.html`](../Rewind_Amplify_Lab.html). Nothing to install, no server, no network.
 
 ![The Lab's first scene](../media/lab-1-signal.png)
 
@@ -14,39 +14,53 @@ A live, exact simulation of the Rewind & Amplify model, in a browser. Open [`ind
 | 4. Rewind & amplify | Prepare, mark, rewind, reflect, replay: the amplitudes of the eight three-step records, computed live |
 | 5. Answer | The two futures, 10.10% and 4.67%, with a slider for the defect's coupling |
 | 6. IBM hardware | The measured counts beside the ideal simulator and the noise model |
-| 7. Why it matters | Who could use this, what we claim, and what we do not |
+| 7. Photons | Two photons meet at a beam splitter. Two sources are equally bright, and only the pairs show which one has a hidden memory |
+| 8. Lasers | A laser steps at an unknown time. A stored record is replayed: an ordinary receiver, a cloud of 64 atoms, and each monitor's alarm |
+| 9. Chipmaking | Light prints fine stripes on a resist, cell by cell: entangled pairs against two laser routes, and what each costs in photons |
+| 10. Why it matters | Who could use this, what we claim, and what we do not |
 
 Every scene has plain and technical captions. Press **T** to switch.
+
+![The Chipmaking tab](../media/lab-9-chips.png)
 
 ## Controls
 
 | Key | Action |
 |---|---|
 | ← → | Previous and next scene |
-| 1 to 7 | Jump to a scene |
+| 1 to 9, then 0 | Jump to a scene |
 | T | Plain or technical captions |
 | R | Reveal or hide the defect |
 | D | Add or remove the defect |
 | Space | Pause the simulation |
 
-The **45 s tour** button plays all seven scenes on a timer, for a presenter to talk over.
+The tour button plays all ten scenes in 70 seconds, for a presenter to talk over. `?tour=core` plays the 45-second version without the three research tabs.
 
-Address-bar options, for setting up a screenshot or a demo: `?level=tech`, `?reveal=1`, `?speed=4`, `?runs=2000`, `?stage=3`, `?seed=7`, `?tour=1`, followed by `#scene`, for example `index.html?level=tech&reveal=1#machine`.
+Address-bar options, for setting up a screenshot or a demo: `?level=tech`, `?reveal=1`, `?speed=4`, `?runs=2000`, `?stage=3`, `?seed=7`, `?tour=1`, and for the research tabs `?source=independent`, `?scenario=shared_path` (or `short_coherence`), `?light=phase_cycled` (or `phase_cycled_burst`). Follow them with `#scene`, for example `index.html?level=tech&reveal=1#machine`.
 
 ## Why it can be trusted
 
 The animation is not a cartoon of the physics. [`engine.js`](engine.js) builds the same circuits, gate for gate, as the Qiskit package in [`../rewindandamplify-main/qrsm_grover/`](../rewindandamplify-main/qrsm_grover/), and simulates them as a statevector. The page stores no answers for the model: 4.67%, 10.10% and every amplitude on screen are computed when you open it.
 
-Two test files hold it to that:
+The three research tabs are held to the studies they illustrate in the same way. [`research.js`](research.js) restates four small formulas, and what each tab does with them is this:
+
+| Tab | What is live | What is saved |
+|---|---|---|
+| Photons | Each pair is drawn at random from the study's own model: the environment switches with the stored probability, and a pair splits with probability (1 − overlap) / 2 | The 0.0% and 0.8%, the overlaps measured on IBM, the GaAs visibilities and the dead-time fit |
+| Lasers | Nothing is simulated: one stored 128-second record of each scenario is replayed, with its readings, hidden truth, alarm levels and alarm times | The detection and false-alarm rates over 1,920 records |
+| Chipmaking | Every exposure is a fresh Poisson draw from the study's exposure model at its saved operating point | The 95.2 / 78.3 / 83.3% and the photon counts, which the live model reproduces to nine decimal places |
+
+Three test files hold all of it:
 
 ```bash
-node --test lab/test_engine.cjs lab/test_data.cjs
+node --test lab/test_engine.cjs lab/test_data.cjs lab/test_research.cjs
 ```
 
 - [`test_engine.cjs`](test_engine.cjs): Kraus operators, history probabilities, and the complete query circuit for both models and all four builds agree with Qiskit to 10⁻¹². Reference values come from the frozen file `research-validation/original_after_click_verification.json` and from [`reference.json`](reference.json), which [`make_reference.py`](make_reference.py) writes from the Qiskit package.
 - [`test_data.cjs`](test_data.cjs): every measured number on the hardware scene is recomputed from the campaign's saved files, including both total-variation distances from the measured histories. [`data.js`](data.js) is generated by [`make_data.py`](make_data.py) and records the hash of each file it read.
+- [`test_research.cjs`](test_research.cjs): the overlap formula against all four benchmark source pairs, the atomic response against the study's Bloch integration, the exposure model against the saved cell means and accuracies, the replayed records against the stored traces and alarm times, and every number the three tabs display against the file that stores it.
 
-The measured numbers are raw counts from real IBM jobs. The Lab submits nothing and contacts nothing.
+The measured numbers are raw counts from real IBM jobs. The research tabs show simulations and one reanalysis of published data: no photons, lasers or wafers were measured by the team. The Lab submits nothing and contacts nothing.
 
 ## Files
 
@@ -54,18 +68,19 @@ The measured numbers are raw counts from real IBM jobs. The Lab submits nothing 
 |---|---|
 | `index.html`, `styles.css`, `app.js` | The page |
 | `engine.js` | The exact simulator: statevector, the model's gates, Kraus operators, amplification with any reflection |
-| `data.js` | Measured IBM numbers, generated. Do not edit by hand. |
+| `research.js` | The formulas behind the research tabs: photon overlap, pair coincidences, the atomic response, the exposure model |
+| `data.js` | Measured IBM numbers and saved research results, generated. Do not edit by hand. |
 | `reference.json` | Qiskit-side reference values for the tests, generated |
 | `make_data.py`, `make_reference.py` | The generators, each with a `--check` mode |
 | `build.py` | Writes `../Rewind_Amplify_Lab.html`, with a `--check` mode |
-| `capture.py` | Records stills, slide panels, a README loop and the 45-second tour |
-| `check_browser.py` | Opens every scene in a real browser and fails on any error |
+| `capture.py` | Records stills, slide panels, a README loop and the tour (70 seconds, or `--kind core` for 45) |
+| `check_browser.py` | Opens every scene in a real browser, presses every control and fails on any error |
 
 ## Changing it
 
 ```bash
 python lab/build.py                 # after editing the page: rebuild the single file
-python lab/make_data.py             # after a saved hardware result changes
+python lab/make_data.py             # after a saved hardware or research result changes
 python lab/make_reference.py        # after the Qiskit package changes (it should not)
 python lab/check_browser.py         # every scene, both caption levels, folder app and single file
 python lab/capture.py stills        # media/lab-*.png

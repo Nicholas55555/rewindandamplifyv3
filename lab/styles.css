@@ -55,6 +55,9 @@ h1, h3, p { margin: 0; }
 .scenes button:hover { color: var(--ink); }
 .scenes button[aria-current="true"] { color: var(--ink); border-bottom-color: var(--cyan); }
 .scenes button[aria-current="true"] span { color: var(--cyan); }
+.scenes i, .ghost i { font-style: normal; }
+.short { display: none; }
+.nav-gap { width: 1px; height: 18px; background: var(--line-2); align-self: center; margin: 0 6px; }
 .top-tools { display: flex; gap: 10px; align-items: center; flex: none; }
 .seg { display: inline-flex; border: 1px solid var(--line-2); border-radius: 999px; overflow: hidden; }
 .seg button { background: none; border: 0; padding: 6px 13px; font-size: 13px; color: var(--muted); }
@@ -219,6 +222,44 @@ table.mini .ok { color: var(--green); } table.mini .bad { color: var(--red); }
 p.jobline { font-family: var(--mono); font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 9px; }
 .jobline code, .jobline #hw-job { color: var(--cyan); }
 
+/* research tabs: photons, lasers, chipmaking */
+.research-grid { display: grid; grid-template-columns: 1.72fr 1fr; gap: 12px; min-height: 0; }
+.research-main { grid-template-rows: auto minmax(0, 1fr) auto; }
+.research-side { display: grid; gap: 12px; align-content: start; min-height: 0; overflow: auto; }
+.seg.three { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; border-radius: 12px; }
+.seg.three button { padding: 7px 12px; font-size: 13.5px; white-space: nowrap; }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.duo > div, .trio > div { display: grid; }
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.duo small, .trio small, .fact small { font-size: 11px; letter-spacing: .15em; color: var(--muted); font-weight: 600; text-transform: uppercase; }
+.duo b, .trio b { font-family: var(--mono); font-size: clamp(24px, 2.5vw, 40px); font-weight: 500; line-height: 1.1; }
+.duo span, .trio span { font-size: 12.5px; color: var(--muted); }
+.fact { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; align-items: baseline; border-top: 1px solid var(--line); padding-top: 8px; }
+.fact:first-of-type { border-top: 0; padding-top: 0; }
+.fact small { grid-column: 1 / -1; }
+.fact b { font-family: var(--mono); font-size: clamp(19px, 1.7vw, 26px); font-weight: 500; color: var(--ink); white-space: nowrap; }
+.fact > span { font-size: 13px; color: var(--soft); }
+.fact b i { font-style: normal; font-size: .6em; color: var(--muted); margin: 0 4px; }
+.fact b.amber { color: var(--amber); } .fact b.cyan { color: var(--cyan); }
+table.mini tr.on td { color: var(--ink); background: rgba(100, 217, 233, .08); } table.mini tr.on td:first-child { box-shadow: inset 3px 0 0 var(--cyan); }
+.meterline { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 2fr) auto; gap: 10px; align-items: center; font-size: 13.5px; color: var(--soft); }
+.meterline .track { height: 12px; border-radius: 12px; background: #0a1826; border: 1px solid var(--line); overflow: hidden; }
+.meterline .track i { display: block; height: 100%; width: 0; border-radius: 12px; background: var(--cyan); transition: width .5s ease; }
+.meterline b { font-family: var(--mono); font-size: 19px; font-weight: 500; min-width: 62px; text-align: right; }
+.meterline.amber .track i { background: var(--amber); } .meterline.amber b { color: var(--amber); }
+.meterline.cyan b { color: var(--cyan); }
+.meterline.violet .track i { background: var(--violet); } .meterline.violet b { color: var(--violet); }
+.meterline.red .track i { background: var(--red); } .meterline.red b { color: var(--red); }
+.meterline.dim .track i { background: var(--muted); } .meterline.dim b { color: var(--soft); }
+.chip.negative { color: var(--amber); border-color: rgba(237, 181, 104, .5); }
+.chip.published { color: var(--violet); border-color: rgba(185, 168, 229, .5); }
+.chips-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.research-main .hint b { color: var(--soft); font-weight: 600; }
+.research-main .hint .caught { color: var(--green); } .research-main .hint .false, .research-main .hint .late { color: var(--red); }
+.note { font-size: 12.5px !important; color: var(--muted) !important; }
+.note.alert { color: var(--red) !important; }
+#ls-atomic td, #cp-table td { padding: 4px 6px; }
+
 /* impact */
 .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; min-height: 0; align-content: start; overflow: auto; }
 #impact { grid-template-rows: auto minmax(0, 1fr); }
@@ -248,9 +289,9 @@ p.jobline { font-family: var(--mono); font-size: 12px; color: var(--muted); bord
 .progress i { display: block; height: 100%; width: 0; background: var(--amber); }
 
 /* each scene's main grid is exactly as tall as the space it is given, so a tall picture shrinks instead of overflowing */
-.question-grid, .rewind-grid, .answer-grid, .hardware-grid { grid-template-rows: minmax(0, 1fr); }
+.question-grid, .rewind-grid, .answer-grid, .hardware-grid, .research-grid { grid-template-rows: minmax(0, 1fr); }
 /* ───────── a 720-line projector: tighter type so the pictures keep their room ───────── */
-@media (max-height: 880px) and (min-width: 1181px) {
+@media (max-height: 940px) and (min-width: 1181px) {
   .top { padding-top: 7px; padding-bottom: 7px; }
   main { padding-top: 10px; }
   .scene { gap: 9px; }
@@ -269,13 +310,27 @@ p.jobline { font-family: var(--mono); font-size: 12px; color: var(--muted); bord
   table.mini td { padding: 3px 6px; } table.ladder tr.strong td { font-size: 17px; }
   .lanes { gap: 8px; } .lane-num strong { font-size: clamp(28px, 3vw, 44px); }
   .future b { font-size: clamp(28px, 3vw, 44px); } .evidence-mini .hint { display: none; }
+  .research-side { gap: 9px; } .research-side .hint { display: none; } .fact { padding-top: 5px; }
+  .duo b, .trio b { font-size: clamp(22px, 2.2vw, 32px); }
 }
-/* ───────── smaller screens ───────── */
+/* a 900-line screen has room for the summary scene at full size */
+@media (min-height: 881px) and (max-height: 940px) and (min-width: 1181px) {
+  #impact .card { padding: 14px 16px; gap: 8px; } #impact .card p { font-size: 14.5px; }
+  .who h3 { font-size: 20px; } .ledger ul { font-size: 14.5px; gap: 6px; }
+}
+/* ───────── smaller screens: ten tabs must stay on one line, so labels shorten before anything wraps ───────── */
+@media (max-width: 1590px) {
+  .long { display: none; } .short { display: inline; }
+  .scenes button { padding: 8px 10px; }
+}
 @media (max-width: 1420px) {
-  .top { gap: 12px; padding: 10px 18px; }
-  .scenes button { padding: 8px 8px; font-size: 13px; }
-  .scenes button span { margin-right: 5px; }
-  .brand-text small { letter-spacing: .1em; }
+  .top { gap: 10px; padding: 10px 18px; }
+  .scenes { flex-wrap: nowrap; gap: 0; }
+  .scenes button { padding: 8px 7px; font-size: 13px; }
+  .scenes button span { display: none; }
+  .nav-gap { margin: 0 3px; }
+  .brand-text small { display: none; }
+  .seg button { padding: 6px 10px; }
 }
 @media (max-width: 1180px), (max-height: 640px) {
   body { height: auto; min-height: 100vh; overflow: auto; }
@@ -283,12 +338,13 @@ p.jobline { font-family: var(--mono); font-size: 12px; color: var(--muted); bord
   main { overflow: visible; }
   .scene { height: auto; grid-template-rows: none; }
   canvas { height: auto; object-fit: fill; }
-  .question-grid, .rewind-grid, .answer-grid, .hardware-grid, .rewind-main, .answer-grid > .card, .raster-card, .question-side { grid-template-rows: none; }
-  .answer-side, .hw-side, .impact-grid { overflow: visible; }
+  .question-grid, .rewind-grid, .answer-grid, .hardware-grid, .research-grid, .rewind-main, .research-main, .answer-grid > .card, .raster-card, .question-side { grid-template-rows: none; }
+  .answer-side, .hw-side, .research-side, .impact-grid { overflow: visible; }
 }
 @media (max-width: 1180px) {
-  .scene-foot.three, .machine-grid, .rewind-grid, .answer-grid, .hardware-grid, .impact-grid, .question-grid { grid-template-columns: 1fr; }
+  .scene-foot.three, .machine-grid, .rewind-grid, .answer-grid, .hardware-grid, .research-grid, .impact-grid, .question-grid { grid-template-columns: 1fr; }
   .raster-card { grid-row: auto; grid-column: auto; }
+  .scenes { flex-wrap: wrap; } .nav-gap { display: none; }
   .scenes button { padding: 6px 8px; font-size: 13px; }
   .scope { display: none; }
   .tally { grid-template-columns: repeat(3, 1fr); }
@@ -298,6 +354,8 @@ p.jobline { font-family: var(--mono); font-size: 12px; color: var(--muted); bord
   .stages { grid-template-columns: repeat(5, minmax(0, 1fr)); } .stages button small { display: none; }
   .futures { grid-template-columns: 1fr; } .speed span { display: none; }
   .lane { grid-template-columns: 1fr; } .lane-head { grid-column: auto; }
+  .seg.three { grid-auto-flow: row; } .trio { grid-template-columns: 1fr; }
+  .scenes { justify-content: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) { .scene { animation: none; } .meter .track i, .switch i { transition: none; } }
 /* frame-by-frame capture: nothing may depend on the wall clock */
