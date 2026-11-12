@@ -1,4 +1,58 @@
-# Finals Q&A and evidence prompts
+# Finals Q&A (V3)
+
+Updated 12 November 2026. Rehearse the twelve questions below aloud, with all four members taking turns. The longer answers after them are for depth. If you do not know an answer on the day, say so and point to the repository: an honest "we did not test that" scores better than a guess.
+
+## Twelve questions to rehearse
+
+**1. What is the problem, in one sentence?**
+A hidden defect can change what a detector records, and from the record alone you cannot tell it from a detector fault. Teams building quantum chips and photon sources need models that separate the two.
+
+**2. Why would a quantum computer help?**
+Studying a rare event by ordinary sampling costs about 1/p runs. Amplitude amplification costs about 1/√p calls of the model. For one 64-step record that is 27 million runs against about a hundred calls. And the model's memory is quantum, so a quantum circuit is its natural simulator.
+
+**3. So is this faster than a classical computer?**
+No. At this size an exact classical sampler answers in a fraction of a millisecond. Its cost grew about 6× per added hidden qubit in our tests, so the question only opens for larger hidden memories. We have not shown a crossover.
+
+**4. What exactly did you build in Qiskit?**
+The recurrent model as a circuit. A reversible version with a fresh qubit per step. A one-gate oracle for "a click at this step". The inverse preparation and an ancilla-assisted reflection. Steering. Transpilation to IBM's CZ basis on a fixed layout, with readout-calibration circuits in every job. The package has 114 tests.
+
+**5. What ran on real hardware?**
+Seventeen jobs on IBM Kingston and Marrakesh. The featured run is 8,192 shots per circuit on Marrakesh, job `dbqb1ifv5hds73dfo310`. The lighter build hit the click 6,300 times, 76.90%, with 58 two-qubit gates. The textbook build hit it 5,674 times, 69.26%, with 125.
+
+**6. Is that 7.6-point gap real?**
+Within the run, yes: the 95% interval is 6.3 to 9.0 points. Across the three runs that day the lighter build led every time, by 7.6 to 14.5 points. The interval covers shot noise only, not drift between runs.
+
+**7. Did fewer gates cause it?**
+That is the leading explanation, not a proof. With no noise the two builds tie. A noise model with only gate and readout errors predicts a gap of 7 to 9 points. But the two circuits also differ in width, in routing, and in which qubit reads the click.
+
+**8. A higher hit rate is not a correct answer. How do you know the answer is right?**
+We do not assume it. We measure how far the accepted histories are from the exact conditional distribution: 0.118 for the lighter build and 0.181 for the textbook build. Both are biased. On hardware the two futures came out as 8.79% and 11.66%, against the exact 4.67% and 10.10%.
+
+**9. What noise analysis or mitigation did you do?**
+Three things. Echo circuits showed the chip was about 1.5 times noisier than its calibration said. A noise-model simulation of the exact compiled circuits predicted 78.4% and 69.7%, against the measured 76.9% and 69.3%. Dynamical decoupling and twirling, on identical circuits, made the answer error worse. The headline numbers are raw counts.
+
+**10. Did you detect a real defect?**
+No. We programmed both models and ran them on IBM's qubits. Telling a real defect from a detector fault needs calibrated records from a real device, competing models, and a blind test. That is our next experiment.
+
+**11. What is original here?**
+Not amplitude amplification, which is established work. Ours is noticing that a recurrent model with resets cannot be amplified, making it reversible with identical statistics, steering one gate so a single round is enough, using a lighter reflection, and checking the conditional answer instead of only the hit rate.
+
+**12. What did you learn, and what comes next?**
+More hits is not more truth. On today's hardware the lighter circuit wins. And one of our own follow-ups went against us: for laser monitoring, a conventional reference beat our quantum add-on, 98% to 58%. Next we want to fit the model to held-out, calibrated device records against a strong classical baseline.
+
+### Five harder ones
+
+**What does your noise model leave out?** Idle decoherence, crosstalk, leakage and drift. One scale factor, 1.54, stands in for all of them. It under-predicts the damage to our deepest circuit, 182 gates, so depolarizing noise is too kind to long circuits.
+
+**Why did plain sampling give the wrong order on hardware?** Because the event is rare. The click should appear in 3.95% of shots and appeared in 7.6%, so about half of the accepted shots were false clicks. Our noise model predicts this. Amplifying the event first lifts it above that floor.
+
+**Is steering cheating?** It is classical importance reweighting, and we say so. It changes one emission angle, which scales every history containing that click by the same factor, so conditional answers are unchanged. It needs a rough value of the click probability.
+
+**Why is the local reflection only approximate?** A full reflection keeps the state in the two-dimensional plane Grover's algorithm rotates in. Reflecting on three of five qubits lets a little amplitude leak out of that plane. In the ideal circuit the cost is 0.035 in total-variation distance.
+
+**How would this scale?** Width grows by one qubit per time step, and depth by one model run per amplification call. The classical exact sampler's cost grows about 8ⁿ in the number of hidden qubits n in theory, about 6× per qubit in our tests. Our hardware runs of this model are small, about a dozen qubits, so scaling is an estimate and not a result.
+
+## Longer answers
 
 ## November 11: new real IBM execution and photon-memory research
 
@@ -25,7 +79,7 @@ establish optical coupling, wavelength compatibility, detector calibration,
 resist response, manufacturing yield or economic savings. The available devices
 have 156 qubits; the full 219/389-qubit spatial constructions cannot fit.
 
-Revised 11 November 2026 after the research followups. Rehearse these across all four team members. `FINALS_EVIDENCE.md` traces the original hardware comparison and the current research evidence. `RESEARCH_CURRENT.md` explains all completed local studies and remaining questions. Keep the original hardware query, the newer synthetic optical studies and physical validation distinct.
+Revised 11 November 2026 after the research followups. `FINALS_EVIDENCE.md` traces the original hardware comparison and the current research evidence, and `docs/EVIDENCE.md` maps the V3 headline numbers to files. `RESEARCH_CURRENT.md` explains all completed local studies and remaining questions. Keep the original hardware query, the newer synthetic optical studies and physical validation distinct.
 
 **What is the problem, and who might use this?** Device researchers want to learn whether hidden memory changes an emitter's detection pattern. We ask the model what happens after a selected rare click. Ordinary rejection sampling discards every run without that click. Our quantum construction returns more matching samples while checking whether their conditional behavior remains accurate. At this small size, direct classical methods are faster. The separate laser-sensing study asks whether another reference helps a source-monitoring engineer identify changes.
 
@@ -57,7 +111,7 @@ Revised 11 November 2026 after the research followups. Rehearse these across all
 
 **What does “rewind” mean?** The known reversible model preparation is run backwards as part of amplitude amplification. The original measurement/reset process is not directly reversible. We do not reverse a physical defect, a wafer, or a photon already detected in a laboratory.
 
-**What was actually run on IBM hardware?** The new campaign completed 10 Marrakesh jobs with 207 science circuit executions and 40 calibration circuits,688,640 shots and244 QPU seconds. The original QRSM, photon-memory instruments, atomic/interferometer primitives and small process queries are digitally represented. The precision-repeat local/full pair gave 76.90%/69.26% raw acceptance with 58/125 native two-qubit gates, while the conditional answers remained biased. Every job and raw result is retained in hardware_campaign/. These are real superconducting computations, not optical source or wafer measurements.
+**What was actually run on IBM hardware?** The new campaign completed 10 Marrakesh jobs with 207 science circuit executions and 40 calibration circuits, 688,640 shots and 244 QPU seconds. The original QRSM, photon-memory instruments, atomic/interferometer primitives and small process queries are digitally represented. The precision-repeat local/full pair gave 76.90%/69.26% raw acceptance with 58/125 native two-qubit gates, while the conditional answers remained biased. Every job and raw result is retained in hardware_campaign/. These are real superconducting computations, not optical source or wafer measurements.
 
 **What does total variation distance measure?** Here it compares the distribution of accepted observed click histories with the model's exact conditional distribution. Zero means identical distributions. The current headline rates and conditional-history errors are raw. Secondary readout correction and older corrected Kingston figures are separately labeled. None measures complete hidden-state fidelity.
 

@@ -6,6 +6,10 @@ Project-authored code and documentation continue the original project's MIT lice
 
 `rewindandamplify-main/` contains the original FGCU team's project and saved IBM results, with its MIT notice preserved. Source: [Nicholas55555/rewindandamplify](https://github.com/Nicholas55555/rewindandamplify). The v2 repository preserves that directory layout for reproducibility; it does not replace the original repository's Git history.
 
+## Presentation media added in V3
+
+`media/cinematic-45s.mp4` and its poster frame are the team's own 45-second explainer. Its music is an original instrumental synthesized for this presentation and contains no third-party samples. `media/lab-tour.mp4`, `media/lab-tour-with-score.mp4`, `media/lab-bench.gif` and the `media/lab-*.png` screenshots are recordings of this repository's own Lab page, made by `lab/capture.py`; the second file adds the same original score. The cover image of the deck was generated with OpenAI image generation for the V2 deck. The QR codes on the slides were generated with the open-source `segno` library and encode this repository's address.
+
 ## Experimental photon-correlation reference
 
 `photon_reference/fig3a.dat` and `fig3a_fit.dat` are unmodified source data by Clarisse Fournier, Kenji Watanabe, Takashi Taniguchi, Julien Barjon, Stéphanie Buil, Jean-Pierre Hermier and Aymeric Delteil, from “Investigating the fast spectral diffusion of a quantum emitter in hBN using resonant excitation and photon correlations,” *Physical Review B* **107**, 195304 (2023).

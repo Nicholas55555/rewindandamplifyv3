@@ -39,11 +39,17 @@ jobs:
           package-manager-cache: false
       - name: Check tracked publication scope and credential patterns
         run: python .github/scripts/check_publication.py
+      - name: Check the Lab engine against Qiskit, and its numbers against the saved hardware record
+        run: node --test lab/test_engine.cjs lab/test_data.cjs
+      - name: Verify the Lab data bundle and single-file Lab match their sources
+        run: |
+          python lab/make_data.py --check
+          python lab/build.py --check
       - name: Check original and current app evidence parity
         run: node --test laser-diagnostics-app/test_model.cjs
       - name: Check local links, hashes and actual MP4 containers
         run: python laser-diagnostics-app/check_package.py
-      - name: Verify the single-file HTML demo matches its sources
+      - name: Verify the single-file research explorer matches its sources
         run: python laser-diagnostics-app/build_standalone.py --check
       - name: Check the public presentation handoff
         run: python check_finals.py --public
@@ -86,6 +92,12 @@ jobs:
         run: python quantum_dot_bridge/hom_analysis/verify_results.py
       - name: Verify saved real IBM results without accessing the cloud
         run: python hardware_campaign/verify_campaign.py
+      - name: Recompute the noise-model study and the Lab's Qiskit reference
+        run: |
+          python hardware_campaign/noise_model/run_study.py --check
+          python lab/make_reference.py --check
+      - name: Reproduce the headline numbers
+        run: python reproduce.py
       - name: Confirm frozen research artifacts remain unchanged
         run: python verify_research_pack.py .
       - name: Confirm tests did not rewrite tracked files

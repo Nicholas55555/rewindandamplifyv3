@@ -1,0 +1,7 @@
+# Only for rebuilding the deck and re-recording the Lab. The science code and its tests do not need these.
+# Also needed: an installed Chrome or Edge (captures), and Microsoft PowerPoint (the PDF export step).
+python-pptx>=1.0
+pillow>=10.0
+segno>=1.6
+playwright>=1.48
+imageio-ffmpeg>=0.5

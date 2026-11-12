@@ -1,153 +1,178 @@
-# Rewind & Amplify V2
+# Rewind & Amplify
 
-**Predicting how hidden interactions change quantum measurement patterns—and asking those models about rare events.**
+**Asking a quantum model about its rarest events, and checking the answer on IBM hardware.**
 
-FGCU **Qubits** · Qiskit Fall Fest · November 2026
+FGCU **Qubits** · IBM Qiskit Fall Fest 2026 · Florida finals, 14 November 2026 · V3
 
-This is the continuation of [Rewind & Amplify](https://github.com/Nicholas55555/rewindandamplify). The centerpiece is a quantum recurrent state machine (**QRSM**): a physical hidden-state model that predicts sequences of measurement outcomes. We make that model reversible, use amplitude amplification to obtain selected histories more often, and check whether the returned answers remain accurate. Small versions ran on IBM quantum hardware.
+[![checks](https://github.com/Nicholas55555/rewindandamplifyv3/actions/workflows/ci.yml/badge.svg)](https://github.com/Nicholas55555/rewindandamplifyv3/actions/workflows/ci.yml)
 
-The finals work adds independently checked numerical studies of detector errors, optical sensing, phase measurement and lithography-inspired processes. These extensions contain useful negative results as well as conditional benefits, now accompanied by real IBM executions of feasible model circuits. **Digital model execution is distinct from validating a laser diagnostic or fabricating a chipmaking system. No practical quantum computational advantage is demonstrated.**
+**[Open the Lab](https://nicholas55555.github.io/rewindandamplifyv3/) · [Slides](finals-deck/Rewind_Amplify_Finals_V3.pdf) · [45-second tour](media/lab-tour.mp4) · [Reproduce it](#try-it) · [Evidence map](docs/EVIDENCE.md) · [For judges](#for-judges-where-each-criterion-is-answered)**
 
-**[Presentation PDF](finals-deck/Rewind_Amplify_Finals_Visual.pdf) · [Editable PowerPoint](finals-deck/Rewind_Amplify_Finals_Visual.pptx) · [Presenter guide](finals-deck/Visual_Presenter_Guide.md) · [Research findings](RESEARCH_CURRENT.md) · [Repository guide](docs/REPOSITORY_GUIDE.md)**
+![A laser drives an emitter, a hidden defect trades energy with it, and a detector records a click or no click each step](media/lab-bench.gif)
 
-## What is a click, and why care?
+*A live, exact simulation of our model, recorded from [the Lab](Rewind_Amplify_Lab.html). Watch a click: the emitter empties, and the hidden defect keeps what it had.*
 
-A **click** is a recorded `1` on the model's output qubit in one time step. In an optical interpretation it represents a detector event. On IBM, superconducting-qubit readout represents that role; these circuits did not detect optical photons. A single click is not a defect diagnosis.
+## The problem
 
-The emitter and a hidden two-level partner retain memory between steps. Each observed bit conditions the model's quantum-state estimate, which determines probabilities for later observations. Across many records, classical fitting can compare candidate interactions and detector/noise models. This matters because an unwanted interaction can change a qubit's evolution before measurement, while a detector error can change the recorded outcome. Confusing them can bias an inferred state or coupling.
+A detector records one bit per time step: click, or no click. That record is all anyone sees. Out of sight, a defect can trade energy with the source and quietly change the pattern.
 
-The original query asks: **given a click at step 3, how likely is another click at step 6?** Its exact answer is **4.67%** for the specified coupled-defect model and **10.10%** for the emitter-only model. These are deliberately programmed alternatives, not an unknown defect discovered in hardware. See the [reproduced conditional predictions](research-validation/original_after_click_verification.json).
+Teams building quantum chips have this problem: hidden two-level defects drain their qubits between calibrations. So do engineers building single-photon sources. And it is easy to get wrong, because a faulty detector can look exactly like a defect. Guess the cause wrong, and you fix the wrong thing.
 
-Classical hidden-state models also capture history. The QRSM's physical structure must earn its value through calibrated predictions and comparisons; quantum notation alone is not an advantage.
+## The idea in a minute
 
-## What we built
+We model the device as a **quantum recurrent state machine (QRSM)**: a small circuit that behaves like a recurrent network whose memory is qubits. Two qubits hold the memory and are never measured. One bit comes out per step.
 
-![One step of the original recurrent quantum model: drive, hidden coupling and output measurement](rewindandamplify-main/results/figures/fig_circuit_hybrid.png)
+The useful question is about a rare event: **given a click at step 3, what happens next?** With no defect, a click empties the source and the machine starts over, so the chance of another click at step 6 is **10.10%**. With a hidden defect, something remembers, and it is **4.67%**. The pattern after a rare click is a fingerprint of hidden memory.
 
-The original dynamic circuit measures and resets its output. To apply amplitude amplification, we instead retain a fresh output qubit at each step, preserving the information needed to reverse the **model circuit**.
+The catch is the cost. That click happens in 3.95% of runs, so the ordinary method runs the machine 25 times and throws 24 away. For one real 64-step record it would take 27,495,891 runs.
 
-| Part | Purpose | What must be checked |
+Grover's algorithm, in its general form called amplitude amplification, makes rare answers common at about the square root of the cost. But it has to run the machine backwards, and our machine resets a qubit every step. A reset cannot be undone. **You can't amplify what you can't rewind.** So we built it in four moves:
+
+| Move | What it does | What it buys |
 |---|---|---|
-| Retain the history | Replace resets with additional qubits so preparation can be undone | Agreement with the original outcome statistics |
-| Steer the preparation | Make a supported event less rare through classical parameter tuning | Preservation of the desired conditional answer |
-| Mark, rewind and amplify | Increase the probability of selected histories | Complete preparation, inverse and oracle costs |
-| Use a local reflection | Reduce gate count in an approximate hardware-oriented variant | Conditional-distribution error, not just accepted shots |
+| **1. Purify** | A fresh qubit replaces every reset | One reversible circuit with identical click statistics |
+| **2. Steer** | Tune one gate so the rare click is less rare | Less rarity for free; the answer is unchanged |
+| **3. Amplify locally** | One round, with a reflection on 3 qubits instead of all 5 | About half the gates, so less noise |
+| **4. Verify** | The click is measured directly | A failed shot shows itself and is dropped |
 
-Ideal full amplitude amplification preserves the conditional answer. Local reflection can bias it. At this small scale, an exact classical conditional sampler is faster. The potential computing question is whether larger hidden quantum memories could justify coherent queries after all preparation, accuracy and hardware costs are included.
+![The Lab's rewind-and-amplify scene: the amplitudes of the eight three-step records after one round](media/lab-4-rewind.png)
 
-## Actual IBM evidence
+## What we found
 
-The current campaign ran on **IBM Marrakesh on November 11, 2026**. The two
-featured circuits use the same steering, one amplification round and a common
-physical-qubit pool with fixed initial placement; actual routed measurement
-maps and calibration records are saved. The fresh precision repeat used the
-same compiled circuits and 8,192 shots per circuit.
+Everything below is recomputed by `python reproduce.py` or recounted from saved raw counts.
 
-| Circuit | Raw matching shots, fresh repeat | Native two-qubit gates | Raw selected-history TV distance |
-|---|---:|---:|---:|
-| Steering + full reflection | 5,674 / 8,192 = **69.26%** | **125** | **0.1814** |
-| Steering + local reflection | 6,300 / 8,192 = **76.90%** | **58** | **0.1177** |
+| | Our lighter build (local reflection) | Textbook build (full reflection) |
+|---|---:|---:|
+| Two-qubit gates after compiling for IBM Marrakesh | **58** | 125 |
+| Chance of the click, ideal simulator | 96.10% | 96.49% |
+| Chance of the click, our noise model | 78.40% | 69.72% |
+| **Chance of the click, measured on IBM Marrakesh** | **76.90%** (6,300 of 8,192) | **69.26%** (5,674 of 8,192) |
+| Error in the answer, measured (lower is better) | **0.118** | 0.181 |
 
-The local circuit returned **7.64 percentage points** more selected outcomes
-(independent-shot 95% interval: 6.29–8.99 points). The earlier 2,048-shot run gave
-77.39% versus 64.26%; these are separate runs, not pooled evidence. Routing,
-different operations and device drift still prevent a causal gate-count claim.
-Readout correction is secondary and conditional on its calibration model.
+Without amplification the same chip returned the click in 6.74% of shots.
 
-In the precision repeat's local continued-history circuit, the step-6 rates
-were **8.79% versus 11.66%** for the programmed coupled/uncoupled alternatives,
-compared with exact targets **4.67% versus 10.10%**. The difference had the
-expected sign but both answers were biased; other circuit variants reversed
-the expected sign. This does **not** establish reliable diagnosis of an unknown
-defect. More selected samples are useful only when their conditional answer
-remains accurate. TV distance here concerns observed histories, not complete
-hidden-state fidelity.
+- **It works exactly in simulation.** Qiskit circuits match the exact model to better than 10⁻¹⁴, and full amplification leaves the conditional answer untouched.
+- **On real hardware, fewer gates won.** The lighter build led by 7.6 points (95% interval 6.3 to 9.0) in the 8,192-shot run, and led in all three runs that day.
+- **A simple noise model predicts the gap.** With no noise the two builds tie. A model with only gate and readout errors, with one scale factor fitted on separate echo circuits, predicts 78.4% and 69.7%. The chip gave 76.9% and 69.3%. [Details](hardware_campaign/noise_model/README.md).
+- **Error suppression did not help.** Dynamical decoupling and twirling on the identical circuits made the answer error worse.
+- **The answers on hardware are biased, and we show it.** The lighter build returned 8.79% and 11.66% for the two futures, against the exact 4.67% and 10.10%: the right order, visibly off. The noise model predicts that bias within half a point.
 
-The [campaign results](hardware_campaign/RESULTS.md),
-[coverage ledger](hardware_campaign/coverage.json) and
-[evidence note](FINALS_EVIDENCE.md) preserve job IDs, counts and scope. The older
-Kingston 40/85-gate pair and its repeats remain separately documented in
-[the archived hardware verification](research-validation/hardware_verification.json).
-Small optical, atomic, quantum-dot and process-model circuits now also have
-real gate-model executions; **these are digital emulations, not optical or
-wafer measurements**. Deep circuits often fail even when an event rate looks
-plausible. No practical quantum speedup or dollar saving is measured.
+![The Lab's hardware scene: measured hit rates beside the ideal simulator and the noise model](media/lab-6-hardware.png)
 
-## What the new research changed
+## What we do not claim
 
-The performance studies below are **synthetic studies or circuit construction**. Selected forward-model components have since run on IBM; that does not reproduce the full synthetic inference or apparatus experiment. Full protocols, assumptions and uncertainty are in [Research findings](RESEARCH_CURRENT.md).
+- **No quantum speedup today.** At this size an exact classical sampler answers in a fraction of a millisecond. Its cost grew about 6× per added hidden qubit in our tests, which is where a quantum method could matter.
+- **No real defect was detected.** IBM's superconducting qubits played the roles of a model we programmed.
+- **No photons, lasers or wafers were measured.** The optical and semiconductor studies in this repository are simulations and a reanalysis of published data, and some of them are negative results.
+- **Amplitude amplification is not ours.** It is established work ([Brassard et al. 2002](https://arxiv.org/abs/quant-ph/0005055); [Low, Yoder and Chuang 2014](https://doi.org/10.1103/PhysRevA.89.062315)). Ours is the mapping onto a hidden-memory model and the noise-aware build.
 
-| Question | Result | Implication |
-|---|---|---|
-| Can readout dynamics masquerade as a hidden interaction? | Ignoring detector dead time fitted coupling **0.069** for synthetic truth **0.65**; modeling it gave **0.706** and better held-out prediction. Other parameters remained biased. | Model the detector before interpreting a defect. |
-| Does an atomic reference improve frequency monitoring? | With unknown onset, detection within 32 s was **51.35%** for a conventional receiver, **58.02%** with an atomic channel and **97.97%** with a second conventional reference. Full-record false alarms were 5.42%, 5.16% and 4.06%. | The atomic channel adds information here; the stronger conventional comparator still wins. |
-| Can the emitter records promptly diagnose drive amplitude? | A +20% field step gave **3.71%** detection within 32 bins, alongside **6.84%** false alarms over stable 96-bin records. A prior-only control explained most apparent estimation gain. | This operating regime is not a useful prompt monitor. |
-| Can quantum light improve phase measurement? | At 20,000 mean object-incident photons, 81% overall efficiency and ideal preparation, a charged coherent/NOON hybrid gave global phase RMSE **0.00637 rad**, versus **0.00791 rad** for the specified coherent protocol. | A conditional benefit merits testing; loss, preparation time and phase ambiguity matter. |
-| What does a complete spatial quantum query cost? | Two **389-qubit** circuits were constructed and read back, with **2.87–3.38 million** constructive generic CX upper bounds per complete round. | These unoptimized constructions expose costs hidden by a free-oracle assumption. The full state was not simulated. |
+## Try it
 
-The exposure study also tests loss, blur, linear background and conventional illumination alternatives. Stronger fringe contrast does not establish a better manufactured feature, favorable dose or wafer yield. A lithography connection needs a compatible wavelength and monitoring point, measured source/detector response, strong conventional references and a measured link to exposure quality. The hypothetical 698 nm atomic study does not establish DUV/EUV compatibility.
+**The Lab, with nothing to install.** Open the [live Lab](https://nicholas55555.github.io/rewindandamplifyv3/), or download [`Rewind_Amplify_Lab.html`](https://raw.githubusercontent.com/Nicholas55555/rewindandamplifyv3/main/Rewind_Amplify_Lab.html) (save the file, then open it in Chrome or Edge). It is one file and works offline. Press **45 s tour**, or use the arrow keys. **T** switches between plain and technical captions.
 
-**Semiconductor connection: quantum dots.** The [quantum-dot study](quantum_dot_bridge/README.md) makes the original QRSM question concrete: how can a hidden environment alter useful photon measurements? Our illustrative calculations show that equal counts and zero multiphoton emission can hide different interference quality, and that pair correlations matter even at fixed individual-photon frequency distributions. A separate [reanalysis of published GaAs histograms](quantum_dot_bridge/hom_analysis/README.md) exposes normalization sensitivity. These findings define measurement and calibration requirements for a proposed diagnostic of photon sources used in quantum photonic chips. The [new sequential joint-photon instrument](quantum_dot_bridge/qrsm_hom_followup/README.md) is now implemented, independently checked and digitally executed on IBM. Its synthetic tests expose passive unobservability, acquisition cost and false diagnoses under nuisance changes; strong classical predictors remain competitive. It has not been fitted to the external dot data. No dot was fabricated, measured or microscopically diagnosed by our team.
-
-## Try it without a quantum account
-
-**V2 demo — one HTML file:** download [`Rewind_Amplify_v2_Demo.html`](https://raw.githubusercontent.com/Nicholas55555/rewindandamplifyv2/main/Rewind_Amplify_v2_Demo.html) (save the linked file), then open it in Chrome or Edge. It includes all interactive views, both MP4 videos and the evidence files. No server, installation or internet is needed. Evidence links save embedded files with their original names; external citations and IBM portal links require internet. GitHub shows HTML source instead of running it.
-
-The editable folder version remains at [`laser-diagnostics-app/index.html`](laser-diagnostics-app/index.html); keep that folder intact. Rebuild the single-file edition after source changes with `python laser-diagnostics-app/build_standalone.py`; use `--check` to verify it without rewriting files.
-
-- **Rewind the model** explains clicks, conditional predictions and amplification using verified saved outputs.
-- **Current research** explores frequency, amplitude, phase, circuit-cost, quantum-dot and new IBM results.
-- **Earlier sensor study** preserves the separate known-midpoint experiment; its rates are not the new unknown-onset rates.
-- **Check the evidence** links sources and provides short explanatory videos.
-
-The [demo guide](laser-diagnostics-app/README.md) includes a 45-second walkthrough. Controls browse frozen results or explicitly labeled analytical formulas; they do not submit jobs or rerun the studies.
-
-**Original Qiskit package:** use Python 3.10 or later in a virtual environment, then:
+**The numbers, in one command.** Python 3.10 or later, in a virtual environment:
 
 ```bash
-git clone https://github.com/Nicholas55555/rewindandamplifyv2.git
-cd rewindandamplifyv2/rewindandamplify-main
-python -m pip install -e ".[test]"
-python -m pytest
-python demo/demo.py
+git clone https://github.com/Nicholas55555/rewindandamplifyv3.git
+cd rewindandamplifyv3
+python -m pip install -r requirements-dev.txt
+python reproduce.py
 ```
 
-**App and public-package checks**, from the repository root with Node.js and Python installed:
+It prints the exact model, the Qiskit circuits on an Aer simulator, the classical baseline, the noise-model prediction and the recounted IBM results in about ten seconds. No IBM account is needed. [Sample output](docs/reproduce_output.txt).
+
+**The tests.**
 
 ```bash
-node --test laser-diagnostics-app/test_model.cjs
-python laser-diagnostics-app/check_package.py
-python check_finals.py --public
+python .github/scripts/run_tests.py          # 434 Python tests: the Qiskit package and every study
+node --test lab/test_engine.cjs lab/test_data.cjs laser-diagnostics-app/test_model.cjs
+python check_finals.py --public              # deck, videos, demos and hashes of every quoted result
 ```
 
-Research followups used Python 3.12.10 and [recorded dependencies](research-validation/research_requirements.txt). See the [repository guide](docs/REPOSITORY_GUIDE.md) for separate study tests and reproduction instructions. Tests and local demos need no IBM credentials.
+**Use the package.**
 
-To create a local shareable bundle, run `python build_finals_pack.py --public`. It produces `Rewind_Amplify_v2_Public_Pack.zip` without publishing anything. The public edition omits private judging material and old local delivery archives.
+```python
+from qrsm_grover import QRSM, click_at
+from qrsm_grover.amplify import hardware_amplified, steered_gamma
+from qrsm_grover.fastsim import reflection_qubits
+
+machine = QRSM()                       # an emitter, one hidden defect, and a light qubit
+T = 3
+question = click_at(T)                 # "a click at step 3"
+p = machine.history_probabilities(T)[question.mask(T)].sum()
+steer = steered_gamma(p, machine.gamma)                    # tune the last emission
+A = machine.purified(T, gammas=[None] * (T - 1) + [steer])
+n = machine.n_memory
+oracle = question.oracle(n + T, list(range(n, n + T)))
+circuit = hardware_amplified(A, oracle, r=1, reflect_on=reflection_qubits(machine, T, "memory+last-1"))
+```
+
+Install it with `python -m pip install -e rewindandamplify-main`.
+
+## For judges: where each criterion is answered
+
+| Criterion | Where to look |
+|---|---|
+| A clear, meaningful problem, and who it affects | [The problem](#the-problem) above; Lab scene 1; slides 2 and 11 |
+| Why quantum might help, and honesty about limits | [What we do not claim](#what-we-do-not-claim); slides 5, 6 and 12; `reproduce.py` section 3 |
+| Does the code run; is Qiskit used appropriately | `python reproduce.py`; [`rewindandamplify-main/qrsm_grover/`](rewindandamplify-main/qrsm_grover/); 434 Python tests and 41 JavaScript tests in CI |
+| Results interpreted, against a classical baseline, expected values, simulator and hardware | [What we found](#what-we-found); [noise-model study](hardware_campaign/noise_model/README.md); [campaign results](hardware_campaign/RESULTS.md) |
+| Originality | Making a recurrent quantum model reversible, steering, and the local reflection: slide 7 and [the original report](rewindandamplify-main/docs/REPORT.md) |
+| Clear to technical and non-technical audiences | The Lab's plain and technical captions; [the deck](finals-deck/Rewind_Amplify_Finals_V3.pdf); [presenter guide](finals-deck/Presenter_Guide_V3.md) |
+| Questions, teamwork, what we learned, next steps | [Q&A](FINALS_QA.md); slide 13; [Team](#team-prior-work-and-ai-assistance) |
+| Bonus: simulator | Aer statevector and density-matrix runs in `reproduce.py` |
+| Bonus: real IBM hardware, with job results | Seventeen jobs across two campaigns; IDs, raw counts and compiled circuits in [`hardware_campaign/`](hardware_campaign/) and [`rewindandamplify-main/results/hardware/`](rewindandamplify-main/results/hardware/) |
+| Bonus: hardware compared with a simulator, noise analysed, suppression applied | [Noise-model study](hardware_campaign/noise_model/README.md); echo circuits; dynamical decoupling and twirling runs; readout calibration inside every job |
+
+## What is new in V3
+
+V3 is the presentation-ready version of [V2](https://github.com/Nicholas55555/rewindandamplifyv2), which continued [the original project](https://github.com/Nicholas55555/rewindandamplify). The research evidence from V2 is kept byte for byte, and its checks still pass.
+
+- **The Lab** ([`lab/`](lab/), [`Rewind_Amplify_Lab.html`](Rewind_Amplify_Lab.html)): a live, exact simulation of the model in the browser, in seven scenes. Its engine is a gate-for-gate port of the Qiskit package, held to Qiskit within 10⁻¹² by tests.
+- **A simulator-against-hardware study** ([`hardware_campaign/noise_model/`](hardware_campaign/noise_model/)) of the exact circuits that ran on IBM.
+- **One-command reproduction** ([`reproduce.py`](reproduce.py)).
+- **A rebuilt talk** ([`finals-deck/`](finals-deck/)): problem first, one picture per slide, with real embedded video. The V2 deck is kept in [`finals-deck/v2/`](finals-deck/v2/).
+- **Videos** ([`media/`](media/)): a 45-second screen recording of the Lab, and the team's 45-second cinematic cut.
+
+![The thirteen slides of the main talk](finals-deck/main-slides.png)
 
 ## Find the work
 
 | Location | Contents |
 |---|---|
-| [`rewindandamplify-main/`](rewindandamplify-main/) | Original QRSM package, experiments, classical baselines, reports and archived IBM results |
-| [`finals-deck/`](finals-deck/) | Current 13-slide main talk plus 22 Q&A slides; planned 9:20 including the demo |
-| [`laser-diagnostics-app/`](laser-diagnostics-app/) | Standalone offline demo and copied evidence |
-| [`qrsm_photon_poc/`](qrsm_photon_poc/) | Emitter–cavity companion, inference, changing-drive diagnosis and coherent-history circuits |
-| [`laser_sensor_viability/`](laser_sensor_viability/) | Finite-pulse atomic/reference model and newer unknown-onset monitoring study |
-| [`quantum_lithography_poc/`](quantum_lithography_poc/) | Quantum-light exposure and separate phase-inspection models |
-| [`quantum_dot_bridge/`](quantum_dot_bridge/) | Semiconductor photon-source coherence benchmark, cost accounting and bounded reanalysis of external HOM histograms |
-| [`finals-lithography/`](finals-lithography/) | Spatial process models, classical baselines and reversible circuit construction |
-| [`hardware_campaign/`](hardware_campaign/) | New real IBM jobs, calibrated raw results, circuit costs and 25-family coverage |
-| [`research-validation/`](research-validation/) | Reproduction tools, source hashes and scoped verification receipts |
+| [`lab/`](lab/) | The Lab: page, exact engine, tests, and the tools that record it |
+| [`rewindandamplify-main/`](rewindandamplify-main/) | The original Qiskit package `qrsm_grover`, its experiments, 114 tests, report and first IBM runs |
+| [`hardware_campaign/`](hardware_campaign/) | Ten IBM Marrakesh jobs of 11 November: plans, compiled circuits, raw counts, analysis, and the noise-model study |
+| [`finals-deck/`](finals-deck/) | The V3 deck, presenter guide and the script that builds them |
+| [`media/`](media/) | Videos and screenshots |
+| [`laser-diagnostics-app/`](laser-diagnostics-app/) | <a id="research-explorer"></a>The research explorer: every follow-up study and its evidence, also as the single file [`Rewind_Amplify_Research_Explorer.html`](Rewind_Amplify_Research_Explorer.html) |
+| [`qrsm_photon_poc/`](qrsm_photon_poc/), [`quantum_dot_bridge/`](quantum_dot_bridge/), [`laser_sensor_viability/`](laser_sensor_viability/), [`quantum_lithography_poc/`](quantum_lithography_poc/), [`finals-lithography/`](finals-lithography/) | Follow-up studies: detector effects, photon sources, laser monitoring, phase inspection and circuit costs. [Summary](RESEARCH_CURRENT.md) |
+| [`research-validation/`](research-validation/) | Independent re-derivations and hash receipts |
+| [`docs/`](docs/) | [Evidence map](docs/EVIDENCE.md), [repository guide](docs/REPOSITORY_GUIDE.md), sample output |
+
+For the team: start with [`START_HERE_FINALS.md`](START_HERE_FINALS.md).
 
 ## Team, prior work and AI assistance
 
-- **Nicholas Taylor:** QRSM research, Grover fusion and experiments.
-- **Timofey Yudintsev:** research and the keyword-search idea.
-- **Dan Izquierdo:** experimentation.
-- **Dillon Satria Sitepu:** formatting and revising.
+- **Nicholas Taylor**: QRSM research, the Grover fusion, experiments
+- **Timofey Yudintsev**: research, and the keyword-search idea
+- **Dan Izquierdo**: experimentation, and the 45-second video
+- **Dillon Satria Sitepu**: formatting and revising
 
-The QRSM idea and exact physical filter predate the event. Amplitude amplification, quantum conditional inference and atomic laser-noise spectroscopy are established prior work. The project's contribution is the recurrent-model implementation, reversible-query mapping, hardware adaptations and the explicitly scoped experiments—not the invention of those underlying methods. The [original report and references](rewindandamplify-main/docs/REPORT.md) document the earlier work.
+The QRSM idea and its exact filter predate the event. Amplitude amplification, quantum conditional inference and atomic laser-noise spectroscopy are established prior work. The project's contribution is the recurrent-model implementation, the reversible-query mapping, the noise-aware hardware build and the explicitly scoped experiments.
 
-The original work used **Claude**. These extensions used **Codex with OpenAI models**, including collaborating agents for implementation, research review, tests, application and presentation work. “Independent checks” here means separate numerical implementations or code/scientific reviews within the project, not external peer review or independent laboratory replication.
+The original project was built with **Claude**. The V2 research extensions used **Codex with OpenAI models**. V3 (the Lab, the noise-model study, the reproduction script and the rebuilt deck) was built with **Claude**. The team set the questions and reviewed the results. "Independent checks" in this repository means separate numerical implementations or reviews within the project, not external peer review.
 
-Project code is [MIT licensed](LICENSE). Retained data and other third-party material have their own terms; see [Third-party notices](THIRD_PARTY_NOTICES.md). The original project's license is preserved.
+## References
+
+- L. K. Grover, "A fast quantum mechanical algorithm for database search", STOC 1996.
+- G. Brassard, P. Høyer, M. Mosca and A. Tapp, "Quantum amplitude amplification and estimation", [Contemporary Mathematics 305 (2002)](https://arxiv.org/abs/quant-ph/0005055).
+- G. H. Low, T. J. Yoder and I. L. Chuang, "Quantum inference on Bayesian networks", [Phys. Rev. A 89, 062315 (2014)](https://doi.org/10.1103/PhysRevA.89.062315).
+- A. Monras, A. Beige and K. Wiesner, "Hidden quantum Markov models and non-adaptive read-out of many-body states", [arXiv:1002.2337](https://arxiv.org/abs/1002.2337).
+- S. Schlör et al., "Correlating decoherence in transmon qubits: low frequency noise by single fluctuators", [Phys. Rev. Lett. 123, 190502 (2019)](https://www.nist.gov/publications/correlating-decoherence-transmon-qubits-low-frequency-noise-single-fluctuators).
+
+The full list is in [the original report](rewindandamplify-main/docs/REPORT.md).
+
+## License
+
+Project code is [MIT licensed](LICENSE). Retained data and other third-party material have their own terms: see [Third-party notices](THIRD_PARTY_NOTICES.md).

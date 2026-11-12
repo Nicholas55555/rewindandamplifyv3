@@ -23,14 +23,21 @@ Use Node.js 24 for the app checks. The app has no npm dependencies or build step
 From the repository root:
 
 ```sh
-node --test laser-diagnostics-app/test_model.cjs
+node --test lab/test_engine.cjs lab/test_data.cjs laser-diagnostics-app/test_model.cjs
+python lab/make_data.py --check
+python lab/build.py --check
 python laser-diagnostics-app/check_package.py
+python laser-diagnostics-app/build_standalone.py --check
 python check_finals.py --public
 python verify_research_pack.py .
 python .github/scripts/check_publication.py
 python .github/scripts/run_tests.py --group core
 python .github/scripts/run_tests.py --group research
+python lab/make_reference.py --check
+python reproduce.py
 ```
+
+If you change anything under `lab/`, rebuild the single file with `python lab/build.py`. If a saved hardware result changes, run `python lab/make_data.py` and rebuild the deck (see [finals-deck/README.md](finals-deck/README.md)): `check_finals.py` fails until the slides agree with the evidence again.
 
 The runner starts a fresh process for each test directory, limits each suite to five minutes, and limits numerical libraries to one thread. Do not collect every `test_model.py` in one Python process: several studies deliberately have distinct modules named `model`. `--list` prints the selected commands without running them. The original photon CPTP check is an executable script rather than a unittest class, so the runner invokes it explicitly.
 

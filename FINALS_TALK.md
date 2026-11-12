@@ -1,38 +1,56 @@
-# Current finals talk
+# The finals talk (V3)
 
-Updated 11 November 2026. Use **finals-deck/Visual_Presenter_Guide.md** for the complete narration, sources and handoffs. The same notes are embedded in **Rewind_Amplify_Finals_Visual.pptx**.
+Updated 12 November 2026. The complete narration, cues and sources are in [`finals-deck/Presenter_Guide_V3.md`](finals-deck/Presenter_Guide_V3.md), and the same notes are inside [`finals-deck/Rewind_Amplify_Finals_V3.pptx`](finals-deck/Rewind_Amplify_Finals_V3.pptx).
 
-The plan is **9 minutes 20 seconds**, including a **45-second original QRSM demo**, leaving 40 seconds before the ten-minute limit. Slides 1–13 form the main talk; slides 14–35 are backups. This is a timing plan, not a measured team rehearsal.
+The plan is **9 minutes 20 seconds**, including a **45-second Lab demo**, which leaves 40 seconds before the ten-minute limit. Slides 1 to 13 are the talk. Slides 14 to 38 are backups. This is a plan, not a measured rehearsal: time it aloud.
 
-| Time | Topic |
-|---|---|
-| 0:00–0:15 | Rewind & Amplify |
-| 0:15–1:00 | Hidden defects can change the state before readout |
-| 1:00–1:35 | A click is one recorded measurement outcome |
-| 1:35–2:35 | The QRSM connects each bit to a hidden-state model |
-| 2:35–3:20 | Hidden memory changes what follows a click |
-| 3:20–4:05 | Rare conditions waste ordinary samples |
-| 4:05–5:00 | A reversible model makes amplification possible |
-| 5:00–6:00 | More matching answers with fewer gates |
-| 6:00–6:45 | The query returns a prediction about the next clicks |
-| 6:45–7:25 | Quantum-dot source quality and the QRSM |
-| 7:25–8:10 | The classical reference leads with unknown onset |
-| 8:10–8:50 | The evidence changes our next experiment |
-| 8:50–9:20 | Our contribution and what we learned |
+| Time | Slide | What the audience should take away | Suggested speaker |
+|---|---:|---|---|
+| 0:00–0:15 | 1 | Who we are, in one breath | Nicholas |
+| 0:15–1:00 | 2 | Something hidden changes the signal, and three kinds of people have that problem | Dan |
+| 1:00–1:50 | 3 | Our model: a recurrent machine whose memory is qubits (QRSM) | Nicholas |
+| 1:50–2:35 | 4 | One click, two futures: 10.10% against 4.67% | Nicholas |
+| 2:35–3:10 | 5 | The useful runs are rare, so ordinary sampling wastes almost all of them | Timofey |
+| 3:10–4:05 | 6 | Why quantum might help, the two catches, and no speedup today | Timofey |
+| 4:05–5:00 | 7 | Our four moves: purify, steer, amplify locally, verify | Nicholas |
+| 5:00–6:00 | 8 | On IBM hardware the lighter build won: 76.90% against 69.26% | Dillon |
+| 6:00–6:45 | 9 | A noise model predicts the gap; suppression did not help | Dillon |
+| 6:45–7:35 | 10 | The Lab, running (45-second video, or live) | Timofey |
+| 7:35–8:15 | 11 | Who could use this, scored honestly, including a result that went against us | Dan |
+| 8:15–8:50 | 12 | What we claim, what we do not, and the next experiment | Nicholas |
+| 8:50–9:20 | 13 | Roles, three lessons, thank you | All four |
 
-The first nine slides explain the original quantum-computing project. Define the click, explain the QRSM hidden-state update and why detector errors can mislead defect inference, show the useful after-click prediction, then distinguish classical fitting from coherent amplification. A higher matching rate is valuable only when the conditional answer remains accurate.
+Speaker assignments are suggestions that give every member a part with a result in it. Change them freely. Each person should present something they can answer questions about.
 
-The main sensor chart now uses unknown-onset monitoring: detect the first source event within 32 seconds of its unknown onset in a 128-second record. False alarms refer to the entire record. The earlier known-time experiment remains separately labeled in the app and must not supply rates, RMSEs or failure-case numbers for this chart.
+## How the talk is built
 
-Slide 10 explicitly connects the original QRSM question to semiconductor photon-source quality. The QRSM predicts observations conditioned on hidden dynamics; a dot supplies a possible physical emitter and environment to investigate. Our model shows why counts alone miss interference quality, and why correlations matter. The proposed practical use is qualifying or tuning sources for quantum photonic chips with calibrated measurements and a yield budget. The joint two-photon measurement model is now implemented and checked, including IBM digital emulation. It is not fitted to a physical source; the key lessons are acquisition cost, nuisance ambiguity and competitive classical predictors. Keep the memory comparison and external HOM extraction in backups 30–35. A lithography-laser diagnostic still needs a separate compatible interface and physical test.
+The order follows the rubric: problem first, then why quantum and its limits, then what we built, then results against simulator and hardware, then who it is for.
 
-The research decision slide includes the poor amplitude-monitor result and a conditional phase-inspection opportunity. Explain that most of the apparent amplitude-estimation gain came from the positive prior. Phase estimation at matched object-incident photons does not establish a printed-feature or wafer benefit. Keep the detailed budgets and controls for Q&A.
+One picture per slide. Most pictures are captures of the running Lab, so the talk, the demo and the repository show the same thing.
+
+One name for each idea. Say **hidden defect** for the unseen two-level system, **click** for a recorded 1, **the lighter build** for steering plus local reflection, and **the textbook build** for steering plus full reflection. The deck uses the same words.
+
+Say the limits out loud, at slide 6 and again at slide 12. The second judging criterion asks for exactly that.
+
+## The demo
+
+Slide 10 holds [`media/lab-tour.mp4`](media/lab-tour.mp4), a 45-second screen recording of the Lab, embedded as real video. Click it once to play. It is silent: narrate it with the words in the notes.
+
+If it does not play, open `Rewind_Amplify_Lab.html` and press **45 s tour**. The page does the same thing live.
+
+To do the demo live from the start, open the Lab before the talk, leave it on scene 1, and switch windows at slide 10. Budget the same 45 seconds.
+
+## The optional cold open
+
+Slide 37 holds the team's 45-second cinematic cut with original music. To open with it, type **37** and **Enter** on the cover, play it, then type **2** and **Enter**.
+
+Two 45-second videos do not fit in ten minutes. If you open with the cinematic cut, replace the video on slide 10 with a short live look at the Lab (20 seconds on scenes 1 and 4), and rehearse the total.
 
 ## Backup map
 
 | Slide | Topic |
 |---:|---|
-| 14 | Hardware repeats and noise controls |
+| 14 | Hardware repeats and noise controls: all three runs of 11 November |
 | 15 | Deep optical queries show large distribution errors |
 | 16 | Sensor assumptions and resource accounting |
 | 17 | Calibration failures can reverse the conclusion |
@@ -54,9 +72,12 @@ The research decision slide includes the poor amplitude-monitor result and a con
 | 33 | More data helps only under trusted calibration |
 | 34 | Atomic and photon channels on IBM |
 | 35 | Hardware coverage and circuit limits |
+| 36 | The noise model, circuit by circuit |
+| 37 | The cinematic cut (video) |
+| 38 | Anyone can rerun it: `python reproduce.py` |
 
-The user confirmed the original README roles. Use the guide’s suggested handoffs and rehearse with all four presenters. Read **FINALS_QA.md** together and use **FINALS_RUBRIC.md** to check all seven supplied criteria. The new research is AI-assisted; do not assign its individual implementation work to a teammate without confirmation.
+In PowerPoint's slide show, type a slide number and press Enter to jump to it.
 
-Test the final PPTX, PDF, offline application and MP4 videos on the actual presentation computer. Videos remain conceptual illustrations of the earlier optical extensions. Use the original-query screenshot if window switching is awkward. No API token or network access is needed.
+## On the day
 
-The current Presenter Guide is authoritative for revised slide wording. New backups 32–35 cover the joint-photon instrument, calibrated-design power and failure modes, atomic/photon channel execution, and hardware coverage limits. Use the new Marrakesh first/precision-repeat numbers separately; retain Kingston figures only as labeled historical evidence.
+Test the PowerPoint, both videos and the Lab on the presentation computer. Videos embedded in a PowerPoint play in PowerPoint for Windows and Mac. They do not play in the PDF, and may not play in Google Slides or Keynote: if the venue uses one of those, use the loose MP4 files in [`media/`](media/) or run the Lab live.

@@ -2,19 +2,34 @@
 
 This guide maps the public continuation of [Rewind & Amplify](https://github.com/Nicholas55555/rewindandamplify). Start with the [homepage](../README.md) for the scientific question and selected results. Paths below are relative to the repository root unless stated otherwise.
 
+## What V3 added
+
+V3 keeps every V2 research directory byte for byte, because their results are pinned by hash, and adds a presentation layer beside them:
+
+| Addition | Where | Checked by |
+|---|---|---|
+| The Lab: a live, exact simulation of the model in the browser | [`lab/`](../lab/), and the single file [`Rewind_Amplify_Lab.html`](../Rewind_Amplify_Lab.html) | `node --test lab/test_engine.cjs lab/test_data.cjs`, `python lab/build.py --check`, `python lab/make_data.py --check`, `python lab/make_reference.py --check` |
+| A noise-model simulation of the circuits that ran on IBM | [`hardware_campaign/noise_model/`](../hardware_campaign/noise_model/) | its unit tests, and `python hardware_campaign/noise_model/run_study.py --check` |
+| One-command reproduction of the headline numbers | [`reproduce.py`](../reproduce.py) | run it |
+| The V3 deck, with embedded video | [`finals-deck/`](../finals-deck/) | `python check_finals.py --public` |
+| Videos and screenshots | [`media/`](../media/) | `python lab/capture.py` regenerates the Lab ones |
+| An evidence map for the headline numbers | [`docs/EVIDENCE.md`](EVIDENCE.md) | |
+
+The V2 single-file demo is now called the research explorer: [`Rewind_Amplify_Research_Explorer.html`](../Rewind_Amplify_Research_Explorer.html), built from [`laser-diagnostics-app/`](../laser-diagnostics-app/). The V2 deck is kept in [`finals-deck/v2/`](../finals-deck/v2/). The sections below were written for V2 and still describe the research directories accurately.
+
 ## Choose a starting point
 
 | Goal | Start here |
 |---|---|
 | Understand the original quantum project | [Original one-pager](../rewindandamplify-main/docs/ONE_PAGER.md), then [full report](../rewindandamplify-main/docs/REPORT.md) |
-| Try the demonstration | Open [the single-file v2 HTML](../Rewind_Amplify_v2_Demo.html) locally, or keep [the editable app folder](../laser-diagnostics-app/index.html) together; follow its [walkthrough](../laser-diagnostics-app/README.md) |
-| Present the current work | [PPTX](../finals-deck/Rewind_Amplify_Finals_Visual.pptx), [PDF](../finals-deck/Rewind_Amplify_Finals_Visual.pdf), [timed guide](../finals-deck/Visual_Presenter_Guide.md) |
+| Try the demonstration | Open [the Lab](../Rewind_Amplify_Lab.html) locally. For the follow-up studies, open [the single-file research explorer](../Rewind_Amplify_Research_Explorer.html), or keep [its editable app folder](../laser-diagnostics-app/index.html) together |
+| Present the current work | [PPTX](../finals-deck/Rewind_Amplify_Finals_V3.pptx), [PDF](../finals-deck/Rewind_Amplify_Finals_V3.pdf), [timed guide](../finals-deck/Presenter_Guide_V3.md). The V2 deck: [PPTX](../finals-deck/v2/Rewind_Amplify_Finals_Visual.pptx), [guide](../finals-deck/v2/Visual_Presenter_Guide.md) |
 | Check the actual IBM comparison | [Evidence note](../FINALS_EVIDENCE.md), [raw hardware directory](../rewindandamplify-main/results/hardware/), [reproduction receipt](../research-validation/hardware_verification.json) |
 | Read the completed local research | [Research findings](../RESEARCH_RESULTS.md), then the relevant study README below |
 | Explore the semiconductor connection | [Quantum-dot bridge](../quantum_dot_bridge/README.md): checked findings, explicit QRSM mapping and missing two-photon instrument, proposed source-qualification workflow, and external HOM reference |
 | See what remains open | The final sections of [Research findings](../RESEARCH_RESULTS.md) and the [bounded-program completion audit](../research-validation/completion_audit.json) |
 
-The presentation contains **13 main slides and 22 backups**, with a planned **9:20** main talk including a **45-second original-model demo**. This is a rehearsal plan, not measured delivery time. The PPTX has speaker notes and editable text/charts/tables. The PDF is a static image fallback without notes. Exported slides and package structure were checked; native PowerPoint playback still needs testing on the presentation machine.
+The V3 presentation contains **13 main slides and 25 backups**, with a planned **9:20** main talk including a **45-second Lab demo**. The V2 presentation contained 13 main slides and 22 backups. This is a rehearsal plan, not measured delivery time. The PPTX has speaker notes and editable text/charts/tables. The PDF is a static image fallback without notes. Exported slides and package structure were checked; native PowerPoint playback still needs testing on the presentation machine.
 
 ## Current results versus historical snapshots
 
@@ -56,7 +71,7 @@ The original [package README](../rewindandamplify-main/README.md) explains indiv
 
 ## Check the offline application
 
-Open `Rewind_Amplify_v2_Demo.html` in Chrome or Edge for the single-file edition, or open `laser-diagnostics-app/index.html` with its folder intact. No server or dependency installation is required for normal use. Both contain the same interactive results and videos; the single-file version downloads its embedded evidence when those links are selected. Rebuild it with `python laser-diagnostics-app/build_standalone.py`, then verify with `python laser-diagnostics-app/build_standalone.py --check`. From the root, the folder app's software checks are:
+Open `Rewind_Amplify_Research_Explorer.html` in Chrome or Edge for the single-file edition, or open `laser-diagnostics-app/index.html` with its folder intact. No server or dependency installation is required for normal use. Both contain the same interactive results and videos; the single-file version downloads its embedded evidence when those links are selected. Rebuild it with `python laser-diagnostics-app/build_standalone.py`, then verify with `python laser-diagnostics-app/build_standalone.py --check`. From the root, the folder app's software checks are:
 
 ```bash
 node --test laser-diagnostics-app/test_model.cjs
@@ -74,7 +89,7 @@ To create a portable public bundle locally:
 python build_finals_pack.py --public
 ```
 
-The output is `Rewind_Amplify_v2_Public_Pack.zip`. The command creates a local archive; it does not upload or publish it. Use the public flag for this repository. Historical delivery archives from the private working directory are not the public distribution.
+The output is `Rewind_Amplify_v3_Public_Pack.zip`. The command creates a local archive; it does not upload or publish it. Use the public flag for this repository. Historical delivery archives from the private working directory are not the public distribution.
 
 ## Reproduce the research studies
 
