@@ -32,8 +32,8 @@ EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".git", ".venv", "node_modules
 PRIVATE_DOCUMENTS = {"results.csv", "Qiskit_Fall_Fest_Judging_Rubric.xlsx", "WORKSPACE_AUDIT.md"}
 PUBLIC_DOCUMENTS = ["README.md", "Rewind_Amplify_Lab.html", "Rewind_Amplify_Research_Explorer.html", "index.html", "LICENSE",
                     "THIRD_PARTY_NOTICES.md", "CONTRIBUTING.md",
-                    "docs/REPOSITORY_GUIDE.md", "requirements-dev.txt", "RESEARCH_ARCHIVE_MANIFEST.json",
-                    ".gitignore", ".gitattributes", ".github/workflows/ci.yml",
+                    "docs/REPOSITORY_GUIDE.md", "requirements-dev.txt", "requirements-tools.txt",
+                    "RESEARCH_ARCHIVE_MANIFEST.json", ".gitignore", ".gitattributes", ".nojekyll", ".github/workflows/ci.yml",
                     ".github/scripts/run_tests.py", ".github/scripts/check_publication.py"]
 INTRO = """# Rewind & Amplify — portable finals pack
 

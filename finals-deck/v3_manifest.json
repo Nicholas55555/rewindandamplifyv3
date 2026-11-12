@@ -42,7 +42,7 @@
  "sha256": {
   "Rewind_Amplify_Finals_V3.pptx": "b3a48a79cbb24ec04dbbc4ab6dfeb4875df85c58943a3045eaa10384125f0f02",
   "Rewind_Amplify_Finals_V3.pdf": "ee7c0d776297e1ceab839beb11fbee929d47ec4c50f11b58929b53399136377c",
-  "Presenter_Guide_V3.md": "bfd77fc6a66e36dd796a4eda8996f3e92d21644632f909524f375026d6bd2de1"
+  "Presenter_Guide_V3.md": "aa3259a18b6c4f41d3d5287128b7b7903b94f7a98a6340342980780dd80e50e3"
  },
  "source_sha256": {
   "research-validation/original_after_click_verification.json": "0db2be4bb4d6e1a6349383554c380d446c6ba4cac5112a710e8baef1e5b49481",
@@ -57,7 +57,7 @@
   "qrsm_photon_poc/followup/inference_results/fixed_411101_dead1_fit0.json": "1caca96deb6b9719d4e0e76b4f1fdabf73e45c13feec606ab1073d2cc3caf91f",
   "qrsm_photon_poc/followup/inference_results/fixed_411101_dead1_fit1.json": "84a85bb5c07211efc39b4bdc5e36480268fcbf90869f96bc9dd947b567c773b6",
   "quantum_dot_bridge/results.json": "362d27539b5c35e45482644b94d70223b9809ac5a77b6c2bf2aa52a86aec7889",
-  "finals-deck/v3_notes.json": "0fa5c401bfa1b65b8a4ff8fe75a3ae8809623f43efd1f043d0193157926a7f65",
+  "finals-deck/v3_notes.json": "c74f5a0a8a06596573028903c6a8945b176a8c97aaacbec6323312b8df870ab4",
   "finals-deck/v2/Rewind_Amplify_Finals_Visual.pptx": "cde68fee746f3abde22e2318729ea362c873833688e2327d81ece859e0594db7",
   "media/lab-tour.mp4": "e18d6c0e68161b5aec214f7d64b3fbdf8e7edeeccca4a22820df3410dec53acd",
   "media/cinematic-45s.mp4": "415dbe5a49095219bd1c5e2110a6630546dc79d47ddc8ce6cb41bf0fe1724ee6"

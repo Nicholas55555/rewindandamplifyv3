@@ -44,7 +44,7 @@ python finals-deck/finish_v3_deck.py       # presenter guide, contact sheet, man
 python check_finals.py --public
 ```
 
-Requirements: `pip install python-pptx pillow segno playwright imageio-ffmpeg`, an installed Chrome or Edge for the captures, and Microsoft PowerPoint for the PDF step. The science code needs none of these.
+Requirements: `pip install -r requirements-tools.txt`, an installed Chrome or Edge for the captures, and Microsoft PowerPoint for the PDF step. The science code needs none of these.
 
 The cover and the 22 backup slides numbered 14 to 35 come unchanged from the V2 deck, except slide 23, whose slide numbers are updated. The V2 deck itself was built with a tool that is not redistributed; see [`v2/BUILDING.md`](v2/BUILDING.md).
 

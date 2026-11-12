@@ -2,7 +2,7 @@
 
 **13 main slides, planned 9:20 including a 45-second Lab demo. The limit is 10:00.** The narration below is 1,119 words, about 130 words a minute outside the demo.
 
-13 main slides in 9:20, including a 45-second Lab demo. The limit is 10:00. Speaker assignments are suggestions: change them to suit the team, and rehearse aloud.
+Speaker assignments are suggestions: change them to suit the team, and rehearse aloud with a timer.
 
 The same notes are inside the PowerPoint. Slides 14 onward are backups for questions.
 
