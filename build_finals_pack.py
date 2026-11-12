@@ -22,7 +22,8 @@ DOCS = ["START_HERE_FINALS.md", "check_finals.py", "FINALS_PLAN.md", "FINALS_TAL
         "reproduce.py"]
 DECKS = ["finals-deck/Rewind_Amplify_Finals_V3.pptx", "finals-deck/Rewind_Amplify_Finals_V3.pdf",
          "finals-deck/Presenter_Guide_V3.md", "finals-deck/v3_manifest.json", "finals-deck/v3_notes.json", "finals-deck/README.md",
-         "finals-deck/main-slides.png", "finals-deck/build_v3_deck.py", "finals-deck/finish_v3_deck.py", "finals-deck/finish_v3_deck.ps1",
+         "finals-deck/main-slides.png", "finals-deck/deck_kit.py", "finals-deck/build_v3_deck.py", "finals-deck/v3_backups.py",
+         "finals-deck/finish_v3_deck.py", "finals-deck/finish_v3_deck.ps1",
          ".finals-deck-build/visual_build.mjs", ".finals-deck-build/visual_render_final.mjs",
          ".finals-deck-build/visual_finish.py", ".finals-deck-build/visual_notes.json"]
 TREES = ["finals-lithography", "photon_reference", "qrsm_photon_poc", "rewindandamplify-main", "external_data", "quantum_lithography_poc", "laser_sensor_poc",
@@ -37,8 +38,8 @@ PUBLIC_DOCUMENTS = ["README.md", "Rewind_Amplify_Lab.html", "Rewind_Amplify_Rese
                     ".github/scripts/run_tests.py", ".github/scripts/check_publication.py"]
 INTRO = """# Rewind & Amplify — portable finals pack
 
-1. Open `finals-deck/Rewind_Amplify_Finals_V3.pptx` for thirteen main slides followed by technical backups. It holds two embedded videos. The PDF is a static fallback without speaker notes or video. Use Presenter_Guide_V3.md for the 9:20 planned talk.
-2. Open `Rewind_Amplify_Lab.html` directly: this single file is the live demo and needs nothing else. For the follow-up studies, open `Rewind_Amplify_Research_Explorer.html`, which includes its videos and downloadable evidence. Or open `laser-diagnostics-app/index.html` with its folder intact. Choose Focus view for the original QRSM demo. Current research contains the new comparisons; Earlier sensor study preserves the known-time experiment. Both work offline.
+1. Open `finals-deck/Rewind_Amplify_Finals_V3.pptx` for thirteen main slides followed by 26 backups in the same style. It holds two embedded videos. The PDF is a static fallback without speaker notes or video. Use Presenter_Guide_V3.md for the 9:25 planned talk.
+2. Open `Rewind_Amplify_Lab.html` directly: this single file is the live demo and needs nothing else. Its last three tabs animate the follow-up research on photon sources, laser monitoring and chipmaking. For the follow-up studies, open `Rewind_Amplify_Research_Explorer.html`, which includes its videos and downloadable evidence. Or open `laser-diagnostics-app/index.html` with its folder intact. Choose Focus view for the original QRSM demo. Current research contains the new comparisons; Earlier sensor study preserves the known-time experiment. Both work offline.
 3. The two 12-second MP4 videos and PNG fallbacks are in `animations/`. They are conceptual illustrations from the earlier optical/sensing extensions, not current performance evidence. The app has playback controls.
 4. Read `START_HERE_FINALS.md`, `FINALS_RUBRIC.md`, `FINALS_EVIDENCE.md`, and `RESEARCH_CURRENT.md`. The earlier `RESEARCH_RESULTS.md` remains the frozen research snapshot. Run `python check_finals.py` for package checks. Rehearse on the presentation computer.
 

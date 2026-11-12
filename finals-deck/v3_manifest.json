@@ -5,17 +5,17 @@
  "presenter_guide": "Presenter_Guide_V3.md",
  "contact_sheet": "main-slides.png",
  "main_slide_count": 13,
- "total_slide_count": 38,
- "notes_count": 38,
- "talk_timing_seconds": 560,
- "demo_seconds": 45,
+ "total_slide_count": 39,
+ "notes_count": 39,
+ "talk_timing_seconds": 565,
+ "demo_seconds": 71,
  "time_limit_seconds": 600,
- "speaking_script_words": 1119,
+ "speaking_script_words": 1145,
  "embedded_videos": {
   "count": 2,
   "slides": [
    10,
-   37
+   39
   ],
   "parts": [
    "ppt/media/media1.mp4",
@@ -25,50 +25,67 @@
  "powerpoint_check": {
   "powerpoint_version": "16.0",
   "opened_without_repair": true,
-  "slides": 38,
+  "slides": 39,
   "embedded_videos": [
    {
     "slide": 10,
     "name": "lab-tour.mp4",
-    "milliseconds": 46000
+    "milliseconds": 71000
    },
    {
-    "slide": 37,
+    "slide": 39,
     "name": "cinematic-45s.mp4",
     "milliseconds": 45000
    }
   ]
  },
  "sha256": {
-  "Rewind_Amplify_Finals_V3.pptx": "b3a48a79cbb24ec04dbbc4ab6dfeb4875df85c58943a3045eaa10384125f0f02",
-  "Rewind_Amplify_Finals_V3.pdf": "ee7c0d776297e1ceab839beb11fbee929d47ec4c50f11b58929b53399136377c",
-  "Presenter_Guide_V3.md": "aa3259a18b6c4f41d3d5287128b7b7903b94f7a98a6340342980780dd80e50e3"
+  "Rewind_Amplify_Finals_V3.pptx": "a1557f0715c93862cb2d22f7030ab0d6f8c4878a3092ee95ae86ac6867fc2cd5",
+  "Rewind_Amplify_Finals_V3.pdf": "977b918e3a646ae7f768d44f04671135d171e2c3e91d9510c3b2ebae71e9260c",
+  "Presenter_Guide_V3.md": "9f791936e10dfe69019e218236a680c30ea27ec87a905d6de37c0316918a6a8d"
  },
  "source_sha256": {
-  "research-validation/original_after_click_verification.json": "0db2be4bb4d6e1a6349383554c380d446c6ba4cac5112a710e8baef1e5b49481",
+  "finals-deck/v2/Rewind_Amplify_Finals_Visual.pptx": "cde68fee746f3abde22e2318729ea362c873833688e2327d81ece859e0594db7",
+  "finals-deck/v3_notes.json": "134b60d5b83de596357f8522fc33dff394a026697883bdc2f8146367207aec8d",
+  "finals-lithography/full_spatial_circuit/results.json": "62769c7a89be87aab019d911d9bc6f7b778c9a73a7f1f4c044b0d43328ce3ba6",
+  "hardware_campaign/coverage.json": "19f66dbe6098b9b5703f1403ee1796e385073865f7373e3b37d7260370482cfb",
+  "hardware_campaign/noise_model/results.json": "64d7a778c0591e6bcedceced18897d47730452ac40f033088e186aac2c2f364e",
+  "hardware_campaign/results.json": "3ab53e47a45bf0ec85629193e5eed54c006991868065e15524e94dc090830a85",
+  "hardware_campaign/runs/optical_dilation_plain_v2/analysis.json": "c1d7665bba7b232a2c854e96be203d44bec8094de1e3fe5e7a86985cf176049d",
+  "hardware_campaign/runs/original_plain_v2/analysis.json": "6c1ea899f82178826725f49cbc5f5510c3342ff6e382d577397de94a48b96fd3",
+  "hardware_campaign/runs/original_precision_v1/analysis.json": "1567e47c6001e55611c6dca59f8e3f29b69ecfa5c996acbdf622c0909959b3fa",
   "hardware_campaign/runs/original_precision_v1/hero_acceptance_contrast.json": "d0fffabcb17a6eaa8f3dd517a869d546fb37acfca49fdba07f31844e7bf61b5e",
   "hardware_campaign/runs/original_precision_v1/job.json": "54ff39842ad670e89be547af98f6a7fb23e5e87e1f5e94ac3b835c1b5067fc52",
-  "hardware_campaign/runs/original_plain_v2/analysis.json": "6c1ea899f82178826725f49cbc5f5510c3342ff6e382d577397de94a48b96fd3",
+  "hardware_campaign/runs/original_precision_v1/loop_contrasts.json": "a3e5fb0f348bd149dbd7c0968620acf1d0a98009f38abb435be9cf5b339bbe98",
   "hardware_campaign/runs/original_suppressed_v1/analysis.json": "13b29cf6bddcdb0e5618fcb023dae3d7236358dd7d5ba8e8c919bfae2b9867b0",
-  "hardware_campaign/results.json": "3ab53e47a45bf0ec85629193e5eed54c006991868065e15524e94dc090830a85",
-  "hardware_campaign/noise_model/results.json": "64d7a778c0591e6bcedceced18897d47730452ac40f033088e186aac2c2f364e",
-  "rewindandamplify-main/results/numbers.json": "7e37fc3a97b77b975aefc22b5f1ff318e9b5fb43d5a4a43d1f9577982e994f62",
   "laser_sensor_viability/followup/main/results.json": "c9c1821e404af0fb74c384ba82cfadb38d49be5a3d15fb8a0cfb7a9a1e445da9",
+  "laser_sensor_viability/results.json": "7a35b25be3c998b14c439dc6a705db2489463484fe1743b00d5d7af96e9293ac",
+  "media/cinematic-45s.mp4": "415dbe5a49095219bd1c5e2110a6630546dc79d47ddc8ce6cb41bf0fe1724ee6",
+  "media/lab-tour.mp4": "4113fe45ee3dd0a53f760ae9739d22dd548e198f55ec231dae416ecf19c8b9e4",
+  "qrsm_photon_poc/drive_diagnostics_followup/main/prior_only_estimation_control.json": "932e745a5f8107bbf37a05c97e7d53bfff8257a2d2b30c84405079b5c920a572",
+  "qrsm_photon_poc/drive_diagnostics_followup/main/results.json": "74847bbee9cbaf6fbd41d72ab2566839919de73d218e2690ad383c135495a069",
+  "qrsm_photon_poc/followup/dynamics_results.json": "b9b055fbc251b044d6ded0629f80980e17a3382a39f676a36d835e1c1e243c9b",
+  "qrsm_photon_poc/followup/independent_review.json": "79c50d03fd8d3398ff9656b8acbed68c847e761c8495f6ded2a9fa93ebde1873",
   "qrsm_photon_poc/followup/inference_results/fixed_411101_dead1_fit0.json": "1caca96deb6b9719d4e0e76b4f1fdabf73e45c13feec606ab1073d2cc3caf91f",
   "qrsm_photon_poc/followup/inference_results/fixed_411101_dead1_fit1.json": "84a85bb5c07211efc39b4bdc5e36480268fcbf90869f96bc9dd947b567c773b6",
+  "quantum_dot_bridge/hom_analysis/results.json": "9e66fd73027780f61219af8ff493d652911622473dfb29cbe9be37ffaa79a19a",
+  "quantum_dot_bridge/qrsm_hom_followup/exploratory_design/validation_run/results.json": "0685e84da3427091baa743b03228939cf90126ac1cd0359fa692dab020a4ebd2",
+  "quantum_dot_bridge/qrsm_hom_followup/main/results.json": "97473faba057d4f0624cb37b3c31d2355bcb0878e7425d64349b954ed12b65cd",
   "quantum_dot_bridge/results.json": "362d27539b5c35e45482644b94d70223b9809ac5a77b6c2bf2aa52a86aec7889",
-  "finals-deck/v3_notes.json": "c74f5a0a8a06596573028903c6a8945b176a8c97aaacbec6323312b8df870ab4",
-  "finals-deck/v2/Rewind_Amplify_Finals_Visual.pptx": "cde68fee746f3abde22e2318729ea362c873833688e2327d81ece859e0594db7",
-  "media/lab-tour.mp4": "e18d6c0e68161b5aec214f7d64b3fbdf8e7edeeccca4a22820df3410dec53acd",
-  "media/cinematic-45s.mp4": "415dbe5a49095219bd1c5e2110a6630546dc79d47ddc8ce6cb41bf0fe1724ee6"
+  "quantum_lithography_poc/exposure_followup/results.json": "b1ed512117235c49140512e1a1b3d9abc7b28c45b14c7b6d12d3682f61b7fa3b",
+  "quantum_lithography_poc/phase_inspection_followup/results.json": "8c9ac370ed20a154376bb19b0ae6947f01346fa05fccb3d191e280adb927d6f4",
+  "research-validation/original_after_click_verification.json": "0db2be4bb4d6e1a6349383554c380d446c6ba4cac5112a710e8baef1e5b49481",
+  "rewindandamplify-main/results/numbers.json": "7e37fc3a97b77b975aefc22b5f1ff318e9b5fb43d5a4a43d1f9577982e994f62"
  },
  "build": [
+  "finals-deck/deck_kit.py",
   "finals-deck/build_v3_deck.py",
+  "finals-deck/v3_backups.py",
   "finals-deck/finish_v3_deck.ps1",
   "finals-deck/finish_v3_deck.py"
  ],
  "limitations": [
-  "9:20 is a planned timeline; the team must rehearse the actual delivery.",
+  "9:25 is a planned timeline; the team must rehearse the actual delivery.",
   "Speaker assignments in the notes are suggestions.",
   "The PDF shows a still frame where the deck has a video."
  ]

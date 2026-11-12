@@ -19,31 +19,28 @@ from pathlib import Path
 from PIL import Image
 from pptx import Presentation
 
+import build_v3_deck
+import deck_kit
+import v3_backups
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 PPTX, PDF = HERE / "Rewind_Amplify_Finals_V3.pptx", HERE / "Rewind_Amplify_Finals_V3.pdf"
 GUIDE, MANIFEST, SHEET = HERE / "Presenter_Guide_V3.md", HERE / "v3_manifest.json", HERE / "main-slides.png"
 PREVIEW = HERE / "preview"
 MAIN = 13
-# every saved result the builder reads a number from; a change to any of them means the deck must be rebuilt
-EVIDENCE = [
-    "research-validation/original_after_click_verification.json",
-    "hardware_campaign/runs/original_precision_v1/hero_acceptance_contrast.json",
-    "hardware_campaign/runs/original_precision_v1/job.json",
-    "hardware_campaign/runs/original_plain_v2/analysis.json",
-    "hardware_campaign/runs/original_suppressed_v1/analysis.json",
-    "hardware_campaign/results.json",
-    "hardware_campaign/noise_model/results.json",
-    "rewindandamplify-main/results/numbers.json",
-    "laser_sensor_viability/followup/main/results.json",
-    "qrsm_photon_poc/followup/inference_results/fixed_411101_dead1_fit0.json",
-    "qrsm_photon_poc/followup/inference_results/fixed_411101_dead1_fit1.json",
-    "quantum_dot_bridge/results.json",
-    "finals-deck/v3_notes.json",
-    "finals-deck/v2/Rewind_Amplify_Finals_Visual.pptx",
-    "media/lab-tour.mp4",
-    "media/cinematic-45s.mp4",
-]
+DEMO_SECONDS = 71        # the Lab recording on slide 10
+# what the deck is built from besides the saved results; the results themselves are listed by evidence_files()
+INPUTS = ["finals-deck/v3_notes.json", "finals-deck/v2/Rewind_Amplify_Finals_Visual.pptx", "media/lab-tour.mp4", "media/cinematic-45s.mp4"]
+
+
+def evidence_files() -> list[str]:
+    """Every saved result a slide reads a number from: collected by running the builder's own readers, so the list
+    cannot fall behind the slides. A change to any of these files means the deck must be rebuilt."""
+    deck_kit.LOADED.clear()
+    v3_backups.backup_evidence(build_v3_deck.evidence())
+    build_v3_deck.slide_impact_sources()
+    return sorted(deck_kit.LOADED | set(INPUTS))
 
 
 def sha(path: Path) -> str:
@@ -87,10 +84,11 @@ def main() -> None:
 
     # ---- presenter guide
     lines = ["# Presenter guide: finals deck V3", "",
-             f"**{MAIN} main slides, planned {end // 60}:{end % 60:02d} including a 45-second Lab demo. The limit is 10:00.** "
-             f"The narration below is {words:,} words, about {words / (end - 45) * 60:.0f} words a minute outside the demo.",
+             f"**{MAIN} main slides, planned {end // 60}:{end % 60:02d} including a {DEMO_SECONDS - 1}-second Lab demo. The limit is 10:00.** "
+             f"The narration below is {words:,} words, about {words / end * 60:.0f} words a minute overall.",
              "", script["plan"], "",
-             "The same notes are inside the PowerPoint. Slides 14 onward are backups for questions.", "",
+             "The same notes are inside the PowerPoint. Slides 14 onward are backups for questions: slide 14 is a map of them, "
+             "and each one's note says when to show it.", "",
              "| Slide | Time | Speaker | Title |", "|---:|---|---|---|"]
     for i, entry in enumerate(script["main"], 1):
         lines.append(f"| {i} | {entry['time']} | {entry['speaker']} | {slide_title(slides[i - 1])} |")
@@ -105,6 +103,7 @@ def main() -> None:
     for i in range(MAIN + 1, len(slides) + 1):
         note = slides[i - 1].notes_slide.notes_text_frame.text.strip()
         note = re.sub(r"^Backup\s*", "", note)
+        note = note.replace("SHOW THIS WHEN: ", "**Show this when.** ").replace("SOURCES: ", "**Sources.** ")
         lines += [f"### {i}. {slide_title(slides[i - 1])}", "", note, ""]
     GUIDE.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8", newline="\n")
 
@@ -139,13 +138,14 @@ def main() -> None:
         "schema": 1,
         "deck": PPTX.name, "pdf": PDF.name, "presenter_guide": GUIDE.name, "contact_sheet": SHEET.name,
         "main_slide_count": MAIN, "total_slide_count": len(slides), "notes_count": sum(s.has_notes_slide for s in slides),
-        "talk_timing_seconds": end, "demo_seconds": 45, "time_limit_seconds": 600, "speaking_script_words": words,
+        "talk_timing_seconds": end, "demo_seconds": DEMO_SECONDS, "time_limit_seconds": 600, "speaking_script_words": words,
         "embedded_videos": {"count": len(videos), "slides": video_slides, "parts": videos},
         "powerpoint_check": report,
         "sha256": {p.name: sha(p) for p in (PPTX, PDF, GUIDE) if p.is_file()},
-        "source_sha256": {rel: sha(ROOT / rel) for rel in EVIDENCE},
-        "build": ["finals-deck/build_v3_deck.py", "finals-deck/finish_v3_deck.ps1", "finals-deck/finish_v3_deck.py"],
-        "limitations": ["9:20 is a planned timeline; the team must rehearse the actual delivery.",
+        "source_sha256": {rel: sha(ROOT / rel) for rel in evidence_files()},
+        "build": ["finals-deck/deck_kit.py", "finals-deck/build_v3_deck.py", "finals-deck/v3_backups.py", "finals-deck/finish_v3_deck.ps1",
+                  "finals-deck/finish_v3_deck.py"],
+        "limitations": [f"{end // 60}:{end % 60:02d} is a planned timeline; the team must rehearse the actual delivery.",
                         "Speaker assignments in the notes are suggestions.",
                         "The PDF shows a still frame where the deck has a video."],
     }

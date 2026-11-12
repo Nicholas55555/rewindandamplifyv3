@@ -65,6 +65,8 @@
 !/finals-deck/v3_manifest.json
 !/finals-deck/v3_notes.json
 !/finals-deck/build_v3_deck.py
+!/finals-deck/deck_kit.py
+!/finals-deck/v3_backups.py
 !/finals-deck/finish_v3_deck.py
 !/finals-deck/finish_v3_deck.ps1
 !/finals-deck/assets/

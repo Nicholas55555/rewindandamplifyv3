@@ -1,10 +1,10 @@
 # Presenter guide: finals deck V3
 
-**13 main slides, planned 9:20 including a 45-second Lab demo. The limit is 10:00.** The narration below is 1,119 words, about 130 words a minute outside the demo.
+**13 main slides, planned 9:25 including a 70-second Lab demo. The limit is 10:00.** The narration below is 1,145 words, about 122 words a minute overall.
 
 Speaker assignments are suggestions: change them to suit the team, and rehearse aloud with a timer.
 
-The same notes are inside the PowerPoint. Slides 14 onward are backups for questions.
+The same notes are inside the PowerPoint. Slides 14 onward are backups for questions: slide 14 is a map of them, and each one's note says when to show it.
 
 | Slide | Time | Speaker | Title |
 |---:|---|---|---|
@@ -17,10 +17,10 @@ The same notes are inside the PowerPoint. Slides 14 onward are backups for quest
 | 7 | 4:05–5:00 | Nicholas | You can’t amplify what you can’t rewind. |
 | 8 | 5:00–6:00 | Dillon | On IBM hardware, fewer gates won. |
 | 9 | 6:00–6:45 | Dillon | A simple noise model predicts the gap. |
-| 10 | 6:45–7:35 | Timofey | The Lab: our model, live in a browser. |
-| 11 | 7:35–8:15 | Dan | Three places hidden memory matters. Honestly scored. |
-| 12 | 8:15–8:50 | Nicholas | What we claim, and what we don’t. |
-| 13 | 8:50–9:20 | All four | What we built, and what we learned. |
+| 10 | 6:45–8:00 | Timofey | The Lab: our model, live in a browser. |
+| 11 | 8:00–8:20 | Dan | Beyond qubits: three tests. Honestly scored. |
+| 12 | 8:20–8:55 | Nicholas | What we claim, and what we don’t. |
+| 13 | 8:55–9:25 | All four | What we built, and what we learned. |
 
 ## Main talk
 
@@ -30,7 +30,7 @@ The same notes are inside the PowerPoint. Slides 14 onward are backups for quest
 
 We are Qubits, from Florida Gulf Coast University. A quantum device can hide a defect that changes what it does next. We built a model of that, and a way to ask the model about its rarest events. Then we ran it on IBM hardware.
 
-**Cue.** One breath, then move on. Optional cold open: type 37 and Enter to play the 45-second cinematic cut first, then 2 and Enter. If you use it, drop the video on slide 10 and demo the Lab live instead, or you will run over.
+**Cue.** One breath, then move on. Optional cold open: type 39 and Enter to play the 45-second cinematic cut first, then 2 and Enter. If you use it, play the 45-second Lab video instead of the 70-second one on slide 10 (media/lab-tour-45s.mp4), or demo the Lab live, or you will run over.
 
 **Sources.** README.md. Cover art from the V2 deck.
 
@@ -116,27 +116,27 @@ So we checked it against a simulator. With no noise the two builds tie. Using th
 
 ### 10. The Lab: our model, live in a browser.
 
-*6:45–7:35 · Timofey*
+*6:45–8:00 · Timofey*
 
-Here it is running. This is the Lab: our model, live in a browser, with no install. The laser drives the emitter, the hidden defect trades energy with it, and the detector clicks. Every run is a row. The amber column is the rare click, and most rows miss it. Now rewind and amplify: mark the click, run the film backwards, flip the blank start, run forward, and the click is 96 percent. One click, two futures. And the IBM result, with our noise model beside it.
+Here it is running. This is the Lab: our model, live in a browser, with no install. The laser drives the emitter, the hidden defect trades energy with it, and the detector clicks. Every run is a row. The amber column is the rare click, and most rows miss it. Now rewind and amplify: mark the click, run the film backwards, flip the blank start, run forward, and the click is 96 percent. One click, two futures. And the IBM result, with our noise model beside it. Then we asked the same question of other light. Two photon sources, equally bright: only the pairs reveal the hidden memory. A drifting laser: our atomic sensor helped a little, a second ordinary reference far more. And chip printing: entangled pairs draw cleaner stripes, and pay for it in photons.
 
-**Cue.** Click the video once to play; it is 45 seconds and silent, so talk over it. If the video will not play, switch to Rewind_Amplify_Lab.html, press the 45 s tour button, and say the same words. Do not apologise, just switch.
+**Cue.** Click the video once to play. It is 70 seconds and silent, so talk over it: the first 41 seconds are the project, the last 29 are the three research tabs. If the video will not play, switch to Rewind_Amplify_Lab.html, press the tour button, and say the same words. Short on time: stop the video when the IBM hardware scene ends, at 41 seconds. Do not apologise, just switch.
 
-**Sources.** media/lab-tour.mp4, recorded frame by frame from lab/index.html by lab/capture.py with a fixed seed. It is a screen recording of the running page, not an animation.
+**Sources.** media/lab-tour.mp4, recorded frame by frame from lab/index.html by lab/capture.py with a fixed seed. It is a screen recording of the running page, not an animation. The three research tabs are held to the studies' saved files by lab/test_research.cjs.
 
-### 11. Three places hidden memory matters. Honestly scored.
+### 11. Beyond qubits: three tests. Honestly scored.
 
-*7:35–8:15 · Dan*
+*8:00–8:20 · Dan*
 
-Who could use this? Quantum hardware teams, to compare explanations for a drifting qubit instead of guessing. Photon-source engineers: we showed that sources with the same brightness can have photon overlap anywhere from 20 to 100 percent. And we tested laser metrology, where our own research changed our mind. An added atomic reference helped a little, 58 percent detection. A second ordinary reference reached 98. We report that too.
+So, honestly scored. Photon sources: our simulation, plus published data we reanalysed. Laser monitoring: a negative result for our quantum add-on, and we keep it. Chipmaking: cleaner stripes for more light, and our full question would need 389 qubits. The chip we used has 156.
 
-**Cue.** The chips on each card say what kind of evidence it is. The third card is a negative result on purpose: say it with confidence.
+**Cue.** Twenty seconds: one sentence per card, then move on. The chip on each card says what kind of evidence it is. The second card is a negative result on purpose: say it with confidence. Backups 24 to 38 cover each study.
 
-**Sources.** Dead time: 0.069 against true 0.65, 0.706 once modelled (qrsm_photon_poc/followup). Overlaps 1.00/0.50/0.20/0.25 (quantum_dot_bridge). Unknown-onset monitor 51.35/58.02/97.97% (laser_sensor_viability/followup).
+**Sources.** Photons: 0.0% and 0.8% coincidences at overlap 1.00 and 0.60 (quantum_dot_bridge/results.json). Lasers: 51.35, 58.02 and 97.97% caught within 32 s (laser_sensor_viability/followup/main/results.json). Chipmaking: 95.16, 78.28 and 83.29% of cells right (quantum_lithography_poc/exposure_followup/results.json); 389 qubits (finals-lithography/full_spatial_circuit/results.json).
 
 ### 12. What we claim, and what we don’t.
 
-*8:15–8:50 · Nicholas*
+*8:20–8:55 · Nicholas*
 
 So here is what we claim. A recurrent quantum model, made reversible. Amplification that preserves the answer. A lighter build that beat the textbook build on real IBM hardware. And every number traceable to saved counts and tests. What we do not claim: no speedup today, no real defect detected, no photons or wafers measured. Next, we want to fit these models to real, calibrated device records, against a strong classical baseline.
 
@@ -146,11 +146,11 @@ So here is what we claim. A recurrent quantum model, made reversible. Amplificat
 
 ### 13. What we built, and what we learned.
 
-*8:50–9:20 · All four*
+*8:55–9:25 · All four*
 
 Nicholas led the model and the Grover fusion. Timofey, the research and the search idea. Dan, the experiments and our video. Dillon, the figures and the revising. What we learned: more hits is not more truth, so check the answer. On today's hardware the lighter circuit wins. And report the result that goes against you. Thank you. We would love your questions.
 
-**Cue.** Each person says their own line. Stop at 9:20. Backups from slide 14: hardware repeats 14, rubric map 23, prior work and AI 24, noise model detail 36, cinematic cut 37, reproduce 38.
+**Cue.** Each person says their own line. Stop at 9:25. Backups start at slide 14, which is a map of them: hardware 15 to 19, method and credit 20 to 23, light 24 to 29, lasers 30 to 34, chipmaking 35 to 38, cinematic cut 39.
 
 **Sources.** Roles as listed in the original README and confirmed for V2; the video credit follows the team's cinematic kit. AI assistance: Claude for the original project and V3, Codex with OpenAI models for the V2 research extensions.
 
@@ -158,222 +158,237 @@ Nicholas led the model and the Grover fusion. Timofey, the research and the sear
 
 | Slide | Title |
 |---:|---|
-| 14 | Hardware repeats and noise controls |
-| 15 | Deep optical queries show large distribution errors |
-| 16 | Sensor assumptions and resource accounting |
-| 17 | Calibration failures can reverse the conclusion |
-| 18 | Detector dead time can distort inferred coupling |
-| 19 | Where the quantum component enters |
-| 20 | The transfer to lithography needs its own test |
-| 21 | The continued query separates models with bias |
-| 22 | One step of the recurrent quantum model |
-| 23 | Judging rubric and evidence map |
-| 24 | Contribution, prior work and AI assistance |
-| 25 | Drive amplitude: a useful negative result |
-| 26 | Phase inspection: benefit depends on the budget |
-| 27 | The full spatial query is costly to construct |
-| 28 | Exposure: contrast trades against dose and loss |
-| 29 | Model accuracy is part of the resource budget |
-| 30 | Equal photon counts can hide poor interference |
-| 31 | External GaAs data: a conditional reanalysis |
-| 32 | The joint-photon QRSM observation model |
-| 33 | More data helps only under trusted calibration |
-| 34 | Atomic and photon channels on IBM |
-| 35 | Hardware coverage and circuit limits |
-| 36 | The same noise model, circuit by circuit. |
-| 37 | The cinematic cut. 45 seconds. |
-| 38 | Anyone can rerun it. One command. |
+| 14 | Backups, by the question asked. |
+| 15 | What each move bought, measured on the chip. |
+| 16 | Three runs. The lighter build led every time. |
+| 17 | The same noise model, circuit by circuit. |
+| 18 | Deeper circuits returned noise. We kept them. |
+| 19 | What ran on IBM, and where it stops. |
+| 20 | One step of the machine, in gates and in maths. |
+| 21 | Anyone can rerun it. One command. |
+| 22 | The rubric, and where each point is answered. |
+| 23 | What is ours, what is prior work, and where AI helped. |
+| 24 | Equally bright. Not equally good. |
+| 25 | A real quantum dot: published data, reanalysed. |
+| 26 | Ignore the detector’s blind time, and the fit is wrong. |
+| 27 | A QRSM for photon pairs: memory between pairs. |
+| 28 | More data helps only if the calibration holds. |
+| 29 | A better model costs more qubits. |
+| 30 | A calibration slip can reverse the conclusion. |
+| 31 | The laser monitor: what we assumed. |
+| 32 | The atomic channel, run as a circuit on IBM. |
+| 33 | Drive amplitude: a negative result we keep. |
+| 34 | Where the quantum part actually enters. |
+| 35 | Sharper lines, paid for in photons. |
+| 36 | The full question needs 389 qubits. We have 156. |
+| 37 | Reading a phase: the benefit depends on the budget. |
+| 38 | Lithography light is not our laboratory laser. |
+| 39 | The cinematic cut. 45 seconds. |
 
-### 14. Hardware repeats and noise controls
+### 14. Backups, by the question asked.
 
-The three current runs remain separate. Suppression used dynamical decoupling and twirling; it did not improve this pair in the observed run. The larger-shot follow-up was chosen after inspecting the first campaign and must not be described as a preselected independent confirmation of all hypotheses. Its 7.64 point yield difference has an independent-shot interval 6.29 to 8.99 points, excluding drift and calibration uncertainty. First-run ablations also include plain 6.74 percent, steering-only 24.07 percent and unsteered full three-round 48.73 percent. Conditional accuracy differs strongly. Earlier Kingston results 86.06/78.49 percent and 40/85 gates remain historical, with different layouts. None are pooled or interpreted as a universal noise advantage.
+**Show this when.** You need a backup and do not remember its number.
 
-PRESENTER CUE: 
+The backups are grouped by topic: what ran on IBM, method and credit, light and detectors, lasers, chipmaking. In a slide show, type a slide number and press Enter to jump straight to it.
 
-SOURCES: hardware_campaign/runs/original_plain_v2/analysis.json, original_suppressed_v1/analysis.json, original_precision_v1/analysis.json and hero_acceptance_contrast.json. All original43rows include the full earlier39circuit suite plus catalog repeats. Archived evidence research-validation/hardware_verification.json. Raw summaries primary; projected independent assignment inversion is a sensitivity analysis without calibration uncertainty.
+**Sources.** Built from the deck itself by finals-deck/v3_backups.py, so the numbers cannot drift.
 
-### 15. Deep optical queries show large distribution errors
+### 15. What each move bought, measured on the chip.
 
-Both retained three-bin models pass exact branch and conditional-state checks before hardware. Native routing raises these queries to 26,749 and 54,998 CZ gates. Each returns zero selected shots out of 512. That alone is inconclusive: even ideal expected counts are below one. The measured data marginals have substantial total-variation error, while full data-plus-environment distributions deviate still more. The one-bin circuits can instead produce inflated acceptance with wrong conditional distributions. Better mathematical truncation therefore does not guarantee a more useful hardware answer. Classical recursion already solves these small models efficiently. Cavity-two is a deliberately truncated physical surrogate, and Z statistics do not establish full conditional-state fidelity.
+**Show this when.** “How much did each part of your method contribute?” or “Why not just run Grover?”
 
-PRESENTER CUE: 
+These five circuits ran in the first job, 2,048 shots each. Plain sampling found the click in 6.7 percent of shots. The ideal is 3.95, so on a rare event noise adds false clicks. Steering one gate costs no extra two-qubit gates and raised it to 24 percent. Textbook amplification without steering needs three rounds and 345 gates, and stalled at 49 percent. Steering plus one round reached 64 percent with the full reflection and 77 percent with our lighter one. This is one run of each circuit. Only the last two were repeated.
 
-SOURCES: hardware_campaign/runs/optical_dilation_plain_v2/analysis.json and raw.json, rows optical_3bin_0p03_all_r1 and optical_3bin_0p003_all_r1. Raw0/512, Wilson upper.7447%, versus ideal.127833/.127551%. DataZTV.436846/.384204. Underlying genericCX10,189/19,864 from multibin_followup/main/ideal_0p03.json and ideal_0p003.json. State approximation error versus cavity2 .02604/.01094 before hardware is a different quantity.
+**Sources.** hardware_campaign/runs/original_plain_v2/analysis.json, rows click3-full-r0, click3-steered-full-r0, click3-full-r3, click3-steered-full-r1 and click3-steered-memory+last-1-r1. Job dbqarvmjjaos73agv2u0.
 
-### 16. Sensor assumptions and resource accounting
+### 16. Three runs. The lighter build led every time.
 
-The atomic response follows finite driven Bloch rotations with T1/T2 damping, preparation error, asymmetric readout error and binomial projection noise. Optical intensity changes the Rabi frequency and induces an assumed light shift during pulses. Conventional receivers include source-photon shot noise, electronics and reference drift. All methods see the same underlying source task and duration. The photon allocation is a declared assumption: atomic coupling and beam geometry are not specified from a real apparatus, and reference lasers plus atomic support optics are not included in a full cost comparison. Therefore this is not a resource-matched quantum advantage test.
+**Show this when.** “Was that one lucky run?” or “Did error suppression help?”
 
-PRESENTER CUE: 
+The same two compiled circuits ran three times, and the runs are never pooled. The lighter build led by 13.1 points in the first run, 14.5 with suppression, and 7.6 in the 8,192-shot repeat. Suppression means dynamical decoupling plus twirling. It did not improve the answer error: for the local build it went from 0.107 to 0.145. The larger repeat was chosen after we saw the first run, so call it a follow-up, not a preregistered confirmation. Its interval, 6.29 to 8.99 points, is shot noise only and leaves out drift and calibration. Earlier results on IBM Kingston, 86.06 and 78.49 percent with 40 and 85 gates, are historical and used different layouts.
 
-SOURCES: laser_sensor_viability/results.json config and resource_ledger supply the unchanged physical model. New task: followup/README.md, protocol.json and main/results.json. Unknown source onset48–96s, eight independently trained/calibrated pipelines, held-out sessions. Whole-record alarm calibration, misses and prealarms charged32sin restricted delay. Bishof etal., PRL111093604, https://arxiv.org/abs/1303.6741 is physical precedent, not chosen device specifications.
+**Sources.** hardware_campaign/runs/original_plain_v2/analysis.json, original_suppressed_v1/analysis.json, original_precision_v1/analysis.json and hero_acceptance_contrast.json. Archived Kingston evidence: research-validation/hardware_verification.json.
 
-### 17. Calibration failures can reverse the conclusion
+### 17. The same noise model, circuit by circuit.
 
-These are the new unknown-onset results. Each cell gives timely detection followed by full-record false alarms. The target is source-frequency change, so a sensor/reference/path change can trigger a false source diagnosis. Shorter atomic coherence makes the fused channel worse than C alone. A separate agreement veto reduces the primary-reference failure but sacrifices sensitivity and still exceeds the nominal alarm target. Shared-path drift is structurally indistinguishable from source motion in this measurement model. Hierarchical pipeline/session intervals quantify finite simulation variation, not physical model error or calibrated universal coverage. None of the older known-midpoint rates belong in this table.
+**Show this when.** “Does a simulator explain the hardware?” or “Is the after-click answer right on hardware?”
 
-PRESENTER CUE: 
+This is the noise model from slide 9, applied to the eight after-click circuits. Each pair is the chance of a click at step 6: with the programmed defect, then without it. The exact values are 4.67 and 10.10 percent. Only the steer-plus-local build returned the right order on the chip, 8.8 against 11.7 percent, and both numbers are biased. Plain sampling, the full reflection and the memory-only control reverse the order. The model, fitted only on the echo circuits, predicts the local build's values within about half a point. It under-predicts the damage to the 182-gate circuit. This separates two programmed circuits under these conditions. It does not locate an unknown defect in the IBM processor.
 
-SOURCES: laser_sensor_viability/followup/main/results.json and README.md. New primary-reference CQFAR84.53%, common-path94.11%. Agreement rule15.57% and68.23%, respectively. Nominal CQgain6.67pp, shortcoherence−5.42pp. Eight pipelines and96test sessions per scenario.
+**Sources.** hardware_campaign/noise_model/results.json (after_click). hardware_campaign/runs/original_precision_v1/loop_contrasts.json: local build, step 6: 538 of 6,118 and 834 of 7,152 accepted histories; difference −0.0287, interval −0.0389 to −0.0184 (shot noise only).
 
-### 18. Detector dead time can distort inferred coupling
+### 18. Deeper circuits returned noise. We kept them.
 
-After a click, the next recorded bit is forced to zero while the underlying system evolves unconditionally. Ignoring that readout process misattributes detector correlation to the hidden interaction. Including it improves held-out log likelihood by 0.4584 nats per 24-bin record, with paired conditional 95% interval 0.3978–0.5210. The fitted coupling moves closer to the known synthetic value, but dephasing reaches its upper bound and efficiency remains biased. A trained HMM captures the detector correlation too: the corrected physical model’s advantage over it is unresolved. Other physical parameters and the family remain known. This fresh result replaces the earlier truth-informed candidate-count example in the current deck.
+**Show this when.** “What happens with deeper circuits?” or “Did anything fail?”
 
-PRESENTER CUE: 
+We also compiled a three-bin optical model for the chip. Routing raised it to 26,749 and 54,998 two-qubit gates. Each returned zero accepted shots out of 512. That alone proves little, because even a perfect chip would expect less than one hit. But the measured distribution is far from the target, with errors of 0.44 and 0.38. A mathematically better truncation did not give a more useful hardware answer, and a classical recursion already solves these small models. We keep the result because it marks where today's hardware stops.
 
-SOURCES: qrsm_photon_poc/followup/README.md, inference_results/fixed_411101_dead1_fit0.json, fixed_411101_dead1_fit1.json, parameter_validation_v2/ and independent_review.json. The HMM difference interval for the corrected model is−.0067to+.0222nats/record.
+**Sources.** hardware_campaign/runs/optical_dilation_plain_v2/analysis.json, rows optical_3bin_0p03_all_r1 and optical_3bin_0p003_all_r1: 0 of 512, Wilson upper bound 0.74%, ideal 0.1278% and 0.1276%, data-register TV 0.4368 and 0.3842. Z statistics are not a state fidelity.
 
-### 19. Where the quantum component enters
+### 19. What ran on IBM, and where it stops.
 
-A sensor can use quantum dynamics while a classical computer processes its readouts. We now compile the finite driven atomic channel, including dissipation, into an IBM digital circuit. That tests a bounded implementation on superconducting hardware, not an atom, physical optical coupling or a 128 second acquisition. Unknown-onset detection still runs as classical inference on synthetic records. The separate recurrent-model query uses coherent preparation and amplitude amplification. Connecting a calibrated full acquisition process to a competitive quantum algorithm remains further work. No end-to-end quantum advantage follows from executing a component.
+**Show this when.** “What exactly ran on real hardware?”
 
-PRESENTER CUE: 
+Ten jobs on IBM Marrakesh: 207 science circuits and 40 calibration circuits, 688,640 shots, 244 seconds of processor time. Those are circuit executions including repeats, not 207 separate findings. The original query ran in full and was repeated. The quantum-dot, atomic and photon models ran as digital circuits, with no optical setup involved. Deeper stress circuits showed that a high hit rate can hide a wrong answer. The full 49-cell exposure circuit needs 389 qubits and cannot fit a 156-qubit device. Every research family has a written ledger of what was shown and what is missing.
 
-SOURCES: hardware_campaign/optical_controls/README.md, models.py and hardware_integration_review.json. Canonical laser_sensor_viability/model.py. Independent Bloch versus Lindblad/Stinespring checks. LASER_DIAGNOSTICS_ROADMAP.md and hardware_campaign/coverage.json distinguish component, classical and physical requirements.
+**Sources.** hardware_campaign/results.json, RESULTS.md and coverage.json (25 families). Job IDs, plans, raw counts and compiled circuits: hardware_campaign/runs/.
 
-### 20. The transfer to lithography needs its own test
+### 20. One step of the machine, in gates and in maths.
 
-The distinction matters. A CO2 drive laser heats tin to create plasma, which emits EUV. Monitoring the drive is different from measuring EUV. A narrow-line 698 nm atomic benchmark does not automatically transfer to either of those signals or to a 193 nm broadband pulsed excimer source. Existing conventional monitoring measures relevant source quantities. Cymer and imec reported controlled wafer experiments correlating light-source changes with critical-dimension behavior. That motivates source metrology, not a quantitative yield claim for our sensor. Atomic laser-noise metrology is also established prior work, including Bishof and colleagues in 2013.
+**Show this when.** “How does the model work, exactly?” or “How did you make it reversible?”
 
-PRESENTER CUE: 
+The emitter rotates under the drive. The hidden qubit rotates under its detuning and exchanges one excitation with the emitter. Then the emitter partly swaps into a light qubit. In the dynamic version that light qubit is measured and reset every step. In the purified version we keep each step's light in a fresh qubit and measure at the end, so the whole run is one reversible circuit with the same click statistics. That trades qubits for reversibility: two memory qubits plus one per step. A click applies K1, which empties the emitter and leaves the defect conditioned on the record. That back-action is the recurrent update.
 
-SOURCES: ASML: https://www.asml.com/en/technology/lithography-principles/light-and-lasers and https://www.asml.com/en/products/euv-lithography-systems. Cymer/imec2014: https://www.cymer.com/wp-content/uploads/2018/12/Cymer_SPIE_AdvancedLithography_2014.pdf. Bishof etal.: https://arxiv.org/abs/1303.6741.
+**Sources.** rewindandamplify-main/qrsm_grover/model.py and its tests. Defaults θ = 0.6, γ = 0.2, φ = 0.45, ζ = 0.3. lab/engine.js is a gate-for-gate port, tested against Qiskit to 1e-12.
 
-### 21. The continued query separates models with bias
+### 21. Anyone can rerun it. One command.
 
-The selected precision follow-up uses 8192 shots per circuit. Its steered local implementation gives step-six rates 8.794 percent with the programmed defect and 11.661 percent without it. The raw contrast has the intended sign and a shot-based interval excluding zero. Both rates remain biased relative to 4.667 and 10.102 percent exact targets. Crucially, plain, steered full and memory-only implementations reverse the expected sign. The initial campaign also failed to resolve the small local contrast at its lower precision. We preserve these results rather than calling this reliable diagnosis. The effect distinguishes particular programmed circuits under particular conditions; it does not locate unknown defects in the IBM processor or a laser.
+**Show this when.** “Does the code run?” or “Can we check your numbers?”
 
-PRESENTER CUE: 
+One command, about ten seconds, no IBM account. It prints the exact model, the Qiskit circuits on an Aer simulator, the classical baseline, the noise-model prediction and the IBM results recounted from the saved raw counts. Continuous integration runs it on every push, on Linux and Windows.
 
-SOURCES: hardware_campaign/runs/original_precision_v1/loop_contrasts.json and analysis.json. Local step6counts538/6118 versus834/7152 accepted histories. Contrast−.0286735, independent-shot Wilson-based95%interval[−.0389321,−.0183558]. Intervals exclude drift, readout-calibration and model uncertainty. Original ideal target research-validation/original_after_click_verification.json. Earlier archived continued jobs remain separate historical evidence.
+**Sources.** reproduce.py; docs/reproduce_output.txt; .github/workflows/ci.yml.
 
-### 22. One step of the recurrent quantum model
+### 22. The rubric, and where each point is answered.
 
-The emitter rotates under a drive. A hidden qubit rotates under its detuning and exchanges excitation with the emitter. The emitter then exchanges with a fresh output qubit. The dynamic implementation measures and resets that output each step. The purified implementation retains it, so the environment and history required for reversal remain in the circuit. This trades extra qubits for reversibility. Model steps are dimensionless. The optical labels describe a model interpretation. These IBM circuits did not measure photon arrivals.
+**Show this when.** A judge asks where a criterion is addressed.
 
-PRESENTER CUE: 
+This map follows the published judging criteria. For each one it names the slides that answer it. The hardware bonus is the highest tier reached, not a sum of tiers. We do not predict a score.
 
-SOURCES: Original fig_circuit_hybrid.png, qrsm_grover/model.py and tests. QRSM defaults theta=.6,gamma=.2,phi=(.45,),zeta=(.3,).
+**Sources.** FINALS_RUBRIC.md, which quotes the criteria published on the event page.
 
-### 23. Judging rubric and evidence map
+### 23. What is ours, what is prior work, and where AI helped.
 
-This map follows the supplied Qiskit Fall Fest judging rubric. Exceptional performance asks for a specific stakeholder and realistic impact, a defensible quantum rationale that considers classical alternatives and hardware scale, reproducible Qiskit implementation, rigorous comparisons, a clear contribution relative to reused ideas, accessible delivery within the time limit, and shared understanding. The hardware bonus is a separate highest-tier item, not an additive sum of all tier values. We do not predict a judge score.
+**Show this when.** “What is original here?” or “How did you use AI?”
 
-PRESENTER CUE: 
+Amplitude amplification and amplified conditional inference are prior work, and so is atomic laser-noise spectroscopy. The QRSM idea and its exact filter came before the event. The hackathon project is the Qiskit build, the fusion with Grover, steering, the local reflection and the experiments. The finals work added model audits, the joint-photon model, the IBM Marrakesh campaign, the noise model and the Lab. The original project and V3 were built with Claude, and the V2 research extensions with Codex and OpenAI models. The team set the questions and reviewed the results. Do not say that every generated analysis was checked line by line by hand.
 
-SOURCES: User-supplied Qiskit_Fall_Fest_Judging_Rubric.xlsx, extracted by root. FINALS_RUBRIC.md.
+**Sources.** README.md, section “Team, prior work and AI assistance”. Brassard et al., arXiv:quant-ph/0005055. Low, Yoder and Chuang, arXiv:1402.7359. Bishof et al., arXiv:1303.6741.
 
-### 24. Contribution, prior work and AI assistance
+### 24. Equally bright. Not equally good.
 
-The original README documents the team research timeline and Claude assistance. The team set the original direction and questions and reviewed the work. This finals revision uses Codex and OpenAI models to assist research review, reproduction, simulations, tests, application and presentation. Do not imply that every generated analysis has already received manual team verification. Amplitude amplification and Bayesian quantum inference are prior art. Atomic laser-noise spectroscopy is also prior art. The separate optical and sensing extensions test scoped feasibility questions and do not establish an end-to-end quantum computing advantage.
+**Show this when.** “Can’t you just count photons?” or “What does hidden memory mean for a photon source?”
 
-PRESENTER CUE: 
+Each photon on its own has the same brightness and the same fifty-fifty mix of two colours. If the hidden environment holds still between the two photons, they match, and at a beam splitter they always leave together. If it switches, they can differ, and sometimes one goes each way. The overlap falls from 1 to 0.6, and coincidences rise from zero to 0.8 percent of attempts. So a single-photon measurement misses what the pair measurement sees. The environment here is classical, so a hidden-Markov model is a fair competitor: this is not a witness of quantum memory. The same two cases ran as five-qubit circuits on IBM and gave overlaps of 0.81 and 0.52, against ideal values of 1 and 0.6. At 20 percent survival it takes 25 attempts to get one surviving pair; at 80 percent, about 1.6.
 
-SOURCES: Original README PriorworkandAIhelp and Team. Brassardetal https://arxiv.org/abs/quant-ph/0005055. Lowetal https://arxiv.org/abs/1402.7359. Bishofetal https://arxiv.org/abs/1303.6741.
+**Sources.** quantum_dot_bridge/results.json: classical_trap_pair_comparison, endpoints p = 0 and 0.5; collection_loss_sweep. PROTOCOL.md and independent_review.json. IBM: hardware_campaign/results.json, family_results.dot_frozen, run dots_plain_v1, 4,096 shots, 21 two-qubit gates. lab/research.js restates the formulas and lab/test_research.cjs holds them to these files.
 
-### 25. Drive amplitude: a useful negative result
+### 25. A real quantum dot: published data, reanalysed.
 
-The field-amplitude proxy is the drive parameter, not an incident-photon flux. A 20 percent field step would correspond to 44 percent intensity under fixed coupling. This low-count regime yields poor timely detection alongside substantial full-record false alarms. The physical filter, fitted HMM and count detector share the same bits; these are not independent engineered optical receivers. The post-holdout prior-only control exposes a weak constant-estimate comparison: for this step, using observations only slightly improves the prior estimate, and for the four other source-changing cases it makes estimation worse. Afterpulsing produces 10.55 percent false source alarms. The model needs a better operating regime and calibrated detector dynamics before a practical monitor claim.
+**Show this when.** “Do you have any real optical data?”
 
-PRESENTER CUE: 
+These are external measurements, not ours: Hong-Ou-Mandel histograms of a GaAs quantum dot, published by Münzberg and colleagues under CC BY 4.0. We normalized central peaks to side peaks and applied the published splitter and multiphoton corrections. The visibilities are 0.80, 0.83 and 0.77 at the three delays. At 39.4 nanoseconds a different normalization gives 0.794 instead of 0.772, a shift larger than the counting interval. The lesson is that a source-quality number depends on the measurement controls. The intervals leave out polarization, routing and drift. We did not fit a QRSM to these histograms: they are aggregates, without the sequential records a fit would need. No microscopic cause is claimed.
 
-SOURCES: qrsm_photon_poc/drive_diagnostics_followup/README.md; main/results.json, prior_only_estimation_control.json, independent_review.json, prior_only_independent_review.json. Four separately calibrated pipelines,13cases,128records per pipeline/case,96bins/cavity4. Stable FAR35/512 and step timely19/512 for physical QRSM. Prior-only MSE minus observed-data MSE .00025149, paired interval [.00007878,.00044596] for this step, a small conditional effect. Prior supplement is post-holdout descriptive, not another confirmatory test.
+**Sources.** quantum_dot_bridge/hom_analysis/results.json and PROTOCOL.md. Dataset doi:10.5281/zenodo.6337697, CC BY 4.0, by Julian Münzberg, Franz Draxl, Saimon Filipe Covre da Silva, Yusuf Karli, Santanu Manna, Armando Rastelli, Gregor Weihs and Robert Keil. Paper: APL Photonics 7, 070802 (2022). Their own quoted values, 0.803, 0.826 and 0.774, are kept separate.
 
-### 26. Phase inspection: benefit depends on the budget
+### 26. Ignore the detector’s blind time, and the fit is wrong.
 
-A doubled fringe has a pi ambiguity. Pure NOON performs well locally around a shared calibrated working point, but fails to identify the full phase globally. A charged coherent pilot resolves that ambiguity in the tested hybrid. Both sample modes illuminate the object; the resource is 20,000 mean photons before object transmission, including reference-arm photons. The high-efficiency case has 90 percent object transmission and 90 percent detection, with ideal preparation. Lower transmission removes the precision benefit. At one-percent preparation, matching dose requires 100 times longer for pure NOON; at fixed clock time its precision is worse. Ideal number-resolving detection, a known phase reference and the declared classical protocol bound this result. It is not superiority over all classical designs or a measured feature-size benefit.
+**Show this when.** “Could a detector artefact look like a defect?”
 
-PRESENTER CUE: 
+After a click the detector is blind for one step while the system keeps evolving. If the model leaves that out, it blames the hidden interaction for a correlation the detector made. On fresh synthetic records with a true coupling of 0.65, the fit gives 0.069 with the blind time ignored and 0.706 with it modelled. Prediction improves by 0.458 nats per 24-bin record. The corrected fit is still biased: dephasing sits at its upper bound and the efficiency is off. A trained hidden-Markov model captures the detector correlation too, so the corrected physical model’s edge over it is unresolved. This is synthetic inference, not a diagnosis of a real device.
 
-SOURCES: quantum_lithography_poc/phase_inspection_followup/README.md and results.json high_efficiency/equal_sample_photons. Pure NOON modulo-pi RMSE .0062646rad, full2piRMSE2.226739rad. Hybrid.00637086rad, coherent.007908rad,2000outcomes per protocol in each cohort. Zero errors gives95%Wilson upper bound.1917%. Global phases reused across methods; outcomes independently drawn. Separate equal-clock and equal-dose budgets.
+**Sources.** qrsm_photon_poc/followup/README.md; inference_results/fixed_411101_dead1_fit0.json and fit1.json; independent_review.json. Paired interval for the 0.458 gain: 0.398 to 0.521. Corrected model against the HMM: −0.007 to +0.022 nats per record.
 
-### 27. The full spatial query is costly to construct
+### 27. A QRSM for photon pairs: memory between pairs.
 
-This is an actual constructed reversible 49-cell oracle, not an extrapolation from three cells. Four count qubits per cell encode a capped Poisson law,23 bits accumulate the weighted score, and 170 extra clean ancillas support explicit reversible gates. Both 389 qubit circuits pass QPY serialization and independent structural, arithmetic and uncomputation checks. The CX values are constructive generic decomposition upper bounds, including preparation and one complete amplification round; they are not a routed device compilation. Rounding and capped-tail bounds bracket the original event, with relative bracket width 0.2406 percent at dose 1.5 and 0.3526 percent at dose 1.8. Classical dynamic programming already solves this independent-cell distribution efficiently. Construction alone establishes neither computational advantage nor physical lithography feasibility.
+**Show this when.** “Did you build a model for the photon-pair case?”
 
-PRESENTER CUE: 
+Yes. Each photon is emitted into a shape that depends on the environment’s state. A controlled-swap parity check plays the role of the beam splitter. The environment is kept between pairs, so a record carries memory. Passive observation alone cannot separate a coherent environment from a classical one. With a calibrated control, the 64-pair simulation flags 5.6 percent of coherent records against 4.5 percent false flags, which is barely a difference. Four-pair circuits ran on IBM with 22 and 29 qubits. Their flag distributions were off by 0.25 and 0.29, so implementation noise is still large. None of this validates the optical assumptions or certifies quantum memory.
 
-SOURCES: finals-lithography/full_spatial_circuit/README.md, results.json, process_bounds.py, independent_review.json. Floor and ceiling clean circuits389qubits; CX bounds3,382,108/2,874,028 and U5,050,537/4,288,741. Dose1.5 original event bracket [.004226948015,.004237128599]; conservative conditionalTVbound.00482. Cap15 value change usesPoisson tailN>=16, encoded cap probabilityusesN>=15. Check row direction against event interval: floor weights admit an upper event; ceiling weights give a lower event.
+**Sources.** quantum_dot_bridge/qrsm_hom_followup/README.md, physical_model.py, circuits.py, main/results.json (regimes[1]) and main/independent_review.json. IBM: hardware_campaign/results.json, family_results.dot_selected_four_pair, 4,096 shots each, 256 and 334 native CZ gates.
 
-### 28. Exposure: contrast trades against dose and loss
+### 28. More data helps only if the calibration holds.
 
-The response combines declared linear and two-photon activation coefficients, loss, phase jitter, finite pixel collection and post-activation blur. Activations are rare Poisson events, not direct photon probabilities. The NOON pattern has stronger mean contrast and higher best guard-cell accuracy under the nominal assumptions, but requires more incident photons at its best tested dose. The duty-cycle comparator concentrates equal average photons into ten-percent active time, giving higher peak intensity. It is one explicit classical competitor, not an optimum over all illumination. Loss, blur, linear leakage, background and low preparation success degrade the result. The 20 guard cells exclude boundary cells. This is a sensitivity study of an assumed resist, not a prediction for an available material or fabricated feature.
+**Show this when.** “Would more data fix it?”
 
-PRESENTER CUE: 
+Partly. With a selected control and resets between four-pair blocks, the share of coherent records flagged climbs from 12 percent at 64 pairs to 80 percent at 2,584 and 99.8 percent at 7,644, with about 5 percent false flags. That is a different preparation protocol from the 64-pair study, not a tuned replacement for it. But at 7,644 pairs a still-classical source is flagged 72 percent of the time if the collection efficiency changed, 53 percent if the mode overlap changed and 21 percent if the readout changed. An eight-state classical model predicts as well as the physical one, within uncertainty. More data cannot repair a wrong model of the measurement.
 
-SOURCES: quantum_lithography_poc/exposure_followup/README.md and results.json finite_nominal. Table optimizes each method over tested doses, so it is not a single equal-dose operating point. G1/G2 supplement verifies spatial conservation and harmonic/per-photon accounting. 540,000Poisson realizations. Wavelength800nm, ±30degree modes, second harmonic400nm; period is not linewidth. Independent or fast phase jitter/mean-rate approximation excludes slow correlated phase drift.
+**Sources.** quantum_dot_bridge/qrsm_hom_followup/exploratory_design/README.md, VALIDATION_PROTOCOL.md and validation_run/results.json (power_trials). 2,000 records per cell. No validated physical control or reset time.
 
-### 29. Model accuracy is part of the resource budget
+### 29. A better model costs more qubits.
 
-The original optical circuit uses only two cavity levels. Comparing its conditional predictions with a six-level reference reveals errors of several percentage points, especially under stronger drive. Increasing the cutoff reduces the discrepancy in these cases, but raises state and circuit costs. Six fresh joint-inference cases fit five parameters with source and detector controls. Fixed settings do not resolve performance versus an HMM; controlled settings give small held-out gains under shared known physics. Fixed-drive detuning sign remains structurally ambiguous. Controlled settings break that exact symmetry but do not establish reliable finite-data sign identification. Local curvature intervals fail near boundaries and are not global uncertainty guarantees. Thermal, multimode and non-Markovian effects remain future model families.
+**Show this when.** “How accurate is the model itself?”
 
-PRESENTER CUE: 
+The optical circuit keeps only two levels of its cavity. Against a six-level reference, its after-click predictions are off by up to 2.8 points, and 7.1 at stronger drive. Four levels cut that to 0.05 and five to 0.003. So more physics is available, at the price of more qubits and gates, and the cheap circuit answers a slightly different question. Six levels is a larger numerical reference, not the exact infinite model. The dynamics were cross-checked against QuTiP.
 
-SOURCES: qrsm_photon_poc/followup/README.md, dynamics_results.json, inference_results/, parameter_validation_v2/ and independent_review.json. Max after-click error over tested later lags versus cavity dimension6. Master equation independently checked with QuTiP; trajectory statistics tested separately. Controlled model-HMM logscore gains .0574[.0158,.1014] and .0972[.0448,.1495]nats/24-binrecord under conditional bootstrap. This does not establish physical defect identification or a quantum computational speedup.
+**Sources.** qrsm_photon_poc/followup/dynamics_results.json (cutoff: default and high_drive, max_conditional_difference_vs_dimension6) and README.md.
 
-### 30. Equal photon counts can hide poor interference
+### 30. A calibration slip can reverse the conclusion.
 
-Each photon separately has the same brightness and fifty-fifty frequency distribution. Shared versus independent offsets still change pair overlap from one to 0.6. A single-photon marginal misses information in the joint observation. This benchmark environment is entirely classical, and an HMM is a necessary competitor. The new sequential HOM instrument implements the broader hidden-state question using a different complete-emission source model. Its digital circuits also test these frozen pair controls. It does not turn this classical memory example into a coherent-defect witness. An engineer can use the distinction to select interference-sensitive source measurements alongside collection cost. At 80 percent survival, a pair takes 1.5625 attempts on average; at 20 percent, it takes 25. These are surviving pairs, not necessarily resolved coincidences.
+**Show this when.** “Did the quantum sensor help?” or “What could go wrong with that monitor?”
 
-PRESENTER CUE: 
+The task is to catch a half-hertz step in a laser’s frequency within 32 seconds, without knowing when it happens. An ordinary reference alone caught 51 percent. Adding the atomic sensor raised that to 58. A second ordinary reference reached 98. Atoms alone caught under 8 percent. So the quantum add-on helped a little, and the ordinary route helped far more. Under stress it gets worse. With atoms that lose coherence sooner, adding them made the monitor worse than the reference alone. If the first reference itself steps, the first two monitors raise false alarms about 90 percent of the time. If the shared path steps, all three do, because that looks exactly like the laser moving. All of this is simulation.
 
-SOURCES: quantum_dot_bridge/results.json classical_trap_pair_comparison endpoints p_switch=0 and.5, PROTOCOL.md and independent_review.json. Both marginals are(.5,.5), ideal g2(0)=0 and eta=.2. M1/.6 gives coincidence per attempted excitation pair0/.008 at a balanced beamsplitter. The classical state remains fixed within each wavepacket; the pair model does not infer a switching time. Other benchmark cases retain counts while giving overlap1/.5/.2/.25 from pure dephasing or detuning. Sixteen tests and independent density-kernel quadrature support the calculations. External GaAs histograms are separate and did not calibrate this illustrative model. No semiconductor defect, physical device setting, quantum advantage or lithography yield was identified.
+**Sources.** laser_sensor_viability/followup/main/results.json and README.md: scenarios unseen_nominal_sessions, unseen_short_coherence, primary_reference_changes and common_sampled_path_changes; methods classical, classical_quantum, two_classical and quantum. 1,920 quiet and 1,920 faulty records per scenario, eight calibrated pipelines. The Lab’s Lasers tab replays one stored record of each (example_traces.json).
 
-### 31. External GaAs data: a conditional reanalysis
+### 31. The laser monitor: what we assumed.
 
-The real-data lesson is that a source-quality estimate depends on measurement controls. These are external Hong–Ou–Mandel histograms analyzed classically, not team measurements or a QRSM fit. We normalize central peaks to side peaks and apply published splitter and multiphoton corrections. The intervals exclude polarization, routing and drift systematics. At 39.4 nanoseconds, co-only normalization changes the estimate from 0.7724 to 0.7938. That discrepancy guides checks of polarization, alignment and normalization before assigning a cause. The new joint-photon instrument supplies a mathematical candidate model, but these aggregate histograms lack the sequential records and source calibration needed to fit and test it. Repeated time-tagged acquisitions and held-out comparisons remain necessary. No microscopic cause, monotonic decay, reproduced author pipeline or improved device performance follows.
+**Show this when.** “What did you assume about the atomic sensor?”
 
-PRESENTER CUE: 
+The atomic response follows driven Bloch rotations with decay, preparation error, readout error and projection noise for 64 independent atoms. Each one-second cycle gives one reading: two 2.5 millisecond pulses around a 20 millisecond dark time, then dead time. The conventional receivers include shot noise, electronics noise and reference drift. All monitors see the same task for the same duration. What is not matched is the equipment: reference lasers, cooling, trapping and readout are not costed. So this is not a resource-matched advantage test.
 
-SOURCES: quantum_dot_bridge/hom_analysis/results.json, PROTOCOL.md and independent review. Dataset https://doi.org/10.5281/zenodo.6337697, CC BY4.0, by Julian Munzberg, Franz Draxl, Saimon Filipe Covre da Silva, Yusuf Karli, Santanu Manna, Armando Rastelli, Gregor Weihs and Robert Keil. Paper https://arxiv.org/html/2203.08682v1 SectionIV Eqs3–4. Quoted paper V=.803(.005),.826(.004),.774(.004) remain separate. Our primary extraction uses half-open windows of half-width2ns, no background subtraction, reference cycle indices−2,−1,+1,+2 and200000Monte Carlo draws. R=.514±.007,g2=.016±.001, assumed independent but shared across separations. Data hashes verified against reference_hom/provenance_manifest.json. These aggregate histograms cannot provide original QRSM binary histories or uniquely identify charge traps.
+**Sources.** laser_sensor_viability/results.json (config, resource_ledger), model.py and README.md. Precedent for atomic laser-noise spectroscopy: Bishof et al., Phys. Rev. Lett. 111, 093604 (2013), arXiv:1303.6741.
 
-### 32. The joint-photon QRSM observation model
+### 32. The atomic channel, run as a circuit on IBM.
 
-The missing observation model is now implemented. A fully excited emitter decays into a photon whose exponential temporal mode depends on the environmental state. Complex Gram overlaps embed the finite mode family exactly. A controlled-SWAP parity measurement equals the balanced-HOM symmetry statistic, and tracing the photon modes produces a conditional environmental map. Independent bosonic calculations check probabilities and conditional coherences. The environment persists between pairs. Passive outcomes cannot separate these hypotheses. A calibrated shift introduces a small joint effect, but the 64 pair simulated study gives only 5.60 percent coherent flags versus 4.50 percent classical false flags. The separate selected four-pair IBM circuits use 22/29 qubits and 256/334 native CZ gates. Their raw flag distributions have TV.249/.286, so implementation noise remains substantial. They do not validate the optical assumptions or certify quantum memory.
+**Show this when.** “Did any of the sensing work run on a quantum computer?”
 
-PRESENTER CUE: 
+The atomic channel did, as a circuit. We built the full noisy evolution of the model atom, with its pulses, dark time and decay, and compiled it to four qubits and 22 two-qubit gates. IBM Marrakesh ran it with 2,048 shots per setting. The response goes the right way: 32, 48 and 73 percent measured, against 21, 50 and 79 percent in the model. It is biased, most at the outer settings. Superconducting qubits imitated the model. No atoms, no optical coupling and no 128-second monitor were tested. A separate two-photon circuit gave an occupation error of 0.033.
 
-SOURCES: quantum_dot_bridge/qrsm_hom_followup/README.md, physical_model.py, circuits.py, main/results.json and main/independent_review.json. Thirty thousand synthetic records replayed independently. Hardware current summary family_results.dot_selected_four_pair, selected_four_coherent and selected_four_classical,4096shots each. Distinct chosenθ3π/4,+2Γfour-pair control. Zconditional memory is not fullstate tomography. Main14circuit bundle uses earlierθπ/3. New source assumes full emission, fixed environment during each packet and controlled gaps. Original QRSM excitation-exchange dynamics are distinct. Measurement precedent Garcia-Escartin and Chamorro-Posada, https://arxiv.org/html/1303.6814v1.
+**Sources.** hardware_campaign/optical_controls/README.md, PROTOCOL.md and models.py; hardware_campaign/runs/optical_controls_plain_v1/analysis.json (job dbqat8nv5hds73dfnsig), rows atomic_d-5_Z, atomic_d+0_Z, atomic_d+5_Z and noon_phi0.35. Intervals are Wilson, shot noise only.
 
-### 33. More data helps only under trusted calibration
+### 33. Drive amplitude: a negative result we keep.
 
-After preserving the negative main result, an exact 648 setting scan selected a new control and gap rotation. A separate prospective simulation uses ideal resets between four-pair blocks and independently calibrated thresholds at every budget. At 2584 attempted pairs, nominal flags reach 79.75 percent with 4.85 percent classical false flags. The full budget curve remains visible. This is a different preparation protocol, not a tuned replacement of the 64 pair study. At 7644 pairs, changes in collection, mode overlap or readout give 72,53.25 and 21.05 percent false flags from still-classical sources. The 8 state HMM differs from the calibrated physical predictor by only 0.0000092 nats per pair, with an interval spanning zero. All 20 HMM starts reached the iteration cap. More data cannot repair a wrong measurement model, and no classical impossibility or physical defect follows.
+**Show this when.** “Can the click record detect a change in the drive?”
 
-PRESENTER CUE: 
+Not in the regime we tested. We simulated 96-bin click records with a 20 percent jump in drive strength at an unknown time, and read the same bits three ways. The physical model caught 3.7 percent of jumps in time, a classical hidden-Markov model 3.1 and a simple count comparison 1.8. Each raised more false alarms than that on steady records. The amplitude estimate barely beats a guess that ignores the data: an error of 0.1125 against 0.1136. A 20 percent field step is a 44 percent intensity step, so this is a hard regime with few counts. The model needs a better operating point and calibrated detector dynamics before any monitoring claim.
 
-SOURCES: quantum_dot_bridge/qrsm_hom_followup/exploratory_design/README.md, design_results.json, VALIDATION_PROTOCOL.md, validation_run/results.json and independent_review.json. θ3π/4, second-emission shift+2Γ, eta.8, resetI/2 per4pair block. All lost pairs charged,2source excitations per pair. Independent20k training and20k predictive blocks,4/8state HMM10starts/200iterations. Rigorous simple-hypothesis bound1911blocks uses a different exact-model log4 threshold, not the empirical curves. No validated physical control/reset time.
+**Sources.** qrsm_photon_poc/drive_diagnostics_followup/README.md; main/results.json (cases source_step_20pct and stable_source); main/prior_only_estimation_control.json; independent_review.json. 512 records per case, 6,656 in all. The prior-only control was added after the holdout and is descriptive.
 
-### 34. Atomic and photon channels on IBM
+### 34. Where the quantum part actually enters.
 
-The atomic adapter exponentiates the actual driven Lindblad evolution through finite pulses and free precession, constructs its complete channel and synthesizes a Stinespring isometry. It does not rotate a qubit directly to an analytic output probability. Independent affine-Bloch calculations verify the ideal response. IBM results show the response direction but retain material bias, especially at the outer detunings. Separate photon circuits prepare actual finite mode states, apply phases, recombine and encode loss. A coherent source is represented by its unnormalized Poisson sectors through N8; vacuum and the omitted tail remain charged. Raw occupancy moments include source failures. These are meaningful implementation tests, while acquisition, calibration and apparatus costs remain optical questions.
+**Show this when.** “Where exactly is the quantum computer in the sensing story?”
 
-PRESENTER CUE: 
+In three different places, with different evidence. The sensor’s dynamics are quantum, and we ran that channel as a circuit on IBM. The diagnosis, turning readings into an alarm, is classical inference on synthetic records. The rare-history query is the quantum algorithm of the main talk, run on IBM. Running one component on a quantum computer does not make the whole pipeline quantum, and a sensing benefit would not be a computing speedup.
 
-SOURCES: hardware_campaign/optical_controls/README.md, PROTOCOL.md, models.py, bundle_v2/manifest.json and hardware_integration_review.json. hardware_campaign/runs/optical_controls_plain_v1/analysis.json,33science rows. Atomic originalT1=100s,T2=.2s,2.5ms pulses,20ms dark interval,1% preparation error; physical optical2/4%readout assumptions not added as if hardware correction. Coherent mean2before object, tailN>8=.0002374473, source/detection/object losses declared. Independent compiled mapping and moments audit passed.
+**Sources.** hardware_campaign/optical_controls/README.md and hardware_integration_review.json; laser_sensor_viability/model.py; LASER_DIAGNOSTICS_ROADMAP.md; hardware_campaign/coverage.json.
 
-### 35. Hardware coverage and circuit limits
+### 35. Sharper lines, paid for in photons.
 
-Ten completed jobs execute 207 science circuits and 40 calibration circuits, totaling 688640 shots and 244 charged QPU seconds. These are circuit executions including repeats, not 207 independent discoveries. The campaign covers the original suite and meaningful rungs of circuit-ready families. Independent 3/5/7 site contacts compare enumeration and clean counters. The 1024 entry seeded-diagonal stress circuit reaches 98,680 native CZ gates and 46.58 percent raw matches versus 99.23 percent ideal. It is distinct from semantic retrieval. Eight-step rounds and ten-step bounded rewinds test ingredients, not full adaptive BBHT. Four-pair dot circuits use 22/29 qubits and a declared 32 entry flag-memory marginal. The 389 qubit 49 cell construction cannot fit 156 qubits. Classical benchmarks, published optical data and real process calibration remain separate requirements.
+**Show this when.** “How does this connect to making chips?” or “Is quantum lithography better?”
 
-PRESENTER CUE: 
+We simulated a strip of resist that needs two photons at once, under crossed beams. The fine stripes appear for laser light too. Entangled pairs give them about twice the contrast: 43 percent against 21 to 25. At each light’s best dose, pairs print 95 percent of scored cells correctly, two shifted laser exposures 78 and short laser pulses 83. Pairs also use the most light: 14.9 million photons against 0.84 million for the pulsed laser. Loss, a leakier resist, background or an unreliable pair source reverse the result. This is a sensitivity study of an assumed resist, not a prediction for any real material or printed feature.
 
-SOURCES: hardware_campaign/results.json and RESULTS.md, all10job IDs with immutable plans/raw counts and exact ISAQPY. coverage.json and coverage.md; extensions/bundle_v1/manifest.json and independent_review.json; quantum_dot_bridge/qrsm_hom_followup/exploratory_design/HARDWARE_EXTENSION.md and hardware_bundle/manifest.json. Native counts differ from generic constructions. Z marginal checks are not full-state fidelity. Full49 results in finals-lithography/full_spatial_circuit/results.json.
+**Sources.** quantum_lithography_poc/exposure_followup/README.md, model.py and results.json (case finite_nominal, best_threshold_accuracy). 800 nm beams at ±30 degrees: the 400 nm figure is a period, not a linewidth. lab/research.js reproduces the three rows to nine decimal places (lab/test_research.cjs).
 
-### 36. The same noise model, circuit by circuit.
+### 36. The full question needs 389 qubits. We have 156.
 
-Backup. The same noise model, fitted only on the echo circuits, applied to all eight after-click circuits. It predicts the lighter build's biased answers within half a point and explains why plain sampling reverses the order: on a 4 percent event, false clicks swamp the true ones. It under-predicts the damage to the 182-gate circuit.
+**Show this when.** “Could your algorithm run on this problem today?”
 
-SOURCES: hardware_campaign/noise_model/results.json, after_click.
+No, and this slide says why. The rare event is a contact failing to print in a 49-cell exposure model, which happens in 0.42 percent of exposures. We built the reversible circuit that would amplify it: 196 qubits to count photons, 23 for the score and 170 spare, 389 in all. The device we used has 156. The gate count is an upper bound of about 3.4 million for one round. Both circuit files load back and pass structural checks, but the circuit was never simulated in full or run. Classical dynamic programming already solves this model. Building the circuit shows neither an advantage nor that the process works.
 
-### 37. The cinematic cut. 45 seconds.
+**Sources.** finals-lithography/full_spatial_circuit/README.md, results.json, process_bounds.py and independent_review.json. Floor and ceiling weights bracket the event: 0.004227 to 0.004237. Small versions that did run on IBM (hardware_campaign, family spatial) returned high hit rates with wrong answers.
 
-Backup or optional cold open. The team's problem-first video with original music. It is a cinematic explainer, not a screen recording of the product. Click once to play.
+### 37. Reading a phase: the benefit depends on the budget.
 
-SOURCES: media/cinematic-45s.mp4, from the team's cinematic kit. Numbers shown match hardware_campaign/RESULTS.md.
+**Show this when.** “What about using quantum light to inspect rather than print?”
 
-### 38. Anyone can rerun it. One command.
+We simulated measuring one optical phase with 20,000 photons, charging every photon sent. Entangled pairs alone see a signal that repeats every half turn, so they pick the wrong half about half the time. Spending 10 percent of the photons on ordinary laser light fixes that, and the hybrid is slightly more precise than laser light alone: 0.0064 against 0.0079 radians. The benefit needs high efficiency. If the pair source succeeds 1 percent of the time, matching the dose takes 100 times longer. The comparison assumes ideal photon counting and a known reference, and it is not a claim over every classical design.
 
-Backup for 'does the code run?'. One command, about ten seconds, no IBM account: the exact model, the Qiskit circuits on Aer, the classical baseline, the noise model and the recounted IBM results.
+**Sources.** quantum_lithography_poc/phase_inspection_followup/README.md and results.json (case high_efficiency, budget equal_sample_photons; case one_percent_preparation). 2,000 outcomes per protocol; zero errors gives a 95% upper bound of 0.19%.
 
-SOURCES: reproduce.py; docs/reproduce_output.txt.
+### 38. Lithography light is not our laboratory laser.
+
+**Show this when.** “Does this apply to real lithography machines?”
+
+Not directly, and we should say so. In an EUV machine a carbon-dioxide laser heats tin into a plasma, and the plasma emits the 13.5 nanometre light that exposes the wafer. Deep-ultraviolet machines use a 193 nanometre excimer laser. Our sensor study uses a narrow 698 nanometre laboratory line that atoms can read. None of the industrial sources is represented in our model. Conventional source monitoring already exists, and Cymer and imec have linked source changes to feature sizes on wafers. That motivates source metrology in general. It is not a yield claim for our sensor.
+
+**Sources.** LASER_DIAGNOSTICS_ROADMAP.md. ASML: asml.com/en/technology/lithography-principles/light-and-lasers. Cymer and imec, SPIE Advanced Lithography 2014. Bishof et al., arXiv:1303.6741.
+
+### 39. The cinematic cut. 45 seconds.
+
+**Show this when.** You want the optional cold open, or a judge asks to see the video.
+
+The team's problem-first video with original music. It is a cinematic explainer, not a screen recording of the product. Click once to play. If you open the talk with it, stop the Lab video on slide 10 at 41 seconds, or use the 45-second version.
+
+**Sources.** media/cinematic-45s.mp4, from the team's cinematic kit. Numbers shown match hardware_campaign/RESULTS.md.

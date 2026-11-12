@@ -27,16 +27,20 @@ ROOT = Path(__file__).resolve().parent
 DECK = ROOT / 'finals-deck'
 V2_DECK = DECK / 'v2'
 MAIN_SLIDES = 13
-TALK_SECONDS = 560
+TALK_SECONDS = 565           # the planned main talk: 9:25
+TIME_LIMIT_SECONDS = 600
+SLIDE_BACKGROUND = '091624'  # every slide after the cover shares one dark theme
 REQUIRED = [
     'README.md', 'START_HERE_FINALS.md', 'FINALS_TALK.md', 'FINALS_QA.md', 'FINALS_EVIDENCE.md', 'FINALS_RUBRIC.md',
     'Qiskit_Fall_Fest_Judging_Rubric.xlsx',
     # the V3 presentation
     'finals-deck/Rewind_Amplify_Finals_V3.pptx', 'finals-deck/Rewind_Amplify_Finals_V3.pdf',
     'finals-deck/v3_manifest.json', 'finals-deck/v3_notes.json', 'finals-deck/Presenter_Guide_V3.md',
-    'media/lab-tour.mp4', 'media/cinematic-45s.mp4',
+    'finals-deck/deck_kit.py', 'finals-deck/build_v3_deck.py', 'finals-deck/v3_backups.py',
+    'media/lab-tour.mp4', 'media/lab-tour-45s.mp4', 'media/cinematic-45s.mp4',
     # the Lab, and the one-command reproduction
-    'Rewind_Amplify_Lab.html', 'index.html', 'lab/index.html', 'lab/engine.js', 'lab/data.js', 'lab/app.js', 'lab/styles.css',
+    'Rewind_Amplify_Lab.html', 'index.html', 'lab/index.html', 'lab/engine.js', 'lab/research.js', 'lab/data.js', 'lab/app.js',
+    'lab/styles.css',
     'reproduce.py', 'hardware_campaign/noise_model/results.json',
     # the archived V2 deck and the research explorer
     'finals-deck/v2/Rewind_Amplify_Finals_Visual.pptx', 'finals-deck/v2/Rewind_Amplify_Finals_Visual.pdf',
@@ -127,8 +131,24 @@ def check_v3_deck(errors: list) -> None:
                 if start != end:
                     errors.append('Main talk timeline has a gap or overlap')
                 end = stop
-            if end != TALK_SECONDS or manifest.get('talk_timing_seconds') != TALK_SECONDS:
-                errors.append('Expected the 9:20 main talk plan')
+            if end != TALK_SECONDS or manifest.get('talk_timing_seconds') != TALK_SECONDS or end > TIME_LIMIT_SECONDS - 30:
+                errors.append(f'Expected the {TALK_SECONDS // 60}:{TALK_SECONDS % 60:02d} main talk plan, at least 30 seconds inside the limit')
+            # the backups: one note each that says when to show the slide, and the same dark theme as the main talk
+            backups = script.get('backups', [])
+            if total != MAIN_SLIDES + len(backups):
+                errors.append(f'Expected {MAIN_SLIDES} main slides plus {len(backups)} backups; the deck has {total} slides')
+            for offset, entry in enumerate(backups):
+                number = MAIN_SLIDES + 1 + offset
+                name = f'ppt/notesSlides/notesSlide{number}.xml'
+                text = ' '.join(t.text or '' for t in ET.fromstring(z.read(name)).iter(DRAWING)) if name in names else ''
+                if 'SHOW THIS WHEN' not in text or squeeze(entry['text']) not in squeeze(text):
+                    errors.append(f'Backup slide {number} ({entry["key"]}) does not carry its note')
+            light = [i for i in range(2, len(slides) + 1)
+                     if SLIDE_BACKGROUND not in z.read(f'ppt/slides/slide{i}.xml').decode('utf-8').split('<p:spTree>')[0].upper()]
+            if light:
+                errors.append(f'Slides without the dark theme background: {light}')
+            else:
+                print(f'Presentation: {len(backups)} backups, each with a note, all {len(slides) - 1} slides after the cover in one theme')
             # videos must be playable media, not pictures of videos
             videos = [n for n in names if n.startswith('ppt/media/') and n.lower().endswith('.mp4')]
             video_slides = []
