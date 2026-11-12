@@ -107,6 +107,24 @@ test('After-click rows: exact targets match the engine, and step-6 values match 
   assert.equal((100 * local.no_defect.future[2].probability).toFixed(2), '11.66');
 });
 
+test('The noise-model ladder shown beside the measurement is the saved study, for the same job', () => {
+  const study = json('hardware_campaign/noise_model/results.json');
+  assert.equal(study.job_id, D.hero.precision.job_id);
+  near(D.noise_model.gate_error_scale, study.echo_fit.scale);
+  for (const key of ['local', 'full']) {
+    const row = study.featured_pair[key];
+    near(D.noise_model[key].echo_scaled.hit_rate, row.echo_scaled.hit_rate);
+    near(D.noise_model[key].ideal.hit_rate, D.hero.precision[key].ideal_probability, 1e-9);
+    near(row.measured.hit_rate, D.hero.precision[key].probability);
+    near(row.measured.answer_error_tv, D.hero.precision[key].tv_to_exact, 1e-9);
+    // the claim on screen: calibration alone is optimistic, the echo-fitted model lands within two points
+    assert.ok(D.noise_model[key].calibration.hit_rate > D.hero.precision[key].probability + 0.04);
+    assert.ok(Math.abs(D.noise_model[key].echo_scaled.hit_rate - D.hero.precision[key].probability) < 0.02);
+  }
+  assert.equal((100 * D.noise_model.local.echo_scaled.hit_rate).toFixed(1), '78.4');
+  assert.equal((100 * D.noise_model.full.echo_scaled.hit_rate).toFixed(1), '69.7');
+});
+
 test('Campaign totals and job list match the campaign summary', () => {
   const summary = json('hardware_campaign/results.json');
   assert.equal(D.backend, 'ibm_marrakesh');

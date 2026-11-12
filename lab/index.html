@@ -261,10 +261,22 @@ qc.measure(light, click[t]); qc.reset(light)</code></pre>
       <p class="jobline"><span id="hw-job"></span> · <span id="hw-campaign"></span> · raw counts, compiled circuits and calibrations are saved in <code>hardware_campaign/</code></p>
     </div>
     <div class="hw-side">
-      <div class="card kpis">
-        <div><small>ANSWER ERROR · LOWER IS BETTER</small><b><span class="cyan" id="hw-tv-local">0.118</span> <i>vs</i> <span class="amber" id="hw-tv-full">0.181</span></b><span>total-variation distance of accepted histories</span></div>
-        <div><small>IDEAL SIMULATOR · SAME CIRCUITS</small><b><span class="cyan" id="hw-ideal-local">96.1%</span> <i>vs</i> <span class="amber" id="hw-ideal-full">96.5%</span></b><span>noise costs the deeper circuit more</span></div>
-        <div><small>GATES SPENT PER ACCEPTED SHOT</small><b><span class="cyan" id="hw-gps-local">75</span> <i>vs</i> <span class="amber" id="hw-gps-full">180</span></b><span>an accounting proxy, not a speedup</span></div>
+      <div class="card">
+        <p class="eyebrow">Simulator against hardware · same compiled circuits</p>
+        <table class="mini ladder">
+          <thead><tr><th></th><th class="cyan">Local</th><th class="amber">Full</th></tr></thead>
+          <tbody>
+            <tr><td>Ideal simulator</td><td id="hw-ideal-local">96.1%</td><td id="hw-ideal-full">96.5%</td></tr>
+            <tr><td>Noise model <small id="hw-nm-note">fitted on echo circuits only</small></td><td id="hw-nm-local">78.4%</td><td id="hw-nm-full">69.7%</td></tr>
+            <tr class="strong"><td>IBM Marrakesh, measured</td><td class="cyan" id="hw-meas-local">76.9%</td><td class="amber" id="hw-meas-full">69.3%</td></tr>
+          </tbody>
+        </table>
+        <p class="hint plain">Without noise the two builds tie. A model with only gate and readout errors predicts the gap the chip showed.</p>
+        <p class="hint tech">Depolarizing gate errors from the calibration snapshot, scaled by <span id="hw-nm-scale">1.54</span>× (fitted on two echo circuits), plus in-job readout errors. Density-matrix simulation of the submitted ISA circuits.</p>
+      </div>
+      <div class="card kpis two">
+        <div><small>ANSWER ERROR · LOWER IS BETTER</small><b><span class="cyan" id="hw-tv-local">0.118</span> <i>vs</i> <span class="amber" id="hw-tv-full">0.181</span></b><span>TV distance of accepted histories from exact</span></div>
+        <div><small>GATES PER ACCEPTED SHOT</small><b><span class="cyan" id="hw-gps-local">75</span> <i>vs</i> <span class="amber" id="hw-gps-full">180</span></b><span>an accounting proxy, not a speedup</span></div>
       </div>
       <div class="card">
         <p class="eyebrow">The after-click answer on hardware · step 6</p>

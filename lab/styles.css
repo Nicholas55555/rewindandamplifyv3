@@ -198,6 +198,14 @@ input[type="range"] { width: 100%; accent-color: var(--cyan); }
 .who-list b { color: var(--ink); font-weight: 600; }
 .hw-side { display: grid; gap: 12px; align-content: start; min-height: 0; overflow: auto; }
 .kpis { grid-template-columns: 1fr; gap: 9px; }
+.kpis.two { grid-template-columns: 1fr 1fr; gap: 16px; }
+.kpis.two div { border-top: 0; padding-top: 0; }
+table.ladder td, table.ladder th { text-align: right; font-size: 15px; }
+table.ladder td:first-child, table.ladder th:first-child { text-align: left; }
+table.ladder td small { display: block; font-size: 11.5px; color: var(--muted); font-family: var(--sans); }
+table.ladder tr.strong td { font-size: 19px; font-weight: 600; border-bottom: 0; color: var(--ink); }
+table.ladder tr.strong td.cyan { color: var(--cyan); } table.ladder tr.strong td.amber { color: var(--amber); }
+table.mini th.cyan { color: var(--cyan); } table.mini th.amber { color: var(--amber); }
 .kpis div { display: grid; border-top: 1px solid var(--line); padding-top: 7px; }
 .kpis div:first-child { border-top: 0; padding-top: 0; }
 .kpis b { font-family: var(--mono); font-size: clamp(20px, 1.9vw, 28px); font-weight: 500; }

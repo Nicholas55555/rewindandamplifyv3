@@ -1,0 +1,655 @@
+{
+ "schema": "ra-noise-model-study-v1",
+ "run": "original_precision_v1",
+ "job_id": "dbqb1ifv5hds73dfo310",
+ "backend": "ibm_marrakesh",
+ "calibration_snapshot": "2026-11-11 05:07:21-05:00",
+ "model": "Depolarizing sx, x and cz errors at the reported average gate infidelities, exact rz, and per-qubit readout assignment errors measured by this job's own all-zeros and all-ones circuits. No idle decoherence, crosstalk, leakage or drift. Exact density-matrix probabilities, so no shot noise.",
+ "readout_errors": {
+  "109": {
+   "job": [
+    0.00537109375,
+    0.019287109375
+   ],
+   "reported": [
+    0.0126953125,
+    0.0126953125
+   ]
+  },
+  "110": {
+   "job": [
+    0.01806640625,
+    0.0107421875
+   ],
+   "reported": [
+    0.0107421875,
+    0.0146484375
+   ]
+  },
+  "111": {
+   "job": [
+    0.0096435546875,
+    0.020751953125
+   ],
+   "reported": [
+    0.015625,
+    0.0185546875
+   ]
+  },
+  "112": {
+   "job": [
+    0.01025390625,
+    0.0220947265625
+   ],
+   "reported": [
+    0.00390625,
+    0.01171875
+   ]
+  },
+  "118": {
+   "job": [
+    0.0020751953125,
+    0.0252685546875
+   ],
+   "reported": [
+    0.0009765625,
+    0.0263671875
+   ]
+  },
+  "127": {
+   "job": [
+    0.0146484375,
+    0.037353515625
+   ],
+   "reported": [
+    0.0458984375,
+    0.021484375
+   ]
+  },
+  "128": {
+   "job": [
+    0.022216796875,
+    0.04541015625
+   ],
+   "reported": [
+    0.005859375,
+    0.0341796875
+   ]
+  },
+  "129": {
+   "job": [
+    0.0023193359375,
+    0.013916015625
+   ],
+   "reported": [
+    0.001953125,
+    0.01171875
+   ]
+  },
+  "137": {
+   "job": [
+    0.002197265625,
+    0.018310546875
+   ],
+   "reported": [
+    0.0009765625,
+    0.0107421875
+   ]
+  },
+  "147": {
+   "job": [
+    0.0023193359375,
+    0.1317138671875
+   ],
+   "reported": [
+    0.01171875,
+    0.01171875
+   ]
+  }
+ },
+ "echo_fit": {
+  "scale": 1.5423,
+  "echoes": [
+   {
+    "circuit": "echo-T3-x1",
+    "two_qubit_gates": 43,
+    "measured_return": 0.7635498046875,
+    "shots": 8192,
+    "calibration_return": 0.8291867691954918,
+    "echo_scaled_return": 0.7687200032769941,
+    "measured_error_per_two_qubit_gate": 0.0062542422587058555,
+    "calibration_error_per_two_qubit_gate": 0.004346569336720063
+   },
+   {
+    "circuit": "echo-T5-x1",
+    "two_qubit_gates": 101,
+    "measured_return": 0.5867919921875,
+    "shots": 8192,
+    "calibration_return": 0.686546583583164,
+    "echo_scaled_return": 0.583602806520923,
+    "measured_error_per_two_qubit_gate": 0.005264163584995596,
+    "calibration_error_per_two_qubit_gate": 0.0037166523186396017
+   }
+  ],
+  "meaning": "Multiplier on every reported gate error that best reproduces the two echo circuits. It absorbs idle decoherence, crosstalk and drift, which the model does not represent."
+ },
+ "featured_pair": {
+  "local": {
+   "circuit": "click3-steered-memory+last-1-r1",
+   "two_qubit_gates": 58,
+   "shots": 8192,
+   "logical_qubits": 5,
+   "measured": {
+    "hit_rate": 0.76904296875,
+    "answer_error_tv": 0.11772082482363419
+   },
+   "measured_hit_wilson95": [
+    0.7597918489622243,
+    0.7780418831990944
+   ],
+   "ideal": {
+    "hit_rate": 0.9610172483426277,
+    "answer_error_tv": 0.03528976823366502
+   },
+   "calibration": {
+    "hit_rate": 0.8315312583605245,
+    "answer_error_tv": 0.06965985675172215
+   },
+   "echo_scaled": {
+    "hit_rate": 0.7840236972611713,
+    "answer_error_tv": 0.08904274277728425
+   },
+   "calibration_reported_readout": {
+    "hit_rate": 0.8393774960475928,
+    "answer_error_tv": 0.07538906470562773
+   }
+  },
+  "full": {
+   "circuit": "click3-steered-full-r1",
+   "two_qubit_gates": 125,
+   "shots": 8192,
+   "logical_qubits": 7,
+   "measured": {
+    "hit_rate": 0.692626953125,
+    "answer_error_tv": 0.18138711662528023
+   },
+   "measured_hit_wilson95": [
+    0.6825469858242973,
+    0.7025263487267738
+   ],
+   "ideal": {
+    "hit_rate": 0.9649002179026761,
+    "answer_error_tv": 3.0619902230064056e-16
+   },
+   "calibration": {
+    "hit_rate": 0.7628821918807279,
+    "answer_error_tv": 0.11124685124803713
+   },
+   "echo_scaled": {
+    "hit_rate": 0.6972459797417891,
+    "answer_error_tv": 0.1654644103550177
+   },
+   "calibration_reported_readout": {
+    "hit_rate": 0.761783559068228,
+    "answer_error_tv": 0.1042336256522737
+   }
+  }
+ },
+ "hit_rate_gap_local_minus_full": {
+  "measured": 0.076416015625,
+  "ideal": -0.0038829695600484104,
+  "calibration": 0.06864906647979663,
+  "echo_scaled": 0.08677771751938212
+ },
+ "after_click": [
+  {
+   "circuit": "loop-defect-r0",
+   "two_qubit_gates": 88,
+   "shots": 8192,
+   "logical_qubits": 10,
+   "measured": {
+    "hit_rate": 0.0755615234375,
+    "answer_error_tv": 0.3894460384523399,
+    "later_click_rates": [
+     0.17609046849757673,
+     0.19063004846526657,
+     0.13408723747980614
+    ]
+   },
+   "measured_hit_wilson95": [
+    0.0700350985686263,
+    0.0814858239699831
+   ],
+   "ideal": {
+    "hit_rate": 0.03954181605860478,
+    "answer_error_tv": 2.229546121585402e-15,
+    "later_click_rates": [
+     0.00974439133622758,
+     0.03017519959596588,
+     0.046674963429853014
+    ]
+   },
+   "calibration": {
+    "hit_rate": 0.06996200815452566,
+    "answer_error_tv": 0.2912966508775275,
+    "later_click_rates": [
+     0.11130492290058157,
+     0.12304946533368462,
+     0.10969629400357422
+    ]
+   },
+   "echo_scaled": {
+    "hit_rate": 0.08339871352812403,
+    "answer_error_tv": 0.3621324598858441,
+    "later_click_rates": [
+     0.14135552652081618,
+     0.14903004581611798,
+     0.12524430528538205
+    ]
+   },
+   "calibration_reported_readout": {
+    "hit_rate": 0.07723772308895283,
+    "answer_error_tv": 0.29037581257258027,
+    "later_click_rates": [
+     0.10472437202101625,
+     0.11493111444295587,
+     0.09708011432691277
+    ]
+   }
+  },
+  {
+   "circuit": "loop-nodefect-r0",
+   "two_qubit_gates": 15,
+   "shots": 8192,
+   "logical_qubits": 8,
+   "measured": {
+    "hit_rate": 0.126220703125,
+    "answer_error_tv": 0.17296953825391942,
+    "later_click_rates": [
+     0.08123791102514506,
+     0.09477756286266925,
+     0.10058027079303675
+    ]
+   },
+   "measured_hit_wilson95": [
+    0.1192039511823038,
+    0.13358784197651766
+   ],
+   "ideal": {
+    "hit_rate": 0.10102428336359526,
+    "answer_error_tv": 1.0038419024279764e-15,
+    "later_click_rates": [
+     0.017466438509031953,
+     0.05751520564905455,
+     0.10102428336359538
+    ]
+   },
+   "calibration": {
+    "hit_rate": 0.12102284338809928,
+    "answer_error_tv": 0.08876433490092688,
+    "later_click_rates": [
+     0.04415109373876361,
+     0.0787280064152562,
+     0.11954054672517823
+    ]
+   },
+   "echo_scaled": {
+    "hit_rate": 0.12362805829535053,
+    "answer_error_tv": 0.10049176721437375,
+    "later_click_rates": [
+     0.04806511647779921,
+     0.08194147581280835,
+     0.12112242304096586
+    ]
+   },
+   "calibration_reported_readout": {
+    "hit_rate": 0.11406096504029467,
+    "answer_error_tv": 0.09942934799578096,
+    "later_click_rates": [
+     0.037285563236124045,
+     0.07403715803569562,
+     0.14704699667888793
+    ]
+   }
+  },
+  {
+   "circuit": "loop-defect-r1",
+   "two_qubit_gates": 98,
+   "shots": 8192,
+   "logical_qubits": 8,
+   "measured": {
+    "hit_rate": 0.746826171875,
+    "answer_error_tv": 0.21660207167163653,
+    "later_click_rates": [
+     0.05067015364498202,
+     0.09104282445243543,
+     0.08793723439032364
+    ]
+   },
+   "measured_hit_wilson95": [
+    0.7372958519538777,
+    0.7561251128511071
+   ],
+   "ideal": {
+    "hit_rate": 0.9610172483426264,
+    "answer_error_tv": 0.03528976823366505,
+    "later_click_rates": [
+     0.009678655720122834,
+     0.030091841675669785,
+     0.046729708344067075
+    ]
+   },
+   "calibration": {
+    "hit_rate": 0.8315312583605242,
+    "answer_error_tv": 0.17763907497887105,
+    "later_click_rates": [
+     0.039843338908896984,
+     0.07926605927875048,
+     0.07231849388499158
+    ]
+   },
+   "echo_scaled": {
+    "hit_rate": 0.7840236972611719,
+    "answer_error_tv": 0.22706526528359633,
+    "later_click_rates": [
+     0.05302041340992354,
+     0.09552813961331492,
+     0.08438163956351678
+    ]
+   },
+   "calibration_reported_readout": {
+    "hit_rate": 0.8393774960475928,
+    "answer_error_tv": 0.18922610032342863,
+    "later_click_rates": [
+     0.0471151712438523,
+     0.07212330556375457,
+     0.07210260168221307
+    ]
+   }
+  },
+  {
+   "circuit": "loop-nodefect-r1",
+   "two_qubit_gates": 32,
+   "shots": 8192,
+   "logical_qubits": 7,
+   "measured": {
+    "hit_rate": 0.873046875,
+    "answer_error_tv": 0.1231328331922322,
+    "later_click_rates": [
+     0.04753914988814318,
+     0.07843959731543625,
+     0.11661073825503356
+    ]
+   },
+   "measured_hit_wilson95": [
+    0.8656622857281064,
+    0.8800817639474787
+   ],
+   "ideal": {
+    "hit_rate": 0.9808166205401588,
+    "answer_error_tv": 0.044674001996697923,
+    "later_click_rates": [
+     0.017466438509031762,
+     0.05751520564905432,
+     0.10102428336359529
+    ]
+   },
+   "calibration": {
+    "hit_rate": 0.9208866571814107,
+    "answer_error_tv": 0.11284738464230802,
+    "later_click_rates": [
+     0.02932432897469316,
+     0.08589555346256814,
+     0.10897091303911248
+    ]
+   },
+   "echo_scaled": {
+    "hit_rate": 0.8962026445363579,
+    "answer_error_tv": 0.1315101507413887,
+    "later_click_rates": [
+     0.03301938587891928,
+     0.09123095944862031,
+     0.11286987906017214
+    ]
+   },
+   "calibration_reported_readout": {
+    "hit_rate": 0.9167397847142265,
+    "answer_error_tv": 0.1061369980591868,
+    "later_click_rates": [
+     0.03657946659176455,
+     0.07140344300790692,
+     0.10889168798402522
+    ]
+   }
+  },
+  {
+   "circuit": "loop-defect-full-r1",
+   "two_qubit_gates": 182,
+   "shots": 8192,
+   "logical_qubits": 10,
+   "measured": {
+    "hit_rate": 0.6605224609375,
+    "answer_error_tv": 0.2870710485393001,
+    "later_click_rates": [
+     0.09111070042506006,
+     0.09813343189798558,
+     0.12899648863426355
+    ]
+   },
+   "measured_hit_wilson95": [
+    0.6501951346224706,
+    0.6706993108367554
+   ],
+   "ideal": {
+    "hit_rate": 0.9649002179026751,
+    "answer_error_tv": 5.351043021941483e-16,
+    "later_click_rates": [
+     0.009744391336227703,
+     0.030175199595966574,
+     0.046674963429852966
+    ]
+   },
+   "calibration": {
+    "hit_rate": 0.7448313084220195,
+    "answer_error_tv": 0.21119496621338718,
+    "later_click_rates": [
+     0.06350895173314886,
+     0.07641239280711765,
+     0.08523314041995794
+    ]
+   },
+   "echo_scaled": {
+    "hit_rate": 0.680804784704271,
+    "answer_error_tv": 0.2989587273146798,
+    "later_click_rates": [
+     0.08652882217678923,
+     0.09721234123758933,
+     0.10363149046453125
+    ]
+   },
+   "calibration_reported_readout": {
+    "hit_rate": 0.7498552533458711,
+    "answer_error_tv": 0.24080456730280855,
+    "later_click_rates": [
+     0.06914046386623805,
+     0.08355169417930484,
+     0.08495882418409367
+    ]
+   }
+  },
+  {
+   "circuit": "loop-nodefect-full-r1",
+   "two_qubit_gates": 56,
+   "shots": 8192,
+   "logical_qubits": 8,
+   "measured": {
+    "hit_rate": 0.8111572265625,
+    "answer_error_tv": 0.16550970926368497,
+    "later_click_rates": [
+     0.044996237772761474,
+     0.07960872836719338,
+     0.10865312264860798
+    ]
+   },
+   "measured_hit_wilson95": [
+    0.8025368014917689,
+    0.8194859676911717
+   ],
+   "ideal": {
+    "hit_rate": 1.0000000000000002,
+    "answer_error_tv": 5.885960126894533e-16,
+    "later_click_rates": [
+     0.017466438509032078,
+     0.0575152056490547,
+     0.10102428336359548
+    ]
+   },
+   "calibration": {
+    "hit_rate": 0.9027161405987685,
+    "answer_error_tv": 0.07904565489763954,
+    "later_click_rates": [
+     0.029260805725163572,
+     0.06591527635660449,
+     0.11263174827230513
+    ]
+   },
+   "echo_scaled": {
+    "hit_rate": 0.8659822595457709,
+    "answer_error_tv": 0.10427893052334737,
+    "later_click_rates": [
+     0.03472016113278021,
+     0.06965855767232515,
+     0.11385834306894388
+    ]
+   },
+   "calibration_reported_readout": {
+    "hit_rate": 0.9093665082497578,
+    "answer_error_tv": 0.10283783660116279,
+    "later_click_rates": [
+     0.028205877907872344,
+     0.0657318146430569,
+     0.14228491665319573
+    ]
+   }
+  },
+  {
+   "circuit": "loop-defect-memory-r1",
+   "two_qubit_gates": 93,
+   "shots": 8192,
+   "logical_qubits": 8,
+   "measured": {
+    "hit_rate": 0.7606201171875,
+    "answer_error_tv": 0.21045474307250867,
+    "later_click_rates": [
+     0.05231904991173166,
+     0.09661370566522227,
+     0.0845771144278607
+    ]
+   },
+   "measured_hit_wilson95": [
+    0.7512591316507887,
+    0.7697367931062055
+   ],
+   "ideal": {
+    "hit_rate": 0.9610172483426265,
+    "answer_error_tv": 0.035289768233664885,
+    "later_click_rates": [
+     0.009678655720123,
+     0.030091841675670042,
+     0.04672970834406729
+    ]
+   },
+   "calibration": {
+    "hit_rate": 0.8549461362107779,
+    "answer_error_tv": 0.18364588386083272,
+    "later_click_rates": [
+     0.057040261787602096,
+     0.07259300343703368,
+     0.07182584303790474
+    ]
+   },
+   "echo_scaled": {
+    "hit_rate": 0.8126933273872087,
+    "answer_error_tv": 0.23410567977696697,
+    "later_click_rates": [
+     0.0726442368459045,
+     0.08997928651372096,
+     0.08430125815887286
+    ]
+   },
+   "calibration_reported_readout": {
+    "hit_rate": 0.8568016851449419,
+    "answer_error_tv": 0.1938297171597319,
+    "later_click_rates": [
+     0.04985142119947809,
+     0.0783269837986821,
+     0.07072522935210017
+    ]
+   }
+  },
+  {
+   "circuit": "loop-nodefect-memory-r1",
+   "two_qubit_gates": 23,
+   "shots": 8192,
+   "logical_qubits": 7,
+   "measured": {
+    "hit_rate": 0.6644287109375,
+    "answer_error_tv": 0.2668665163977441,
+    "later_click_rates": [
+     0.08340988425500644,
+     0.05107477494029028,
+     0.03968399779533346
+    ]
+   },
+   "measured_hit_wilson95": [
+    0.654128597330731,
+    0.6745746863449932
+   ],
+   "ideal": {
+    "hit_rate": 0.7428602862805945,
+    "answer_error_tv": 0.22845084383123482,
+    "later_click_rates": [
+     0.07041328944556659,
+     0.018390911980474205,
+     0.008424406538322712
+    ]
+   },
+   "calibration": {
+    "hit_rate": 0.7243413827627612,
+    "answer_error_tv": 0.2527361819070043,
+    "later_click_rates": [
+     0.07844359062049912,
+     0.052169978660958544,
+     0.02515158377128324
+    ]
+   },
+   "echo_scaled": {
+    "hit_rate": 0.7165035753420324,
+    "answer_error_tv": 0.25952853726556413,
+    "later_click_rates": [
+     0.08041757312929582,
+     0.0586459769327412,
+     0.032646299610678504
+    ]
+   },
+   "calibration_reported_readout": {
+    "hit_rate": 0.719502797414264,
+    "answer_error_tv": 0.2587950226627876,
+    "later_click_rates": [
+     0.08543816080697719,
+     0.03646883603891747,
+     0.024710541500466032
+    ]
+   }
+  }
+ ],
+ "source_sha256": {
+  "hardware_campaign/noise_model/run_study.py": "b9f7e67af1bbf3845689f47658a3eb5bd93fdc8be2a11938d596a7e5c10983ff",
+  "hardware_campaign/noise_model/simulate.py": "82b5fecd2e09c6b35b0414aa4c2bd43e74f7350252738420c8688437b3eeaf7a",
+  "hardware_campaign/original_bundle_v2/manifest.json": "876c4421860182e9d7195f1a06a6dbcf47db0cdf7cc8ce7bf7ede76289deb1f9",
+  "hardware_campaign/runs/original_precision_v1/backend_properties.json": "5f65673ee3b68766b315a7c59872fad0860ae0b58a3d5b20175480c69f100c88",
+  "hardware_campaign/runs/original_precision_v1/plan.json": "118c64063259fb04517e84ba2400a8092c14f227b38c02f95852c07c3ae430b3",
+  "hardware_campaign/runs/original_precision_v1/raw.json": "0b083d0f98ee00abfb0de641c8e4c17cdd1e3db3359b9050cc6168226204f22c",
+  "hardware_campaign/runs/original_precision_v1/selected_isa.qpy": "c482c443b770a4c925292ded7939804231f4c768b0fc87b178964fc9f922b65e"
+ }
+}

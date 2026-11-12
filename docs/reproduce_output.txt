@@ -1,0 +1,38 @@
+REWIND & AMPLIFY: reproduce the headline numbers (no IBM account, no network)
+
+1. The exact model: one small matrix per recorded bit
+-----------------------------------------------------
+                                          with the defect    emitter only
+   chance of a click at step 3                      3.95%          10.10%
+   click at step 4, given one at step 3             0.97%           1.75%
+   click at step 5, given one at step 3             3.02%           5.75%
+   click at step 6, given one at step 3             4.67%          10.10%
+   Ordinary sampling keeps 1 run in 25.3 and throws the rest away.
+
+2. The Qiskit circuits on an ideal simulator (Aer statevector)
+--------------------------------------------------------------
+   build                                  qubits  hit rate  answer error   sampled 20,000 shots
+   plain sampling (no amplification)           7     3.95%        0.0000            780 hits
+   textbook: full reflection, 1 round          7    31.93%        0.0000          6,356 hits
+   steer + full reflection, 1 round            7    96.49%        0.0000         19,298 hits
+   steer + local reflection, 1 round           5    96.10%        0.0353         19,222 hits
+   Full reflection leaves the conditional answer untouched: worst error 7.5e-17.
+   Local reflection trades a small bias for about half the gates.
+
+3. The classical baseline we must beat (and do not, at this size)
+-----------------------------------------------------------------
+   Exact conditional sampler, no rejection: P(click at 3) = 3.95%, 0.05 ms per sample in Python.
+   Rejection sampling: 25.3 model runs per kept sample.  Amplified: 3 calls, hit rate 96%.
+   So today the classical sampler wins. Its cost grew about 6x per added hidden qubit in our tests;
+   amplification instead costs about 1/sqrt(p) calls of the machine, whatever the memory size.
+
+4. What ran on IBM Marrakesh on 11 November 2026 (job dbqb1ifv5hds73dfo310, 8,192 shots per circuit)
+----------------------------------------------------------------------------------------------------
+   build                        2-qubit gates    ideal  noise model   measured    hits  answer error
+   steer + local reflection                58   96.10%       78.40%     76.90%   6,300        0.1177
+   steer + full reflection                125   96.49%       69.72%     69.26%   5,674        0.1814
+   Noise model: reported gate errors x 1.54 (fitted only on two echo circuits) and in-job readout errors.
+   After-click answer at step 6, local build: 8.79% with the defect, 11.66% without (exact 4.67% and 10.10%).
+   Right order, visibly biased. These are raw counts with no error mitigation.
+
+Done in about 10 s. Nothing above claims a quantum speedup: at this size the classical sampler is faster.

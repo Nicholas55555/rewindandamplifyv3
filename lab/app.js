@@ -583,6 +583,11 @@
     $('hw-full-gates').textContent = `${F.two_qubit_gates} two-qubit gates · depth ${F.depth}`;
     $('hw-tv-local').textContent = L.tv_to_exact.toFixed(3); $('hw-tv-full').textContent = F.tv_to_exact.toFixed(3);
     $('hw-ideal-local').textContent = pct(L.ideal_probability, 1); $('hw-ideal-full').textContent = pct(F.ideal_probability, 1);
+    const nm = DATA.noise_model;
+    $('hw-nm-local').textContent = pct(nm.local.echo_scaled.hit_rate, 1); $('hw-nm-full').textContent = pct(nm.full.echo_scaled.hit_rate, 1);
+    $('hw-nm-note').textContent = hw.run === 'suppressed' ? 'fitted on echo circuits only · models no DD or twirling' : 'fitted on echo circuits only';
+    $('hw-nm-scale').textContent = nm.gate_error_scale.toFixed(2);
+    $('hw-meas-local').textContent = pct(L.probability, 1); $('hw-meas-full').textContent = pct(F.probability, 1);
     $('hw-gps-local').textContent = L.gates_per_accepted_shot.toFixed(0); $('hw-gps-full').textContent = F.gates_per_accepted_shot.toFixed(0);
     const plain = DATA.variants['click3-full-r0'];
     $('hw-plain-rate').textContent = pct(plain.probability);
@@ -607,7 +612,7 @@
     }
     hw.u = reduced ? 1 : 0;
   }
-  function drawShots(id, row, color) {
+  function drawShots(id, row, color, predicted) {
     const { ctx, w, h } = fit($(id));
     const rows = row.shots > 4096 ? 32 : 16, cols = row.shots / rows, cw = w / cols, chh = h / rows, lit = Math.round(row.accepted * ease(hw.u));
     ctx.fillStyle = rgba(C.blue, 0.13);
@@ -617,6 +622,11 @@
     const ix = row.ideal_probability * w;
     line(ctx, ix, 0, ix, h, C.ink, 1.5);
     text(ctx, `ideal ${pct(row.ideal_probability, 1)}`, ix - 6, 13, { align: 'right', size: 11, color: C.ink, mono: true });
+    if (predicted !== undefined) {
+      const px = predicted * w;
+      ctx.setLineDash([4, 4]); line(ctx, px, 0, px, h, C.ink, 1.5); ctx.setLineDash([]);
+      text(ctx, `model ${pct(predicted, 1)}`, px + 6, h - 7, { size: 11, color: C.ink, mono: true });
+    }
   }
 
   // ------------------------------------------------------------------ frame loop
@@ -628,6 +638,7 @@
     requestAnimationFrame(frame);
   }
   function render(dt, now) {
+    advanceTour(dt);
     advance(dt);
     if (bench.parentNode) drawBench(now);
     if (state.scene === 'signal') drawRates();
@@ -637,9 +648,9 @@
     else if (state.scene === 'answer') drawAnswer();
     else if (state.scene === 'hardware') {
       if (hw.u < 1) hw.u = Math.min(1, hw.u + dt / 1100);
-      drawShots('shots-local', DATA.hero[hw.run].local, C.cyan); drawShots('shots-full', DATA.hero[hw.run].full, C.amber);
+      drawShots('shots-local', DATA.hero[hw.run].local, C.cyan, DATA.noise_model.local.echo_scaled.hit_rate);
+      drawShots('shots-full', DATA.hero[hw.run].full, C.amber, DATA.noise_model.full.echo_scaled.hit_rate);
     }
-    advanceTour(dt);
   }
   function drawStatic() { if (state.scene === 'rewind') { renderAmpText(); } }
 

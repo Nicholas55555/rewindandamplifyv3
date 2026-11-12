@@ -39,6 +39,7 @@
 !/lab/
 !/media/
 !/index.html
+!/.nojekyll
 !/Rewind_Amplify_Lab.html
 !/reproduce.py
 !/animations/
