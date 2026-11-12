@@ -1,4 +1,4 @@
-"""Build/check the single-file v2 demo using only the Python standard library.
+"""Build/check the single-file research explorer using only the Python standard library.
 
 The folder app is the source. All its scripts, styles, videos and evidence are
 embedded unchanged; the portable edition saves evidence links as named files.
@@ -16,7 +16,7 @@ import re
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-OUTPUT = ROOT / 'Rewind_Amplify_v2_Demo.html'
+OUTPUT = ROOT / 'Rewind_Amplify_Research_Explorer.html'
 MANIFEST = HERE / 'standalone_manifest.json'
 MIMES = {'.mp4': 'video/mp4', '.png': 'image/png', '.json': 'application/json',
          '.md': 'text/plain;charset=utf-8', '.csv': 'text/csv;charset=utf-8',
@@ -82,10 +82,13 @@ def build() -> tuple[bytes, bytes]:
         return f'{attr}="data:{entry["mime"]};base64,{blobs[entry["sha256"]]}"'
 
     html = re.sub(r'(poster|src)="(assets/[^"]+)"', media, html)
-    html = html.replace('<title>Rewind & Amplify · Quantum histories lab</title>',
-                        '<title>Rewind & Amplify V2 · Portable demo</title>')
+    html = html.replace('<title>Rewind & Amplify · Research explorer</title>',
+                        '<title>Rewind & Amplify · Research explorer (single file)</title>')
+    # The single file sits at the repository root, beside the single-file Lab.
+    assert html.count('href="../lab/index.html"') == 1
+    html = html.replace('href="../lab/index.html"', 'href="Rewind_Amplify_Lab.html"')
     notice = ('<p class="caption" style="max-width:1370px;margin:16px auto;padding:0 24px">'
-              '<strong>V2 · Single-file offline demo.</strong> '
+              '<strong>Research explorer · single-file offline edition.</strong> '
               'Evidence links save embedded files. External citations and IBM portal links need internet. '
               'All interactive results and both videos work offline.</p>\n')
     registry = json.dumps({'files': files, 'blobs': blobs}, separators=(',', ':'), sort_keys=True)

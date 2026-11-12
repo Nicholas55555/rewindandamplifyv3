@@ -293,7 +293,7 @@ def check(html: Path, output: Path | None = None) -> dict:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--html", type=Path, default=ROOT / "Rewind_Amplify_v2_Demo.html")
+    parser.add_argument("--html", type=Path, default=ROOT / "Rewind_Amplify_Research_Explorer.html")
     parser.add_argument("--output", type=Path, help="Optional receipt/screenshots directory beneath .publication-audit")
     arguments = parser.parse_args()
     result = check(arguments.html.resolve(), arguments.output)
