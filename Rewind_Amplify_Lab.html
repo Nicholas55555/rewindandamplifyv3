@@ -1,0 +1,1784 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Rewind & Amplify Lab: a live, exact simulation of a quantum recurrent state machine, amplitude amplification on its click histories, and the IBM hardware results.">
+<title>Rewind & Amplify · Lab</title>
+<meta name="generator" content="lab/build.py from sources 904d51775701">
+<style>
+/* Rewind & Amplify Lab. One dark theme, sized for a projector first and a laptop second. No external assets. */
+:root {
+  --bg: #050d16;
+  --bg-2: #0a1724;
+  --panel: #0f2030;
+  --panel-2: #132a3d;
+  --line: #22394b;
+  --line-2: #2f4b61;
+  --ink: #f6f3eb;
+  --soft: #c9d5dd;
+  --muted: #8fa4b3;
+  --cyan: #64d9e9;
+  --amber: #edb568;
+  --violet: #b9a8e5;
+  --blue: #7ea6c4;
+  --red: #f08a7c;
+  --green: #86d6a4;
+  --sans: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono: "Cascadia Mono", "Cascadia Code", Consolas, "SF Mono", ui-monospace, Menlo, monospace;
+  --radius: 14px;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.45;
+  display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100vh; overflow: hidden;
+  background-image:
+    radial-gradient(1100px 520px at 78% -10%, rgba(100, 217, 233, .10), transparent 62%),
+    radial-gradient(900px 480px at 8% 108%, rgba(237, 181, 104, .07), transparent 60%),
+    linear-gradient(rgba(126, 166, 196, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(126, 166, 196, .045) 1px, transparent 1px);
+  background-size: auto, auto, 56px 56px, 56px 56px;
+  background-attachment: fixed;
+}
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+code, pre { font-family: var(--mono); }
+h1, h3, p { margin: 0; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--bg); padding: 8px 12px; border-radius: 8px; z-index: 20; }
+.skip:focus { left: 8px; }
+.cyan { color: var(--cyan); } .amber { color: var(--amber); } .violet { color: var(--violet); }
+
+/* ───────── header ───────── */
+.top { display: flex; align-items: center; gap: 20px; padding: 10px 26px; border-bottom: 1px solid var(--line); background: rgba(5, 13, 22, .86); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 10; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); flex: none; }
+.brand-mark { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--cyan); position: relative; display: grid; place-items: center; }
+.brand-mark i { position: absolute; border-radius: 50%; border: 1.5px solid var(--cyan); opacity: .55; }
+.brand-mark i:nth-child(1) { inset: 6px; } .brand-mark i:nth-child(2) { inset: 11px; opacity: .8; }
+.brand-mark i:nth-child(3) { width: 6px; height: 6px; background: var(--amber); border: 0; opacity: 1; }
+.brand-text { font-weight: 700; letter-spacing: .14em; font-size: 14px; display: grid; }
+.brand-text small { font-weight: 500; letter-spacing: .16em; font-size: 10px; color: var(--muted); margin-top: 2px; }
+.scenes { display: flex; gap: 2px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+.scenes button { background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 12px; color: var(--muted); font-size: 14px; white-space: nowrap; }
+.scenes button span { font-family: var(--mono); font-size: 11px; margin-right: 7px; color: var(--line-2); }
+.scenes button:hover { color: var(--ink); }
+.scenes button[aria-current="true"] { color: var(--ink); border-bottom-color: var(--cyan); }
+.scenes button[aria-current="true"] span { color: var(--cyan); }
+.top-tools { display: flex; gap: 10px; align-items: center; flex: none; }
+.seg { display: inline-flex; border: 1px solid var(--line-2); border-radius: 999px; overflow: hidden; }
+.seg button { background: none; border: 0; padding: 6px 13px; font-size: 13px; color: var(--muted); }
+.seg button[aria-pressed="true"] { background: var(--cyan); color: #04121b; font-weight: 600; }
+.seg.wide { display: grid; grid-template-columns: 1fr 1fr; border-radius: 12px; width: 100%; }
+.seg.wide button { padding: 9px 10px; display: grid; gap: 1px; font-size: 14px; }
+.seg.wide small { font-size: 11px; opacity: .8; }
+.ghost { background: none; border: 1px solid var(--line-2); border-radius: 999px; padding: 6px 14px; font-size: 13px; color: var(--ink); }
+.ghost:hover, .ghost[aria-pressed="true"] { border-color: var(--amber); color: var(--amber); }
+
+/* ───────── scenes ───────── */
+main { padding: 14px 26px 10px; max-width: 1840px; width: 100%; margin: 0 auto; outline: none; min-height: 0; overflow: auto; }
+.scene { display: grid; gap: 12px; animation: rise .45s ease both; height: 100%; grid-template-rows: auto minmax(0, 1fr) auto; }
+.scene[hidden] { display: none; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.eyebrow { font-size: 11.5px; letter-spacing: .17em; text-transform: uppercase; color: var(--cyan); font-weight: 600; }
+.eyebrow.amber { color: var(--amber); }
+.scene-head { display: grid; gap: 6px; max-width: 1180px; }
+.scene-head h1 { font-size: clamp(28px, 3.3vw, 50px); line-height: 1.05; letter-spacing: -.015em; font-weight: 700; }
+.scene-head h1 em { font-style: normal; color: var(--cyan); }
+.lede { font-size: clamp(15px, 1.28vw, 19px); color: var(--soft); max-width: 1020px; }
+body.level-plain .tech, body.level-tech .plain { display: none !important; }
+.card { background: linear-gradient(180deg, rgba(19, 42, 61, .86), rgba(13, 28, 42, .9)); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.card p { color: var(--soft); font-size: 14.5px; }
+.card-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.hint { font-size: 12.5px !important; color: var(--muted) !important; }
+.row { display: flex; gap: 8px; align-items: center; }
+.row.wrap { flex-wrap: wrap; }
+.pill { background: rgba(100, 217, 233, .08); border: 1px solid var(--line-2); border-radius: 999px; padding: 7px 14px; font-size: 13.5px; color: var(--ink); text-decoration: none; display: inline-block; white-space: nowrap; }
+.pill:hover { border-color: var(--cyan); }
+.pill.quiet { background: none; color: var(--muted); }
+.pill.primary { background: var(--cyan); color: #04121b; border-color: var(--cyan); font-weight: 600; }
+.pill[aria-pressed="true"] { border-color: var(--amber); color: var(--amber); background: rgba(237, 181, 104, .09); }
+.pill b { font-weight: 600; }
+canvas { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+
+.bench-slot { border: 1px solid var(--line); border-radius: var(--radius); background: radial-gradient(900px 320px at 50% 40%, rgba(100, 217, 233, .07), transparent 70%), rgba(7, 17, 27, .7); overflow: hidden; min-width: 0; min-height: 0; display: grid; }
+.scene-foot { display: grid; gap: 14px; }
+.scene-foot.three { grid-template-columns: 1.05fr .9fr 1.05fr; }
+.machine-grid { grid-template-columns: 1.35fr 1fr .95fr; }
+
+/* machine */
+#circuit { width: 100%; height: auto; }
+#circuit .wires line { stroke: var(--line-2); stroke-width: 1.5; }
+#circuit .wires line.violet { stroke: rgba(185, 168, 229, .5); }
+#circuit .wires text { fill: var(--muted); font-size: 13px; font-family: var(--mono); }
+#circuit .wires text.violet { fill: var(--violet); }
+#circuit .gate rect { fill: #0b1a28; stroke: var(--cyan); stroke-width: 1.5; transition: fill .2s, stroke-width .2s; }
+#circuit .gate text { fill: var(--ink); font-size: 15px; text-anchor: middle; font-family: var(--mono); }
+#circuit .gate text.cap { fill: var(--muted); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; font-family: var(--sans); }
+#circuit .gate.violet rect { stroke: var(--violet); } #circuit .gate.amber rect { stroke: var(--amber); }
+#circuit .gate path { fill: none; stroke: var(--amber); stroke-width: 1.5; }
+#circuit .gate.on rect { fill: rgba(100, 217, 233, .22); stroke-width: 2.5; }
+#circuit .gate.violet.on rect { fill: rgba(185, 168, 229, .24); } #circuit .gate.amber.on rect { fill: rgba(237, 181, 104, .24); }
+body.no-defect #circuit .gate.violet, body.no-defect #circuit .wires .violet { opacity: .22; }
+.meters { display: grid; gap: 10px; }
+.meter { display: grid; grid-template-columns: 1fr 64px; gap: 4px 10px; align-items: center; font-size: 13.5px; color: var(--soft); }
+.meter .track { grid-column: 1 / 2; height: 9px; border-radius: 9px; background: #0a1826; overflow: hidden; border: 1px solid var(--line); }
+.meter .track i { display: block; height: 100%; width: 0; background: var(--cyan); border-radius: 9px; transition: width .18s linear; }
+.meter b { grid-row: 1 / 3; grid-column: 2; font-family: var(--mono); font-size: 19px; text-align: right; color: var(--cyan); font-weight: 500; }
+.meter.violet .track i { background: var(--violet); } .meter.violet b { color: var(--violet); }
+.meter.amber .track i { background: var(--amber); } .meter.amber b { color: var(--amber); }
+body.no-defect .meter.violet { opacity: .3; }
+.code-card pre { margin: 0; background: #07131f; border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; font-size: 12.6px; line-height: 1.55; overflow-x: auto; color: #d7e6ee; }
+.code-card .c { color: var(--muted); }
+
+/* question */
+.question-grid { display: grid; grid-template-columns: 1.12fr 1fr; gap: 12px; min-height: 0; }
+.raster-card { grid-template-rows: auto minmax(0, 1fr); }
+.question-side { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 12px; min-height: 0; }
+.question-side .bench-slot { aspect-ratio: 900 / 330; }
+.tally { grid-template-columns: repeat(3, auto); align-content: space-evenly; align-items: end; gap: 10px 30px; }
+.big { display: grid; }
+.big small, .estimate small, .readouts small, .kpis small, .future small { font-size: 11px; letter-spacing: .15em; color: var(--muted); font-weight: 600; }
+.big b { font-family: var(--mono); font-size: clamp(26px, 3vw, 50px); font-weight: 500; line-height: 1.1; }
+.big span { font-size: 12.5px; color: var(--amber); font-family: var(--mono); }
+.big.amber b { color: var(--amber); } .big.dim b { color: var(--muted); }
+.estimate { display: grid; grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 12px; }
+.estimate b { font-family: var(--mono); font-size: clamp(28px, 3.4vw, 58px); font-weight: 500; color: var(--cyan); line-height: 1.1; }
+.estimate small { font-size: 12.5px; }
+.estimate span { font-size: 14px; }
+.estimate span { font-size: 12.5px; color: var(--muted); }
+.estimate .exact { color: var(--soft); }
+
+/* rewind */
+.rewind-grid { display: grid; grid-template-columns: 2.25fr 1fr; gap: 12px; min-height: 0; }
+.rewind-main { grid-template-rows: auto minmax(0, 1fr) auto; }
+.stages { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.stages button { background: #0b1a28; border: 1px solid var(--line); border-radius: 11px; padding: 8px 10px; text-align: left; display: grid; grid-template-columns: auto 1fr; gap: 0 9px; align-items: center; }
+.stages button span { grid-row: 1 / 3; font-family: var(--mono); font-size: 12px; color: var(--muted); width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--line-2); display: grid; place-items: center; }
+.stages button b { font-size: 15px; } .stages button small { font-size: 11.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.stages button.on { border-color: var(--cyan); background: rgba(100, 217, 233, .12); }
+.stages button.on span { background: var(--cyan); color: #04121b; border-color: var(--cyan); }
+.stages button.done span { border-color: var(--cyan); color: var(--cyan); }
+.stage-caption { font-size: 15.5px !important; color: var(--ink) !important; min-height: 2.9em; }
+.rewind-side { gap: 12px; }
+.switch-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 14.5px; }
+.switch-row small { display: block; color: var(--muted); font-size: 12px; }
+.switch { width: 46px; height: 26px; border-radius: 26px; border: 1px solid var(--line-2); background: #0a1826; position: relative; flex: none; padding: 0; }
+.switch i { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--muted); transition: transform .18s, background .18s; }
+.switch[aria-checked="true"] { background: rgba(100, 217, 233, .2); border-color: var(--cyan); }
+.switch[aria-checked="true"] i { transform: translateX(20px); background: var(--cyan); }
+.readouts { display: grid; gap: 10px; }
+.readouts div { display: grid; border-top: 1px solid var(--line); padding-top: 8px; }
+.readouts b { font-family: var(--mono); font-size: clamp(22px, 2.1vw, 32px); font-weight: 500; color: var(--cyan); line-height: 1.15; }
+.readouts span { font-size: 12.5px; color: var(--muted); }
+
+/* answer */
+.answer-grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 12px; min-height: 0; }
+.answer-grid > .card { grid-template-rows: auto minmax(0, 1fr) auto; }
+.answer-side { display: grid; gap: 12px; align-content: start; min-height: 0; overflow: auto; }
+.futures { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.future { border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; background: rgba(15, 32, 48, .85); display: grid; }
+.future b { font-family: var(--mono); font-size: clamp(30px, 3.4vw, 54px); font-weight: 500; line-height: 1.05; }
+.future span { font-size: 12.5px; color: var(--muted); }
+.future.amber { border-color: rgba(237, 181, 104, .55); } .future.amber b { color: var(--amber); }
+.future.cyan { border-color: rgba(100, 217, 233, .55); } .future.cyan b { color: var(--cyan); }
+.slider { display: grid; gap: 6px; font-size: 14.5px; }
+.slider output { font-family: var(--mono); color: var(--cyan); margin-left: 8px; }
+input[type="range"] { width: 100%; accent-color: var(--cyan); }
+.check { font-size: 13.5px; color: var(--soft); display: flex; gap: 7px; align-items: center; cursor: pointer; }
+.check input { accent-color: var(--cyan); width: 16px; height: 16px; }
+.evidence-mini code { font-size: 12px; color: var(--cyan); word-break: break-all; }
+
+/* hardware */
+.hardware-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 12px; min-height: 0; }
+.lanes { gap: 14px; align-content: space-evenly; }
+.lane canvas { height: auto; object-fit: fill; }
+.lane { display: grid; grid-template-columns: 1fr auto; gap: 6px 18px; align-items: center; }
+.lane-head { grid-column: 1 / 3; display: flex; justify-content: space-between; align-items: baseline; font-size: 15px; }
+.lane-head span { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.lane canvas { border-radius: 8px; border: 1px solid var(--line); background: #07131f; }
+.lane-num { display: grid; min-width: 190px; }
+.lane-num strong { font-family: var(--mono); font-size: clamp(30px, 3.3vw, 52px); font-weight: 500; line-height: 1; }
+.lane-num span { font-size: 12.5px; color: var(--muted); }
+.lane.cyan strong, .lane.cyan .lane-head b { color: var(--cyan); } .lane.amber strong, .lane.amber .lane-head b { color: var(--amber); }
+.baseline { display: flex; gap: 14px; align-items: baseline; border-top: 1px solid var(--line); padding-top: 10px; font-size: 14px; color: var(--soft); flex-wrap: wrap; }
+.baseline b { font-family: var(--mono); font-size: 22px; font-weight: 500; color: var(--soft); }
+.baseline small { font-size: 12.5px; color: var(--muted); }
+.who-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; font-size: 14.5px; color: var(--soft); }
+.who-list b { color: var(--ink); font-weight: 600; }
+.hw-side { display: grid; gap: 12px; align-content: start; min-height: 0; overflow: auto; }
+.kpis { grid-template-columns: 1fr; gap: 9px; }
+.kpis div { display: grid; border-top: 1px solid var(--line); padding-top: 7px; }
+.kpis div:first-child { border-top: 0; padding-top: 0; }
+.kpis b { font-family: var(--mono); font-size: clamp(20px, 1.9vw, 28px); font-weight: 500; }
+.kpis b i { font-style: normal; font-size: .55em; color: var(--muted); margin: 0 6px; }
+.kpis > div > span { font-size: 12.5px; color: var(--muted); }
+table.mini { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+table.mini th { text-align: left; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: 4px 6px; border-bottom: 1px solid var(--line); }
+table.mini td { padding: 5px 6px; border-bottom: 1px solid rgba(34, 57, 75, .6); font-family: var(--mono); color: var(--soft); }
+table.mini td:first-child { font-family: var(--sans); }
+table.mini .ok { color: var(--green); } table.mini .bad { color: var(--red); }
+p.jobline { font-family: var(--mono); font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 9px; }
+.jobline code, .jobline #hw-job { color: var(--cyan); }
+
+/* impact */
+.impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; min-height: 0; align-content: start; overflow: auto; }
+#impact { grid-template-rows: auto minmax(0, 1fr); }
+#rate-chart { height: auto; object-fit: fill; }
+.who h3 { font-size: 20px; }
+.who .stat { border-top: 1px solid var(--line); padding-top: 8px; font-size: 13.5px; }
+.who .stat b { color: var(--ink); font-family: var(--mono); font-weight: 500; }
+.chip { justify-self: start; font-size: 10.5px; letter-spacing: .13em; text-transform: uppercase; font-weight: 700; padding: 4px 9px; border-radius: 999px; border: 1px solid; }
+.chip.measured { color: var(--green); border-color: rgba(134, 214, 164, .5); }
+.chip.simulated { color: var(--cyan); border-color: rgba(100, 217, 233, .5); }
+.chip.proposed { color: var(--amber); border-color: rgba(237, 181, 104, .5); }
+.ledger ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14.5px; color: var(--soft); }
+.ledger.yes { border-color: rgba(100, 217, 233, .4); } .ledger.no { border-color: rgba(237, 181, 104, .4); }
+.links { margin-top: 2px; }
+
+/* ───────── footer ───────── */
+.bottom { display: flex; align-items: center; gap: 16px; padding: 9px 26px; border-top: 1px solid var(--line); background: rgba(5, 13, 22, .9); position: sticky; bottom: 0; z-index: 10; }
+.nav-btn { border: 1px solid var(--line-2); background: none; border-radius: 999px; padding: 8px 18px; font-size: 14.5px; }
+.nav-btn.primary { background: var(--cyan); border-color: var(--cyan); color: #04121b; font-weight: 600; }
+.nav-btn:disabled { opacity: .3; cursor: default; }
+.speed { display: flex; align-items: center; gap: 4px; font-size: 12.5px; color: var(--muted); }
+.speed span { margin-right: 4px; letter-spacing: .12em; text-transform: uppercase; font-size: 11px; }
+.speed button { background: none; border: 1px solid var(--line); border-radius: 8px; padding: 4px 9px; font-size: 12.5px; color: var(--muted); font-family: var(--mono); }
+.speed button[aria-pressed="true"] { border-color: var(--cyan); color: var(--cyan); }
+.scope { flex: 1; text-align: center; font-size: 12.5px; color: var(--muted); }
+.progress { position: absolute; left: 0; right: 0; top: -2px; height: 2px; background: transparent; }
+.progress i { display: block; height: 100%; width: 0; background: var(--amber); }
+
+/* ───────── smaller screens ───────── */
+@media (max-width: 1180px), (max-height: 640px) {
+  body { height: auto; min-height: 100vh; overflow: auto; }
+  main { overflow: visible; }
+  .scene { height: auto; grid-template-rows: none; }
+  canvas { height: auto; object-fit: fill; }
+  .question-grid, .rewind-main, .answer-grid > .card, .raster-card, .question-side { grid-template-rows: none; }
+  .answer-side, .hw-side, .impact-grid { overflow: visible; }
+}
+@media (max-width: 1180px) {
+  .scene-foot.three, .machine-grid, .rewind-grid, .answer-grid, .hardware-grid, .impact-grid, .question-grid { grid-template-columns: 1fr; }
+  .raster-card { grid-row: auto; grid-column: auto; }
+  .scenes button { padding: 6px 8px; font-size: 13px; }
+  .scope { display: none; }
+  .tally { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 720px) {
+  .top { flex-wrap: wrap; padding: 8px 12px; gap: 8px; } main { padding: 12px; } .bottom { padding: 8px 12px; gap: 8px; }
+  .stages { grid-template-columns: repeat(5, minmax(0, 1fr)); } .stages button small { display: none; }
+  .futures { grid-template-columns: 1fr; } .speed span { display: none; }
+  .lane { grid-template-columns: 1fr; } .lane-head { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .scene { animation: none; } .meter .track i, .switch i { transition: none; } }
+/* frame-by-frame capture: nothing may depend on the wall clock */
+body.capture *, body.capture *::before, body.capture *::after { animation: none !important; transition: none !important; }
+</style>
+</head>
+<body>
+<a class="skip" href="#stage">Skip to the lab</a>
+
+<header class="top">
+  <a class="brand" href="#signal" aria-label="Rewind and Amplify Lab, first scene">
+    <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="brand-text">REWIND &amp; AMPLIFY<small>FGCU QUBITS · LIVE LAB</small></span>
+  </a>
+  <nav class="scenes" aria-label="Scenes">
+    <button data-scene="signal"><span>1</span>Signal</button>
+    <button data-scene="machine"><span>2</span>Machine</button>
+    <button data-scene="question"><span>3</span>Question</button>
+    <button data-scene="rewind"><span>4</span>Rewind &amp; amplify</button>
+    <button data-scene="answer"><span>5</span>Answer</button>
+    <button data-scene="hardware"><span>6</span>IBM hardware</button>
+    <button data-scene="impact"><span>7</span>Why it matters</button>
+  </nav>
+  <div class="top-tools">
+    <div class="seg" role="group" aria-label="Explanation level">
+      <button id="level-plain" aria-pressed="true" title="Plain-language captions (T)">Plain</button>
+      <button id="level-tech" aria-pressed="false" title="Technical captions (T)">Technical</button>
+    </div>
+    <button id="tour" class="ghost" title="Play all seven scenes (45 seconds)">▶ 45 s tour</button>
+  </div>
+</header>
+
+<main id="stage" tabindex="-1">
+
+<!-- ───────────────────────── 1 · SIGNAL ───────────────────────── -->
+<section class="scene" id="signal" aria-labelledby="signal-title">
+  <div class="scene-head">
+    <p class="eyebrow">The problem</p>
+    <h1 id="signal-title">Something is hidden <em>inside the signal.</em></h1>
+    <p class="lede plain">A laser drives a tiny light source. A detector records one bit per time step: <b>click</b>, or no click. Out of sight, a defect can trade energy with the source and quietly change the pattern.</p>
+    <p class="lede tech">A driven two-level emitter leaks into a measured output mode. A hidden two-level system exchanges one excitation with it. The detector sees a binary record; the memory that shapes it is never measured.</p>
+  </div>
+  <div class="bench-slot" data-bench="large"></div>
+  <div class="scene-foot three">
+    <div class="card">
+      <p class="eyebrow amber">Who has this problem</p>
+      <ul class="who-list plain">
+        <li><b>Quantum-chip teams.</b> Unseen defects drain their qubits between calibrations.</li>
+        <li><b>Photon-source engineers.</b> Two sources can look equally bright and behave differently.</li>
+        <li><b>Anyone reading a detector.</b> A detector fault can look exactly like a defect.</li>
+      </ul>
+      <ul class="who-list tech">
+        <li><b>Superconducting qubits.</b> Two-level-system defects set coherence limits and drift in time.</li>
+        <li><b>Solid-state emitters.</b> Charge and spin environments reduce photon indistinguishability.</li>
+        <li><b>Inference.</b> Readout dead time or error can imitate a coupling, biasing the fitted model.</li>
+      </ul>
+    </div>
+    <div class="card controls-card">
+      <p class="eyebrow">Try it</p>
+      <div class="row">
+        <button id="toggle-defect" class="pill" aria-pressed="true">Hidden defect: <b>present</b></button>
+        <button id="toggle-reveal" class="pill" aria-pressed="false">Reveal what’s hidden</button>
+      </div>
+      <p class="hint">One run cannot tell you which device you have. The difference lives in the statistics.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Click rate so far, by step</p>
+      <canvas id="rate-chart" width="560" height="150" aria-label="Measured click rate at each step from the runs so far, against the exact model"></canvas>
+      <p class="hint" id="rate-note">Bars: these runs. Lines: the exact model.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 2 · MACHINE ───────────────────────── -->
+<section class="scene" id="machine" aria-labelledby="machine-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">Our model</p>
+    <h1 id="machine-title">A recurrent machine whose <em>memory is quantum.</em></h1>
+    <p class="lede plain">Every time step repeats the same four moves. The memory is two qubits that are never looked at. Only one bit comes out. We call it a QRSM: a quantum recurrent state machine.</p>
+    <p class="lede tech">Each step applies RY(θ) on the emitter, RZ(ζ) on the defect, a Givens exchange(φ), then emission into a light qubit that is measured and reset. The memory evolves under the Kraus operator K<sub>y</sub> chosen by the recorded bit y.</p>
+  </div>
+  <div class="bench-slot" data-bench="medium"></div>
+  <div class="scene-foot machine-grid">
+    <div class="card">
+      <p class="eyebrow">One step, gate by gate</p>
+      <svg id="circuit" viewBox="0 0 760 190" role="img" aria-label="One step of the machine as a circuit: drive, detune, exchange, emit, measure and reset">
+        <g class="wires">
+          <text x="8" y="44">emitter</text><line x1="92" y1="40" x2="750" y2="40"/>
+          <text x="8" y="99" class="violet">defect</text><line x1="92" y1="95" x2="750" y2="95" class="violet"/>
+          <text x="8" y="154">light</text><line x1="92" y1="150" x2="750" y2="150"/>
+        </g>
+        <g class="gate" data-phase="drive"><rect x="120" y="18" width="92" height="44" rx="8"/><text x="166" y="46">RY(θ)</text><text class="cap" x="166" y="182">drive</text></g>
+        <g class="gate violet" data-phase="exchange"><rect x="236" y="73" width="92" height="44" rx="8"/><text x="282" y="101">RZ(ζ)</text></g>
+        <g class="gate violet" data-phase="exchange"><rect x="352" y="18" width="110" height="99" rx="8"/><text x="407" y="64">exchange</text><text x="407" y="86">(φ)</text><text class="cap" x="349" y="182">detune + exchange</text></g>
+        <g class="gate" data-phase="emit"><rect x="490" y="18" width="110" height="154" rx="8"/><text x="545" y="92">emit</text><text x="545" y="114">(γ)</text></g>
+        <g class="gate amber" data-phase="read"><rect x="622" y="128" width="124" height="44" rx="8"/><path d="M636 162 a16 16 0 0 1 32 0 M652 162 l10 -18"/><text x="710" y="156">0 / 1</text></g>
+      </svg>
+      <p class="hint tech">Same gates as <code>qrsm_grover/model.py</code>. This page simulates them exactly; a test holds it to Qiskit within 10⁻¹².</p>
+      <p class="hint plain">The animation above is not a cartoon. It runs these gates, and a test holds it to the Qiskit code.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">What the memory is doing right now</p>
+      <div class="meters">
+        <div class="meter"><span>Emitter excited</span><div class="track"><i id="m-emitter"></i></div><b id="v-emitter">0%</b></div>
+        <div class="meter violet"><span>Defect excited</span><div class="track"><i id="m-defect"></i></div><b id="v-defect">0%</b></div>
+        <div class="meter amber"><span>Chance of a click this step</span><div class="track"><i id="m-click"></i></div><b id="v-click">0%</b></div>
+      </div>
+      <p class="hint plain">Watch a click: the emitter empties, because the photon carried its energy away. The defect keeps what it had. That leftover is the hidden memory.</p>
+      <p class="hint tech">K<sub>1</sub> = sin α |0⟩⟨1| on the emitter: a click projects the emitter to ground and leaves the defect conditioned. No click also updates the state. That back-action is the recurrent update.</p>
+    </div>
+    <div class="card code-card">
+      <p class="eyebrow">In Qiskit</p>
+<pre><code><span class="c"># one step: drive, detune, exchange, emit</span>
+qc.ry(theta, emitter)
+qc.rz(zeta, defect)
+exchange(qc, phi, src=defect, dst=emitter)
+qc.cry(2*alpha, emitter, light)
+qc.cx(light, emitter)
+qc.measure(light, click[t]); qc.reset(light)</code></pre>
+      <p class="hint">θ = 0.6 · γ = 0.2 · φ = 0.45 · ζ = 0.3</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 3 · QUESTION ───────────────────────── -->
+<section class="scene" id="question" aria-labelledby="question-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">The question, and why it is expensive</p>
+    <h1 id="question-title">Given a click at step 3, <em>what happens next?</em></h1>
+    <p class="lede plain">The useful runs are the rare ones. To study them the ordinary way, you run the machine again and again and throw away every run that missed.</p>
+    <p class="lede tech">Rejection sampling costs 1/p runs per accepted sample. Here p = P(click at step 3). For one real 64-step record in our first project it was 27,495,891 runs.</p>
+  </div>
+  <div class="question-grid">
+    <div class="card raster-card">
+      <div class="card-head"><p class="eyebrow">Every run so far · the amber column is the click we asked about</p>
+        <div class="row"><button id="ff" class="pill">Fast-forward 5,000 runs</button><button id="reset-runs" class="pill quiet">Reset</button></div></div>
+      <canvas id="raster" width="900" height="560" aria-label="A raster of click records: each row is one run, each tick a click"></canvas>
+    </div>
+    <div class="question-side">
+    <div class="bench-slot" data-bench="small"></div>
+    <div class="card tally">
+      <div class="big"><small>RUNS</small><b id="t-runs">0</b></div>
+      <div class="big amber"><small>KEPT</small><b id="t-kept">0</b><span id="t-kept-rate">—</span></div>
+      <div class="big dim"><small>THROWN AWAY</small><b id="t-waste">0</b></div>
+      <div class="estimate">
+        <small>Click at step 6, given a click at step 3</small>
+        <b id="t-est">—</b>
+        <span id="t-est-note">waiting for kept runs</span>
+        <span class="exact" id="t-exact"></span>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 4 · REWIND & AMPLIFY ───────────────────────── -->
+<section class="scene" id="rewind" aria-labelledby="rewind-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">Our method</p>
+    <h1 id="rewind-title">You can’t amplify <em>what you can’t rewind.</em></h1>
+    <p class="lede plain">Grover’s trick makes rare answers common, but it must run the machine backwards, and a reset cannot be undone. So we keep every output in a fresh qubit. Now the whole run is one reversible film.</p>
+    <p class="lede tech">Deferred measurement turns T steps into one unitary A with A|0⟩ = Σ<sub>y</sub> |m<sub>y</sub>⟩|y⟩. One iteration is Q = A S<sub>0</sub> A† S<sub>f</sub>. It reweights the marked histories and leaves their conditional distribution untouched.</p>
+  </div>
+  <div class="rewind-grid">
+    <div class="card rewind-main">
+      <div class="stages" id="stages" role="group" aria-label="Stages of one amplification round">
+        <button data-stage="0"><span>1</span><b>Prepare</b><small>run the film: A</small></button>
+        <button data-stage="1"><span>2</span><b>Mark</b><small>flag the click</small></button>
+        <button data-stage="2"><span>3</span><b>Rewind</b><small>run it backwards: A†</small></button>
+        <button data-stage="3"><span>4</span><b>Reflect</b><small>flip the blank start</small></button>
+        <button data-stage="4"><span>5</span><b>Replay</b><small>run forward again</small></button>
+      </div>
+      <canvas id="amp-canvas" width="1180" height="430" aria-label="Amplitudes of the eight three-step click histories through the stages of amplification"></canvas>
+      <p class="stage-caption" id="stage-caption"></p>
+    </div>
+    <div class="card rewind-side">
+      <div class="row wrap">
+        <button id="amp-play" class="pill primary">▶ Play one round</button>
+      </div>
+      <label class="switch-row"><span>Steer the last step<small>tune one gate so the event is less rare</small></span>
+        <button id="amp-steer" class="switch" role="switch" aria-checked="true"><i></i></button></label>
+      <div class="seg wide" role="group" aria-label="Reflection">
+        <button id="amp-full" aria-pressed="false">Full reflection<small>all 5 qubits</small></button>
+        <button id="amp-local" aria-pressed="true">Local reflection<small>3 qubits</small></button>
+      </div>
+      <div class="readouts">
+        <div><small>CHANCE OF THE CLICK</small><b id="amp-hit">—</b><span id="amp-hit-note"></span></div>
+        <div><small>ERROR IN THE ANSWER</small><b id="amp-tv">—</b><span>total-variation distance from exact</span></div>
+        <div><small>TWO-QUBIT GATES ON IBM</small><b id="amp-gates">—</b><span id="amp-gates-note">after transpiling for Marrakesh</span></div>
+      </div>
+      <p class="hint plain" id="amp-insight"></p>
+      <p class="hint tech" id="amp-insight-tech"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 5 · ANSWER ───────────────────────── -->
+<section class="scene" id="answer" aria-labelledby="answer-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">What the query returns</p>
+    <h1 id="answer-title">One click. <em>Two futures.</em></h1>
+    <p class="lede plain">With no defect, a click empties the source and the machine starts over. With a hidden defect, something remembers. The pattern after the click tells the two apart.</p>
+    <p class="lede tech">With k = 0 the click operator resets the memory, so P(click at 3 + τ | click at 3) equals the fresh-run rate at step τ. A coupled defect survives the click and suppresses the later rate: the model’s version of g⁽²⁾(τ).</p>
+  </div>
+  <div class="answer-grid">
+    <div class="card">
+      <div class="card-head"><p class="eyebrow">Chance of a click at each later step, given a click at step 3</p>
+        <label class="check"><input type="checkbox" id="show-ibm"> Overlay IBM Marrakesh (measured)</label></div>
+      <canvas id="answer-canvas" width="900" height="560" aria-label="Conditional click probability at steps 4, 5 and 6 for the emitter-only and defect models"></canvas>
+      <p class="hint" id="answer-note"></p>
+    </div>
+    <div class="answer-side">
+      <div class="futures">
+        <div class="future amber"><small>EMITTER ONLY</small><b id="ans-none">10.10%</b><span>click at step 6</span></div>
+        <div class="future cyan"><small>WITH THE HIDDEN DEFECT</small><b id="ans-defect">4.67%</b><span>click at step 6</span></div>
+      </div>
+      <div class="card">
+        <label class="slider"><span>Defect coupling φ <output id="phi-out">0.45</output></span>
+          <input type="range" id="phi" min="0" max="0.9" step="0.01" value="0.45" aria-label="Defect coupling"></label>
+        <div class="row"><button id="phi-reset" class="pill quiet">Reset to 0.45</button><button id="ans-sample" class="pill">Check by sampling 20,000 runs</button></div>
+        <p class="hint" id="ans-sample-note">Slide the coupling to zero: the two futures become the same.</p>
+      </div>
+      <div class="card evidence-mini">
+        <p class="eyebrow">How this number is made</p>
+        <p class="plain">The page multiplies small matrices: one per recorded bit. No fitting, no stored answer. A test checks it against our Qiskit circuits.</p>
+        <p class="tech">P(y) = ‖K<sub>y<sub>T</sub></sub> … K<sub>y<sub>1</sub></sub>|0⟩‖², summed over histories with y<sub>3</sub> = 1. θ = 0.6, γ = 0.2, ζ = 0.3. Verified against <code>research-validation/original_after_click_verification.json</code>.</p>
+        <p class="hint">These are predictions of two programmed models, not a diagnosis of a real defect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 6 · HARDWARE ───────────────────────── -->
+<section class="scene" id="hardware" aria-labelledby="hardware-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">Real quantum hardware</p>
+    <h1 id="hardware-title">On IBM Marrakesh, <em>fewer gates won.</em></h1>
+    <p class="lede plain">We ran both builds on a 156-qubit IBM quantum computer. The lighter build found the rare click more often and gave a closer answer. Both answers were still off, and we show that too.</p>
+    <p class="lede tech">ibm_marrakesh (Heron), raw counts, no mitigation in the headline. Same steering, one round, same compiled circuits as the first run. TV compares accepted-history distributions with the exact conditional law.</p>
+  </div>
+  <div class="hardware-grid">
+    <div class="card lanes">
+      <div class="card-head"><p class="eyebrow" id="hw-run-label">Precision repeat · 8,192 shots per circuit</p>
+        <div class="seg" role="group" aria-label="Which run"><button id="hw-precision" aria-pressed="true">8,192-shot repeat</button><button id="hw-first" aria-pressed="false">First run · 2,048</button><button id="hw-supp" aria-pressed="false">With DD + twirling</button></div></div>
+      <div class="lane cyan">
+        <div class="lane-head"><b>Local reflection</b><span id="hw-local-gates">58 two-qubit gates</span></div>
+        <canvas id="shots-local" width="640" height="80" aria-label="Shots that matched, local reflection"></canvas>
+        <div class="lane-num"><strong id="hw-local-rate">76.90%</strong><span id="hw-local-count">6,300 of 8,192 shots hit the click</span></div>
+      </div>
+      <div class="lane amber">
+        <div class="lane-head"><b>Full reflection</b><span id="hw-full-gates">125 two-qubit gates</span></div>
+        <canvas id="shots-full" width="640" height="80" aria-label="Shots that matched, full reflection"></canvas>
+        <div class="lane-num"><strong id="hw-full-rate">69.26%</strong><span id="hw-full-count">5,674 of 8,192 shots hit the click</span></div>
+      </div>
+      <div class="baseline"><span>Without amplification:</span><b id="hw-plain-rate">6.74%</b><small id="hw-plain-note"></small></div>
+      <p class="hint" id="hw-diff"></p>
+      <p class="jobline"><span id="hw-job"></span> · <span id="hw-campaign"></span> · raw counts, compiled circuits and calibrations are saved in <code>hardware_campaign/</code></p>
+    </div>
+    <div class="hw-side">
+      <div class="card kpis">
+        <div><small>ANSWER ERROR · LOWER IS BETTER</small><b><span class="cyan" id="hw-tv-local">0.118</span> <i>vs</i> <span class="amber" id="hw-tv-full">0.181</span></b><span>total-variation distance of accepted histories</span></div>
+        <div><small>IDEAL SIMULATOR · SAME CIRCUITS</small><b><span class="cyan" id="hw-ideal-local">96.1%</span> <i>vs</i> <span class="amber" id="hw-ideal-full">96.5%</span></b><span>noise costs the deeper circuit more</span></div>
+        <div><small>GATES SPENT PER ACCEPTED SHOT</small><b><span class="cyan" id="hw-gps-local">75</span> <i>vs</i> <span class="amber" id="hw-gps-full">180</span></b><span>an accounting proxy, not a speedup</span></div>
+      </div>
+      <div class="card">
+        <p class="eyebrow">The after-click answer on hardware · step 6</p>
+        <table class="mini" id="hw-loop"><thead><tr><th>Build</th><th>With defect</th><th>Emitter only</th><th>Order</th></tr></thead><tbody></tbody></table>
+        <p class="hint">Exact: 4.67% and 10.10%. Only some builds recover the right order, and all are biased. This is not a defect detector.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 7 · IMPACT ───────────────────────── -->
+<section class="scene" id="impact" aria-labelledby="impact-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">Who needs this, and what we can honestly say</p>
+    <h1 id="impact-title">A way to ask hidden-memory models <em>about their rarest events.</em></h1>
+  </div>
+  <div class="impact-grid">
+    <div class="card who">
+      <span class="chip measured">Model run on IBM hardware</span>
+      <h3>Quantum hardware teams</h3>
+      <p>Hidden two-level defects change how a qubit behaves between calibrations. A physical model of the click record lets you compare explanations instead of guessing, and separate a defect from a detector error.</p>
+      <p class="stat"><b>0.069 → 0.706</b> fitted coupling once detector dead time was modelled, against a true 0.65 (synthetic records).</p>
+    </div>
+    <div class="card who">
+      <span class="chip simulated">Simulated · published data reanalysed</span>
+      <h3>Single-photon source engineers</h3>
+      <p>Photonic chips need photons that match, not just photons that arrive. Counting clicks misses that. The same hidden-memory question applies to quantum-dot sources.</p>
+      <p class="stat"><b>Same brightness, 20% to 100% overlap</b> in our four illustrative source models.</p>
+    </div>
+    <div class="card who">
+      <span class="chip proposed">Simulated · conventional sensor still ahead</span>
+      <h3>Laser and lithography metrology</h3>
+      <p>Is the light source drifting, or the sensor? We tested an added atomic reference. It helped a little. A second ordinary reference helped far more.</p>
+      <p class="stat"><b>58% vs 98%</b> timely detection: atomic channel versus a second conventional reference.</p>
+    </div>
+    <div class="card ledger yes">
+      <p class="eyebrow">What we claim</p>
+      <ul>
+        <li>A recurrent quantum model made reversible, with identical click statistics.</li>
+        <li>Amplitude amplification on its histories, with the conditional answer preserved in the ideal case.</li>
+        <li>A lighter, noise-aware build that beat the textbook build on real IBM hardware.</li>
+        <li>Every number traceable to saved counts, circuits and tests.</li>
+      </ul>
+    </div>
+    <div class="card ledger no">
+      <p class="eyebrow amber">What we do not claim</p>
+      <ul>
+        <li>No quantum speedup today. At this size an exact classical sampler is faster.</li>
+        <li>No real defect was detected. IBM qubits played the roles of a programmed model.</li>
+        <li>No photons, lasers or wafers were measured.</li>
+        <li>Amplitude amplification is established prior work. Ours is the mapping and the noise-aware design.</li>
+      </ul>
+    </div>
+    <div class="card next">
+      <p class="eyebrow">Next experiment</p>
+      <p>Fit candidate models to held-out, calibrated device records and compare against a strong classical hidden-Markov baseline. Then ask where a larger hidden memory makes the classical sampler’s cost, which grew about 6× per hidden qubit in our tests, the bottleneck.</p>
+      <div class="row wrap links">
+        <a class="pill" id="link-explorer" href="https://github.com/Nicholas55555/rewindandamplifyv3#research-explorer">Open the research explorer ↗</a>
+        <a class="pill quiet" id="link-evidence" href="../docs/EVIDENCE.md">Evidence map ↗</a>
+        <a class="pill quiet" id="link-repo" href="https://github.com/Nicholas55555/rewindandamplifyv3">Code on GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bottom">
+  <button id="prev" class="nav-btn" aria-label="Previous scene">←</button>
+  <div class="speed" role="group" aria-label="Simulation speed">
+    <span>Speed</span>
+    <button data-speed="1" aria-pressed="true">1×</button><button data-speed="4" aria-pressed="false">4×</button><button data-speed="20" aria-pressed="false">20×</button>
+    <button id="pause" aria-pressed="false" title="Pause the simulation (space)">❚❚</button>
+    <button id="sound" aria-pressed="false" title="Play a tick on every click">♪ off</button>
+  </div>
+  <p class="scope" id="scope-line">Live exact simulation in your browser · IBM numbers are saved raw counts · no quantum advantage is claimed</p>
+  <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+  <button id="next" class="nav-btn primary" aria-label="Next scene">Next →</button>
+</footer>
+
+<script data-source="lab/engine.js">
+/* Rewind & Amplify — exact QRSM engine for the browser and Node.
+
+   A gate-for-gate JavaScript port of the Qiskit package in rewindandamplify-main/qrsm_grover
+   (model.py, amplify.py, fastsim.py, queries.py). It builds the same circuits from the same gates and
+   simulates them as a statevector, so every number the Lab shows is computed, not stored.
+
+   Conventions match Qiskit: qubit 0 is the least significant bit. Qubit order is
+   (emitter, defects..., light_1 ... light_T), and a history integer uses bit t for the click at step t + 1.
+
+   lab/test_engine.cjs checks this file against the frozen Qiskit results in
+   research-validation/original_after_click_verification.json to 1e-12.
+*/
+(function (root, factory) {
+  'use strict';
+  if (typeof module !== 'undefined' && module.exports) module.exports = factory();
+  else root.QRSMEngine = factory();
+})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+  'use strict';
+
+  // The numbers from the hidden-defect project: QRSM() in qrsm_grover/model.py.
+  const DEFAULTS = Object.freeze({ theta: 0.6, gamma: 0.2, phi: 0.45, zeta: 0.3 });
+
+  /** A model: an emitter with phi.length hidden defects. `defect: false` gives the emitter-only machine. */
+  function makeModel(options) {
+    const o = Object.assign({ defect: true }, DEFAULTS, options || {});
+    const list = v => (Array.isArray(v) ? v.slice() : [v]);
+    const phi = o.defect ? list(o.phi) : [];
+    const zeta = o.defect ? list(o.zeta) : [];
+    if (phi.length !== zeta.length) throw new RangeError('phi and zeta need one entry per defect');
+    if (!(o.gamma >= 0 && o.gamma <= 1)) throw new RangeError('gamma is a probability');
+    return Object.freeze({ theta: +o.theta, gamma: +o.gamma, phi: Object.freeze(phi), zeta: Object.freeze(zeta),
+                           k: phi.length, nMemory: 1 + phi.length });
+  }
+
+  // ------------------------------------------------------------------ statevector
+
+  function zeroState(n) {
+    if (n > 20) throw new RangeError('this simulator is for small circuits');
+    const re = new Float64Array(1 << n), im = new Float64Array(1 << n);
+    re[0] = 1;
+    return { n, re, im };
+  }
+
+  function cloneState(s) {
+    return { n: s.n, re: Float64Array.from(s.re), im: Float64Array.from(s.im) };
+  }
+
+  /** Apply the 2x2 matrix [[a, b], [c, d]] to qubit q, given as [a.re, a.im, b.re, b.im, c.re, c.im, d.re, d.im].
+      With `control` set, only where that qubit is 1. */
+  function apply1(s, q, m, control) {
+    const re = s.re, im = s.im, size = re.length, bit = 1 << q;
+    const cbit = control === undefined || control === null ? 0 : 1 << control;
+    for (let i = 0; i < size; i++) {
+      if (i & bit) continue;
+      if (cbit && !(i & cbit)) continue;
+      const j = i | bit;
+      const ar = re[i], ai = im[i], br = re[j], bi = im[j];
+      re[i] = m[0] * ar - m[1] * ai + m[2] * br - m[3] * bi;
+      im[i] = m[0] * ai + m[1] * ar + m[2] * bi + m[3] * br;
+      re[j] = m[4] * ar - m[5] * ai + m[6] * br - m[7] * bi;
+      im[j] = m[4] * ai + m[5] * ar + m[6] * bi + m[7] * br;
+    }
+  }
+
+  // Qiskit's definitions: RY(t) = [[cos t/2, -sin t/2], [sin t/2, cos t/2]], RZ(l) = diag(e^{-il/2}, e^{+il/2}).
+  const ryMatrix = t => { const c = Math.cos(t / 2), s = Math.sin(t / 2); return [c, 0, -s, 0, s, 0, c, 0]; };
+  const rzMatrix = l => { const c = Math.cos(l / 2), s = Math.sin(l / 2); return [c, -s, 0, 0, 0, 0, c, s]; };
+  const X = [0, 0, 1, 0, 1, 0, 0, 0];
+
+  /** Run a list of gates. Each is ['ry', q, angle], ['rz', q, angle], ['cx', control, target] or
+      ['cry', control, target, angle]. With `inverse`, run the adjoint: reversed order, negated angles. */
+  function run(s, ops, inverse) {
+    const count = ops.length;
+    for (let i = 0; i < count; i++) {
+      const op = inverse ? ops[count - 1 - i] : ops[i];
+      const sign = inverse ? -1 : 1;
+      switch (op[0]) {
+        case 'ry': apply1(s, op[1], ryMatrix(sign * op[2])); break;
+        case 'rz': apply1(s, op[1], rzMatrix(sign * op[2])); break;
+        case 'cx': apply1(s, op[2], X, op[1]); break;
+        case 'cry': apply1(s, op[2], ryMatrix(sign * op[3]), op[1]); break;
+        default: throw new Error('unknown gate ' + op[0]);
+      }
+    }
+    return s;
+  }
+
+  /** Flip the sign of every basis state where `bit` is 1: a Z gate, the oracle for "a click at this step". */
+  function flipWhereOne(s, q) {
+    const re = s.re, im = s.im, bit = 1 << q;
+    for (let i = 0; i < re.length; i++) if (i & bit) { re[i] = -re[i]; im[i] = -im[i]; }
+  }
+
+  /** Flip the sign of every basis state where all the watched qubits are 0: the zero reflection S_0. */
+  function flipWhereAllZero(s, qubits) {
+    let mask = 0;
+    for (const q of qubits) mask |= 1 << q;
+    const re = s.re, im = s.im;
+    for (let i = 0; i < re.length; i++) if (!(i & mask)) { re[i] = -re[i]; im[i] = -im[i]; }
+  }
+
+  function probabilityWhere(s, test) {
+    let total = 0;
+    for (let i = 0; i < s.re.length; i++) if (test(i)) total += s.re[i] * s.re[i] + s.im[i] * s.im[i];
+    return total;
+  }
+
+  // ------------------------------------------------------------------ the machine
+
+  /** One step's gates in the project's order: drive, detune, exchange, emit. Emitter is qubit 0, defects 1..k. */
+  function stepOps(model, light, theta, gamma) {
+    const ops = [['ry', 0, theta === undefined || theta === null ? model.theta : theta]];
+    for (let d = 0; d < model.k; d++) ops.push(['rz', 1 + d, model.zeta[d]]);
+    for (let d = 0; d < model.k; d++) {
+      // exchange(angle, src=defect, dst=emitter): a real Givens rotation that swaps one excitation
+      ops.push(['cx', 0, 1 + d], ['cry', 1 + d, 0, 2 * model.phi[d]], ['cx', 0, 1 + d]);
+    }
+    const g = gamma === undefined || gamma === null ? model.gamma : gamma;
+    const alpha = Math.asin(Math.sqrt(g));
+    // emission into a light known to start in |0>
+    ops.push(['cry', 0, light, 2 * alpha], ['cx', light, 0]);
+    return ops;
+  }
+
+  /** The reversible machine A as a gate list: T steps, a fresh light for each, nothing measured. */
+  function purifiedOps(model, T, gammas, firstLight) {
+    const start = firstLight === undefined ? model.nMemory : firstLight;
+    let ops = [];
+    for (let t = 0; t < T; t++) ops = ops.concat(stepOps(model, start + t, null, gammas ? gammas[t] : null));
+    return ops;
+  }
+
+  // ------------------------------------------------------------------ the exact model (Kraus form)
+
+  /** K_0 and K_1: what one step does to the memory given no click, or a click. Row-major d x d complex. */
+  function kraus(model, gamma) {
+    const n = model.nMemory, d = 1 << n, ops = stepOps(model, n, null, gamma);
+    const K = [0, 1].map(() => ({ d, re: new Float64Array(d * d), im: new Float64Array(d * d) }));
+    for (let input = 0; input < d; input++) {
+      const s = { n: n + 1, re: new Float64Array(2 * d), im: new Float64Array(2 * d) };
+      s.re[input] = 1;
+      run(s, ops);
+      for (let y = 0; y < 2; y++) for (let out = 0; out < d; out++) {
+        K[y].re[out * d + input] = s.re[y * d + out];
+        K[y].im[out * d + input] = s.im[y * d + out];
+      }
+    }
+    return K;
+  }
+
+  function matVec(K, psi) {
+    const d = K.d, re = new Float64Array(d), im = new Float64Array(d);
+    for (let r = 0; r < d; r++) {
+      let xr = 0, xi = 0;
+      for (let c = 0; c < d; c++) {
+        const kr = K.re[r * d + c], ki = K.im[r * d + c];
+        xr += kr * psi.re[c] - ki * psi.im[c];
+        xi += kr * psi.im[c] + ki * psi.re[c];
+      }
+      re[r] = xr; im[r] = xi;
+    }
+    return { re, im };
+  }
+
+  const norm2 = v => { let t = 0; for (let i = 0; i < v.re.length; i++) t += v.re[i] * v.re[i] + v.im[i] * v.im[i]; return t; };
+
+  function groundMemory(model) {
+    const d = 1 << model.nMemory, psi = { re: new Float64Array(d), im: new Float64Array(d) };
+    psi.re[0] = 1;
+    return psi;
+  }
+
+  /** P(every history) by brute force: 2**T rows. Index y has bit t set for a click at step t + 1. */
+  function historyProbabilities(model, T, gammas) {
+    let branches = [groundMemory(model)];
+    for (let t = 0; t < T; t++) {
+      const K = kraus(model, gammas ? gammas[t] : null);
+      branches = branches.map(b => matVec(K[0], b)).concat(branches.map(b => matVec(K[1], b)));
+    }
+    return Float64Array.from(branches, norm2);
+  }
+
+  /** The chance each memory qubit is excited in a pure memory state: what the animation shows as glow. */
+  function populations(model, psi) {
+    const out = new Array(model.nMemory).fill(0);
+    for (let i = 0; i < psi.re.length; i++) {
+      const w = psi.re[i] * psi.re[i] + psi.im[i] * psi.im[i];
+      for (let q = 0; q < model.nMemory; q++) if ((i >> q) & 1) out[q] += w;
+    }
+    return out;
+  }
+
+  /** One measured step of a single run. Returns the click, its probability and the conditioned memory. */
+  function sampleStep(model, K, psi, random) {
+    const clicked = matVec(K[1], psi), p1 = norm2(clicked);
+    const y = random() < p1 ? 1 : 0;
+    const next = y ? clicked : matVec(K[0], psi);
+    const scale = 1 / Math.sqrt(norm2(next));
+    for (let i = 0; i < next.re.length; i++) { next.re[i] *= scale; next.im[i] *= scale; }
+    return { y, pClick: p1, psi: next };
+  }
+
+  /** The memory just before emission in one step: after drive, detune and exchange. For the animation only. */
+  function preEmission(model, psi) {
+    const n = model.nMemory, s = { n, re: Float64Array.from(psi.re), im: Float64Array.from(psi.im) };
+    const ops = stepOps(model, n).slice(0, -2);
+    const afterDrive = { n, re: Float64Array.from(psi.re), im: Float64Array.from(psi.im) };
+    run(afterDrive, ops.slice(0, 1));
+    run(s, ops);
+    return { afterDrive: populations(model, afterDrive), afterExchange: populations(model, s) };
+  }
+
+  /** A whole run of T steps. Returns the click bits and the memory populations after each step. */
+  function sampleRun(model, T, random, K) {
+    const ks = K || kraus(model);
+    let psi = groundMemory(model);
+    const bits = [], pops = [];
+    for (let t = 0; t < T; t++) {
+      const r = sampleStep(model, ks, psi, random);
+      bits.push(r.y); psi = r.psi; pops.push(populations(model, psi));
+    }
+    return { bits, populations: pops };
+  }
+
+  /** The exact answers after a click at step t0: click rates, conditional click rates and g2, for lags 1..tau. */
+  function afterClick(model, t0, tau) {
+    const T = t0 + tau, probs = historyProbabilities(model, T);
+    const at = (y, t) => ((y >> (t - 1)) & 1) === 1;
+    let pClick = 0;
+    const plain = new Array(tau).fill(0), joint = new Array(tau).fill(0);
+    for (let y = 0; y < probs.length; y++) {
+      if (at(y, t0)) pClick += probs[y];
+      for (let j = 1; j <= tau; j++) {
+        if (at(y, t0 + j)) { plain[j - 1] += probs[y]; if (at(y, t0)) joint[j - 1] += probs[y]; }
+      }
+    }
+    const conditional = joint.map(v => v / pClick);
+    return { pClick, plain, conditional, g2: conditional.map((c, i) => c / plain[i]) };
+  }
+
+  // ------------------------------------------------------------------ rewind and amplify
+
+  const rotationAngle = p => Math.asin(Math.sqrt(p));
+  /** The ideal chance of a marked outcome after r full iterations: sin^2((2r + 1) asin(sqrt(p))). */
+  const successProbability = (p, r) => Math.sin((2 * r + 1) * rotationAngle(p)) ** 2;
+  /** The emission strength for the clicked step that makes the marked probability `target`, or 1 if it cannot. */
+  const steeredGamma = (p, gamma, target) => Math.min(1, (target === undefined ? 0.25 : target) * gamma / p);
+
+  function clickProbability(model, T) {
+    const probs = historyProbabilities(model, T);
+    let p = 0;
+    for (let y = 0; y < probs.length; y++) if ((y >> (T - 1)) & 1) p += probs[y];
+    return p;
+  }
+
+  /** The emission strength for step T that makes one iteration enough, from the exact click rate. */
+  const steerFor = (model, T) => steeredGamma(clickProbability(model, T), model.gamma);
+
+  /** Named reflections: 'full', 'memory', or 'memory+last-w' for the memory and the last w lights. */
+  function reflectionQubits(model, T, kind) {
+    const n = model.nMemory, range = (a, b) => Array.from({ length: b - a }, (_, i) => a + i);
+    if (kind === 'full') return range(0, n + T);
+    if (kind === 'memory') return range(0, n);
+    if (kind.startsWith('memory+last-')) return range(0, n).concat(range(n + T - (+kind.split('-').pop()), n + T));
+    throw new RangeError('unknown reflection ' + kind);
+  }
+
+  function lightDistribution(s, nMemory, T) {
+    const out = new Float64Array(1 << T), mask = (1 << T) - 1;
+    for (let i = 0; i < s.re.length; i++) out[(i >> nMemory) & mask] += s.re[i] * s.re[i] + s.im[i] * s.im[i];
+    return out;
+  }
+
+  function conditionalDistribution(probs, marked) {
+    let total = 0;
+    for (let y = 0; y < probs.length; y++) if (marked(y)) total += probs[y];
+    return Float64Array.from(probs, (p, y) => (marked(y) ? p / total : 0));
+  }
+
+  function totalVariation(p, q) {
+    let t = 0;
+    for (let i = 0; i < p.length; i++) t += Math.abs(p[i] - q[i]);
+    return t / 2;
+  }
+
+  /** "A click at step T" amplified r times on a T-step machine. `stages` keeps every sub-step for the animation.
+
+      One iteration is: mark (Z on the last light), rewind (A dagger), reflect about zero on the watched qubits,
+      replay (A). Watching every qubit is textbook amplitude amplification; watching fewer is cheaper and approximate. */
+  function amplifiedHistory(model, T, options) {
+    const o = Object.assign({ r: 1, reflection: 'full', steer: null, stages: false }, options || {});
+    const n = model.nMemory, markQubit = n + T - 1;
+    const gammas = o.steer === null ? null : Array.from({ length: T }, (_, t) => (t === T - 1 ? o.steer : null));
+    const A = purifiedOps(model, T, gammas), watched = reflectionQubits(model, T, o.reflection);
+    const marked = y => ((y >> (T - 1)) & 1) === 1;
+    const s = run(zeroState(n + T), A);
+    const stages = [];
+    const snapshot = label => {
+      if (!o.stages) return;
+      const dist = lightDistribution(s, n, T);
+      let hit = 0;
+      for (let y = 0; y < dist.length; y++) if (marked(y)) hit += dist[y];
+      let mask = 0;
+      for (const q of watched) mask |= 1 << q;
+      stages.push({ label, distribution: dist, hit, blank: probabilityWhere(s, i => !(i & mask)),
+                    signed: signedHistoryAmplitudes(s, n, T) });
+    };
+    snapshot('prepare');
+    for (let i = 0; i < o.r; i++) {
+      flipWhereOne(s, markQubit); snapshot('mark');
+      run(s, A, true); snapshot('rewind');
+      flipWhereAllZero(s, watched); snapshot('reflect');
+      run(s, A); snapshot('replay');
+    }
+    const distribution = lightDistribution(s, n, T);
+    let hit = 0;
+    for (let y = 0; y < distribution.length; y++) if (marked(y)) hit += distribution[y];
+    const exact = conditionalDistribution(historyProbabilities(model, T), marked);
+    const conditional = conditionalDistribution(distribution, marked);
+    return { hit, distribution, conditional, exactConditional: exact, tv: totalVariation(conditional, exact),
+             watched, qubits: n + T, stages };
+  }
+
+  /** Each history's amplitude size with the sign of its largest component. Meaningful right after prepare and mark,
+      where every memory branch of a history shares one sign change; used only to draw the mark step. */
+  function signedHistoryAmplitudes(s, nMemory, T) {
+    const d = 1 << nMemory, out = new Float64Array(1 << T);
+    for (let y = 0; y < out.length; y++) {
+      let w = 0, big = 0, sign = 1;
+      for (let m = 0; m < d; m++) {
+        const i = (y << nMemory) | m, a = s.re[i] * s.re[i] + s.im[i] * s.im[i];
+        w += a;
+        if (a > big) { big = a; sign = s.re[i] < 0 ? -1 : 1; }
+      }
+      out[y] = sign * Math.sqrt(w);
+    }
+    return out;
+  }
+
+  /** Grover inside the loop: run t0 steps, amplify "a click at step t0", then run tau more steps on fresh lights.
+      Returns the chance of keeping a shot and the click rate at each later step among the kept shots. */
+  function loopQuery(model, t0, tau, options) {
+    const o = Object.assign({ r: 0, reflection: 'full', steer: null }, options || {});
+    const n = model.nMemory, markQubit = n + t0 - 1;
+    const gammas = o.steer === null ? null : Array.from({ length: t0 }, (_, t) => (t === t0 - 1 ? o.steer : null));
+    const A = purifiedOps(model, t0, gammas), watched = reflectionQubits(model, t0, o.reflection);
+    const s = run(zeroState(n + t0 + tau), A);
+    for (let i = 0; i < o.r; i++) {
+      flipWhereOne(s, markQubit);
+      run(s, A, true);
+      flipWhereAllZero(s, watched);
+      run(s, A);
+    }
+    run(s, purifiedOps(model, tau, null, n + t0));
+    const kept = probabilityWhere(s, i => (i >> markQubit) & 1);
+    const conditional = [];
+    for (let j = 0; j < tau; j++) {
+      const later = n + t0 + j;
+      conditional.push(probabilityWhere(s, i => ((i >> markQubit) & 1) && ((i >> later) & 1)) / kept);
+    }
+    return { eventProbability: kept, conditional, qubits: n + t0 + tau };
+  }
+
+  // ------------------------------------------------------------------ helpers for the page
+
+  /** A small seeded generator (mulberry32), so a replayed demo shows the same runs. */
+  function seeded(seed) {
+    let a = seed >>> 0;
+    return function () {
+      a = (a + 0x6D2B79F5) >>> 0;
+      let t = a;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  const historyToString = (y, T) => Array.from({ length: T }, (_, t) => (y >> t) & 1).join('');
+
+  return { DEFAULTS, makeModel, zeroState, cloneState, run, stepOps, purifiedOps, kraus, matVec, norm2, groundMemory,
+           historyProbabilities, populations, sampleStep, sampleRun, preEmission, afterClick, rotationAngle,
+           successProbability, steeredGamma, clickProbability, steerFor, reflectionQubits, lightDistribution,
+           conditionalDistribution, totalVariation, amplifiedHistory, loopQuery, seeded, historyToString,
+           flipWhereOne, flipWhereAllZero, probabilityWhere };
+});
+</script>
+<script data-source="lab/data.js">
+// Generated by lab/make_data.py from the saved hardware analyses. Do not edit by hand.
+(function(root){'use strict';var data={"backend":"ibm_marrakesh","campaign":{"calibration_circuits":40,"date":"2026-11-11","jobs":10,"qpu_seconds":244,"science_circuits":207,"total_shots":688640},"hero":{"first":{"difference":{"interval95":[0.10367585756739026,0.15874708471302112],"probability":0.13134765625},"full":{"accepted":1316,"depth":289,"duration_us":12.61599999999999,"gates_per_accepted_shot":194.52887537993922,"history_probabilities":[0.16845703125,0.06298828125,0.0888671875,0.037109375,0.49951171875,0.048828125,0.0673828125,0.02685546875],"ideal_probability":0.9649002179026787,"logical_qubits":7,"name":"click3-steered-full-r1","probability":0.642578125,"shots":2048,"tv_to_exact":0.20100012235825088,"tv_to_ideal_circuit":0.20100012235825085,"two_qubit_gates":125,"unsteered_probability":0.039541816058604816,"wilson95":[0.6215732458237437,0.6630491344724692]},"job_id":"dbqarvmjjaos73agv2u0","local":{"accepted":1585,"depth":189,"duration_us":8.476000000000008,"gates_per_accepted_shot":74.94258675078865,"history_probabilities":[0.1279296875,0.02783203125,0.05712890625,0.01318359375,0.67431640625,0.0205078125,0.0693359375,0.009765625],"ideal_probability":0.9610172483426288,"logical_qubits":5,"name":"click3-steered-memory+last-1-r1","probability":0.77392578125,"shots":2048,"tv_to_exact":0.10706237006423308,"tv_to_ideal_circuit":0.07392203623405112,"two_qubit_gates":58,"unsteered_probability":0.039541816058604816,"wilson95":[0.7553068066942152,0.7915190677789885]},"run":"original_plain_v2","shots":2048,"submitted_utc":"2026-11-11T18:03:43.078822+00:00"},"precision":{"difference":{"interval95":[0.06286679975808751,0.0899284618152853],"probability":0.076416015625},"full":{"accepted":5674,"depth":289,"duration_us":12.61599999999999,"gates_per_accepted_shot":180.47232992597816,"history_probabilities":[0.1524658203125,0.0517578125,0.0789794921875,0.024169921875,0.552001953125,0.0474853515625,0.067138671875,0.0260009765625],"ideal_probability":0.9649002179026787,"logical_qubits":7,"name":"click3-steered-full-r1","probability":0.692626953125,"shots":8192,"tv_to_exact":0.18138711662528023,"tv_to_ideal_circuit":0.18138711662528023,"two_qubit_gates":125,"unsteered_probability":0.039541816058604816,"wilson95":[0.6825469858242973,0.7025263487267738]},"job_id":"dbqb1ifv5hds73dfo310","local":{"accepted":6300,"depth":189,"duration_us":8.476000000000008,"gates_per_accepted_shot":75.4184126984127,"history_probabilities":[0.127197265625,0.026611328125,0.0660400390625,0.0111083984375,0.661865234375,0.0294189453125,0.0682373046875,0.009521484375],"ideal_probability":0.9610172483426288,"logical_qubits":5,"name":"click3-steered-memory+last-1-r1","probability":0.76904296875,"shots":8192,"tv_to_exact":0.11772082482363419,"tv_to_ideal_circuit":0.08458049099345223,"two_qubit_gates":58,"unsteered_probability":0.039541816058604816,"wilson95":[0.7597918489622243,0.7780418831990944]},"run":"original_precision_v1","shots":8192,"submitted_utc":"2026-11-11T18:15:38.430463+00:00"},"suppressed":{"difference":{"interval95":[0.11695607216752921,0.17276814819400071],"probability":0.14501953125},"full":{"accepted":1269,"depth":289,"duration_us":12.61599999999999,"gates_per_accepted_shot":201.7336485421592,"history_probabilities":[0.166015625,0.0712890625,0.11376953125,0.029296875,0.455078125,0.06298828125,0.07275390625,0.02880859375],"ideal_probability":0.9649002179026787,"logical_qubits":7,"name":"click3-steered-full-r1","probability":0.61962890625,"shots":2048,"tv_to_exact":0.24391918123475656,"tv_to_ideal_circuit":0.24391918123475653,"two_qubit_gates":125,"unsteered_probability":0.039541816058604816,"wilson95":[0.5983976260726602,0.6404122478060117]},"job_id":"dbqauf9abdes73fnu9pg","local":{"accepted":1566,"depth":189,"duration_us":8.476000000000008,"gates_per_accepted_shot":75.85185185185185,"history_probabilities":[0.115234375,0.04541015625,0.06005859375,0.0146484375,0.63720703125,0.04736328125,0.0634765625,0.0166015625],"ideal_probability":0.9610172483426288,"logical_qubits":5,"name":"click3-steered-memory+last-1-r1","probability":0.7646484375,"shots":2048,"tv_to_exact":0.14502241212522146,"tv_to_ideal_circuit":0.11188207829503952,"two_qubit_gates":58,"unsteered_probability":0.039541816058604816,"wilson95":[0.7457908011306225,0.7825151239397454]},"run":"original_suppressed_v1","shots":2048,"submitted_utc":"2026-11-11T18:09:02.066681+00:00"}},"jobs":[{"calibration_circuits":4,"job_id":"dbqas3pabdes73fnu5n0","qpu_seconds":22,"run":"dots_plain_v1","science_circuits":14,"shots_per_circuit":4096},{"calibration_circuits":4,"job_id":"dbqb5e6jjaos73agvij0","qpu_seconds":11,"run":"dots_selected_plain_v1","science_circuits":4,"shots_per_circuit":4096},{"calibration_circuits":4,"job_id":"dbqav0habdes73fnuaf0","qpu_seconds":23,"run":"dots_suppressed_v1","science_circuits":14,"shots_per_circuit":4096},{"calibration_circuits":4,"job_id":"dbqb4vujjaos73agvhq0","qpu_seconds":34,"run":"extensions_plain_v1","science_circuits":25,"shots_per_circuit":2048},{"calibration_circuits":4,"job_id":"dbqat8nv5hds73dfnsig","qpu_seconds":22,"run":"optical_controls_plain_v1","science_circuits":33,"shots_per_circuit":2048},{"calibration_circuits":4,"job_id":"dbqavpfv5hds73dfo0cg","qpu_seconds":15,"run":"optical_dilation_plain_v2","science_circuits":13,"shots_per_circuit":512},{"calibration_circuits":4,"job_id":"dbqarvmjjaos73agv2u0","qpu_seconds":29,"run":"original_plain_v2","science_circuits":43,"shots_per_circuit":2048},{"calibration_circuits":4,"job_id":"dbqb1ifv5hds73dfo310","qpu_seconds":38,"run":"original_precision_v1","science_circuits":12,"shots_per_circuit":8192},{"calibration_circuits":4,"job_id":"dbqauf9abdes73fnu9pg","qpu_seconds":32,"run":"original_suppressed_v1","science_circuits":43,"shots_per_circuit":2048},{"calibration_circuits":4,"job_id":"dbqatdpabdes73fnu7r0","qpu_seconds":18,"run":"spatial_plain_v1","science_circuits":6,"shots_per_circuit":4096}],"kingston":{"backend":"ibm_kingston","builds":[{"build":"plain sampling","hardware_raw":0.060546875,"hardware_tv":0.07121355171558065,"ideal":0.03954181605860481,"name":"click3-full-r0","noise_model_raw":0.058837890625,"question":"T = 3","suppressed_raw":0.0771484375,"suppressed_tv":0.06344720190152045,"two_qubit_gates":13},{"build":"textbook Grover, r = 3","hardware_raw":0.585205078125,"hardware_tv":0.2627016844484899,"ideal":0.9715448276427217,"name":"click3-full-r3","noise_model_raw":0.74169921875,"question":"T = 3","suppressed_raw":0.607666015625,"suppressed_tv":0.24019127134094267,"two_qubit_gates":213},{"build":"local reflection, r = 3","hardware_raw":0.7568359375,"hardware_tv":0.09225474852808471,"ideal":0.9675936189672626,"name":"click3-memory+last-1-r3","noise_model_raw":0.83984375,"question":"T = 3","suppressed_raw":0.734375,"suppressed_tv":0.1675857894544452,"two_qubit_gates":112},{"build":"steer + textbook reflection","hardware_raw":0.784912109375,"hardware_tv":0.06897534230162003,"ideal":0.9649002179026728,"name":"click3-steered-full-r1","noise_model_raw":0.87451171875,"question":"T = 3","suppressed_raw":0.777587890625,"suppressed_tv":0.10004742260468949,"two_qubit_gates":85},{"build":"steer + local (resilient)","hardware_raw":0.860595703125,"hardware_tv":0.055313250543431065,"ideal":0.9610172483426239,"name":"click3-steered-memory+last-1-r1","noise_model_raw":0.8916015625,"question":"T = 3","suppressed_raw":0.826416015625,"suppressed_tv":0.06688777249234507,"two_qubit_gates":40},{"build":"plain sampling","hardware_raw":0.080810546875,"hardware_tv":0.21432606148644562,"ideal":0.05428401072566305,"name":"click5-full-r0","noise_model_raw":0.0693359375,"question":"T = 5","suppressed_raw":0.097412109375,"suppressed_tv":0.25985537180054613,"two_qubit_gates":27},{"build":"local reflection, r = 3","hardware_raw":0.645263671875,"hardware_tv":0.32694366653171597,"ideal":0.9859297070558682,"name":"click5-memory+last-1-r3","noise_model_raw":0.802001953125,"question":"T = 5","suppressed_raw":0.662109375,"suppressed_tv":0.38972658558019846,"two_qubit_gates":210},{"build":"steer + textbook reflection","hardware_raw":0.644775390625,"hardware_tv":0.4276257689834565,"ideal":0.9999999999999969,"name":"click5-steered-full-r1","noise_model_raw":0.817138671875,"question":"T = 5","suppressed_raw":0.612548828125,"suppressed_tv":0.3524809187802197,"two_qubit_gates":171},{"build":"steer + local (resilient)","hardware_raw":0.743896484375,"hardware_tv":0.15989738168521772,"ideal":0.9891966238694018,"name":"click5-steered-memory+last-1-r1","noise_model_raw":0.87939453125,"question":"T = 5","suppressed_raw":0.779296875,"suppressed_tv":0.20030089518104238,"two_qubit_gates":88}],"date":"2026-11-05","job_ids":{"plain":"dbmfqlt8ft8s738uplmg","suppressed":"dbmfqme74qds73ds7ieg"},"shots":4096},"loops":{"first":{"builds":{"full":{"defect":{"accepted":1299,"depth":354,"duration_us":14.763999999999978,"future":[{"exact":0.009744391336227691,"ideal_circuit":0.0097443913362277,"kept":1299,"probability":0.1170130869899923,"step":4,"successes":152,"wilson95":[0.10065177326847168,0.13563289263350697]},{"exact":0.030175199595966665,"ideal_circuit":0.030175199595966706,"kept":1299,"probability":0.11085450346420324,"step":5,"successes":144,"wilson95":[0.09491565415000375,0.12908816215843888]},{"exact":0.04667496342985301,"ideal_circuit":0.04667496342985302,"kept":1299,"probability":0.13010007698229406,"step":6,"successes":169,"wilson95":[0.11289084800876498,0.14949062327947765]}],"ideal_probability":0.96490021790268,"logical_qubits":10,"name":"loop-defect-full-r1","probability":0.63427734375,"shots":2048,"tv_to_exact":0.37238626091725524,"tv_to_ideal_circuit":0.3723862609172551,"two_qubit_gates":182,"unsteered_probability":0.039541816058604795,"wilson95":[0.6131847208943232,0.6548671783572472]},"no_defect":{"accepted":1620,"depth":175,"duration_us":8.780000000000008,"future":[{"exact":0.01746643850903218,"ideal_circuit":0.01746643850903216,"kept":1620,"probability":0.03888888888888889,"step":4,"successes":63,"wilson95":[0.03051345747793799,0.04944598567791712]},{"exact":0.057515205649054886,"ideal_circuit":0.05751520564905485,"kept":1620,"probability":0.09197530864197531,"step":5,"successes":149,"wilson95":[0.07885148599473693,0.10702962769471452]},{"exact":0.10102428336359573,"ideal_circuit":0.10102428336359569,"kept":1620,"probability":0.1037037037037037,"step":6,"successes":168,"wilson95":[0.08978303230899112,0.11949938068439439]}],"ideal_probability":1.0000000000000022,"logical_qubits":8,"name":"loop-nodefect-full-r1","probability":0.791015625,"shots":2048,"tv_to_exact":0.16439509093942384,"tv_to_ideal_circuit":0.16439509093942384,"two_qubit_gates":56,"unsteered_probability":0.10102428336359558,"wilson95":[0.7728699286794732,0.808071642062112]}},"local":{"defect":{"accepted":1574,"depth":265,"duration_us":10.920000000000007,"future":[{"exact":0.009744391336227691,"ideal_circuit":0.009678655720123008,"kept":1574,"probability":0.04637865311308768,"step":4,"successes":73,"wilson95":[0.03704764762517114,0.05791845811569857]},{"exact":0.030175199595966665,"ideal_circuit":0.03009184167567013,"kept":1574,"probability":0.09847522236340533,"step":5,"successes":155,"wilson95":[0.08471858185332516,0.1141869907352318]},{"exact":0.04667496342985301,"ideal_circuit":0.046729708344067256,"kept":1574,"probability":0.10038119440914867,"step":6,"successes":158,"wilson95":[0.08649459902570109,0.11621363698411272]}],"ideal_probability":0.9610172483426282,"logical_qubits":8,"name":"loop-defect-r1","probability":0.7685546875,"shots":2048,"tv_to_exact":0.21783645256064477,"tv_to_ideal_circuit":0.18727564137713398,"two_qubit_gates":98,"unsteered_probability":0.039541816058604795,"wilson95":[0.7497960287888281,0.7863077697143128]},"no_defect":{"accepted":1790,"depth":113,"duration_us":6.516000000000004,"future":[{"exact":0.01746643850903218,"ideal_circuit":0.01746643850903215,"kept":1790,"probability":0.05195530726256983,"step":4,"successes":93,"wilson95":[0.04259970695751261,0.06322985667934275]},{"exact":0.057515205649054886,"ideal_circuit":0.057515205649054824,"kept":1790,"probability":0.09776536312849161,"step":5,"successes":175,"wilson95":[0.0848559234080489,0.11239755018114789]},{"exact":0.10102428336359573,"ideal_circuit":0.10102428336359569,"kept":1790,"probability":0.1212290502793296,"step":6,"successes":217,"wilson95":[0.10691422948056659,0.13716612481592708]}],"ideal_probability":0.9808166205401585,"logical_qubits":7,"name":"loop-nodefect-r1","probability":0.8740234375,"shots":2048,"tv_to_exact":0.14777443054593287,"tv_to_ideal_circuit":0.10826322794378346,"two_qubit_gates":32,"unsteered_probability":0.10102428336359558,"wilson95":[0.8589484995672094,0.8876978816208012]}},"memory":{"defect":{"accepted":1568,"depth":218,"duration_us":9.41200000000001,"future":[{"exact":0.009744391336227691,"ideal_circuit":0.009678655720122994,"kept":1568,"probability":0.047193877551020405,"step":4,"successes":74,"wilson95":[0.03775917525243783,0.05884182605631774]},{"exact":0.030175199595966665,"ideal_circuit":0.030091841675670108,"kept":1568,"probability":0.10012755102040816,"step":5,"successes":157,"wilson95":[0.08623344646995802,0.1159761701787599]},{"exact":0.04667496342985301,"ideal_circuit":0.046729708344067256,"kept":1568,"probability":0.09183673469387756,"step":6,"successes":144,"wilson95":[0.07852254892000267,0.1071459593019742]}],"ideal_probability":0.9610172483426277,"logical_qubits":8,"name":"loop-defect-memory-r1","probability":0.765625,"shots":2048,"tv_to_exact":0.20249137389119765,"tv_to_ideal_circuit":0.17193491546242493,"two_qubit_gates":93,"unsteered_probability":0.039541816058604795,"wilson95":[0.746791904488306,0.7834634889402552]},"no_defect":{"accepted":1321,"depth":79,"duration_us":5.436000000000002,"future":[{"exact":0.01746643850903218,"ideal_circuit":0.07041328944556685,"kept":1321,"probability":0.08554125662376987,"step":4,"successes":113,"wilson95":[0.07163475153023119,0.10185125865644218]},{"exact":0.057515205649054886,"ideal_circuit":0.018390911980474288,"kept":1321,"probability":0.059046177138531414,"step":5,"successes":78,"wilson95":[0.047568042808365046,0.07308145661398606]},{"exact":0.10102428336359573,"ideal_circuit":0.00842440653832276,"kept":1321,"probability":0.05526116578349735,"step":6,"successes":73,"wilson95":[0.044179723277067345,0.068921703178952]}],"ideal_probability":0.7428602862805943,"logical_qubits":7,"name":"loop-nodefect-memory-r1","probability":0.64501953125,"shots":2048,"tv_to_exact":0.25355216834463506,"tv_to_ideal_circuit":0.11743861460609378,"two_qubit_gates":23,"unsteered_probability":0.10102428336359558,"wilson95":[0.6240417404657543,0.6654543107259416]}},"plain":{"defect":{"accepted":160,"depth":150,"duration_us":7.624000000000005,"future":[{"exact":0.009744391336227691,"ideal_circuit":0.009744391336227695,"kept":160,"probability":0.225,"step":4,"successes":36,"wilson95":[0.16718260299010437,0.29571280435422354]},{"exact":0.030175199595966665,"ideal_circuit":0.03017519959596669,"kept":160,"probability":0.23125,"step":5,"successes":37,"wilson95":[0.17268348893654045,0.30241884096814364]},{"exact":0.04667496342985301,"ideal_circuit":0.04667496342985304,"kept":160,"probability":0.1125,"step":6,"successes":18,"wilson95":[0.07235633854421358,0.17081446271370296]}],"ideal_probability":0.03954181605860485,"logical_qubits":10,"name":"loop-defect-r0","probability":0.078125,"shots":2048,"tv_to_exact":0.44637117492979594,"tv_to_ideal_circuit":0.44637117492979583,"two_qubit_gates":88,"unsteered_probability":0.039541816058604795,"wilson95":[0.0672759985472384,0.09055367071328213]},"no_defect":{"accepted":251,"depth":47,"duration_us":4.387999999999999,"future":[{"exact":0.01746643850903218,"ideal_circuit":0.01746643850903217,"kept":251,"probability":0.07569721115537849,"step":4,"successes":19,"wilson95":[0.04899347146507422,0.11519276029768494]},{"exact":0.057515205649054886,"ideal_circuit":0.05751520564905486,"kept":251,"probability":0.06772908366533864,"step":5,"successes":17,"wilson95":[0.0427133138024808,0.10577688475394517]},{"exact":0.10102428336359573,"ideal_circuit":0.10102428336359566,"kept":251,"probability":0.07171314741035857,"step":6,"successes":18,"wilson95":[0.04584024066576224,0.11049797449383035]}],"ideal_probability":0.10102428336359574,"logical_qubits":8,"name":"loop-nodefect-r0","probability":0.12255859375,"shots":2048,"tv_to_exact":0.15313938472089927,"tv_to_ideal_circuit":0.15313938472089925,"two_qubit_gates":15,"unsteered_probability":0.10102428336359558,"wilson95":[0.10905847980687314,0.13747199975143978]}}},"job_id":"dbqarvmjjaos73agv2u0","run":"original_plain_v2"},"precision":{"builds":{"full":{"defect":{"accepted":5411,"depth":354,"duration_us":14.763999999999978,"future":[{"exact":0.009744391336227691,"ideal_circuit":0.0097443913362277,"kept":5411,"probability":0.09111070042506006,"step":4,"successes":493,"wilson95":[0.08373058781676586,0.09907097088967741]},{"exact":0.030175199595966665,"ideal_circuit":0.030175199595966706,"kept":5411,"probability":0.09813343189798558,"step":5,"successes":531,"wilson95":[0.09048957684749277,0.10634748051167599]},{"exact":0.04667496342985301,"ideal_circuit":0.04667496342985302,"kept":5411,"probability":0.12899648863426355,"step":6,"successes":698,"wilson95":[0.12032781274058954,0.1381915676450308]}],"ideal_probability":0.96490021790268,"logical_qubits":10,"name":"loop-defect-full-r1","probability":0.6605224609375,"shots":8192,"tv_to_exact":0.2870710485393001,"tv_to_ideal_circuit":0.28707104853930004,"two_qubit_gates":182,"unsteered_probability":0.039541816058604795,"wilson95":[0.6501951346224706,0.6706993108367554]},"no_defect":{"accepted":6645,"depth":175,"duration_us":8.780000000000008,"future":[{"exact":0.01746643850903218,"ideal_circuit":0.01746643850903216,"kept":6645,"probability":0.044996237772761474,"step":4,"successes":299,"wilson95":[0.04026948087518896,0.05024876392703301]},{"exact":0.057515205649054886,"ideal_circuit":0.05751520564905485,"kept":6645,"probability":0.07960872836719338,"step":5,"successes":529,"wilson95":[0.07334066924429272,0.086362561069915]},{"exact":0.10102428336359573,"ideal_circuit":0.10102428336359569,"kept":6645,"probability":0.10865312264860798,"step":6,"successes":722,"wilson95":[0.1013955024347888,0.11636295485252003]}],"ideal_probability":1.0000000000000022,"logical_qubits":8,"name":"loop-nodefect-full-r1","probability":0.8111572265625,"shots":8192,"tv_to_exact":0.16550970926368497,"tv_to_ideal_circuit":0.16550970926368497,"two_qubit_gates":56,"unsteered_probability":0.10102428336359558,"wilson95":[0.8025368014917689,0.8194859676911717]}},"local":{"defect":{"accepted":6118,"depth":265,"duration_us":10.920000000000007,"future":[{"exact":0.009744391336227691,"ideal_circuit":0.009678655720123008,"kept":6118,"probability":0.05067015364498202,"step":4,"successes":310,"wilson95":[0.045450839249567485,0.056453377482773445]},{"exact":0.030175199595966665,"ideal_circuit":0.03009184167567013,"kept":6118,"probability":0.09104282445243543,"step":5,"successes":557,"wilson95":[0.08408875519060244,0.0985101354111862]},{"exact":0.04667496342985301,"ideal_circuit":0.046729708344067256,"kept":6118,"probability":0.08793723439032364,"step":6,"successes":538,"wilson95":[0.08109685439369971,0.0952947536027468]}],"ideal_probability":0.9610172483426282,"logical_qubits":8,"name":"loop-defect-r1","probability":0.746826171875,"shots":8192,"tv_to_exact":0.21660207167163653,"tv_to_ideal_circuit":0.1860407820072241,"two_qubit_gates":98,"unsteered_probability":0.039541816058604795,"wilson95":[0.7372958519538777,0.7561251128511071]},"no_defect":{"accepted":7152,"depth":113,"duration_us":6.516000000000004,"future":[{"exact":0.01746643850903218,"ideal_circuit":0.01746643850903215,"kept":7152,"probability":0.04753914988814318,"step":4,"successes":340,"wilson95":[0.04284583605678693,0.05271825137527216]},{"exact":0.057515205649054886,"ideal_circuit":0.057515205649054824,"kept":7152,"probability":0.07843959731543625,"step":5,"successes":561,"wilson95":[0.07243237783372575,0.08489942797828234]},{"exact":0.10102428336359573,"ideal_circuit":0.10102428336359569,"kept":7152,"probability":0.11661073825503356,"step":6,"successes":834,"wilson95":[0.1093772993719258,0.12425580561531338]}],"ideal_probability":0.9808166205401585,"logical_qubits":7,"name":"loop-nodefect-r1","probability":0.873046875,"shots":8192,"tv_to_exact":0.1231328331922322,"tv_to_ideal_circuit":0.08480067280143457,"two_qubit_gates":32,"unsteered_probability":0.10102428336359558,"wilson95":[0.8656622857281064,0.8800817639474787]}},"memory":{"defect":{"accepted":6231,"depth":218,"duration_us":9.41200000000001,"future":[{"exact":0.009744391336227691,"ideal_circuit":0.009678655720122994,"kept":6231,"probability":0.05231904991173166,"step":4,"successes":326,"wilson95":[0.04706091219591617,0.05812884493781936]},{"exact":0.030175199595966665,"ideal_circuit":0.030091841675670108,"kept":6231,"probability":0.09661370566522227,"step":5,"successes":602,"wilson95":[0.08952486684759534,0.10419961946021761]},{"exact":0.04667496342985301,"ideal_circuit":0.046729708344067256,"kept":6231,"probability":0.0845771144278607,"step":6,"successes":527,"wilson95":[0.07792159349244991,0.09174454249632026]}],"ideal_probability":0.9610172483426277,"logical_qubits":8,"name":"loop-defect-memory-r1","probability":0.7606201171875,"shots":8192,"tv_to_exact":0.21045474307250867,"tv_to_ideal_circuit":0.17990776378128517,"two_qubit_gates":93,"unsteered_probability":0.039541816058604795,"wilson95":[0.7512591316507887,0.7697367931062055]},"no_defect":{"accepted":5443,"depth":79,"duration_us":5.436000000000002,"future":[{"exact":0.01746643850903218,"ideal_circuit":0.07041328944556685,"kept":5443,"probability":0.08340988425500644,"step":4,"successes":454,"wilson95":[0.07635483927310104,0.09105254089656496]},{"exact":0.057515205649054886,"ideal_circuit":0.018390911980474288,"kept":5443,"probability":0.05107477494029028,"step":5,"successes":278,"wilson95":[0.04553633246724349,0.057246438621876186]},{"exact":0.10102428336359573,"ideal_circuit":0.00842440653832276,"kept":5443,"probability":0.03968399779533346,"step":6,"successes":216,"wilson95":[0.03481418248808457,0.045203101311297206]}],"ideal_probability":0.7428602862805943,"logical_qubits":7,"name":"loop-nodefect-memory-r1","probability":0.6644287109375,"shots":8192,"tv_to_exact":0.2668665163977441,"tv_to_ideal_circuit":0.08684043845617279,"two_qubit_gates":23,"unsteered_probability":0.10102428336359558,"wilson95":[0.654128597330731,0.6745746863449932]}},"plain":{"defect":{"accepted":619,"depth":150,"duration_us":7.624000000000005,"future":[{"exact":0.009744391336227691,"ideal_circuit":0.009744391336227695,"kept":619,"probability":0.17609046849757673,"step":4,"successes":109,"wilson95":[0.14810810329966106,0.2080683452635657]},{"exact":0.030175199595966665,"ideal_circuit":0.03017519959596669,"kept":619,"probability":0.19063004846526657,"step":5,"successes":118,"wilson95":[0.16163106511117994,0.22344519374097935]},{"exact":0.04667496342985301,"ideal_circuit":0.04667496342985304,"kept":619,"probability":0.13408723747980614,"step":6,"successes":83,"wilson95":[0.1094888110160282,0.16319929671250483]}],"ideal_probability":0.03954181605860485,"logical_qubits":10,"name":"loop-defect-r0","probability":0.0755615234375,"shots":8192,"tv_to_exact":0.3894460384523399,"tv_to_ideal_circuit":0.3894460384523398,"two_qubit_gates":88,"unsteered_probability":0.039541816058604795,"wilson95":[0.0700350985686263,0.0814858239699831]},"no_defect":{"accepted":1034,"depth":47,"duration_us":4.387999999999999,"future":[{"exact":0.01746643850903218,"ideal_circuit":0.01746643850903217,"kept":1034,"probability":0.08123791102514506,"step":4,"successes":84,"wilson95":[0.06609455550481891,0.09948127244096258]},{"exact":0.057515205649054886,"ideal_circuit":0.05751520564905486,"kept":1034,"probability":0.09477756286266925,"step":5,"successes":98,"wilson95":[0.07839422281701106,0.11416067766632026]},{"exact":0.10102428336359573,"ideal_circuit":0.10102428336359566,"kept":1034,"probability":0.10058027079303675,"step":6,"successes":104,"wilson95":[0.08370035660201706,0.12041700354026415]}],"ideal_probability":0.10102428336359574,"logical_qubits":8,"name":"loop-nodefect-r0","probability":0.126220703125,"shots":8192,"tv_to_exact":0.17296953825391942,"tv_to_ideal_circuit":0.17296953825391942,"two_qubit_gates":15,"unsteered_probability":0.10102428336359558,"wilson95":[0.1192039511823038,0.13358784197651766]}}},"job_id":"dbqb1ifv5hds73dfo310","run":"original_precision_v1"},"suppressed":{"builds":{"full":{"defect":{"accepted":1327,"depth":354,"duration_us":14.763999999999978,"future":[{"exact":0.009744391336227691,"ideal_circuit":0.0097443913362277,"kept":1327,"probability":0.22079879427279578,"step":4,"successes":293,"wilson95":[0.1993053711384039,0.2439040396530014]},{"exact":0.030175199595966665,"ideal_circuit":0.030175199595966706,"kept":1327,"probability":0.2645064054257724,"step":5,"successes":351,"wilson95":[0.24147945647268154,0.28889285357405037]},{"exact":0.04667496342985301,"ideal_circuit":0.04667496342985302,"kept":1327,"probability":0.5109269027882442,"step":6,"successes":678,"wilson95":[0.4840387332639975,0.5377519915498341]}],"ideal_probability":0.96490021790268,"logical_qubits":10,"name":"loop-defect-full-r1","probability":0.64794921875,"shots":2048,"tv_to_exact":0.6878573838909527,"tv_to_ideal_circuit":0.6878573838909525,"two_qubit_gates":182,"unsteered_probability":0.039541816058604795,"wilson95":[0.6270047094213683,0.6683397468449074]},"no_defect":{"accepted":1631,"depth":175,"duration_us":8.780000000000008,"future":[{"exact":0.01746643850903218,"ideal_circuit":0.01746643850903216,"kept":1631,"probability":0.08522378908645004,"step":4,"successes":139,"wilson95":[0.07262867776772003,0.09976813618633928]},{"exact":0.057515205649054886,"ideal_circuit":0.05751520564905485,"kept":1631,"probability":0.17290006131207847,"step":5,"successes":282,"wilson95":[0.1553215274521989,0.19201579737336005]},{"exact":0.10102428336359573,"ideal_circuit":0.10102428336359569,"kept":1631,"probability":0.1741263028816677,"step":6,"successes":284,"wilson95":[0.15649380564045481,0.1932902396168734]}],"ideal_probability":1.0000000000000022,"logical_qubits":8,"name":"loop-nodefect-full-r1","probability":0.79638671875,"shots":2048,"tv_to_exact":0.27159604125753906,"tv_to_ideal_circuit":0.2715960412575391,"two_qubit_gates":56,"unsteered_probability":0.10102428336359558,"wilson95":[0.7783992551275182,0.8132643915841299]}},"local":{"defect":{"accepted":1547,"depth":265,"duration_us":10.920000000000007,"future":[{"exact":0.009744391336227691,"ideal_circuit":0.009678655720123008,"kept":1547,"probability":0.10407239819004525,"step":4,"successes":161,"wilson95":[0.08982412933830815,0.12028210490466447]},{"exact":0.030175199595966665,"ideal_circuit":0.03009184167567013,"kept":1547,"probability":0.17194570135746606,"step":5,"successes":266,"wilson95":[0.15396098984981768,0.19155560423721676]},{"exact":0.04667496342985301,"ideal_circuit":0.046729708344067256,"kept":1547,"probability":0.1777634130575307,"step":6,"successes":275,"wilson95":[0.15951726558889856,0.19760593077048405]}],"ideal_probability":0.9610172483426282,"logical_qubits":8,"name":"loop-defect-r1","probability":0.75537109375,"shots":2048,"tv_to_exact":0.41092890212029387,"tv_to_ideal_circuit":0.38036760818944565,"two_qubit_gates":98,"unsteered_probability":0.039541816058604795,"wilson95":[0.7362869590856566,0.7734990165818755]},"no_defect":{"accepted":1778,"depth":113,"duration_us":6.516000000000004,"future":[{"exact":0.01746643850903218,"ideal_circuit":0.01746643850903215,"kept":1778,"probability":0.06467941507311586,"step":4,"successes":115,"wilson95":[0.05415913927331323,0.07707669973082654]},{"exact":0.057515205649054886,"ideal_circuit":0.057515205649054824,"kept":1778,"probability":0.13048368953880765,"step":5,"successes":232,"wilson95":[0.11562027467310436,0.1469403793652933]},{"exact":0.10102428336359573,"ideal_circuit":0.10102428336359569,"kept":1778,"probability":0.17435320584926883,"step":6,"successes":310,"wilson95":[0.1574245362797859,0.1926859944481171]}],"ideal_probability":0.9808166205401585,"logical_qubits":7,"name":"loop-nodefect-r1","probability":0.8681640625,"shots":2048,"tv_to_exact":0.2542525114315898,"tv_to_ideal_circuit":0.21738376928381842,"two_qubit_gates":32,"unsteered_probability":0.10102428336359558,"wilson95":[0.8528201534644981,0.882129417574353]}},"memory":{"defect":{"accepted":1551,"depth":218,"duration_us":9.41200000000001,"future":[{"exact":0.009744391336227691,"ideal_circuit":0.009678655720122994,"kept":1551,"probability":0.0915538362346873,"step":4,"successes":142,"wilson95":[0.07819264361010878,0.10693327851381904]},{"exact":0.030175199595966665,"ideal_circuit":0.030091841675670108,"kept":1551,"probability":0.15409413281753706,"step":5,"successes":239,"wilson95":[0.13698275886427386,0.17291472688077314]},{"exact":0.04667496342985301,"ideal_circuit":0.046729708344067256,"kept":1551,"probability":0.16956802063185042,"step":6,"successes":263,"wilson95":[0.15171438670122503,0.18905441375420204]}],"ideal_probability":0.9610172483426277,"logical_qubits":8,"name":"loop-defect-memory-r1","probability":0.75732421875,"shots":2048,"tv_to_exact":0.38832192119751086,"tv_to_ideal_circuit":0.35776037415531475,"two_qubit_gates":93,"unsteered_probability":0.039541816058604795,"wilson95":[0.73828678124986,0.7753981311340586]},"no_defect":{"accepted":1457,"depth":79,"duration_us":5.436000000000002,"future":[{"exact":0.01746643850903218,"ideal_circuit":0.07041328944556685,"kept":1457,"probability":0.10432395332875773,"step":4,"successes":152,"wilson95":[0.0896547026893019,0.12107415974947905]},{"exact":0.057515205649054886,"ideal_circuit":0.018390911980474288,"kept":1457,"probability":0.09540150995195608,"step":5,"successes":139,"wilson95":[0.08136351711442731,0.1115673838528951]},{"exact":0.10102428336359573,"ideal_circuit":0.00842440653832276,"kept":1457,"probability":0.07824296499656828,"step":6,"successes":114,"wilson95":[0.06553606080895116,0.0931679911747971]}],"ideal_probability":0.7428602862805943,"logical_qubits":7,"name":"loop-nodefect-memory-r1","probability":0.71142578125,"shots":2048,"tv_to_exact":0.32102747297587564,"tv_to_ideal_circuit":0.1906706677074802,"two_qubit_gates":23,"unsteered_probability":0.10102428336359558,"wilson95":[0.6914208229490294,0.7306390765998069]}},"plain":{"defect":{"accepted":249,"depth":150,"duration_us":7.624000000000005,"future":[{"exact":0.009744391336227691,"ideal_circuit":0.009744391336227695,"kept":249,"probability":0.20481927710843373,"step":4,"successes":51,"wilson95":[0.1593580691472015,0.2592499364953897]},{"exact":0.030175199595966665,"ideal_circuit":0.03017519959596669,"kept":249,"probability":0.1927710843373494,"step":5,"successes":48,"wilson95":[0.14859215543744556,0.24628556472116983]},{"exact":0.04667496342985301,"ideal_circuit":0.04667496342985304,"kept":249,"probability":0.3172690763052209,"step":6,"successes":79,"wilson95":[0.2626111345871953,0.377479535572504]}],"ideal_probability":0.03954181605860485,"logical_qubits":10,"name":"loop-defect-r0","probability":0.12158203125,"shots":2048,"tv_to_exact":0.5296367306660359,"tv_to_ideal_circuit":0.5296367306660359,"two_qubit_gates":88,"unsteered_probability":0.039541816058604795,"wilson95":[0.10813237497808459,0.1364486362220351]},"no_defect":{"accepted":261,"depth":47,"duration_us":4.387999999999999,"future":[{"exact":0.01746643850903218,"ideal_circuit":0.01746643850903217,"kept":261,"probability":0.09578544061302682,"step":4,"successes":25,"wilson95":[0.06572299315764688,0.13757394932425684]},{"exact":0.057515205649054886,"ideal_circuit":0.05751520564905486,"kept":261,"probability":0.12643678160919541,"step":5,"successes":33,"wilson95":[0.09146442416851774,0.17224602030527952]},{"exact":0.10102428336359573,"ideal_circuit":0.10102428336359566,"kept":261,"probability":0.15708812260536398,"step":6,"successes":41,"wilson95":[0.11795603346478875,0.206167913000902]}],"ideal_probability":0.10102428336359574,"logical_qubits":8,"name":"loop-nodefect-r0","probability":0.12744140625,"shots":2048,"tv_to_exact":0.24486922825700905,"tv_to_ideal_circuit":0.24486922825700908,"two_qubit_gates":15,"unsteered_probability":0.10102428336359558,"wilson95":[0.11369330940263926,0.14258451194663985]}}},"job_id":"dbqauf9abdes73fnu9pg","run":"original_suppressed_v1"}},"schema":1,"source_sha256":{"hardware_campaign/results.json":"3ab53e47a45bf0ec85629193e5eed54c006991868065e15524e94dc090830a85","hardware_campaign/runs/original_plain_v2/analysis.json":"6c1ea899f82178826725f49cbc5f5510c3342ff6e382d577397de94a48b96fd3","hardware_campaign/runs/original_plain_v2/hero_acceptance_contrast.json":"b1c0102d0664b74c66438693dd47542b52fc994bdcfc9ee278aef362bc7f3545","hardware_campaign/runs/original_plain_v2/job.json":"6bf6d8798a17f50176a89c94b4c91a7a7285c90d3ce12368b7426723b793da00","hardware_campaign/runs/original_precision_v1/analysis.json":"1567e47c6001e55611c6dca59f8e3f29b69ecfa5c996acbdf622c0909959b3fa","hardware_campaign/runs/original_precision_v1/hero_acceptance_contrast.json":"d0fffabcb17a6eaa8f3dd517a869d546fb37acfca49fdba07f31844e7bf61b5e","hardware_campaign/runs/original_precision_v1/job.json":"54ff39842ad670e89be547af98f6a7fb23e5e87e1f5e94ac3b835c1b5067fc52","hardware_campaign/runs/original_suppressed_v1/analysis.json":"13b29cf6bddcdb0e5618fcb023dae3d7236358dd7d5ba8e8c919bfae2b9867b0","hardware_campaign/runs/original_suppressed_v1/hero_acceptance_contrast.json":"67358df8fe510c4094d3de8b8061d7b0c5ded6f5f914bca0ac233058898297d0","hardware_campaign/runs/original_suppressed_v1/job.json":"1112298fa05ea36e02daa9cece439d00b5c0f3af096b8a73358141e5df85ea7d","rewindandamplify-main/results/numbers.json":"7e37fc3a97b77b975aefc22b5f1ff318e9b5fb43d5a4a43d1f9577982e994f62"},"variants":{"click3-full-r0":{"accepted":138,"depth":71,"duration_us":4.852,"ideal_probability":0.039541816058604885,"logical_qubits":7,"name":"click3-full-r0","probability":0.0673828125,"shots":2048,"tv_to_exact":0.23922531067594616,"tv_to_ideal_circuit":0.23922531067594616,"two_qubit_gates":22,"unsteered_probability":0.039541816058604816,"wilson95":[0.0573157400339048,0.07906977728649009]},"click3-full-r1":{"accepted":674,"depth":324,"duration_us":13.583999999999984,"ideal_probability":0.31934023231908804,"logical_qubits":7,"name":"click3-full-r1","probability":0.3291015625,"shots":2048,"tv_to_exact":0.29437948433095834,"tv_to_ideal_circuit":0.2943794843309584,"two_qubit_gates":137,"unsteered_probability":0.039541816058604816,"wilson95":[0.3090874950591552,0.34975554225702776]},"click3-full-r2":{"accepted":988,"depth":573,"duration_us":22.040000000000006,"ideal_probability":0.7089169490680719,"logical_qubits":7,"name":"click3-full-r2","probability":0.482421875,"shots":2048,"tv_to_exact":0.380177607806733,"tv_to_ideal_circuit":0.380177607806733,"two_qubit_gates":241,"unsteered_probability":0.039541816058604816,"wilson95":[0.460833666808915,0.5040759027436066]},"click3-full-r3":{"accepted":998,"depth":828,"duration_us":30.80800000000011,"ideal_probability":0.9715448276427396,"logical_qubits":7,"name":"click3-full-r3","probability":0.4873046875,"shots":2048,"tv_to_exact":0.484367769506651,"tv_to_ideal_circuit":0.484367769506651,"two_qubit_gates":345,"unsteered_probability":0.039541816058604816,"wilson95":[0.46570095068796247,0.5089559606555253]},"click3-memory+last-1-r1":{"accepted":674,"depth":209,"duration_us":9.23200000000001,"ideal_probability":0.3185626230107118,"logical_qubits":5,"name":"click3-memory+last-1-r1","probability":0.3291015625,"shots":2048,"tv_to_exact":0.15491360896003853,"tv_to_ideal_circuit":0.15149503633564743,"two_qubit_gates":74,"unsteered_probability":0.039541816058604816,"wilson95":[0.3090874950591552,0.34975554225702776]},"click3-memory+last-1-r2":{"accepted":1112,"depth":351,"duration_us":13.599999999999982,"ideal_probability":0.7054833866778726,"logical_qubits":5,"name":"click3-memory+last-1-r2","probability":0.54296875,"shots":2048,"tv_to_exact":0.18429099725711598,"tv_to_ideal_circuit":0.17321433361040053,"two_qubit_gates":113,"unsteered_probability":0.039541816058604816,"wilson95":[0.5213337230762649,0.5644428846842375]},"click3-memory+last-1-r3":{"accepted":1308,"depth":493,"duration_us":17.967999999999943,"ideal_probability":0.9675936189672736,"logical_qubits":5,"name":"click3-memory+last-1-r3","probability":0.638671875,"shots":2048,"tv_to_exact":0.17178082191115424,"tv_to_ideal_circuit":0.14873580806388217,"two_qubit_gates":152,"unsteered_probability":0.039541816058604816,"wilson95":[0.6176248691575927,0.6591996377058473]},"click3-memory-r1":{"accepted":515,"depth":171,"duration_us":7.876000000000007,"ideal_probability":0.27186375601836743,"logical_qubits":5,"name":"click3-memory-r1","probability":0.25146484375,"shots":2048,"tv_to_exact":0.16088001730321505,"tv_to_ideal_circuit":0.12992405909826973,"two_qubit_gates":61,"unsteered_probability":0.039541816058604816,"wilson95":[0.2331519367005193,0.2707083661393011]},"click3-memory-r2":{"accepted":1060,"depth":271,"duration_us":10.900000000000007,"ideal_probability":0.6192617503694801,"logical_qubits":5,"name":"click3-memory-r2","probability":0.517578125,"shots":2048,"tv_to_exact":0.15382744357176237,"tv_to_ideal_circuit":0.13721304890901947,"two_qubit_gates":100,"unsteered_probability":0.039541816058604816,"wilson95":[0.4959240972563934,0.539166333191085]},"click3-memory-r3":{"accepted":1247,"depth":371,"duration_us":13.92399999999998,"ideal_probability":0.9064273546475952,"logical_qubits":5,"name":"click3-memory-r3","probability":0.60888671875,"shots":2048,"tv_to_exact":0.17322342789640563,"tv_to_ideal_circuit":0.14952656665453268,"two_qubit_gates":139,"unsteered_probability":0.039541816058604816,"wilson95":[0.58756665145087,0.6297990704876761]},"click3-steered-full-r0":{"accepted":493,"depth":68,"duration_us":4.78,"ideal_probability":0.19770908029302448,"logical_qubits":7,"name":"click3-steered-full-r0","probability":0.24072265625,"shots":2048,"tv_to_exact":0.16293992395754062,"tv_to_ideal_circuit":0.1629399239575406,"two_qubit_gates":22,"unsteered_probability":0.039541816058604816,"wilson95":[0.22270327655001537,0.2597128743496795]},"click3-steered-full-r1":{"accepted":1316,"depth":289,"duration_us":12.61599999999999,"ideal_probability":0.9649002179026787,"logical_qubits":7,"name":"click3-steered-full-r1","probability":0.642578125,"shots":2048,"tv_to_exact":0.20100012235825088,"tv_to_ideal_circuit":0.20100012235825085,"two_qubit_gates":125,"unsteered_probability":0.039541816058604816,"wilson95":[0.6215732458237437,0.6630491344724692]},"click3-steered-memory+last-1-r1":{"accepted":1585,"depth":189,"duration_us":8.476000000000008,"ideal_probability":0.9610172483426288,"logical_qubits":5,"name":"click3-steered-memory+last-1-r1","probability":0.77392578125,"shots":2048,"tv_to_exact":0.10706237006423308,"tv_to_ideal_circuit":0.07392203623405112,"two_qubit_gates":58,"unsteered_probability":0.039541816058604816,"wilson95":[0.7553068066942152,0.7915190677789885]}},"what":"Raw counts from real IBM Quantum hardware running digital model circuits. No optical photons were detected."};if(typeof module!=='undefined'&&module.exports)module.exports=data;else root.LAB_DATA=data;})(typeof globalThis!=='undefined'?globalThis:this);
+</script>
+<script data-source="lab/app.js">
+/* Rewind & Amplify Lab — the page.
+
+   Everything that moves here is driven by lab/engine.js, an exact simulation of the Qiskit circuits.
+   Measured IBM numbers come from lab/data.js, which lab/make_data.py copies from the saved analyses.
+   No network calls, no stored "answers" for the model, no live quantum jobs. */
+(function () {
+  'use strict';
+  const E = window.QRSMEngine, DATA = window.LAB_DATA;
+  const $ = id => document.getElementById(id);
+  const C = { ink: '#f6f3eb', soft: '#c9d5dd', muted: '#8fa4b3', line: '#22394b', line2: '#2f4b61', cyan: '#64d9e9',
+              amber: '#edb568', violet: '#b9a8e5', blue: '#7ea6c4', red: '#f08a7c', green: '#86d6a4', dark: '#07131f' };
+  const SANS = '"Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,Arial,sans-serif';
+  const MONO = '"Cascadia Mono","Cascadia Code",Consolas,ui-monospace,Menlo,monospace';
+  const T = 6, T0 = 3, TAU = 3;
+  const SCENES = ['signal', 'machine', 'question', 'rewind', 'answer', 'hardware', 'impact'];
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const DEFAULT_PHI = E.DEFAULTS.phi;
+  let source = Math.random;                 // ?seed=N swaps in a seeded generator so a capture can be repeated
+  const random = () => source();
+
+  const state = { scene: 'signal', level: 'plain', defect: true, phi: DEFAULT_PHI, reveal: false, speed: 1, paused: false,
+                  sound: false, tour: null };
+
+  // ------------------------------------------------------------------ small helpers
+  const pct = (v, d = 2) => (100 * v).toFixed(d) + '%';
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const lerp = (a, b, u) => a + (b - a) * u;
+  const ease = u => (u <= 0 ? 0 : u >= 1 ? 1 : u * u * (3 - 2 * u));
+  const span = (u, a, b) => clamp((u - a) / (b - a), 0, 1);
+  const rgba = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
+  const comma = n => n.toLocaleString('en-US');
+
+  function fit(canvas) {
+    // Keep the drawing coordinates the element was authored with, and add device pixels for a sharp projector image.
+    const w = +canvas.dataset.w || (canvas.dataset.w = canvas.width, canvas.width);
+    const h = +canvas.dataset.h || (canvas.dataset.h = canvas.height, canvas.height);
+    const dpr = clamp(window.devicePixelRatio || 1, 1, 2);
+    if (canvas.width !== Math.round(w * dpr)) { canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr); }
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    return { ctx, w: +w, h: +h };
+  }
+  function text(ctx, s, x, y, o) {
+    const p = Object.assign({ size: 13, color: C.muted, align: 'left', weight: 400, mono: false, spacing: 0, base: 'alphabetic' }, o);
+    ctx.font = `${p.weight} ${p.size}px ${p.mono ? MONO : SANS}`;
+    ctx.fillStyle = p.color; ctx.textAlign = p.align; ctx.textBaseline = p.base;
+    if ('letterSpacing' in ctx) ctx.letterSpacing = p.spacing + 'px';
+    ctx.fillText(s, x, y);
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+  }
+  function line(ctx, x0, y0, x1, y1, color, width) {
+    ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.strokeStyle = color; ctx.lineWidth = width || 1; ctx.stroke();
+  }
+  function box(ctx, x, y, w, h, r, fill, stroke, width) {
+    ctx.beginPath(); ctx.roundRect(x, y, w, h, r);
+    if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+    if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = width || 1; ctx.stroke(); }
+  }
+  function glow(ctx, x, y, r, color, alpha) {
+    if (alpha <= 0) return;
+    const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+    g.addColorStop(0, rgba(color, alpha)); g.addColorStop(0.45, rgba(color, alpha * 0.35)); g.addColorStop(1, rgba(color, 0));
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, 2 * Math.PI); ctx.fill();
+  }
+  /** A travelling wave packet: a short sine under a bell curve. */
+  function packet(ctx, x, y, color, alpha, phase, length, height) {
+    if (alpha <= 0.01) return;
+    const L = length || 30, A = height || 9;
+    ctx.save(); ctx.globalCompositeOperation = 'lighter';
+    glow(ctx, x, y, L * 0.9, color, 0.5 * alpha);
+    ctx.beginPath();
+    for (let d = -L; d <= L; d += 2) {
+      const yy = y + A * Math.exp(-((d / (L * 0.45)) ** 2)) * Math.sin(d * 0.42 - phase);
+      if (d === -L) ctx.moveTo(x + d, yy); else ctx.lineTo(x + d, yy);
+    }
+    ctx.strokeStyle = rgba(color, alpha); ctx.lineWidth = 2.4; ctx.lineJoin = 'round'; ctx.stroke();
+    ctx.restore();
+  }
+
+  // ------------------------------------------------------------------ the model and its statistics
+  let model, K, exactRates, exactOther, after;
+  const stats = { runs: 0, clicks: new Array(T).fill(0), kept: 0, later: new Array(TAU).fill(0), recent: [] };
+  function resetStats() {
+    stats.runs = 0; stats.kept = 0; stats.clicks.fill(0); stats.later.fill(0); stats.recent = [];
+  }
+  function ratesOf(m) {
+    const probs = E.historyProbabilities(m, T);
+    return Array.from({ length: T }, (_, t) => probs.reduce((s, p, y) => s + ((y >> t) & 1 ? p : 0), 0));
+  }
+  function rebuildModel() {
+    model = E.makeModel({ defect: state.defect, phi: state.phi });
+    K = E.kraus(model);
+    exactRates = ratesOf(model);
+    exactOther = ratesOf(E.makeModel({ defect: !state.defect, phi: state.phi }));
+    after = E.afterClick(model, T0, TAU);
+    resetStats(); resetRun();
+    document.body.classList.toggle('no-defect', !state.defect);
+    $('toggle-defect').innerHTML = `Hidden defect: <b>${state.defect ? 'present' : 'absent'}</b>`;
+    $('toggle-defect').setAttribute('aria-pressed', state.defect);
+    computeAmp(); renderAnswerNumbers(); drawStatic();
+  }
+  function record(bits) {
+    stats.runs++;
+    for (let t = 0; t < T; t++) stats.clicks[t] += bits[t];
+    const kept = bits[T0 - 1] === 1;
+    if (kept) { stats.kept++; for (let j = 0; j < TAU; j++) stats.later[j] += bits[T0 + j]; }
+    stats.recent.unshift({ bits, kept });
+    if (stats.recent.length > 204) stats.recent.length = 204;
+  }
+
+  // ------------------------------------------------------------------ one animated run
+  const STEP_MS = 1750, GAP = 0.55;
+  const sim = { psi: null, t: 0, bits: [], u: 0, step: null, gap: 0, flash: 0, flashKind: 0 };
+  function resetRun() { sim.psi = E.groundMemory(model); sim.t = 0; sim.bits = []; sim.u = 0; sim.step = null; sim.gap = 0; }
+  function beginStep() {
+    const before = E.populations(model, sim.psi), pre = E.preEmission(model, sim.psi);
+    const r = E.sampleStep(model, K, sim.psi, random);
+    sim.step = { before, drive: pre.afterDrive, exchange: pre.afterExchange, pClick: r.pClick, y: r.y,
+                 after: E.populations(model, r.psi), next: r.psi, announced: false };
+    sim.u = 0;
+  }
+  function advance(dt) {
+    if (state.paused) return;
+    let budget = dt * state.speed / STEP_MS;
+    sim.flash = Math.max(0, sim.flash - dt / 420);
+    let guard = 0;
+    while (budget > 0 && guard++ < 400) {
+      if (sim.gap > 0) { const used = Math.min(sim.gap, budget); sim.gap -= used; budget -= used; if (sim.gap <= 0) resetRun(); continue; }
+      if (!sim.step) beginStep();
+      const used = Math.min(1 - sim.u, budget);
+      sim.u += used; budget -= used;
+      if (!sim.step.announced && sim.u >= 0.86) {
+        sim.step.announced = true;
+        if (sim.step.y) { sim.flash = 1; tick(); }
+      }
+      if (sim.u >= 1) {
+        sim.bits.push(sim.step.y); sim.psi = sim.step.next; sim.step = null; sim.t++;
+        if (sim.t >= T) { record(sim.bits.slice()); sim.gap = GAP; }
+      }
+    }
+  }
+  function shownPopulations() {
+    const s = sim.step;
+    if (!s) return E.populations(model, sim.psi);
+    const u = sim.u, out = [];
+    for (let q = 0; q < model.nMemory; q++) {
+      let v = lerp(s.before[q], s.drive[q], ease(span(u, 0.2, 0.32)));
+      v = lerp(v, s.exchange[q], ease(span(u, 0.34, 0.5)));
+      v = lerp(v, s.after[q], ease(span(u, 0.86, 0.97)));
+      out.push(v);
+    }
+    return out;
+  }
+  const phaseOf = u => (u < 0.32 ? 'drive' : u < 0.5 ? 'exchange' : u < 0.86 ? 'emit' : 'read');
+
+  // a soft tick on every click, only when asked for
+  let audio = null;
+  function tick() {
+    if (!state.sound) return;
+    try {
+      audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+      const o = audio.createOscillator(), g = audio.createGain();
+      o.type = 'triangle'; o.frequency.value = 1320;
+      g.gain.setValueAtTime(0.16, audio.currentTime); g.gain.exponentialRampToValueAtTime(0.0008, audio.currentTime + 0.09);
+      o.connect(g).connect(audio.destination); o.start(); o.stop(audio.currentTime + 0.1);
+    } catch (e) { state.sound = false; }
+  }
+
+  // ------------------------------------------------------------------ the bench: laser, emitter, hidden defect, detector
+  const bench = document.createElement('canvas');
+  bench.id = 'bench'; bench.setAttribute('role', 'img');
+  bench.setAttribute('aria-label', 'Animation: a drive laser excites an emitter, a hidden defect exchanges energy with it, and a detector records a click or no click each step');
+  const BENCH_H = { large: 392, medium: 330, small: 330 };
+  function mountBench() {
+    const slot = document.querySelector(`#${state.scene} .bench-slot`);
+    if (!slot) { bench.remove(); return; }
+    bench.dataset.h = BENCH_H[slot.dataset.bench] || 360;
+    if (bench.parentNode !== slot) slot.appendChild(bench);
+  }
+  function drawBench(now) {
+    const slot = bench.parentNode;
+    if (!slot) return;
+    // The drawing is as wide as its slot is, so nothing is letterboxed: positions are fractions of the width.
+    const area = slot.getBoundingClientRect(), H = +bench.dataset.h;
+    const W = area.height > 40 ? clamp(Math.round(H * area.width / area.height / 20) * 20, 860, 1900) : 1200;
+    if (+bench.dataset.w !== W || bench.height % H) { bench.dataset.w = W; bench.width = W; bench.height = H; }
+    const { ctx } = fit(bench);
+    const m = clamp(W / 1250, 0.74, 1.3);                               // element scale
+    const ts = clamp(W / Math.max(area.width, 1), 1, 1.55);             // keeps labels near 12 px on screen
+    const detail = area.width >= 900;
+    const cy = Math.round(H * (detail ? 0.42 : 0.4)), ex = Math.round(W * 0.46), er = 40 * m;
+    const dOff = Math.min(112 * m + 14, cy - 34), dy = cy - dOff, dr = 23 * m;
+    const lx0 = W * 0.05, lw = 156 * m, lx1 = lx0 + lw, detw = 126 * m, detx = W * 0.95 - detw;
+    const s = sim.step, u = s ? sim.u : 0, pops = shownPopulations();
+    const pe = pops[0], pd = model.k ? pops[1] : 0, phase = now / 90;
+    const label = (str, x, y, o) => text(ctx, str, x, y, Object.assign({ size: 12 * ts, spacing: 2, weight: 600, align: 'center' }, o));
+    const note = (str, x, y, o) => { if (detail) text(ctx, str, x, y, Object.assign({ size: 12 * ts, align: 'center' }, o)); };
+
+    // faint guides: the drive beam and the output waveguide
+    line(ctx, lx1 + 10, cy, ex - er - 8, cy, rgba(C.amber, 0.16), 2);
+    line(ctx, ex + er + 8, cy - 9 * m, detx - 6, cy - 9 * m, rgba(C.cyan, 0.17), 1.5);
+    line(ctx, ex + er + 8, cy + 9 * m, detx - 6, cy + 9 * m, rgba(C.cyan, 0.17), 1.5);
+
+    // drive laser
+    const driving = s ? 1 - span(u, 0.24, 0.34) : 0, lh = 34 * m;
+    box(ctx, lx0, cy - lh, lw, 2 * lh, 14 * m, '#0b1a28', rgba(C.amber, 0.9), 1.6);
+    box(ctx, lx1 - 4, cy - 12 * m, 14 * m, 24 * m, 4, rgba(C.amber, 0.25 + 0.5 * driving), rgba(C.amber, 0.9), 1.2);
+    ctx.beginPath();
+    for (let d = 0; d <= lw - 60 * m; d += 2) { const yy = cy + 11 * m * Math.sin(d * 0.2 / m - phase * (s ? 1 : 0.25)); d ? ctx.lineTo(lx0 + 26 * m + d, yy) : ctx.moveTo(lx0 + 26 * m, yy); }
+    ctx.strokeStyle = rgba(C.amber, 0.85); ctx.lineWidth = 1.8; ctx.stroke();
+    label('DRIVE LASER', lx0 + lw / 2, cy + lh + 22 * ts, { color: C.amber });
+    note('one pulse per step', lx0 + lw / 2, cy + lh + 40 * ts);
+    if (s && u < 0.27) packet(ctx, lerp(lx1 + 16, ex - er - 6, ease(u / 0.26)), cy, C.amber, 0.95, phase, 34 * m, 11 * m);
+
+    // the hidden region: the defect and its link to the emitter
+    const veilTop = Math.max(6, dy - dr - 12), veilBottom = cy - er - 5;
+    if (state.reveal) {
+      if (model.k) {
+        ctx.beginPath();
+        for (let yy = dy + dr; yy <= cy - er; yy += 2) { const xx = ex + 5 * Math.sin((yy - dy) * 0.5 + phase * 0.6); yy === dy + dr ? ctx.moveTo(xx, yy) : ctx.lineTo(xx, yy); }
+        ctx.strokeStyle = rgba(C.violet, 0.75); ctx.lineWidth = 1.8; ctx.stroke();
+        const swapping = s ? Math.sin(Math.PI * span(u, 0.33, 0.5)) : 0;
+        if (swapping > 0.02) {
+          const a = lerp(dy + dr, cy - er, span(u, 0.33, 0.5));
+          ctx.save(); ctx.globalCompositeOperation = 'lighter';
+          glow(ctx, ex, a, 13 * m, C.violet, 0.9 * swapping); glow(ctx, ex, dy + dr + cy - er - a, 13 * m, C.cyan, 0.9 * swapping);
+          ctx.restore();
+        }
+        ctx.save(); ctx.globalCompositeOperation = 'lighter'; glow(ctx, ex, dy, dr * 2.3, C.violet, 0.12 + 0.88 * pd); ctx.restore();
+        ctx.beginPath(); ctx.arc(ex, dy, dr, 0, 2 * Math.PI); ctx.fillStyle = '#0b1a28'; ctx.fill();
+        ctx.strokeStyle = C.violet; ctx.lineWidth = 2; ctx.stroke();
+        ctx.beginPath(); ctx.arc(ex, dy, (4 + 11 * Math.sqrt(pd)) * m, 0, 2 * Math.PI); ctx.fillStyle = rgba(C.violet, 0.35 + 0.65 * pd); ctx.fill();
+        label('HIDDEN DEFECT', ex + dr + 16, dy - 2, { color: C.violet, align: 'left' });
+        text(ctx, detail ? `a second qubit nobody measures · excited ${pct(pd, 0)}` : `excited ${pct(pd, 0)}`, ex + dr + 16, dy + 16 * ts, { size: 12 * ts });
+      } else {
+        ctx.setLineDash([5, 5]); ctx.beginPath(); ctx.arc(ex, dy, dr, 0, 2 * Math.PI); ctx.strokeStyle = rgba(C.violet, 0.45); ctx.lineWidth = 1.5; ctx.stroke(); ctx.setLineDash([]);
+        label('NOTHING HERE', ex + dr + 16, dy - 2, { color: C.muted, align: 'left' });
+        text(ctx, 'this device has no hidden defect', ex + dr + 16, dy + 16 * ts, { size: 12 * ts });
+      }
+    } else {
+      const vw = Math.max(236 * m, 215 * ts), vx = ex - vw / 2, vh = veilBottom - veilTop;
+      ctx.save(); ctx.beginPath(); ctx.roundRect(vx, veilTop, vw, vh, 12); ctx.clip();
+      ctx.fillStyle = '#0a1622'; ctx.fillRect(vx, veilTop, vw, vh);
+      for (let d = -vh; d < vw; d += 11) line(ctx, vx + d, veilTop + vh, vx + d + vh, veilTop, rgba(C.violet, 0.16), 1);
+      ctx.restore();
+      ctx.setLineDash([6, 5]); box(ctx, vx, veilTop, vw, vh, 12, null, rgba(C.violet, 0.6), 1.3); ctx.setLineDash([]);
+      label('HIDDEN FROM THE DETECTOR', ex, veilTop + vh / 2 + 1, { base: 'middle', color: C.violet, size: 11.5 * ts, spacing: 1.8 });
+    }
+
+    // emitter
+    ctx.save(); ctx.globalCompositeOperation = 'lighter'; glow(ctx, ex, cy, er * 2.5, C.cyan, 0.1 + 0.9 * pe); ctx.restore();
+    ctx.beginPath(); ctx.arc(ex, cy, er, 0, 2 * Math.PI); ctx.fillStyle = '#0b1a28'; ctx.fill();
+    ctx.strokeStyle = rgba(C.cyan, 0.55); ctx.lineWidth = 2; ctx.stroke();
+    ctx.beginPath(); ctx.arc(ex, cy, er, -Math.PI / 2, -Math.PI / 2 + 2 * Math.PI * pe); ctx.strokeStyle = C.cyan; ctx.lineWidth = 4.5; ctx.lineCap = 'round'; ctx.stroke(); ctx.lineCap = 'butt';
+    ctx.beginPath(); ctx.arc(ex, cy, (6 + 20 * Math.sqrt(pe)) * m, 0, 2 * Math.PI); ctx.fillStyle = rgba(C.cyan, 0.3 + 0.7 * pe); ctx.fill();
+    ctx.beginPath(); ctx.arc(ex, cy, 3.5 * m, 0, 2 * Math.PI); ctx.fillStyle = C.ink; ctx.fill();
+    label('EMITTER', ex, cy + er + 22 * ts, { color: C.cyan });
+    note(`a qubit · excited ${pct(pe, 0)}`, ex, cy + er + 40 * ts);
+
+    // the light on its way out: one wave, whose detection is a matter of chance
+    if (s && u >= 0.5 && u < 0.9) {
+      const a = 0.3 + 0.7 * Math.sqrt(s.pClick), fade = s.y ? 1 : 1 - span(u, 0.8, 0.9);
+      packet(ctx, lerp(ex + er + 10, detx - 16, ease(span(u, 0.5, 0.86))), cy, C.cyan, a * fade, phase, 30 * m, 9 * m);
+    }
+
+    // detector
+    const f = sim.flash, dh = 40 * m;
+    if (f > 0) { ctx.save(); ctx.globalCompositeOperation = 'lighter'; glow(ctx, detx + 18, cy, 150 * m * (1.25 - 0.4 * f), C.amber, 0.95 * f); ctx.restore(); }
+    box(ctx, detx, cy - dh, detw, 2 * dh, 14 * m, f > 0 ? rgba(C.amber, 0.12 + 0.3 * f) : '#0b1a28', f > 0 ? C.amber : rgba(C.ink, 0.75), 1.6 + f);
+    ctx.beginPath(); ctx.arc(detx + 6, cy, 22 * m, -Math.PI / 2, Math.PI / 2); ctx.strokeStyle = f > 0 ? C.amber : rgba(C.ink, 0.75); ctx.lineWidth = 2; ctx.stroke();
+    if (f > 0.05) label('CLICK', detx + detw / 2 + 12 * m, cy + 7 * m, { size: 20 * m * Math.max(1, ts * 0.9), weight: 700, color: C.amber });
+    else if (s && u >= 0.9 && !s.y) text(ctx, 'no click', detx + detw / 2 + 12 * m, cy + 5, { align: 'center', size: 13 * ts });
+    label('DETECTOR', detx + detw / 2, cy + dh + 22 * ts, { color: C.ink });
+    note('one bit per step', detx + detw / 2, cy + dh + 40 * ts);
+
+    // the click record
+    const cw = 58 * m * Math.max(1, ts * 0.85), gap = 10 * m, total = T * cw + (T - 1) * gap, tx = (W - total) / 2;
+    const ch = 42 * m * Math.max(1, ts * 0.85), ty = H - ch - (detail ? 22 : 26) * ts;
+    text(ctx, 'CLICK RECORD', tx - 18, ty + ch / 2 + 4, { align: 'right', size: 11.5 * ts, spacing: 2, weight: 600 });
+    text(ctx, `run ${comma(stats.runs + (sim.gap > 0 ? 0 : 1))}`, tx + total + 18, ty + ch / 2 + 4, { size: 12 * ts, mono: true });
+    const asking = state.scene !== 'signal' && state.scene !== 'machine';
+    for (let t = 0; t < T; t++) {
+      const x = tx + t * (cw + gap), done = t < sim.bits.length, live = !done && t === sim.t && sim.gap <= 0;
+      const bit = done ? sim.bits[t] : null, key = asking && t === T0 - 1;
+      box(ctx, x, ty, cw, ch, 9 * m, bit ? rgba(C.amber, 0.2) : '#0b1a28',
+          bit ? C.amber : live ? C.cyan : key ? rgba(C.amber, 0.75) : C.line2, bit || live || key ? 1.8 : 1);
+      text(ctx, `${t + 1}`, x + cw / 2, ty - 7, { align: 'center', size: 11 * ts, mono: true, color: key ? C.amber : C.muted });
+      if (done) text(ctx, String(bit), x + cw / 2, ty + ch / 2 + 1, { align: 'center', base: 'middle', size: 22 * m * Math.max(1, ts * 0.85), mono: true, color: bit ? C.amber : C.muted, weight: bit ? 700 : 400 });
+      else if (live) text(ctx, '·', x + cw / 2, ty + ch / 2, { align: 'center', base: 'middle', size: 26 * m, color: C.cyan });
+    }
+    if (asking) text(ctx, 'the click we ask about', tx + (T0 - 1) * (cw + gap) + cw / 2, ty + ch + 15 * ts, { align: 'center', size: 11 * ts, color: C.amber });
+  }
+
+  // ------------------------------------------------------------------ scene 1: click rate by step
+  function drawRates() {
+    const { ctx, w, h } = fit($('rate-chart'));
+    const x0 = 44, x1 = w - 12, y0 = 12, y1 = h - 26, top = 0.16;
+    for (const v of [0, 0.05, 0.1, 0.15]) {
+      const y = y1 - v / top * (y1 - y0);
+      line(ctx, x0, y, x1, y, C.line, 1); text(ctx, `${Math.round(v * 100)}%`, x0 - 8, y + 4, { align: 'right', size: 11, mono: true });
+    }
+    const bw = (x1 - x0) / T;
+    for (let t = 0; t < T; t++) {
+      const cx = x0 + (t + 0.5) * bw;
+      if (stats.runs) {
+        const v = stats.clicks[t] / stats.runs, hh = clamp(v / top, 0, 1) * (y1 - y0);
+        box(ctx, cx - bw * 0.27, y1 - hh, bw * 0.54, hh, 4, rgba(C.ink, 0.3), null);
+      }
+      const mine = state.defect ? C.cyan : C.amber, other = state.defect ? C.amber : C.cyan;
+      const yo = y1 - exactOther[t] / top * (y1 - y0), ym = y1 - exactRates[t] / top * (y1 - y0);
+      line(ctx, cx - bw * 0.36, yo, cx + bw * 0.36, yo, rgba(other, state.reveal ? 0.35 : 0.9), 2);
+      line(ctx, cx - bw * 0.36, ym, cx + bw * 0.36, ym, rgba(mine, 0.9), 2);
+      text(ctx, `${t + 1}`, cx, h - 8, { align: 'center', size: 11, mono: true });
+    }
+    $('rate-note').textContent = `Bars: ${comma(stats.runs)} run${stats.runs === 1 ? '' : 's'} so far. Lines: exact, cyan with the defect and amber without.`
+      + (state.reveal ? '' : ' Which device is this? Keep watching.');
+  }
+
+  // ------------------------------------------------------------------ scene 2: live meters and the circuit highlight
+  let lastPhase = '';
+  function updateMachine() {
+    const pops = shownPopulations(), s = sim.step;
+    const set = (id, v, on) => { $('m-' + id).style.width = pct(on ? v : 0, 1); $('v-' + id).textContent = on ? pct(v, 0) : '—'; };
+    set('emitter', pops[0], true); set('defect', model.k ? pops[1] : 0, !!model.k);
+    set('click', s ? s.pClick : 0, !!s);
+    const phase = s ? phaseOf(sim.u) : '';
+    if (phase !== lastPhase) {
+      lastPhase = phase;
+      document.querySelectorAll('#circuit .gate').forEach(g => g.classList.toggle('on', g.dataset.phase === phase));
+    }
+  }
+
+  // ------------------------------------------------------------------ scene 3: the raster and the tally
+  const RASTER_ROWS = 34;
+  function drawRaster() {
+    const { ctx, w, h } = fit($('raster'));
+    const cols = 6, rows = RASTER_ROWS, cell = 19, cgap = 3, runW = T * (cell + cgap) - cgap, colGap = (w - 24 - cols * runW) / (cols - 1);
+    const rh = (h - 26) / rows;
+    for (let c = 0; c < cols; c++) {
+      const x = 12 + c * (runW + colGap), kx = x + (T0 - 1) * (cell + cgap);
+      box(ctx, kx - 2, 16, cell + 4, h - 22, 5, rgba(C.amber, 0.09), rgba(C.amber, 0.28), 1);
+      for (let t = 0; t < T; t++) text(ctx, `${t + 1}`, x + t * (cell + cgap) + cell / 2, 11, { align: 'center', size: 10, mono: true, color: t === T0 - 1 ? C.amber : C.muted });
+    }
+    stats.recent.forEach((run, i) => {
+      const c = Math.floor(i / rows), r = i % rows;
+      if (c >= cols) return;
+      const x = 12 + c * (runW + colGap), y = 20 + r * rh, hh = Math.max(4, rh - 5);
+      if (run.kept) box(ctx, x - 4, y - 2, runW + 8, hh + 4, 4, rgba(C.amber, 0.13), null);
+      for (let t = 0; t < T; t++) {
+        const on = run.bits[t] === 1, key = t === T0 - 1;
+        box(ctx, x + t * (cell + cgap), y, cell, hh, 3,
+            on ? (key ? C.amber : run.kept ? C.cyan : rgba(C.ink, 0.75)) : rgba(C.blue, run.kept ? 0.22 : 0.1), null);
+      }
+    });
+    if (!stats.recent.length) text(ctx, 'Runs appear here as the machine finishes them.', w / 2, h / 2, { align: 'center', size: 14 });
+  }
+  function updateTally() {
+    $('t-runs').textContent = comma(stats.runs);
+    $('t-kept').textContent = comma(stats.kept);
+    $('t-kept-rate').textContent = stats.runs ? `${pct(stats.kept / stats.runs, 1)} of runs · exact ${pct(after.pClick)}` : `exact ${pct(after.pClick)}`;
+    $('t-waste').textContent = comma(stats.runs - stats.kept);
+    const exact = after.conditional[TAU - 1];
+    if (stats.kept >= 1) {
+      const p = stats.later[TAU - 1] / stats.kept, se = Math.sqrt(Math.max(p * (1 - p), 1 / (4 * stats.kept)) / stats.kept);
+      $('t-est').textContent = pct(p, 1);
+      $('t-est-note').textContent = `± ${(196 * se).toFixed(1)} points, from only ${comma(stats.kept)} kept run${stats.kept === 1 ? '' : 's'}`;
+    } else { $('t-est').textContent = '—'; $('t-est-note').textContent = 'waiting for a run with the click'; }
+    $('t-exact').textContent = `exact for this model: ${pct(exact)}`;
+  }
+
+  // ------------------------------------------------------------------ scene 4: rewind and amplify
+  const STAGES = ['prepare', 'mark', 'rewind', 'reflect', 'replay'];
+  const amp = { steer: true, reflection: 'memory+last-1', stage: 0, u: 1, playing: false, result: null, base: 0, rate: 1 };
+  function computeAmp() {
+    const steer = amp.steer ? E.steerFor(model, T0) : null;
+    amp.result = E.amplifiedHistory(model, T0, { r: 1, reflection: amp.reflection, steer, stages: true });
+    amp.base = E.clickProbability(model, T0);
+    amp.gamma = steer;
+  }
+  function measuredFor() {
+    // IBM ran the default defect model. Show its numbers only when that is the model on screen.
+    if (!state.defect || Math.abs(state.phi - DEFAULT_PHI) > 1e-9) return null;
+    const name = `click3-${amp.steer ? 'steered-' : ''}${amp.reflection}-r1`;
+    const precise = Object.values(DATA.hero.precision).find(v => v && v.name === name);
+    return precise ? Object.assign({ run: 'precision' }, precise) : (DATA.variants[name] ? Object.assign({ run: 'first' }, DATA.variants[name]) : null);
+  }
+  function setStage(k, animate) {
+    amp.stage = clamp(k, 0, 4); amp.u = animate && !reduced ? 0 : 1;
+    document.querySelectorAll('#stages button').forEach((b, i) => { b.classList.toggle('on', i === amp.stage); b.classList.toggle('done', i < amp.stage); });
+    renderAmpText();
+  }
+  function playAmp() {
+    amp.playing = true; setStage(0, true); $('amp-play').textContent = '❚❚ Playing';
+  }
+  function stopAmp() { amp.playing = false; amp.rate = 1; $('amp-play').textContent = '▶ Play one round'; }
+  function advanceAmp(dt) {
+    if (amp.u < 1) amp.u = Math.min(1, amp.u + dt * amp.rate / 1500);
+    else if (amp.playing) {
+      amp.hold = (amp.hold || 0) + dt * amp.rate;
+      if (amp.hold > 1100) { amp.hold = 0; if (amp.stage < 4) setStage(amp.stage + 1, true); else stopAmp(); }
+    }
+  }
+  function renderAmpText() {
+    if (!amp.result) return;
+    const r = amp.result, s = r.stages, n = r.watched.length, all = r.qubits, m = measuredFor();
+    const p0 = s[0].hit, blank = s[2].blank, local = amp.reflection !== 'full';
+    const plain = [
+      `PREPARE. Run the reversible machine once. All eight possible 3-step records now exist together, each with a wave height of √probability. The click we want is ${pct(p0)} of the total.`,
+      `MARK. One gate flips the sign of every record that has a click at step 3. Nothing you could measure has changed yet: the probabilities are the same.`,
+      `REWIND. Run the machine backwards. Unmarked, everything would return to the blank start. Because of the mark, only ${pct(blank, 1)} does.`,
+      `REFLECT. Flip the sign of the blank start${local ? `, checking just ${n} of the ${all} qubits` : `, checking all ${all} qubits`}.`,
+      `REPLAY. Run forward again. The waves now add up on the records with the click: ${pct(r.hit)} instead of ${pct(amp.base)}.`,
+    ];
+    const tech = [
+      `A|0⟩ = Σ |m_y⟩|y⟩ on ${all} qubits${amp.steer ? `, with the step-3 emission steered to γ′ = ${amp.gamma.toFixed(3)}` : ''}. p = ${p0.toFixed(4)}, θ = asin√p = ${(E.rotationAngle(p0) * 180 / Math.PI).toFixed(1)}°.`,
+      `S_f = Z on light 3. It is a single-qubit gate because the predicate reads one bit. Amplitudes of marked histories change sign; |amplitude|² does not.`,
+      `A† S_f A|0⟩. The overlap with ${local ? `the watched ${n}-qubit zero subspace` : '|0…0⟩'} is ${local ? blank.toFixed(4) : `(1 − 2p)² = ${blank.toFixed(4)}`}.`,
+      `S_0 on ${n} qubit${n === 1 ? '' : 's'}: ${local ? 'the memory and the last light. Cheaper multi-controlled Z, but an approximation' : 'a multi-controlled Z over every qubit, built from relative-phase Toffolis with ancillas'}.`,
+      `Q = A S_0 A† S_f gives P = ${r.hit.toFixed(4)}${local ? '' : ` = sin²(3θ)`}. Conditional-distribution error TV = ${r.tv.toFixed(4)}. Cost: 3 calls of the machine.`,
+    ];
+    $('stage-caption').textContent = (state.level === 'tech' ? tech : plain)[amp.stage];
+    $('amp-hit').textContent = pct(r.hit);
+    $('amp-hit-note').textContent = `ideal · was ${pct(amp.base)}` + (amp.steer ? `, steered to ${pct(p0)}` : ', not steered');
+    $('amp-tv').textContent = r.tv < 5e-7 ? '0.000' : r.tv.toFixed(3);
+    $('amp-tv').style.color = r.tv < 5e-7 ? C.cyan : C.amber;
+    $('amp-gates').textContent = m ? String(m.two_qubit_gates) : '—';
+    $('amp-gates-note').textContent = m ? `measured hit rate ${pct(m.probability, 1)} over ${comma(m.shots)} shots` : 'IBM ran the default defect model (φ = 0.45)';
+    $('amp-full').innerHTML = `Full reflection<small>all ${all} qubits</small>`;
+    $('amp-local').innerHTML = `Local reflection<small>${model.nMemory + 1} qubits</small>`;
+    let a, b;
+    if (!amp.steer) {
+      a = `Without steering the click is too rare for one round: ${pct(r.hit, 1)}. Textbook Grover needs three, and on IBM Marrakesh three rounds cost ${DATA.variants['click3-full-r3'].two_qubit_gates} gates and reached ${pct(DATA.variants['click3-full-r3'].probability, 1)}.`;
+      b = `Unsteered p = ${amp.base.toFixed(4)} gives sin²(3θ) = ${E.successProbability(amp.base, 1).toFixed(3)}; the peak is at r = 3 (${E.successProbability(amp.base, 3).toFixed(3)}), i.e. 7 machine calls and far more depth.`;
+    } else if (local) {
+      a = `Steering makes one round enough. The local reflection checks fewer qubits, so it needs about half the gates. The price is a small bias in the ideal answer (${r.tv.toFixed(3)}).`;
+      b = `Steering is classical importance reweighting of one emission angle: it scales every marked history equally, so conditionals stay exact. The local S_0 leaks outside the 2-D Grover plane, hence TV = ${r.tv.toFixed(4)}.`;
+    } else {
+      a = `Exact in theory: the answer is untouched. But every extra gate is a chance for noise, and this build needs about twice as many.`;
+      b = `Full S_0 keeps the state in span{|good⟩, |bad⟩}, so the conditional law is preserved to machine precision. The cost is the wide multi-controlled Z after transpilation.`;
+    }
+    $('amp-insight').textContent = a; $('amp-insight-tech').textContent = b;
+  }
+  function drawAmp() {
+    const { ctx, w, h } = fit($('amp-canvas'));
+    const r = amp.result, s = r.stages, k = amp.stage, u = ease(amp.u);
+    const order = [0, 1, 2, 3, 4, 5, 6, 7], mid = 216, unit = 158, bw = 56, gap = 20, groupGap = 54, left = 46;
+    const xOf = i => left + i * (bw + gap) + (i >= 4 ? groupGap : 0);
+    const A = j => order.map(y => Math.sqrt(s[j].distribution[y]));
+    // which picture: records (stages 0, 1, 4) or the rewound view (stages 2, 3)
+    let recAlpha = 1, values = A(0), signs = order.map(() => 1), blankVal = 0;
+    if (k === 0) values = A(0).map(v => v * u);
+    else if (k === 1) { values = A(0); signs = order.map(y => ((y >> 2) & 1 ? 1 - 2 * u : 1)); }
+    else if (k === 2) { values = A(0); signs = order.map(y => ((y >> 2) & 1 ? -1 : 1)); recAlpha = 1 - u; blankVal = Math.sqrt(s[2].blank); }
+    else if (k === 3) { recAlpha = 0; blankVal = Math.sqrt(s[2].blank) * (1 - 2 * u); }
+    else { values = A(4); recAlpha = u; blankVal = -Math.sqrt(s[2].blank); }
+
+    line(ctx, left - 14, mid, xOf(7) + bw + 14, mid, C.line2, 1.2);
+    text(ctx, 'WAVE HEIGHT = √PROBABILITY', left - 14, 22, { size: 13, spacing: 2, weight: 600 });
+    if (recAlpha > 0.01) {
+      ctx.save(); ctx.globalAlpha = recAlpha;
+      text(ctx, 'NO CLICK AT STEP 3', (xOf(0) + xOf(3) + bw) / 2, h - 8, { align: 'center', size: 13, spacing: 1.6, weight: 600, color: C.blue });
+      text(ctx, 'CLICK AT STEP 3 · WHAT WE ASKED FOR', (xOf(4) + xOf(7) + bw) / 2, h - 8, { align: 'center', size: 13, spacing: 1.6, weight: 600, color: C.amber });
+      const dist = k === 4 ? s[4].distribution : s[0].distribution;
+      order.forEach((y, i) => {
+        const marked = (y >> 2) & 1, v = values[i] * signs[i], hh = v * unit, x = xOf(i), color = marked ? C.amber : C.blue;
+        box(ctx, x, hh >= 0 ? mid - hh : mid, bw, Math.max(Math.abs(hh), 1.5), 5, rgba(color, marked ? 0.9 : 0.6), null);
+        // the record as three dots in time order: filled means a click
+        for (let t = 0; t < 3; t++) {
+          const on = (y >> t) & 1, dx = x + bw / 2 + (t - 1) * 16, dyy = h - 54;
+          ctx.beginPath(); ctx.arc(dx, dyy, 5.5, 0, 2 * Math.PI);
+          if (on) { ctx.fillStyle = t === 2 ? C.amber : C.ink; ctx.fill(); } else { ctx.strokeStyle = C.line2; ctx.lineWidth = 1.4; ctx.stroke(); }
+        }
+        const p = dist[y] * (k === 0 ? u : 1);
+        text(ctx, p >= 0.0995 ? pct(p, 1) : pct(p, 2), x + bw / 2, h - 31, { align: 'center', size: 13.5, mono: true, color: marked ? C.amber : C.soft });
+      });
+      ctx.restore();
+    }
+    if (recAlpha < 0.99) {
+      ctx.save(); ctx.globalAlpha = 1 - recAlpha;
+      const bx = left + 120, rx = bx + 250, big = 130, rest = Math.sqrt(1 - s[2].blank), hh = blankVal * unit, local = amp.reflection !== 'full';
+      box(ctx, bx, hh >= 0 ? mid - hh : mid, big, Math.max(Math.abs(hh), 1.5), 6, rgba(C.cyan, 0.85), null);
+      box(ctx, rx, mid - rest * unit, big, rest * unit, 6, rgba(C.amber, 0.5), null);
+      text(ctx, local ? 'BLANK ON THE WATCHED QUBITS' : 'BACK AT THE BLANK START', bx + big / 2, h - 34, { align: 'center', size: 13, spacing: 1.6, weight: 600, color: C.cyan });
+      text(ctx, pct(s[2].blank, 1), bx + big / 2, h - 10, { align: 'center', size: 17, mono: true, color: C.cyan });
+      text(ctx, 'COULD NOT REWIND', rx + big / 2, h - 34, { align: 'center', size: 13, spacing: 1.6, weight: 600, color: C.amber });
+      text(ctx, pct(1 - s[2].blank, 1), rx + big / 2, h - 10, { align: 'center', size: 17, mono: true, color: C.amber });
+      ctx.restore();
+    }
+
+    // the geometry: a rotation in the plane of (everything else, runs with the click)
+    const cx = 850, cyy = 262, R = 200;
+    const p0 = s[0].hit, th = E.rotationAngle(p0), end = E.rotationAngle(r.hit) + (r.hit > 0.999999 ? 0 : 0);
+    let ang = th;
+    if (k === 0) ang = th; else if (k === 1) ang = lerp(th, -th, u); else if (k === 2 || k === 3) ang = -th; else ang = lerp(-th, Math.min(end, Math.PI / 2), u);
+    ctx.beginPath(); ctx.arc(cx, cyy, R, -Math.PI / 2, 0.42); ctx.strokeStyle = C.line2; ctx.lineWidth = 1.2; ctx.stroke();
+    line(ctx, cx, cyy, cx + R + 22, cyy, C.line2, 1.2); line(ctx, cx, cyy, cx, cyy - R - 18, C.line2, 1.2);
+    text(ctx, 'EVERYTHING ELSE', cx + R + 22, cyy + 20, { align: 'right', size: 12.5, spacing: 1.4, weight: 600, color: C.blue });
+    text(ctx, 'RUNS WITH THE CLICK', cx + 10, cyy - R - 8, { size: 12.5, spacing: 1.4, weight: 600, color: C.amber });
+    ctx.setLineDash([5, 6]); line(ctx, cx, cyy, cx + (R + 12) * Math.cos(th), cyy - (R + 12) * Math.sin(th), rgba(C.ink, k >= 1 ? 0.55 : 0.2), 1.2); ctx.setLineDash([]);
+    if (k >= 1) text(ctx, 'starting direction', cx + (R + 16) * Math.cos(th), cyy - (R + 16) * Math.sin(th) - 2, { size: 13, color: C.soft });
+    const vx = cx + R * Math.cos(ang), vy = cyy - R * Math.sin(ang);
+    ctx.save(); ctx.globalCompositeOperation = 'lighter'; glow(ctx, vx, vy, 26, C.cyan, 0.8); ctx.restore();
+    line(ctx, cx, cyy, vx, vy, C.cyan, 3.2);
+    ctx.beginPath(); ctx.arc(vx, vy, 6.5, 0, 2 * Math.PI); ctx.fillStyle = C.ink; ctx.fill();
+    line(ctx, vx, vy, vx, cyy, rgba(C.amber, 0.7), 1.4);
+    const shown = Math.sin(ang) ** 2 * (k === 4 && u > 0.98 ? 0 : 1) + (k === 4 && u > 0.98 ? r.hit : 0);
+    text(ctx, pct(shown, 1), cx - 18, cyy - 26, { size: 34, mono: true, color: C.amber, weight: 500, align: 'right' });
+    text(ctx, 'chance of the click', cx - 18, cyy - 4, { size: 13, align: 'right' });
+    text(ctx, '= height²', cx - 18, cyy + 14, { size: 13, align: 'right' });
+  }
+
+  // ------------------------------------------------------------------ scene 5: two futures
+  const answer = { sampled: null, ibm: false };
+  function refModels() { return { defect: E.makeModel({ phi: state.phi }), none: E.makeModel({ defect: false }) }; }
+  function renderAnswerNumbers() {
+    const m = refModels(), d = E.afterClick(m.defect, T0, TAU), n = E.afterClick(m.none, T0, TAU);
+    answer.exact = { defect: d, none: n };
+    $('ans-defect').textContent = pct(d.conditional[2]); $('ans-none').textContent = pct(n.conditional[2]);
+    $('phi-out').textContent = state.phi.toFixed(2);
+    $('answer-note').textContent = `Exact predictions. A click at step 3 happens in ${pct(d.pClick)} of runs with the defect and ${pct(n.pClick)} without.`
+      + (answer.ibm ? ' Diamonds: IBM Marrakesh, steer + local build, raw counts with 95% intervals. Right order at step 6, visibly biased.' : '');
+  }
+  function sampleAnswer() {
+    const m = refModels(), N = 20000, out = {};
+    for (const key of ['defect', 'none']) {
+      const Kk = E.kraus(m[key]); let kept = 0; const later = [0, 0, 0];
+      for (let i = 0; i < N; i++) { const b = E.sampleRun(m[key], T, random, Kk).bits; if (b[2]) { kept++; later[0] += b[3]; later[1] += b[4]; later[2] += b[5]; } }
+      out[key] = { kept, later, n: N };
+    }
+    answer.sampled = out;
+    $('ans-sample-note').textContent = `Sampled ${comma(N)} runs of each model in your browser: kept ${comma(out.defect.kept)} with the defect and ${comma(out.none.kept)} without. Dots with bars are those samples.`;
+  }
+  function drawAnswer() {
+    const { ctx, w, h } = fit($('answer-canvas'));
+    const x0 = 70, x1 = w - 40, y0 = 30, y1 = h - 58, top = 0.14;
+    const X = j => x0 + (j + 0.5) / 3 * (x1 - x0), Y = v => y1 - clamp(v / top, 0, 1.04) * (y1 - y0);
+    for (let v = 0; v <= top + 1e-9; v += 0.02) { line(ctx, x0, Y(v), x1, Y(v), C.line, 1); text(ctx, `${Math.round(v * 100)}%`, x0 - 12, Y(v) + 5, { align: 'right', size: 13, mono: true }); }
+    for (let j = 0; j < 3; j++) text(ctx, `step ${T0 + 1 + j}`, X(j), h - 22, { align: 'center', size: 15, color: C.ink });
+    text(ctx, `${j3('after the click')}`, x1, h - 4, { align: 'right', size: 11.5 });
+    const series = [['none', C.amber, 'emitter only'], ['defect', C.cyan, 'with the hidden defect']];
+    for (const [key, color, name] of series) {
+      const vals = answer.exact[key].conditional;
+      ctx.beginPath(); vals.forEach((v, j) => (j ? ctx.lineTo(X(j), Y(v)) : ctx.moveTo(X(j), Y(v)))); ctx.strokeStyle = color; ctx.lineWidth = 3.2; ctx.lineJoin = 'round'; ctx.stroke();
+      vals.forEach((v, j) => {
+        ctx.save(); ctx.globalCompositeOperation = 'lighter'; glow(ctx, X(j), Y(v), 20, color, 0.5); ctx.restore();
+        ctx.beginPath(); ctx.arc(X(j), Y(v), 7, 0, 2 * Math.PI); ctx.fillStyle = color; ctx.fill();
+        text(ctx, pct(v), X(j) + (key === 'none' ? -14 : 14), Y(v) + (key === 'none' ? -14 : 24), { align: key === 'none' ? 'right' : 'left', size: 17, mono: true, color });
+      });
+      text(ctx, name, X(2) + 16, Y(vals[2]) + (key === 'none' ? -34 : 44), { size: 12.5, color, align: 'right' });
+      const smp = answer.sampled && answer.sampled[key];
+      if (smp && smp.kept > 0) smp.later.forEach((c, j) => {
+        const p = c / smp.kept, se = 1.96 * Math.sqrt(p * (1 - p) / smp.kept), x = X(j) + (key === 'none' ? 26 : -26);
+        line(ctx, x, Y(p - se), x, Y(p + se), rgba(color, 0.9), 2); line(ctx, x - 5, Y(p - se), x + 5, Y(p - se), rgba(color, 0.9), 2); line(ctx, x - 5, Y(p + se), x + 5, Y(p + se), rgba(color, 0.9), 2);
+        ctx.beginPath(); ctx.arc(x, Y(p), 4.5, 0, 2 * Math.PI); ctx.fillStyle = C.dark; ctx.fill(); ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.stroke();
+      });
+      if (answer.ibm) {
+        const rows = DATA.loops.precision.builds.local[key === 'none' ? 'no_defect' : 'defect'].future;
+        rows.forEach((f, j) => {
+          const x = X(j) + (key === 'none' ? 50 : -50), y = Y(f.probability);
+          line(ctx, x, Y(f.wilson95[0]), x, Y(f.wilson95[1]), rgba(color, 0.75), 1.6);
+          ctx.beginPath(); ctx.moveTo(x, y - 8); ctx.lineTo(x + 7, y); ctx.lineTo(x, y + 8); ctx.lineTo(x - 7, y); ctx.closePath();
+          ctx.fillStyle = C.dark; ctx.fill(); ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.stroke();
+          if (j === 2) text(ctx, `IBM ${pct(f.probability, 1)}`, x, y + (key === 'none' ? -14 : 24), { align: 'center', size: 11.5, mono: true, color });
+        });
+      }
+    }
+    function j3(s) { return s; }
+  }
+
+  // ------------------------------------------------------------------ scene 6: IBM hardware
+  const hw = { run: 'precision', u: 1 };
+  function renderHardware() {
+    const h = DATA.hero[hw.run], L = h.local, F = h.full;
+    const label = { precision: `Precision repeat · ${comma(h.shots)} shots per circuit`, first: `First run · ${comma(h.shots)} shots per circuit`,
+                    suppressed: `Same circuits with dynamical decoupling and twirling · ${comma(h.shots)} shots` }[hw.run];
+    $('hw-run-label').textContent = label;
+    for (const [id, key] of [['hw-precision', 'precision'], ['hw-first', 'first'], ['hw-supp', 'suppressed']]) $(id).setAttribute('aria-pressed', hw.run === key);
+    $('hw-local-rate').textContent = pct(L.probability); $('hw-full-rate').textContent = pct(F.probability);
+    $('hw-local-count').textContent = `${comma(L.accepted)} of ${comma(L.shots)} shots hit the click`;
+    $('hw-full-count').textContent = `${comma(F.accepted)} of ${comma(F.shots)} shots hit the click`;
+    $('hw-local-gates').textContent = `${L.two_qubit_gates} two-qubit gates · depth ${L.depth}`;
+    $('hw-full-gates').textContent = `${F.two_qubit_gates} two-qubit gates · depth ${F.depth}`;
+    $('hw-tv-local').textContent = L.tv_to_exact.toFixed(3); $('hw-tv-full').textContent = F.tv_to_exact.toFixed(3);
+    $('hw-ideal-local').textContent = pct(L.ideal_probability, 1); $('hw-ideal-full').textContent = pct(F.ideal_probability, 1);
+    $('hw-gps-local').textContent = L.gates_per_accepted_shot.toFixed(0); $('hw-gps-full').textContent = F.gates_per_accepted_shot.toFixed(0);
+    const plain = DATA.variants['click3-full-r0'];
+    $('hw-plain-rate').textContent = pct(plain.probability);
+    $('hw-plain-note').textContent = `${comma(plain.accepted)} of ${comma(plain.shots)} shots in the first run · ideal ${pct(plain.ideal_probability)}: on a rare event, noise adds false clicks`;
+    const d = h.difference;
+    $('hw-diff').textContent = d
+      ? `Local minus full: ${(100 * d.probability).toFixed(2)} points (95% interval ${(100 * d.interval95[0]).toFixed(2)} to ${(100 * d.interval95[1]).toFixed(2)}, independent shots). `
+        + (hw.run === 'suppressed' ? 'Suppression did not improve the answer error here.' : 'Routing, circuit width and drift differ, so gate count is not proven to be the only cause.') + ' Runs are never pooled.'
+      : '';
+    $('hw-job').textContent = `job ${h.job_id} · ${DATA.backend} · ${h.submitted_utc.slice(0, 10)}`;
+    const c = DATA.campaign;
+    $('hw-campaign').textContent = `campaign: ${c.jobs} jobs, ${comma(c.science_circuits)} circuits, ${comma(c.total_shots)} shots, ${c.qpu_seconds} s of QPU time`;
+    const names = { plain: 'Plain sampling', local: 'Steer + local', full: 'Steer + full', memory: 'Memory-only control' };
+    const body = document.querySelector('#hw-loop tbody'); body.replaceChildren();
+    const loops = DATA.loops[hw.run].builds;
+    for (const key of ['plain', 'local', 'full', 'memory']) {
+      const dft = loops[key].defect.future[2].probability, non = loops[key].no_defect.future[2].probability, ok = dft < non && key !== 'memory';
+      const tr = document.createElement('tr');
+      const cells = [names[key], pct(dft), pct(non), key === 'memory' ? 'wrong answer' : ok ? 'right' : 'reversed'];
+      cells.forEach((t, i) => { const td = document.createElement('td'); td.textContent = t; if (i === 3) td.className = ok ? 'ok' : 'bad'; tr.append(td); });
+      body.append(tr);
+    }
+    hw.u = reduced ? 1 : 0;
+  }
+  function drawShots(id, row, color) {
+    const { ctx, w, h } = fit($(id));
+    const rows = row.shots > 4096 ? 32 : 16, cols = row.shots / rows, cw = w / cols, chh = h / rows, lit = Math.round(row.accepted * ease(hw.u));
+    ctx.fillStyle = rgba(C.blue, 0.13);
+    for (let i = 0; i < row.shots; i++) { const c = Math.floor(i / rows), r = i % rows; ctx.fillRect(c * cw + 0.3, r * chh + 0.3, cw - 0.6, chh - 0.6); }
+    ctx.fillStyle = color;
+    for (let i = 0; i < lit; i++) { const c = Math.floor(i / rows), r = i % rows; ctx.fillRect(c * cw + 0.3, r * chh + 0.3, cw - 0.6, chh - 0.6); }
+    const ix = row.ideal_probability * w;
+    line(ctx, ix, 0, ix, h, C.ink, 1.5);
+    text(ctx, `ideal ${pct(row.ideal_probability, 1)}`, ix - 6, 13, { align: 'right', size: 11, color: C.ink, mono: true });
+  }
+
+  // ------------------------------------------------------------------ frame loop
+  let last = performance.now(), manual = false, clock = 0;
+  function frame(now) {
+    if (manual) return;
+    const dt = Math.min(now - last, 120); last = now;
+    render(dt, now);
+    requestAnimationFrame(frame);
+  }
+  function render(dt, now) {
+    advance(dt);
+    if (bench.parentNode) drawBench(now);
+    if (state.scene === 'signal') drawRates();
+    else if (state.scene === 'machine') updateMachine();
+    else if (state.scene === 'question') { drawRaster(); updateTally(); }
+    else if (state.scene === 'rewind') { advanceAmp(dt); drawAmp(); }
+    else if (state.scene === 'answer') drawAnswer();
+    else if (state.scene === 'hardware') {
+      if (hw.u < 1) hw.u = Math.min(1, hw.u + dt / 1100);
+      drawShots('shots-local', DATA.hero[hw.run].local, C.cyan); drawShots('shots-full', DATA.hero[hw.run].full, C.amber);
+    }
+    advanceTour(dt);
+  }
+  function drawStatic() { if (state.scene === 'rewind') { renderAmpText(); } }
+
+  // ------------------------------------------------------------------ scenes, tour, controls
+  function show(id, fromTour) {
+    if (!SCENES.includes(id)) id = 'signal';
+    if (!fromTour) stopTour();
+    state.scene = id;
+    document.querySelectorAll('.scene').forEach(s => { s.hidden = s.id !== id; });
+    document.querySelectorAll('.scenes button').forEach(b => b.setAttribute('aria-current', b.dataset.scene === id));
+    const i = SCENES.indexOf(id);
+    $('prev').disabled = i === 0; $('next').textContent = i === SCENES.length - 1 ? 'Start over ↺' : 'Next →';
+    mountBench();
+    if (id === 'rewind') { computeAmp(); stopAmp(); setStage(0, false); if (fromTour) { playAmp(); amp.rate = 1.7; } }
+    if (id === 'answer') renderAnswerNumbers();
+    if (id === 'hardware') renderHardware();
+    try { history.replaceState(null, '', '#' + id); } catch (e) { /* file:// in some browsers */ }
+    window.scrollTo({ top: 0 });
+  }
+  const step = d => { const i = SCENES.indexOf(state.scene) + d; show(SCENES[(i + SCENES.length) % SCENES.length]); };
+  function fastForward(n) { for (let i = 0; i < n; i++) record(E.sampleRun(model, T, random, K).bits); }
+
+  const TOUR = [['signal', 6], ['machine', 6], ['question', 7], ['rewind', 9], ['answer', 6], ['hardware', 7], ['impact', 4]];
+  // one beat per scene, at a time in seconds after the scene opens
+  const BEATS = {
+    signal: [[3.2, () => setReveal(true)]],
+    question: [[2.4, () => fastForward(3000)]],
+    answer: [[0, () => setPhi(0)], [1.0, t => setPhi(Math.min(DEFAULT_PHI, DEFAULT_PHI * (t - 1.0) / 2.6)), 3.7], [3.7, () => setPhi(DEFAULT_PHI)]],
+  };
+  function startTour() {
+    state.tour = { i: 0, t: 0, done: 0 }; $('tour').textContent = '■ Stop tour'; $('tour').setAttribute('aria-pressed', 'true');
+    if (!state.defect || state.phi !== DEFAULT_PHI) { state.defect = true; setPhi(DEFAULT_PHI); }
+    setReveal(false); setSpeed(4); state.paused = false; show(TOUR[0][0], true);
+  }
+  function stopTour() {
+    if (!state.tour) return;
+    state.tour = null; $('tour').textContent = '▶ 45 s tour'; $('tour').setAttribute('aria-pressed', 'false'); $('progress-bar').style.width = '0';
+  }
+  function advanceTour(dt) {
+    const tour = state.tour; if (!tour) return;
+    tour.t += dt / 1000;
+    const total = TOUR.reduce((s, x) => s + x[1], 0), before = TOUR.slice(0, tour.i).reduce((s, x) => s + x[1], 0);
+    $('progress-bar').style.width = pct(Math.min(1, (before + tour.t) / total), 2);
+    const beats = BEATS[TOUR[tour.i][0]] || [];
+    beats.forEach((beat, n) => {
+      const [at, run, until] = beat;
+      if (until !== undefined) { if (tour.t >= at && tour.t < until) run(tour.t); }      // a continuous beat
+      else if (tour.t >= at && !(tour.done & (1 << n))) { tour.done |= 1 << n; run(tour.t); }
+    });
+    if (tour.t >= TOUR[tour.i][1]) {
+      tour.i++; tour.t = 0; tour.done = 0;
+      if (tour.i >= TOUR.length) stopTour(); else show(TOUR[tour.i][0], true);
+    }
+  }
+  function setPhi(v) {
+    state.phi = v; $('phi').value = v; answer.sampled = null;
+    const scene = state.scene; rebuildModel(); if (scene === 'answer') renderAnswerNumbers();
+  }
+  function setSpeed(v) {
+    state.speed = v;
+    document.querySelectorAll('.speed button[data-speed]').forEach(b => b.setAttribute('aria-pressed', +b.dataset.speed === v));
+  }
+  function setLevel(level) {
+    state.level = level;
+    document.body.classList.toggle('level-plain', level === 'plain'); document.body.classList.toggle('level-tech', level === 'tech');
+    $('level-plain').setAttribute('aria-pressed', level === 'plain'); $('level-tech').setAttribute('aria-pressed', level === 'tech');
+    renderAmpText();
+  }
+  function setReveal(v) {
+    state.reveal = v; $('toggle-reveal').setAttribute('aria-pressed', v);
+    $('toggle-reveal').textContent = v ? 'Hide it again' : 'Reveal what’s hidden';
+  }
+
+  document.querySelectorAll('.scenes button').forEach(b => b.addEventListener('click', () => show(b.dataset.scene)));
+  $('prev').addEventListener('click', () => step(-1)); $('next').addEventListener('click', () => step(1));
+  $('tour').addEventListener('click', () => (state.tour ? stopTour() : startTour()));
+  $('level-plain').addEventListener('click', () => setLevel('plain')); $('level-tech').addEventListener('click', () => setLevel('tech'));
+  $('toggle-defect').addEventListener('click', () => { state.defect = !state.defect; rebuildModel(); });
+  $('toggle-reveal').addEventListener('click', () => setReveal(!state.reveal));
+  document.querySelectorAll('.speed button[data-speed]').forEach(b => b.addEventListener('click', () => setSpeed(+b.dataset.speed)));
+  $('pause').addEventListener('click', () => { state.paused = !state.paused; $('pause').setAttribute('aria-pressed', state.paused); $('pause').textContent = state.paused ? '▶' : '❚❚'; });
+  $('sound').addEventListener('click', () => { state.sound = !state.sound; $('sound').setAttribute('aria-pressed', state.sound); $('sound').textContent = state.sound ? '♪ on' : '♪ off'; if (state.sound) tick(); });
+  $('ff').addEventListener('click', () => fastForward(5000));
+  $('reset-runs').addEventListener('click', () => { resetStats(); resetRun(); });
+  document.querySelectorAll('#stages button').forEach(b => b.addEventListener('click', () => { stopAmp(); setStage(+b.dataset.stage, true); }));
+  $('amp-play').addEventListener('click', () => (amp.playing ? stopAmp() : playAmp()));
+  $('amp-steer').addEventListener('click', () => { amp.steer = !amp.steer; $('amp-steer').setAttribute('aria-checked', amp.steer); computeAmp(); stopAmp(); setStage(amp.stage, false); });
+  const setReflection = kind => {
+    amp.reflection = kind; $('amp-full').setAttribute('aria-pressed', kind === 'full'); $('amp-local').setAttribute('aria-pressed', kind !== 'full');
+    computeAmp(); stopAmp(); setStage(amp.stage, false);
+  };
+  $('amp-full').addEventListener('click', () => setReflection('full')); $('amp-local').addEventListener('click', () => setReflection('memory+last-1'));
+  $('phi').addEventListener('input', () => { state.defect = true; setPhi(+$('phi').value); });
+  $('phi-reset').addEventListener('click', () => setPhi(DEFAULT_PHI));
+  $('ans-sample').addEventListener('click', sampleAnswer);
+  $('show-ibm').addEventListener('change', () => { answer.ibm = $('show-ibm').checked; renderAnswerNumbers(); });
+  $('hw-precision').addEventListener('click', () => { hw.run = 'precision'; renderHardware(); });
+  $('hw-first').addEventListener('click', () => { hw.run = 'first'; renderHardware(); });
+  $('hw-supp').addEventListener('click', () => { hw.run = 'suppressed'; renderHardware(); });
+  window.addEventListener('keydown', e => {
+    if (e.ctrlKey || e.metaKey || e.altKey || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); step(1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); step(-1); }
+    else if (e.key >= '1' && e.key <= '7') show(SCENES[+e.key - 1]);
+    else if (e.key === 't' || e.key === 'T') setLevel(state.level === 'plain' ? 'tech' : 'plain');
+    else if (e.key === 'r' || e.key === 'R') setReveal(!state.reveal);
+    else if (e.key === 'd' || e.key === 'D') { state.defect = !state.defect; rebuildModel(); }
+    else if (e.key === ' ' && e.target.tagName !== 'BUTTON') { e.preventDefault(); $('pause').click(); }
+  });
+  window.addEventListener('hashchange', () => { const id = location.hash.slice(1); if (id && id !== state.scene) show(id); });
+
+  // ------------------------------------------------------------------ go
+  const query = new URLSearchParams(location.search);
+  if (query.get('seed')) source = E.seeded(+query.get('seed'));
+  if (query.get('capture') === '1') document.body.classList.add('capture');
+  setLevel(query.get('level') === 'tech' ? 'tech' : 'plain');
+  rebuildModel();
+  if (query.get('reveal') === '1') setReveal(true);
+  if (query.get('speed')) setSpeed(clamp(+query.get('speed') || 1, 1, 20));
+  show(location.hash.slice(1) || 'signal');
+  if (query.get('runs')) fastForward(clamp(+query.get('runs') || 0, 0, 200000));
+  if (query.get('stage')) setStage(+query.get('stage'), false);
+  if (query.get('tour') === '1') startTour();
+  window.LAB = {
+    state, stats, sim, amp, hw, show, fastForward, startTour, setReveal, setPhi, model: () => model,
+    /** Stop the real-time loop; frames then advance only through tick(ms). Used to record the tour frame by frame. */
+    manual() { manual = true; clock = 0; },
+    tick(ms) { clock += ms; render(ms, clock); },
+    tourLength: () => TOUR.reduce((s, x) => s + x[1], 0),
+  };
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

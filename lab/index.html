@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Rewind & Amplify Lab: a live, exact simulation of a quantum recurrent state machine, amplitude amplification on its click histories, and the IBM hardware results.">
+<title>Rewind & Amplify · Lab</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#stage">Skip to the lab</a>
+
+<header class="top">
+  <a class="brand" href="#signal" aria-label="Rewind and Amplify Lab, first scene">
+    <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="brand-text">REWIND &amp; AMPLIFY<small>FGCU QUBITS · LIVE LAB</small></span>
+  </a>
+  <nav class="scenes" aria-label="Scenes">
+    <button data-scene="signal"><span>1</span>Signal</button>
+    <button data-scene="machine"><span>2</span>Machine</button>
+    <button data-scene="question"><span>3</span>Question</button>
+    <button data-scene="rewind"><span>4</span>Rewind &amp; amplify</button>
+    <button data-scene="answer"><span>5</span>Answer</button>
+    <button data-scene="hardware"><span>6</span>IBM hardware</button>
+    <button data-scene="impact"><span>7</span>Why it matters</button>
+  </nav>
+  <div class="top-tools">
+    <div class="seg" role="group" aria-label="Explanation level">
+      <button id="level-plain" aria-pressed="true" title="Plain-language captions (T)">Plain</button>
+      <button id="level-tech" aria-pressed="false" title="Technical captions (T)">Technical</button>
+    </div>
+    <button id="tour" class="ghost" title="Play all seven scenes (45 seconds)">▶ 45 s tour</button>
+  </div>
+</header>
+
+<main id="stage" tabindex="-1">
+
+<!-- ───────────────────────── 1 · SIGNAL ───────────────────────── -->
+<section class="scene" id="signal" aria-labelledby="signal-title">
+  <div class="scene-head">
+    <p class="eyebrow">The problem</p>
+    <h1 id="signal-title">Something is hidden <em>inside the signal.</em></h1>
+    <p class="lede plain">A laser drives a tiny light source. A detector records one bit per time step: <b>click</b>, or no click. Out of sight, a defect can trade energy with the source and quietly change the pattern.</p>
+    <p class="lede tech">A driven two-level emitter leaks into a measured output mode. A hidden two-level system exchanges one excitation with it. The detector sees a binary record; the memory that shapes it is never measured.</p>
+  </div>
+  <div class="bench-slot" data-bench="large"></div>
+  <div class="scene-foot three">
+    <div class="card">
+      <p class="eyebrow amber">Who has this problem</p>
+      <ul class="who-list plain">
+        <li><b>Quantum-chip teams.</b> Unseen defects drain their qubits between calibrations.</li>
+        <li><b>Photon-source engineers.</b> Two sources can look equally bright and behave differently.</li>
+        <li><b>Anyone reading a detector.</b> A detector fault can look exactly like a defect.</li>
+      </ul>
+      <ul class="who-list tech">
+        <li><b>Superconducting qubits.</b> Two-level-system defects set coherence limits and drift in time.</li>
+        <li><b>Solid-state emitters.</b> Charge and spin environments reduce photon indistinguishability.</li>
+        <li><b>Inference.</b> Readout dead time or error can imitate a coupling, biasing the fitted model.</li>
+      </ul>
+    </div>
+    <div class="card controls-card">
+      <p class="eyebrow">Try it</p>
+      <div class="row">
+        <button id="toggle-defect" class="pill" aria-pressed="true">Hidden defect: <b>present</b></button>
+        <button id="toggle-reveal" class="pill" aria-pressed="false">Reveal what’s hidden</button>
+      </div>
+      <p class="hint">One run cannot tell you which device you have. The difference lives in the statistics.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">Click rate so far, by step</p>
+      <canvas id="rate-chart" width="560" height="150" aria-label="Measured click rate at each step from the runs so far, against the exact model"></canvas>
+      <p class="hint" id="rate-note">Bars: these runs. Lines: the exact model.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 2 · MACHINE ───────────────────────── -->
+<section class="scene" id="machine" aria-labelledby="machine-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">Our model</p>
+    <h1 id="machine-title">A recurrent machine whose <em>memory is quantum.</em></h1>
+    <p class="lede plain">Every time step repeats the same four moves. The memory is two qubits that are never looked at. Only one bit comes out. We call it a QRSM: a quantum recurrent state machine.</p>
+    <p class="lede tech">Each step applies RY(θ) on the emitter, RZ(ζ) on the defect, a Givens exchange(φ), then emission into a light qubit that is measured and reset. The memory evolves under the Kraus operator K<sub>y</sub> chosen by the recorded bit y.</p>
+  </div>
+  <div class="bench-slot" data-bench="medium"></div>
+  <div class="scene-foot machine-grid">
+    <div class="card">
+      <p class="eyebrow">One step, gate by gate</p>
+      <svg id="circuit" viewBox="0 0 760 190" role="img" aria-label="One step of the machine as a circuit: drive, detune, exchange, emit, measure and reset">
+        <g class="wires">
+          <text x="8" y="44">emitter</text><line x1="92" y1="40" x2="750" y2="40"/>
+          <text x="8" y="99" class="violet">defect</text><line x1="92" y1="95" x2="750" y2="95" class="violet"/>
+          <text x="8" y="154">light</text><line x1="92" y1="150" x2="750" y2="150"/>
+        </g>
+        <g class="gate" data-phase="drive"><rect x="120" y="18" width="92" height="44" rx="8"/><text x="166" y="46">RY(θ)</text><text class="cap" x="166" y="182">drive</text></g>
+        <g class="gate violet" data-phase="exchange"><rect x="236" y="73" width="92" height="44" rx="8"/><text x="282" y="101">RZ(ζ)</text></g>
+        <g class="gate violet" data-phase="exchange"><rect x="352" y="18" width="110" height="99" rx="8"/><text x="407" y="64">exchange</text><text x="407" y="86">(φ)</text><text class="cap" x="349" y="182">detune + exchange</text></g>
+        <g class="gate" data-phase="emit"><rect x="490" y="18" width="110" height="154" rx="8"/><text x="545" y="92">emit</text><text x="545" y="114">(γ)</text></g>
+        <g class="gate amber" data-phase="read"><rect x="622" y="128" width="124" height="44" rx="8"/><path d="M636 162 a16 16 0 0 1 32 0 M652 162 l10 -18"/><text x="710" y="156">0 / 1</text></g>
+      </svg>
+      <p class="hint tech">Same gates as <code>qrsm_grover/model.py</code>. This page simulates them exactly; a test holds it to Qiskit within 10⁻¹².</p>
+      <p class="hint plain">The animation above is not a cartoon. It runs these gates, and a test holds it to the Qiskit code.</p>
+    </div>
+    <div class="card">
+      <p class="eyebrow">What the memory is doing right now</p>
+      <div class="meters">
+        <div class="meter"><span>Emitter excited</span><div class="track"><i id="m-emitter"></i></div><b id="v-emitter">0%</b></div>
+        <div class="meter violet"><span>Defect excited</span><div class="track"><i id="m-defect"></i></div><b id="v-defect">0%</b></div>
+        <div class="meter amber"><span>Chance of a click this step</span><div class="track"><i id="m-click"></i></div><b id="v-click">0%</b></div>
+      </div>
+      <p class="hint plain">Watch a click: the emitter empties, because the photon carried its energy away. The defect keeps what it had. That leftover is the hidden memory.</p>
+      <p class="hint tech">K<sub>1</sub> = sin α |0⟩⟨1| on the emitter: a click projects the emitter to ground and leaves the defect conditioned. No click also updates the state. That back-action is the recurrent update.</p>
+    </div>
+    <div class="card code-card">
+      <p class="eyebrow">In Qiskit</p>
+<pre><code><span class="c"># one step: drive, detune, exchange, emit</span>
+qc.ry(theta, emitter)
+qc.rz(zeta, defect)
+exchange(qc, phi, src=defect, dst=emitter)
+qc.cry(2*alpha, emitter, light)
+qc.cx(light, emitter)
+qc.measure(light, click[t]); qc.reset(light)</code></pre>
+      <p class="hint">θ = 0.6 · γ = 0.2 · φ = 0.45 · ζ = 0.3</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 3 · QUESTION ───────────────────────── -->
+<section class="scene" id="question" aria-labelledby="question-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">The question, and why it is expensive</p>
+    <h1 id="question-title">Given a click at step 3, <em>what happens next?</em></h1>
+    <p class="lede plain">The useful runs are the rare ones. To study them the ordinary way, you run the machine again and again and throw away every run that missed.</p>
+    <p class="lede tech">Rejection sampling costs 1/p runs per accepted sample. Here p = P(click at step 3). For one real 64-step record in our first project it was 27,495,891 runs.</p>
+  </div>
+  <div class="question-grid">
+    <div class="card raster-card">
+      <div class="card-head"><p class="eyebrow">Every run so far · the amber column is the click we asked about</p>
+        <div class="row"><button id="ff" class="pill">Fast-forward 5,000 runs</button><button id="reset-runs" class="pill quiet">Reset</button></div></div>
+      <canvas id="raster" width="900" height="560" aria-label="A raster of click records: each row is one run, each tick a click"></canvas>
+    </div>
+    <div class="question-side">
+    <div class="bench-slot" data-bench="small"></div>
+    <div class="card tally">
+      <div class="big"><small>RUNS</small><b id="t-runs">0</b></div>
+      <div class="big amber"><small>KEPT</small><b id="t-kept">0</b><span id="t-kept-rate">—</span></div>
+      <div class="big dim"><small>THROWN AWAY</small><b id="t-waste">0</b></div>
+      <div class="estimate">
+        <small>Click at step 6, given a click at step 3</small>
+        <b id="t-est">—</b>
+        <span id="t-est-note">waiting for kept runs</span>
+        <span class="exact" id="t-exact"></span>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 4 · REWIND & AMPLIFY ───────────────────────── -->
+<section class="scene" id="rewind" aria-labelledby="rewind-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">Our method</p>
+    <h1 id="rewind-title">You can’t amplify <em>what you can’t rewind.</em></h1>
+    <p class="lede plain">Grover’s trick makes rare answers common, but it must run the machine backwards, and a reset cannot be undone. So we keep every output in a fresh qubit. Now the whole run is one reversible film.</p>
+    <p class="lede tech">Deferred measurement turns T steps into one unitary A with A|0⟩ = Σ<sub>y</sub> |m<sub>y</sub>⟩|y⟩. One iteration is Q = A S<sub>0</sub> A† S<sub>f</sub>. It reweights the marked histories and leaves their conditional distribution untouched.</p>
+  </div>
+  <div class="rewind-grid">
+    <div class="card rewind-main">
+      <div class="stages" id="stages" role="group" aria-label="Stages of one amplification round">
+        <button data-stage="0"><span>1</span><b>Prepare</b><small>run the film: A</small></button>
+        <button data-stage="1"><span>2</span><b>Mark</b><small>flag the click</small></button>
+        <button data-stage="2"><span>3</span><b>Rewind</b><small>run it backwards: A†</small></button>
+        <button data-stage="3"><span>4</span><b>Reflect</b><small>flip the blank start</small></button>
+        <button data-stage="4"><span>5</span><b>Replay</b><small>run forward again</small></button>
+      </div>
+      <canvas id="amp-canvas" width="1180" height="430" aria-label="Amplitudes of the eight three-step click histories through the stages of amplification"></canvas>
+      <p class="stage-caption" id="stage-caption"></p>
+    </div>
+    <div class="card rewind-side">
+      <div class="row wrap">
+        <button id="amp-play" class="pill primary">▶ Play one round</button>
+      </div>
+      <label class="switch-row"><span>Steer the last step<small>tune one gate so the event is less rare</small></span>
+        <button id="amp-steer" class="switch" role="switch" aria-checked="true"><i></i></button></label>
+      <div class="seg wide" role="group" aria-label="Reflection">
+        <button id="amp-full" aria-pressed="false">Full reflection<small>all 5 qubits</small></button>
+        <button id="amp-local" aria-pressed="true">Local reflection<small>3 qubits</small></button>
+      </div>
+      <div class="readouts">
+        <div><small>CHANCE OF THE CLICK</small><b id="amp-hit">—</b><span id="amp-hit-note"></span></div>
+        <div><small>ERROR IN THE ANSWER</small><b id="amp-tv">—</b><span>total-variation distance from exact</span></div>
+        <div><small>TWO-QUBIT GATES ON IBM</small><b id="amp-gates">—</b><span id="amp-gates-note">after transpiling for Marrakesh</span></div>
+      </div>
+      <p class="hint plain" id="amp-insight"></p>
+      <p class="hint tech" id="amp-insight-tech"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 5 · ANSWER ───────────────────────── -->
+<section class="scene" id="answer" aria-labelledby="answer-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">What the query returns</p>
+    <h1 id="answer-title">One click. <em>Two futures.</em></h1>
+    <p class="lede plain">With no defect, a click empties the source and the machine starts over. With a hidden defect, something remembers. The pattern after the click tells the two apart.</p>
+    <p class="lede tech">With k = 0 the click operator resets the memory, so P(click at 3 + τ | click at 3) equals the fresh-run rate at step τ. A coupled defect survives the click and suppresses the later rate: the model’s version of g⁽²⁾(τ).</p>
+  </div>
+  <div class="answer-grid">
+    <div class="card">
+      <div class="card-head"><p class="eyebrow">Chance of a click at each later step, given a click at step 3</p>
+        <label class="check"><input type="checkbox" id="show-ibm"> Overlay IBM Marrakesh (measured)</label></div>
+      <canvas id="answer-canvas" width="900" height="560" aria-label="Conditional click probability at steps 4, 5 and 6 for the emitter-only and defect models"></canvas>
+      <p class="hint" id="answer-note"></p>
+    </div>
+    <div class="answer-side">
+      <div class="futures">
+        <div class="future amber"><small>EMITTER ONLY</small><b id="ans-none">10.10%</b><span>click at step 6</span></div>
+        <div class="future cyan"><small>WITH THE HIDDEN DEFECT</small><b id="ans-defect">4.67%</b><span>click at step 6</span></div>
+      </div>
+      <div class="card">
+        <label class="slider"><span>Defect coupling φ <output id="phi-out">0.45</output></span>
+          <input type="range" id="phi" min="0" max="0.9" step="0.01" value="0.45" aria-label="Defect coupling"></label>
+        <div class="row"><button id="phi-reset" class="pill quiet">Reset to 0.45</button><button id="ans-sample" class="pill">Check by sampling 20,000 runs</button></div>
+        <p class="hint" id="ans-sample-note">Slide the coupling to zero: the two futures become the same.</p>
+      </div>
+      <div class="card evidence-mini">
+        <p class="eyebrow">How this number is made</p>
+        <p class="plain">The page multiplies small matrices: one per recorded bit. No fitting, no stored answer. A test checks it against our Qiskit circuits.</p>
+        <p class="tech">P(y) = ‖K<sub>y<sub>T</sub></sub> … K<sub>y<sub>1</sub></sub>|0⟩‖², summed over histories with y<sub>3</sub> = 1. θ = 0.6, γ = 0.2, ζ = 0.3. Verified against <code>research-validation/original_after_click_verification.json</code>.</p>
+        <p class="hint">These are predictions of two programmed models, not a diagnosis of a real defect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 6 · HARDWARE ───────────────────────── -->
+<section class="scene" id="hardware" aria-labelledby="hardware-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">Real quantum hardware</p>
+    <h1 id="hardware-title">On IBM Marrakesh, <em>fewer gates won.</em></h1>
+    <p class="lede plain">We ran both builds on a 156-qubit IBM quantum computer. The lighter build found the rare click more often and gave a closer answer. Both answers were still off, and we show that too.</p>
+    <p class="lede tech">ibm_marrakesh (Heron), raw counts, no mitigation in the headline. Same steering, one round, same compiled circuits as the first run. TV compares accepted-history distributions with the exact conditional law.</p>
+  </div>
+  <div class="hardware-grid">
+    <div class="card lanes">
+      <div class="card-head"><p class="eyebrow" id="hw-run-label">Precision repeat · 8,192 shots per circuit</p>
+        <div class="seg" role="group" aria-label="Which run"><button id="hw-precision" aria-pressed="true">8,192-shot repeat</button><button id="hw-first" aria-pressed="false">First run · 2,048</button><button id="hw-supp" aria-pressed="false">With DD + twirling</button></div></div>
+      <div class="lane cyan">
+        <div class="lane-head"><b>Local reflection</b><span id="hw-local-gates">58 two-qubit gates</span></div>
+        <canvas id="shots-local" width="640" height="80" aria-label="Shots that matched, local reflection"></canvas>
+        <div class="lane-num"><strong id="hw-local-rate">76.90%</strong><span id="hw-local-count">6,300 of 8,192 shots hit the click</span></div>
+      </div>
+      <div class="lane amber">
+        <div class="lane-head"><b>Full reflection</b><span id="hw-full-gates">125 two-qubit gates</span></div>
+        <canvas id="shots-full" width="640" height="80" aria-label="Shots that matched, full reflection"></canvas>
+        <div class="lane-num"><strong id="hw-full-rate">69.26%</strong><span id="hw-full-count">5,674 of 8,192 shots hit the click</span></div>
+      </div>
+      <div class="baseline"><span>Without amplification:</span><b id="hw-plain-rate">6.74%</b><small id="hw-plain-note"></small></div>
+      <p class="hint" id="hw-diff"></p>
+      <p class="jobline"><span id="hw-job"></span> · <span id="hw-campaign"></span> · raw counts, compiled circuits and calibrations are saved in <code>hardware_campaign/</code></p>
+    </div>
+    <div class="hw-side">
+      <div class="card kpis">
+        <div><small>ANSWER ERROR · LOWER IS BETTER</small><b><span class="cyan" id="hw-tv-local">0.118</span> <i>vs</i> <span class="amber" id="hw-tv-full">0.181</span></b><span>total-variation distance of accepted histories</span></div>
+        <div><small>IDEAL SIMULATOR · SAME CIRCUITS</small><b><span class="cyan" id="hw-ideal-local">96.1%</span> <i>vs</i> <span class="amber" id="hw-ideal-full">96.5%</span></b><span>noise costs the deeper circuit more</span></div>
+        <div><small>GATES SPENT PER ACCEPTED SHOT</small><b><span class="cyan" id="hw-gps-local">75</span> <i>vs</i> <span class="amber" id="hw-gps-full">180</span></b><span>an accounting proxy, not a speedup</span></div>
+      </div>
+      <div class="card">
+        <p class="eyebrow">The after-click answer on hardware · step 6</p>
+        <table class="mini" id="hw-loop"><thead><tr><th>Build</th><th>With defect</th><th>Emitter only</th><th>Order</th></tr></thead><tbody></tbody></table>
+        <p class="hint">Exact: 4.67% and 10.10%. Only some builds recover the right order, and all are biased. This is not a defect detector.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── 7 · IMPACT ───────────────────────── -->
+<section class="scene" id="impact" aria-labelledby="impact-title" hidden>
+  <div class="scene-head">
+    <p class="eyebrow">Who needs this, and what we can honestly say</p>
+    <h1 id="impact-title">A way to ask hidden-memory models <em>about their rarest events.</em></h1>
+  </div>
+  <div class="impact-grid">
+    <div class="card who">
+      <span class="chip measured">Model run on IBM hardware</span>
+      <h3>Quantum hardware teams</h3>
+      <p>Hidden two-level defects change how a qubit behaves between calibrations. A physical model of the click record lets you compare explanations instead of guessing, and separate a defect from a detector error.</p>
+      <p class="stat"><b>0.069 → 0.706</b> fitted coupling once detector dead time was modelled, against a true 0.65 (synthetic records).</p>
+    </div>
+    <div class="card who">
+      <span class="chip simulated">Simulated · published data reanalysed</span>
+      <h3>Single-photon source engineers</h3>
+      <p>Photonic chips need photons that match, not just photons that arrive. Counting clicks misses that. The same hidden-memory question applies to quantum-dot sources.</p>
+      <p class="stat"><b>Same brightness, 20% to 100% overlap</b> in our four illustrative source models.</p>
+    </div>
+    <div class="card who">
+      <span class="chip proposed">Simulated · conventional sensor still ahead</span>
+      <h3>Laser and lithography metrology</h3>
+      <p>Is the light source drifting, or the sensor? We tested an added atomic reference. It helped a little. A second ordinary reference helped far more.</p>
+      <p class="stat"><b>58% vs 98%</b> timely detection: atomic channel versus a second conventional reference.</p>
+    </div>
+    <div class="card ledger yes">
+      <p class="eyebrow">What we claim</p>
+      <ul>
+        <li>A recurrent quantum model made reversible, with identical click statistics.</li>
+        <li>Amplitude amplification on its histories, with the conditional answer preserved in the ideal case.</li>
+        <li>A lighter, noise-aware build that beat the textbook build on real IBM hardware.</li>
+        <li>Every number traceable to saved counts, circuits and tests.</li>
+      </ul>
+    </div>
+    <div class="card ledger no">
+      <p class="eyebrow amber">What we do not claim</p>
+      <ul>
+        <li>No quantum speedup today. At this size an exact classical sampler is faster.</li>
+        <li>No real defect was detected. IBM qubits played the roles of a programmed model.</li>
+        <li>No photons, lasers or wafers were measured.</li>
+        <li>Amplitude amplification is established prior work. Ours is the mapping and the noise-aware design.</li>
+      </ul>
+    </div>
+    <div class="card next">
+      <p class="eyebrow">Next experiment</p>
+      <p>Fit candidate models to held-out, calibrated device records and compare against a strong classical hidden-Markov baseline. Then ask where a larger hidden memory makes the classical sampler’s cost, which grew about 6× per hidden qubit in our tests, the bottleneck.</p>
+      <div class="row wrap links">
+        <a class="pill" id="link-explorer" href="../laser-diagnostics-app/index.html">Open the research explorer ↗</a>
+        <a class="pill quiet" id="link-evidence" href="../docs/EVIDENCE.md">Evidence map ↗</a>
+        <a class="pill quiet" id="link-repo" href="https://github.com/Nicholas55555/rewindandamplifyv3">Code on GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bottom">
+  <button id="prev" class="nav-btn" aria-label="Previous scene">←</button>
+  <div class="speed" role="group" aria-label="Simulation speed">
+    <span>Speed</span>
+    <button data-speed="1" aria-pressed="true">1×</button><button data-speed="4" aria-pressed="false">4×</button><button data-speed="20" aria-pressed="false">20×</button>
+    <button id="pause" aria-pressed="false" title="Pause the simulation (space)">❚❚</button>
+    <button id="sound" aria-pressed="false" title="Play a tick on every click">♪ off</button>
+  </div>
+  <p class="scope" id="scope-line">Live exact simulation in your browser · IBM numbers are saved raw counts · no quantum advantage is claimed</p>
+  <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+  <button id="next" class="nav-btn primary" aria-label="Next scene">Next →</button>
+</footer>
+
+<script src="engine.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

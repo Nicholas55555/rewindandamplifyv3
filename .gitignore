@@ -36,6 +36,11 @@
 !/external_data/
 !/research-validation/
 !/laser-diagnostics-app/
+!/lab/
+!/media/
+!/index.html
+!/Rewind_Amplify_Lab.html
+!/reproduce.py
 !/animations/
 !/finals-deck/
 !/.finals-deck-build/
