@@ -1,0 +1,114 @@
+{
+ "schema": 1,
+ "plan": "13 main slides in 9:20, including a 45-second Lab demo. The limit is 10:00. Speaker assignments are suggestions: change them to suit the team, and rehearse aloud.",
+ "main": [
+  {
+   "time": "0:00–0:15",
+   "speaker": "Nicholas",
+   "text": "We are Qubits, from Florida Gulf Coast University. A quantum device can hide a defect that changes what it does next. We built a model of that, and a way to ask the model about its rarest events. Then we ran it on IBM hardware.",
+   "cue": "One breath, then move on. Optional cold open: type 37 and Enter to play the 45-second cinematic cut first, then 2 and Enter. If you use it, drop the video on slide 10 and demo the Lab live instead, or you will run over.",
+   "sources": "README.md. Cover art from the V2 deck."
+  },
+  {
+   "time": "0:15–1:00",
+   "speaker": "Dan",
+   "text": "Picture a tiny light source driven by a laser. A detector records one bit per time step: click, or no click. That record is all anyone sees. But out of sight, a defect can trade energy with the source and quietly change the pattern. Teams building quantum chips have this problem: hidden defects drain their qubits between calibrations. So do engineers who build single-photon sources. And it is easy to get wrong, because a faulty detector can look exactly like a defect. Guess the cause wrong, and you fix the wrong thing.",
+   "cue": "Point at the hatched box: that is the thing nobody can measure. Say who has the problem before any physics. The picture is our model; on IBM hardware superconducting qubits play these roles.",
+   "sources": "Physical context: Schlör et al. 2019 (two-level fluctuators and transmon coherence); Keith et al. 2018 (measurement-model uncertainty). Synthetic dead-time example: qrsm_photon_poc/followup/README.md."
+  },
+  {
+   "time": "1:00–1:50",
+   "speaker": "Nicholas",
+   "text": "So we built a model of it. We call it a QRSM, a quantum recurrent state machine. Think of a recurrent neural network whose memory is qubits. Every time step repeats the same four gates: drive the emitter, let the defect turn, let the two swap energy, and emit into a light qubit that we measure. The memory, two qubits, is never looked at. Only one bit comes out. And each recorded bit updates the hidden state, which is how the model predicts what comes next. This picture is a live simulation of our Qiskit circuit, and a test holds it to Qiskit.",
+   "cue": "Say the acronym once, slowly. Trace the circuit left to right with the pointer. If asked: K1 = sin(alpha)|0><1| on the emitter, so a click empties the emitter and leaves the defect conditioned.",
+   "sources": "rewindandamplify-main/qrsm_grover/model.py; lab/engine.js and lab/test_engine.cjs (agreement with Qiskit to 1e-12)."
+  },
+  {
+   "time": "1:50–2:35",
+   "speaker": "Nicholas",
+   "text": "Here is the question we ask it. Given a click at step three, what happens next? With no defect, a click empties the source and the machine simply starts over: the chance of another click three steps later is 10.1 percent. With a hidden defect, something remembers, and that chance drops to 4.7 percent. One click, two futures. The pattern after a rare click is a fingerprint of hidden memory. These are exact predictions of two models we programmed. They are not a diagnosis of a real device.",
+   "cue": "Read the two big numbers, then the caveat. Only step 3 is fixed; earlier bits can be anything.",
+   "sources": "research-validation/original_after_click_verification.json: 0.046675 and 0.101024. Recomputed live by lab/engine.js and by python reproduce.py."
+  },
+  {
+   "time": "2:35–3:10",
+   "speaker": "Timofey",
+   "text": "But there is a cost. The click we asked about happens in only 4 percent of runs. To study what follows it the ordinary way, you run the machine 25 times and throw 24 away. For one real 64-step record from our first project, it would take 27 million runs. The useful runs are the rare ones.",
+   "cue": "Each row on the left is one run; the amber column is the click we asked about. Let the 27 million land.",
+   "sources": "P(click at step 3) = 0.039542. 64-step record: rewindandamplify-main/results/numbers.json, wall.rejection_runs = 27,495,891."
+  },
+  {
+   "time": "3:10–4:05",
+   "speaker": "Timofey",
+   "text": "This is where a quantum computer might help. Grover's algorithm, in its general form called amplitude amplification, makes rare answers common at about the square root of the cost. For that 64-step record, 27 million runs become about a hundred calls of the machine. But there are two catches. First, it has to run the machine backwards, and our machine resets a qubit every step. A reset cannot be undone. Second, it is deep, and on today's hardware every extra gate adds noise. And we want to be honest: at this size there is no speedup. A classical sampler answers in a fraction of a millisecond. Quantum could matter only when the hidden memory gets large.",
+   "cue": "Say 'no speedup today' plainly; the rubric rewards it. The three bars are exact calculations for the same record, not hardware runs. Steering, the middle bar, is classical.",
+   "sources": "numbers.json wall: 27,495,891 runs; 6,240 steered; 125 calls. e3.classical_growth_per_qubit = 5.73. Brassard, Hoyer, Mosca, Tapp 2002; Low, Yoder, Chuang 2014."
+  },
+  {
+   "time": "4:05–5:00",
+   "speaker": "Nicholas",
+   "text": "Our project is about those two catches. You can't amplify what you can't rewind. So first we purify: a fresh qubit replaces every reset, and the whole run becomes one reversible circuit with the same click statistics. Second, we steer: we tune one gate so the rare click is less rare, which leaves the answer unchanged. Third, we amplify locally: one round, with a reflection on three qubits instead of all five, about half the gates. Fourth, we verify: the click is measured directly, so a failed shot shows itself. In an ideal simulator the click goes from 4 percent to 96 percent, and the answer stays right to within a small, known bias.",
+   "cue": "Four moves, one sentence each. What is ours: the mapping onto a hidden-memory model and the noise-aware build. Amplitude amplification itself is prior work.",
+   "sources": "qrsm_grover/amplify.py, fastsim.py, hardware.py. Ideal: 96.49% full (error 0), 96.10% local (TV 0.0353). 114 tests on the core package."
+  },
+  {
+   "time": "5:00–6:00",
+   "speaker": "Dillon",
+   "text": "Then we ran it on real hardware: IBM Marrakesh, a 156-qubit processor, 8,192 shots per circuit. Without amplification, the click shows up in under 7 percent of shots. With the textbook build, full reflection, 125 two-qubit gates: 69 percent. With our lighter build, 58 gates: 77 percent. Fewer gates won, by 7.6 points, and the lighter build's answer was also closer to the exact one: an error of 0.12 against 0.18. These are raw counts with no error mitigation. Both are below the ideal 96 percent. And we cannot prove gate count is the only cause, because the two circuits also differ in width and routing.",
+   "cue": "Read the bars bottom to top: 6.7, 69, 77. The solid tick is the ideal simulator; the dashed tick is our noise model, next slide. Job ID is on the slide for anyone who asks.",
+   "sources": "hardware_campaign/runs/original_precision_v1 (job dbqb1ifv5hds73dfo310): 6,300 and 5,674 of 8,192; 58 and 125 native CZ; TV 0.1177 and 0.1814; difference 7.64 points [6.29, 8.99]. Plain: 138 of 2,048 in original_plain_v2."
+  },
+  {
+   "time": "6:00–6:45",
+   "speaker": "Dillon",
+   "text": "So we checked it against a simulator. With no noise the two builds tie. Using the chip's own calibration data, a noise model predicts 83 and 76 percent: the right order, but too optimistic. Our echo circuits, which run the machine forwards and then backwards, show the chip was about one and a half times noisier than its calibration said. With that one number, fitted only on the echoes, the model predicts 78 and 70. The chip gave 77 and 69. We also tried error suppression, dynamical decoupling and twirling, and it did not help. And the answers on hardware are biased, in a way this model predicts.",
+   "cue": "This is the 'compared to simulator, analysed noise, tried suppression' bonus. Point at the four rows top to bottom. If asked what the model leaves out: idle decoherence, crosstalk, leakage, drift.",
+   "sources": "hardware_campaign/noise_model/README.md and results.json: scale 1.54; 83.15/76.29 calibration; 78.40/69.72 echo-scaled; measured 76.90/69.26. Suppression: original_suppressed_v1, TV 0.145/0.244 against 0.107/0.201 plain."
+  },
+  {
+   "time": "6:45–7:35",
+   "speaker": "Timofey",
+   "text": "Here it is running. This is the Lab: our model, live in a browser, with no install. The laser drives the emitter, the hidden defect trades energy with it, and the detector clicks. Every run is a row. The amber column is the rare click, and most rows miss it. Now rewind and amplify: mark the click, run the film backwards, flip the blank start, run forward, and the click is 96 percent. One click, two futures. And the IBM result, with our noise model beside it.",
+   "cue": "Click the video once to play; it is 45 seconds and silent, so talk over it. If the video will not play, switch to Rewind_Amplify_Lab.html, press the 45 s tour button, and say the same words. Do not apologise, just switch.",
+   "sources": "media/lab-tour.mp4, recorded frame by frame from lab/index.html by lab/capture.py with a fixed seed. It is a screen recording of the running page, not an animation."
+  },
+  {
+   "time": "7:35–8:15",
+   "speaker": "Dan",
+   "text": "Who could use this? Quantum hardware teams, to compare explanations for a drifting qubit instead of guessing. Photon-source engineers: we showed that sources with the same brightness can have photon overlap anywhere from 20 to 100 percent. And we tested laser metrology, where our own research changed our mind. An added atomic reference helped a little, 58 percent detection. A second ordinary reference reached 98. We report that too.",
+   "cue": "The chips on each card say what kind of evidence it is. The third card is a negative result on purpose: say it with confidence.",
+   "sources": "Dead time: 0.069 against true 0.65, 0.706 once modelled (qrsm_photon_poc/followup). Overlaps 1.00/0.50/0.20/0.25 (quantum_dot_bridge). Unknown-onset monitor 51.35/58.02/97.97% (laser_sensor_viability/followup)."
+  },
+  {
+   "time": "8:15–8:50",
+   "speaker": "Nicholas",
+   "text": "So here is what we claim. A recurrent quantum model, made reversible. Amplification that preserves the answer. A lighter build that beat the textbook build on real IBM hardware. And every number traceable to saved counts and tests. What we do not claim: no speedup today, no real defect detected, no photons or wafers measured. Next, we want to fit these models to real, calibrated device records, against a strong classical baseline.",
+   "cue": "Left column fast, right column slow. End on the next experiment.",
+   "sources": "FINALS_EVIDENCE.md, FINALS_RUBRIC.md, hardware_campaign/RESULTS.md."
+  },
+  {
+   "time": "8:50–9:20",
+   "speaker": "All four",
+   "text": "Nicholas led the model and the Grover fusion. Timofey, the research and the search idea. Dan, the experiments and our video. Dillon, the figures and the revising. What we learned: more hits is not more truth, so check the answer. On today's hardware the lighter circuit wins. And report the result that goes against you. Thank you. We would love your questions.",
+   "cue": "Each person says their own line. Stop at 9:20. Backups from slide 14: hardware repeats 14, rubric map 23, prior work and AI 24, noise model detail 36, cinematic cut 37, reproduce 38.",
+   "sources": "Roles as listed in the original README and confirmed for V2; the video credit follows the team's cinematic kit. AI assistance: Claude for the original project and V3, Codex with OpenAI models for the V2 research extensions."
+  }
+ ],
+ "new_backups": [
+  {
+   "title": "Simulator against hardware, circuit by circuit",
+   "text": "Backup. The same noise model, fitted only on the echo circuits, applied to all eight after-click circuits. It predicts the lighter build's biased answers within half a point and explains why plain sampling reverses the order: on a 4 percent event, false clicks swamp the true ones. It under-predicts the damage to the 182-gate circuit.",
+   "sources": "hardware_campaign/noise_model/results.json, after_click."
+  },
+  {
+   "title": "Cinematic cut, 45 seconds",
+   "text": "Backup or optional cold open. The team's problem-first video with original music. It is a cinematic explainer, not a screen recording of the product. Click once to play.",
+   "sources": "media/cinematic-45s.mp4, from the team's cinematic kit. Numbers shown match hardware_campaign/RESULTS.md."
+  },
+  {
+   "title": "Anyone can rerun it",
+   "text": "Backup for 'does the code run?'. One command, about ten seconds, no IBM account: the exact model, the Qiskit circuits on Aer, the classical baseline, the noise model and the recounted IBM results.",
+   "sources": "reproduce.py; docs/reproduce_output.txt."
+  }
+ ]
+}

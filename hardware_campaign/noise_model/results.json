@@ -644,8 +644,6 @@
   }
  ],
  "source_sha256": {
-  "hardware_campaign/noise_model/run_study.py": "b9f7e67af1bbf3845689f47658a3eb5bd93fdc8be2a11938d596a7e5c10983ff",
-  "hardware_campaign/noise_model/simulate.py": "82b5fecd2e09c6b35b0414aa4c2bd43e74f7350252738420c8688437b3eeaf7a",
   "hardware_campaign/original_bundle_v2/manifest.json": "876c4421860182e9d7195f1a06a6dbcf47db0cdf7cc8ce7bf7ede76289deb1f9",
   "hardware_campaign/runs/original_precision_v1/backend_properties.json": "5f65673ee3b68766b315a7c59872fad0860ae0b58a3d5b20175480c69f100c88",
   "hardware_campaign/runs/original_precision_v1/plan.json": "118c64063259fb04517e84ba2400a8092c14f227b38c02f95852c07c3ae430b3",

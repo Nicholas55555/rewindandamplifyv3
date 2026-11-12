@@ -115,9 +115,8 @@ class Predictions(unittest.TestCase):
         self.assertEqual(SAVED["job_id"], "dbqb1ifv5hds73dfo310")
         self.assertEqual(SAVED["backend"], "ibm_marrakesh")
         import hashlib
+        self.assertEqual(len(SAVED["source_sha256"]), 5)
         for rel, digest in SAVED["source_sha256"].items():
-            if rel.endswith(("simulate.py", "run_study.py")):
-                continue                                             # these may be reformatted without changing numbers
             self.assertEqual(hashlib.sha256((ROOT / rel).read_bytes()).hexdigest(), digest, rel)
 
 

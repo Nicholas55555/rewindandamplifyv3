@@ -18,23 +18,27 @@ ROOT = Path(__file__).resolve().parent
 DOCS = ["START_HERE_FINALS.md", "check_finals.py", "FINALS_PLAN.md", "FINALS_TALK.md", "FINALS_QA.md", "FINALS_EVIDENCE.md",
         "VIABILITY_FINDINGS.md", "WORKSPACE_AUDIT.md", "QUANTUM_PHOTOLITHOGRAPHY_ROADMAP.md", "LASER_DIAGNOSTICS_ROADMAP.md",
         "LASER_SENSOR_RESEARCH_PLAN.md", "FINALS_RUBRIC.md", "Qiskit_Fall_Fest_Judging_Rubric.xlsx", "results.csv", "build_finals_pack.py",
-        "RESEARCH_RESULTS.md", "RESEARCH_CURRENT.md", "RESEARCH_CONTINUATION_PLAN.md", "verify_research_pack.py", "build_research_pack.py"]
-DECKS = ["finals-deck/Rewind_Amplify_Finals_Visual.pptx", "finals-deck/Rewind_Amplify_Finals_Visual.pdf",
-         "finals-deck/Visual_Presenter_Guide.md", "finals-deck/visual_manifest.json", "finals-deck/BUILDING.md", "finals-deck/cover-preview.png",
+        "RESEARCH_RESULTS.md", "RESEARCH_CURRENT.md", "RESEARCH_CONTINUATION_PLAN.md", "verify_research_pack.py", "build_research_pack.py",
+        "reproduce.py"]
+DECKS = ["finals-deck/Rewind_Amplify_Finals_V3.pptx", "finals-deck/Rewind_Amplify_Finals_V3.pdf",
+         "finals-deck/Presenter_Guide_V3.md", "finals-deck/v3_manifest.json", "finals-deck/v3_notes.json", "finals-deck/README.md",
+         "finals-deck/main-slides.png", "finals-deck/build_v3_deck.py", "finals-deck/finish_v3_deck.py", "finals-deck/finish_v3_deck.ps1",
          ".finals-deck-build/visual_build.mjs", ".finals-deck-build/visual_render_final.mjs",
          ".finals-deck-build/visual_finish.py", ".finals-deck-build/visual_notes.json"]
 TREES = ["finals-lithography", "photon_reference", "qrsm_photon_poc", "rewindandamplify-main", "external_data", "quantum_lithography_poc", "laser_sensor_poc",
-         "laser_sensor_viability", "laser-diagnostics-app", "animations", "research-validation", "finals-deck/assets", "quantum_dot_bridge", "hardware_campaign"]
+         "laser_sensor_viability", "laser-diagnostics-app", "animations", "research-validation", "finals-deck/assets", "finals-deck/v2",
+         "quantum_dot_bridge", "hardware_campaign", "lab", "media", "docs"]
 EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".git", ".venv", "node_modules"}
 PRIVATE_DOCUMENTS = {"results.csv", "Qiskit_Fall_Fest_Judging_Rubric.xlsx", "WORKSPACE_AUDIT.md"}
-PUBLIC_DOCUMENTS = ["README.md", "Rewind_Amplify_v2_Demo.html", "LICENSE", "THIRD_PARTY_NOTICES.md", "CONTRIBUTING.md",
+PUBLIC_DOCUMENTS = ["README.md", "Rewind_Amplify_Lab.html", "Rewind_Amplify_Research_Explorer.html", "index.html", "LICENSE",
+                    "THIRD_PARTY_NOTICES.md", "CONTRIBUTING.md",
                     "docs/REPOSITORY_GUIDE.md", "requirements-dev.txt", "RESEARCH_ARCHIVE_MANIFEST.json",
                     ".gitignore", ".gitattributes", ".github/workflows/ci.yml",
                     ".github/scripts/run_tests.py", ".github/scripts/check_publication.py"]
 INTRO = """# Rewind & Amplify — portable finals pack
 
-1. Open `finals-deck/Rewind_Amplify_Finals_Visual.pptx` for thirteen main slides followed by technical backups. The PDF is a static visual fallback without speaker notes. Use Visual_Presenter_Guide.md for the 9:20 planned talk.
-2. In the public edition, open `Rewind_Amplify_v2_Demo.html` directly: this single file includes the videos and downloadable evidence. Or open `laser-diagnostics-app/index.html` with its folder intact. Choose Focus view for the original QRSM demo. Current research contains the new comparisons; Earlier sensor study preserves the known-time experiment. Both work offline.
+1. Open `finals-deck/Rewind_Amplify_Finals_V3.pptx` for thirteen main slides followed by technical backups. It holds two embedded videos. The PDF is a static fallback without speaker notes or video. Use Presenter_Guide_V3.md for the 9:20 planned talk.
+2. Open `Rewind_Amplify_Lab.html` directly: this single file is the live demo and needs nothing else. For the follow-up studies, open `Rewind_Amplify_Research_Explorer.html`, which includes its videos and downloadable evidence. Or open `laser-diagnostics-app/index.html` with its folder intact. Choose Focus view for the original QRSM demo. Current research contains the new comparisons; Earlier sensor study preserves the known-time experiment. Both work offline.
 3. The two 12-second MP4 videos and PNG fallbacks are in `animations/`. They are conceptual illustrations from the earlier optical/sensing extensions, not current performance evidence. The app has playback controls.
 4. Read `START_HERE_FINALS.md`, `FINALS_RUBRIC.md`, `FINALS_EVIDENCE.md`, and `RESEARCH_CURRENT.md`. The earlier `RESEARCH_RESULTS.md` remains the frozen research snapshot. Run `python check_finals.py` for package checks. Rehearse on the presentation computer.
 
@@ -74,7 +78,8 @@ def sources(public: bool = False) -> list[Path]:
         research = json.loads((ROOT/'RESEARCH_ARCHIVE_MANIFEST.json').read_text(encoding='utf-8'))
         names.extend(item['path'] for item in research['files'])
     selected = [ROOT / name for name in names]
-    manifest = json.loads((ROOT/'finals-deck/visual_manifest.json').read_text(encoding='utf-8'))
+    # the archived V2 deck's own receipts, whose paths were written relative to finals-deck/
+    manifest = json.loads((ROOT/'finals-deck/v2/visual_manifest.json').read_text(encoding='utf-8'))
     for key in ('validation_report', 'visual_review_report'):
         candidate = (ROOT/'finals-deck'/manifest[key]).resolve()
         if not candidate.is_relative_to(ROOT):
@@ -160,7 +165,7 @@ def main() -> None:
     parser.add_argument('--replace', action='store_true', help='replace an existing pack only after the new archive verifies')
     parser.add_argument('--public', action='store_true', help='build the public edition without private judging/source documents')
     args = parser.parse_args()
-    output = args.output or ROOT/('Rewind_Amplify_v2_Public_Pack.zip' if args.public else 'Rewind_Amplify_Finals_Visual_Pack.zip')
+    output = args.output or ROOT/('Rewind_Amplify_v3_Public_Pack.zip' if args.public else 'Rewind_Amplify_Finals_V3_Pack.zip')
     count, size = build(output, replace=args.replace, public=args.public)
     print(f'Verified {count} project files in {output} ({size:,} bytes).')
 

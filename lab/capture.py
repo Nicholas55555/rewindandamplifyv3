@@ -7,6 +7,8 @@ except an optional music track.
     python lab/capture.py stills                      # media/lab-1-signal.png ... media/lab-7-impact.png
     python lab/capture.py tour                        # media/lab-tour.mp4 (silent)
     python lab/capture.py tour --music score.wav      # the same, with a soundtrack
+    python lab/capture.py deck                        # finals-deck/assets/v3/*.png, the panels the slides use
+    python lab/capture.py gif                         # media/lab-bench.gif, a short loop for the README
 
 Needs an installed Chrome or Edge, plus two helper packages that the science code does not use:
 
@@ -33,6 +35,20 @@ STILLS = [
     ("5-answer", "", "answer", 300),
     ("6-hardware", "", "hardware", 1600),
     ("7-impact", "", "impact", 300),
+]
+
+
+# name, query, scene, CSS selector of the panel, and a condition to wait for (JavaScript, in Lab time)
+PANELS = [
+    ("bench-hidden", "speed=1&runs=60", "signal", "#signal .bench-slot", "LAB.sim.step && LAB.sim.u > 0.66 && LAB.sim.u < 0.7 && LAB.sim.t >= 2"),
+    ("bench-revealed", "reveal=1&speed=1&runs=60", "signal", "#signal .bench-slot", "LAB.sim.flash > 0.75 && LAB.sim.bits.length >= 2"),
+    ("circuit", "reveal=1&speed=1", "machine", "#machine .machine-grid > .card:first-child", "LAB.sim.step && LAB.sim.u > 0.4 && LAB.sim.u < 0.45"),
+    ("raster", "speed=4&runs=2400", "question", "#question .raster-card", "true"),
+    ("tally", "speed=4&runs=2400", "question", "#question .tally", "true"),
+    ("amplify-mark", "stage=1", "rewind", "#rewind .rewind-main", "true"),
+    ("amplify-replay", "stage=4", "rewind", "#rewind .rewind-main", "true"),
+    ("answer", "", "answer", "#answer .answer-grid > .card", "true"),
+    ("hardware", "", "hardware", "#hardware .lanes", "LAB.hw.u >= 1"),
 ]
 
 
@@ -77,6 +93,59 @@ def stills(args) -> None:
                 page.close()
                 print(f"wrote {out.relative_to(ROOT)}")
         b.close()
+
+
+def deck(args) -> None:
+    """Crisp captures of single panels, for slides. Each is the live Lab at a chosen moment, not a mock-up."""
+    from playwright.sync_api import sync_playwright
+
+    out_dir = ROOT / "finals-deck" / "assets" / "v3"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    with sync_playwright() as p:
+        b = browser(p)
+        context = b.new_context(viewport={"width": args.width, "height": args.height}, device_scale_factor=args.scale)
+        for name, query, scene, selector, ready in PANELS:
+            if args.only and args.only not in name:
+                continue
+            page = open_page(context, query, scene)
+            run(page, 400)
+            page.evaluate("ready => { for (let i = 0; i < 6000 && !eval(ready); i++) LAB.tick(1000 / 60); }", ready)
+            out = out_dir / f"{name}.png"
+            page.locator(selector).first.screenshot(path=str(out))
+            page.close()
+            print(f"wrote {out.relative_to(ROOT)}")
+        b.close()
+
+
+def gif(args) -> None:
+    """A short loop of the bench: the laser pulses, the defect trades energy, the detector clicks."""
+    import imageio_ffmpeg
+    from playwright.sync_api import sync_playwright
+
+    MEDIA.mkdir(exist_ok=True)
+    out = MEDIA / args.output
+    command = [imageio_ffmpeg.get_ffmpeg_exe(), "-y", "-loglevel", "error", "-f", "image2pipe", "-framerate", str(args.fps),
+               "-c:v", "png", "-i", "-", "-vf",
+               f"scale={args.gif_width}:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors={args.colors}:stats_mode=diff[p];"
+               "[b][p]paletteuse=dither=bayer:bayer_scale=4:diff_mode=rectangle", "-loop", "0", str(out)]
+    with sync_playwright() as p:
+        b = browser(p)
+        context = b.new_context(viewport={"width": 1600, "height": 900}, device_scale_factor=1)
+        page = open_page(context, f"reveal=1&speed={args.speed}", "signal")
+        panel = page.locator("#signal .bench-slot").first
+        # start on a run that contains a click, so the loop shows the detector fire
+        page.evaluate("""() => { for (let i = 0; i < 200000; i++) { LAB.tick(1000 / 30);
+            if (LAB.sim.t === 0 && LAB.sim.u < 0.03 && LAB.sim.step) break; } }""")
+        encoder = subprocess.Popen(command, stdin=subprocess.PIPE)
+        step = 1000 / args.fps
+        for _ in range(int(args.seconds * args.fps)):
+            page.evaluate("ms => LAB.tick(ms)", step)
+            encoder.stdin.write(panel.screenshot(type="png"))
+        encoder.stdin.close()
+        if encoder.wait():
+            raise SystemExit("ffmpeg failed")
+        b.close()
+    print(f"wrote {out.relative_to(ROOT)}  ({out.stat().st_size / 1e6:.1f} MB)")
 
 
 def tour(args) -> None:
@@ -129,6 +198,20 @@ def main() -> None:
     s.add_argument("--only", help="capture only scenes whose name contains this text")
     s.add_argument("--both-levels", action="store_true", help="also save the technical-caption version of each scene")
     s.set_defaults(run=stills)
+    d = sub.add_parser("deck", help="single panels for the slide deck")
+    d.add_argument("--width", type=int, default=1600)
+    d.add_argument("--height", type=int, default=900)
+    d.add_argument("--scale", type=float, default=2)
+    d.add_argument("--only", help="capture only panels whose name contains this text")
+    d.set_defaults(run=deck)
+    g = sub.add_parser("gif", help="a short loop of the bench for the README")
+    g.add_argument("--seconds", type=float, default=10.6)
+    g.add_argument("--fps", type=int, default=12)
+    g.add_argument("--speed", type=int, default=2, help="Lab speed: 2 shows two full runs in about ten seconds")
+    g.add_argument("--gif-width", type=int, default=1000)
+    g.add_argument("--colors", type=int, default=96)
+    g.add_argument("--output", default="lab-bench.gif")
+    g.set_defaults(run=gif)
     t = sub.add_parser("tour", help="the 45-second tour as an MP4")
     t.add_argument("--width", type=int, default=1920)
     t.add_argument("--height", type=int, default=1080)

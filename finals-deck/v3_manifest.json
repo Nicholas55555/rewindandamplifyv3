@@ -1,0 +1,75 @@
+{
+ "schema": 1,
+ "deck": "Rewind_Amplify_Finals_V3.pptx",
+ "pdf": "Rewind_Amplify_Finals_V3.pdf",
+ "presenter_guide": "Presenter_Guide_V3.md",
+ "contact_sheet": "main-slides.png",
+ "main_slide_count": 13,
+ "total_slide_count": 38,
+ "notes_count": 38,
+ "talk_timing_seconds": 560,
+ "demo_seconds": 45,
+ "time_limit_seconds": 600,
+ "speaking_script_words": 1119,
+ "embedded_videos": {
+  "count": 2,
+  "slides": [
+   10,
+   37
+  ],
+  "parts": [
+   "ppt/media/media1.mp4",
+   "ppt/media/media2.mp4"
+  ]
+ },
+ "powerpoint_check": {
+  "powerpoint_version": "16.0",
+  "opened_without_repair": true,
+  "slides": 38,
+  "embedded_videos": [
+   {
+    "slide": 10,
+    "name": "lab-tour.mp4",
+    "milliseconds": 46000
+   },
+   {
+    "slide": 37,
+    "name": "cinematic-45s.mp4",
+    "milliseconds": 45000
+   }
+  ]
+ },
+ "sha256": {
+  "Rewind_Amplify_Finals_V3.pptx": "1dbaa3e6faefacdfbe562201801376c91503b38de6965f0d944ad545c4ebbc65",
+  "Rewind_Amplify_Finals_V3.pdf": "33223727d7b442764dbb9e42f28436e7199dc9a220c44c7eae25e51a477c18a8",
+  "Presenter_Guide_V3.md": "bfd77fc6a66e36dd796a4eda8996f3e92d21644632f909524f375026d6bd2de1"
+ },
+ "source_sha256": {
+  "research-validation/original_after_click_verification.json": "0db2be4bb4d6e1a6349383554c380d446c6ba4cac5112a710e8baef1e5b49481",
+  "hardware_campaign/runs/original_precision_v1/hero_acceptance_contrast.json": "d0fffabcb17a6eaa8f3dd517a869d546fb37acfca49fdba07f31844e7bf61b5e",
+  "hardware_campaign/runs/original_precision_v1/job.json": "54ff39842ad670e89be547af98f6a7fb23e5e87e1f5e94ac3b835c1b5067fc52",
+  "hardware_campaign/runs/original_plain_v2/analysis.json": "6c1ea899f82178826725f49cbc5f5510c3342ff6e382d577397de94a48b96fd3",
+  "hardware_campaign/runs/original_suppressed_v1/analysis.json": "13b29cf6bddcdb0e5618fcb023dae3d7236358dd7d5ba8e8c919bfae2b9867b0",
+  "hardware_campaign/results.json": "3ab53e47a45bf0ec85629193e5eed54c006991868065e15524e94dc090830a85",
+  "hardware_campaign/noise_model/results.json": "64d7a778c0591e6bcedceced18897d47730452ac40f033088e186aac2c2f364e",
+  "rewindandamplify-main/results/numbers.json": "7e37fc3a97b77b975aefc22b5f1ff318e9b5fb43d5a4a43d1f9577982e994f62",
+  "laser_sensor_viability/followup/main/results.json": "c9c1821e404af0fb74c384ba82cfadb38d49be5a3d15fb8a0cfb7a9a1e445da9",
+  "qrsm_photon_poc/followup/inference_results/fixed_411101_dead1_fit0.json": "1caca96deb6b9719d4e0e76b4f1fdabf73e45c13feec606ab1073d2cc3caf91f",
+  "qrsm_photon_poc/followup/inference_results/fixed_411101_dead1_fit1.json": "84a85bb5c07211efc39b4bdc5e36480268fcbf90869f96bc9dd947b567c773b6",
+  "quantum_dot_bridge/results.json": "362d27539b5c35e45482644b94d70223b9809ac5a77b6c2bf2aa52a86aec7889",
+  "finals-deck/v3_notes.json": "0fa5c401bfa1b65b8a4ff8fe75a3ae8809623f43efd1f043d0193157926a7f65",
+  "finals-deck/v2/Rewind_Amplify_Finals_Visual.pptx": "cde68fee746f3abde22e2318729ea362c873833688e2327d81ece859e0594db7",
+  "media/lab-tour.mp4": "8e30ae1a19073f675b0fa464e6d6801cf39c677606465a66fff4ffd9e0f4639c",
+  "media/cinematic-45s.mp4": "415dbe5a49095219bd1c5e2110a6630546dc79d47ddc8ce6cb41bf0fe1724ee6"
+ },
+ "build": [
+  "finals-deck/build_v3_deck.py",
+  "finals-deck/finish_v3_deck.ps1",
+  "finals-deck/finish_v3_deck.py"
+ ],
+ "limitations": [
+  "9:20 is a planned timeline; the team must rehearse the actual delivery.",
+  "Speaker assignments in the notes are suggestions.",
+  "The PDF shows a still frame where the deck has a video."
+ ]
+}
