@@ -2,7 +2,7 @@
 
 Updated 12 November 2026. The complete narration, cues and sources are in [`finals-deck/Presenter_Guide_V3.md`](finals-deck/Presenter_Guide_V3.md), and the same notes are inside [`finals-deck/Rewind_Amplify_Finals_V3.pptx`](finals-deck/Rewind_Amplify_Finals_V3.pptx).
 
-The plan is **9 minutes 20 seconds**, including a **45-second Lab demo**, which leaves 40 seconds before the ten-minute limit. Slides 1 to 13 are the talk. Slides 14 to 38 are backups. This is a plan, not a measured rehearsal: time it aloud.
+The plan is **9 minutes 25 seconds**, including a **70-second Lab demo**, which leaves 35 seconds before the ten-minute limit. Slides 1 to 13 are the talk. Slides 14 to 39 are backups. This is a plan, not a measured rehearsal: time it aloud.
 
 | Time | Slide | What the audience should take away | Suggested speaker |
 |---|---:|---|---|
@@ -15,10 +15,10 @@ The plan is **9 minutes 20 seconds**, including a **45-second Lab demo**, which 
 | 4:05–5:00 | 7 | Our four moves: purify, steer, amplify locally, verify | Nicholas |
 | 5:00–6:00 | 8 | On IBM hardware the lighter build won: 76.90% against 69.26% | Dillon |
 | 6:00–6:45 | 9 | A noise model predicts the gap; suppression did not help | Dillon |
-| 6:45–7:35 | 10 | The Lab, running (45-second video, or live) | Timofey |
-| 7:35–8:15 | 11 | Who could use this, scored honestly, including a result that went against us | Dan |
-| 8:15–8:50 | 12 | What we claim, what we do not, and the next experiment | Nicholas |
-| 8:50–9:20 | 13 | Roles, three lessons, thank you | All four |
+| 6:45–8:00 | 10 | The Lab, running: the project in 41 seconds, then photons, lasers and chipmaking in 29 | Timofey |
+| 8:00–8:20 | 11 | Those three tests, scored honestly, including the one that went against us | Dan |
+| 8:20–8:55 | 12 | What we claim, what we do not, and the next experiment | Nicholas |
+| 8:55–9:25 | 13 | Roles, three lessons, thank you | All four |
 
 Speaker assignments are suggestions that give every member a part with a result in it. Change them freely. Each person should present something they can answer questions about.
 
@@ -34,47 +34,43 @@ Say the limits out loud, at slide 6 and again at slide 12. The second judging cr
 
 ## The demo
 
-Slide 10 holds [`media/lab-tour.mp4`](media/lab-tour.mp4), a 45-second screen recording of the Lab, embedded as real video. Click it once to play. It is silent: narrate it with the words in the notes.
+Slide 10 holds [`media/lab-tour.mp4`](media/lab-tour.mp4), a 70-second screen recording of the Lab, embedded as real video. Click it once to play. It is silent: narrate it with the words in the notes.
 
-If it does not play, open `Rewind_Amplify_Lab.html` and press **45 s tour**. The page does the same thing live.
+| Seconds | What is on screen | What to say |
+|---|---|---|
+| 0–12 | The laser, the emitter, the hidden defect, the detector | The model, and that the detector clicks |
+| 12–19 | Rows of runs piling up | Most runs miss the rare click |
+| 19–28 | Mark, rewind, reflect, replay | Rewind and amplify: 96 percent |
+| 28–41 | Two futures, then the IBM result | One click, two futures; fewer gates won |
+| 41–49 | Two photons at a beam splitter | Equally bright sources: only the pairs reveal the hidden memory |
+| 49–57 | A laser, an ordinary receiver, a cloud of atoms | The atomic sensor helped a little; a second ordinary reference far more |
+| 57–66 | Light printing stripes on a resist | Entangled pairs print cleaner stripes, and pay for it in photons |
+| 66–70 | What we claim and do not claim | Hand over to slide 11 |
 
-To do the demo live from the start, open the Lab before the talk, leave it on scene 1, and switch windows at slide 10. Budget the same 45 seconds.
+If it does not play, open `Rewind_Amplify_Lab.html` and press the tour button in the top right corner. The page does the same thing live.
+
+**Short on time?** Stop the video when the IBM hardware scene ends, at 41 seconds. Or use the 45-second version, [`media/lab-tour-45s.mp4`](media/lab-tour-45s.mp4), which leaves the three research tabs to slide 11.
+
+To do the demo live from the start, open the Lab before the talk, leave it on scene 1, and switch windows at slide 10. Budget the same 70 seconds. Keys **7**, **8** and **9** jump to the Photons, Lasers and Chipmaking tabs.
 
 ## The optional cold open
 
-Slide 37 holds the team's 45-second cinematic cut with original music. To open with it, type **37** and **Enter** on the cover, play it, then type **2** and **Enter**.
+Slide 39 holds the team's 45-second cinematic cut with original music. To open with it, type **39** and **Enter** on the cover, play it, then type **2** and **Enter**.
 
-Two 45-second videos do not fit in ten minutes. If you open with the cinematic cut, replace the video on slide 10 with a short live look at the Lab (20 seconds on scenes 1 and 4), and rehearse the total.
+The cinematic cut and the 70-second Lab video do not both fit in ten minutes. If you open with the cinematic cut, stop the Lab video at 41 seconds or show a short live look at the Lab instead, and rehearse the total.
 
 ## Backup map
 
-| Slide | Topic |
-|---:|---|
-| 14 | Hardware repeats and noise controls: all three runs of 11 November |
-| 15 | Deep optical queries show large distribution errors |
-| 16 | Sensor assumptions and resource accounting |
-| 17 | Calibration failures can reverse the conclusion |
-| 18 | Detector dead time can distort inferred coupling |
-| 19 | Where the quantum component enters |
-| 20 | The transfer to lithography needs its own test |
-| 21 | The continued query separates models with bias |
-| 22 | One step of the recurrent quantum model |
-| 23 | Judging rubric and evidence map |
-| 24 | Contribution, prior work and AI assistance |
-| 25 | Drive amplitude: a useful negative result |
-| 26 | Phase inspection: benefit depends on the budget |
-| 27 | The full spatial query is costly to construct |
-| 28 | Exposure: contrast trades against dose and loss |
-| 29 | Model accuracy is part of the resource budget |
-| 30 | Equal photon counts can hide poor interference |
-| 31 | External GaAs data: a conditional reanalysis |
-| 32 | The joint-photon QRSM observation model |
-| 33 | More data helps only under trusted calibration |
-| 34 | Atomic and photon channels on IBM |
-| 35 | Hardware coverage and circuit limits |
-| 36 | The noise model, circuit by circuit |
-| 37 | The cinematic cut (video) |
-| 38 | Anyone can rerun it: `python reproduce.py` |
+Slide 14 is this map, inside the deck. Every backup's speaker note starts with the question that should bring it up.
+
+| Slides | Topic | What is there |
+|---:|---|---|
+| 15–19 | On IBM hardware | What each move bought (15), three runs (16), the noise model circuit by circuit (17), deeper circuits that failed (18), what ran and where it stops (19) |
+| 20–23 | Method and credit | One step in gates and maths (20), `python reproduce.py` (21), the rubric map (22), what is ours, prior work and AI (23) |
+| 24–29 | Light: photons and detectors | Equally bright, not equally good (24), a real quantum dot reanalysed (25), the detector's blind time (26), a QRSM for photon pairs (27), more data against calibration (28), better model, more qubits (29) |
+| 30–34 | Lasers | Monitors under stress (30), what the monitor assumes (31), the atomic channel on IBM (32), drive amplitude: a negative result (33), where the quantum part enters (34) |
+| 35–38 | Chipmaking | Sharper lines for more photons (35), the 389-qubit question (36), reading a phase (37), real lithography light (38) |
+| 39 | Video | The cinematic cut |
 
 In PowerPoint's slide show, type a slide number and press Enter to jump to it.
 

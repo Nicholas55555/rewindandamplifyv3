@@ -23,7 +23,7 @@ Use Node.js 24 for the app checks. The app has no npm dependencies or build step
 From the repository root:
 
 ```sh
-node --test lab/test_engine.cjs lab/test_data.cjs laser-diagnostics-app/test_model.cjs
+node --test lab/test_engine.cjs lab/test_data.cjs lab/test_research.cjs laser-diagnostics-app/test_model.cjs
 python lab/make_data.py --check
 python lab/build.py --check
 python laser-diagnostics-app/check_package.py

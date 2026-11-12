@@ -6,7 +6,7 @@ FGCU **Qubits** · IBM Qiskit Fall Fest 2026 · Florida finals, 14 November 2026
 
 [![checks](https://github.com/Nicholas55555/rewindandamplifyv3/actions/workflows/ci.yml/badge.svg)](https://github.com/Nicholas55555/rewindandamplifyv3/actions/workflows/ci.yml)
 
-**[Open the Lab](https://nicholas55555.github.io/rewindandamplifyv3/) · [Slides](finals-deck/Rewind_Amplify_Finals_V3.pdf) · [45-second tour](media/lab-tour.mp4) · [Reproduce it](#try-it) · [Evidence map](docs/EVIDENCE.md) · [For judges](#for-judges-where-each-criterion-is-answered)**
+**[Open the Lab](https://nicholas55555.github.io/rewindandamplifyv3/) · [Slides](finals-deck/Rewind_Amplify_Finals_V3.pdf) · [70-second tour](media/lab-tour.mp4) · [Reproduce it](#try-it) · [Evidence map](docs/EVIDENCE.md) · [For judges](#for-judges-where-each-criterion-is-answered)**
 
 ![A laser drives an emitter, a hidden defect trades energy with it, and a detector records a click or no click each step](media/lab-bench.gif)
 
@@ -59,6 +59,18 @@ Without amplification the same chip returned the click in 6.74% of shots.
 
 ![The Lab's hardware scene: measured hit rates beside the ideal simulator and the noise model](media/lab-6-hardware.png)
 
+## The same question, asked of other light
+
+The follow-up studies asked whether the idea reaches beyond qubits: to photon sources, laser monitoring and chipmaking. Each is a tab in the Lab. Each is a simulation or a reanalysis of published data, not a measurement of ours, and one of them went against us.
+
+| Lab tab | What you watch | What we found | Kind of evidence |
+|---|---|---|---|
+| **Photons** | Two photons from one source meet at a beam splitter, while a hidden environment may change between them | Two sources of identical brightness split 0.0% and 0.8% of attempts: only the pairs tell them apart. Photons from a real GaAs quantum dot interfere with visibility 0.77 to 0.83. | Simulated by us; data published by Münzberg et al. (2022), reanalysed |
+| **Lasers** | A laser's frequency steps at an unknown moment, and three monitors have 32 seconds to catch it | An ordinary reference caught 51% of steps. Adding an atomic sensor: 58%. A second ordinary reference: 98%. | Simulated by us. A negative result for the quantum add-on, kept. |
+| **Chipmaking** | Light prints fine stripes on a resist that needs two photons at once, cell by cell | Entangled pairs print 95% of cells correctly and the best laser route 83%, for 18 times the photons. Our rare-event question at full size needs 389 qubits; the chip has 156. | Simulated by us with an assumed resist. The 389-qubit circuit was built and checked, not run. |
+
+![The Lab's Chipmaking tab: one exposure, cell by cell, against the pattern that was wanted](media/lab-9-chips.png)
+
 ## What we do not claim
 
 - **No quantum speedup today.** At this size an exact classical sampler answers in a fraction of a millisecond. Its cost grew about 6× per added hidden qubit in our tests, which is where a quantum method could matter.
@@ -68,7 +80,7 @@ Without amplification the same chip returned the click in 6.74% of shots.
 
 ## Try it
 
-**The Lab, with nothing to install.** Open the [live Lab](https://nicholas55555.github.io/rewindandamplifyv3/), or download [`Rewind_Amplify_Lab.html`](https://raw.githubusercontent.com/Nicholas55555/rewindandamplifyv3/main/Rewind_Amplify_Lab.html) (save the file, then open it in Chrome or Edge). It is one file and works offline. Press **45 s tour**, or use the arrow keys. **T** switches between plain and technical captions.
+**The Lab, with nothing to install.** Open the [live Lab](https://nicholas55555.github.io/rewindandamplifyv3/), or download [`Rewind_Amplify_Lab.html`](https://raw.githubusercontent.com/Nicholas55555/rewindandamplifyv3/main/Rewind_Amplify_Lab.html) (save the file, then open it in Chrome or Edge). It is one file and works offline. Press the tour button, or use the arrow keys. Keys **7**, **8** and **9** open the Photons, Lasers and Chipmaking tabs, and **T** switches between plain and technical captions.
 
 **The numbers, in one command.** Python 3.10 or later, in a virtual environment:
 
@@ -85,7 +97,7 @@ It prints the exact model, the Qiskit circuits on an Aer simulator, the classica
 
 ```bash
 python .github/scripts/run_tests.py          # 434 Python tests: the Qiskit package and every study
-node --test lab/test_engine.cjs lab/test_data.cjs laser-diagnostics-app/test_model.cjs
+node --test lab/test_engine.cjs lab/test_data.cjs lab/test_research.cjs laser-diagnostics-app/test_model.cjs
 python check_finals.py --public              # deck, videos, demos and hashes of every quoted result
 ```
 
@@ -115,7 +127,7 @@ Install it with `python -m pip install -e rewindandamplify-main`.
 |---|---|
 | A clear, meaningful problem, and who it affects | [The problem](#the-problem) above; Lab scene 1; slides 2 and 11 |
 | Why quantum might help, and honesty about limits | [What we do not claim](#what-we-do-not-claim); slides 5, 6 and 12; `reproduce.py` section 3 |
-| Does the code run; is Qiskit used appropriately | `python reproduce.py`; [`rewindandamplify-main/qrsm_grover/`](rewindandamplify-main/qrsm_grover/); 434 Python tests and 41 JavaScript tests in CI |
+| Does the code run; is Qiskit used appropriately | `python reproduce.py`; [`rewindandamplify-main/qrsm_grover/`](rewindandamplify-main/qrsm_grover/); 434 Python tests and 49 JavaScript tests in CI |
 | Results interpreted, against a classical baseline, expected values, simulator and hardware | [What we found](#what-we-found); [noise-model study](hardware_campaign/noise_model/README.md); [campaign results](hardware_campaign/RESULTS.md) |
 | Originality | Making a recurrent quantum model reversible, steering, and the local reflection: slide 7 and [the original report](rewindandamplify-main/docs/REPORT.md) |
 | Clear to technical and non-technical audiences | The Lab's plain and technical captions; [the deck](finals-deck/Rewind_Amplify_Finals_V3.pdf); [presenter guide](finals-deck/Presenter_Guide_V3.md) |
@@ -128,11 +140,11 @@ Install it with `python -m pip install -e rewindandamplify-main`.
 
 V3 is the presentation-ready version of [V2](https://github.com/Nicholas55555/rewindandamplifyv2), which continued [the original project](https://github.com/Nicholas55555/rewindandamplify). The research evidence from V2 is kept byte for byte, and its checks still pass.
 
-- **The Lab** ([`lab/`](lab/), [`Rewind_Amplify_Lab.html`](Rewind_Amplify_Lab.html)): a live, exact simulation of the model in the browser, in seven scenes. Its engine is a gate-for-gate port of the Qiskit package, held to Qiskit within 10⁻¹² by tests.
+- **The Lab** ([`lab/`](lab/), [`Rewind_Amplify_Lab.html`](Rewind_Amplify_Lab.html)): a live, exact simulation of the model in the browser, in ten scenes. Six tell the project, three animate the follow-up studies of photon sources, laser monitoring and chipmaking, and one sums up. Its engine is a gate-for-gate port of the Qiskit package, held to Qiskit within 10⁻¹² by tests, and the research tabs are held to the studies' saved files the same way.
 - **A simulator-against-hardware study** ([`hardware_campaign/noise_model/`](hardware_campaign/noise_model/)) of the exact circuits that ran on IBM.
 - **One-command reproduction** ([`reproduce.py`](reproduce.py)).
-- **A rebuilt talk** ([`finals-deck/`](finals-deck/)): problem first, one picture per slide, with real embedded video. The V2 deck is kept in [`finals-deck/v2/`](finals-deck/v2/).
-- **Videos** ([`media/`](media/)): a 45-second screen recording of the Lab, and the team's 45-second cinematic cut.
+- **A rebuilt talk** ([`finals-deck/`](finals-deck/)): problem first, one picture per slide, with real embedded video, and 26 backups in the same style, each marked with the kind of evidence it shows. The V2 deck is kept in [`finals-deck/v2/`](finals-deck/v2/).
+- **Videos** ([`media/`](media/)): a 70-second screen recording of the Lab, a 45-second cut of it, and the team's 45-second cinematic cut.
 
 ![The thirteen slides of the main talk](finals-deck/main-slides.png)
 

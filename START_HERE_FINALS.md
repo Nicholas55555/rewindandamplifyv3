@@ -8,14 +8,14 @@ Nothing here needs an account, a server, Wi-Fi or a live quantum processor.
 
 | | File | What it is |
 |---|---|---|
-| 1 | [`finals-deck/Rewind_Amplify_Finals_V3.pptx`](finals-deck/Rewind_Amplify_Finals_V3.pptx) | The talk: 13 main slides, planned 9:20, then backups. Speaker notes are inside. Slide 10 holds a real, playable 45-second video. |
+| 1 | [`finals-deck/Rewind_Amplify_Finals_V3.pptx`](finals-deck/Rewind_Amplify_Finals_V3.pptx) | The talk: 13 main slides, planned 9:25, then 26 backups in the same style. Speaker notes are inside. Slide 10 holds a real, playable 70-second video. |
 | 2 | [`Rewind_Amplify_Lab.html`](Rewind_Amplify_Lab.html) | The Lab: one file, opens in Chrome or Edge, works offline. This is the live demo and the fallback if the video will not play. |
 | 3 | [`finals-deck/Presenter_Guide_V3.md`](finals-deck/Presenter_Guide_V3.md) | The same narration as the slide notes, with timing, cues and sources. |
 | 4 | [`FINALS_QA.md`](FINALS_QA.md) | Twelve questions to rehearse, then longer answers. |
 
-Fallbacks: [`finals-deck/Rewind_Amplify_Finals_V3.pdf`](finals-deck/Rewind_Amplify_Finals_V3.pdf) (static, no video), [`media/lab-tour.mp4`](media/lab-tour.mp4) and [`media/cinematic-45s.mp4`](media/cinematic-45s.mp4) as loose files.
+Fallbacks: [`finals-deck/Rewind_Amplify_Finals_V3.pdf`](finals-deck/Rewind_Amplify_Finals_V3.pdf) (static, no video), [`media/lab-tour.mp4`](media/lab-tour.mp4), its 45-second version [`media/lab-tour-45s.mp4`](media/lab-tour-45s.mp4) and [`media/cinematic-45s.mp4`](media/cinematic-45s.mp4) as loose files.
 
-## The story in six sentences
+## The story in seven sentences
 
 Every speaker should be able to say this without slides.
 
@@ -25,6 +25,7 @@ Every speaker should be able to say this without slides.
 4. Studying a rare event the ordinary way throws most runs away, and amplitude amplification could fix that, but it must run the machine backwards and a reset cannot be undone.
 5. So we made the machine reversible, steered it, amplified with a lighter reflection, and on IBM Marrakesh the lighter build hit the click in 76.90% of shots against 69.26% for the textbook build, with 58 gates against 125.
 6. There is no speedup today, no real defect was detected, and a simple noise model explains both the gap and the bias in the answers.
+7. We asked the same question of photon sources, a laser monitor and chip printing. Those are simulations, and one of them went against us: an ordinary second reference beat our atomic sensor.
 
 ## The numbers to know cold
 
@@ -42,18 +43,24 @@ Every speaker should be able to say this without slides.
 | 1.54× | How much noisier the chip was than its calibration said | same |
 | 8.79% and 11.66% | The two futures as measured with the lighter build: right order, biased | `hardware_campaign/runs/original_precision_v1/` |
 | `dbqb1ifv5hds73dfo310` | The IBM job ID of the featured run | same |
+| 0.0% and 0.8% | Photon pairs that split, for two sources of identical brightness. Simulated. | `quantum_dot_bridge/results.json` |
+| 51%, 58%, 98% | Laser steps caught within 32 s: ordinary reference, plus atoms, two ordinary references. Simulated. | `laser_sensor_viability/followup/main/results.json` |
+| 95% and 83% | Resist cells printed right: entangled pairs, best laser route, for 18 times the photons. Simulated. | `quantum_lithography_poc/exposure_followup/results.json` |
+| 389 and 156 | Qubits our full chipmaking question needs, and qubits on the chip. Built and checked, not run. | `finals-lithography/full_spatial_circuit/results.json` |
 
 ## The demo, and what to do if it fails
 
-Slide 10 plays a 45-second screen recording of the Lab. Click the video once. It is silent, so talk over it using the notes.
+Slide 10 plays a 70-second screen recording of the Lab. Click the video once. It is silent, so talk over it using the notes. The first 41 seconds are the project; the last 29 are the three research tabs: photons, lasers, chipmaking.
 
-If the video will not play, switch to `Rewind_Amplify_Lab.html`, press **45 s tour** in the top right corner, and say the same words. Useful keys in the Lab: arrows change scene, **1** to **7** jump to a scene, **T** switches plain and technical captions, **R** reveals the hidden defect, **D** removes it, space pauses.
+If the video will not play, switch to `Rewind_Amplify_Lab.html`, press the tour button in the top right corner, and say the same words. Useful keys in the Lab: arrows change scene, **1** to **9** and **0** jump to a scene, **T** switches plain and technical captions, **R** reveals the hidden defect, **D** removes it, space pauses.
 
-Optional cold open: slide 37 holds the team's cinematic cut with music. If you open with it, do the Lab live on slide 10 instead of playing the second video, or the talk will run over.
+Short on time: stop the video at 41 seconds, when the IBM hardware scene ends, and let slide 11 cover the research.
+
+Optional cold open: slide 39 holds the team's cinematic cut with music. If you open with it, stop the Lab video at 41 seconds or use the 45-second version, or the talk will run over.
 
 ## Before Saturday
 
-1. Rehearse aloud, all four speakers, with a timer. The plan is 9:20. Speaker assignments in the notes are suggestions.
+1. Rehearse aloud, all four speakers, with a timer. The plan is 9:25. Speaker assignments in the notes are suggestions.
 2. Test the PowerPoint, both videos and the Lab on the actual presentation computer and projector. Check that sound is where you want it: the Lab video is silent, the cinematic cut has music.
 3. Confirm with the organizers: start time, Q&A length, submission format, and any change to the rubric.
 4. Keep a second copy of this folder on a USB stick.
@@ -73,7 +80,7 @@ Optional cold open: slide 37 holds the team's cinematic cut with music. If you o
 python check_finals.py --public
 ```
 
-It verifies the deck (slide and note counts, the 9:20 plan, both embedded videos), the Lab, and the hash of every saved result that a slide quotes. If it reports that a result changed since the deck was built, rebuild the deck: see [`finals-deck/README.md`](finals-deck/README.md).
+It verifies the deck (slide and note counts, the talk plan, the backups' notes and theme, both embedded videos), the Lab, and the hash of every saved result that a slide quotes. If it reports that a result changed since the deck was built, rebuild the deck: see [`finals-deck/README.md`](finals-deck/README.md).
 
 ## Where the detail lives
 

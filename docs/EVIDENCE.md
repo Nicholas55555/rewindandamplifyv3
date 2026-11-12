@@ -77,6 +77,13 @@ These are simulations, or a reanalysis of data published by others. None is a me
 | Laser-frequency monitor, timely detection | 51.35% conventional; 58.02% with an atomic channel; 97.97% with a second conventional reference | Simulated | [`laser_sensor_viability/followup/README.md`](../laser_sensor_viability/followup/README.md) |
 | Click-based monitoring of drive amplitude | 3.71% timely detection, with 6.84% false alarms: a negative result | Simulated | [`qrsm_photon_poc/drive_diagnostics_followup/README.md`](../qrsm_photon_poc/drive_diagnostics_followup/README.md) |
 | Published GaAs photon-interference data, reanalysed | contrasts 0.8024, 0.8258, 0.7724, matching the authors' values | Reanalysis of data by Münzberg et al. | [`quantum_dot_bridge/hom_analysis/README.md`](../quantum_dot_bridge/hom_analysis/README.md) |
+| Two-photon exposure of a resist | 95.16% of scored cells right with entangled pairs, against 78.28% and 83.29% for two laser routes, at 14.9, 6.8 and 0.84 million photons | Simulated, with an assumed resist | [`quantum_lithography_poc/exposure_followup/README.md`](../quantum_lithography_poc/exposure_followup/README.md) |
+| Reading a phase with entangled pairs | wrong half-turn 50.4% of the time alone; with a 10% laser pilot, error 0.0064 rad against 0.0079 for laser light | Simulated | [`quantum_lithography_poc/phase_inspection_followup/README.md`](../quantum_lithography_poc/phase_inspection_followup/README.md) |
+| The rare-event question for a 49-cell exposure | 389 qubits and about 3.4 million two-qubit gates as an upper bound; the device has 156 qubits | Circuit constructed and checked, not run | [`finals-lithography/full_spatial_circuit/README.md`](../finals-lithography/full_spatial_circuit/README.md) |
+| The two photon-pair cases as circuits | measured overlap 0.81 and 0.52, against ideal 1.00 and 0.60 | Ran on IBM Marrakesh, as digital circuits | [`hardware_campaign/RESULTS.md`](../hardware_campaign/RESULTS.md) |
+| The atomic sensor channel as a circuit | 32.3%, 48.2% and 72.8% excited, against 20.9%, 50.0% and 79.1% in the model | Ran on IBM Marrakesh, as a digital circuit | [`hardware_campaign/optical_controls/README.md`](../hardware_campaign/optical_controls/README.md) |
+
+The Lab's Photons, Lasers and Chipmaking tabs animate these studies, and `node --test lab/test_research.cjs` holds every formula and number on those tabs to the files above.
 
 The full account, with every limitation, is in [`RESEARCH_CURRENT.md`](../RESEARCH_CURRENT.md). The V2 evidence note, which describes the earlier Kingston comparison in detail, is [`FINALS_EVIDENCE.md`](../FINALS_EVIDENCE.md).
 
@@ -86,6 +93,7 @@ The full account, with every limitation, is in [`RESEARCH_CURRENT.md`](../RESEAR
 |---|---|
 | The Lab's engine computes what Qiskit computes | `node --test lab/test_engine.cjs`: Kraus operators, history probabilities and the full query circuit agree with Qiskit to 10⁻¹² |
 | The Lab shows the measured numbers and no others | `node --test lab/test_data.cjs`: every displayed value is recomputed from the campaign's files, whose hashes are recorded |
+| The research tabs follow the studies they illustrate | `node --test lab/test_research.cjs`: the photon overlap formula, the atomic response and the exposure model reproduce the studies' saved values; the Lasers tab replays stored records |
 | The single file is the folder app | `python lab/build.py --check` |
 | The video on slide 10 is the running page | `python lab/capture.py tour` records it again, frame by frame, with a fixed seed |
 
@@ -95,7 +103,7 @@ The full account, with every limitation, is in [`RESEARCH_CURRENT.md`](../RESEAR
 python -m pip install -r requirements-dev.txt
 python reproduce.py
 python .github/scripts/run_tests.py
-node --test lab/test_engine.cjs lab/test_data.cjs laser-diagnostics-app/test_model.cjs
+node --test lab/test_engine.cjs lab/test_data.cjs lab/test_research.cjs laser-diagnostics-app/test_model.cjs
 python check_finals.py --public
 python verify_research_pack.py .
 python hardware_campaign/verify_campaign.py

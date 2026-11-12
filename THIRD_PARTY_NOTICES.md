@@ -8,7 +8,7 @@ Project-authored code and documentation continue the original project's MIT lice
 
 ## Presentation media added in V3
 
-`media/cinematic-45s.mp4` and its poster frame are the team's own 45-second explainer. Its music is an original instrumental synthesized for this presentation and contains no third-party samples. `media/lab-tour.mp4`, `media/lab-tour-with-score.mp4`, `media/lab-bench.gif` and the `media/lab-*.png` screenshots are recordings of this repository's own Lab page, made by `lab/capture.py`; the second file adds the same original score. The cover image of the deck was generated with OpenAI image generation for the V2 deck. The QR codes on the slides were generated with the open-source `segno` library and encode this repository's address.
+`media/cinematic-45s.mp4` and its poster frame are the team's own 45-second explainer. Its music is an original instrumental synthesized for this presentation and contains no third-party samples. `media/lab-tour.mp4`, `media/lab-tour-45s.mp4`, `media/lab-tour-45s-with-score.mp4`, `media/lab-bench.gif` and the `media/lab-*.png` screenshots are recordings of this repository's own Lab page, made by `lab/capture.py`; the third file adds the same original score. The cover image of the deck was generated with OpenAI image generation for the V2 deck. The QR codes on the slides were generated with the open-source `segno` library and encode this repository's address.
 
 ## Experimental photon-correlation reference
 
