@@ -174,7 +174,19 @@ def rule(slide, x0, y0, x1, y1, color=SLATE, width=1.0, dashed=False):
 
 
 def picture(slide, name, x, y, w=None, h=None, outline=SLATE, folder=ASSETS):
-    item = slide.shapes.add_picture(str(folder / name), px(x), px(y), px(w) if w else None, px(h) if h else None)
+    """Place a picture. Given both `w` and `h`, it is fitted inside that box with its proportions kept, so a
+    recaptured Lab panel of a different shape can never be stretched or run under its neighbours."""
+    path = folder / name
+    if w and h:
+        from PIL import Image
+
+        with Image.open(path) as image:
+            ratio = image.width / image.height
+        if w / h > ratio:
+            w = h * ratio
+        else:
+            h = w / ratio
+    item = slide.shapes.add_picture(str(path), px(x), px(y), px(w) if w else None, px(h) if h else None)
     if outline is not None:
         item.line.color.rgb = outline
         item.line.width = Pt(0.75)
@@ -241,7 +253,7 @@ def slide_problem(prs, e):
              "with the source and quietly change the pattern.",
              "Picture of our model, captured from the live Lab. On IBM hardware, superconducting qubits play these roles; "
              "no optical photons were detected.")
-    picture(s, "bench-hidden.png", 64, 196, w=1152)
+    picture(s, "bench-hidden.png", 64, 196, w=1152, h=276)
     cards = [("Quantum-chip teams", "Unseen defects drain their qubits between calibrations."),
              ("Photon-source engineers", "Two sources can look equally bright and behave differently."),
              ("Anyone reading a detector", "A detector fault can look exactly like a defect.")]
@@ -259,8 +271,8 @@ def slide_model(prs, e):
     s = base(prs, 3, "Our model", two_tone("A recurrent machine whose ", "memory is quantum."),
              "We call it a QRSM: a quantum recurrent state machine. Every time step repeats the same four gates.",
              "Same gates as qrsm_grover/model.py. The picture is a live simulation of that circuit, tested against Qiskit to 10⁻¹².")
-    picture(s, "bench-revealed.png", 64, 178, w=800)
-    picture(s, "circuit.png", 64, 390, w=640)
+    picture(s, "bench-revealed.png", 64, 178, w=800, h=200)
+    picture(s, "circuit.png", 64, 390, w=640, h=258)
     facts = [("2 qubits", "of memory: the emitter and a hidden defect. Never measured.", CYAN),
              ("1 bit", "comes out per step: click, or no click.", AMBER),
              ("Each bit", "updates the hidden state, so the model predicts what comes next.", VIOLET)]
@@ -278,7 +290,7 @@ def slide_question(prs, e):
              "starts over. A hidden defect remembers.",
              "Exact predictions of two models we programmed, recomputed live by the Lab and by reproduce.py. "
              "Not a diagnosis of a real defect.")
-    picture(s, "answer.png", 64, 198, h=446)
+    picture(s, "answer.png", 64, 198, w=660, h=446)
     x = 740
     panel(s, x, 198, 476, 150, outline=AMBER)
     text(s, x + 24, 210, 430, 22, "EMITTER ONLY", size=13, bold=True, color=MUTED, tracking=1.4)
@@ -299,7 +311,7 @@ def slide_cost(prs, e):
              "every run that missed.",
              "Rejection sampling costs 1/p runs per kept sample. The 64-step figure is an exact calculation for a real "
              "record from our first project.")
-    picture(s, "raster.png", 64, 198, h=446)
+    picture(s, "raster.png", 64, 198, w=636, h=446)
     x = 716
     rows = [(pct(e["p_click"]), "of runs contain the click we asked about", AMBER),
             (f"{1 / e['p_click']:.0f} runs", "per useful sample. The other 24 are thrown away.", CREAM),
@@ -361,7 +373,7 @@ def slide_method(prs, e):
         text(s, x + 16, 142, 40, 36, n, size=26, bold=True, color=CYAN, anchor=MSO_ANCHOR.MIDDLE)
         text(s, x + 50, 142, 216, 36, head, size=23, bold=True, color=CREAM, anchor=MSO_ANCHOR.MIDDLE)
         text(s, x + 16, 186, 246, 108, body, size=16.5, color=SOFT, line=1.18)
-    picture(s, "amplify-replay.png", 64, 318, h=330)
+    picture(s, "amplify-replay.png", 64, 318, w=596, h=330)
     x = 676
     panel(s, x, 318, 540, 330)
     text(s, x + 24, 330, 490, 22, "IDEAL SIMULATOR · ONE ROUND", size=13, bold=True, color=MUTED, tracking=1.4)

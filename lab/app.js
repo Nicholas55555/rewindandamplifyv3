@@ -186,9 +186,10 @@
     const W = area.height > 40 ? clamp(Math.round(H * area.width / area.height / 20) * 20, 860, 1900) : 1200;
     if (+bench.dataset.w !== W || bench.height % H) { bench.dataset.w = W; bench.width = W; bench.height = H; }
     const { ctx } = fit(bench);
-    const m = clamp(W / 1250, 0.74, 1.3);                               // element scale
     const ts = clamp(W / Math.max(area.width, 1), 1, 1.55);             // keeps labels near 12 px on screen
-    const detail = area.width >= 900;
+    // element scale: as large as the width allows, but never so large that the record collides with the labels above it
+    const m = clamp(Math.min(W / 1250, (H - 66 * ts - 40) / 180), 0.74, 1.3);
+    const detail = area.width >= 900 && area.height >= 300;             // a short or narrow panel drops the second line of each label
     const cy = Math.round(H * (detail ? 0.42 : 0.4)), ex = Math.round(W * 0.46), er = 40 * m;
     const dOff = Math.min(112 * m + 14, cy - 34), dy = cy - dOff, dr = 23 * m;
     const lx0 = W * 0.05, lw = 156 * m, lx1 = lx0 + lw, detw = 126 * m, detx = W * 0.95 - detw;
@@ -761,6 +762,8 @@
     else if (e.key === ' ' && e.target.tagName !== 'BUTTON') { e.preventDefault(); $('pause').click(); }
   });
   window.addEventListener('hashchange', () => { const id = location.hash.slice(1); if (id && id !== state.scene) show(id); });
+  // a scene id in the address would otherwise make the browser scroll past the header on a small screen
+  window.addEventListener('load', () => setTimeout(() => window.scrollTo(0, 0), 0));
 
   // ------------------------------------------------------------------ go
   const query = new URLSearchParams(location.search);

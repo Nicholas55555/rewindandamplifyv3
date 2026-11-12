@@ -108,6 +108,7 @@ def deck(args) -> None:
             if args.only and args.only not in name:
                 continue
             page = open_page(context, query, scene)
+            page.add_style_tag(content="label.check { visibility: hidden }")  # a tick box means nothing on a slide
             run(page, 400)
             page.evaluate("ready => { for (let i = 0; i < 6000 && !eval(ready); i++) LAB.tick(1000 / 60); }", ready)
             out = out_dir / f"{name}.png"

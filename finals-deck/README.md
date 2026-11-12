@@ -33,7 +33,7 @@ python finals-deck/build_v3_deck.py --cinematic path/to/new_cut.mp4
 
 ## Rebuilding from scratch
 
-The slides read their numbers from the saved results when they are built, and most pictures are captures of the running Lab. So a rebuild is four commands:
+The slides read their numbers from the saved results when they are built, and most pictures are captures of the running Lab. So a full rebuild is a short list of commands, run from the repository root:
 
 ```bash
 python lab/capture.py deck                 # the Lab panels the slides show
