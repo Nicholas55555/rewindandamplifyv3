@@ -22,7 +22,7 @@ DOCS = ["START_HERE_FINALS.md", "check_finals.py", "FINALS_PLAN.md", "FINALS_TAL
         "reproduce.py"]
 DECKS = ["finals-deck/Rewind_Amplify_Finals_V3.pptx", "finals-deck/Rewind_Amplify_Finals_V3.pdf",
          "finals-deck/Presenter_Guide_V3.md", "finals-deck/v3_manifest.json", "finals-deck/v3_notes.json", "finals-deck/README.md",
-         "finals-deck/main-slides.png", "finals-deck/deck_kit.py", "finals-deck/build_v3_deck.py", "finals-deck/v3_backups.py",
+         "finals-deck/main-slides.png", "finals-deck/backup-slides.png", "finals-deck/deck_kit.py", "finals-deck/build_v3_deck.py", "finals-deck/v3_backups.py",
          "finals-deck/finish_v3_deck.py", "finals-deck/finish_v3_deck.ps1",
          ".finals-deck-build/visual_build.mjs", ".finals-deck-build/visual_render_final.mjs",
          ".finals-deck-build/visual_finish.py", ".finals-deck-build/visual_notes.json"]

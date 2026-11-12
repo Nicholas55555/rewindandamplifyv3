@@ -27,6 +27,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 PPTX, PDF = HERE / "Rewind_Amplify_Finals_V3.pptx", HERE / "Rewind_Amplify_Finals_V3.pdf"
 GUIDE, MANIFEST, SHEET = HERE / "Presenter_Guide_V3.md", HERE / "v3_manifest.json", HERE / "main-slides.png"
+BACKUP_SHEET = HERE / "backup-slides.png"
 PREVIEW = HERE / "preview"
 MAIN = 13
 DEMO_SECONDS = 71        # the Lab recording on slide 10
@@ -118,6 +119,15 @@ def main() -> None:
             tile = Image.open(path).convert("RGB").resize((cell_w, cell_h), Image.LANCZOS)
             sheet.paste(tile, (gap + (i % columns) * (cell_w + gap), gap + (i // columns) * (cell_h + gap)))
         sheet.save(SHEET, optimize=True)
+        # and the backups, smaller: enough to find a slide by its look
+        cell_w, cell_h, gap, columns = 400, 225, 10, 5
+        backups = previews[MAIN:]
+        rows = -(-len(backups) // columns)
+        sheet = Image.new("RGB", (columns * cell_w + (columns + 1) * gap, rows * cell_h + (rows + 1) * gap), (5, 13, 22))
+        for i, path in enumerate(backups):
+            tile = Image.open(path).convert("RGB").resize((cell_w, cell_h), Image.LANCZOS)
+            sheet.paste(tile, (gap + (i % columns) * (cell_w + gap), gap + (i // columns) * (cell_h + gap)))
+        sheet.save(BACKUP_SHEET, optimize=True)
         report = json.loads((PREVIEW / "powerpoint_report.json").read_text(encoding="utf-8-sig"))
         assert report["slides"] == len(slides)
     else:
@@ -136,7 +146,7 @@ def main() -> None:
         assert "video/mp4" in package.read("[Content_Types].xml").decode("utf-8")
     manifest = {
         "schema": 1,
-        "deck": PPTX.name, "pdf": PDF.name, "presenter_guide": GUIDE.name, "contact_sheet": SHEET.name,
+        "deck": PPTX.name, "pdf": PDF.name, "presenter_guide": GUIDE.name, "contact_sheet": SHEET.name, "backup_contact_sheet": BACKUP_SHEET.name,
         "main_slide_count": MAIN, "total_slide_count": len(slides), "notes_count": sum(s.has_notes_slide for s in slides),
         "talk_timing_seconds": end, "demo_seconds": DEMO_SECONDS, "time_limit_seconds": 600, "speaking_script_words": words,
         "embedded_videos": {"count": len(videos), "slides": video_slides, "parts": videos},

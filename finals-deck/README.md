@@ -17,6 +17,8 @@
 
 Slide 14 is a map of the backups, grouped by the question a judge might ask: on IBM hardware (15 to 19), method and credit (20 to 23), light (24 to 29), lasers (30 to 34), chipmaking (35 to 38), and the cinematic cut (39).
 
+![The 26 backup slides, from the map on slide 14 to the cinematic cut on slide 39](backup-slides.png)
+
 Every backup states its finding in the title, and carries a chip in the top right corner that says what kind of evidence it is: ran on IBM hardware, simulated by us, published data reanalysed, or a negative result. Its speaker note starts with **SHOW THIS WHEN**, followed by what to say and where the numbers live.
 
 ## Playing the videos
