@@ -1,0 +1,1707 @@
+{
+  "schema": "rewind-research-snapshot-v1",
+  "created_utc": "2026-11-11T05:23:20.159635+00:00",
+  "entrypoint": "RESEARCH_RESULTS.md",
+  "scope": "Local numerical research, sources, original dependencies and provenance; separate from finals delivery.",
+  "excluded_files": [
+    {
+      "path": "finals-lithography/full_spatial_circuit/ceil_compact_219q.qpy.partial",
+      "reason": "partial or regenerable output"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/floor_compact_219q.qpy.partial",
+      "reason": "partial or regenerable output"
+    },
+    {
+      "path": "finals-lithography/__pycache__/dose_sweep.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/lithography.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/oracle_comparison.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/oracle_density_pilot.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/oracle_noise_pilot.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/scaling_study.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/spatial_model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/test_dose_sweep.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/test_lithography.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/test_oracle_comparison.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/test_oracle_density_pilot.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/test_oracle_noise_pilot.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/test_scaling_study.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/test_spatial_model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/test_viability_cost_study.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/__pycache__/viability_cost_study.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/followup/__pycache__/model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/followup/__pycache__/quantum.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/followup/__pycache__/spatial_coverage.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/followup/__pycache__/test_followup.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/followup/__pycache__/test_spatial_coverage.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/archive/ceil_clean_389q.qpy",
+      "reason": "superseded/failed circuit binary; source and attempt reports retained"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/archive/ceil_compact_219q.qpy",
+      "reason": "superseded/failed circuit binary; source and attempt reports retained"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/archive/floor_clean_389q.qpy",
+      "reason": "superseded/failed circuit binary; source and attempt reports retained"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/archive/floor_compact_219q.qpy",
+      "reason": "superseded/failed circuit binary; source and attempt reports retained"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/__pycache__/circuit_model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/__pycache__/process_bounds.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/__pycache__/test_full_spatial.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/__pycache__/dilation_feasibility.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/__pycache__/dilation_synthesis.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/__pycache__/evaluate.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/__pycache__/experiment.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/__pycache__/qrsm_photon.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/__pycache__/test_dilation.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/__pycache__/test_dilation_synthesis.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/__pycache__/test_reproduction.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/__pycache__/test_two_bin_amplification.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/__pycache__/two_bin_amplification.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/__pycache__/compare.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/__pycache__/fresh_replication.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/__pycache__/refine_replication.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/__pycache__/test_compare.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/__pycache__/test_fresh_replication.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/__pycache__/test_refine_replication.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/__pycache__/model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/__pycache__/prior_only_control.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/__pycache__/run_study.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/__pycache__/test_model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/__pycache__/inference_model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/__pycache__/parameter_diagnostics.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/__pycache__/run_inference.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/__pycache__/test_inference_model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/__pycache__/test_parameter_diagnostics.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/__pycache__/model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/__pycache__/test_model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "laser_sensor_viability/__pycache__/model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "laser_sensor_viability/__pycache__/run_experiment.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "laser_sensor_viability/__pycache__/test_model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "laser_sensor_viability/followup/__pycache__/run_followup.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "laser_sensor_viability/followup/__pycache__/test_followup.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "quantum_lithography_poc/__pycache__/fringe_compare.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "quantum_lithography_poc/__pycache__/test_fringe_compare.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/__pycache__/model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/__pycache__/test_model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/__pycache__/phase_model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/__pycache__/test_phase_model.cpython-312.pyc",
+      "reason": "regenerable cache/environment"
+    }
+  ],
+  "files": [
+    {
+      "path": "build_research_pack.py",
+      "bytes": 4167,
+      "sha256": "acacf6969ee0c920cf30c5d006296d73d7196b5938c6c02be9bcbc02ba4c8d2a"
+    },
+    {
+      "path": "finals-lithography/dose_sweep.png",
+      "bytes": 89650,
+      "sha256": "0fbb850e1d9162e476c85fdfad758d98988a15ad37295946605d2cff185f48ba"
+    },
+    {
+      "path": "finals-lithography/dose_sweep.py",
+      "bytes": 4761,
+      "sha256": "d606cbc02a6b816bebb0f1f5005e78d13efaecb292b13f25da56f6717773d7e1"
+    },
+    {
+      "path": "finals-lithography/dose_sweep_results.json",
+      "bytes": 6730,
+      "sha256": "488aed885f62bc5482b7af755f3157fd2113887b6b1baca078e3e21f0431c52a"
+    },
+    {
+      "path": "finals-lithography/followup/archive/results.json",
+      "bytes": 42986,
+      "sha256": "2dca28f85666ad09ec477672de2f44e6864d5232ce59ee5327d3ed34ff572832"
+    },
+    {
+      "path": "finals-lithography/followup/archive/spatial_coverage_refined_results.json",
+      "bytes": 311406,
+      "sha256": "08eb0364a5b9922b559bd04d7d184b5db8fab030a70ea629a1ed6b3c9ed6950c"
+    },
+    {
+      "path": "finals-lithography/followup/archive/spatial_coverage_results.json",
+      "bytes": 309781,
+      "sha256": "2c495a647c74f5175c9b631a01487c181335d9628a14eddc3b2c30b60168922c"
+    },
+    {
+      "path": "finals-lithography/followup/audit_manifest.json",
+      "bytes": 4970,
+      "sha256": "62bded02b79ac9be3bec73387f812b70dc096bc77c8c6dd5144f8c39b4b6c671"
+    },
+    {
+      "path": "finals-lithography/followup/correlated_spatial_bridge.png",
+      "bytes": 261915,
+      "sha256": "6c3209be3a5c786caf0b23d4f58097514b14c534555382f5be66eaf832c1f915"
+    },
+    {
+      "path": "finals-lithography/followup/correlated_spatial_results.json",
+      "bytes": 42864,
+      "sha256": "de47b6353e0f0904c4618ab309340b60001f7f30884d1a87c1b65acc4e35852e"
+    },
+    {
+      "path": "finals-lithography/followup/model.py",
+      "bytes": 6448,
+      "sha256": "b335ab34548dff297ed353a4a19ac995d199ad6982edb0714d21736c0338aefc"
+    },
+    {
+      "path": "finals-lithography/followup/plot_results.py",
+      "bytes": 5460,
+      "sha256": "77221d700414d5210bded944c2f50080f587d28f1c95649950d0c98c8f592fab"
+    },
+    {
+      "path": "finals-lithography/followup/quantum.py",
+      "bytes": 6213,
+      "sha256": "c46c334c15384687f7d482c0f1c1d200eb74b28e4ed1a5541cd2015f19957089"
+    },
+    {
+      "path": "finals-lithography/followup/README.md",
+      "bytes": 17442,
+      "sha256": "f0eb8cb8ca59316efcc3b2f2953c6e271ab14e47b4c7e815bbc56b25a3f3c903"
+    },
+    {
+      "path": "finals-lithography/followup/run_study.py",
+      "bytes": 6898,
+      "sha256": "bb8b19d91f400980f563959cb1c1020fb5497861076ea346693774bd52fb7058"
+    },
+    {
+      "path": "finals-lithography/followup/spatial_coverage.png",
+      "bytes": 230724,
+      "sha256": "ca6e7e0f82704f56b896d761e5f12a1aab792afa1b1e07363f2a4c70b5656707"
+    },
+    {
+      "path": "finals-lithography/followup/spatial_coverage.py",
+      "bytes": 10780,
+      "sha256": "7d83433aae4bb7cd221cb472f3fb6903fabb51de96c7730de7b007f04cc8f395"
+    },
+    {
+      "path": "finals-lithography/followup/spatial_coverage_refined_results.json",
+      "bytes": 311406,
+      "sha256": "b16b3139fa0f60a108c6631f039a9819448b2686fb196d2ced16b26e1d860b2f"
+    },
+    {
+      "path": "finals-lithography/followup/test_followup.py",
+      "bytes": 4463,
+      "sha256": "55e85656fc0c4741a112b61a5d20200ba5c9dbea28992a15258509d3d38dc9d2"
+    },
+    {
+      "path": "finals-lithography/followup/test_results.txt",
+      "bytes": 2484,
+      "sha256": "a1c48ecd3ae6d8fdfb7006a8a5ebe3332b308b3b1fc808763fe38a03c22f434a"
+    },
+    {
+      "path": "finals-lithography/followup/test_spatial_coverage.py",
+      "bytes": 3534,
+      "sha256": "37ee4ed351838a5188ba9fb49fb858a52ba137d6df10542d0a343e058cf3c4d1"
+    },
+    {
+      "path": "finals-lithography/followup/validate_artifacts.py",
+      "bytes": 5182,
+      "sha256": "5e4d8c2166e63ecc38b79a09ef595b93e5f3a3c823dd6f5a8f5cc6f737f21790"
+    },
+    {
+      "path": "finals-lithography/followup/validation.json",
+      "bytes": 991,
+      "sha256": "cee83712e37b65e418838dcc4d06c587fe000f370ae8be9a1f590ace9066cadf"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/archive/results.json",
+      "bytes": 12351,
+      "sha256": "f495d3cea8153cfdfda9171f8f0bc0f797241f2e35d72f139ec3918122eadbf0"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/archive/results_after_release.json",
+      "bytes": 16221,
+      "sha256": "a315b9d0cb6cca6db5df913dec58458846444690c2a2572cc11ff004404d98aa"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/archive/results_after_reused_inverse.json",
+      "bytes": 16219,
+      "sha256": "d1c3f2536b20592ff7a53273fecec3035db6202e9d044d3b0b15c2a79740d982"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/artifact_manifest.json",
+      "bytes": 1571,
+      "sha256": "d4306c9ce641ac8408c41c0c9dec7daf5e7add38097e56f18bd2074761bfa6b1"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/ceil_clean_389q.qpy",
+      "bytes": 37656770,
+      "sha256": "38c2b602c2df43f7cf6681cce72ecb0be914599fc8f7a362fd6ed8f80be8273d"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/circuit_model.py",
+      "bytes": 8848,
+      "sha256": "ca54b7d6dea0be05f8ff924263dec9fb23306cac3d795b9e307a4c83f5ab4d3d"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/floor_clean_389q.qpy",
+      "bytes": 43696842,
+      "sha256": "876bcede2202d09fed6821ceb93ba821d9c68b56144f72033ca6438eb307991a"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/independent_review.json",
+      "bytes": 7086,
+      "sha256": "b0f8c67d2762832efd3cc890234c096e77d15d01da9fa56501a3b781816bf625"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/process_bounds.py",
+      "bytes": 2651,
+      "sha256": "3355a64b16858340c1128412152f0b7abec1f5d8c117541664fceed72b61c2a5"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/README.md",
+      "bytes": 11932,
+      "sha256": "e4cf82e75502e5b36952a0fd0e16910b2c68d17763f15536c44af8ef9f8f8f60"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/results.json",
+      "bytes": 19234,
+      "sha256": "62769c7a89be87aab019d911d9bc6f7b778c9a73a7f1f4c044b0d43328ce3ba6"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/run_construction.py",
+      "bytes": 12379,
+      "sha256": "63cf564a1204304ae0a57177b73fb9229fcaebef3c6099bbd8b8fb27ce6ba7d8"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/test_full_spatial.py",
+      "bytes": 5504,
+      "sha256": "023c62f2923b83639568f3e83395d307925b843c94f3244d5d7f1bf262a03106"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/test_results.txt",
+      "bytes": 1359,
+      "sha256": "c9cdfef9a271fe1f1bf78dbba6709d232ebe4fcefad6991ebfa1cd4471aeebe1"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/validate_results.py",
+      "bytes": 4265,
+      "sha256": "c0f12559465e497db86e52c38c5cb2246d2d41a6f61855fff6b4a42f5eca0364"
+    },
+    {
+      "path": "finals-lithography/full_spatial_circuit/validation.json",
+      "bytes": 1163,
+      "sha256": "1c3a1cfb72b776e5c3e9790836048f45537880865c910140a9d7798f91694d90"
+    },
+    {
+      "path": "finals-lithography/index.html",
+      "bytes": 16347,
+      "sha256": "e5c572c935a2d9805265b5bc25533e4fc631f35905aed1f60505d24437415771"
+    },
+    {
+      "path": "finals-lithography/lithography.py",
+      "bytes": 9138,
+      "sha256": "d7f2dd4707275769b99e8eaf4dcdb85227540a3cc8de1c1f4ce0599d9120394e"
+    },
+    {
+      "path": "finals-lithography/oracle_comparison.py",
+      "bytes": 8972,
+      "sha256": "9056962eb3a8a776f65a467e398e3e1ca06d63d965a8fc3adc39906e6d8698e5"
+    },
+    {
+      "path": "finals-lithography/oracle_comparison_results.json",
+      "bytes": 6466,
+      "sha256": "7d1f6fffba1703d34bdc701bdbd0625481a74ae819a86375d74796f3560f933e"
+    },
+    {
+      "path": "finals-lithography/oracle_density_n5.json",
+      "bytes": 3851,
+      "sha256": "4d9bb406e2f3372e92b210b6098ad27fd7376634d90cf674b7bd35901b93eeaa"
+    },
+    {
+      "path": "finals-lithography/oracle_density_n7.json",
+      "bytes": 4348,
+      "sha256": "5b739cf0faff6724d3ce70a5c2793a14ae2f4ae82bd6ea94c2f1cf5d42a42a56"
+    },
+    {
+      "path": "finals-lithography/oracle_density_pilot.py",
+      "bytes": 11101,
+      "sha256": "dad10c7b49daa7dec76337b26de94327181ad7c8e2ae9ea0895495ebb557dc65"
+    },
+    {
+      "path": "finals-lithography/oracle_noise_pilot.py",
+      "bytes": 7679,
+      "sha256": "3d3b1b5cedbc648f0720cb9584f43ddcdb2a2fef2a07ee88c0e7a7a73fc3003f"
+    },
+    {
+      "path": "finals-lithography/oracle_noise_pilot_results.json",
+      "bytes": 5510,
+      "sha256": "8c87a24810ed334013b7920faae313da11b0a582b80711b2c310cd6179e966d3"
+    },
+    {
+      "path": "finals-lithography/plot_viability_cost.py",
+      "bytes": 1924,
+      "sha256": "7bdd33a16aa295b44b465654baea60f668e17a3f628c7acb4085d5f860fc0059"
+    },
+    {
+      "path": "finals-lithography/README.md",
+      "bytes": 17634,
+      "sha256": "c671740d1e52498c7a0b17b9717481eb261bd5eec321335b5b5e8a0ecb5aa23f"
+    },
+    {
+      "path": "finals-lithography/replication_check.py",
+      "bytes": 1912,
+      "sha256": "808a724b5e0838d3f6ec9fc9637a47ba8e357df61e9723bc4c02cd19b207cecb"
+    },
+    {
+      "path": "finals-lithography/scaling_results.json",
+      "bytes": 5382,
+      "sha256": "642c070a33d13b8e619a1a2fa76ed7ff73867f2f08b0aa8da7c8175d3ea6b293"
+    },
+    {
+      "path": "finals-lithography/scaling_study.py",
+      "bytes": 4869,
+      "sha256": "6f4f631dded1a9206bcfc407d5e8f314924c9b45e3bcfe59569bfa2b9370bcf9"
+    },
+    {
+      "path": "finals-lithography/spatial_demo.png",
+      "bytes": 92856,
+      "sha256": "9f892a5a541103110a266e04cbd88cc9aba06701c4839a69f4832c00a1768bcf"
+    },
+    {
+      "path": "finals-lithography/spatial_model.py",
+      "bytes": 9567,
+      "sha256": "c86d14731d0d1f52e5b205438f3124bed9158e5b941c375a235369edad368093"
+    },
+    {
+      "path": "finals-lithography/spatial_results.json",
+      "bytes": 3232,
+      "sha256": "1b638548bcfb61365cfad4568a185e0296de3aa4276f3426c53c15e1b0264b91"
+    },
+    {
+      "path": "finals-lithography/test_browser.js",
+      "bytes": 2992,
+      "sha256": "9e058d2c2f6e3dbdc92c53ffb359c51dd6b80221e21984b6aaea1c61ac25499d"
+    },
+    {
+      "path": "finals-lithography/test_dose_sweep.py",
+      "bytes": 1051,
+      "sha256": "bb72917dd92030f50f124f084f29bad7ee8f28c6f761d94ee53c215c978c95a5"
+    },
+    {
+      "path": "finals-lithography/test_lithography.py",
+      "bytes": 3970,
+      "sha256": "c11c7b9dd5b6074c35dd1077bfd09b14221db90b5cbe22b4de58727989c6a022"
+    },
+    {
+      "path": "finals-lithography/test_oracle_comparison.py",
+      "bytes": 1492,
+      "sha256": "12c87d2d10756f15ad7c3a705c2d056fd47ed8ef2ef8850e193bd4174abd46af"
+    },
+    {
+      "path": "finals-lithography/test_oracle_density_pilot.py",
+      "bytes": 3056,
+      "sha256": "5703c904e22718e09f487f82ed681ad264d48c1128c8f4713e54340129c6556d"
+    },
+    {
+      "path": "finals-lithography/test_oracle_noise_pilot.py",
+      "bytes": 1276,
+      "sha256": "5a7069ba5080f14e2e04602efa423e6a609478070cade8564144194e1cbe177c"
+    },
+    {
+      "path": "finals-lithography/test_scaling_study.py",
+      "bytes": 1317,
+      "sha256": "6b47c583c75171acde95f71aff3b83e02e3083c31ce1e057e13906b040f9e6cf"
+    },
+    {
+      "path": "finals-lithography/test_spatial_model.py",
+      "bytes": 2669,
+      "sha256": "86a40e87a0a980c53c576617efb1bc29cac09491d99c86d51bbe492294bf8544"
+    },
+    {
+      "path": "finals-lithography/test_viability_cost_study.py",
+      "bytes": 2688,
+      "sha256": "177e19656dbce41a1e6f400571a174e3ffa49281d73d98c368d82304f2b6c6e0"
+    },
+    {
+      "path": "finals-lithography/viability_cost_n5.json",
+      "bytes": 10642,
+      "sha256": "3e9a6ab834db962be2650b4a09042063fd03ca9d4ded19d3dacf5b995707ac00"
+    },
+    {
+      "path": "finals-lithography/viability_cost_n7.json",
+      "bytes": 12121,
+      "sha256": "3fba5fc7fd65e65a0bd1c00f1dd1f4c5fdc9a969bccbdf259117fcbb6925ac25"
+    },
+    {
+      "path": "finals-lithography/VIABILITY_COST_README.md",
+      "bytes": 5273,
+      "sha256": "2bcd88c05f7f7b376ce85ca5890fd3a1e1430a40f837695b3d1e4073b31cf697"
+    },
+    {
+      "path": "finals-lithography/viability_cost_study.py",
+      "bytes": 9935,
+      "sha256": "0b0e6ed2e486cf97d2af3af1882caf415b8715c5fb161d706c8d162b3b69997c"
+    },
+    {
+      "path": "finals-lithography/viability_cost_tradeoff.png",
+      "bytes": 113295,
+      "sha256": "3c81fdfc0b34c142cbfd1d4c7d789e28b0cc31213db0dd67329c4eb4028db4f1"
+    },
+    {
+      "path": "LASER_DIAGNOSTICS_ROADMAP.md",
+      "bytes": 17913,
+      "sha256": "407f376b41c9e3381fe3b6f6527282bd13f63172d822c88bec6e3146af17fe7c"
+    },
+    {
+      "path": "LASER_SENSOR_RESEARCH_PLAN.md",
+      "bytes": 5039,
+      "sha256": "aa0d67df9088b8501cdcf983b4b291f27bf74a4bf448ba6f383d17cf77b57d30"
+    },
+    {
+      "path": "laser_sensor_viability/amplitude_sweep.png",
+      "bytes": 109893,
+      "sha256": "8d79cc195739aa891b0b37b3af915eae42e9f7395b41b0d2f5a82dba191483ee"
+    },
+    {
+      "path": "laser_sensor_viability/comparison.png",
+      "bytes": 92252,
+      "sha256": "6ca468589499578f5eac4593ec06b04a64928d6b9bf817e64be23913908b6040"
+    },
+    {
+      "path": "laser_sensor_viability/example_trace.png",
+      "bytes": 290161,
+      "sha256": "6d1a42efed34e9126c29a7b59e9c2258c0ba5a31b94a7b0e31d66d3156b6cc51"
+    },
+    {
+      "path": "laser_sensor_viability/example_traces.json",
+      "bytes": 415738,
+      "sha256": "4792d304e13922bef7a335dd1f1dc342f19347f15d64a87bc5882f36c2b52ef7"
+    },
+    {
+      "path": "laser_sensor_viability/followup/main/causal_trace.png",
+      "bytes": 222793,
+      "sha256": "de52d7cf33cf5d2e12a2a8b3801d8a89474ed8f9abae373b19abfd0d94c1d255"
+    },
+    {
+      "path": "laser_sensor_viability/followup/main/example_traces.json",
+      "bytes": 399655,
+      "sha256": "3e55d4e8dfd1791e0e1535cc9c983e7e6db1f251f4bed7c79c6258fe040f2dc0"
+    },
+    {
+      "path": "laser_sensor_viability/followup/main/provenance_start.json",
+      "bytes": 5427,
+      "sha256": "9353a444d02f11710e66983d2daeb0eb6aa14655f8d9f98e4aa8bb4702abad8b"
+    },
+    {
+      "path": "laser_sensor_viability/followup/main/record_outcomes.npz",
+      "bytes": 209689,
+      "sha256": "896dddb923f9af204ba5809d35941981dcdd5a208fc831fae564756109102193"
+    },
+    {
+      "path": "laser_sensor_viability/followup/main/results.json",
+      "bytes": 733592,
+      "sha256": "c9c1821e404af0fb74c384ba82cfadb38d49be5a3d15fb8a0cfb7a9a1e445da9"
+    },
+    {
+      "path": "laser_sensor_viability/followup/main/session_stress_tests.png",
+      "bytes": 231338,
+      "sha256": "9146557cce54f8b9a56cc0169bc449f6f754c0fd1dd3bed9ad0101d9d8ca8b09"
+    },
+    {
+      "path": "laser_sensor_viability/followup/main/unknown_onset_comparison.png",
+      "bytes": 71368,
+      "sha256": "a3b1b6b3132525239a45ebac5b52eeb310d4aa573e1b3f02efa9daed23ea1e8b"
+    },
+    {
+      "path": "laser_sensor_viability/followup/protocol.json",
+      "bytes": 4507,
+      "sha256": "31bc54cddcf173358d23ed42497593e3fbe70a7850cfa767d1cef018b7413291"
+    },
+    {
+      "path": "laser_sensor_viability/followup/README.md",
+      "bytes": 12082,
+      "sha256": "c445b3854af96d03a377e9dc58440c63d079465bb32eeb7af4ad4981fcf102a8"
+    },
+    {
+      "path": "laser_sensor_viability/followup/run_followup.py",
+      "bytes": 22876,
+      "sha256": "439de6eb4445cff0713ddddc315d185bd5b36a94522ac7f07133b108c8176a61"
+    },
+    {
+      "path": "laser_sensor_viability/followup/software_smoke/causal_trace.png",
+      "bytes": 228448,
+      "sha256": "37831af910e723034ae7b71d421ad59eae7f9948ca75b001e50a8d7f588c232e"
+    },
+    {
+      "path": "laser_sensor_viability/followup/software_smoke/example_traces.json",
+      "bytes": 402010,
+      "sha256": "c1a460eafb41381bdce598e405d892c169a4400fd77b0e881f33afc35f9122be"
+    },
+    {
+      "path": "laser_sensor_viability/followup/software_smoke/provenance_start.json",
+      "bytes": 5428,
+      "sha256": "7355eb4746fa6bba813c0a736f8702b3bbf91f4ed245c530f5aa66a949158e64"
+    },
+    {
+      "path": "laser_sensor_viability/followup/software_smoke/record_outcomes.npz",
+      "bytes": 37478,
+      "sha256": "6802346246ee15894e355446860e3cf4ff781ad8c4aa5ecdc164c467f68c8fc7"
+    },
+    {
+      "path": "laser_sensor_viability/followup/software_smoke/results.json",
+      "bytes": 125223,
+      "sha256": "786175be9dc69fdd84d19251e1fc80ec889335fa25144d4de16e6939750a0bcf"
+    },
+    {
+      "path": "laser_sensor_viability/followup/software_smoke/session_stress_tests.png",
+      "bytes": 264618,
+      "sha256": "f874a80a12a3bbbc111aaf6ab67ff4d26871e2f8b6431f58cea34fc1f2c17703"
+    },
+    {
+      "path": "laser_sensor_viability/followup/software_smoke/unknown_onset_comparison.png",
+      "bytes": 73963,
+      "sha256": "4d5c8284b5922d986ceee364b8f9ebadf16321e1cc556c9194175fb0fae9a7cc"
+    },
+    {
+      "path": "laser_sensor_viability/followup/test_followup.py",
+      "bytes": 4775,
+      "sha256": "df4a6a39b4ef15bfde0ec93be2b68a26fc112da223ce003b16080a77a4e85498"
+    },
+    {
+      "path": "laser_sensor_viability/followup/validate_results.py",
+      "bytes": 4716,
+      "sha256": "f167152d425162bce51b9b75086d89c3a0a25528b3fb7d38243c32f871037777"
+    },
+    {
+      "path": "laser_sensor_viability/followup/validation.json",
+      "bytes": 9857,
+      "sha256": "2e40227fa2e04fbbe2809cc1a60d77e559a625e13034b3fd1f47448891b548c7"
+    },
+    {
+      "path": "laser_sensor_viability/model.py",
+      "bytes": 16448,
+      "sha256": "751b3138d409bd3965870b517ce8da9257a94ba98118ec6428866f91973da5c8"
+    },
+    {
+      "path": "laser_sensor_viability/numerical_refinement.json",
+      "bytes": 31952,
+      "sha256": "f70f4cab104d429f529b4eeffe32dcc0cf1868f5ba7cf7a3a4a41e95028ca101"
+    },
+    {
+      "path": "laser_sensor_viability/README.md",
+      "bytes": 17513,
+      "sha256": "21fa3b86f8d2f6f9903b9fc312b748a85da0e79ce22cbd380e643239fabf5630"
+    },
+    {
+      "path": "laser_sensor_viability/requirements.txt",
+      "bytes": 104,
+      "sha256": "d6f655f3d6957c93716cfad5fe61172017d8c5b3adaed5bd666d9aa43afaa170"
+    },
+    {
+      "path": "laser_sensor_viability/results.json",
+      "bytes": 118095,
+      "sha256": "7a35b25be3c998b14c439dc6a705db2489463484fe1743b00d5d7af96e9293ac"
+    },
+    {
+      "path": "laser_sensor_viability/run_experiment.py",
+      "bytes": 21603,
+      "sha256": "fefcaf0b9237445ac9d85cbee4ac1cabe9110459b4905f44853ec14d3a2e7097"
+    },
+    {
+      "path": "laser_sensor_viability/stress_tests.png",
+      "bytes": 202912,
+      "sha256": "b83101645d5c0bbff93db162d7c9961cd0573b3f3f5b9b3095621db1d0c64952"
+    },
+    {
+      "path": "laser_sensor_viability/test_model.py",
+      "bytes": 6028,
+      "sha256": "a1eb11ec4f9f69b0fd9948a3d54653b2baddfa7a24e6c340986a5e3a216f72a0"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/compare.py",
+      "bytes": 13925,
+      "sha256": "4ef63ffddd4c023333501cebfe4e8e643a56893d73a96c407c1700e290f5a10f"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/fresh_replication.py",
+      "bytes": 9851,
+      "sha256": "63044e5fb31a8fbb84c96f403c9f49c0390c459dfcebd40e9c2bf8615d6b14cc"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/fresh_replication_refined.json",
+      "bytes": 154980,
+      "sha256": "5c8537549908dfef4ed640f299599edea56abe6ee2e28230704f3088a446cdd9"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/fresh_replication_results.json",
+      "bytes": 150362,
+      "sha256": "017141acda5359f36dbd2601dd249ae767d5ca566f14061f9e4599cab3c26837"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/heldout_hmm_results.json",
+      "bytes": 59667,
+      "sha256": "e01300a07e4bc4c0d5a78ea90aa4339c512e9427cdeb81319b88ec79e621a178"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/heldout_hmm_results_extended.json",
+      "bytes": 59720,
+      "sha256": "ff191ad51dd13af7c012c4127f5f21b47bebc66f2f0ef6d99b53f144bda460ac"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/README.md",
+      "bytes": 10296,
+      "sha256": "6402e6581a734c6042fdcf7698b0265f248d30a77fbe4b773258912c35f3e4cd"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/refine_replication.py",
+      "bytes": 8443,
+      "sha256": "2b601d343d3a32a67b561237b3d82674918a3c9433ca7d9baeb533d6883aa8e3"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/test_compare.py",
+      "bytes": 3905,
+      "sha256": "00b64244f2db42e35fb37312c2ca16c0d06f6346c2e38df293ada89f8f517be5"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/test_fresh_replication.py",
+      "bytes": 3076,
+      "sha256": "1502156bb5bbea10c42c2074165b43a2877b3964bb00dd741200c85f68865491"
+    },
+    {
+      "path": "qrsm_photon_poc/diagnostics_baselines/test_refine_replication.py",
+      "bytes": 2010,
+      "sha256": "fc208431843d5f5ba42471e88d3233a6f6b88f7aa31ac3f84949c1b99ebaeed5"
+    },
+    {
+      "path": "qrsm_photon_poc/dilation_feasibility.py",
+      "bytes": 12282,
+      "sha256": "2670d6f5eae1e4c16cf3e608f1c74038d056701512b33800b2753134cfb8b3b9"
+    },
+    {
+      "path": "qrsm_photon_poc/dilation_synthesis.py",
+      "bytes": 12723,
+      "sha256": "9ce17e0dd0ae06fe991bad927a3bf555066430ced46b101a7aed81fbab214a9f"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/drive_detection.png",
+      "bytes": 125146,
+      "sha256": "41517e46b642684f0b4ccf4038e72fe2bc6635764ad70bf14e77ea99c60e8a59"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/drive_estimation.png",
+      "bytes": 106382,
+      "sha256": "9937991af9cb6f15a5319c7d14155f7e1104748439a857271fa36cc3f5012a27"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/independent_review.json",
+      "bytes": 8219,
+      "sha256": "40df853d651ff4405d10aa6d4d14dfd2fc28853159bde2afe22cf2acad51b334"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/pipeline_0.json",
+      "bytes": 7524,
+      "sha256": "639b712e5414d84898dcdc0f7c5d7cd534d47edc8910f9195f575f5dfbd4ea85"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/pipeline_0_raw.npz",
+      "bytes": 4199941,
+      "sha256": "99d38c1dd825feb64b700c2383c364ae6b766ae2832787f37d83f7d27fb5d359"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/pipeline_1.json",
+      "bytes": 7519,
+      "sha256": "ea49220501937b38c1287d14fd608400043ebe176452eaf5aad8fe6ccd38edab"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/pipeline_1_raw.npz",
+      "bytes": 4142038,
+      "sha256": "3ef7af41bf783a3bbd3e3d11096706d02d51ca094aa6b869328a6a67b2269b80"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/pipeline_2.json",
+      "bytes": 7517,
+      "sha256": "e1d115f1e4a9028f01e19a7b5175755bc3f09b21e27a56d449abcc4797b48dac"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/pipeline_2_raw.npz",
+      "bytes": 4229407,
+      "sha256": "43d3b9669848081d5e2acb6c64e4649e7373626bc52302e78c58f689e749e9da"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/pipeline_3.json",
+      "bytes": 7525,
+      "sha256": "fc0f73b97fb0ad9119a6b55dd656ecf900a97ed31992674ec9bd722abe82d7df"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/pipeline_3_raw.npz",
+      "bytes": 4227938,
+      "sha256": "176d1f1ded8e6c4d67756e1664c47d2fc41303a1b807c68ab70d9307067adace"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/prior_only_comparison.png",
+      "bytes": 110034,
+      "sha256": "5af3b3b02267f1a8560dce710f592b7aeaafc4df207216a8e6340eeb69c5bfe2"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/prior_only_estimation_control.json",
+      "bytes": 31694,
+      "sha256": "932e745a5f8107bbf37a05c97e7d53bfff8257a2d2b30c84405079b5c920a572"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/prior_only_independent_review.json",
+      "bytes": 3774,
+      "sha256": "c634c70d8640d0f09e277c29e7d4a18e9d8bd8ebd61fe8606402d969ed263f3f"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/provenance_start.json",
+      "bytes": 35030,
+      "sha256": "04f0bad0f78c8d0f296b195d3eec7ba6f864e552f30d87a85bfa15c40ada01cf"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/results.json",
+      "bytes": 161943,
+      "sha256": "74847bbee9cbaf6fbd41d72ab2566839919de73d218e2690ad383c135495a069"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/main/validation.json",
+      "bytes": 3482,
+      "sha256": "9eea3a46eddc5f4186fe63322dca296ef0f9e1fac6a0ee01f501323651ecc282"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/model.py",
+      "bytes": 8603,
+      "sha256": "49dccebaaaa78318c70280e8a3ef6220511ea890e0cb5677658f2bdf526f9b3d"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/prior_only_control.py",
+      "bytes": 5712,
+      "sha256": "29fe2b207680151c670a1b9e0e541f4ec0b12168733dcea12763e38eecbb143d"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/PROTOCOL.md",
+      "bytes": 6531,
+      "sha256": "791c295045799e8ca689459a6ebff7391d852d7cfca630ec7e80b2969789b180"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/README.md",
+      "bytes": 17536,
+      "sha256": "7160dd6c1577bb526d69e4554851158e6193d122e9bb7baf587192cf835ac523"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/run_study.py",
+      "bytes": 18893,
+      "sha256": "f8fea46074b915e85dd45a57a4bbf142abf8c8ef681f04e89d5fb32173cf5596"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke/pipeline_0.json",
+      "bytes": 6656,
+      "sha256": "254718f256b906387d0050161142c55ee67e3e7b75eff5b859bfd91f2e5aeec7"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke/pipeline_0_raw.npz",
+      "bytes": 131395,
+      "sha256": "2e4399249a0834a22d54e50ea561a6d3435d67907580e706205c4288a353f973"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke/provenance_start.json",
+      "bytes": 1945,
+      "sha256": "41cae1f57060d08e57a45c785b8ac922931dcb7fb7330eeea3d9fcc6f95c2b8d"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke/results.json",
+      "bytes": 29688,
+      "sha256": "073c8f5971c2611046f311ff4c5d3520a263ba5339bf3c34c2d5e2381e952d26"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke_final/drive_detection.png",
+      "bytes": 90163,
+      "sha256": "5ce554d642f8e95885c5559cbf5a2cb214637b377da5f34090832322539bce66"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke_final/drive_estimation.png",
+      "bytes": 76131,
+      "sha256": "22b534c46af742ad895bf8cc8c100265a1759b20e5f03fea9bd3c80779269d7d"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke_final/pipeline_0.json",
+      "bytes": 6641,
+      "sha256": "e33f646f39b9a7a95c455b267a41182e2922b7f630aaa34624997d81acbd5654"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke_final/pipeline_0_raw.npz",
+      "bytes": 159916,
+      "sha256": "a0df56163402f9fd6331268a01e4c8b304116baf641939ed0435c3034b422ed8"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke_final/provenance_start.json",
+      "bytes": 6112,
+      "sha256": "59252971a22cbf0b419611a2d79af6a416cad178dd53a967389e3ce5d9126485"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke_final/results.json",
+      "bytes": 34509,
+      "sha256": "22645a70b628bd8a84172fbcaed1996ac5f3b0e5e4559bfa4f69ea90b5e9feaa"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke_final/validation.json",
+      "bytes": 2549,
+      "sha256": "9364a35f2a902b653eb42672852c240e73c4f67165f59f169635aca27306f97d"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke_namespaced/pipeline_0.json",
+      "bytes": 6641,
+      "sha256": "35ef213e32d5d1a33f75de287c8e0a7230b1d9aaf43933b5d13a882a410ee564"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke_namespaced/pipeline_0_raw.npz",
+      "bytes": 159916,
+      "sha256": "a0df56163402f9fd6331268a01e4c8b304116baf641939ed0435c3034b422ed8"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke_namespaced/provenance_start.json",
+      "bytes": 6112,
+      "sha256": "830f3d7e6cb40408b3c6ef1a8ca6ec12cb4282e77d602e723d0d53acc5506866"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/software_smoke_namespaced/results.json",
+      "bytes": 34503,
+      "sha256": "3535ecd34bf4ff965a23e268ac652163df8d8f8ee73ac3c07bffde08b6d4225f"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/test_model.py",
+      "bytes": 5995,
+      "sha256": "38958e4b748e34a7f75518f4785b98d5eeb03eb4aa841e310eea2215d9f4a1dc"
+    },
+    {
+      "path": "qrsm_photon_poc/drive_diagnostics_followup/validate_and_plot.py",
+      "bytes": 10433,
+      "sha256": "db189d9d2fa99c547d8ba74f12b59a9a25689fef5684cd179ce4a57a0b285824"
+    },
+    {
+      "path": "qrsm_photon_poc/evaluate.py",
+      "bytes": 4443,
+      "sha256": "accfbe696f1ae54f12dd8e5c92eed16e77065899c251b698b7a08c999710e330"
+    },
+    {
+      "path": "qrsm_photon_poc/experiment.py",
+      "bytes": 8245,
+      "sha256": "5cc71776d14771a90a147bf15f351eb6e05ad0c4722994abd199f0ca3ef6d8b1"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/cavity_cutoff.png",
+      "bytes": 170158,
+      "sha256": "77ba85bb9fd3a85b135704da6c0e7dba80a9c0af6b8a236403bdda049d4da5d3"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/dynamics_results.json",
+      "bytes": 103108,
+      "sha256": "b9b055fbc251b044d6ded0629f80980e17a3382a39f676a36d835e1c1e243c9b"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/independent_review.json",
+      "bytes": 5449,
+      "sha256": "79c50d03fd8d3398ff9656b8acbed68c847e761c8495f6ded2a9fa93ebde1873"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/inference_model.py",
+      "bytes": 6949,
+      "sha256": "56bea54d666e422f4061e600bbc12d2da9cd0620bb8cd2603d100df74c2c1d25"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/inference_results/controlled_411001_dead0_fit0.json",
+      "bytes": 70749,
+      "sha256": "cd610f136a2ea37b651a3ec9b5c23058e1f9eb494f0c97e685c4af1659bf3198"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/inference_results/controlled_411002_dead0_fit0.json",
+      "bytes": 59673,
+      "sha256": "9f14b100aad52ea0ec27152524ffa35560f4591326be7eed421b8061f9e93a9b"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/inference_results/fixed_411001_dead0_fit0.json",
+      "bytes": 51391,
+      "sha256": "8c457f5a74dc35f2b41cc7de1398a09bfec192c7c5e452a8b4b35564a8c43bf5"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/inference_results/fixed_411002_dead0_fit0.json",
+      "bytes": 51411,
+      "sha256": "f9c5a8ba8de9dfdbda0df0ec4bfaa49b9f2c4a649e8b614eeea27bbaf15e15cd"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/inference_results/fixed_411101_dead1_fit0.json",
+      "bytes": 51196,
+      "sha256": "1caca96deb6b9719d4e0e76b4f1fdabf73e45c13feec606ab1073d2cc3caf91f"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/inference_results/fixed_411101_dead1_fit1.json",
+      "bytes": 51051,
+      "sha256": "84a85bb5c07211efc39b4bdc5e36480268fcbf90869f96bc9dd947b567c773b6"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/inference_results/information.json",
+      "bytes": 3511,
+      "sha256": "ab2909715a613131703cdc45e08503f3f7c73f703771a98b5278fabb92d25058"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/inference_results/protocol.json",
+      "bytes": 933,
+      "sha256": "4515e0bacf9737a1beee4a5cf6f9d6bb748f2baad5fa35a3f6d2a8b32fc81cfa"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/parameter_diagnostics.py",
+      "bytes": 6368,
+      "sha256": "37abfdf5501cd16900b27cb9b72a3a4a42aaaa8e11599a35d69451a53107c9d1"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/parameter_validation/controlled_411001_dead0_fit0.json",
+      "bytes": 4284,
+      "sha256": "35f3a21d943b39d4ba5b87657a18ca025ba21cf6bbd47970346ee26480398f1a"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/parameter_validation/fixed_411001_dead0_fit0.json",
+      "bytes": 3366,
+      "sha256": "7e1fb2a237bc875c1c3460f14aaa6e67e01e75f8271381dddf836facf1b42f35"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/parameter_validation/fixed_411002_dead0_fit0.json",
+      "bytes": 1252,
+      "sha256": "00635b1cc8abd1703b2e762b6d3716ce49e62a84d2fc683bb37b661f41b821f4"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/parameter_validation_v2/controlled_411001_dead0_fit0.json",
+      "bytes": 4737,
+      "sha256": "7f44135847cab7c991e8911ec2997910b1b817debc2a516bcd65c67083b71c53"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/parameter_validation_v2/controlled_411002_dead0_fit0.json",
+      "bytes": 1302,
+      "sha256": "d44da51e2c0737d15f28ec54ac43caad3155964bbdf13edbdd155af5ee90e2a0"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/parameter_validation_v2/fixed_411001_dead0_fit0.json",
+      "bytes": 3843,
+      "sha256": "711915d14ae574e2ec8720d71851c9e8b9b12c1fa800f711c8cb66343684494e"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/parameter_validation_v2/fixed_411002_dead0_fit0.json",
+      "bytes": 1296,
+      "sha256": "6275dd246b6fc9278f85bc7c0482087346a25e7744dd50511535ef325a55bb48"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/parameter_validation_v2/fixed_411101_dead1_fit0.json",
+      "bytes": 1296,
+      "sha256": "2f94748da49c19a0f312db6d7b0d5fb39b1d76ab7d58d1f0bc8186137e892fab"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/parameter_validation_v2/fixed_411101_dead1_fit1.json",
+      "bytes": 1296,
+      "sha256": "ea1104b9725d594d79f2f27c5f5f0a1a2313b75c8b44195a78ef9462c3a7c0d4"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/plot_dynamics.py",
+      "bytes": 1329,
+      "sha256": "a3e733aa98ab49d4fc9e172f097cac3cb3b251a8d2cfaf4e2c96acc562d17808"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/PROTOCOL.md",
+      "bytes": 2658,
+      "sha256": "7800532b7b4137420a91240f7c4c5dea0724d149919c1a7f923969bdcc284a84"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/README.md",
+      "bytes": 10988,
+      "sha256": "27a1f066d3875bbbfb2af882933edb79cf48d2df8a498231563506a9ac24cfb9"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/run_inference.py",
+      "bytes": 9379,
+      "sha256": "0dc4884954022dec1f302db758c44ec79760c06cef5136e39a647ce925f61a93"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/test_inference_model.py",
+      "bytes": 2347,
+      "sha256": "409136b97707af9763f8674534de3c595a467f291ff9a2cd2ab763db514da87f"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/test_parameter_diagnostics.py",
+      "bytes": 1265,
+      "sha256": "344090e295780fd6132d5ba525afc095f64b59179ab24eeebb34d4942b89bfca"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/test_results.txt",
+      "bytes": 1330,
+      "sha256": "ad0360ea679effa03602476a9e6d53dd5718732686ef9e93c6a17f2c5ac3f695"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/verify_dynamics.py",
+      "bytes": 7004,
+      "sha256": "208df4924a91820dc4638838b820f07786913aac02f54c4fd7487ab259564910"
+    },
+    {
+      "path": "qrsm_photon_poc/followup/verify_independent_review.py",
+      "bytes": 7703,
+      "sha256": "486068edca320bc4e58cb45d5bd5c68c4c65299798815908f89cf447636cc95f"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/dilation_feasibility_normalized.json",
+      "bytes": 3099,
+      "sha256": "5c90320f8219b8f4568c686bf1111f830f944299f05b50e1c2dec3c349798b64"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/dilation_synthesis_8q.json",
+      "bytes": 3454,
+      "sha256": "45a19bbaaa28db4fe87011849031b780960c2668c40de403eb45de906246de0b"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/dilation_synthesis_8q_validated.json",
+      "bytes": 3929,
+      "sha256": "e641bae3464c545c03b83fcc3ca5db19f0e07abc8634524c885db4cf969908ff"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/dilation_synthesis_coarse.json",
+      "bytes": 334,
+      "sha256": "9e6d4d2db87064eb03fe79cbca09aa9295820738273dd197db6e4d7756005e94"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/dilation_synthesis_coarse_retry.json",
+      "bytes": 3443,
+      "sha256": "ed1944d4a9a2198299de15e6ad36ff484484fd3b30027d0ecdc05d92955f4224"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/dilation_synthesis_coarse_validated.json",
+      "bytes": 3917,
+      "sha256": "80ecca7adc84e3ef37c42718c851386ee16fdafc3654194587e1b8a180036e8c"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/full/heldout_evaluation.json",
+      "bytes": 881,
+      "sha256": "c0287ab867c236cdb4e1945626b2930d108574fd7f7261528dcb57ba6a9caad3"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/full/no_defect_control.csv",
+      "bytes": 48600,
+      "sha256": "d85dd1d468244c4dd60309a2c7fa6426d546813fd173740d926826c837c0f29f"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/full/poc_results.png",
+      "bytes": 271512,
+      "sha256": "72912ed439a5909fc04e6ecb202b3f666f42f682ed20dd55dc656cc622081a11"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/full/results.json",
+      "bytes": 2192,
+      "sha256": "dd5a6d07b34e4fa32dc909fe2012a677d658d1e7058621dc9b91916bed4ca838"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/full/synthetic_click_records.csv",
+      "bytes": 48600,
+      "sha256": "85a7e3132df86741f848b154e5d98814bcbe35fb8ebe8e0d61d0c1c3940312ea"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/quick/heldout_evaluation.json",
+      "bytes": 879,
+      "sha256": "f39bb88eceab186aff439e445353322f4ff3704c8e3400fb4bf5842a34bc4483"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/quick/no_defect_control.csv",
+      "bytes": 792,
+      "sha256": "532284d33e18f48a378df52093ec09ca380469faa75e7768695880ca85c6a61f"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/quick/poc_results.png",
+      "bytes": 288066,
+      "sha256": "15ec01b2599009df4180f6dd2e606356e628cfbe01b73476c7b92a419ff457e1"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/quick/results.json",
+      "bytes": 2219,
+      "sha256": "b97a181800483e77c0b398a2c8051973cd3a4066da0ca8c3772b5d49814586cb"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/quick/synthetic_click_records.csv",
+      "bytes": 792,
+      "sha256": "65b5341e4d20947b33b392599a2e6326f62644531a37ba75abb32e7fab8855ea"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/two_bin_double.json",
+      "bytes": 2505,
+      "sha256": "a6c30b4b54f3fe293c85be0910555c231c19feb288dd577cc5b5376ff8fd073e"
+    },
+    {
+      "path": "qrsm_photon_poc/generated/two_bin_summary.png",
+      "bytes": 111133,
+      "sha256": "e037e6e33243d099f6e4e7c28d8ca7c6ade5d910b4d3d9283a032afbc9122a53"
+    },
+    {
+      "path": "qrsm_photon_poc/heldout_evaluation.json",
+      "bytes": 767,
+      "sha256": "138b509fdaec6fbe6dfb48db83abe066294f06c1fe59ad3d9aad2e1ffa5c4ec3"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/ideal_0p003.json",
+      "bytes": 11854,
+      "sha256": "f335d05ee1051a4d9a36b4f062d955b92e7c04500e2b134837459c1034d32bcf"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/ideal_0p003.npz",
+      "bytes": 38116,
+      "sha256": "dc22bf119fb7cfa6e54e1a4aa03b3f4b65d7d807a25eae8752a825202cec1f55"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/ideal_0p03.json",
+      "bytes": 11804,
+      "sha256": "666f5afb1f3e3fad6ca1d3a4d0a952efe0d561ad8bc4f393d5bd6e50e0343682"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/ideal_0p03.npz",
+      "bytes": 38156,
+      "sha256": "e71b21711bf9d923a2ce25fd968f57407fb8a00fb3a16a7cc55d623dcbc31eae"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/noise_0p003.json",
+      "bytes": 10305,
+      "sha256": "72f5b38e84e7490d1d8f82ef8d557655d961c9ec477e215d6784109706927249"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/noise_0p003.npz",
+      "bytes": 35193,
+      "sha256": "a39875921ec7b4ab8e187490368e714f7dfe1e402e237e04ce91f939be7ce74d"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/noise_0p03.json",
+      "bytes": 10304,
+      "sha256": "ea4be670a290f22cec1a4caecdc91f173f1175f9eb0cfc2a448c0905f49d4ff9"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/noise_0p03.npz",
+      "bytes": 35109,
+      "sha256": "d0aa80c20a50842cf4eb4567779f4c07c5e2e566e42161d9954e793d1c8e9b19"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/one_bin_noise.png",
+      "bytes": 181905,
+      "sha256": "4835ffffb6060e1aa9ce64fbdae002fd269f676b9089db583d5de18d06671398"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/provenance_start.json",
+      "bytes": 1164,
+      "sha256": "903c1be44b9ac0a31e893a7fcc6e0071d3920e224fdbce1ea8e39bff7e813518"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/suite_status.json",
+      "bytes": 892,
+      "sha256": "2392c1c7f4a0aa9c1988b063f6270984a3ed29448f65a42b6dd41c6054bdbbde"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/three_bin_tradeoff.png",
+      "bytes": 135097,
+      "sha256": "c4a320d29cc9ca02a4839314f5aab3a855e8a8358076d177a9c3b85d9ca5215f"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/main/validation.json",
+      "bytes": 1397,
+      "sha256": "8dbbb3da3f64da09dd784bdfbc146d00e88f65d7d6f36091139c26745b063a22"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/model.py",
+      "bytes": 16871,
+      "sha256": "f078ccc75a9b16c9855668a2e3e85d679b418aed2b7cdc44b292c25bef005ab8"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/PROTOCOL.md",
+      "bytes": 3412,
+      "sha256": "f2c1e359e0a9a1b3b52e17f67c8b187de364f7eebe6920a7a6f685a24f14ad24"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/README.md",
+      "bytes": 12075,
+      "sha256": "15120d8e6d161630475e0156b3f6c73a2372a96720d30799338e36e9b8f1be72"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/run_suite.py",
+      "bytes": 4858,
+      "sha256": "08dcd5850e6b09274795cbebd6804ba8e83a3124c5a8c17ad9964443f8718d74"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/test_model.py",
+      "bytes": 3762,
+      "sha256": "a81526a9af33e0e2bbe05f10bbfda479377bb9cfa3e0b5b5576a970eb8452ac6"
+    },
+    {
+      "path": "qrsm_photon_poc/multibin_followup/validate_and_plot.py",
+      "bytes": 7923,
+      "sha256": "abf5dd6f435b222a919d6f47ba22f3c5948ce80b27cfb33ac73d5b585e031f06"
+    },
+    {
+      "path": "qrsm_photon_poc/no_defect_control.csv",
+      "bytes": 48000,
+      "sha256": "0a8aa80b93cc756eaaefb803b05417f8d20a517565450faea4fefddc5e52aefd"
+    },
+    {
+      "path": "qrsm_photon_poc/plot_two_bin.py",
+      "bytes": 2941,
+      "sha256": "1e6d2af959a0ea5f8325134f6b66dfa5f62f7d8fc945f30ef99e8895f0dbc1a5"
+    },
+    {
+      "path": "qrsm_photon_poc/poc_results.png",
+      "bytes": 308611,
+      "sha256": "058aebec59c970caff4569f70cd8891aa0af5ee85107392ddb5782a95e7ce2e4"
+    },
+    {
+      "path": "qrsm_photon_poc/qrsm_photon.py",
+      "bytes": 8546,
+      "sha256": "d93d976a1e31d0eb7d67a59754dbbcce14a9a1e1c38df60cf3e2f21ce8f4344a"
+    },
+    {
+      "path": "qrsm_photon_poc/README.md",
+      "bytes": 21497,
+      "sha256": "14e3b60b53f6581b78c2ec14a9642b21e116fcd1e6badb9d02b71d329c6301ce"
+    },
+    {
+      "path": "qrsm_photon_poc/requirements.txt",
+      "bytes": 40,
+      "sha256": "b4d4671879d33d90228042687b851af90add9dc1d9433d2a161ac674b52c7dfb"
+    },
+    {
+      "path": "qrsm_photon_poc/results.json",
+      "bytes": 2097,
+      "sha256": "834efadbb387a8a9dbe4c234066c15e6c15d90bbe2b4e7c9f03c28c7cced38b0"
+    },
+    {
+      "path": "qrsm_photon_poc/synthetic_click_records.csv",
+      "bytes": 48000,
+      "sha256": "b29638d52b6085a2477899fee0effbc7525eada9f32994af4c6ee33ab969486d"
+    },
+    {
+      "path": "qrsm_photon_poc/test_dilation.py",
+      "bytes": 4288,
+      "sha256": "92b920259cb68e3cd01f295ff35188f9ebfd38c498bc4742bf71c7f0aeff24ea"
+    },
+    {
+      "path": "qrsm_photon_poc/test_dilation_synthesis.py",
+      "bytes": 2494,
+      "sha256": "0eb1a8e53495878704e1cc01e0a70c1e0b58e7549a025b284f1913d3e1ccee6a"
+    },
+    {
+      "path": "qrsm_photon_poc/test_model.py",
+      "bytes": 1453,
+      "sha256": "d4776c3bc2791fd7fd31d38f6f4d97e91e51e24f126994945378b5db311a8e23"
+    },
+    {
+      "path": "qrsm_photon_poc/test_reproduction.py",
+      "bytes": 2587,
+      "sha256": "743c37777a887f749933fd3d4935d2bde51c1d0d67dceca8ea4772c67cc3f2de"
+    },
+    {
+      "path": "qrsm_photon_poc/test_two_bin_amplification.py",
+      "bytes": 2650,
+      "sha256": "59cbd96c0ac6072bba733b97e0e13f0c334d65168fc286709d97c0e5c6d46d3d"
+    },
+    {
+      "path": "qrsm_photon_poc/two_bin_amplification.py",
+      "bytes": 10020,
+      "sha256": "d909782a99dae9c722d99fb602f42d39018cf3e4e0490356bea7148433d78071"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/exposure_tradeoffs.png",
+      "bytes": 219615,
+      "sha256": "e11fd74f52f73f34e6db2a3127e657140d95c94c6b9fb304508ff8cea39f81eb"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/loss_blur_preparation.png",
+      "bytes": 181334,
+      "sha256": "6afd5afde94bf3ada9ee4113607d505eb655e5f2415c44e4c6a0fa46f699d7e8"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/model.py",
+      "bytes": 10299,
+      "sha256": "7943aefc4fbb91180505194c73834f01d7a97c8c044d9aa665e6124cc700a933"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/moment_supplement.py",
+      "bytes": 15361,
+      "sha256": "9cf98a125cc83abd969d93b7aefe89b2d2c22d83cecdef078e2987fab2161f21"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/MOMENT_SUPPLEMENT.txt",
+      "bytes": 2987,
+      "sha256": "0af9ece57e6b01e61ee65e0fe191242b4a094247cdbf206da6aab37a6a766116"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/moments_supplement.csv",
+      "bytes": 30907,
+      "sha256": "b8f6fddb37193bd05bd16753cb3ced250906a40138b04daefbb03acf83491981"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/moments_supplement.json",
+      "bytes": 316756,
+      "sha256": "749037502583e965056a8b1de39637bc813f46e682c5c64c68e3b9bbdb65bd94"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/raw_moments.png",
+      "bytes": 423163,
+      "sha256": "2235558c0635f966a32817c5485752482632026f73dd84be654ddee9ba067747"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/README.md",
+      "bytes": 14096,
+      "sha256": "e73d3d0437d372fb7b741d174593cc993d83067429761d5736a2f8faf9eb83d3"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/requirements.txt",
+      "bytes": 46,
+      "sha256": "ee51afafe3eace7540be2e3d5a4955d15522fa3cf7063ed29550949880eeb2f4"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/results.json",
+      "bytes": 600281,
+      "sha256": "b1ed512117235c49140512e1a1b3d9abc7b28c45b14c7b6d12d3682f61b7fa3b"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/run_study.py",
+      "bytes": 10370,
+      "sha256": "913efb053eab9d025a7cf9377196b3355536c80794356962cf5136f2efbb0e7b"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/run_summary.json",
+      "bytes": 3796,
+      "sha256": "5828d63ce29c90f40b1c5875cfdfdc2a5256e3f21d872db5e4cb306fe84725ee"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/sensitivity.csv",
+      "bytes": 19169,
+      "sha256": "d5d05f4b2308137a5bc5beec341f7894317714159c2642d97bf0178c9d2eea6b"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/test_model.py",
+      "bytes": 6701,
+      "sha256": "057036cccb9ad3ea7ab2614e9ee223d63c30c43bdf99ff28cfad43270b4c6174"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/test_results.txt",
+      "bytes": 1438,
+      "sha256": "0deee65098a503819c8364d3eb5b97f306ca3769f53fe1c857d48faf21d5f4f4"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/threshold_dose_tradeoff.png",
+      "bytes": 113337,
+      "sha256": "497ea7a9d733880755066dcc4a187bec22eda5e4c5abad69fae1262e79d7c2da"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/verification.json",
+      "bytes": 2544,
+      "sha256": "fad5b2b2432f3aa2a8ca32ddecb22352d97e6f4fc6a85e75ffcb91950fe1c66a"
+    },
+    {
+      "path": "quantum_lithography_poc/exposure_followup/verify_results.py",
+      "bytes": 4206,
+      "sha256": "142d5e3fb2b185761ba34df7522594dc572c46e2a121e7d7e75b24718f962506"
+    },
+    {
+      "path": "quantum_lithography_poc/fringe_compare.py",
+      "bytes": 2339,
+      "sha256": "7613164f60036ebd16d482e8690cde7bcf7f7b708ef48ff504c6849f16eb837f"
+    },
+    {
+      "path": "quantum_lithography_poc/fringe_comparison.png",
+      "bytes": 119304,
+      "sha256": "7eeecdee4cc26481f8a5d34ddb1c9531141b47852753bb353a47e336296127c1"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/global_phase_ambiguity.png",
+      "bytes": 66333,
+      "sha256": "186c7bf3a132ac88e65b2ca17294a1d61454deb1bb3959a3bea17dcb6ed50179"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/local_phase_tradeoffs.png",
+      "bytes": 84739,
+      "sha256": "506104b9fccc173b228349cf5c02b8ce465ce1435897b03fab8895905cc96c18"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/phase_model.py",
+      "bytes": 7198,
+      "sha256": "df08a8c3360b825cd1609504e19554fcf0569a20f2d6c6c40446e81886bdff16"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/README.md",
+      "bytes": 12901,
+      "sha256": "51adb1ab3133d4be92bad651920d7e8c97f5d4ec1791511a1dcbecf4fbc78c8f"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/requirements.txt",
+      "bytes": 46,
+      "sha256": "ee51afafe3eace7540be2e3d5a4955d15522fa3cf7063ed29550949880eeb2f4"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/results.json",
+      "bytes": 218046,
+      "sha256": "8c9ac370ed20a154376bb19b0ae6947f01346fa05fccb3d191e280adb927d6f4"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/run_phase_study.py",
+      "bytes": 8833,
+      "sha256": "5edee8b6d1ec0c0d380a7b4fe0209e1fce442cb036c0247ff9e0c235163895c8"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/run_summary.json",
+      "bytes": 7568,
+      "sha256": "5de31d77bb472de8205906514acf4c8a53c19e713c5436a35d183714e1f7efd5"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/test_phase_model.py",
+      "bytes": 4991,
+      "sha256": "82d04f707a963f6ca098656ba31c9c051b903957036e787f7751c9a3b2c9adac"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/test_results.txt",
+      "bytes": 1305,
+      "sha256": "d5f8f5cccacef760d271b8dbd29d57979d15d013b4fc67be1240298c120cc66c"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/verification.json",
+      "bytes": 2025,
+      "sha256": "191f6a2d53733ed5c78f1751ea5e484919d26226dc394aba8bb039c3812179bc"
+    },
+    {
+      "path": "quantum_lithography_poc/phase_inspection_followup/verify_phase_results.py",
+      "bytes": 3566,
+      "sha256": "5c307dd23144df811fb2a4f55d63fbe8c16742dc958d621082fa25cb6a0bc8ad"
+    },
+    {
+      "path": "quantum_lithography_poc/README.md",
+      "bytes": 2190,
+      "sha256": "987caeeeab81b73bbb766f3bb2c9817cd25868223e6ca1de6cc37db2e07e0e57"
+    },
+    {
+      "path": "quantum_lithography_poc/test_fringe_compare.py",
+      "bytes": 1289,
+      "sha256": "faa6ee257fb0dc883517a3bf98903a4e1b275bc38a61b813160f6eed87a84075"
+    },
+    {
+      "path": "QUANTUM_PHOTOLITHOGRAPHY_ROADMAP.md",
+      "bytes": 8975,
+      "sha256": "e5723da2959979c74ea308c2483b6478e3eae792e1d02eadd99dd210de2a8dae"
+    },
+    {
+      "path": "research-validation/check_research_delivery.py",
+      "bytes": 4328,
+      "sha256": "75ef842b7523c3d0cb74c618a8f3a52c13229b4c9fae5eb745a8b09fa256f314"
+    },
+    {
+      "path": "research-validation/collect_research_checks.py",
+      "bytes": 7524,
+      "sha256": "c15c28216f6c4146d47678875be691c8b61548671d58c3757082a68e59eeaef3"
+    },
+    {
+      "path": "research-validation/completion_audit.json",
+      "bytes": 22035,
+      "sha256": "21aa9b4fe5377ef5145a548c870139bfedef9e8037c58caaed8859e94b3b03c6"
+    },
+    {
+      "path": "research-validation/research_checks.json",
+      "bytes": 22214,
+      "sha256": "5ddea142541f784c7967f349e1c42bc37c1b464aaa604d6d0c63a9bd357780fa"
+    },
+    {
+      "path": "research-validation/research_requirements.txt",
+      "bytes": 208,
+      "sha256": "d3373c5dc25ea851c6671bdef550a7e0e843669dcbbaa9defa08bed83196d3fd"
+    },
+    {
+      "path": "RESEARCH_CONTINUATION_PLAN.md",
+      "bytes": 5505,
+      "sha256": "f459cfc713377583cf253f6e1bbe83e0bc346c0bac347f9646d666ebc5dcc9ba"
+    },
+    {
+      "path": "RESEARCH_RESULTS.md",
+      "bytes": 23036,
+      "sha256": "c1babe8f588d3488dd9c38aca1c264be21f992eb7bff1ea1a82276fc1b279904"
+    },
+    {
+      "path": "verify_research_pack.py",
+      "bytes": 3615,
+      "sha256": "1ce0cbe5cb782cf86da67d2772d304197f1adec9776f4d574f08b29d2d550685"
+    }
+  ]
+}

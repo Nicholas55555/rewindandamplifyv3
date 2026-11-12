@@ -1,0 +1,33 @@
+{
+  "probability_difference": 0.13134765625,
+  "independent_shot_wilson_based_interval95": [
+    0.10367585756739026,
+    0.15874708471302112
+  ],
+  "first": {
+    "successes": 1585,
+    "shots": 2048,
+    "probability": 0.77392578125
+  },
+  "second": {
+    "successes": 1316,
+    "shots": 2048,
+    "probability": 0.642578125
+  },
+  "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+  "first_name": "click3-steered-memory+last-1-r1",
+  "second_name": "click3-steered-full-r1",
+  "selected_history_tv_vs_unsteered": [
+    0.10706237006423308,
+    0.20100012235825088
+  ],
+  "native_two_qubit_gate_counts": [
+    58,
+    125
+  ],
+  "input_analysis_sha256": [
+    "6c1ea899f82178826725f49cbc5f5510c3342ff6e382d577397de94a48b96fd3",
+    "6c1ea899f82178826725f49cbc5f5510c3342ff6e382d577397de94a48b96fd3"
+  ],
+  "source_sha256": "3ac4eaad4909619118d5821baab9d1e67f2640965ef7b892d006a84a0242d4d6"
+}

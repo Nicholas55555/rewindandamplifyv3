@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "independent_method": "Exact complex Lindblad density-matrix propagation",
+  "model_sha256": "751b3138d409bd3965870b517ce8da9257a94ba98118ec6428866f91973da5c8",
+  "checks": [
+    {
+      "case": "nominal",
+      "points": 21,
+      "max_probability_error_4_substeps": 7.10185993796908e-05,
+      "max_probability_error_16_substeps": 4.363841813737057e-06,
+      "max_probability_error_production_default": 4.363841813737057e-06
+    },
+    {
+      "case": "short_coherence",
+      "points": 21,
+      "max_probability_error_4_substeps": 0.0007114904620804108,
+      "max_probability_error_16_substeps": 4.4313609277812915e-05,
+      "max_probability_error_production_default": 4.4313609277812915e-05
+    }
+  ],
+  "common_shift_identifiability": {
+    "sensor_values_unchanged": true,
+    "rank": 2,
+    "unknown_frequencies": 3,
+    "meaning": "Independent reference stability or another anchor is required to identify absolute source drift."
+  },
+  "scope": "Numerical consistency and model identifiability, not experimental validation."
+}

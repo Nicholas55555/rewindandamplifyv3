@@ -1,0 +1,146 @@
+{
+  "source": {
+    "dataset_doi": "10.5281/zenodo.6337697",
+    "publication_doi": "10.1063/5.0091867",
+    "license": "CC BY 4.0",
+    "file": "QD5_countrates_18-06-15.csv",
+    "file_md5": "c348c2a0c228222469fae33e8113d852",
+    "integration_seconds_per_record_as_documented": 1
+  },
+  "n_records": 51421,
+  "record_timestamp_delta_seconds": {
+    "minimum": 1.0458920001983643,
+    "median": 1.059105634689331,
+    "maximum": 1.2948024272918701,
+    "count_over_two_seconds": 0
+  },
+  "channels": {
+    "Ch1": {
+      "mean_recorded_count_per_integration": 104323.65255440384,
+      "min_count": 44601,
+      "max_count": 175530,
+      "number_zero": 0,
+      "number_positive": 51421,
+      "fraction_positive": 1.0
+    },
+    "Ch2": {
+      "mean_recorded_count_per_integration": 90964.11053849595,
+      "min_count": 38634,
+      "max_count": 152168,
+      "number_zero": 0,
+      "number_positive": 51421,
+      "fraction_positive": 1.0
+    },
+    "Ch3": {
+      "mean_recorded_count_per_integration": 102661.71274382062,
+      "min_count": 43868,
+      "max_count": 172373,
+      "number_zero": 0,
+      "number_positive": 51421,
+      "fraction_positive": 1.0
+    },
+    "Ch4": {
+      "mean_recorded_count_per_integration": 96452.45870364248,
+      "min_count": 41007,
+      "max_count": 162780,
+      "number_zero": 0,
+      "number_positive": 51421,
+      "fraction_positive": 1.0
+    },
+    "Coin_12": {
+      "mean_recorded_count_per_integration": 1093.3668540090625,
+      "min_count": 381,
+      "max_count": 1932,
+      "number_zero": 0,
+      "number_positive": 51421,
+      "fraction_positive": 1.0
+    },
+    "Coin_13": {
+      "mean_recorded_count_per_integration": 1207.0116878318197,
+      "min_count": 404,
+      "max_count": 2137,
+      "number_zero": 0,
+      "number_positive": 51421,
+      "fraction_positive": 1.0
+    },
+    "Coin_14": {
+      "mean_recorded_count_per_integration": 1133.876354018786,
+      "min_count": 400,
+      "max_count": 2006,
+      "number_zero": 0,
+      "number_positive": 51421,
+      "fraction_positive": 1.0
+    },
+    "Coin_23": {
+      "mean_recorded_count_per_integration": 1044.330429202077,
+      "min_count": 365,
+      "max_count": 1876,
+      "number_zero": 0,
+      "number_positive": 51421,
+      "fraction_positive": 1.0
+    },
+    "Coin_24": {
+      "mean_recorded_count_per_integration": 980.695844110383,
+      "min_count": 343,
+      "max_count": 1737,
+      "number_zero": 0,
+      "number_positive": 51421,
+      "fraction_positive": 1.0
+    },
+    "Coin_34": {
+      "mean_recorded_count_per_integration": 1085.6313762859531,
+      "min_count": 359,
+      "max_count": 1910,
+      "number_zero": 0,
+      "number_positive": 51421,
+      "fraction_positive": 1.0
+    },
+    "Coin_123": {
+      "mean_recorded_count_per_integration": 14.132222243830341,
+      "min_count": 0,
+      "max_count": 39,
+      "number_zero": 2,
+      "number_positive": 51419,
+      "fraction_positive": 0.9999611053849594
+    },
+    "Coin_124": {
+      "mean_recorded_count_per_integration": 13.258882557709885,
+      "min_count": 0,
+      "max_count": 37,
+      "number_zero": 1,
+      "number_positive": 51420,
+      "fraction_positive": 0.9999805526924798
+    },
+    "Coin_134": {
+      "mean_recorded_count_per_integration": 14.61933840259816,
+      "min_count": 0,
+      "max_count": 38,
+      "number_zero": 1,
+      "number_positive": 51420,
+      "fraction_positive": 0.9999805526924798
+    },
+    "Coin_234": {
+      "mean_recorded_count_per_integration": 12.69039886427724,
+      "min_count": 0,
+      "max_count": 33,
+      "number_zero": 2,
+      "number_positive": 51419,
+      "fraction_positive": 0.9999611053849594
+    },
+    "Coin_1234": {
+      "mean_recorded_count_per_integration": 0.1706112288753622,
+      "min_count": 0,
+      "max_count": 4,
+      "number_zero": 43345,
+      "number_positive": 8076,
+      "fraction_positive": 0.15705645553373135
+    }
+  },
+  "interpretation": [
+    "The file contains 1-second integrated count records, not individual photon arrival times.",
+    "A Ch1 >= 1 click/no-click conversion is constant for these data and cannot recover within-bin histories.",
+    "Coin_1234 is a four-channel coincidence count, not a substitute single-emitter click record.",
+    "Timestamp spacing and exposure duration should not be treated as identical.",
+    "These are independent authors' measured data, not a validation or measurement by Rewind & Amplify."
+  ]
+}

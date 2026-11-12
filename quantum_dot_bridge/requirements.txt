@@ -1,0 +1,2 @@
+# Only NumPy is required for the model, independent quadrature, and unit tests.
+numpy==2.3.1

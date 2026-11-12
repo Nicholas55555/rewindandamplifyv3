@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# run logs hold local paths and add nothing to the saved results
+results/logs/
+
+# never commit credentials. Your IBM key lives in ~/.qiskit, outside this repository.
+.env
+*.token
+qiskit-ibm.json
+
+# editors and systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# rendered output: rebuild with tools/render_deck.py
+deck/render/
+deck/*.mp4

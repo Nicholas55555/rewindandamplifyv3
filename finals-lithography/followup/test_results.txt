@@ -1,0 +1,22 @@
+test_oracle_marks_every_basis_component_and_uncomputes (test_followup.CircuitTests.test_oracle_marks_every_basis_component_and_uncomputes) ... ok
+test_preparation_all_512_amplitudes (test_followup.CircuitTests.test_preparation_all_512_amplitudes) ... ok
+test_two_rounds_preserve_conditioned_maps (test_followup.CircuitTests.test_two_rounds_preserve_conditioned_maps) ... ok
+test_weighted_adder_maps_all_populated_components (test_followup.CircuitTests.test_weighted_adder_maps_all_populated_components) ... ok
+test_cap_matches_poisson_tail_and_event_is_exact (test_followup.ModelTests.test_cap_matches_poisson_tail_and_event_is_exact) ... ok
+test_conditional_sampler_no_rejection_and_correct_law (test_followup.ModelTests.test_conditional_sampler_no_rejection_and_correct_law) ... ok
+test_independent_control_same_marginals_and_different_joint (test_followup.ModelTests.test_independent_control_same_marginals_and_different_joint) ... ok
+test_readout_bit_order_and_normalization (test_followup.ModelTests.test_readout_bit_order_and_normalization) ... ok
+test_coverage_bracket_and_zero_hit_interval (test_spatial_coverage.CoverageTests.test_coverage_bracket_and_zero_hit_interval) ... ok
+test_fft_inversion_agrees_with_recurrence_and_negligible_alias (test_spatial_coverage.CoverageTests.test_fft_inversion_agrees_with_recurrence_and_negligible_alias) ... ok
+test_lattice_recurrence_matches_poisson_closed_form (test_spatial_coverage.CoverageTests.test_lattice_recurrence_matches_poisson_closed_form) ... ok
+test_linear_response_matches_original_for_random_maps (test_spatial_coverage.CoverageTests.test_linear_response_matches_original_for_random_maps) ... ok
+test_longdouble_and_float64_recurrence_agree (test_spatial_coverage.CoverageTests.test_longdouble_and_float64_recurrence_agree) ... ok
+test_no_tilt_monte_carlo_matches_known_poisson_event (test_spatial_coverage.CoverageTests.test_no_tilt_monte_carlo_matches_known_poisson_event) ... ok
+test_nonunit_weights_and_zero_weight_tail (test_spatial_coverage.CoverageTests.test_nonunit_weights_and_zero_weight_tail) ... ok
+test_pilot_respects_nondefault_threshold (test_spatial_coverage.CoverageTests.test_pilot_respects_nondefault_threshold) ... ok
+test_rounding_bounds_contain_known_nonlattice_probability (test_spatial_coverage.CoverageTests.test_rounding_bounds_contain_known_nonlattice_probability) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 5.552s
+
+OK

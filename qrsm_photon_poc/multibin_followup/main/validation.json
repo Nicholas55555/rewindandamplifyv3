@@ -1,0 +1,56 @@
+{
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "source_hash": "multibin_followup\\PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "source_hash": "multibin_followup\\model.py",
+      "passed": true
+    },
+    {
+      "source_hash": "multibin_followup\\run_suite.py",
+      "passed": true
+    },
+    {
+      "source_hash": "qrsm_photon.py",
+      "passed": true
+    },
+    {
+      "source_hash": "dilation_feasibility.py",
+      "passed": true
+    },
+    {
+      "source_hash": "dilation_synthesis.py",
+      "passed": true
+    },
+    {
+      "branch_matrix_audit": "ideal_0p03.json",
+      "passed": true,
+      "matrices": 40
+    },
+    {
+      "branch_matrix_audit": "ideal_0p003.json",
+      "passed": true,
+      "matrices": 40
+    },
+    {
+      "branch_matrix_audit": "noise_0p03.json",
+      "passed": true,
+      "matrices": 32
+    },
+    {
+      "branch_matrix_audit": "noise_0p003.json",
+      "passed": true,
+      "matrices": 32
+    }
+  ],
+  "method": "Independent saved-matrix positivity/trace, original channel recursion, SVD trace distance and readout mixture recount; source/archive hashes checked.",
+  "validator_sha256": "abf5dd6f435b222a919d6f47ba22f3c5948ce80b27cfb33ac73d5b585e031f06",
+  "noisy_workers_above_8_qubits": false,
+  "figure_files": [
+    "three_bin_tradeoff.png",
+    "one_bin_noise.png"
+  ]
+}

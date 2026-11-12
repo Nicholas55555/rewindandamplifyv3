@@ -1,0 +1,38 @@
+{
+  "schema": "qrsm-hom-exploration-validation-v1",
+  "all_checks_passed": true,
+  "checks": [
+    "12 focused tests pass: exact distributions, power-bound algebra, seed uniqueness, invalid-law rejection, classical fitting, original circuit equivalence, MPS marginal order and bounded register size",
+    "All648 deterministic control designs and all fresh random records/thresholds/scores replayed",
+    "Independent bosonic/HMM checker passed (maximum discrepancy3.09e-13)",
+    "Four serialized QPY circuits independently MPS-verified against32-entry CP-map marginals",
+    "Full-curve four-panel plot visually inspected; nuisance failures and classical comparators retained"
+  ],
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.3.1",
+    "scipy": "1.18.1",
+    "qiskit": "2.6.1",
+    "qiskit_aer": "0.18.2"
+  },
+  "source_sha256": {
+    "verify_exploration.py": "f6b80f415bb9d37ee6c37919618d8415370e3e6dd5faa6431612ffc0f6c287a1",
+    "independent_validation_check.py": "2c4553697bfc7d2c4931f6b87207e9578e6c0d154881a9244a8ed18a81376f21",
+    "plot_validation.py": "afd4ab123424860bfc565a638340049c5fc3e854e52d217a94f873754a1c6c1f"
+  },
+  "artifact_sha256": {
+    "design_results.json": "f936798c5c8f632e3262a620112b52948335a670471aba63ceddfc4b087211b3",
+    "validation_run/results.json": "0685e84da3427091baa743b03228939cf90126ac1cd0359fa692dab020a4ebd2",
+    "validation_run/records.npz": "15e5348f1118e49f0c37bd90c61f9aee3c8c1ab443224a6d2255debf0f64c7eb",
+    "validation_run/provenance.json": "4a3800b8d41d50222e249612a1937e475fb4d14f713c7faea0b08be12ae0d65e",
+    "validation_run/independent_review.json": "a162ef8b9305d980d1d64fd203163f1969128f0590a7f0631876ae349effe493",
+    "plot_manifest.json": "fe198f6a9834a20c451f281598dc678bcb545704b3d5e775e1d2aa413693530d",
+    "design_validation.png": "fc5b640432c3705a7c84b71a87aa13117f3c57245b7337daacadc3110c0f909e",
+    "design_validation.pdf": "525c601e2938529d5e1fc5b2ccbb3962085cc6528b3a0194fa934a17c0f19b40",
+    "hardware_bundle/manifest.json": "d0c3ae21ea96342ef48e62623df08f4f7b1b8ad9b4fbaaf16ff7427ae286492e",
+    "hardware_bundle/independent_review.json": "af7e4e1d589247d8e618e04bf44630af1593f3a2787c6f3a983e8ea101ff83d6"
+  },
+  "independent_original_script_sha256": "28a067d30f8a974418e242f82e22316229649b4fa12efb9db13c2abeb8798d20",
+  "independent_portable_change_scope": "Path resolution, docstring provenance and optional output wrapper only; mathematical review body unchanged.",
+  "scope": "Exact modeled design and conditional synthetic validation plus digital circuit references. Optical reset/control feasibility and real-source attribution are not validated."
+}

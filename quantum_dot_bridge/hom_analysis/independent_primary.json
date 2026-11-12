@@ -1,0 +1,166 @@
+{
+  "scope": "Independent stdlib primary extraction, no science-module import; adapted from root reviewer",
+  "source_sha256": "7866247d045f0ac05209855beca778a800db90a83731bd5110c120184dd581c1",
+  "original_reviewer_source_sha256": "1b99f3114f4e4157227cd30c03c3dcd0f1b55d44d1aa7c841b704f7e8fefde22",
+  "protocol_sha256": "c8bfbbb3932e6657dc8311ce655eedfd33a9ed37e32b84798a7073f26fbefafb",
+  "results_sha256": "9e66fd73027780f61219af8ff493d652911622473dfb29cbe9be37ffaa79a19a",
+  "all_primary_areas_centers_and_point_estimates_match": true,
+  "count_only_monte_carlo_sd_within_1_percent_of_independent_delta_method": true,
+  "acquisitions": [
+    {
+      "file": "HOM_QD5_resonant_photon1+2_17-39-23.csv",
+      "delay_ns": 13.1,
+      "polarization": "co",
+      "offset_ps": -250,
+      "centers_ps": [
+        -250,
+        -105250,
+        -52750,
+        52250,
+        104750
+      ],
+      "counts": [
+        5402,
+        48236,
+        48092,
+        48388,
+        48369
+      ],
+      "normalized_central": 0.11190926275992438,
+      "raw_sha256": "060604e8aef06bf865229365f5ae3cabfe4986c85c548391693a48465a15181a"
+    },
+    {
+      "file": "HOM_QD5_resonant_photon1+2_dist_17-42-16.csv",
+      "delay_ns": 13.1,
+      "polarization": "cross",
+      "offset_ps": -250,
+      "centers_ps": [
+        -250,
+        -105250,
+        -52750,
+        52250,
+        104750
+      ],
+      "counts": [
+        16965,
+        34578,
+        34620,
+        34405,
+        34432
+      ],
+      "normalized_central": 0.49161444561162027,
+      "raw_sha256": "f2aa4d585dc3fd0f95212fc986ed3d142dd0a579fb476856fb30fcdb3de1fe24"
+    },
+    {
+      "file": "HOM_QD5_resonant_photon1+3_17-50-06.csv",
+      "delay_ns": 26.2,
+      "polarization": "co",
+      "offset_ps": -250,
+      "centers_ps": [
+        -250,
+        -105250,
+        -52750,
+        52250,
+        104750
+      ],
+      "counts": [
+        4599,
+        45049,
+        45155,
+        45497,
+        45210
+      ],
+      "normalized_central": 0.10168535909922559,
+      "raw_sha256": "f13b91b12ba28e5fd3d86caf80c2163dec4667d0d4667f67a7dcd4a7165ca0b0"
+    },
+    {
+      "file": "HOM_QD5_resonant_photon1+3_dist_17-52-41.csv",
+      "delay_ns": 26.2,
+      "polarization": "cross",
+      "offset_ps": -250,
+      "centers_ps": [
+        -250,
+        -105250,
+        -52750,
+        52250,
+        104750
+      ],
+      "counts": [
+        23346,
+        46930,
+        46903,
+        47083,
+        47015
+      ],
+      "normalized_central": 0.49690577924876683,
+      "raw_sha256": "f39e6607b75dd8e829e98025943c971a12589a83b25cc349ea7c7b06ffe48ac0"
+    },
+    {
+      "file": "HOM_QD5_resonant_photon1+4_17-57-10.csv",
+      "delay_ns": 39.4,
+      "polarization": "co",
+      "offset_ps": -250,
+      "centers_ps": [
+        -250,
+        -105250,
+        -52750,
+        52250,
+        104750
+      ],
+      "counts": [
+        7501,
+        63655,
+        63506,
+        63713,
+        63273
+      ],
+      "normalized_central": 0.11805765954349255,
+      "raw_sha256": "fe6a13209ccddd52a9a98e50e10302c1cd2dc0cbfc34f7eea79da811c5e7a201"
+    },
+    {
+      "file": "HOM_QD5_resonant_photon1+4_dist_18-00-48.csv",
+      "delay_ns": 39.4,
+      "polarization": "cross",
+      "offset_ps": -250,
+      "centers_ps": [
+        -250,
+        -105250,
+        -52750,
+        52250,
+        104750
+      ],
+      "counts": [
+        29867,
+        65052,
+        64863,
+        65154,
+        65153
+      ],
+      "normalized_central": 0.4591003066612354,
+      "raw_sha256": "514b07b90ed44ff349aee5cc3cb60af81bdef1f907d1796182c8a3bdd9033f20"
+    }
+  ],
+  "estimates": [
+    {
+      "delay_ns": 13.1,
+      "raw_visibility": 0.7723637623774512,
+      "corrected_visibility": 0.8024399254698154,
+      "corrected_count_only_sd_delta": 0.003710721478254265,
+      "co_only_corrected": 0.8063258024740009
+    },
+    {
+      "delay_ns": 26.2,
+      "raw_visibility": 0.7953628970607752,
+      "corrected_visibility": 0.8258497076057942,
+      "corrected_count_only_sd_delta": 0.0034296669603945027,
+      "co_only_corrected": 0.8271387035306423
+    },
+    {
+      "delay_ns": 39.4,
+      "raw_visibility": 0.7428499658341421,
+      "corrected_visibility": 0.7723991627803637,
+      "corrected_count_only_sd_delta": 0.0034583058603354874,
+      "co_only_corrected": 0.7938094507789742
+    }
+  ]
+}

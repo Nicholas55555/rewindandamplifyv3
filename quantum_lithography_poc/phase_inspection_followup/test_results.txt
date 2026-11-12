@@ -1,0 +1,14 @@
+test_charged_coarse_record_resolves_global_branch (test_phase_model.PhaseTests.test_charged_coarse_record_resolves_global_branch) ... ok
+test_exact_finite_records_and_estimator_convergence (test_phase_model.PhaseTests.test_exact_finite_records_and_estimator_convergence) ... ok
+test_global_ambiguity_is_not_given_to_estimator (test_phase_model.PhaseTests.test_global_ambiguity_is_not_given_to_estimator) ... ok
+test_independent_fock_beamsplitter_limit (test_phase_model.PhaseTests.test_independent_fock_beamsplitter_limit) ... ok
+test_known_fisher_limits_and_loss_scaling (test_phase_model.PhaseTests.test_known_fisher_limits_and_loss_scaling) ... ok
+test_loss_matches_independent_binomial_thinning_of_fock_outputs (test_phase_model.PhaseTests.test_loss_matches_independent_binomial_thinning_of_fock_outputs) ... ok
+test_probabilities_conserve_and_count_losses (test_phase_model.PhaseTests.test_probabilities_conserve_and_count_losses) ... ok
+test_sample_dose_counted_before_object_and_detector_loss (test_phase_model.PhaseTests.test_sample_dose_counted_before_object_and_detector_loss) ... ok
+test_wrap_and_invalid_settings (test_phase_model.PhaseTests.test_wrap_and_invalid_settings) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.085s
+
+OK

@@ -1,0 +1,97 @@
+{
+  "record_length": 128,
+  "angle_delta_radians": 0.4,
+  "true_persistent_switch_probability": 0.02,
+  "true_iid_switch_probability": 0.5,
+  "fixed_decision": "ideal known-model log-likelihood ratio > 0 means persistent",
+  "models_retuned": false,
+  "note": "Independent synthetic records; intervals conditional on scenario and known generative family.",
+  "scenarios": [
+    {
+      "name": "ideal_control",
+      "seed": 873104,
+      "symmetric_readout_bit_flip_probability": 0.0,
+      "records_per_class": 1200,
+      "true_positive_count": 1102,
+      "false_positive_count": 93,
+      "true_positive_rate": 0.9183333333333333,
+      "false_positive_rate": 0.0775,
+      "true_positive_wilson_95pct": [
+        0.9014710960202122,
+        0.9325257668088328
+      ],
+      "false_positive_wilson_95pct": [
+        0.06368395571862093,
+        0.09401243979069007
+      ],
+      "sample_mean_readout": {
+        "persistent": 0.49802734375,
+        "iid": 0.5011393229166666
+      }
+    },
+    {
+      "name": "readout_flip_10pct",
+      "seed": 873105,
+      "symmetric_readout_bit_flip_probability": 0.1,
+      "records_per_class": 1200,
+      "true_positive_count": 911,
+      "false_positive_count": 77,
+      "true_positive_rate": 0.7591666666666667,
+      "false_positive_rate": 0.06416666666666666,
+      "true_positive_wilson_95pct": [
+        0.734171442913943,
+        0.782507888440306
+      ],
+      "false_positive_wilson_95pct": [
+        0.05164513089868225,
+        0.07946969129336834
+      ],
+      "sample_mean_readout": {
+        "persistent": 0.5032291666666666,
+        "iid": 0.4995572916666667
+      }
+    },
+    {
+      "name": "readout_flip_25pct",
+      "seed": 873106,
+      "symmetric_readout_bit_flip_probability": 0.25,
+      "records_per_class": 1200,
+      "true_positive_count": 403,
+      "false_positive_count": 81,
+      "true_positive_rate": 0.3358333333333333,
+      "false_positive_rate": 0.0675,
+      "true_positive_wilson_95pct": [
+        0.30967339467966565,
+        0.3630409838515655
+      ],
+      "false_positive_wilson_95pct": [
+        0.0546407874953228,
+        0.0831194280260429
+      ],
+      "sample_mean_readout": {
+        "persistent": 0.4994921875,
+        "iid": 0.5008203125
+      }
+    }
+  ],
+  "equal_pulse_area_examples": [
+    {
+      "amplitude": 1.5707963267948966,
+      "duration": 1.0,
+      "area": 1.5707963267948966,
+      "probability_one": 0.5000000000000001
+    },
+    {
+      "amplitude": 3.141592653589793,
+      "duration": 0.5,
+      "area": 1.5707963267948966,
+      "probability_one": 0.5000000000000001
+    },
+    {
+      "amplitude": 0.7853981633974483,
+      "duration": 2.0,
+      "area": 1.5707963267948966,
+      "probability_one": 0.5000000000000001
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+test_blur_and_pixel_averaging_match_numeric_integrals (test_model.ModelTests.test_blur_and_pixel_averaging_match_numeric_integrals) ... ok
+test_classical_phase_cycle_and_duty_charge_every_exposure (test_model.ModelTests.test_classical_phase_cycle_and_duty_charge_every_exposure) ... ok
+test_equal_photon_budget_costs_more_attempts_when_preparation_fails (test_model.ModelTests.test_equal_photon_budget_costs_more_attempts_when_preparation_fails) ... ok
+test_invalid_inputs (test_model.ModelTests.test_invalid_inputs) ... ok
+test_jitter_matches_independent_gaussian_quadrature (test_model.ModelTests.test_jitter_matches_independent_gaussian_quadrature) ... ok
+test_loss_limits_and_weak_response (test_model.ModelTests.test_loss_limits_and_weak_response) ... ok
+test_old_normalized_output_limit (test_model.ModelTests.test_old_normalized_output_limit) ... ok
+test_poisson_statistics_and_threshold_are_independently_correct (test_model.ModelTests.test_poisson_statistics_and_threshold_are_independently_correct) ... ok
+test_quantum_moments_against_independent_loss_kraus_calculation (test_model.ModelTests.test_quantum_moments_against_independent_loss_kraus_calculation) ... ok
+test_spatial_mode_columns_are_orthogonal_and_conserve_dose (test_model.ModelTests.test_spatial_mode_columns_are_orthogonal_and_conserve_dose) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.060s
+
+OK

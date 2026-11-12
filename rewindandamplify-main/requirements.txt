@@ -1,0 +1,8 @@
+# The versions everything here was run with.
+qiskit==2.6.1
+qiskit-aer==0.18.2
+qiskit-ibm-runtime==0.51.0
+numpy>=2.0
+scipy>=1.13
+matplotlib>=3.9
+pytest>=8.0

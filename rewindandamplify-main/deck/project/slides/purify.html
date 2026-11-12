@@ -1,0 +1,27 @@
+<section id="purify" data-transition="fade" style="background:#F6F5F0;color:#12203A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:88px 128px 104px;display:flex;flex-direction:column;gap:26px">
+<h2 style="font-size:60px;font-weight:600;line-height:1.12;letter-spacing:-0.5px">Move 1: Purify. A fresh qubit replaces every reset</h2>
+<div style="display:flex;gap:40px;align-items:stretch">
+<div style="flex:1;background:#FCFCFB;border:1px solid #DDDAD0;border-radius:16px;padding:26px 32px;display:flex;flex-direction:column;gap:14px">
+<h3 style="font-size:35px;font-weight:600">Before: one light, reset each step</h3>
+<svg aria-label="One light line with a measure and reset after every step" width="660" height="180" viewBox="0 0 660 180" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="87" width="660" height="4" fill="#9AA5B5"/><rect x="40" y="45" width="60" height="90" rx="8" fill="#12203A"/><rect x="110" y="45" width="44" height="90" rx="8" fill="#B5431A"/><rect x="250" y="45" width="60" height="90" rx="8" fill="#12203A"/><rect x="320" y="45" width="44" height="90" rx="8" fill="#B5431A"/><rect x="460" y="45" width="60" height="90" rx="8" fill="#12203A"/><rect x="530" y="45" width="44" height="90" rx="8" fill="#B5431A"/></svg>
+<p style="font-size:30px;line-height:1.28;color:#3B4658">Measure and reset: cheap in qubits, but the past is gone.</p>
+</div>
+<div style="flex:1;background:#FCFCFB;border:1px solid #DDDAD0;border-radius:16px;padding:26px 32px;display:flex;flex-direction:column;gap:14px">
+<h3 style="font-size:35px;font-weight:600">After: a fresh light per step</h3>
+<svg aria-label="Three separate light lines, each touched once, with nothing measured until the end" width="660" height="180" viewBox="0 0 660 180" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="24" width="660" height="4" fill="#9AA5B5"/><rect x="0" y="87" width="660" height="4" fill="#9AA5B5"/><rect x="0" y="150" width="660" height="4" fill="#9AA5B5"/><rect x="60" y="3" width="60" height="48" rx="8" fill="#12203A"/><rect x="280" y="66" width="60" height="48" rx="8" fill="#12203A"/><rect x="500" y="129" width="60" height="48" rx="8" fill="#12203A"/><rect x="612" y="3" width="40" height="174" rx="8" fill="#EB6834"/></svg>
+<p style="font-size:30px;line-height:1.28;color:#3B4658">Nothing measured until the end: one reversible circuit, A.</p>
+</div>
+</div>
+<div style="display:flex;gap:56px;flex:1;align-items:center">
+<div style="flex:1.15;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:50px;font-family:'JetBrains Mono', 'Courier New', monospace">A|0⟩ = Σ<span style="color:#6A7282"> over y of </span>|m<span style="color:#6A7282">_y</span>⟩ |y⟩</p>
+<p style="font-size:35px;line-height:1.28;color:#3B4658">The state holds <b>every click history at once</b>, each with weight √P(y). Grover’s search space is the machine’s own past.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;gap:20px;align-items:baseline"><p style="font-size:54px;font-weight:600;white-space:nowrap">4 × 10⁻¹⁶</p><p style="font-size:29px;line-height:1.28;color:#3B4658">largest amplitude error against the exact model</p></div>
+<div style="display:flex;gap:20px;align-items:baseline"><p style="font-size:54px;font-weight:600;white-space:nowrap">p = 0.61</p><p style="font-size:29px;line-height:1.28;color:#3B4658">reset and purified circuits click alike, 1,000,000 shots each</p></div>
+</div>
+</div>
+<p style="position:absolute;right:128px;bottom:56px;width:100px;text-align:right;font-size:24px;color:#6A7282">9</p>
+<aside>Here’s the first move, and the key to everything else. Instead of reusing one light qubit and resetting it, we give every step a fresh light, and measure nothing until the end. By the deferred measurement principle the click statistics can’t change. But now the whole run is one reversible circuit, and that state holds every possible click history at once, each with an amplitude equal to the square root of its probability. So Grover’s search space is the machine’s own past. We checked: amplitudes match the exact model to ten to the minus sixteen, and the two circuits click alike over a million shots each.</aside>
+</section>

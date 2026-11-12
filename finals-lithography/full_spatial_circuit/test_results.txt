@@ -1,0 +1,13 @@
+test_actual_small_oracle_and_grover_preserve_predicate (test_full_spatial.FullSpatialTests.test_actual_small_oracle_and_grover_preserve_predicate) ... ok
+test_clean_chain_has_no_hidden_relative_phases (test_full_spatial.FullSpatialTests.test_clean_chain_has_no_hidden_relative_phases) ... ok
+test_clean_toffoli_chain_exhaustive_small_and_large_control_edges (test_full_spatial.FullSpatialTests.test_clean_toffoli_chain_exhaustive_small_and_large_control_edges) ... ok
+test_controlled_carry_addition_exhaustive_modular_arithmetic (test_full_spatial.FullSpatialTests.test_controlled_carry_addition_exhaustive_modular_arithmetic) ... ok
+test_exact_four_bit_poisson_preparation (test_full_spatial.FullSpatialTests.test_exact_four_bit_poisson_preparation) ... ok
+test_finite_classical_dp_matches_complete_small_enumeration (test_full_spatial.FullSpatialTests.test_finite_classical_dp_matches_complete_small_enumeration) ... ok
+test_full_register_ledger_no_overflow_and_real_ancillas (test_full_spatial.FullSpatialTests.test_full_register_ledger_no_overflow_and_real_ancillas) ... ok
+test_tail_bound_counts_changes_above_cap_not_overflow_category (test_full_spatial.FullSpatialTests.test_tail_bound_counts_changes_above_cap_not_overflow_category) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.450s
+
+OK

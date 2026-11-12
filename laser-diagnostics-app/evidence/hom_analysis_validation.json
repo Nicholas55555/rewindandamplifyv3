@@ -1,0 +1,45 @@
+{
+  "schema": "hom-analysis-validation-v1",
+  "created_utc": "2026-11-11T17:11:30.108538+00:00",
+  "status": "passed",
+  "unit_tests": {
+    "count": 14,
+    "command": "python -m unittest discover -s quantum_dot_bridge/hom_analysis -p test_analysis.py -v",
+    "exit_code": 0
+  },
+  "deterministic_reproduction": {
+    "command": "python quantum_dot_bridge/hom_analysis/verify_results.py",
+    "status": "all estimator,200000-draw Monte Carlo,covariance,sensitivity and source/raw hash fields passed",
+    "tolerance": 1e-11
+  },
+  "independent_stdlib": {
+    "command": "python quantum_dot_bridge/hom_analysis/independent_check.py",
+    "receipt": "independent_primary.json",
+    "status": "30 peak areas,30 centers,all primary/co-only estimates match; Monte Carlo count-only SD within1% of independent delta method",
+    "origin": "Separate root reviewer authored original extraction before comparing canonical result; portable adaptation provenance in source"
+  },
+  "visual_inspection": {
+    "artifact": "analysis.png",
+    "status": "Six panels inspected; all peaks fully visible, error bars and scope labels legible; top histogram axes show saved bins and \u00b12ns windows",
+    "numeric_data_unchanged_by_plot_edits": true,
+    "pdf_volatile_timestamps_suppressed": true
+  },
+  "scientific_scope": "Computational verification only. Conditional intervals exclude unknown normalization/systematic uncertainty. No physical device, QRSM or microscopic defect model validated.",
+  "artifact_sha256": {
+    "PROTOCOL.md": "c8bfbbb3932e6657dc8311ce655eedfd33a9ed37e32b84798a7073f26fbefafb",
+    "analysis.py": "73b9216dc6ca7a9593ebd52e0820a189f5c6bb9167bc881005cafa365f85e6c1",
+    "run_analysis.py": "ca3411561c9b23148101e1b68c5370d25f24e4b555c8abb0acddc68c0b7d63fb",
+    "test_analysis.py": "7ccf4729643d1cd67912f7f1e9502a57e8783261e00b6b38d209d7b4d76c8b5b",
+    "verify_results.py": "5578b53e2d82cf0d90524d57921760496bba83ebaa872cf4badb98a14757aac0",
+    "independent_check.py": "7866247d045f0ac05209855beca778a800db90a83731bd5110c120184dd581c1",
+    "results.json": "9e66fd73027780f61219af8ff493d652911622473dfb29cbe9be37ffaa79a19a",
+    "independent_primary.json": "c50b7baa5ac16dc632fb1942170e7cb18f126ab8b9943290d7e898b2ac814ea3",
+    "plot_analysis.py": "ea390e3a9bf2615d848feaa94411466912ec417bc73d631d3a719473fe0636e7",
+    "plot_manifest.json": "d9e02dd5261545f4bebeba968a8940c606250f67088bdc8e869f549bfbe0e0be",
+    "analysis.png": "0f1dbc7f656dee62817a3b3c6f7b665244b839d2612c04bcf1aca7cc3e22ec43",
+    "analysis.pdf": "89afb540dc2263ab437780ff361d738780199d3aa0384ee321c3e70d2829b47d",
+    "README.md": "b316f77cb49aa323220162d5962743c8d1ae13ba9fc5956d1396eaeccd4d0604",
+    "requirements.txt": "4ff86467ed9d6940841a6615f921a69f75fcfa15da4afbbcbee70a5009d9f4ad"
+  },
+  "derived_artifact_integrity": "Verifier checks plot source/results/PNG/PDF hashes, independent receipt source/results/protocol/raw hashes, and all14 validation artifact hashes without a self-cycle."
+}

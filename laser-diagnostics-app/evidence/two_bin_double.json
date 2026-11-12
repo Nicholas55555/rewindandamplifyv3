@@ -1,0 +1,68 @@
+{
+  "model": {
+    "cavity_dimension": 2,
+    "physical_system_dimension": 8,
+    "choi_absolute_cutoff": 0.03,
+    "time_bins": 2,
+    "event": "double",
+    "system_qubits": 3,
+    "outcome_flags": 2,
+    "environment_qubits_per_bin": 3,
+    "total_qubits": 11,
+    "simulator": "ideal Qiskit statevector; no hardware noise"
+  },
+  "event": {
+    "original_open_system_probability": 0.0017847973842755522,
+    "retained_model_probability": 0.0017263984682337737,
+    "qiskit_preparation_probability": 0.0017263984682321597,
+    "qiskit_amplified_probability": 0.015466137701138622,
+    "one_round_theoretical_probability": 0.015466137701137887,
+    "retained_vs_original_conditional_state_trace_distance": 0.017426082991643884,
+    "amplified_vs_retained_conditional_state_trace_distance": 5.141573682388836e-13,
+    "preparation_vs_retained_max_branch_frobenius_error": 4.80260725833748e-13
+  },
+  "history_probabilities": {
+    "00": {
+      "original": 0.890549664170923,
+      "retained": 0.8924476335814258,
+      "amplified": 0.8801644301137148
+    },
+    "01": {
+      "original": 0.08615032573201406,
+      "retained": 0.08508702594650042,
+      "amplified": 0.08391593062070615
+    },
+    "10": {
+      "original": 0.021515212712786894,
+      "retained": 0.020738942003840057,
+      "amplified": 0.02045350156481584
+    },
+    "11": {
+      "original": 0.0017847973842755522,
+      "retained": 0.0017263984682337737,
+      "amplified": 0.015466137701138622
+    }
+  },
+  "compilation": {
+    "basis": [
+      "u",
+      "cx"
+    ],
+    "optimization_level": 1,
+    "seed_transpiler": 13,
+    "cx_gates": 6663,
+    "depth": 12672,
+    "contains": "two-bin preparation, event oracle, inverse preparation, full reflection, replay"
+  },
+  "normalization": {
+    "pre_normalization_completeness_spectral_error": 0.05328349236369283,
+    "right_normalization_spectral_change": 0.027756009979740273
+  },
+  "limitations": [
+    "Synthetic cavity-2 model with coarse Choi truncation; physical parameters are not calibrated.",
+    "One modeled two-bin query, ideal statevector only; no real photonic hardware or speedup.",
+    "Environment and outcome registers are retained; generic circuit costs exclude topology and noise.",
+    "State trace distance is for this selected input and event, not a worst-case guarantee.",
+    "Inversion reverses the coherent model and retained environment, not photons already detected in a lab."
+  ]
+}

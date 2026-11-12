@@ -1,0 +1,303 @@
+{
+  "schema": "fresh-precision-loop-comparison-v1",
+  "input_analysis_sha256": "1567e47c6001e55611c6dca59f8e3f29b69ecfa5c996acbdf622c0909959b3fa",
+  "comparisons": {
+    "plain": [
+      {
+        "probability_difference": 0.09485255747243167,
+        "independent_shot_wilson_based_interval95": [
+          0.0614484709287517,
+          0.1302348386153395
+        ],
+        "first": {
+          "successes": 109,
+          "shots": 619,
+          "probability": 0.17609046849757673
+        },
+        "second": {
+          "successes": 84,
+          "shots": 1034,
+          "probability": 0.08123791102514506
+        },
+        "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+        "step": 4,
+        "ideal_difference": -0.007722047172804487,
+        "ideal_probabilities": [
+          0.009744391336227691,
+          0.01746643850903218
+        ]
+      },
+      {
+        "probability_difference": 0.09585248560259732,
+        "independent_shot_wilson_based_interval95": [
+          0.06097203011442876,
+          0.13253010262603276
+        ],
+        "first": {
+          "successes": 118,
+          "shots": 619,
+          "probability": 0.19063004846526657
+        },
+        "second": {
+          "successes": 98,
+          "shots": 1034,
+          "probability": 0.09477756286266925
+        },
+        "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+        "step": 5,
+        "ideal_difference": -0.02734000605308822,
+        "ideal_probabilities": [
+          0.030175199595966665,
+          0.057515205649054886
+        ]
+      },
+      {
+        "probability_difference": 0.03350696668676939,
+        "independent_shot_wilson_based_interval95": [
+          0.0019066731663159031,
+          0.06715876449705502
+        ],
+        "first": {
+          "successes": 83,
+          "shots": 619,
+          "probability": 0.13408723747980614
+        },
+        "second": {
+          "successes": 104,
+          "shots": 1034,
+          "probability": 0.10058027079303675
+        },
+        "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+        "step": 6,
+        "ideal_difference": -0.05434931993374272,
+        "ideal_probabilities": [
+          0.04667496342985301,
+          0.10102428336359573
+        ]
+      }
+    ],
+    "steered_local": [
+      {
+        "probability_difference": 0.003131003756838842,
+        "independent_shot_wilson_based_interval95": [
+          -0.004221841608879319,
+          0.010579015080514368
+        ],
+        "first": {
+          "successes": 310,
+          "shots": 6118,
+          "probability": 0.05067015364498202
+        },
+        "second": {
+          "successes": 340,
+          "shots": 7152,
+          "probability": 0.04753914988814318
+        },
+        "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+        "step": 4,
+        "ideal_difference": -0.007722047172804487,
+        "ideal_probabilities": [
+          0.009744391336227691,
+          0.01746643850903218
+        ]
+      },
+      {
+        "probability_difference": 0.012603227136999184,
+        "independent_shot_wilson_based_interval95": [
+          0.0031117313912793817,
+          0.02218693304109085
+        ],
+        "first": {
+          "successes": 557,
+          "shots": 6118,
+          "probability": 0.09104282445243543
+        },
+        "second": {
+          "successes": 561,
+          "shots": 7152,
+          "probability": 0.07843959731543625
+        },
+        "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+        "step": 5,
+        "ideal_difference": -0.02734000605308822,
+        "ideal_probabilities": [
+          0.030175199595966665,
+          0.057515205649054886
+        ]
+      },
+      {
+        "probability_difference": -0.028673503864709918,
+        "independent_shot_wilson_based_interval95": [
+          -0.0389320541249284,
+          -0.01835576539948261
+        ],
+        "first": {
+          "successes": 538,
+          "shots": 6118,
+          "probability": 0.08793723439032364
+        },
+        "second": {
+          "successes": 834,
+          "shots": 7152,
+          "probability": 0.11661073825503356
+        },
+        "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+        "step": 6,
+        "ideal_difference": -0.05434931993374272,
+        "ideal_probabilities": [
+          0.04667496342985301,
+          0.10102428336359573
+        ]
+      }
+    ],
+    "steered_full": [
+      {
+        "probability_difference": 0.046114462652298585,
+        "independent_shot_wilson_based_interval95": [
+          0.037056036016706206,
+          0.055372331556026305
+        ],
+        "first": {
+          "successes": 493,
+          "shots": 5411,
+          "probability": 0.09111070042506006
+        },
+        "second": {
+          "successes": 299,
+          "shots": 6645,
+          "probability": 0.044996237772761474
+        },
+        "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+        "step": 4,
+        "ideal_difference": -0.007722047172804487,
+        "ideal_probabilities": [
+          0.009744391336227691,
+          0.01746643850903218
+        ]
+      },
+      {
+        "probability_difference": 0.018524703530792205,
+        "independent_shot_wilson_based_interval95": [
+          0.00832456744300904,
+          0.0288571359547787
+        ],
+        "first": {
+          "successes": 531,
+          "shots": 5411,
+          "probability": 0.09813343189798558
+        },
+        "second": {
+          "successes": 529,
+          "shots": 6645,
+          "probability": 0.07960872836719338
+        },
+        "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+        "step": 5,
+        "ideal_difference": -0.02734000605308822,
+        "ideal_probabilities": [
+          0.030175199595966665,
+          0.057515205649054886
+        ]
+      },
+      {
+        "probability_difference": 0.020343365985655573,
+        "independent_shot_wilson_based_interval95": [
+          0.008742182668336417,
+          0.03205756801491429
+        ],
+        "first": {
+          "successes": 698,
+          "shots": 5411,
+          "probability": 0.12899648863426355
+        },
+        "second": {
+          "successes": 722,
+          "shots": 6645,
+          "probability": 0.10865312264860798
+        },
+        "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+        "step": 6,
+        "ideal_difference": -0.05434931993374272,
+        "ideal_probabilities": [
+          0.04667496342985301,
+          0.10102428336359573
+        ]
+      }
+    ],
+    "steered_memory": [
+      {
+        "probability_difference": -0.031090834343274774,
+        "independent_shot_wilson_based_interval95": [
+          -0.04036759093053306,
+          -0.02195150297047392
+        ],
+        "first": {
+          "successes": 326,
+          "shots": 6231,
+          "probability": 0.05231904991173166
+        },
+        "second": {
+          "successes": 454,
+          "shots": 5443,
+          "probability": 0.08340988425500644
+        },
+        "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+        "step": 4,
+        "ideal_difference": -0.007722047172804487,
+        "ideal_probabilities": [
+          0.009744391336227691,
+          0.01746643850903218
+        ]
+      },
+      {
+        "probability_difference": 0.045538930724931995,
+        "independent_shot_wilson_based_interval95": [
+          0.036139937779892564,
+          0.0549315040215504
+        ],
+        "first": {
+          "successes": 602,
+          "shots": 6231,
+          "probability": 0.09661370566522227
+        },
+        "second": {
+          "successes": 278,
+          "shots": 5443,
+          "probability": 0.05107477494029028
+        },
+        "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+        "step": 5,
+        "ideal_difference": -0.02734000605308822,
+        "ideal_probabilities": [
+          0.030175199595966665,
+          0.057515205649054886
+        ]
+      },
+      {
+        "probability_difference": 0.04489311663252724,
+        "independent_shot_wilson_based_interval95": [
+          0.03624693466927811,
+          0.05355839944633416
+        ],
+        "first": {
+          "successes": 527,
+          "shots": 6231,
+          "probability": 0.0845771144278607
+        },
+        "second": {
+          "successes": 216,
+          "shots": 5443,
+          "probability": 0.03968399779533346
+        },
+        "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+        "step": 6,
+        "ideal_difference": -0.05434931993374272,
+        "ideal_probabilities": [
+          0.04667496342985301,
+          0.10102428336359573
+        ]
+      }
+    ]
+  },
+  "scope": "Programmed models, selected after first campaign; no pooling across jobs, no unknown physical defect diagnosis. Difference intervals reflect independent shots only; gate/readout/context bias and drift excluded."
+}

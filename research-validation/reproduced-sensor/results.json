@@ -1,0 +1,3910 @@
+{
+  "schema_version": 1,
+  "evidence_type": "synthetic physically motivated surrogate; no measured laser or QPU data",
+  "config": {
+    "wavelength_nm": 698.0,
+    "atoms": 64,
+    "pulse_s": 0.0025,
+    "dark_s": 0.02,
+    "cycle_s": 1.0,
+    "cycles": 128,
+    "t1_s": 100.0,
+    "t2_s": 0.2,
+    "preparation_error": 0.01,
+    "readout_01": 0.02,
+    "readout_10": 0.04,
+    "source_photons_per_cycle": 20000000000.0,
+    "diode_fraction": 0.1,
+    "detector_efficiency": 0.8,
+    "diode_dark_electrons": 100.0,
+    "diode_electronic_noise_electrons": 300.0,
+    "phase_electronics_rad": 0.003,
+    "pulse_lightshift_hz_per_relative_power": 3.0,
+    "coherent_amplitude_coupling_hz": 0.2,
+    "source_frequency_ou_sd_hz": 0.08,
+    "source_frequency_ou_time_s": 8.0,
+    "primary_reference_rw_hz_per_sqrt_s": 0.04,
+    "secondary_reference_rw_hz_per_sqrt_s": 0.01,
+    "atomic_reference_rw_hz_per_sqrt_s": 0.01,
+    "common_path_ou_sd_hz": 0.025,
+    "intensity_ou_sd": 0.015,
+    "diode_gain_ou_sd": 0.002,
+    "fault_step_hz": 0.5
+  },
+  "methods": [
+    {
+      "id": "power_only",
+      "label": "Power photodiode",
+      "columns": [
+        0
+      ],
+      "channels": [
+        "power"
+      ],
+      "resource_note": "10% source photon allocation; frequency-blind negative control."
+    },
+    {
+      "id": "classical",
+      "label": "Conventional C",
+      "columns": [
+        0,
+        1
+      ],
+      "channels": [
+        "power",
+        "primary coherent reference"
+      ],
+      "resource_note": "10% photodiode +90% primary heterodyne; one external LO."
+    },
+    {
+      "id": "quantum",
+      "label": "Atomic Q + power",
+      "columns": [
+        0,
+        3
+      ],
+      "channels": [
+        "power",
+        "atomic Ramsey"
+      ],
+      "resource_note": "10% photodiode +45% atomic probe; remaining45% unused; atomic support optics uncounted."
+    },
+    {
+      "id": "classical_quantum",
+      "label": "C + atomic Q",
+      "columns": [
+        0,
+        2,
+        3
+      ],
+      "channels": [
+        "power",
+        "primary coherent reference",
+        "atomic Ramsey"
+      ],
+      "resource_note": "10% photodiode +45% primary heterodyne +45% atomic probe; atomic support optics uncounted."
+    },
+    {
+      "id": "two_classical",
+      "label": "C + independent C",
+      "columns": [
+        0,
+        2,
+        4
+      ],
+      "channels": [
+        "power",
+        "primary coherent reference",
+        "independent coherent reference"
+      ],
+      "resource_note": "10% photodiode +45% primary heterodyne +45% secondary heterodyne; independent LO uncounted."
+    }
+  ],
+  "numerics": {
+    "pulse_integrator": "Strang split coherent rotation and Markov damping",
+    "substeps_per_pulse": 16,
+    "refinement_record": "numerical_refinement.json preserves first4-substep results; refinement used unchanged seeds and scientific parameters."
+  },
+  "seed": 770214,
+  "nominal_false_alarm_target": 0.05,
+  "calibration": {
+    "response": {
+      "seed": 511901,
+      "repetitions_per_grid_point": 256,
+      "grid_points": 45,
+      "equivalent_quantum_cycles": 11520,
+      "equivalent_quantum_scan_duration_s": 11520.0,
+      "q_intercept": 0.48901638454861124,
+      "q_slope_per_hz": 0.05768717447916662,
+      "q_power_coefficient": -0.009345160590278227,
+      "h_intercept_hz": -0.00010757262535528422,
+      "h_slope": 1.0000874103198663,
+      "h_power_coefficient_hz": 0.20515258573375605,
+      "calibration_detuning_range_hz": [
+        -1,
+        1
+      ],
+      "calibration_relative_power_range": [
+        0.9,
+        1.1
+      ]
+    },
+    "fit_null_records": 4000,
+    "fit_injected_records": 4000,
+    "independent_threshold_records": 6000,
+    "fit_seed": 770214,
+    "injection_seed": 770216,
+    "threshold_seed": 770217,
+    "estimators": {
+      "power_only": {
+        "columns": [
+          0
+        ],
+        "weights": [
+          0.0
+        ],
+        "mean": [
+          -0.0001874120621274725
+        ],
+        "note": "Always predicts zero frequency change; absolute power change is its alarm score."
+      },
+      "classical": {
+        "columns": [
+          0,
+          1
+        ],
+        "weights": [
+          -0.5827673062385198,
+          0.9949956829490197
+        ],
+        "mean": [
+          -0.0001874120621274725,
+          0.007879544187449032
+        ],
+        "calibrated_response": [
+          0.0,
+          1.005029486194501
+        ],
+        "null_covariance": [
+          [
+            6.756941223677308e-05,
+            3.957529166019696e-05
+          ],
+          [
+            3.957529166019696e-05,
+            0.07186468252050553
+          ]
+        ],
+        "note": "Linear minimum-variance unbiased estimate under the fitted local response/covariance."
+      },
+      "quantum": {
+        "columns": [
+          0,
+          3
+        ],
+        "weights": [
+          0.3632953413315313,
+          0.9562735799158572
+        ],
+        "mean": [
+          -0.0001874120621274725,
+          -0.0010682943766060515
+        ],
+        "calibrated_response": [
+          0.0,
+          1.0457258477098053
+        ],
+        "null_covariance": [
+          [
+            6.756941223677308e-05,
+            -2.5670114910305666e-05
+          ],
+          [
+            -2.5670114910305666e-05,
+            0.042848745462873136
+          ]
+        ],
+        "note": "Linear minimum-variance unbiased estimate under the fitted local response/covariance."
+      },
+      "classical_quantum": {
+        "columns": [
+          0,
+          2,
+          3
+        ],
+        "weights": [
+          0.03274207004328957,
+          0.3499101923912815,
+          0.6199353876963029
+        ],
+        "mean": [
+          -0.0001874120621274725,
+          0.007734124047598888,
+          -0.0010682943766060515
+        ],
+        "calibrated_response": [
+          0.0,
+          1.0051651790202047,
+          1.0457258477098053
+        ],
+        "null_covariance": [
+          [
+            6.756941223677308e-05,
+            3.915704803353435e-05,
+            -2.5670114910305666e-05
+          ],
+          [
+            3.915704803353435e-05,
+            0.0718374679762799,
+            0.0013906420770979334
+          ],
+          [
+            -2.5670114910305666e-05,
+            0.0013906420770979334,
+            0.042848745462873136
+          ]
+        ],
+        "note": "Linear minimum-variance unbiased estimate under the fitted local response/covariance."
+      },
+      "two_classical": {
+        "columns": [
+          0,
+          2,
+          4
+        ],
+        "weights": [
+          -0.31410257774401573,
+          0.056635878969151135,
+          0.9426597708344888
+        ],
+        "mean": [
+          -0.0001874120621274725,
+          0.007734124047598888,
+          -8.018987597260131e-05
+        ],
+        "calibrated_response": [
+          0.0,
+          1.0051651790202047,
+          1.0004368657232006
+        ],
+        "null_covariance": [
+          [
+            6.756941223677308e-05,
+            3.915704803353435e-05,
+            2.0162134117781328e-05
+          ],
+          [
+            3.915704803353435e-05,
+            0.0718374679762799,
+            0.002971635887735678
+          ],
+          [
+            2.0162134117781328e-05,
+            0.002971635887735678,
+            0.007068610015763928
+          ]
+        ],
+        "note": "Linear minimum-variance unbiased estimate under the fitted local response/covariance."
+      }
+    },
+    "thresholds": {
+      "power_only": 0.015690059562710964,
+      "classical": 0.5309248335148975,
+      "quantum": 0.39078352416074014,
+      "classical_quantum": 0.3146674201317191,
+      "two_classical": 0.1583027150370885
+    },
+    "test_retuning": false,
+    "synthetic_model_calibration_equivalent_acquisition_s": 1792000.0,
+    "calibration_cost_note": "Monte Carlo under an assumed model, not physically acquired. Directly collecting this many128s histories would take20.74days at default counts, plus3.2h response scan. A practical laboratory calibration protocol is still needed.",
+    "decision": "abs(calibrated linear estimate)>independently calibrated threshold; power uses abs(relative-power change)",
+    "event_time_known": true,
+    "assumed_event_cycle": 64
+  },
+  "resource_ledger": {
+    "source_photons_per_cycle": 20000000000.0,
+    "cycles_per_record": 128,
+    "duration_s": 128.0,
+    "interrogation_s": 0.025,
+    "dead_time_s": 0.975,
+    "optical_probe_duty_fraction": 0.005,
+    "same_bookkept_source_allotment_for_C_CQ_CC": true,
+    "matched": "acquisition duration, source paths and target task; assumed photon allotment bookkeeping only",
+    "not_matched": [
+      "LO power and stability cost",
+      "atomic cooling, trapping, readout and reset light",
+      "hardware complexity and operating cost",
+      "independent reference apparatus"
+    ],
+    "atomic_probe_power_during_pulses_w": 5.122639746229328e-07,
+    "coupling_assumption": "The atomic geometry/coupling is assumed calibrated to a pi/2 pulse in2.5ms at its45% allocation. Dipole/beam-area coupling and apparatus are unmodeled; varying allotted photons alone does not change Omega. No measured device/coupling validation.",
+    "photon_accounting_limit": "A source-photon-allocation check is not total-resource fairness or proof of quantum advantage."
+  },
+  "scenarios": [
+    {
+      "id": "nominal",
+      "label": "Calibrated laboratory surrogate",
+      "description": "Independent references and matched calibrated response.",
+      "parameters": {},
+      "seeds": {
+        "null": 770314,
+        "alt": 770316,
+        "estimation": 770318,
+        "trace": 770319
+      },
+      "methods": {
+        "power_only": {
+          "detection_count": 192,
+          "false_alarm_count": 194,
+          "records_per_class": 4000,
+          "detection_rate": 0.048,
+          "false_alarm_rate": 0.0485,
+          "detection_ci95": [
+            0.04179809839755376,
+            0.055069238336336396
+          ],
+          "false_alarm_ci95": [
+            0.04226507035940136,
+            0.05560130693119909
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.5772693094270628,
+          "rmse_ci95": [
+            0.5692257493548826,
+            0.5852023218376431
+          ],
+          "bias_hz": 0.008957734004010913,
+          "mse_hz2": 0.333239855606398,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 1813,
+          "false_alarm_count": 189,
+          "records_per_class": 4000,
+          "detection_rate": 0.45325,
+          "false_alarm_rate": 0.04725,
+          "detection_ci95": [
+            0.43787519408683473,
+            0.46871451386075247
+          ],
+          "false_alarm_ci95": [
+            0.04109801024846582,
+            0.05427076565035889
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.27068724867740057,
+          "rmse_ci95": [
+            0.2646374333487831,
+            0.2766047759234287
+          ],
+          "bias_hz": -0.005363446534672617,
+          "mse_hz2": 0.0732715865965409,
+          "alarm_threshold": 0.5309248335148975
+        },
+        "quantum": {
+          "detection_count": 2795,
+          "false_alarm_count": 184,
+          "records_per_class": 4000,
+          "detection_rate": 0.69875,
+          "false_alarm_rate": 0.046,
+          "detection_ci95": [
+            0.68434672200857,
+            0.7127718992837736
+          ],
+          "false_alarm_ci95": [
+            0.03993220770280679,
+            0.05293896680424217
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.19906173626018142,
+          "rmse_ci95": [
+            0.19480654798116226,
+            0.20322784885320017
+          ],
+          "bias_hz": 0.0032114738476974915,
+          "mse_hz2": 0.039625574842918024,
+          "alarm_threshold": 0.39078352416074014
+        },
+        "classical_quantum": {
+          "detection_count": 3439,
+          "false_alarm_count": 198,
+          "records_per_class": 4000,
+          "detection_rate": 0.85975,
+          "false_alarm_rate": 0.0495,
+          "detection_ci95": [
+            0.848643393015975,
+            0.8701662875370849
+          ],
+          "false_alarm_ci95": [
+            0.043199593091043056,
+            0.056664865312978
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.16122439362890664,
+          "rmse_ci95": [
+            0.15763621222223187,
+            0.1647344371958843
+          ],
+          "bias_hz": 0.00023931194367640262,
+          "mse_hz2": 0.025993305101008637,
+          "alarm_threshold": 0.3146674201317191
+        },
+        "two_classical": {
+          "detection_count": 4000,
+          "false_alarm_count": 229,
+          "records_per_class": 4000,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 0.05725,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.05046619153555666,
+            0.06488339549747402
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.08271292278760531,
+          "rmse_ci95": [
+            0.08090222476312293,
+            0.08448482242695342
+          ],
+          "bias_hz": -0.0009894981641822328,
+          "mse_hz2": 0.006841427596068357,
+          "alarm_threshold": 0.1583027150370885
+        }
+      },
+      "paired_comparisons": {
+        "classical_to_classical_quantum": {
+          "mse_reduction_hz2": 0.04727828149553225,
+          "mse_reduction_ci95": [
+            0.04428054104125978,
+            0.050276021949804725
+          ],
+          "relative_mse_reduction": 0.6452471372820556,
+          "detection_increase": 0.4065,
+          "detection_increase_ci95": [
+            0.390537297132238,
+            0.42246270286776194
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_to_two_classical": {
+          "mse_reduction_hz2": 0.06643015900047254,
+          "mse_reduction_ci95": [
+            0.06320004643659095,
+            0.06966027156435413
+          ],
+          "relative_mse_reduction": 0.9066291871944897,
+          "detection_increase": 0.54675,
+          "detection_increase_ci95": [
+            0.5313210741739591,
+            0.5621789258260408
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_quantum_to_two_classical": {
+          "mse_reduction_hz2": 0.019151877504940282,
+          "mse_reduction_ci95": [
+            0.017996736131915925,
+            0.020307018877964638
+          ],
+          "relative_mse_reduction": 0.7368003965066034,
+          "detection_increase": 0.14025,
+          "detection_increase_ci95": [
+            0.1294875804976104,
+            0.15101241950238964
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        }
+      },
+      "null_definition": "No injected source-frequency change; scenario disturbances and stochastic background remain.",
+      "fault_definition": "Random-sign0.5Hz source change; same scenario disturbances as null.",
+      "rmse_target": "Injected mean post-minus-pre frequency for independently drawn Uniform(-1,1)Hz amplitudes.",
+      "reference_disagreement_check": {
+        "nominal_target": 0.01,
+        "threshold_hz": 0.8557903283202571,
+        "no_injected_source_step_flag_rate": 0.01025,
+        "injected_source_step_flag_rate": 0.00825,
+        "meaning": "Atomic and primary-reference paths disagree; this cannot identify which reference changed. Diagnostic flag only, not used to improve saved detection metrics."
+      }
+    },
+    {
+      "id": "short_coherence",
+      "label": "Atomic coherence deteriorates",
+      "description": "T2 falls from200ms to12ms; readout errors rise. Frozen calibration is deliberately not updated.",
+      "parameters": {
+        "config_changes": {
+          "t2_s": 0.012,
+          "readout_01": 0.1,
+          "readout_10": 0.14
+        }
+      },
+      "seeds": {
+        "null": 770324,
+        "alt": 770326,
+        "estimation": 770328,
+        "trace": 770329
+      },
+      "methods": {
+        "power_only": {
+          "detection_count": 209,
+          "false_alarm_count": 203,
+          "records_per_class": 4000,
+          "detection_rate": 0.05225,
+          "false_alarm_rate": 0.05075,
+          "detection_ci95": [
+            0.045773352977234574,
+            0.05958582848869311
+          ],
+          "false_alarm_ci95": [
+            0.04436880356817323,
+            0.05799325622762358
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.5751054344016517,
+          "rmse_ci95": [
+            0.5670965348022857,
+            0.5830043238020325
+          ],
+          "bias_hz": 0.012366231307005208,
+          "mse_hz2": 0.3307462606783126,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 1827,
+          "false_alarm_count": 165,
+          "records_per_class": 4000,
+          "detection_rate": 0.45675,
+          "false_alarm_rate": 0.04125,
+          "detection_ci95": [
+            0.44136204856670835,
+            0.4722209432778509
+          ],
+          "false_alarm_ci95": [
+            0.03551453044904325,
+            0.047865758769257874
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.2672828300222799,
+          "rmse_ci95": [
+            0.26162343598451937,
+            0.2728248525942827
+          ],
+          "bias_hz": -0.01712073540934813,
+          "mse_hz2": 0.07144011122471898,
+          "alarm_threshold": 0.5309248335148975
+        },
+        "quantum": {
+          "detection_count": 184,
+          "false_alarm_count": 135,
+          "records_per_class": 4000,
+          "detection_rate": 0.046,
+          "false_alarm_rate": 0.03375,
+          "detection_ci95": [
+            0.03993220770280679,
+            0.05293896680424217
+          ],
+          "false_alarm_ci95": [
+            0.028585882635801245,
+            0.0398087982318454
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.5295359834314669,
+          "rmse_ci95": [
+            0.5210016667255761,
+            0.5379349205681233
+          ],
+          "bias_hz": 0.0101964892615107,
+          "mse_hz2": 0.28040835774873074,
+          "alarm_threshold": 0.39078352416074014
+        },
+        "classical_quantum": {
+          "detection_count": 1056,
+          "false_alarm_count": 144,
+          "records_per_class": 4000,
+          "detection_rate": 0.264,
+          "false_alarm_rate": 0.036,
+          "detection_ci95": [
+            0.2505708459162257,
+            0.27788201131651347
+          ],
+          "false_alarm_ci95": [
+            0.03065772052804423,
+            0.04223264284479875
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.3583469674123911,
+          "rmse_ci95": [
+            0.3522299241899355,
+            0.36436132974352103
+          ],
+          "bias_hz": 0.0006138297972424906,
+          "mse_hz2": 0.1284125490536573,
+          "alarm_threshold": 0.3146674201317191
+        },
+        "two_classical": {
+          "detection_count": 4000,
+          "false_alarm_count": 230,
+          "records_per_class": 4000,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 0.0575,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.050701252776744136,
+            0.06514785453464168
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.08205556615957703,
+          "rmse_ci95": [
+            0.08016963270249577,
+            0.08389911720563194
+          ],
+          "bias_hz": -0.0011731045234882945,
+          "mse_hz2": 0.0067331159377687225,
+          "alarm_threshold": 0.1583027150370885
+        }
+      },
+      "paired_comparisons": {
+        "classical_to_classical_quantum": {
+          "mse_reduction_hz2": -0.05697243782893831,
+          "mse_reduction_ci95": [
+            -0.061971130604256186,
+            -0.05197374505362043
+          ],
+          "relative_mse_reduction": -0.797485290157629,
+          "detection_increase": -0.19275,
+          "detection_increase_ci95": [
+            -0.20909447151214916,
+            -0.17640552848785085
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_to_two_classical": {
+          "mse_reduction_hz2": 0.06470699528695026,
+          "mse_reduction_ci95": [
+            0.06173107661919101,
+            0.0676829139547095
+          ],
+          "relative_mse_reduction": 0.9057516033732181,
+          "detection_increase": 0.54325,
+          "detection_increase_ci95": [
+            0.5278112713387653,
+            0.5586887286612348
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_quantum_to_two_classical": {
+          "mse_reduction_hz2": 0.12167943311588857,
+          "mse_reduction_ci95": [
+            0.11732532716839758,
+            0.12603353906337955
+          ],
+          "relative_mse_reduction": 0.9475665268901774,
+          "detection_increase": 0.736,
+          "detection_increase_ci95": [
+            0.7223380321323924,
+            0.7496619678676075
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        }
+      },
+      "null_definition": "No injected source-frequency change; scenario disturbances and stochastic background remain.",
+      "fault_definition": "Random-sign0.5Hz source change; same scenario disturbances as null.",
+      "rmse_target": "Injected mean post-minus-pre frequency for independently drawn Uniform(-1,1)Hz amplitudes.",
+      "reference_disagreement_check": {
+        "nominal_target": 0.01,
+        "threshold_hz": 0.8557903283202571,
+        "no_injected_source_step_flag_rate": 0.0095,
+        "injected_source_step_flag_rate": 0.09725,
+        "meaning": "Atomic and primary-reference paths disagree; this cannot identify which reference changed. Diagnostic flag only, not used to improve saved detection metrics."
+      }
+    },
+    {
+      "id": "atomic_reference_drift",
+      "label": "Atomic reference also drifts",
+      "description": "Unknown +/-0.7Hz atomic-transition step occurs in null and fault records. A false alarm means misattributing sensor drift.",
+      "parameters": {
+        "atom_step_hz": 0.7
+      },
+      "seeds": {
+        "null": 770334,
+        "alt": 770336,
+        "estimation": 770338,
+        "trace": 770339
+      },
+      "methods": {
+        "power_only": {
+          "detection_count": 207,
+          "false_alarm_count": 220,
+          "records_per_class": 4000,
+          "detection_rate": 0.05175,
+          "false_alarm_rate": 0.055,
+          "detection_ci95": [
+            0.045304992146476264,
+            0.05905514876274112
+          ],
+          "false_alarm_ci95": [
+            0.04835239551328616,
+            0.06250150901454818
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.580302742366042,
+          "rmse_ci95": [
+            0.5722275629216425,
+            0.5882670837535068
+          ],
+          "bias_hz": 0.009834812865792223,
+          "mse_hz2": 0.33675127279754885,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 1759,
+          "false_alarm_count": 190,
+          "records_per_class": 4000,
+          "detection_rate": 0.43975,
+          "false_alarm_rate": 0.0475,
+          "detection_ci95": [
+            0.4244331089032879,
+            0.4551825040131212
+          ],
+          "false_alarm_ci95": [
+            0.04133132317032518,
+            0.05453697300685468
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.26646135575713736,
+          "rmse_ci95": [
+            0.2605707502686757,
+            0.2722245255818859
+          ],
+          "bias_hz": -0.006757332202170938,
+          "mse_hz2": 0.07100165411193171,
+          "alarm_threshold": 0.5309248335148975
+        },
+        "quantum": {
+          "detection_count": 2393,
+          "false_alarm_count": 3771,
+          "records_per_class": 4000,
+          "detection_rate": 0.59825,
+          "false_alarm_rate": 0.94275,
+          "detection_ci95": [
+            0.5829699471856937,
+            0.6133415222078797
+          ],
+          "false_alarm_ci95": [
+            0.9351166045025261,
+            0.9495338084644434
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.7185971049770773,
+          "rmse_ci95": [
+            0.7125079640057691,
+            0.7246350804309898
+          ],
+          "bias_hz": -0.008370144306494746,
+          "mse_hz2": 0.5163817992814367,
+          "alarm_threshold": 0.39078352416074014
+        },
+        "classical_quantum": {
+          "detection_count": 2190,
+          "false_alarm_count": 3204,
+          "records_per_class": 4000,
+          "detection_rate": 0.5475,
+          "false_alarm_rate": 0.801,
+          "detection_ci95": [
+            0.532036963764945,
+            0.5628718891225334
+          ],
+          "false_alarm_ci95": [
+            0.7883411751525883,
+            0.8130812399870117
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.4772551231877006,
+          "rmse_ci95": [
+            0.4722755422864348,
+            0.4821832819331965
+          ],
+          "bias_hz": -0.007763666601151746,
+          "mse_hz2": 0.22777245260890727,
+          "alarm_threshold": 0.3146674201317191
+        },
+        "two_classical": {
+          "detection_count": 3999,
+          "false_alarm_count": 226,
+          "records_per_class": 4000,
+          "detection_rate": 0.99975,
+          "false_alarm_rate": 0.0565,
+          "detection_ci95": [
+            0.9985851689339011,
+            0.9999558674980424
+          ],
+          "false_alarm_ci95": [
+            0.04976123892611694,
+            0.0640897872718483
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.08386017370955871,
+          "rmse_ci95": [
+            0.08201812423269433,
+            0.08566262175853039
+          ],
+          "bias_hz": 4.928830491557104e-05,
+          "mse_hz2": 0.007032528734597362,
+          "alarm_threshold": 0.1583027150370885
+        }
+      },
+      "paired_comparisons": {
+        "classical_to_classical_quantum": {
+          "mse_reduction_hz2": -0.15677079849697553,
+          "mse_reduction_ci95": [
+            -0.16209351159873542,
+            -0.15144808539521565
+          ],
+          "relative_mse_reduction": -2.207987975179165,
+          "detection_increase": 0.10775,
+          "detection_increase_ci95": [
+            0.08637473312787866,
+            0.12912526687212134
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_to_two_classical": {
+          "mse_reduction_hz2": 0.06396912537733435,
+          "mse_reduction_ci95": [
+            0.060883426749381325,
+            0.06705482400528737
+          ],
+          "relative_mse_reduction": 0.9009526070546072,
+          "detection_increase": 0.56,
+          "detection_increase_ci95": [
+            0.5446151686192565,
+            0.5753848313807436
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_quantum_to_two_classical": {
+          "mse_reduction_hz2": 0.22073992387430988,
+          "mse_reduction_ci95": [
+            0.2160147718146134,
+            0.22546507593400636
+          ],
+          "relative_mse_reduction": 0.9691247617784909,
+          "detection_increase": 0.45225,
+          "detection_increase_ci95": [
+            0.4368240162392624,
+            0.46767598376073755
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        }
+      },
+      "null_definition": "No injected source-frequency change; scenario disturbances and stochastic background remain.",
+      "fault_definition": "Random-sign0.5Hz source change; same scenario disturbances as null.",
+      "rmse_target": "Injected mean post-minus-pre frequency for independently drawn Uniform(-1,1)Hz amplitudes.",
+      "reference_disagreement_check": {
+        "nominal_target": 0.01,
+        "threshold_hz": 0.8557903283202571,
+        "no_injected_source_step_flag_rate": 0.34625,
+        "injected_source_step_flag_rate": 0.35525,
+        "meaning": "Atomic and primary-reference paths disagree; this cannot identify which reference changed. Diagnostic flag only, not used to improve saved detection metrics."
+      }
+    },
+    {
+      "id": "primary_reference_drift",
+      "label": "Primary optical reference drifts",
+      "description": "Unknown +/-0.7Hz primary-LO step occurs in null and fault records.",
+      "parameters": {
+        "primary_step_hz": 0.7
+      },
+      "seeds": {
+        "null": 770344,
+        "alt": 770346,
+        "estimation": 770348,
+        "trace": 770349
+      },
+      "methods": {
+        "power_only": {
+          "detection_count": 205,
+          "false_alarm_count": 193,
+          "records_per_class": 4000,
+          "detection_rate": 0.05125,
+          "false_alarm_rate": 0.04825,
+          "detection_ci95": [
+            0.0448368081964689,
+            0.05852429215603819
+          ],
+          "false_alarm_ci95": [
+            0.04203155996755503,
+            0.05533529704469027
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.5772117288290061,
+          "rmse_ci95": [
+            0.5692653962258446,
+            0.5850501418300592
+          ],
+          "bias_hz": 0.009161526302034378,
+          "mse_hz2": 0.33317337989777007,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 2172,
+          "false_alarm_count": 2965,
+          "records_per_class": 4000,
+          "detection_rate": 0.543,
+          "false_alarm_rate": 0.74125,
+          "detection_ci95": [
+            0.5275286268344727,
+            0.5583888610426132
+          ],
+          "false_alarm_ci95": [
+            0.7274511727278529,
+            0.754585895884866
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.7486638653914827,
+          "rmse_ci95": [
+            0.7404843314859422,
+            0.756754994373773
+          ],
+          "bias_hz": -0.0034176345371073184,
+          "mse_hz2": 0.560497583342916,
+          "alarm_threshold": 0.5309248335148975
+        },
+        "quantum": {
+          "detection_count": 2769,
+          "false_alarm_count": 197,
+          "records_per_class": 4000,
+          "detection_rate": 0.69225,
+          "false_alarm_rate": 0.04925,
+          "detection_ci95": [
+            0.6777675135483718,
+            0.7063635805067381
+          ],
+          "false_alarm_ci95": [
+            0.04296589092782036,
+            0.056399047197845546
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.20263181868361968,
+          "rmse_ci95": [
+            0.1980562040682708,
+            0.20710636860350315
+          ],
+          "bias_hz": 0.0060842614010475134,
+          "mse_hz2": 0.04105965394303132,
+          "alarm_threshold": 0.39078352416074014
+        },
+        "classical_quantum": {
+          "detection_count": 2648,
+          "false_alarm_count": 1392,
+          "records_per_class": 4000,
+          "detection_rate": 0.662,
+          "false_alarm_rate": 0.348,
+          "detection_ci95": [
+            0.6471917427753641,
+            0.6764973975987728
+          ],
+          "false_alarm_ci95": [
+            0.3333906629778504,
+            0.36290100778221884
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.2970864954208194,
+          "rmse_ci95": [
+            0.2921917675866489,
+            0.3019018755778752
+          ],
+          "bias_hz": 0.0027574221233028578,
+          "mse_hz2": 0.08826038576142453,
+          "alarm_threshold": 0.3146674201317191
+        },
+        "two_classical": {
+          "detection_count": 3999,
+          "false_alarm_count": 343,
+          "records_per_class": 4000,
+          "detection_rate": 0.99975,
+          "false_alarm_rate": 0.08575,
+          "detection_ci95": [
+            0.9985851689339011,
+            0.9999558674980424
+          ],
+          "false_alarm_ci95": [
+            0.07746554972718939,
+            0.09482934903832832
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.09186467015551576,
+          "rmse_ci95": [
+            0.08983915986462,
+            0.09384647356391539
+          ],
+          "bias_hz": -0.0001099323099368461,
+          "mse_hz2": 0.00843911762278171,
+          "alarm_threshold": 0.1583027150370885
+        }
+      },
+      "paired_comparisons": {
+        "classical_to_classical_quantum": {
+          "mse_reduction_hz2": 0.4722371975814914,
+          "mse_reduction_ci95": [
+            0.461497764162175,
+            0.48297663100080784
+          ],
+          "relative_mse_reduction": 0.8425320850894261,
+          "detection_increase": 0.119,
+          "detection_increase_ci95": [
+            0.1047854769729084,
+            0.1332145230270916
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_to_two_classical": {
+          "mse_reduction_hz2": 0.5520584657201341,
+          "mse_reduction_ci95": [
+            0.5399371588830416,
+            0.5641797725572265
+          ],
+          "relative_mse_reduction": 0.9849435254074613,
+          "detection_increase": 0.45675,
+          "detection_increase_ci95": [
+            0.44129572405114287,
+            0.4722042759488571
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_quantum_to_two_classical": {
+          "mse_reduction_hz2": 0.0798212681386428,
+          "mse_reduction_ci95": [
+            0.07699249604542756,
+            0.08265004023185805
+          ],
+          "relative_mse_reduction": 0.9043838574919286,
+          "detection_increase": 0.33775,
+          "detection_increase_ci95": [
+            0.323091786220187,
+            0.35240821377981296
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        }
+      },
+      "null_definition": "No injected source-frequency change; scenario disturbances and stochastic background remain.",
+      "fault_definition": "Random-sign0.5Hz source change; same scenario disturbances as null.",
+      "rmse_target": "Injected mean post-minus-pre frequency for independently drawn Uniform(-1,1)Hz amplitudes.",
+      "reference_disagreement_check": {
+        "nominal_target": 0.01,
+        "threshold_hz": 0.8557903283202571,
+        "no_injected_source_step_flag_rate": 0.30975,
+        "injected_source_step_flag_rate": 0.32025,
+        "meaning": "Atomic and primary-reference paths disagree; this cannot identify which reference changed. Diagnostic flag only, not used to improve saved detection metrics."
+      }
+    },
+    {
+      "id": "shared_path_drift",
+      "label": "Shared optical-path confounder",
+      "description": "Unknown +/-0.7Hz sampled-path shift affects every frequency channel; these observations cannot isolate source from common path.",
+      "parameters": {
+        "common_path_step_hz": 0.7
+      },
+      "seeds": {
+        "null": 770354,
+        "alt": 770356,
+        "estimation": 770358,
+        "trace": 770359
+      },
+      "methods": {
+        "power_only": {
+          "detection_count": 207,
+          "false_alarm_count": 202,
+          "records_per_class": 4000,
+          "detection_rate": 0.05175,
+          "false_alarm_rate": 0.0505,
+          "detection_ci95": [
+            0.045304992146476264,
+            0.05905514876274112
+          ],
+          "false_alarm_ci95": [
+            0.044134869278676186,
+            0.05772767023876546
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.5768510452474855,
+          "rmse_ci95": [
+            0.5688220391137128,
+            0.5847698219169242
+          ],
+          "bias_hz": 0.01054973874868035,
+          "mse_hz2": 0.33275712840311666,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 2244,
+          "false_alarm_count": 2961,
+          "records_per_class": 4000,
+          "detection_rate": 0.561,
+          "false_alarm_rate": 0.74025,
+          "detection_ci95": [
+            0.5455696113772652,
+            0.5763133365413913
+          ],
+          "false_alarm_ci95": [
+            0.7264351340330468,
+            0.7536038534662515
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.7405460023746493,
+          "rmse_ci95": [
+            0.7326606870147033,
+            0.748348235094659
+          ],
+          "bias_hz": 6.20037671567335e-05,
+          "mse_hz2": 0.548408381633074,
+          "alarm_threshold": 0.5309248335148975
+        },
+        "quantum": {
+          "detection_count": 2392,
+          "false_alarm_count": 3737,
+          "records_per_class": 4000,
+          "detection_rate": 0.598,
+          "false_alarm_rate": 0.93425,
+          "detection_ci95": [
+            0.5827186387196521,
+            0.6130933103955662
+          ],
+          "false_alarm_ci95": [
+            0.9261451076959776,
+            0.9415216158069167
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.7214182567407055,
+          "rmse_ci95": [
+            0.7154978780479889,
+            0.7272904432387532
+          ],
+          "bias_hz": -0.0007893943215921597,
+          "mse_hz2": 0.5204443011587985,
+          "alarm_threshold": 0.39078352416074014
+        },
+        "classical_quantum": {
+          "detection_count": 2504,
+          "false_alarm_count": 3961,
+          "records_per_class": 4000,
+          "detection_rate": 0.626,
+          "false_alarm_rate": 0.99025,
+          "detection_ci95": [
+            0.6108910043574071,
+            0.6408672159335881
+          ],
+          "false_alarm_ci95": [
+            0.9866999234961226,
+            0.9928593423583251
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.7116564142679147,
+          "rmse_ci95": [
+            0.7068410469818832,
+            0.7164394170052949
+          ],
+          "bias_hz": -0.00047631619324542385,
+          "mse_hz2": 0.5064548519686658,
+          "alarm_threshold": 0.3146674201317191
+        },
+        "two_classical": {
+          "detection_count": 3390,
+          "false_alarm_count": 4000,
+          "records_per_class": 4000,
+          "detection_rate": 0.8475,
+          "false_alarm_rate": 1.0,
+          "detection_ci95": [
+            0.8360259826748121,
+            0.8583072042388454
+          ],
+          "false_alarm_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.7035419299716917,
+          "rmse_ci95": [
+            0.7010647962640657,
+            0.7060103723712631
+          ],
+          "bias_hz": 0.007199074622921687,
+          "mse_hz2": 0.4949712472282928,
+          "alarm_threshold": 0.1583027150370885
+        }
+      },
+      "paired_comparisons": {
+        "classical_to_classical_quantum": {
+          "mse_reduction_hz2": 0.04195352966440829,
+          "mse_reduction_ci95": [
+            0.03257325494845458,
+            0.051333804380361996
+          ],
+          "relative_mse_reduction": 0.07650052601216135,
+          "detection_increase": 0.065,
+          "detection_increase_ci95": [
+            0.055259171252419644,
+            0.07474082874758037
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_to_two_classical": {
+          "mse_reduction_hz2": 0.0534371344047813,
+          "mse_reduction_ci95": [
+            0.04221282786578856,
+            0.06466144094377405
+          ],
+          "relative_mse_reduction": 0.09744040425796176,
+          "detection_increase": 0.2865,
+          "detection_increase_ci95": [
+            0.272048268390436,
+            0.30095173160956395
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_quantum_to_two_classical": {
+          "mse_reduction_hz2": 0.011483604740373018,
+          "mse_reduction_ci95": [
+            0.00475936273499233,
+            0.018207846745753705
+          ],
+          "relative_mse_reduction": 0.022674488546678008,
+          "detection_increase": 0.2215,
+          "detection_increase_ci95": [
+            0.2070476037069281,
+            0.2359523962930719
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        }
+      },
+      "null_definition": "No injected source-frequency change; scenario disturbances and stochastic background remain.",
+      "fault_definition": "Random-sign0.5Hz source change; same scenario disturbances as null.",
+      "rmse_target": "Injected mean post-minus-pre frequency for independently drawn Uniform(-1,1)Hz amplitudes.",
+      "reference_disagreement_check": {
+        "nominal_target": 0.01,
+        "threshold_hz": 0.8557903283202571,
+        "no_injected_source_step_flag_rate": 0.01,
+        "injected_source_step_flag_rate": 0.012,
+        "meaning": "Atomic and primary-reference paths disagree; this cannot identify which reference changed. Diagnostic flag only, not used to improve saved detection metrics."
+      }
+    },
+    {
+      "id": "power_only_disturbance",
+      "label": "Power changes by10%",
+      "description": "A10% intensity increase occurs in both null and frequency-fault records. Calibrated cross-sensitivity correction uses observed photodiode data.",
+      "parameters": {
+        "power_step": 0.1
+      },
+      "seeds": {
+        "null": 770364,
+        "alt": 770366,
+        "estimation": 770368,
+        "trace": 770369
+      },
+      "methods": {
+        "power_only": {
+          "detection_count": 4000,
+          "false_alarm_count": 4000,
+          "records_per_class": 4000,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 1.0,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.576978674255002,
+          "rmse_ci95": [
+            0.5689163309030528,
+            0.5849299013744533
+          ],
+          "bias_hz": 0.008864409201132795,
+          "mse_hz2": 0.33290439054505977,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 1790,
+          "false_alarm_count": 229,
+          "records_per_class": 4000,
+          "detection_rate": 0.4475,
+          "false_alarm_rate": 0.05725,
+          "detection_ci95": [
+            0.4321484587461824,
+            0.46295228279923634
+          ],
+          "false_alarm_ci95": [
+            0.05046619153555666,
+            0.06488339549747402
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.274704600547352,
+          "rmse_ci95": [
+            0.26866053739417917,
+            0.28061851466150867
+          ],
+          "bias_hz": -0.06987120654560568,
+          "mse_hz2": 0.07546261756188025,
+          "alarm_threshold": 0.5309248335148975
+        },
+        "quantum": {
+          "detection_count": 2766,
+          "false_alarm_count": 192,
+          "records_per_class": 4000,
+          "detection_rate": 0.6915,
+          "false_alarm_rate": 0.048,
+          "detection_ci95": [
+            0.6770085890834909,
+            0.7056239441365535
+          ],
+          "false_alarm_ci95": [
+            0.04179809839755376,
+            0.055069238336336396
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.2023737571421711,
+          "rmse_ci95": [
+            0.19778980483307293,
+            0.20685615355548842
+          ],
+          "bias_hz": -0.028871031334512957,
+          "mse_hz2": 0.040955137579838444,
+          "alarm_threshold": 0.39078352416074014
+        },
+        "classical_quantum": {
+          "detection_count": 3429,
+          "false_alarm_count": 237,
+          "records_per_class": 4000,
+          "detection_rate": 0.85725,
+          "false_alarm_rate": 0.05925,
+          "detection_ci95": [
+            0.8460662564944947,
+            0.8677482212750136
+          ],
+          "false_alarm_ci95": [
+            0.05234773625351233,
+            0.06699801300635953
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.17144249921632546,
+          "rmse_ci95": [
+            0.16771512359700153,
+            0.17509054341089358
+          ],
+          "bias_hz": -0.04297027247695286,
+          "mse_hz2": 0.029392530537539752,
+          "alarm_threshold": 0.3146674201317191
+        },
+        "two_classical": {
+          "detection_count": 4000,
+          "false_alarm_count": 275,
+          "records_per_class": 4000,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 0.06875,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.061315317094574856,
+            0.07701220274279269
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.08826497158646697,
+          "rmse_ci95": [
+            0.08635603614638111,
+            0.09013348678157616
+          ],
+          "bias_hz": -0.034011917593797236,
+          "mse_hz2": 0.0077907052091598225,
+          "alarm_threshold": 0.1583027150370885
+        }
+      },
+      "paired_comparisons": {
+        "classical_to_classical_quantum": {
+          "mse_reduction_hz2": 0.0460700870243405,
+          "mse_reduction_ci95": [
+            0.04302661932479348,
+            0.049113554723887516
+          ],
+          "relative_mse_reduction": 0.6105021070407806,
+          "detection_increase": 0.40975,
+          "detection_increase_ci95": [
+            0.3937393114166343,
+            0.4257606885833657
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_to_two_classical": {
+          "mse_reduction_hz2": 0.06767191235272042,
+          "mse_reduction_ci95": [
+            0.06441182767355229,
+            0.07093199703188856
+          ],
+          "relative_mse_reduction": 0.8967607345084293,
+          "detection_increase": 0.5525,
+          "detection_increase_ci95": [
+            0.5370888499143806,
+            0.5679111500856194
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_quantum_to_two_classical": {
+          "mse_reduction_hz2": 0.021601825328379932,
+          "mse_reduction_ci95": [
+            0.020344700426037365,
+            0.0228589502307225
+          ],
+          "relative_mse_reduction": 0.734942685550343,
+          "detection_increase": 0.14275,
+          "detection_increase_ci95": [
+            0.13190788038479137,
+            0.1535921196152086
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        }
+      },
+      "null_definition": "No injected source-frequency change; scenario disturbances and stochastic background remain.",
+      "fault_definition": "Random-sign0.5Hz source change; same scenario disturbances as null.",
+      "rmse_target": "Injected mean post-minus-pre frequency for independently drawn Uniform(-1,1)Hz amplitudes.",
+      "reference_disagreement_check": {
+        "nominal_target": 0.01,
+        "threshold_hz": 0.8557903283202571,
+        "no_injected_source_step_flag_rate": 0.0105,
+        "injected_source_step_flag_rate": 0.0115,
+        "meaning": "Atomic and primary-reference paths disagree; this cannot identify which reference changed. Diagnostic flag only, not used to improve saved detection metrics."
+      }
+    },
+    {
+      "id": "correlated_references",
+      "label": "Atomic and primary-reference noise correlate",
+      "description": "Reference random-walk increments have correlation0.95; frozen nominal fusion assumes the calibration covariance.",
+      "parameters": {
+        "primary_atom_reference_correlation": 0.95
+      },
+      "seeds": {
+        "null": 770374,
+        "alt": 770376,
+        "estimation": 770378,
+        "trace": 770379
+      },
+      "methods": {
+        "power_only": {
+          "detection_count": 187,
+          "false_alarm_count": 186,
+          "records_per_class": 4000,
+          "detection_rate": 0.04675,
+          "false_alarm_rate": 0.0465,
+          "detection_ci95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ],
+          "false_alarm_ci95": [
+            0.04039837476372546,
+            0.053471840300033796
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.5747529774032244,
+          "rmse_ci95": [
+            0.5667128443728775,
+            0.5826821793143717
+          ],
+          "bias_hz": 0.009142535450085348,
+          "mse_hz2": 0.33034098503387144,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 1810,
+          "false_alarm_count": 147,
+          "records_per_class": 4000,
+          "detection_rate": 0.4525,
+          "false_alarm_rate": 0.03675,
+          "detection_ci95": [
+            0.43712811087746667,
+            0.46796303623505514
+          ],
+          "false_alarm_ci95": [
+            0.03134969527109993,
+            0.043039228936808505
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.2610751237702569,
+          "rmse_ci95": [
+            0.25558140229802395,
+            0.26645560099702453
+          ],
+          "bias_hz": -0.007798130797077243,
+          "mse_hz2": 0.06816022025165494,
+          "alarm_threshold": 0.5309248335148975
+        },
+        "quantum": {
+          "detection_count": 2814,
+          "false_alarm_count": 218,
+          "records_per_class": 4000,
+          "detection_rate": 0.7035,
+          "false_alarm_rate": 0.0545,
+          "detection_ci95": [
+            0.6891567414751356,
+            0.7174527651059559
+          ],
+          "false_alarm_ci95": [
+            0.04788310299269288,
+            0.061971760978431156
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.2004565500408778,
+          "rmse_ci95": [
+            0.19612662169908449,
+            0.20469490753188294
+          ],
+          "bias_hz": 0.002608246931323072,
+          "mse_hz2": 0.040182828454290956,
+          "alarm_threshold": 0.39078352416074014
+        },
+        "classical_quantum": {
+          "detection_count": 3317,
+          "false_alarm_count": 345,
+          "records_per_class": 4000,
+          "detection_rate": 0.82925,
+          "false_alarm_rate": 0.08625,
+          "detection_ci95": [
+            0.817274273810742,
+            0.8405939327829898
+          ],
+          "false_alarm_ci95": [
+            0.07794224622775305,
+            0.09535169309447493
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.18415823438654202,
+          "rmse_ci95": [
+            0.18017726568607598,
+            0.188054948125877
+          ],
+          "bias_hz": -0.0010255224638651326,
+          "mse_hz2": 0.03391425529236855,
+          "alarm_threshold": 0.3146674201317191
+        },
+        "two_classical": {
+          "detection_count": 4000,
+          "false_alarm_count": 215,
+          "records_per_class": 4000,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 0.05375,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.04717947319582875,
+            0.061176829940229834
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.08177056848391126,
+          "rmse_ci95": [
+            0.0799638437747278,
+            0.08353822735212285
+          ],
+          "bias_hz": -0.0003718296695686561,
+          "mse_hz2": 0.00668642587018202,
+          "alarm_threshold": 0.1583027150370885
+        }
+      },
+      "paired_comparisons": {
+        "classical_to_classical_quantum": {
+          "mse_reduction_hz2": 0.0342459649592864,
+          "mse_reduction_ci95": [
+            0.031894569641566534,
+            0.03659736027700626
+          ],
+          "relative_mse_reduction": 0.5024333083556153,
+          "detection_increase": 0.37675,
+          "detection_increase_ci95": [
+            0.361228119840356,
+            0.3922718801596439
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_to_two_classical": {
+          "mse_reduction_hz2": 0.061473794381472914,
+          "mse_reduction_ci95": [
+            0.058647137752049903,
+            0.06430045101089593
+          ],
+          "relative_mse_reduction": 0.9019013458950834,
+          "detection_increase": 0.5475,
+          "detection_increase_ci95": [
+            0.5320732748326262,
+            0.5629267251673737
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_quantum_to_two_classical": {
+          "mse_reduction_hz2": 0.027227829422186527,
+          "mse_reduction_ci95": [
+            0.025774790093448113,
+            0.028680868750924942
+          ],
+          "relative_mse_reduction": 0.8028432052380459,
+          "detection_increase": 0.17075,
+          "detection_increase_ci95": [
+            0.15908739719016488,
+            0.18241260280983515
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        }
+      },
+      "null_definition": "No injected source-frequency change; scenario disturbances and stochastic background remain.",
+      "fault_definition": "Random-sign0.5Hz source change; same scenario disturbances as null.",
+      "rmse_target": "Injected mean post-minus-pre frequency for independently drawn Uniform(-1,1)Hz amplitudes.",
+      "reference_disagreement_check": {
+        "nominal_target": 0.01,
+        "threshold_hz": 0.8557903283202571,
+        "no_injected_source_step_flag_rate": 0.002,
+        "injected_source_step_flag_rate": 0.0025,
+        "meaning": "Atomic and primary-reference paths disagree; this cannot identify which reference changed. Diagnostic flag only, not used to improve saved detection metrics."
+      }
+    },
+    {
+      "id": "gradual_source_change",
+      "label": "Unseen gradual source change",
+      "description": "Source ramps over the middle half of the record; the estimator and decision boundary remain fixed. Target RMSE is for mean post-minus-pre frequency.",
+      "parameters": {
+        "ramp": true
+      },
+      "seeds": {
+        "null": 770384,
+        "alt": 770386,
+        "estimation": 770388,
+        "trace": 770389
+      },
+      "methods": {
+        "power_only": {
+          "detection_count": 181,
+          "false_alarm_count": 220,
+          "records_per_class": 4000,
+          "detection_rate": 0.04525,
+          "false_alarm_rate": 0.055,
+          "detection_ci95": [
+            0.03923334996233639,
+            0.052139263709647124
+          ],
+          "false_alarm_ci95": [
+            0.04835239551328616,
+            0.06250150901454818
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.42901131093413675,
+          "rmse_ci95": [
+            0.42293689549572544,
+            0.4350009106281169
+          ],
+          "bias_hz": 0.0017738801524788332,
+          "mse_hz2": 0.18405070490942657,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 1121,
+          "false_alarm_count": 166,
+          "records_per_class": 4000,
+          "detection_rate": 0.28025,
+          "false_alarm_rate": 0.0415,
+          "detection_ci95": [
+            0.2665477611332373,
+            0.2943739141925866
+          ],
+          "false_alarm_ci95": [
+            0.03574652025319747,
+            0.048133289243458804
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.26253712096293913,
+          "rmse_ci95": [
+            0.25682802761451706,
+            0.26812467995068023
+          ],
+          "bias_hz": -0.010250321148223905,
+          "mse_hz2": 0.06892573988350892,
+          "alarm_threshold": 0.5309248335148975
+        },
+        "quantum": {
+          "detection_count": 1826,
+          "false_alarm_count": 234,
+          "records_per_class": 4000,
+          "detection_rate": 0.4565,
+          "false_alarm_rate": 0.0585,
+          "detection_ci95": [
+            0.4411129620879562,
+            0.471970509478248
+          ],
+          "false_alarm_ci95": [
+            0.051641876715401734,
+            0.0662053117094047
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.20480244006866533,
+          "rmse_ci95": [
+            0.20030058608268886,
+            0.20920744281953704
+          ],
+          "bias_hz": 0.00046288619372082153,
+          "mse_hz2": 0.04194403945807926,
+          "alarm_threshold": 0.39078352416074014
+        },
+        "classical_quantum": {
+          "detection_count": 2550,
+          "false_alarm_count": 218,
+          "records_per_class": 4000,
+          "detection_rate": 0.6375,
+          "false_alarm_rate": 0.0545,
+          "detection_ci95": [
+            0.6224771816273891,
+            0.652258971467943
+          ],
+          "false_alarm_ci95": [
+            0.04788310299269288,
+            0.061971760978431156
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.1650669911822248,
+          "rmse_ci95": [
+            0.1614913714343554,
+            0.16856678233909672
+          ],
+          "bias_hz": -0.0032482401213307977,
+          "mse_hz2": 0.027247111577952676,
+          "alarm_threshold": 0.3146674201317191
+        },
+        "two_classical": {
+          "detection_count": 3984,
+          "false_alarm_count": 188,
+          "records_per_class": 4000,
+          "detection_rate": 0.996,
+          "false_alarm_rate": 0.047,
+          "detection_ci95": [
+            0.9935119313640512,
+            0.9975363008925648
+          ],
+          "false_alarm_ci95": [
+            0.04086474761936001,
+            0.05400450800110956
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.08214263499158175,
+          "rmse_ci95": [
+            0.08035501592380145,
+            0.08389217116397737
+          ],
+          "bias_hz": -6.468226691954326e-05,
+          "mse_hz2": 0.0067474124833602316,
+          "alarm_threshold": 0.1583027150370885
+        }
+      },
+      "paired_comparisons": {
+        "classical_to_classical_quantum": {
+          "mse_reduction_hz2": 0.041678628305556256,
+          "mse_reduction_ci95": [
+            0.03889376695874051,
+            0.044463489652372006
+          ],
+          "relative_mse_reduction": 0.6046888778560392,
+          "detection_increase": 0.35725,
+          "detection_increase_ci95": [
+            0.34078767381083663,
+            0.3737123261891634
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_to_two_classical": {
+          "mse_reduction_hz2": 0.062178327400148704,
+          "mse_reduction_ci95": [
+            0.0592299908074705,
+            0.0651266639928269
+          ],
+          "relative_mse_reduction": 0.9021060565361506,
+          "detection_increase": 0.71575,
+          "detection_increase_ci95": [
+            0.7017701244925438,
+            0.7297298755074562
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        },
+        "classical_quantum_to_two_classical": {
+          "mse_reduction_hz2": 0.020499699094592445,
+          "mse_reduction_ci95": [
+            0.019336557185355655,
+            0.021662841003829234
+          ],
+          "relative_mse_reduction": 0.7523622838312161,
+          "detection_increase": 0.3585,
+          "detection_increase_ci95": [
+            0.3435561298301923,
+            0.3734438701698077
+          ],
+          "interpretation": "Positive favors added channel. Paired intervals conditional on synthetic model; no multiplicity correction."
+        }
+      },
+      "null_definition": "No injected source-frequency change; scenario disturbances and stochastic background remain.",
+      "fault_definition": "Random-sign0.5Hz source change; same scenario disturbances as null.",
+      "rmse_target": "Injected mean post-minus-pre frequency for independently drawn Uniform(-1,1)Hz amplitudes.",
+      "reference_disagreement_check": {
+        "nominal_target": 0.01,
+        "threshold_hz": 0.8557903283202571,
+        "no_injected_source_step_flag_rate": 0.00625,
+        "injected_source_step_flag_rate": 0.00925,
+        "meaning": "Atomic and primary-reference paths disagree; this cannot identify which reference changed. Diagnostic flag only, not used to improve saved detection metrics."
+      }
+    }
+  ],
+  "amplitude_sweep": [
+    {
+      "amplitude_hz": 0.0,
+      "seed": 771215,
+      "methods": {
+        "power_only": {
+          "detection_rate": 0.045,
+          "ci95": [
+            0.03675381704471326,
+            0.05499069598122689
+          ],
+          "count": 90,
+          "n": 2000
+        },
+        "classical": {
+          "detection_rate": 0.0495,
+          "ci95": [
+            0.040827254610808245,
+            0.059900004989600644
+          ],
+          "count": 99,
+          "n": 2000
+        },
+        "quantum": {
+          "detection_rate": 0.051,
+          "ci95": [
+            0.04218996991731548,
+            0.06153153854124964
+          ],
+          "count": 102,
+          "n": 2000
+        },
+        "classical_quantum": {
+          "detection_rate": 0.052,
+          "ci95": [
+            0.043099720209557914,
+            0.06261795415444468
+          ],
+          "count": 104,
+          "n": 2000
+        },
+        "two_classical": {
+          "detection_rate": 0.0495,
+          "ci95": [
+            0.040827254610808245,
+            0.059900004989600644
+          ],
+          "count": 99,
+          "n": 2000
+        }
+      }
+    },
+    {
+      "amplitude_hz": 0.15,
+      "seed": 771218,
+      "methods": {
+        "power_only": {
+          "detection_rate": 0.0545,
+          "ci95": [
+            0.045378356153563185,
+            0.06532973297403316
+          ],
+          "count": 109,
+          "n": 2000
+        },
+        "classical": {
+          "detection_rate": 0.0765,
+          "ci95": [
+            0.06564592724758744,
+            0.0889778117996338
+          ],
+          "count": 153,
+          "n": 2000
+        },
+        "quantum": {
+          "detection_rate": 0.1245,
+          "ci95": [
+            0.11074657034676971,
+            0.13969313216145118
+          ],
+          "count": 249,
+          "n": 2000
+        },
+        "classical_quantum": {
+          "detection_rate": 0.1615,
+          "ci95": [
+            0.1460236816757033,
+            0.17827415933370488
+          ],
+          "count": 323,
+          "n": 2000
+        },
+        "two_classical": {
+          "detection_rate": 0.4435,
+          "ci95": [
+            0.421856213091795,
+            0.46536041325098654
+          ],
+          "count": 887,
+          "n": 2000
+        }
+      }
+    },
+    {
+      "amplitude_hz": 0.3,
+      "seed": 771221,
+      "methods": {
+        "power_only": {
+          "detection_rate": 0.051,
+          "ci95": [
+            0.04218996991731548,
+            0.06153153854124964
+          ],
+          "count": 102,
+          "n": 2000
+        },
+        "classical": {
+          "detection_rate": 0.2045,
+          "ci95": [
+            0.18739771047635959,
+            0.22273526446686084
+          ],
+          "count": 409,
+          "n": 2000
+        },
+        "quantum": {
+          "detection_rate": 0.326,
+          "ci95": [
+            0.30580717922742506,
+            0.3468599532264509
+          ],
+          "count": 652,
+          "n": 2000
+        },
+        "classical_quantum": {
+          "detection_rate": 0.4725,
+          "ci95": [
+            0.45069374278170404,
+            0.4944116948187647
+          ],
+          "count": 945,
+          "n": 2000
+        },
+        "two_classical": {
+          "detection_rate": 0.9605,
+          "ci95": [
+            0.9510433073255731,
+            0.9681910921283929
+          ],
+          "count": 1921,
+          "n": 2000
+        }
+      }
+    },
+    {
+      "amplitude_hz": 0.5,
+      "seed": 771224,
+      "methods": {
+        "power_only": {
+          "detection_rate": 0.0475,
+          "ci95": [
+            0.03901402059617837,
+            0.05772090719335553
+          ],
+          "count": 95,
+          "n": 2000
+        },
+        "classical": {
+          "detection_rate": 0.4655,
+          "ci95": [
+            0.4437261649389321,
+            0.4874061113234743
+          ],
+          "count": 931,
+          "n": 2000
+        },
+        "quantum": {
+          "detection_rate": 0.7045,
+          "ci95": [
+            0.6841268698642553,
+            0.7240890577977122
+          ],
+          "count": 1409,
+          "n": 2000
+        },
+        "classical_quantum": {
+          "detection_rate": 0.869,
+          "ci95": [
+            0.8535029122373577,
+            0.8830823068690775
+          ],
+          "count": 1738,
+          "n": 2000
+        },
+        "two_classical": {
+          "detection_rate": 1.0,
+          "ci95": [
+            0.9980829527187469,
+            0.9999999999999998
+          ],
+          "count": 2000,
+          "n": 2000
+        }
+      }
+    },
+    {
+      "amplitude_hz": 0.75,
+      "seed": 771227,
+      "methods": {
+        "power_only": {
+          "detection_rate": 0.049,
+          "ci95": [
+            0.04037353995030726,
+            0.05935563669738288
+          ],
+          "count": 98,
+          "n": 2000
+        },
+        "classical": {
+          "detection_rate": 0.7835,
+          "ci95": [
+            0.7649154586282094,
+            0.8009975755633201
+          ],
+          "count": 1567,
+          "n": 2000
+        },
+        "quantum": {
+          "detection_rate": 0.9615,
+          "ci95": [
+            0.9521448929760082,
+            0.9690856723833953
+          ],
+          "count": 1923,
+          "n": 2000
+        },
+        "classical_quantum": {
+          "detection_rate": 0.9925,
+          "ci95": [
+            0.9876620858637751,
+            0.9954496225641908
+          ],
+          "count": 1985,
+          "n": 2000
+        },
+        "two_classical": {
+          "detection_rate": 1.0,
+          "ci95": [
+            0.9980829527187469,
+            0.9999999999999998
+          ],
+          "count": 2000,
+          "n": 2000
+        }
+      }
+    },
+    {
+      "amplitude_hz": 1.0,
+      "seed": 771230,
+      "methods": {
+        "power_only": {
+          "detection_rate": 0.052,
+          "ci95": [
+            0.043099720209557914,
+            0.06261795415444468
+          ],
+          "count": 104,
+          "n": 2000
+        },
+        "classical": {
+          "detection_rate": 0.9545,
+          "ci95": [
+            0.9444626753715425,
+            0.9627947286497985
+          ],
+          "count": 1909,
+          "n": 2000
+        },
+        "quantum": {
+          "detection_rate": 0.999,
+          "ci95": [
+            0.9963610657309615,
+            0.9997257210823479
+          ],
+          "count": 1998,
+          "n": 2000
+        },
+        "classical_quantum": {
+          "detection_rate": 1.0,
+          "ci95": [
+            0.9980829527187469,
+            0.9999999999999998
+          ],
+          "count": 2000,
+          "n": 2000
+        },
+        "two_classical": {
+          "detection_rate": 1.0,
+          "ci95": [
+            0.9980829527187469,
+            0.9999999999999998
+          ],
+          "count": 2000,
+          "n": 2000
+        }
+      }
+    }
+  ],
+  "scope": [
+    "Low-frequency narrow-line698nm laboratory surrogate, not193nm DUV, CO2 drive or13.5nm EUV.",
+    "64 independent atoms with classical optical drive, no squeezing/entanglement.",
+    "Interrogation samples once per second; source frequency is quasi-static within each25ms window.",
+    "No phase-noise spectrum reconstruction, wafer outcome, real sensor performance or end-to-end quantum advantage established."
+  ],
+  "sources": [
+    {
+      "title": "Bishof et al., Optical spectrum analyzer with quantum limited noise floor (2013)",
+      "url": "https://arxiv.org/html/1303.6741v2",
+      "role": "Established atomic laser-noise spectroscopy; quadrature Ramsey, finite pulses and dead-time precedent. Our numerical values/results are synthetic."
+    },
+    {
+      "title": "Day et al., Limits on atomic qubit control from laser noise (2022)",
+      "url": "https://www.nature.com/articles/s41534-022-00586-4",
+      "role": "Laser noise can limit atomic-qubit control; not validation of this surrogate."
+    },
+    {
+      "title": "ASML, Light and lasers in lithography",
+      "url": "https://www.asml.com/en/technology/lithography-principles/light-and-lasers",
+      "role": "Distinguishes lithography source architectures and wavelengths."
+    }
+  ],
+  "runtime": {
+    "python": "3.12.10",
+    "numpy": "2.3.1"
+  },
+  "nominal_operating_points": [
+    {
+      "calibration_target": 0.01,
+      "methods": {
+        "power_only": {
+          "threshold": 0.021087320244813638,
+          "detection_rate": 0.0085,
+          "false_alarm_rate": 0.00725,
+          "detection_ci95": [
+            0.006089150197258207,
+            0.011853982556518358
+          ],
+          "false_alarm_ci95": [
+            0.00505273936997787,
+            0.010392791992022947
+          ]
+        },
+        "classical": {
+          "threshold": 0.6886435759781608,
+          "detection_rate": 0.2385,
+          "false_alarm_rate": 0.00975,
+          "detection_ci95": [
+            0.22554805837877334,
+            0.2519537304617405
+          ],
+          "false_alarm_ci95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "quantum": {
+          "threshold": 0.5146825696129653,
+          "detection_rate": 0.4635,
+          "false_alarm_rate": 0.00825,
+          "detection_ci95": [
+            0.44808886059502456,
+            0.47898117876512375
+          ],
+          "false_alarm_ci95": [
+            0.005880555429162704,
+            0.01156305704625871
+          ]
+        },
+        "classical_quantum": {
+          "threshold": 0.4220014237680416,
+          "detection_rate": 0.67525,
+          "false_alarm_rate": 0.00675,
+          "detection_ci95": [
+            0.66057592318116,
+            0.6895877919457997
+          ],
+          "false_alarm_ci95": [
+            0.00464322819694238,
+            0.009803262608348136
+          ]
+        },
+        "two_classical": {
+          "threshold": 0.22121525444619222,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 0.0065,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.0044397068203533615,
+            0.009507263706582005
+          ]
+        }
+      }
+    },
+    {
+      "calibration_target": 0.05,
+      "methods": {
+        "power_only": {
+          "threshold": 0.015690059562710964,
+          "detection_rate": 0.048,
+          "false_alarm_rate": 0.0485,
+          "detection_ci95": [
+            0.04179809839755376,
+            0.055069238336336396
+          ],
+          "false_alarm_ci95": [
+            0.04226507035940136,
+            0.05560130693119909
+          ]
+        },
+        "classical": {
+          "threshold": 0.5309248335148975,
+          "detection_rate": 0.45325,
+          "false_alarm_rate": 0.04725,
+          "detection_ci95": [
+            0.43787519408683473,
+            0.46871451386075247
+          ],
+          "false_alarm_ci95": [
+            0.04109801024846582,
+            0.05427076565035889
+          ]
+        },
+        "quantum": {
+          "threshold": 0.39078352416074014,
+          "detection_rate": 0.69875,
+          "false_alarm_rate": 0.046,
+          "detection_ci95": [
+            0.68434672200857,
+            0.7127718992837736
+          ],
+          "false_alarm_ci95": [
+            0.03993220770280679,
+            0.05293896680424217
+          ]
+        },
+        "classical_quantum": {
+          "threshold": 0.3146674201317191,
+          "detection_rate": 0.85975,
+          "false_alarm_rate": 0.0495,
+          "detection_ci95": [
+            0.848643393015975,
+            0.8701662875370849
+          ],
+          "false_alarm_ci95": [
+            0.043199593091043056,
+            0.056664865312978
+          ]
+        },
+        "two_classical": {
+          "threshold": 0.1583027150370885,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 0.05725,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.05046619153555666,
+            0.06488339549747402
+          ]
+        }
+      }
+    },
+    {
+      "calibration_target": 0.1,
+      "methods": {
+        "power_only": {
+          "threshold": 0.013269249336295147,
+          "detection_rate": 0.0985,
+          "false_alarm_rate": 0.09525,
+          "detection_ci95": [
+            0.08964699169922524,
+            0.10812344126240506
+          ],
+          "false_alarm_ci95": [
+            0.08653706179623596,
+            0.10473960754677739
+          ]
+        },
+        "classical": {
+          "threshold": 0.44261048537622705,
+          "detection_rate": 0.58225,
+          "false_alarm_rate": 0.09925,
+          "detection_ci95": [
+            0.5668944252885808,
+            0.5974477462902634
+          ],
+          "false_alarm_ci95": [
+            0.09036511028016748,
+            0.10890388351652826
+          ]
+        },
+        "quantum": {
+          "threshold": 0.3279375545466544,
+          "detection_rate": 0.8005,
+          "false_alarm_rate": 0.101,
+          "detection_ci95": [
+            0.7878300081758152,
+            0.8125933664070744
+          ],
+          "false_alarm_ci95": [
+            0.09204134899531147,
+            0.11072428674987034
+          ]
+        },
+        "classical_quantum": {
+          "threshold": 0.26805928247678995,
+          "detection_rate": 0.91425,
+          "false_alarm_rate": 0.10025,
+          "detection_ci95": [
+            0.9051706509616718,
+            0.9225344502728107
+          ],
+          "false_alarm_ci95": [
+            0.09132285403517428,
+            0.10994422087494209
+          ]
+        },
+        "two_classical": {
+          "threshold": 0.1340938920425757,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 0.10475,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.09563617298296472,
+            0.1146222669375443
+          ]
+        }
+      }
+    }
+  ],
+  "response_curve": {
+    "detuning_hz": [
+      -25.0,
+      -24.9,
+      -24.8,
+      -24.7,
+      -24.6,
+      -24.5,
+      -24.4,
+      -24.3,
+      -24.2,
+      -24.1,
+      -24.0,
+      -23.9,
+      -23.8,
+      -23.7,
+      -23.6,
+      -23.5,
+      -23.4,
+      -23.3,
+      -23.2,
+      -23.1,
+      -23.0,
+      -22.9,
+      -22.8,
+      -22.7,
+      -22.6,
+      -22.5,
+      -22.4,
+      -22.3,
+      -22.2,
+      -22.1,
+      -22.0,
+      -21.9,
+      -21.8,
+      -21.7,
+      -21.6,
+      -21.5,
+      -21.4,
+      -21.3,
+      -21.2,
+      -21.1,
+      -21.0,
+      -20.9,
+      -20.8,
+      -20.7,
+      -20.6,
+      -20.5,
+      -20.4,
+      -20.3,
+      -20.2,
+      -20.1,
+      -20.0,
+      -19.9,
+      -19.8,
+      -19.7,
+      -19.6,
+      -19.5,
+      -19.4,
+      -19.3,
+      -19.2,
+      -19.1,
+      -19.0,
+      -18.9,
+      -18.8,
+      -18.7,
+      -18.6,
+      -18.5,
+      -18.4,
+      -18.3,
+      -18.2,
+      -18.1,
+      -18.0,
+      -17.9,
+      -17.8,
+      -17.7,
+      -17.6,
+      -17.5,
+      -17.4,
+      -17.3,
+      -17.2,
+      -17.1,
+      -17.0,
+      -16.9,
+      -16.799999999999997,
+      -16.7,
+      -16.6,
+      -16.5,
+      -16.4,
+      -16.299999999999997,
+      -16.2,
+      -16.1,
+      -16.0,
+      -15.9,
+      -15.799999999999999,
+      -15.7,
+      -15.6,
+      -15.5,
+      -15.399999999999999,
+      -15.299999999999999,
+      -15.2,
+      -15.1,
+      -15.0,
+      -14.899999999999999,
+      -14.799999999999999,
+      -14.7,
+      -14.6,
+      -14.5,
+      -14.399999999999999,
+      -14.299999999999999,
+      -14.2,
+      -14.1,
+      -14.0,
+      -13.899999999999999,
+      -13.799999999999999,
+      -13.7,
+      -13.6,
+      -13.5,
+      -13.399999999999999,
+      -13.299999999999999,
+      -13.2,
+      -13.1,
+      -13.0,
+      -12.899999999999999,
+      -12.799999999999999,
+      -12.7,
+      -12.6,
+      -12.5,
+      -12.399999999999999,
+      -12.299999999999999,
+      -12.2,
+      -12.1,
+      -12.0,
+      -11.899999999999999,
+      -11.799999999999999,
+      -11.7,
+      -11.6,
+      -11.5,
+      -11.399999999999999,
+      -11.299999999999999,
+      -11.2,
+      -11.1,
+      -11.0,
+      -10.899999999999999,
+      -10.799999999999999,
+      -10.7,
+      -10.6,
+      -10.5,
+      -10.399999999999999,
+      -10.299999999999999,
+      -10.2,
+      -10.1,
+      -10.0,
+      -9.899999999999999,
+      -9.799999999999999,
+      -9.7,
+      -9.6,
+      -9.5,
+      -9.399999999999999,
+      -9.299999999999999,
+      -9.2,
+      -9.1,
+      -9.0,
+      -8.899999999999999,
+      -8.8,
+      -8.7,
+      -8.599999999999998,
+      -8.5,
+      -8.399999999999999,
+      -8.3,
+      -8.2,
+      -8.099999999999998,
+      -8.0,
+      -7.899999999999999,
+      -7.800000000000001,
+      -7.699999999999999,
+      -7.599999999999998,
+      -7.5,
+      -7.399999999999999,
+      -7.300000000000001,
+      -7.199999999999999,
+      -7.099999999999998,
+      -7.0,
+      -6.899999999999999,
+      -6.800000000000001,
+      -6.699999999999999,
+      -6.599999999999998,
+      -6.5,
+      -6.399999999999999,
+      -6.300000000000001,
+      -6.199999999999999,
+      -6.099999999999998,
+      -6.0,
+      -5.899999999999999,
+      -5.799999999999997,
+      -5.699999999999999,
+      -5.599999999999998,
+      -5.5,
+      -5.399999999999999,
+      -5.299999999999997,
+      -5.199999999999999,
+      -5.099999999999998,
+      -5.0,
+      -4.899999999999999,
+      -4.799999999999997,
+      -4.699999999999999,
+      -4.599999999999998,
+      -4.5,
+      -4.399999999999999,
+      -4.299999999999997,
+      -4.199999999999999,
+      -4.099999999999998,
+      -4.0,
+      -3.8999999999999986,
+      -3.799999999999997,
+      -3.6999999999999993,
+      -3.599999999999998,
+      -3.5,
+      -3.3999999999999986,
+      -3.299999999999997,
+      -3.1999999999999993,
+      -3.099999999999998,
+      -3.0,
+      -2.8999999999999986,
+      -2.799999999999997,
+      -2.6999999999999993,
+      -2.599999999999998,
+      -2.5,
+      -2.3999999999999986,
+      -2.299999999999997,
+      -2.1999999999999993,
+      -2.099999999999998,
+      -2.0,
+      -1.8999999999999986,
+      -1.7999999999999972,
+      -1.6999999999999993,
+      -1.5999999999999979,
+      -1.5,
+      -1.3999999999999986,
+      -1.2999999999999972,
+      -1.1999999999999993,
+      -1.0999999999999979,
+      -1.0,
+      -0.8999999999999986,
+      -0.7999999999999972,
+      -0.6999999999999993,
+      -0.5999999999999979,
+      -0.5,
+      -0.3999999999999986,
+      -0.29999999999999716,
+      -0.1999999999999993,
+      -0.09999999999999787,
+      0.0,
+      0.10000000000000142,
+      0.20000000000000284,
+      0.3000000000000007,
+      0.40000000000000213,
+      0.5,
+      0.6000000000000014,
+      0.7000000000000028,
+      0.8000000000000007,
+      0.9000000000000021,
+      1.0,
+      1.1000000000000014,
+      1.2000000000000028,
+      1.3000000000000007,
+      1.4000000000000021,
+      1.5,
+      1.6000000000000014,
+      1.7000000000000028,
+      1.8000000000000007,
+      1.9000000000000021,
+      2.0,
+      2.1000000000000014,
+      2.200000000000003,
+      2.3000000000000007,
+      2.400000000000002,
+      2.5,
+      2.6000000000000014,
+      2.700000000000003,
+      2.8000000000000007,
+      2.900000000000002,
+      3.0,
+      3.1000000000000014,
+      3.200000000000003,
+      3.3000000000000007,
+      3.400000000000002,
+      3.5,
+      3.6000000000000014,
+      3.700000000000003,
+      3.8000000000000007,
+      3.900000000000002,
+      4.0,
+      4.100000000000001,
+      4.200000000000003,
+      4.300000000000001,
+      4.400000000000002,
+      4.5,
+      4.600000000000001,
+      4.700000000000003,
+      4.800000000000001,
+      4.900000000000002,
+      5.0,
+      5.100000000000001,
+      5.200000000000003,
+      5.300000000000001,
+      5.400000000000002,
+      5.5,
+      5.600000000000001,
+      5.700000000000003,
+      5.800000000000001,
+      5.900000000000002,
+      6.0,
+      6.100000000000001,
+      6.200000000000003,
+      6.300000000000001,
+      6.400000000000002,
+      6.5,
+      6.600000000000001,
+      6.700000000000003,
+      6.800000000000001,
+      6.900000000000002,
+      7.0,
+      7.100000000000001,
+      7.200000000000003,
+      7.300000000000004,
+      7.399999999999999,
+      7.5,
+      7.600000000000001,
+      7.700000000000003,
+      7.800000000000004,
+      7.899999999999999,
+      8.0,
+      8.100000000000001,
+      8.200000000000003,
+      8.300000000000004,
+      8.399999999999999,
+      8.5,
+      8.600000000000001,
+      8.700000000000003,
+      8.800000000000004,
+      8.899999999999999,
+      9.0,
+      9.100000000000001,
+      9.200000000000003,
+      9.300000000000004,
+      9.399999999999999,
+      9.5,
+      9.600000000000001,
+      9.700000000000003,
+      9.800000000000004,
+      9.899999999999999,
+      10.0,
+      10.100000000000001,
+      10.200000000000003,
+      10.300000000000004,
+      10.399999999999999,
+      10.5,
+      10.600000000000001,
+      10.700000000000003,
+      10.800000000000004,
+      10.899999999999999,
+      11.0,
+      11.100000000000001,
+      11.200000000000003,
+      11.300000000000004,
+      11.399999999999999,
+      11.5,
+      11.600000000000001,
+      11.700000000000003,
+      11.800000000000004,
+      11.899999999999999,
+      12.0,
+      12.100000000000001,
+      12.200000000000003,
+      12.300000000000004,
+      12.399999999999999,
+      12.5,
+      12.600000000000001,
+      12.700000000000003,
+      12.800000000000004,
+      12.899999999999999,
+      13.0,
+      13.100000000000001,
+      13.200000000000003,
+      13.300000000000004,
+      13.400000000000006,
+      13.5,
+      13.600000000000001,
+      13.700000000000003,
+      13.800000000000004,
+      13.900000000000006,
+      14.0,
+      14.100000000000001,
+      14.200000000000003,
+      14.300000000000004,
+      14.400000000000006,
+      14.5,
+      14.600000000000001,
+      14.700000000000003,
+      14.800000000000004,
+      14.900000000000006,
+      15.0,
+      15.100000000000001,
+      15.200000000000003,
+      15.300000000000004,
+      15.400000000000006,
+      15.5,
+      15.600000000000001,
+      15.700000000000003,
+      15.800000000000004,
+      15.900000000000006,
+      16.0,
+      16.1,
+      16.200000000000003,
+      16.300000000000004,
+      16.400000000000006,
+      16.5,
+      16.6,
+      16.700000000000003,
+      16.800000000000004,
+      16.900000000000006,
+      17.0,
+      17.1,
+      17.200000000000003,
+      17.300000000000004,
+      17.400000000000006,
+      17.5,
+      17.6,
+      17.700000000000003,
+      17.800000000000004,
+      17.900000000000006,
+      18.0,
+      18.1,
+      18.200000000000003,
+      18.300000000000004,
+      18.400000000000006,
+      18.5,
+      18.6,
+      18.700000000000003,
+      18.800000000000004,
+      18.900000000000006,
+      19.0,
+      19.1,
+      19.200000000000003,
+      19.300000000000004,
+      19.400000000000006,
+      19.5,
+      19.6,
+      19.700000000000003,
+      19.800000000000004,
+      19.900000000000006,
+      20.0,
+      20.1,
+      20.200000000000003,
+      20.300000000000004,
+      20.400000000000006,
+      20.5,
+      20.6,
+      20.700000000000003,
+      20.800000000000004,
+      20.900000000000006,
+      21.0,
+      21.1,
+      21.200000000000003,
+      21.300000000000004,
+      21.400000000000006,
+      21.5,
+      21.6,
+      21.700000000000003,
+      21.800000000000004,
+      21.900000000000006,
+      22.0,
+      22.1,
+      22.200000000000003,
+      22.300000000000004,
+      22.400000000000006,
+      22.5,
+      22.6,
+      22.700000000000003,
+      22.800000000000004,
+      22.900000000000006,
+      23.0,
+      23.1,
+      23.200000000000003,
+      23.300000000000004,
+      23.400000000000006,
+      23.5,
+      23.6,
+      23.700000000000003,
+      23.800000000000004,
+      23.900000000000006,
+      24.0,
+      24.1,
+      24.200000000000003,
+      24.300000000000004,
+      24.400000000000006,
+      24.5,
+      24.6,
+      24.700000000000003,
+      24.800000000000004,
+      24.900000000000006,
+      25.0
+    ],
+    "probability": [
+      0.6861933432859773,
+      0.6809153763102879,
+      0.6755968844884489,
+      0.6702389927646814,
+      0.6648428344813585,
+      0.6594095511391804,
+      0.6539402921555979,
+      0.6484362146215341,
+      0.6428984830564636,
+      0.6373282691618928,
+      0.6317267515732982,
+      0.6260951156105742,
+      0.6204345530270444,
+      0.6147462617570855,
+      0.6090314456624255,
+      0.6032913142771602,
+      0.5975270825515493,
+      0.5917399705946452,
+      0.5859312034158066,
+      0.580102010665154,
+      0.5742536263730204,
+      0.568387288688456,
+      0.5625042396168393,
+      0.5566057247566489,
+      0.5506929930354596,
+      0.5447672964452079,
+      0.5388298897767912,
+      0.5328820303540571,
+      0.5269249777672322,
+      0.5209599936058557,
+      0.5149883411912695,
+      0.5090112853087226,
+      0.5030300919391475,
+      0.49704602799066366,
+      0.4910603610298709,
+      0.4850743590129793,
+      0.47908929001684625,
+      0.47310642196996466,
+      0.46712702238346776,
+      0.4611523580822087,
+      0.4551836949359642,
+      0.4492222975908262,
+      0.44326942920083917,
+      0.4373263511599339,
+      0.431394322834222,
+      0.42547460129470055,
+      0.4195684410504357,
+      0.4136770937822655,
+      0.407801808077093,
+      0.4019438291628203,
+      0.3961043986439778,
+      0.390284754238112,
+      0.38448612951297817,
+      0.3787097536246016,
+      0.37295685105626625,
+      0.36722864135846944,
+      0.36152633888992,
+      0.3558511525596204,
+      0.3502042855700912,
+      0.34458693516179534,
+      0.33900029235881335,
+      0.3334455417158268,
+      0.3279238610664583,
+      0.3224364212730317,
+      0.3169843859777928,
+      0.31156891135565695,
+      0.30619114586852364,
+      0.3008522300212223,
+      0.2955532961191298,
+      0.290295468027525,
+      0.2850798609327125,
+      0.2799075811049924,
+      0.27477972566349673,
+      0.2696973823429681,
+      0.26466162926252096,
+      0.25967353469642357,
+      0.254734156846974,
+      0.24984454361949243,
+      0.24500573239950085,
+      0.24021874983211688,
+      0.23548461160372416,
+      0.23080432222596012,
+      0.22617887482207133,
+      0.2216092509156658,
+      0.21709642022193654,
+      0.21264134044136784,
+      0.20824495705600046,
+      0.20390820312827382,
+      0.19963199910249452,
+      0.19541725260898804,
+      0.19126485827095835,
+      0.18717569751409668,
+      0.18315063837899956,
+      0.1791905353364117,
+      0.1752962291053438,
+      0.171468546474114,
+      0.1677083001243338,
+      0.16401628845788657,
+      0.1603932954269309,
+      0.15684009036697133,
+      0.15335742783302023,
+      0.1499460474389078,
+      0.1466066736997417,
+      0.1433400158775922,
+      0.14014676783037858,
+      0.13702760786406626,
+      0.1339831985881199,
+      0.13101418677432058,
+      0.1281212032189198,
+      0.12530486260819745,
+      0.12256576338742753,
+      0.1199044876333028,
+      0.11732160092981926,
+      0.11481765224766917,
+      0.11239317382716117,
+      0.11004868106468577,
+      0.10778467240276328,
+      0.10560162922368505,
+      0.10350001574677721,
+      0.10148027892931095,
+      0.09954284837108167,
+      0.09768813622266198,
+      0.09591653709736912,
+      0.09422842798696135,
+      0.0926241681810583,
+      0.0911040991903426,
+      0.0896685446735215,
+      0.08831781036809057,
+      0.08705218402489744,
+      0.08587193534652977,
+      0.08477731592953773,
+      0.08376855921050069,
+      0.08284588041595206,
+      0.08200947651617768,
+      0.08125952618288586,
+      0.08059618975077419,
+      0.08001960918298279,
+      0.07952990804046159,
+      0.07912719145523998,
+      0.07881154610761924,
+      0.07858304020728366,
+      0.07844172347833396,
+      0.07838762714825531,
+      0.07842076394081689,
+      0.07854112807290035,
+      0.07874869525525836,
+      0.07904342269722518,
+      0.07942524911533591,
+      0.07989409474589561,
+      0.0804498613614695,
+      0.08109243229129734,
+      0.08182167244563597,
+      0.0826374283440079,
+      0.08353952814737088,
+      0.0845277816941785,
+      0.08560198054035494,
+      0.08676189800313747,
+      0.08800728920880957,
+      0.08933789114429705,
+      0.09075342271262839,
+      0.09225358479223368,
+      0.09383806030007684,
+      0.09550651425861256,
+      0.0972585938665514,
+      0.09909392857340481,
+      0.10101213015781123,
+      0.10301279280963022,
+      0.10509549321575558,
+      0.10725979064967847,
+      0.1095052270647296,
+      0.11183132719102365,
+      0.11423759863605834,
+      0.11672353198895809,
+      0.11928860092833912,
+      0.12193226233377256,
+      0.1246539564008135,
+      0.12745310675959748,
+      0.1303291205969377,
+      0.1332813887819409,
+      0.13630928599508388,
+      0.1394121708607363,
+      0.14258938608310204,
+      0.14584025858554586,
+      0.1491640996532808,
+      0.1525602050793748,
+      0.15602785531406613,
+      0.1595663156173315,
+      0.16317483621469558,
+      0.16685265245623554,
+      0.17059898497875015,
+      0.17441303987106369,
+      0.17829400884241786,
+      0.1822410693939377,
+      0.1862533849931036,
+      0.1903301052512272,
+      0.19447036610385893,
+      0.1986732899941217,
+      0.202937986058909,
+      0.2072635503179071,
+      0.21164906586542706,
+      0.21609360306496955,
+      0.22059621974651175,
+      0.2251559614064547,
+      0.22977186141019815,
+      0.23444294119729733,
+      0.23916821048915807,
+      0.24394666749922822,
+      0.24877729914563032,
+      0.25365908126621045,
+      0.25859097883593574,
+      0.2635719461866079,
+      0.26860092722884354,
+      0.27367685567627004,
+      0.27879865527189185,
+      0.2839652400165834,
+      0.2891755143996497,
+      0.2944283736314149,
+      0.29972270387778643,
+      0.30505738249674363,
+      0.3104312782766994,
+      0.31584325167669103,
+      0.32129215506833847,
+      0.3267768329795242,
+      0.3322961223397528,
+      0.3378488527271127,
+      0.3434338466168142,
+      0.34904991963123533,
+      0.35469588079142755,
+      0.36037053277002545,
+      0.3660726721455076,
+      0.37180108965775865,
+      0.37755457046486923,
+      0.3833318944011271,
+      0.38913183623613923,
+      0.39495316593503726,
+      0.4007946489196974,
+      0.406655046330937,
+      0.4125331152916127,
+      0.41842760917058297,
+      0.42433727784746417,
+      0.4302608679781286,
+      0.4361971232608963,
+      0.4421447847033446,
+      0.44810259088970283,
+      0.454069278248754,
+      0.46004358132219786,
+      0.46602423303341833,
+      0.47200996495659175,
+      0.47799950758608317,
+      0.4839915906060743,
+      0.4899849431603612,
+      0.4959782941222694,
+      0.5019703723646244,
+      0.5079599070297226,
+      0.5139456277992476,
+      0.5199262651640657,
+      0.5259005506938562,
+      0.5318672173065049,
+      0.5378249995372152,
+      0.5437726338072748,
+      0.5497088586924163,
+      0.5556324151907238,
+      0.5615420469900219,
+      0.5674365007346909,
+      0.5733145262918541,
+      0.5791748770168789,
+      0.5850163100181318,
+      0.5908375864209405,
+      0.5966374716306929,
+      0.6024147355950337,
+      0.6081681530650843,
+      0.6138965038556481,
+      0.6195985731043324,
+      0.6252731515295415,
+      0.6309190356872739,
+      0.6365350282266867,
+      0.6421199381443563,
+      0.6476725810371862,
+      0.6531917793539157,
+      0.658676362645164,
+      0.6641251678119692,
+      0.6695370393527501,
+      0.6749108296086654,
+      0.680245399007294,
+      0.6855396163045931,
+      0.6907923588250908,
+      0.6960025127002465,
+      0.7011689731049385,
+      0.7062906444920315,
+      0.7113664408249625,
+      0.716395285808303,
+      0.7213761131162525,
+      0.7263078666190025,
+      0.7311895006069364,
+      0.7360199800126065,
+      0.7407982806304505,
+      0.7455233893341867,
+      0.7501943042918653,
+      0.7548100351784999,
+      0.7593696033862599,
+      0.7638720422321653,
+      0.7683163971632433,
+      0.7727017259591068,
+      0.7770270989318966,
+      0.7812915991235709,
+      0.7854943225004737,
+      0.7896343781451617,
+      0.793710888445429,
+      0.7977229892805089,
+      0.8016698302043997,
+      0.8055505746262814,
+      0.809364399987987,
+      0.8131104979384756,
+      0.8167880745052982,
+      0.8203963502629926,
+      0.8239345604983817,
+      0.8274019553727521,
+      0.83079780008085,
+      0.8341213750066938,
+      0.8373719758761481,
+      0.840548913906231,
+      0.8436515159511259,
+      0.8466791246448684,
+      0.8496310985406735,
+      0.8525068122468759,
+      0.8553056565594568,
+      0.858027038591116,
+      0.8606703818968908,
+      0.8632351265962532,
+      0.8657207294917078,
+      0.8681266641838189,
+      0.8704524211826775,
+      0.8726975080157625,
+      0.8748614493321861,
+      0.8769437870032991,
+      0.8789440802196247,
+      0.8808619055841107,
+      0.8826968572016894,
+      0.88444854676509,
+      0.8861166036369352,
+      0.8877006749280666,
+      0.8892004255720908,
+      0.8906155383961454,
+      0.891945714187855,
+      0.8931906717584637,
+      0.8943501480021375,
+      0.8954238979514212,
+      0.8964116948288378,
+      0.8973133300946222,
+      0.898128613490559,
+      0.8988573730799666,
+      0.8994994552837514,
+      0.9000547249125808,
+      0.9005230651951297,
+      0.9009043778024268,
+      0.9011985828682685,
+      0.9014056190057096,
+      0.9015254433196296,
+      0.9015580314153585,
+      0.901503377403384,
+      0.9013614939001116,
+      0.9011324120246926,
+      0.9008161813919251,
+      0.9004128701012242,
+      0.8999225647216519,
+      0.899345370273034,
+      0.8986814102031476,
+      0.8979308263609955,
+      0.8970937789661724,
+      0.8961704465743192,
+      0.8951610260386896,
+      0.8940657324678223,
+      0.8928847991793376,
+      0.8916184776498643,
+      0.8902670374611088,
+      0.8888307662420739,
+      0.8873099696074521,
+      0.8857049710921865,
+      0.8840161120822352,
+      0.8822437517415371,
+      0.8803882669352099,
+      0.878450052148974,
+      0.876429519404848,
+      0.8743270981731168,
+      0.8721432352805871,
+      0.8698783948151652,
+      0.8675330580267686,
+      0.8651077232245891,
+      0.8626029056707377,
+      0.8600191374702916,
+      0.85735696745776,
+      0.8546169610800045,
+      0.8517997002756339,
+      0.8489057833508904,
+      0.8459358248520716,
+      0.8428904554345003,
+      0.8397703217280812,
+      0.8365760861994569,
+      0.8333084270108242,
+      0.8299680378753906,
+      0.8265556279095689,
+      0.8230719214818656,
+      0.8195176580585694,
+      0.8158935920462067,
+      0.8122004926308566,
+      0.8084391436143132,
+      0.8046103432471506,
+      0.8007149040587389,
+      0.7967536526842117,
+      0.7927274296884618,
+      0.7886370893871765,
+      0.7844834996649604,
+      0.7802675417905779,
+      0.775990110229373,
+      0.7716521124528762,
+      0.7672544687456692,
+      0.7627981120095316,
+      0.7582839875649168,
+      0.7537130529497893,
+      0.7490862777158949,
+      0.7444046432224656,
+      0.7396691424274431,
+      0.7348807796762358,
+      0.7300405704880706,
+      0.7251495413399841,
+      0.7202087294484942,
+      0.7152191825489916,
+      0.7101819586729248,
+      0.7050981259227908,
+      0.6999687622450095,
+      0.6947949552007133,
+      0.6895778017345022,
+      0.684318407941228,
+      0.6790178888308298,
+      0.6736773680913029,
+      0.6682979778498293,
+      0.6628808584321252,
+      0.6574271581200656,
+      0.6519380329076297,
+      0.646414646255213,
+      0.6408581688423821,
+      0.6352697783190882,
+      0.629650659055437,
+      0.6240020018900223,
+      0.6183250038769157,
+      0.6126208680313396,
+      0.6068908030740925,
+      0.6011360231747768,
+      0.5953577476938797,
+      0.5895572009237732,
+      0.5837356118286703,
+      0.5778942137836118,
+      0.572034244312532,
+      0.5661569448254528,
+      0.5602635603548676,
+      0.5543553392913765,
+      0.5484335331186189,
+      0.5424993961475675,
+      0.5365541852502361,
+      0.5305991595928565,
+      0.5246355803685925,
+      0.518664710529828,
+      0.5126878145201093,
+      0.5067061580057763,
+      0.5007210076073597,
+      0.49473363063078674,
+      0.4887452947984545,
+      0.4827572679802447,
+      0.47677081792450854,
+      0.4707872119891041,
+      0.46480771687253003,
+      0.4588335983452174,
+      0.4528661209810355,
+      0.44690654788907,
+      0.4409561404457269,
+      0.4350161580272255,
+      0.4290878577425302,
+      0.4231724941667839,
+      0.4172713190752963,
+      0.41138558117814406,
+      0.40551652585544024,
+      0.3996653948933256,
+      0.39383342622074835,
+      0.3880218536470727,
+      0.3822319066005835,
+      0.37646480986794234,
+      0.3707217833346391,
+      0.3650040417265117,
+      0.35931279435237207,
+      0.35364924484780513,
+      0.3480145909201871,
+      0.3424100240949831,
+      0.3368367294633729,
+      0.3312958854312641,
+      0.32578866346974245,
+      0.32031622786700675,
+      0.3148797354818539,
+      0.30948033549875886,
+      0.3041191691845972,
+      0.29879736964707,
+      0.29351606159487936
+    ],
+    "short_coherence_probability": [
+      0.5043546592298708,
+      0.5036218118146819,
+      0.5028835282547459,
+      0.5021399642994518,
+      0.5013912768106407,
+      0.500637623729726,
+      0.49987916404457633,
+      0.4991160577561794,
+      0.4983484658450894,
+      0.49757655023766434,
+      0.49680047377210035,
+      0.4960204001642744,
+      0.4952364939733963,
+      0.49444892056748035,
+      0.49365784608864727,
+      0.492863437418255,
+      0.49206586214187453,
+      0.4912652885141151,
+      0.4904618854233018,
+      0.48965582235602045,
+      0.48884726936153255,
+      0.48803639701606905,
+      0.4872233763870084,
+      0.486408378996951,
+      0.4855915767876945,
+      0.48477314208411537,
+      0.48395324755796976,
+      0.4831320661916185,
+      0.48230977124168106,
+      0.4814865362026317,
+      0.48066253477034226,
+      0.4798379408055782,
+      0.4790129282974587,
+      0.4781876713268862,
+      0.4773623440299547,
+      0.4765371205613418,
+      0.47571217505769625,
+      0.47488768160102557,
+      0.47406381418209176,
+      0.4732407466638253,
+      0.4724186527447609,
+      0.4715977059225085,
+      0.47077807945726036,
+      0.4699599463353483,
+      0.4691434792328545,
+      0.4683288504792852,
+      0.46751623202131587,
+      0.4667057953866125,
+      0.46589771164774063,
+      0.4650921513861668,
+      0.46428928465636,
+      0.4634892809500041,
+      0.4626923091603228,
+      0.46189853754653176,
+      0.4611081336984201,
+      0.46032126450107014,
+      0.45953809609972385,
+      0.4587587938648031,
+      0.4579835223570896,
+      0.4572124452930745,
+      0.4564457255104828,
+      0.4556835249339801,
+      0.4549260045410708,
+      0.454173324328192,
+      0.4534256432770135,
+      0.4526831193209476,
+      0.45194590931187983,
+      0.45121416898712297,
+      0.4504880529366053,
+      0.4497677145702985,
+      0.4490533060858912,
+      0.4483449784367173,
+      0.4476428812999419,
+      0.44694716304501736,
+      0.44625797070241113,
+      0.4455754499326131,
+      0.4448997449954313,
+      0.4442309987195795,
+      0.4435693524725668,
+      0.4429149461308898,
+      0.4422679180505388,
+      0.44162840503782397,
+      0.4409965423205253,
+      0.4403724635193711,
+      0.4397563006198578,
+      0.4391481839444088,
+      0.4385482421248852,
+      0.4379566020754486,
+      0.43737338896578537,
+      0.4367987261946973,
+      0.43623273536406415,
+      0.43567553625318123,
+      0.43512724679348236,
+      0.43458798304364954,
+      0.4340578591651144,
+      0.43353698739796176,
+      0.43302547803723257,
+      0.43252343940963855,
+      0.4320309778506882,
+      0.4315481976822335,
+      0.43107520119043596,
+      0.43061208860416544,
+      0.43015895807382665,
+      0.42971590565062645,
+      0.42928302526627826,
+      0.42886040871315667,
+      0.42844814562489775,
+      0.4280463234574561,
+      0.4276550274706179,
+      0.42727434070997805,
+      0.4269043439893796,
+      0.4265451158738265,
+      0.4261967326628662,
+      0.4258592683744511,
+      0.4255327947292781,
+      0.4252173811356136,
+      0.4249130946746029,
+      0.42462000008607104,
+      0.4243381597548148,
+      0.42406763369739187,
+      0.42380847954940815,
+      0.4235607525533044,
+      0.42332450554664913,
+      0.42309978895093714,
+      0.42288665076089493,
+      0.4226851365342995,
+      0.42249528938230796,
+      0.42231714996030534,
+      0.42215075645926525,
+      0.4219961445976338,
+      0.4218533476137316,
+      0.42172239625867836,
+      0.4216033187898428,
+      0.42149614096481614,
+      0.42140088603591264,
+      0.42131757474519893,
+      0.4212462253200502,
+      0.4211868534692379,
+      0.4211394723795472,
+      0.4211040927129258,
+      0.42108072260416574,
+      0.4210693676591152,
+      0.4210700309534261,
+      0.4210827130318341,
+      0.4211074119079703,
+      0.42114412306470717,
+      0.4211928394550404,
+      0.4212535515034991,
+      0.4213262471080931,
+      0.42141091164279143,
+      0.42150752796053137,
+      0.42161607639676135,
+      0.42173653477351236,
+      0.42186887840400067,
+      0.42201308009775906,
+      0.42216911016629577,
+      0.4223369364292795,
+      0.4225165242212511,
+      0.4227078363988578,
+      0.4229108333486108,
+      0.42312547299516434,
+      0.42335171081011114,
+      0.42358949982129845,
+      0.4238387906226575,
+      0.4240995313845469,
+      0.4243716678646057,
+      0.42465514341911836,
+      0.4249498990148822,
+      0.4252558732415821,
+      0.4255730023246652,
+      0.42590122013871334,
+      0.4262404582213135,
+      0.42659064578741923,
+      0.42695170974420216,
+      0.42732357470639315,
+      0.42770616301210107,
+      0.42809939473911907,
+      0.42850318772170126,
+      0.42891745756781696,
+      0.42934211767687314,
+      0.429777079257901,
+      0.43022225134820813,
+      0.4306775408324862,
+      0.4311428524623744,
+      0.4316180888764707,
+      0.4321031506207911,
+      0.43259793616967035,
+      0.43310234194709774,
+      0.4336162623484875,
+      0.4341395897628768,
+      0.43467221459554595,
+      0.4352140252910579,
+      0.43576490835671366,
+      0.43632474838641133,
+      0.4368934280849144,
+      0.43747082829251516,
+      0.43805682801009227,
+      0.4386513044245586,
+      0.43925413293468774,
+      0.43986518717732237,
+      0.44048433905395024,
+      0.44111145875765034,
+      0.4417464148003968,
+      0.4423890740407175,
+      0.4430393017117047,
+      0.44369696144936444,
+      0.44436191532130687,
+      0.44503402385576407,
+      0.4457131460709358,
+      0.4463991395046525,
+      0.44709186024435,
+      0.4477911629573521,
+      0.44849690092145156,
+      0.44920892605578466,
+      0.44992708895199296,
+      0.45065123890566416,
+      0.4513812239480486,
+      0.4521168908780391,
+      0.45285808529441507,
+      0.4536046516283365,
+      0.4543564331760871,
+      0.45511327213205366,
+      0.45587500962194183,
+      0.4566414857362143,
+      0.4574125395637494,
+      0.45818800922571024,
+      0.4589677319096179,
+      0.45975154390362305,
+      0.46053928063096505,
+      0.46133077668461575,
+      0.4621258658620978,
+      0.4629243812004701,
+      0.4637261550114753,
+      0.464531018916838,
+      0.46533880388371174,
+      0.4661493402602612,
+      0.466962457811377,
+      0.467777985754512,
+      0.4685957527956345,
+      0.4694155871652892,
+      0.4702373166547571,
+      0.47106076865231006,
+      0.47188577017954847,
+      0.4727121479278181,
+      0.47353972829469515,
+      0.4743683374205344,
+      0.47519780122507005,
+      0.47602794544406535,
+      0.47685859566599875,
+      0.4776895773687828,
+      0.4785207159565046,
+      0.4793518367961844,
+      0.48018276525453885,
+      0.48101332673474595,
+      0.4818433467132033,
+      0.482672650776268,
+      0.48350106465697595,
+      0.4843284142717281,
+      0.48515452575693996,
+      0.485979225505642,
+      0.4868023402040288,
+      0.48762369686794393,
+      0.4884431228792956,
+      0.4892604460223954,
+      0.4900754945202135,
+      0.49088809707053704,
+      0.4916980828820333,
+      0.4925052817101996,
+      0.4933095238932028,
+      0.49411064038759334,
+      0.49490846280388656,
+      0.49570282344201044,
+      0.49649355532660355,
+      0.4972804922421634,
+      0.49806346876803076,
+      0.4988423203132091,
+      0.49961688315100794,
+      0.5003869944535019,
+      0.5011524923258032,
+      0.5019132158401332,
+      0.5026690050696939,
+      0.5034197011223251,
+      0.5041651461739433,
+      0.5049051835017566,
+      0.5056396575172462,
+      0.5063684137989064,
+      0.5070912991247427,
+      0.5078081615045135,
+      0.5085188502117095,
+      0.5092232158152716,
+      0.5099211102110329,
+      0.5106123866528779,
+      0.5112968997836194,
+      0.5119745056655777,
+      0.5126450618108657,
+      0.5133084272113622,
+      0.5139644623683741,
+      0.5146130293219855,
+      0.5152539916800717,
+      0.5158872146469924,
+      0.5165125650519409,
+      0.517129911376954,
+      0.5177391237845711,
+      0.5183400741451384,
+      0.5189326360637556,
+      0.5195166849068515,
+      0.520092097828392,
+      0.5206587537957084,
+      0.5212165336149441,
+      0.5217653199561124,
+      0.5223049973777614,
+      0.5228354523512403,
+      0.5233565732845604,
+      0.5238682505458507,
+      0.5243703764863958,
+      0.5248628454632581,
+      0.5253455538614762,
+      0.525818400115833,
+      0.526281284732195,
+      0.5267341103084111,
+      0.5271767815547723,
+      0.5276092053140237,
+      0.5280312905809279,
+      0.5284429485213736,
+      0.5288440924910262,
+      0.5292346380535164,
+      0.5296145029981624,
+      0.5299836073572229,
+      0.530341873422678,
+      0.5306892257625296,
+      0.5310255912366268,
+      0.5313508990120028,
+      0.5316650805777282,
+      0.5319680697592734,
+      0.5322598027323777,
+      0.5325402180364234,
+      0.5328092565873107,
+      0.5330668616898313,
+      0.5333129790495373,
+      0.5335475567841066,
+      0.533770545434195,
+      0.5339818979737814,
+      0.534181569819997,
+      0.5343695188424399,
+      0.5345457053719741,
+      0.5347100922090063,
+      0.5348626446312447,
+      0.5350033304009332,
+      0.5351321197715645,
+      0.535248985494063,
+      0.535353902822447,
+      0.535446849518958,
+      0.5355278058586654,
+      0.5355967546335363,
+      0.5356536811559794,
+      0.5356985732618567,
+      0.5357314213129594,
+      0.5357522181989552,
+      0.5357609593388022,
+      0.5357576426816272,
+      0.5357422687070753,
+      0.5357148404251189,
+      0.5356753633753405,
+      0.5356238456256798,
+      0.5355602977706454,
+      0.5354847329289963,
+      0.5353971667408943,
+      0.5352976173645176,
+      0.5351861054721512,
+      0.5350626542457443,
+      0.5349272893719367,
+      0.5347800390365636,
+      0.5346209339186274,
+      0.5344500071837471,
+      0.534267294477085,
+      0.5340728339157492,
+      0.5338666660806762,
+      0.5336488340079936,
+      0.5334193831798668,
+      0.5331783615148311,
+      0.5329258193576083,
+      0.5326618094684153,
+      0.5323863870117599,
+      0.5320996095447371,
+      0.5318015370048144,
+      0.5314922316971202,
+      0.5311717582812326,
+      0.5308401837574729,
+      0.5304975774527053,
+      0.5301440110056498,
+      0.529779558351703,
+      0.5294042957072828,
+      0.5290183015536868,
+      0.5286216566204777,
+      0.5282144438683939,
+      0.5277967484717924,
+      0.5273686578006245,
+      0.5269302614019494,
+      0.5264816509809923,
+      0.5260229203817447,
+      0.5255541655671196,
+      0.5250754845986567,
+      0.5245869776157893,
+      0.5240887468146727,
+      0.5235808964265817,
+      0.5230635326958786,
+      0.5225367638575592,
+      0.5220007001143813,
+      0.5214554536135758,
+      0.5209011384231566,
+      0.5203378705078165,
+      0.5197657677044372,
+      0.519184949697193,
+      0.5185955379922782,
+      0.5179976558922438,
+      0.5173914284699603,
+      0.5167769825422096,
+      0.5161544466429091,
+      0.5155239509959756,
+      0.5148856274878364,
+      0.5142396096395877,
+      0.5135860325788167,
+      0.5129250330110788,
+      0.5122567491910498,
+      0.5115813208933513,
+      0.5108988893830579,
+      0.5102095973858887,
+      0.5095135890581012,
+      0.5088110099560752,
+      0.50810200700561,
+      0.5073867284709338,
+      0.5066653239234319,
+      0.5059379442101014,
+      0.5052047414217398,
+      0.5044658688608723,
+      0.5037214810094276,
+      0.5029717334961644,
+      0.5022167830638613,
+      0.501456787536272,
+      0.5006919057848557,
+      0.4999222976952872,
+      0.49914812413375786,
+      0.4983695469130708,
+      0.4975867287585384,
+      0.49679983327369015,
+      0.4960090249057999,
+      0.4952144689112302,
+      0.4944163313206197,
+      0.4936147789038994,
+      0.49280997913516134,
+      0.4920021001573788,
+      0.4911913107469885,
+      0.49037778027834333,
+      0.48956167868803757,
+      0.4887431764391197,
+      0.4879224444851953,
+      0.4870996542344296,
+      0.48627497751345417,
+      0.48544858653119327,
+      0.48462065384260566,
+      0.48379135231236137,
+      0.48296085507845177,
+      0.4821293355157479,
+      0.48129696719951,
+      0.48046392386885484,
+      0.47963037939019704,
+      0.47879650772065985,
+      0.4779624828714738,
+      0.47712847887136434,
+      0.4762946697299396,
+      0.47546122940108326,
+      0.4746283317463643,
+      0.4737961504984666,
+      0.4729648592246487,
+      0.4721346312902427,
+      0.4713056398221962,
+      0.4704780576726688,
+      0.4696520573826881,
+      0.4688278111458748,
+      0.4680054907722434,
+      0.4671852676520857,
+      0.46636731271994647,
+      0.4655517964186979,
+      0.4647388886637188,
+      0.46392875880718953,
+      0.46312157560250744,
+      0.46231750716883113,
+      0.4615167209557609,
+      0.4607193837081637,
+      0.4599256614311481,
+      0.45913571935519937,
+      0.4583497219014786,
+      0.45756783264729683,
+      0.45679021429176814,
+      0.45601702862165183,
+      0.4552484364773879,
+      0.45448459771933514,
+      0.4537256711942206,
+      0.4529718147018006,
+      0.45222318496174974,
+      0.45147993758077676
+    ],
+    "physical_model": "finite pulse Bloch dynamics; calibrated response local only"
+  },
+  "source_sha256": {
+    "run_experiment.py": "b2baaaa647644dfd93cc29f0d0f4feac53933b0035ef114cb1cb19314849821b",
+    "model.py": "751b3138d409bd3965870b517ce8da9257a94ba98118ec6428866f91973da5c8"
+  }
+}

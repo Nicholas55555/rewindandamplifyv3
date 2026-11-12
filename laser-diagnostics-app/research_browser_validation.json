@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "all_checks_passed": true,
+  "route": "Existing Python Playwright + installed system Chrome in an isolated headless profile, standalone file URL. Uses the previously verified local fallback; no user browser profile or account used.",
+  "route_note": "Previous QA found CUA IAB unavailable and bundled Chromium 138 lacked H.264 decoding. This revision uses installed Chrome directly; media bytes remain unchanged.",
+  "python": "3.12.10",
+  "chromium": "157.0.8103.39",
+  "checks": [
+    "All six frequency cases and both rules match frozen rates; task/false-alarm units visible",
+    "All 13 drive cases preserve eligible/null denominators, matched source-stable FAR and prior-only controls",
+    "All seven phase cases and both budgets show global error, branch errors, dose and time",
+    "Inference pairing and complete explicit circuit ledger visible",
+    "QRSM-to-dot bridge distinguishes measured observables, proposed model mapping and future semiconductor-device QA",
+    "Implemented joint instrument keeps passive/main negative; all six fresh budgets match, including loss/mode nuisance failure and HMM comparison",
+    "All four quantum-dot toy cases, four trap settings and six loss settings match frozen values; native keyboard selector works",
+    "All three external HOM pairs and both display windows retain raw counts, attribution and paper-reported labels; new extraction values/conditional intervals/protocol ranges match saved results",
+    "All seven hardware families/circuit selectors and every dot flag history match saved raw data; native costs, no-hit failures and job/raw links verified",
+    "Original core controls unchanged; chapter arrows/Home/End and Ctrl+Home behave correctly; history link works",
+    "390x844 mobile: all six study views have no document horizontal overflow and readable HTML data",
+    "Reduced-motion preference disables historical autoplay-style controls; MP4s have no autoplay"
+  ],
+  "page_errors": [],
+  "network_requests": 0,
+  "videos": [
+    {
+      "id": "video-sensing",
+      "duration": 12,
+      "play_pause_seek": "passed"
+    },
+    {
+      "id": "video-quantum-extension",
+      "duration": 12,
+      "play_pause_seek": "passed"
+    }
+  ],
+  "screenshots": [
+    "preview-research-frequency.png",
+    "preview-research-drive.png",
+    "preview-research-phase.png",
+    "preview-research-progress.png",
+    "preview-research-dot-bridge.png",
+    "preview-research-joint-hom.png",
+    "preview-research-dot-design.png",
+    "preview-research-dot.png",
+    "preview-research-dot-model.png",
+    "preview-research-dot-data.png",
+    "preview-research-hardware.png",
+    "preview-research-hardware-dot.png",
+    "preview-research-frequency-mobile.png",
+    "preview-research-drive-mobile.png",
+    "preview-research-phase-mobile.png",
+    "preview-research-progress-mobile.png",
+    "preview-research-dot-mobile.png",
+    "preview-research-hardware-mobile.png",
+    "preview-research-hardware-dot-mobile.png",
+    "preview-research-dot-model-mobile.png",
+    "preview-research-dot-data-mobile.png",
+    "preview-research-dot-bridge-mobile.png",
+    "preview-research-joint-hom-mobile.png",
+    "preview-research-dot-design-mobile.png"
+  ],
+  "source_sha256": {
+    "index.html": "8f3e39cb64926dba2633f905a83c064a86ec7f7111493937817787547a1ad010",
+    "app.js": "3074f27e3090f4172ff5b414bc55ff132846041c8bb61831f006f8d2689cdfca",
+    "research.js": "b5fae2647d64a414edb5fd508f682fe056bc8d856352dd92a8df1e8a48f5aade",
+    "quantum-dots.js": "334f778ec835d36cbe20d1f7f355a4564465f602f0d0e242da2446ad8a0802fa",
+    "joint-hom.js": "75b8a82195b98404baf912ec6bbd8dd7af3c338b099dec251a9e285d33eeca0e",
+    "hardware.js": "4e69dabd5c5e65b7fd0b4193d3e88a114b29d541ccdcac4d0f6678bf2d63f6d0",
+    "styles.css": "249994ead38ed393b6d7f6b499d14e203364a183bdc6e512d82a7706170ea70d",
+    "model.js": "089dd4e315936efedbb398c7bac6772ed0939f4b3cfa366deeb36cdeee2ab37f",
+    "data.js": "0a3054e717bfcc1f9457236f7d2a43abe606d45ee4130fb1b3f0ecdb6438e300",
+    "research-data.js": "76752996963018df387a8329ce56a33fa5e38db234eb822c7ac7a5160fe0d888",
+    "check_browser.py": "c50332478204766d3f715b2f279310b310f2a67ca7fe6088b4a0c1bd1e052142"
+  },
+  "evidence_manifest_sha256": "7c465999a84fff2c53e4d037050690e3112ae4bd31d8392525a1d574dae4c963"
+}

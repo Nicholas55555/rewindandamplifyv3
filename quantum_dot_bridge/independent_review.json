@@ -1,0 +1,50 @@
+{
+  "all_checks_passed": true,
+  "method": "Independent dimensionless two-dimensional adaptive integration; no model import",
+  "scope": "Implementation agreement for five declared synthetic cases; adaptive error estimates are not certified device-model bounds.",
+  "scipy": "1.18.1",
+  "cases": [
+    {
+      "case": "transform_limited",
+      "adaptive_integral": 0.9999999999999999,
+      "scipy_error_estimate": 3.9045601245448654e-14,
+      "absolute_difference_from_saved_analytic_value": 1.1102230246251565e-16,
+      "finite_window_in_first_lifetimes": 39.99999999999999,
+      "passed": true
+    },
+    {
+      "case": "markov_dephasing",
+      "adaptive_integral": 0.5,
+      "scipy_error_estimate": 9.898680419990254e-13,
+      "absolute_difference_from_saved_analytic_value": 0.0,
+      "finite_window_in_first_lifetimes": 39.99999999999999,
+      "passed": true
+    },
+    {
+      "case": "differential_detuning",
+      "adaptive_integral": 0.09928152307422156,
+      "scipy_error_estimate": 1.9309541365495307e-11,
+      "absolute_difference_from_saved_analytic_value": 0.0,
+      "finite_window_in_first_lifetimes": 39.99999999999999,
+      "passed": true
+    },
+    {
+      "case": "common_frequency_shift",
+      "adaptive_integral": 0.8333333333333333,
+      "scipy_error_estimate": 5.5723241663805403e-14,
+      "absolute_difference_from_saved_analytic_value": 0.0,
+      "finite_window_in_first_lifetimes": 39.99999999999999,
+      "passed": true
+    },
+    {
+      "case": "unequal_lifetimes_crosscheck",
+      "adaptive_integral": 0.2533340178728717,
+      "scipy_error_estimate": 1.799738465951754e-11,
+      "absolute_difference_from_saved_analytic_value": 1.1102230246251565e-16,
+      "finite_window_in_first_lifetimes": 55.999999999999986,
+      "passed": true
+    }
+  ],
+  "results_sha256": "362d27539b5c35e45482644b94d70223b9809ac5a77b6c2bf2aa52a86aec7889",
+  "check_source_sha256": "5b1f3eea65fa88a719bdd6500aa3ab4fadbea8203d35b8f8ff09961e6d4af2c1"
+}

@@ -1,0 +1,373 @@
+{
+  "configuration": {
+    "n": 7,
+    "p": 0.8,
+    "style": "counter",
+    "rounds": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "backend": "synthetic GenericBackendV2 10-qubit line, not an IBM device",
+    "device_property_seed": 77,
+    "transpiler_seed": 13,
+    "optimization_level": 1,
+    "method": "density_matrix plus independent analytic readout, no shot sampling",
+    "qiskit": "2.6.1",
+    "qiskit_aer": "0.18.2",
+    "python": "3.12.10"
+  },
+  "classical_special_case": {
+    "exact_event_probability": 0.00037119999999999954,
+    "exact_conditional_law": {
+      "0000000": 0.03448275862068964,
+      "1000000": 0.13793103448275862,
+      "0100000": 0.13793103448275862,
+      "0010000": 0.13793103448275862,
+      "0001000": 0.13793103448275862,
+      "0000100": 0.13793103448275862,
+      "0000010": 0.13793103448275862,
+      "0000001": 0.13793103448275862
+    },
+    "conditional_law_tv_from_enumeration": 3.469446951953614e-18,
+    "direct_sampler": "one Bernoulli draw for zero versus one absorption, then a uniform index if needed",
+    "complexity_note": "O(n) output bits; no rejected histories; this exploits the special independent identical-site model",
+    "setup_cost_note": "The closed form is supplied analytically and its derivation/design costs are not timed."
+  },
+  "quantum_cases": [
+    {
+      "n": 7,
+      "p": 0.8,
+      "style": "counter",
+      "rounds": 0,
+      "logical_circuit_qubits": 7,
+      "physical_qubits_used": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "measurement_physical_qubits_in_bit_order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "routed_instruction_counts": {
+        "rz": 14,
+        "sx": 14,
+        "measure": 7
+      },
+      "routed_depth": 5,
+      "ideal": {
+        "hit_probability": 0.000371200000000001,
+        "conditional_tv": 2.42861286636753e-17,
+        "conditional_histories": {
+          "0000000": 0.03448275862068967,
+          "1000000": 0.13793103448275862,
+          "0100000": 0.13793103448275862,
+          "0010000": 0.13793103448275862,
+          "0001000": 0.13793103448275862,
+          "0000100": 0.13793103448275862,
+          "0000010": 0.13793103448275862,
+          "0000001": 0.1379310344827586
+        }
+      },
+      "ideal_amplification_formula": 0.0003711999999999996,
+      "noisy_before_readout": {
+        "hit_probability": 0.0003747152698546367,
+        "conditional_tv": 0.0003282549810842868,
+        "conditional_histories": {
+          "0000000": 0.03455054365599848,
+          "1000000": 0.13802160737142585,
+          "0100000": 0.13781464580872488,
+          "0010000": 0.13786507870779924,
+          "0001000": 0.13791513467425665,
+          "0000100": 0.13780102375916947,
+          "0000010": 0.13802105958336525,
+          "0000001": 0.13801090643926026
+        }
+      },
+      "noisy_after_readout": {
+        "hit_probability": 0.00038682897622618255,
+        "conditional_tv": 0.0024157128449637383,
+        "conditional_histories": {
+          "0000000": 0.034780172193495,
+          "1000000": 0.13772663592019563,
+          "0100000": 0.13847518392398864,
+          "0010000": 0.13857503381609645,
+          "0001000": 0.13742462752290813,
+          "0000100": 0.13697263151744649,
+          "0000010": 0.13886118498034913,
+          "0000001": 0.13718453012552048
+        }
+      },
+      "noisy_output_normalization": 1.0000000000000009,
+      "expected_circuit_shots_per_raw_match": 2585.121750070994,
+      "expected_routed_cx_per_raw_match": 0.0,
+      "expected_routed_sx_per_raw_match": 36191.70450099392
+    },
+    {
+      "n": 7,
+      "p": 0.8,
+      "style": "counter",
+      "rounds": 1,
+      "logical_circuit_qubits": 10,
+      "physical_qubits_used": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "measurement_physical_qubits_in_bit_order": [
+        6,
+        8,
+        7,
+        2,
+        3,
+        1,
+        0
+      ],
+      "routed_instruction_counts": {
+        "cx": 830,
+        "rz": 408,
+        "sx": 88,
+        "measure": 7
+      },
+      "routed_depth": 1061,
+      "ideal": {
+        "hit_probability": 0.003337493871799037,
+        "conditional_tv": 5.377642775528102e-16,
+        "conditional_histories": {
+          "0000000": 0.03448275862068975,
+          "1000000": 0.13793103448275892,
+          "0100000": 0.13793103448275865,
+          "0010000": 0.1379310344827585,
+          "0001000": 0.13793103448275856,
+          "0000100": 0.13793103448275848,
+          "0000010": 0.13793103448275837,
+          "0000001": 0.1379310344827587
+        }
+      },
+      "ideal_amplification_formula": 0.0033374938717990374,
+      "noisy_before_readout": {
+        "hit_probability": 0.013798470001800444,
+        "conditional_tv": 0.0720503611019855,
+        "conditional_histories": {
+          "0000000": 0.08470723254606377,
+          "1000000": 0.11460460703214152,
+          "0100000": 0.1398064875722286,
+          "0010000": 0.15788146856990004,
+          "0001000": 0.12744328016908987,
+          "0000100": 0.12421529750502597,
+          "0000010": 0.11842011872096293,
+          "0000001": 0.13292150788458734
+        }
+      },
+      "noisy_after_readout": {
+        "hit_probability": 0.013856721624485622,
+        "conditional_tv": 0.07220148469570552,
+        "conditional_histories": {
+          "0000000": 0.08477128787116124,
+          "1000000": 0.11449785405843953,
+          "0100000": 0.13992965716011357,
+          "0010000": 0.15784536725063766,
+          "0001000": 0.12753152265737105,
+          "0000100": 0.12409278625049219,
+          "0000010": 0.11852947965007232,
+          "0000001": 0.13280204510171256
+        }
+      },
+      "noisy_output_normalization": 0.9999999999998488,
+      "expected_circuit_shots_per_raw_match": 72.16714220721174,
+      "expected_routed_cx_per_raw_match": 59898.728031985745,
+      "expected_routed_sx_per_raw_match": 6350.708514234633
+    },
+    {
+      "n": 7,
+      "p": 0.8,
+      "style": "counter",
+      "rounds": 2,
+      "logical_circuit_qubits": 10,
+      "physical_qubits_used": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "measurement_physical_qubits_in_bit_order": [
+        7,
+        9,
+        8,
+        2,
+        3,
+        1,
+        0
+      ],
+      "routed_instruction_counts": {
+        "cx": 1711,
+        "rz": 805,
+        "sx": 160,
+        "measure": 7
+      },
+      "routed_depth": 2120,
+      "ideal": {
+        "hit_probability": 0.009252470742417222,
+        "conditional_tv": 5.516420653606247e-16,
+        "conditional_histories": {
+          "0000000": 0.03448275862068975,
+          "1000000": 0.1379310344827589,
+          "0100000": 0.13793103448275837,
+          "0010000": 0.13793103448275848,
+          "0001000": 0.13793103448275867,
+          "0000100": 0.1379310344827586,
+          "0000010": 0.13793103448275842,
+          "0000001": 0.13793103448275867
+        }
+      },
+      "ideal_amplification_formula": 0.009252470742417269,
+      "noisy_before_readout": {
+        "hit_probability": 0.061009493801836144,
+        "conditional_tv": 0.0964166032489126,
+        "conditional_histories": {
+          "0000000": 0.13089936186960224,
+          "1000000": 0.13467553861566264,
+          "0100000": 0.12199375547438482,
+          "0010000": 0.13665809790516564,
+          "0001000": 0.10955306491575713,
+          "0000100": 0.11858719909480508,
+          "0000010": 0.1132544601848093,
+          "0000001": 0.13437852193981312
+        }
+      },
+      "noisy_after_readout": {
+        "hit_probability": 0.06100202623987654,
+        "conditional_tv": 0.09636230414815083,
+        "conditional_histories": {
+          "0000000": 0.1308450627688405,
+          "1000000": 0.13464996758574138,
+          "0100000": 0.12202646958349707,
+          "0010000": 0.13668301791808535,
+          "0001000": 0.1095702906390283,
+          "0000100": 0.11863057932573594,
+          "0000010": 0.11325090004142213,
+          "0000001": 0.13434371213764934
+        }
+      },
+      "noisy_output_normalization": 0.9999999999996498,
+      "expected_circuit_shots_per_raw_match": 16.392898099281624,
+      "expected_routed_cx_per_raw_match": 28048.24864787086,
+      "expected_routed_sx_per_raw_match": 2622.86369588506
+    },
+    {
+      "n": 7,
+      "p": 0.8,
+      "style": "counter",
+      "rounds": 3,
+      "logical_circuit_qubits": 10,
+      "physical_qubits_used": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "measurement_physical_qubits_in_bit_order": [
+        8,
+        9,
+        6,
+        2,
+        3,
+        1,
+        0
+      ],
+      "routed_instruction_counts": {
+        "cx": 2598,
+        "rz": 1202,
+        "sx": 232,
+        "measure": 7
+      },
+      "routed_depth": 3285,
+      "ideal": {
+        "hit_probability": 0.01808101342156618,
+        "conditional_tv": 5.447031714567174e-16,
+        "conditional_histories": {
+          "0000000": 0.03448275862068971,
+          "1000000": 0.13793103448275879,
+          "0100000": 0.13793103448275837,
+          "0010000": 0.1379310344827584,
+          "0001000": 0.1379310344827586,
+          "0000100": 0.13793103448275879,
+          "0000010": 0.13793103448275879,
+          "0000001": 0.13793103448275865
+        }
+      },
+      "ideal_amplification_formula": 0.01808101342156633,
+      "noisy_before_readout": {
+        "hit_probability": 0.11797736270688226,
+        "conditional_tv": 0.13122354096018007,
+        "conditional_histories": {
+          "0000000": 0.16570629958086966,
+          "1000000": 0.12905687973756988,
+          "0100000": 0.13144182386244868,
+          "0010000": 0.1356474941232789,
+          "0001000": 0.11998749237993706,
+          "0000100": 0.0971504578538886,
+          "0000010": 0.10364052963205968,
+          "0000001": 0.1173690228299474
+        }
+      },
+      "noisy_after_readout": {
+        "hit_probability": 0.11772024814584459,
+        "conditional_tv": 0.13100860525859745,
+        "conditional_histories": {
+          "0000000": 0.16549136387928703,
+          "1000000": 0.12897659369473308,
+          "0100000": 0.1315394119615053,
+          "0010000": 0.13570447726344928,
+          "0001000": 0.11991411374960308,
+          "0000100": 0.0973527677997488,
+          "0000010": 0.10358660366785713,
+          "0000001": 0.11743466798381617
+        }
+      },
+      "noisy_output_normalization": 0.9999999999994591,
+      "expected_circuit_shots_per_raw_match": 8.494715359086669,
+      "expected_routed_cx_per_raw_match": 22069.270502907166,
+      "expected_routed_sx_per_raw_match": 1970.7739633081073
+    }
+  ],
+  "limitations": [
+    "Synthetic uncalibrated threshold toy; this is not a wafer process or optical quantum device.",
+    "One seeded synthetic target, one compiler seed; different rounds can have different layouts.",
+    "Noisy event matches can be false positives; P(hit) and CX per raw match alone do not measure correct output.",
+    "The expected counts assume repeated independent circuit runs and exclude single-qubit gates except the separate SX tally, measurement latency, calibration, fault tolerance, and all wall-clock overhead.",
+    "Classical direct sampling is a specially tractable exact baseline for this toy, not a solver for the separate spatial process.",
+    "No fair wall-clock or total-energy comparison and no quantum speedup is demonstrated.",
+    "Density-matrix values are deterministic only within the synthetic local-noise model and not a real hardware result."
+  ]
+}

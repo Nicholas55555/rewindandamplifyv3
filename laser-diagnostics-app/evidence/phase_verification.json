@@ -1,0 +1,27 @@
+{
+  "schema": "phase-inspection-verification-v1",
+  "tests_passed": 9,
+  "estimation_trials": 168000,
+  "sampling_dependence": "Independently drawn outcomes conditional on truth; the same 2000 uniformly sampled global phases are reused across methods/cases. Trials within each combination are independent, combinations share the phase cohort.",
+  "photon_dose_before_object_verified": true,
+  "clock_budget_verified": true,
+  "source_sha256_verified": true,
+  "fisher_information_loss_and_preparation_limits_verified": true,
+  "global_noon_branch_ambiguity_preserved": true,
+  "max_grid_refinement_difference_rad": 9.0831684210535e-05,
+  "visual_review": "Both generated figures individually inspected; axes, budgets, units and phase-domain distinction readable.",
+  "physical_claim_boundary": "Specified ideal optical phase model with losses. No fabricated pattern, material defect diagnosis, device measurement or universal classical limit claim.",
+  "sha256": {
+    "phase_model.py": "df08a8c3360b825cd1609504e19554fcf0569a20f2d6c6c40446e81886bdff16",
+    "test_phase_model.py": "82d04f707a963f6ca098656ba31c9c051b903957036e787f7751c9a3b2c9adac",
+    "run_phase_study.py": "5edee8b6d1ec0c0d380a7b4fe0209e1fce442cb036c0247ff9e0c235163895c8",
+    "verify_phase_results.py": "5c307dd23144df811fb2a4f55d63fbe8c16742dc958d621082fa25cb6a0bc8ad",
+    "README.md": "51adb1ab3133d4be92bad651920d7e8c97f5d4ec1791511a1dcbecf4fbc78c8f",
+    "requirements.txt": "ee51afafe3eace7540be2e3d5a4955d15522fa3cf7063ed29550949880eeb2f4",
+    "results.json": "8c9ac370ed20a154376bb19b0ae6947f01346fa05fccb3d191e280adb927d6f4",
+    "run_summary.json": "5de31d77bb472de8205906514acf4c8a53c19e713c5436a35d183714e1f7efd5",
+    "test_results.txt": "d5f8f5cccacef760d271b8dbd29d57979d15d013b4fc67be1240298c120cc66c",
+    "local_phase_tradeoffs.png": "506104b9fccc173b228349cf5c02b8ce465ce1435897b03fab8895905cc96c18",
+    "global_phase_ambiguity.png": "186c7bf3a132ac88e65b2ca17294a1d61454deb1bb3959a3bea17dcb6ed50179"
+  }
+}

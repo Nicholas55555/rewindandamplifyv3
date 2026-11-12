@@ -1,0 +1,9 @@
+{
+  "results_sha256": "9e66fd73027780f61219af8ff493d652911622473dfb29cbe9be37ffaa79a19a",
+  "plot_source_sha256": "ea390e3a9bf2615d848feaa94411466912ec417bc73d631d3a719473fe0636e7",
+  "artifacts": {
+    "analysis.png": "0f1dbc7f656dee62817a3b3c6f7b665244b839d2612c04bcf1aca7cc3e22ec43",
+    "analysis.pdf": "89afb540dc2263ab437780ff361d738780199d3aa0384ee321c3e70d2829b47d"
+  },
+  "scope": "Saved conditional estimates, fixed sensitivity sweep, and recorded raw histogram bins normalized by saved reference means"
+}

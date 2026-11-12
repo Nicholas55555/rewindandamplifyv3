@@ -1,0 +1,14 @@
+test_control_preserves_trace_and_probability (test_inference_model.InstrumentTests.test_control_preserves_trace_and_probability) ... ok
+test_deadtime_evolves_unconditionally_in_blind_bin (test_inference_model.InstrumentTests.test_deadtime_evolves_unconditionally_in_blind_bin) ... ok
+test_deadtime_normalizes_and_forbids_adjacent_clicks (test_inference_model.InstrumentTests.test_deadtime_normalizes_and_forbids_adjacent_clicks) ... ok
+test_likelihood_sum_matches_original (test_inference_model.InstrumentTests.test_likelihood_sum_matches_original) ... ok
+test_parameter_coordinates_roundtrip (test_inference_model.InstrumentTests.test_parameter_coordinates_roundtrip) ... ok
+test_samples_agree_with_exact_records (test_inference_model.InstrumentTests.test_samples_agree_with_exact_records) ... ok
+test_uncontrolled_matches_original (test_inference_model.InstrumentTests.test_uncontrolled_matches_original) ... ok
+test_fixed_protocol_detuning_sign_is_global_alias (test_parameter_diagnostics.DiagnosticsTests.test_fixed_protocol_detuning_sign_is_global_alias) ... ok
+test_hessian_against_analytic_nonlinear_function (test_parameter_diagnostics.DiagnosticsTests.test_hessian_against_analytic_nonlinear_function) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.422s
+
+OK

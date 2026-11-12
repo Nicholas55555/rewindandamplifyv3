@@ -1,0 +1,211 @@
+{
+  "config": {
+    "seeds": [
+      729901
+    ],
+    "steps": 96,
+    "cavity": 2,
+    "response_records": 16,
+    "train_each_class": 16,
+    "null_calibration": 24,
+    "test_each_scenario": 12,
+    "efficiency_trials": 10000,
+    "dark_trials": 20000,
+    "hmm_starts": 1,
+    "hmm_iterations": 30,
+    "bootstrap": 50,
+    "alpha": 0.05
+  },
+  "cases": {
+    "stable_source": {},
+    "source_step_20pct": {
+      "source": "step",
+      "fraction": 0.2
+    },
+    "stable_source_efficiency_loss": {
+      "nuisance": {
+        "eta_factor": 0.8
+      }
+    },
+    "stable_source_afterpulse": {
+      "nuisance": {
+        "afterpulse": 0.1
+      }
+    }
+  },
+  "source_sha256": {
+    "qrsm_photon_poc\\drive_diagnostics_followup\\run_study.py": "f8fea46074b915e85dd45a57a4bbf142abf8c8ef681f04e89d5fb32173cf5596",
+    "qrsm_photon_poc\\drive_diagnostics_followup\\model.py": "49dccebaaaa78318c70280e8a3ef6220511ea890e0cb5677658f2bdf526f9b3d",
+    "qrsm_photon_poc\\drive_diagnostics_followup\\test_model.py": "38958e4b748e34a7f75518f4785b98d5eeb03eb4aa841e310eea2215d9f4a1dc",
+    "qrsm_photon_poc\\drive_diagnostics_followup\\PROTOCOL.md": "791c295045799e8ca689459a6ebff7391d852d7cfca630ec7e80b2969789b180",
+    "qrsm_photon_poc\\qrsm_photon.py": "d93d976a1e31d0eb7d67a59754dbbcce14a9a1e1c38df60cf3e2f21ce8f4344a",
+    "qrsm_photon_poc\\followup\\inference_model.py": "56bea54d666e422f4061e600bbc12d2da9cd0620bb8cd2603d100df74c2c1d25",
+    "qrsm_photon_poc\\diagnostics_baselines\\compare.py": "4ef63ffddd4c023333501cebfe4e8e643a56893d73a96c407c1700e290f5a10f",
+    "qrsm_photon_poc\\diagnostics_baselines\\refine_replication.py": "2b601d343d3a32a67b561237b3d82674918a3c9433ca7d9baeb533d6883aa8e3"
+  },
+  "random_stream_namespaces": [
+    {
+      "pipeline_master": 729901,
+      "purpose": "detector_calibration",
+      "seed": 13995138224777374279
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "hmm/baseline",
+      "seed": 17470603058511375584
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "hmm/source",
+      "seed": 17339930898079745792
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "response/measurement",
+      "seed": 13503047182605833620
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "response/schedule",
+      "seed": 17201091405665497681
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "response/nuisance",
+      "seed": 1585072101370520889
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "training/baseline/measurement",
+      "seed": 5222846057764983191
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "training/baseline/schedule",
+      "seed": 6968682807164190802
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "training/baseline/nuisance",
+      "seed": 607729088917711304
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "training/step/measurement",
+      "seed": 16856531297546518794
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "training/step/schedule",
+      "seed": 16983821581561256094
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "training/step/nuisance",
+      "seed": 8988715208597951062
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "training/telegraph/measurement",
+      "seed": 16910278106497309216
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "training/telegraph/schedule",
+      "seed": 9107878459827175022
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "training/telegraph/nuisance",
+      "seed": 11503354077733976858
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "threshold/measurement",
+      "seed": 844198627177274655
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "threshold/schedule",
+      "seed": 13357920041413713024
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "threshold/nuisance",
+      "seed": 9174659342342983746
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "test/stable_source/measurement",
+      "seed": 4558093054792644424
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "test/stable_source/schedule",
+      "seed": 11684637870451564438
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "test/stable_source/nuisance",
+      "seed": 9562447470199571022
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "test/source_step_20pct/measurement",
+      "seed": 16500497022022677244
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "test/source_step_20pct/schedule",
+      "seed": 16613982120198588862
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "test/source_step_20pct/nuisance",
+      "seed": 14266761823351984184
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "test/stable_source_efficiency_loss/measurement",
+      "seed": 5163681759563957328
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "test/stable_source_efficiency_loss/schedule",
+      "seed": 10918770774582079
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "test/stable_source_efficiency_loss/nuisance",
+      "seed": 4625459123213694769
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "test/stable_source_afterpulse/measurement",
+      "seed": 3426699013973678229
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "test/stable_source_afterpulse/schedule",
+      "seed": 7358064326771263154
+    },
+    {
+      "pipeline_master": 729901,
+      "purpose": "test/stable_source_afterpulse/nuisance",
+      "seed": 7119912687506912523
+    },
+    {
+      "pipeline_master": 622222,
+      "purpose": "summary_bootstrap",
+      "seed": 3431882419486598483
+    }
+  ],
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.3.1",
+    "scipy": "1.18.1"
+  },
+  "mode": "software_smoke_not_evidence",
+  "pid": 13996,
+  "wall_time_limit_seconds": 180
+}

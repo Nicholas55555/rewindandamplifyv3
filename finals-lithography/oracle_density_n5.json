@@ -1,0 +1,123 @@
+{
+  "configuration": {
+    "synthetic_target": "seeded GenericBackendV2 10-qubit bidirectional line; not real hardware",
+    "qiskit_version": "2.6.1",
+    "qiskit_aer_version": "0.18.2",
+    "python_version": "3.12.10",
+    "seed_transpiler": 13,
+    "target_seed": 77,
+    "optimization_level": 1,
+    "method": "density_matrix, no shot sampling; independent readout applied analytically",
+    "aer_internal_memory_limit_mb": 512,
+    "per_case_timeout_seconds": 45.0
+  },
+  "rows": [
+    {
+      "status": "completed",
+      "sites": 5,
+      "oracle": "enumerated",
+      "seconds": 2.108999999999469,
+      "logical_qubits": 5,
+      "active_physical_qubits": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "data_measurement_physical_qubits_in_bit_order": [
+        3,
+        0,
+        2,
+        4,
+        1
+      ],
+      "compiled_cx": 565,
+      "compiled_depth": 729,
+      "before_readout": {
+        "hit_probability": 0.0865720278741971,
+        "conditional_tv": 0.0925360230642023,
+        "conditional_histories": {
+          "00000": 0.1340161910328811,
+          "10000": 0.18891623846531008,
+          "01000": 0.19661507012655927,
+          "00100": 0.1502722575152237,
+          "00010": 0.16848863150635324,
+          "00001": 0.16169161135367255
+        }
+      },
+      "after_readout": {
+        "hit_probability": 0.08683880836984448,
+        "conditional_tv": 0.09240579951098657,
+        "conditional_histories": {
+          "00000": 0.1340384949753273,
+          "10000": 0.18880451607276927,
+          "01000": 0.19646254263089732,
+          "00100": 0.15055187723495034,
+          "00010": 0.1683531208150568,
+          "00001": 0.16178944827099886
+        }
+      },
+      "before_readout_probability_sum": 0.9999999999915841,
+      "after_readout_probability_sum": 0.9999999999915841
+    },
+    {
+      "status": "completed",
+      "sites": 5,
+      "oracle": "counter",
+      "seconds": 2.563000000000102,
+      "logical_qubits": 8,
+      "active_physical_qubits": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "data_measurement_physical_qubits_in_bit_order": [
+        7,
+        4,
+        6,
+        8,
+        9
+      ],
+      "compiled_cx": 554,
+      "compiled_depth": 710,
+      "before_readout": {
+        "hit_probability": 0.05360954032166594,
+        "conditional_tv": 0.07507530499529233,
+        "conditional_histories": {
+          "00000": 0.09372375267635913,
+          "10000": 0.17853095260633856,
+          "01000": 0.20347384610269845,
+          "00100": 0.15074383086952003,
+          "00010": 0.16707848295742048,
+          "00001": 0.2064491347876633
+        }
+      },
+      "after_readout": {
+        "hit_probability": 0.053980937480843504,
+        "conditional_tv": 0.07431758337590787,
+        "conditional_histories": {
+          "00000": 0.09411577295605382,
+          "10000": 0.1788993895413638,
+          "01000": 0.202946271355381,
+          "00100": 0.1507119440046579,
+          "00010": 0.16749965450664192,
+          "00001": 0.20582696763590166
+        }
+      },
+      "before_readout_probability_sum": 0.9999999999998869,
+      "after_readout_probability_sum": 0.9999999999998868
+    }
+  ],
+  "limitations": [
+    "Synthetic threshold process and synthetic noisy target, not a real wafer or processor.",
+    "Error model has local gate/readout errors; it does not establish performance under device drift, crosstalk or unmodeled effects.",
+    "Oracle circuits use different qubit counts and can have different physical layouts.",
+    "Probabilities are deterministic only within this finite synthetic model; no hardware or end-to-end advantage is established."
+  ]
+}

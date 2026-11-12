@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "error": "RuntimeError: could not enforce Windows process memory limit: None is not a valid string in this context",
+  "worker_memory_limit_mb": 1024,
+  "environment": {
+    "qiskit_version": "2.6.1",
+    "python_version": "3.12.10",
+    "memory_limit_mb": 1024,
+    "timeout_seconds": 90.0
+  }
+}

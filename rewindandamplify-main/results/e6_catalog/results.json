@@ -1,0 +1,925 @@
+{
+ "accuracy": {
+  "rows": [
+   {
+    "request": "how much did we sell in each area",
+    "tokens": [
+     "sales",
+     "region"
+    ],
+    "target": "quarterly_sales_by_region",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "quarterly_sales_by_region",
+    "quantum_top": "quarterly_sales_by_region",
+    "r": 3,
+    "target_probability": 0.79503059387207,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "what do we pay staff per team",
+    "tokens": [
+     "payroll",
+     "employee",
+     "department"
+    ],
+    "target": "employee_payroll_by_department",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "employee_payroll_by_department",
+    "quantum_top": "employee_payroll_by_department",
+    "r": 3,
+    "target_probability": 0.9504392147064206,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "which clients are leaving by location",
+    "tokens": [
+     "customer",
+     "churn",
+     "region"
+    ],
+    "target": "customer_churn_by_region",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "customer_churn_by_region",
+    "quantum_top": "customer_churn_by_region",
+    "r": 3,
+    "target_probability": 0.8900001049041747,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "chip errors at readout",
+    "tokens": [
+     "device",
+     "errors",
+     "readout"
+    ],
+    "target": "qubit_readout_errors_by_device",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "qubit_readout_errors_by_device",
+    "quantum_top": "qubit_readout_errors_by_device",
+    "r": 3,
+    "target_probability": 0.9269866943359375,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "how long do qubits live on each machine",
+    "tokens": [
+     "qubit",
+     "device"
+    ],
+    "target": "qubit_t1_times_by_device",
+    "best_score": 1.0,
+    "matches_at_top_score": 2,
+    "classical_top": "qubit_t1_times_by_device",
+    "quantum_top": "qubit_t1_times_by_device",
+    "r": 6,
+    "target_probability": 0.46623847173759697,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "stock in the warehouse for each item",
+    "tokens": [
+     "inventory",
+     "warehouse"
+    ],
+    "target": "warehouse_inventory_by_product",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "warehouse_inventory_by_product",
+    "quantum_top": "warehouse_inventory_by_product",
+    "r": 3,
+    "target_probability": 0.9613189697265625,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "visitors to the site every day",
+    "tokens": [
+     "traffic",
+     "website",
+     "day"
+    ],
+    "target": "website_traffic_by_day",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "website_traffic_by_day",
+    "quantum_top": "website_traffic_by_day",
+    "r": 3,
+    "target_probability": 0.9613189697265625,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "what we spend on ads per channel",
+    "tokens": [
+     "spend",
+     "marketing",
+     "channel"
+    ],
+    "target": "marketing_spend_by_channel",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "marketing_spend_by_channel",
+    "quantum_top": "marketing_spend_by_channel",
+    "r": 3,
+    "target_probability": 0.9613189697265625,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "complaints from each client",
+    "tokens": [
+     "tickets",
+     "customer"
+    ],
+    "target": "support_tickets_by_customer",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "support_tickets_by_customer",
+    "quantum_top": "support_tickets_by_customer",
+    "r": 3,
+    "target_probability": 0.8909702301025388,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "delivery costs for every area",
+    "tokens": [
+     "shipping",
+     "costs",
+     "region"
+    ],
+    "target": "shipping_costs_by_region",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "shipping_costs_by_region",
+    "quantum_top": "shipping_costs_by_region",
+    "r": 3,
+    "target_probability": 0.9269866943359375,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "refunds each month",
+    "tokens": [
+     "returns",
+     "monthly"
+    ],
+    "target": "product_returns_by_month",
+    "best_score": 0.5,
+    "matches_at_top_score": 2,
+    "classical_top": "monthly_sales_by_product",
+    "quantum_top": "monthly_sales_by_product",
+    "r": 1,
+    "target_probability": 0.22656250000000003,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "electricity for each building",
+    "tokens": [
+     "energy",
+     "building"
+    ],
+    "target": "energy_usage_by_building",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "energy_usage_by_building",
+    "quantum_top": "energy_usage_by_building",
+    "r": 3,
+    "target_probability": 0.9613189697265625,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "marks of pupils in every class",
+    "tokens": [
+     "grades",
+     "student",
+     "course"
+    ],
+    "target": "student_grades_by_course",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "student_grades_by_course",
+    "quantum_top": "student_grades_by_course",
+    "r": 3,
+    "target_probability": 0.9613189697265625,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "broken sensors on the machines",
+    "tokens": [
+     "faults",
+     "device"
+    ],
+    "target": "sensor_faults_by_device",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "sensor_faults_by_device",
+    "quantum_top": "sensor_faults_by_device",
+    "r": 3,
+    "target_probability": 0.8476104736328126,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "yearly revenue per team",
+    "tokens": [
+     "annual",
+     "sales",
+     "department"
+    ],
+    "target": "annual_revenue_by_department",
+    "best_score": 0.6666666666666666,
+    "matches_at_top_score": 1,
+    "classical_top": "annual_revenue_by_department",
+    "quantum_top": "annual_revenue_by_department",
+    "r": 6,
+    "target_probability": 0.3021340751738533,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "monthly sales of each product",
+    "tokens": [
+     "monthly",
+     "sales",
+     "product"
+    ],
+    "target": "monthly_sales_by_product",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "monthly_sales_by_product",
+    "quantum_top": "monthly_sales_by_product",
+    "r": 3,
+    "target_probability": 0.8900001049041747,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "sales for the quarter by region",
+    "tokens": [
+     "sales",
+     "quarterly",
+     "region"
+    ],
+    "target": "quarterly_sales_by_region",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "quarterly_sales_by_region",
+    "quantum_top": "quarterly_sales_by_region",
+    "r": 3,
+    "target_probability": 0.8900001049041747,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "t1 lifetime of the chips",
+    "tokens": [
+     "t1",
+     "device"
+    ],
+    "target": "qubit_t1_times_by_device",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "qubit_t1_times_by_device",
+    "quantum_top": "qubit_t1_times_by_device",
+    "r": 3,
+    "target_probability": 0.8476104736328126,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "salaries in each department",
+    "tokens": [
+     "payroll",
+     "department"
+    ],
+    "target": "employee_payroll_by_department",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "employee_payroll_by_department",
+    "quantum_top": "employee_payroll_by_department",
+    "r": 3,
+    "target_probability": 0.8909702301025388,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   },
+   {
+    "request": "customer churn",
+    "tokens": [
+     "customer",
+     "churn"
+    ],
+    "target": "customer_churn_by_region",
+    "best_score": 1.0,
+    "matches_at_top_score": 1,
+    "classical_top": "customer_churn_by_region",
+    "quantum_top": "customer_churn_by_region",
+    "r": 3,
+    "target_probability": 0.8909702301025388,
+    "ranked_by_score_at_r1": true,
+    "start_probability": 0.0625
+   }
+  ],
+  "summary": {
+   "requests": 20,
+   "classical_top1": 0.95,
+   "quantum_top1": 0.95,
+   "agree": 1.0,
+   "ranked_at_r1": 1.0,
+   "median_target_probability": 0.8909702301025388
+  }
+ },
+ "costs": [
+  {
+   "n": 3,
+   "N": 8,
+   "classical_scan_steps": 8,
+   "grover_queries": 2,
+   "oracle_cz": 6,
+   "diffusion_cz": 6,
+   "total_cz": 24
+  },
+  {
+   "n": 4,
+   "N": 16,
+   "classical_scan_steps": 16,
+   "grover_queries": 3,
+   "oracle_cz": 14,
+   "diffusion_cz": 14,
+   "total_cz": 84
+  },
+  {
+   "n": 5,
+   "N": 32,
+   "classical_scan_steps": 32,
+   "grover_queries": 4,
+   "oracle_cz": 30,
+   "diffusion_cz": 36,
+   "total_cz": 264
+  },
+  {
+   "n": 6,
+   "N": 64,
+   "classical_scan_steps": 64,
+   "grover_queries": 6,
+   "oracle_cz": 62,
+   "diffusion_cz": 82,
+   "total_cz": 864
+  },
+  {
+   "n": 7,
+   "N": 128,
+   "classical_scan_steps": 128,
+   "grover_queries": 9,
+   "oracle_cz": 124,
+   "diffusion_cz": 122,
+   "total_cz": 2214
+  },
+  {
+   "n": 8,
+   "N": 256,
+   "classical_scan_steps": 256,
+   "grover_queries": 13,
+   "oracle_cz": 254,
+   "diffusion_cz": 170,
+   "total_cz": 5512
+  },
+  {
+   "n": 9,
+   "N": 512,
+   "classical_scan_steps": 512,
+   "grover_queries": 18,
+   "oracle_cz": 508,
+   "diffusion_cz": 226,
+   "total_cz": 13212
+  },
+  {
+   "n": 10,
+   "N": 1024,
+   "classical_scan_steps": 1024,
+   "grover_queries": 25,
+   "oracle_cz": 1022,
+   "diffusion_cz": 290,
+   "total_cz": 32800
+  }
+ ],
+ "noisy": [
+  {
+   "backend": "FakeFez",
+   "request": "what do we pay staff per team",
+   "tokens": [
+    "payroll",
+    "employee",
+    "department"
+   ],
+   "target": "employee_payroll_by_department",
+   "catalog": [
+    "quarterly_sales_by_region",
+    "monthly_sales_by_product",
+    "customer_churn_by_region",
+    "employee_payroll_by_department",
+    "website_traffic_by_day",
+    "warehouse_inventory_by_product",
+    "support_tickets_by_customer",
+    "marketing_spend_by_channel"
+   ],
+   "rows": [
+    {
+     "r": 0,
+     "two_qubit_gates": 0,
+     "ideal": 0.12499999999999997,
+     "measured": 0.12298583984375,
+     "distribution": [
+      0.12738037109375,
+      0.12213134765625,
+      0.12646484375,
+      0.12298583984375,
+      0.126708984375,
+      0.124267578125,
+      0.12701416015625,
+      0.123046875
+     ],
+     "ideal_distribution": [
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997
+     ]
+    },
+    {
+     "r": 1,
+     "two_qubit_gates": 32,
+     "ideal": 0.7812499999999999,
+     "measured": 0.69708251953125,
+     "distribution": [
+      0.041748046875,
+      0.04833984375,
+      0.0458984375,
+      0.69708251953125,
+      0.03857421875,
+      0.03839111328125,
+      0.0413818359375,
+      0.048583984375
+     ],
+     "ideal_distribution": [
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.7812499999999999,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993
+     ]
+    },
+    {
+     "r": 2,
+     "two_qubit_gates": 63,
+     "ideal": 0.9453124999999998,
+     "measured": 0.76873779296875,
+     "distribution": [
+      0.031982421875,
+      0.0447998046875,
+      0.038330078125,
+      0.76873779296875,
+      0.026123046875,
+      0.0263671875,
+      0.02911376953125,
+      0.0345458984375
+     ],
+     "ideal_distribution": [
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.9453124999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998
+     ]
+    }
+   ]
+  },
+  {
+   "backend": "FakeTorino",
+   "request": "what do we pay staff per team",
+   "tokens": [
+    "payroll",
+    "employee",
+    "department"
+   ],
+   "target": "employee_payroll_by_department",
+   "catalog": [
+    "quarterly_sales_by_region",
+    "monthly_sales_by_product",
+    "customer_churn_by_region",
+    "employee_payroll_by_department",
+    "website_traffic_by_day",
+    "warehouse_inventory_by_product",
+    "support_tickets_by_customer",
+    "marketing_spend_by_channel"
+   ],
+   "rows": [
+    {
+     "r": 0,
+     "two_qubit_gates": 0,
+     "ideal": 0.12499999999999997,
+     "measured": 0.1260986328125,
+     "distribution": [
+      0.12774658203125,
+      0.1273193359375,
+      0.126708984375,
+      0.1260986328125,
+      0.122802734375,
+      0.12335205078125,
+      0.12255859375,
+      0.1234130859375
+     ],
+     "ideal_distribution": [
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997
+     ]
+    },
+    {
+     "r": 1,
+     "two_qubit_gates": 32,
+     "ideal": 0.7812499999999999,
+     "measured": 0.676513671875,
+     "distribution": [
+      0.043701171875,
+      0.05255126953125,
+      0.0545654296875,
+      0.676513671875,
+      0.04058837890625,
+      0.04083251953125,
+      0.040283203125,
+      0.05096435546875
+     ],
+     "ideal_distribution": [
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.7812499999999999,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993
+     ]
+    },
+    {
+     "r": 2,
+     "two_qubit_gates": 63,
+     "ideal": 0.9453124999999998,
+     "measured": 0.7388916015625,
+     "distribution": [
+      0.03057861328125,
+      0.04205322265625,
+      0.05712890625,
+      0.7388916015625,
+      0.025390625,
+      0.0264892578125,
+      0.02978515625,
+      0.0496826171875
+     ],
+     "ideal_distribution": [
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.9453124999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998
+     ]
+    }
+   ]
+  },
+  {
+   "backend": "FakeKingston",
+   "request": "what do we pay staff per team",
+   "tokens": [
+    "payroll",
+    "employee",
+    "department"
+   ],
+   "target": "employee_payroll_by_department",
+   "catalog": [
+    "quarterly_sales_by_region",
+    "monthly_sales_by_product",
+    "customer_churn_by_region",
+    "employee_payroll_by_department",
+    "website_traffic_by_day",
+    "warehouse_inventory_by_product",
+    "support_tickets_by_customer",
+    "marketing_spend_by_channel"
+   ],
+   "rows": [
+    {
+     "r": 0,
+     "two_qubit_gates": 0,
+     "ideal": 0.12499999999999997,
+     "measured": 0.1240234375,
+     "distribution": [
+      0.12811279296875,
+      0.12176513671875,
+      0.12689208984375,
+      0.1240234375,
+      0.12640380859375,
+      0.12310791015625,
+      0.126708984375,
+      0.12298583984375
+     ],
+     "ideal_distribution": [
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997
+     ]
+    },
+    {
+     "r": 1,
+     "two_qubit_gates": 32,
+     "ideal": 0.7812499999999999,
+     "measured": 0.71923828125,
+     "distribution": [
+      0.039306640625,
+      0.04351806640625,
+      0.04638671875,
+      0.71923828125,
+      0.0362548828125,
+      0.03582763671875,
+      0.03662109375,
+      0.0428466796875
+     ],
+     "ideal_distribution": [
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.7812499999999999,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993
+     ]
+    },
+    {
+     "r": 2,
+     "two_qubit_gates": 63,
+     "ideal": 0.9453124999999998,
+     "measured": 0.8302001953125,
+     "distribution": [
+      0.02191162109375,
+      0.0325927734375,
+      0.029541015625,
+      0.8302001953125,
+      0.01751708984375,
+      0.01873779296875,
+      0.0194091796875,
+      0.03009033203125
+     ],
+     "ideal_distribution": [
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.9453124999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998
+     ]
+    }
+   ]
+  },
+  {
+   "backend": "FakePittsburgh",
+   "request": "what do we pay staff per team",
+   "tokens": [
+    "payroll",
+    "employee",
+    "department"
+   ],
+   "target": "employee_payroll_by_department",
+   "catalog": [
+    "quarterly_sales_by_region",
+    "monthly_sales_by_product",
+    "customer_churn_by_region",
+    "employee_payroll_by_department",
+    "website_traffic_by_day",
+    "warehouse_inventory_by_product",
+    "support_tickets_by_customer",
+    "marketing_spend_by_channel"
+   ],
+   "rows": [
+    {
+     "r": 0,
+     "two_qubit_gates": 0,
+     "ideal": 0.12499999999999997,
+     "measured": 0.122802734375,
+     "distribution": [
+      0.1273193359375,
+      0.12225341796875,
+      0.1265869140625,
+      0.122802734375,
+      0.12689208984375,
+      0.12420654296875,
+      0.12677001953125,
+      0.1231689453125
+     ],
+     "ideal_distribution": [
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997
+     ]
+    },
+    {
+     "r": 1,
+     "two_qubit_gates": 32,
+     "ideal": 0.7812499999999999,
+     "measured": 0.7384033203125,
+     "distribution": [
+      0.03765869140625,
+      0.037353515625,
+      0.0421142578125,
+      0.7384033203125,
+      0.03533935546875,
+      0.0350341796875,
+      0.03460693359375,
+      0.03948974609375
+     ],
+     "ideal_distribution": [
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.7812499999999999,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993
+     ]
+    },
+    {
+     "r": 2,
+     "two_qubit_gates": 63,
+     "ideal": 0.9453124999999998,
+     "measured": 0.8599853515625,
+     "distribution": [
+      0.020263671875,
+      0.02362060546875,
+      0.02618408203125,
+      0.8599853515625,
+      0.01617431640625,
+      0.0166015625,
+      0.01873779296875,
+      0.0184326171875
+     ],
+     "ideal_distribution": [
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.9453124999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998
+     ]
+    }
+   ]
+  },
+  {
+   "backend": "FakeMiami",
+   "request": "what do we pay staff per team",
+   "tokens": [
+    "payroll",
+    "employee",
+    "department"
+   ],
+   "target": "employee_payroll_by_department",
+   "catalog": [
+    "quarterly_sales_by_region",
+    "monthly_sales_by_product",
+    "customer_churn_by_region",
+    "employee_payroll_by_department",
+    "website_traffic_by_day",
+    "warehouse_inventory_by_product",
+    "support_tickets_by_customer",
+    "marketing_spend_by_channel"
+   ],
+   "rows": [
+    {
+     "r": 0,
+     "two_qubit_gates": 0,
+     "ideal": 0.12499999999999997,
+     "measured": 0.123046875,
+     "distribution": [
+      0.12738037109375,
+      0.12689208984375,
+      0.1229248046875,
+      0.123046875,
+      0.12677001953125,
+      0.126220703125,
+      0.122802734375,
+      0.12396240234375
+     ],
+     "ideal_distribution": [
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997,
+      0.12499999999999997
+     ]
+    },
+    {
+     "r": 1,
+     "two_qubit_gates": 34,
+     "ideal": 0.7812499999999999,
+     "measured": 0.714599609375,
+     "distribution": [
+      0.03851318359375,
+      0.0450439453125,
+      0.04876708984375,
+      0.714599609375,
+      0.03570556640625,
+      0.03448486328125,
+      0.03564453125,
+      0.0472412109375
+     ],
+     "ideal_distribution": [
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.7812499999999999,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993,
+      0.031249999999999993
+     ]
+    },
+    {
+     "r": 2,
+     "two_qubit_gates": 63,
+     "ideal": 0.9453124999999998,
+     "measured": 0.82568359375,
+     "distribution": [
+      0.02130126953125,
+      0.03466796875,
+      0.03363037109375,
+      0.82568359375,
+      0.01708984375,
+      0.0184326171875,
+      0.0191650390625,
+      0.030029296875
+     ],
+     "ideal_distribution": [
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.9453124999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998,
+      0.007812499999999998
+     ]
+    }
+   ]
+  }
+ ],
+ "circuit_check": [
+  2.7755575615628914e-17,
+  2.3314683517128287e-15,
+  4.9960036108132044e-15
+ ]
+}

@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "comparison": "Full result tree including all scenario metrics, fits, thresholds, supplemental analyses and sweeps exactly reproduced; all trace arrays exactly reproduced. Only editorial provenance and associated source-file hashes excluded from tree comparison.",
+  "main_scenario_test_records": 96000,
+  "scenarios": 8,
+  "main_methods": 5,
+  "current_source_hashes_verified": {
+    "run_experiment.py": "fefcaf0b9237445ac9d85cbee4ac1cabe9110459b4905f44853ec14d3a2e7097",
+    "model.py": "751b3138d409bd3965870b517ce8da9257a94ba98118ec6428866f91973da5c8"
+  },
+  "canonical_results_sha256": "7a35b25be3c998b14c439dc6a705db2489463484fe1743b00d5d7af96e9293ac",
+  "canonical_traces_sha256": "4792d304e13922bef7a335dd1f1dc342f19347f15d64a87bc5882f36c2b52ef7",
+  "reproduction_directory": "research-validation/reproduced-sensor",
+  "scope": "Same implementation and seeds in a separate full run; independent dynamics cross-check is sensor_physics_verification.json, not this reproduction."
+}

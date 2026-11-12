@@ -1,0 +1,26 @@
+<section id="grover" data-transition="fade" style="background:#F6F5F0;color:#12203A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:88px 128px 104px;display:flex;flex-direction:column;gap:32px">
+<h2 style="font-size:60px;font-weight:600;line-height:1.12;letter-spacing:-0.5px">Grover’s algorithm in one minute</h2>
+<div style="display:flex;gap:32px">
+<div style="flex:1;background:#FCFCFB;border:1px solid #DDDAD0;border-radius:16px;padding:24px 28px;display:flex;flex-direction:column;gap:10px">
+<h3 style="font-size:36px;font-weight:600">1. Start</h3>
+<svg aria-label="Eight equal bars above a line, one of them orange" width="456" height="312" viewBox="0 0 456 312" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="208" width="456" height="3" fill="#C3C2B7"/><rect x="10" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/><rect x="66" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/><rect x="122" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/><rect x="178" y="130" width="36" height="78" rx="4" fill="#EB6834"/><rect x="234" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/><rect x="290" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/><rect x="346" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/><rect x="402" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/></svg>
+<p style="font-size:31px;line-height:1.28;color:#3B4658">Every answer is held at once, with equal weight.</p>
+</div>
+<div style="flex:1;background:#FCFCFB;border:1px solid #DDDAD0;border-radius:16px;padding:24px 28px;display:flex;flex-direction:column;gap:10px">
+<h3 style="font-size:36px;font-weight:600">2. Mark</h3>
+<svg aria-label="The orange bar now points down below the line" width="456" height="312" viewBox="0 0 456 312" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="208" width="456" height="3" fill="#C3C2B7"/><rect x="10" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/><rect x="66" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/><rect x="122" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/><rect x="178" y="212" width="36" height="78" rx="4" fill="#EB6834"/><rect x="234" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/><rect x="290" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/><rect x="346" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/><rect x="402" y="130" width="36" height="78" rx="4" fill="#9AA5B5"/></svg>
+<p style="font-size:31px;line-height:1.28;color:#3B4658">Flip the sign of the answers you want.</p>
+</div>
+<div style="flex:1;background:#FCFCFB;border:1px solid #DDDAD0;border-radius:16px;padding:24px 28px;display:flex;flex-direction:column;gap:10px">
+<h3 style="font-size:36px;font-weight:600">3. Reflect</h3>
+<svg aria-label="After reflecting about the average, the orange bar is tall and the others are short" width="456" height="312" viewBox="0 0 456 312" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="208" width="456" height="3" fill="#C3C2B7"/><rect x="10" y="169" width="36" height="39" rx="4" fill="#9AA5B5"/><rect x="66" y="169" width="36" height="39" rx="4" fill="#9AA5B5"/><rect x="122" y="169" width="36" height="39" rx="4" fill="#9AA5B5"/><rect x="178" y="13" width="36" height="195" rx="4" fill="#EB6834"/><rect x="234" y="169" width="36" height="39" rx="4" fill="#9AA5B5"/><rect x="290" y="169" width="36" height="39" rx="4" fill="#9AA5B5"/><rect x="346" y="169" width="36" height="39" rx="4" fill="#9AA5B5"/><rect x="402" y="169" width="36" height="39" rx="4" fill="#9AA5B5"/></svg>
+<p style="font-size:31px;line-height:1.28;color:#3B4658">Flip everything about the average. The marked answer grows.</p>
+</div>
+</div>
+<div style="display:flex;gap:56px;flex:1;align-items:center">
+<p style="flex:1;font-size:38px;line-height:1.28;color:#3B4658">Repeat. A <b>10%</b> chance becomes <b>99.9%</b> in two rounds. Searching N items takes about <b>√N</b> rounds, where sampling takes N.</p>
+<p style="flex:0.75;font-size:36px;line-height:1.3;color:#3B4658;font-family:'JetBrains Mono', 'Courier New', monospace">P = sin²((2r + 1) θ)<br>p = sin²θ</p>
+</div>
+<p style="position:absolute;right:128px;bottom:56px;width:100px;text-align:right;font-size:24px;color:#6A7282">6</p>
+<aside>Here’s Grover’s algorithm for anyone who hasn’t met it. A quantum computer can hold every possible answer at once, each with a weight. Step two: flip the sign of the answers you want. That changes nothing you could measure yet. Step three is the clever part: flip every weight around the average. The one you marked jumps up, and the others shrink. That’s interference doing the work. Repeat a few times, and a ten percent chance becomes nearly certain in just two rounds. Searching N things takes about the square root of N rounds. One warning: go too far and it overshoots.</aside>
+</section>

@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-11-11T05:10:14.995651+00:00",
+  "files": {
+    "ceil_clean_389q.qpy": "38c2b602c2df43f7cf6681cce72ecb0be914599fc8f7a362fd6ed8f80be8273d",
+    "ceil_compact_219q.qpy.partial": "6ab697306b5e9f184c8c41524f56a904540720c6a8d6743e5bf2abc5c09416ff",
+    "circuit_model.py": "ca54b7d6dea0be05f8ff924263dec9fb23306cac3d795b9e307a4c83f5ab4d3d",
+    "floor_clean_389q.qpy": "876bcede2202d09fed6821ceb93ba821d9c68b56144f72033ca6438eb307991a",
+    "floor_compact_219q.qpy.partial": "cf80548d476236ed4e6d514254a84e5de9d119fe40d581ee134e62b5d04e7864",
+    "independent_review.json": "b0f8c67d2762832efd3cc890234c096e77d15d01da9fa56501a3b781816bf625",
+    "process_bounds.py": "3355a64b16858340c1128412152f0b7abec1f5d8c117541664fceed72b61c2a5",
+    "README.md": "e4cf82e75502e5b36952a0fd0e16910b2c68d17763f15536c44af8ef9f8f8f60",
+    "results.json": "62769c7a89be87aab019d911d9bc6f7b778c9a73a7f1f4c044b0d43328ce3ba6",
+    "run_construction.py": "63cf564a1204304ae0a57177b73fb9229fcaebef3c6099bbd8b8fb27ce6ba7d8",
+    "test_full_spatial.py": "023c62f2923b83639568f3e83395d307925b843c94f3244d5d7f1bf262a03106",
+    "test_results.txt": "c9cdfef9a271fe1f1bf78dbba6709d232ebe4fcefad6991ebfa1cd4471aeebe1",
+    "validate_results.py": "c0f12559465e497db86e52c38c5cb2246d2d41a6f61855fff6b4a42f5eca0364",
+    "validation.json": "1c3a1cfb72b776e5c3e9790836048f45537880865c910140a9d7798f91694d90"
+  },
+  "claim_scope": "Constructed finite approximation with tested components and actual explicit QPY round-trip; not full-state or hardware execution."
+}

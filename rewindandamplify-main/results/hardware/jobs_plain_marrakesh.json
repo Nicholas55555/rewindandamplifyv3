@@ -1,0 +1,1008 @@
+{
+ "backend": "ibm_marrakesh",
+ "jobs": {
+  "plain_marrakesh": "dbmfvad8ft8s738upsjg"
+ },
+ "submitted": "2026-11-05 17:14:00",
+ "experiments": [
+  {
+   "name": "click3-full-r0",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "full",
+    "r": 0,
+    "steer": null
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 13,
+   "depth": 59,
+   "estimated_success": 0.9206084621518436,
+   "physical_qubits": [
+    7,
+    6,
+    5,
+    8,
+    17,
+    14,
+    120
+   ]
+  },
+  {
+   "name": "click3-steered-full-r0",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "full",
+    "r": 0,
+    "steer": 1.0
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 13,
+   "depth": 56,
+   "estimated_success": 0.9208745177030866,
+   "physical_qubits": [
+    6,
+    7,
+    8,
+    17,
+    5,
+    14,
+    120
+   ]
+  },
+  {
+   "name": "click3-steered-memory+last-1-r1",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "memory+last-1",
+    "r": 1,
+    "steer": 1.0
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 40,
+   "depth": 168,
+   "estimated_success": 0.8708886708083967,
+   "physical_qubits": [
+    6,
+    7,
+    8,
+    17,
+    5
+   ]
+  },
+  {
+   "name": "click3-steered-full-r1",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "full",
+    "r": 1,
+    "steer": 1.0
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 71,
+   "depth": 225,
+   "estimated_success": 0.7340232444981338,
+   "physical_qubits": [
+    137,
+    146,
+    148,
+    147,
+    127,
+    145,
+    149
+   ]
+  },
+  {
+   "name": "click3-full-r1",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "full",
+    "r": 1,
+    "steer": null
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 81,
+   "depth": 245,
+   "estimated_success": 0.7091994233427137,
+   "physical_qubits": [
+    148,
+    146,
+    137,
+    147,
+    149,
+    145,
+    127
+   ]
+  },
+  {
+   "name": "click3-full-r2",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "full",
+    "r": 2,
+    "steer": null
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 147,
+   "depth": 426,
+   "estimated_success": 0.598164354752165,
+   "physical_qubits": [
+    7,
+    6,
+    8,
+    27,
+    17,
+    5,
+    9
+   ]
+  },
+  {
+   "name": "click3-full-r3",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "full",
+    "r": 3,
+    "steer": null
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 213,
+   "depth": 612,
+   "estimated_success": 0.5065670132116968,
+   "physical_qubits": [
+    7,
+    6,
+    8,
+    27,
+    17,
+    5,
+    9
+   ]
+  },
+  {
+   "name": "click3-memory+last-1-r1",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "memory+last-1",
+    "r": 1,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 46,
+   "depth": 188,
+   "estimated_success": 0.8602157071377007,
+   "physical_qubits": [
+    6,
+    7,
+    8,
+    17,
+    5
+   ]
+  },
+  {
+   "name": "click3-memory+last-1-r2",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "memory+last-1",
+    "r": 2,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 79,
+   "depth": 320,
+   "estimated_success": 0.7992479326798961,
+   "physical_qubits": [
+    6,
+    7,
+    8,
+    17,
+    5
+   ]
+  },
+  {
+   "name": "click3-memory+last-1-r3",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "memory+last-1",
+    "r": 3,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 112,
+   "depth": 452,
+   "estimated_success": 0.7426012482597358,
+   "physical_qubits": [
+    6,
+    7,
+    8,
+    17,
+    5
+   ]
+  },
+  {
+   "name": "click3-memory-r1",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "memory",
+    "r": 1,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 36,
+   "depth": 152,
+   "estimated_success": 0.8795402676467827,
+   "physical_qubits": [
+    7,
+    6,
+    5,
+    17,
+    8
+   ]
+  },
+  {
+   "name": "click3-memory-r2",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "memory",
+    "r": 2,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 59,
+   "depth": 244,
+   "estimated_success": 0.8361219263669806,
+   "physical_qubits": [
+    7,
+    6,
+    5,
+    17,
+    8
+   ]
+  },
+  {
+   "name": "click3-memory-r3",
+   "meta": {
+    "kind": "history",
+    "group": "click3",
+    "k": 1,
+    "T": 3,
+    "question": "click at step 3",
+    "reflection": "memory",
+    "r": 3,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 82,
+   "depth": 336,
+   "estimated_success": 0.7953148777544722,
+   "physical_qubits": [
+    7,
+    6,
+    5,
+    17,
+    8
+   ]
+  },
+  {
+   "name": "any3-nodefect-full-r0",
+   "meta": {
+    "kind": "history",
+    "group": "any3-nodefect",
+    "k": 0,
+    "T": 3,
+    "question": "any click",
+    "reflection": "full",
+    "r": 0,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 6,
+   "depth": 32,
+   "estimated_success": 0.9424077144067372,
+   "physical_qubits": [
+    147,
+    146,
+    137,
+    148,
+    120
+   ]
+  },
+  {
+   "name": "any3-nodefect-full-r1",
+   "meta": {
+    "kind": "history",
+    "group": "any3-nodefect",
+    "k": 0,
+    "T": 3,
+    "question": "any click",
+    "reflection": "full",
+    "r": 1,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 53,
+   "depth": 188,
+   "estimated_success": 0.844329134153099,
+   "physical_qubits": [
+    7,
+    6,
+    17,
+    8,
+    5
+   ]
+  },
+  {
+   "name": "any3-nodefect-full-r2",
+   "meta": {
+    "kind": "history",
+    "group": "any3-nodefect",
+    "k": 0,
+    "T": 3,
+    "question": "any click",
+    "reflection": "full",
+    "r": 2,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 100,
+   "depth": 343,
+   "estimated_success": 0.759768298448817,
+   "physical_qubits": [
+    7,
+    6,
+    17,
+    8,
+    5
+   ]
+  },
+  {
+   "name": "any3-nodefect-full-r3",
+   "meta": {
+    "kind": "history",
+    "group": "any3-nodefect",
+    "k": 0,
+    "T": 3,
+    "question": "any click",
+    "reflection": "full",
+    "r": 3,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 147,
+   "depth": 498,
+   "estimated_success": 0.6836763579250603,
+   "physical_qubits": [
+    7,
+    6,
+    17,
+    8,
+    5
+   ]
+  },
+  {
+   "name": "any3-full-r0",
+   "meta": {
+    "kind": "history",
+    "group": "any3",
+    "k": 1,
+    "T": 3,
+    "question": "any click",
+    "reflection": "full",
+    "r": 0,
+    "steer": null
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 13,
+   "depth": 59,
+   "estimated_success": 0.9206084621518436,
+   "physical_qubits": [
+    7,
+    6,
+    5,
+    8,
+    17,
+    14,
+    120
+   ]
+  },
+  {
+   "name": "any3-full-r1",
+   "meta": {
+    "kind": "history",
+    "group": "any3",
+    "k": 1,
+    "T": 3,
+    "question": "any click",
+    "reflection": "full",
+    "r": 1,
+    "steer": null
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 102,
+   "depth": 268,
+   "estimated_success": 0.6927810887243193,
+   "physical_qubits": [
+    6,
+    5,
+    17,
+    8,
+    7,
+    4,
+    27
+   ]
+  },
+  {
+   "name": "any3-full-r2",
+   "meta": {
+    "kind": "history",
+    "group": "any3",
+    "k": 1,
+    "T": 3,
+    "question": "any click",
+    "reflection": "full",
+    "r": 2,
+    "steer": null
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 193,
+   "depth": 504,
+   "estimated_success": 0.5713551523381634,
+   "physical_qubits": [
+    7,
+    27,
+    5,
+    17,
+    6,
+    28,
+    8
+   ]
+  },
+  {
+   "name": "any3-full-r3",
+   "meta": {
+    "kind": "history",
+    "group": "any3",
+    "k": 1,
+    "T": 3,
+    "question": "any click",
+    "reflection": "full",
+    "r": 3,
+    "steer": null
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 279,
+   "depth": 727,
+   "estimated_success": 0.4710469243282235,
+   "physical_qubits": [
+    7,
+    27,
+    5,
+    17,
+    6,
+    28,
+    8
+   ]
+  },
+  {
+   "name": "any3-memory-r1",
+   "meta": {
+    "kind": "history",
+    "group": "any3",
+    "k": 1,
+    "T": 3,
+    "question": "any click",
+    "reflection": "memory",
+    "r": 1,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 56,
+   "depth": 176,
+   "estimated_success": 0.8402439620690503,
+   "physical_qubits": [
+    7,
+    17,
+    5,
+    6,
+    8
+   ]
+  },
+  {
+   "name": "any3-memory-r2",
+   "meta": {
+    "kind": "history",
+    "group": "any3",
+    "k": 1,
+    "T": 3,
+    "question": "any click",
+    "reflection": "memory",
+    "r": 2,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 95,
+   "depth": 295,
+   "estimated_success": 0.7725361929525171,
+   "physical_qubits": [
+    7,
+    17,
+    5,
+    6,
+    8
+   ]
+  },
+  {
+   "name": "any3-memory-r3",
+   "meta": {
+    "kind": "history",
+    "group": "any3",
+    "k": 1,
+    "T": 3,
+    "question": "any click",
+    "reflection": "memory",
+    "r": 3,
+    "steer": null
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 141,
+   "depth": 414,
+   "estimated_success": 0.6926062542466986,
+   "physical_qubits": [
+    7,
+    5,
+    17,
+    6,
+    8
+   ]
+  },
+  {
+   "name": "click5-full-r0",
+   "meta": {
+    "kind": "history",
+    "group": "click5",
+    "k": 1,
+    "T": 5,
+    "question": "click at step 5",
+    "reflection": "full",
+    "r": 0,
+    "steer": null
+   },
+   "logical_qubits": 11,
+   "two_qubit_gates": 27,
+   "depth": 95,
+   "estimated_success": 0.8160936419450178,
+   "physical_qubits": [
+    5,
+    7,
+    27,
+    8,
+    17,
+    6,
+    4,
+    14,
+    120,
+    2,
+    148
+   ]
+  },
+  {
+   "name": "click5-full-r1",
+   "meta": {
+    "kind": "history",
+    "group": "click5",
+    "k": 1,
+    "T": 5,
+    "question": "click at step 5",
+    "reflection": "full",
+    "r": 1,
+    "steer": null
+   },
+   "logical_qubits": 11,
+   "two_qubit_gates": 183,
+   "depth": 463,
+   "estimated_success": 0.5118502873062326,
+   "physical_qubits": [
+    17,
+    6,
+    4,
+    5,
+    8,
+    7,
+    27,
+    9,
+    3,
+    2,
+    10
+   ]
+  },
+  {
+   "name": "click5-memory+last-1-r3",
+   "meta": {
+    "kind": "history",
+    "group": "click5",
+    "k": 1,
+    "T": 5,
+    "question": "click at step 5",
+    "reflection": "memory+last-1",
+    "r": 3,
+    "steer": null
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 210,
+   "depth": 670,
+   "estimated_success": 0.5401165412556663,
+   "physical_qubits": [
+    7,
+    6,
+    4,
+    5,
+    27,
+    17,
+    8
+   ]
+  },
+  {
+   "name": "click5-steered-memory+last-1-r1",
+   "meta": {
+    "kind": "history",
+    "group": "click5",
+    "k": 1,
+    "T": 5,
+    "question": "click at step 5",
+    "reflection": "memory+last-1",
+    "r": 1,
+    "steer": 0.9210815363788557
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 88,
+   "depth": 285,
+   "estimated_success": 0.7173977402002812,
+   "physical_qubits": [
+    7,
+    6,
+    4,
+    5,
+    27,
+    17,
+    8
+   ]
+  },
+  {
+   "name": "click5-steered-full-r1",
+   "meta": {
+    "kind": "history",
+    "group": "click5",
+    "k": 1,
+    "T": 5,
+    "question": "click at step 5",
+    "reflection": "full",
+    "r": 1,
+    "steer": 0.9210815363788557
+   },
+   "logical_qubits": 11,
+   "two_qubit_gates": 183,
+   "depth": 464,
+   "estimated_success": 0.5120768494757874,
+   "physical_qubits": [
+    17,
+    6,
+    4,
+    5,
+    8,
+    7,
+    27,
+    9,
+    3,
+    2,
+    10
+   ]
+  },
+  {
+   "name": "loop-defect-r0",
+   "meta": {
+    "kind": "loop",
+    "group": "loop-defect",
+    "k": 1,
+    "t0": 3,
+    "tau": 3,
+    "reflection": "full",
+    "r": 0,
+    "steer": null,
+    "width": 10
+   },
+   "logical_qubits": 10,
+   "two_qubit_gates": 37,
+   "depth": 111,
+   "estimated_success": 0.7887971209145853,
+   "physical_qubits": [
+    5,
+    7,
+    28,
+    8,
+    27,
+    14,
+    120,
+    17,
+    6,
+    4
+   ]
+  },
+  {
+   "name": "loop-defect-r1",
+   "meta": {
+    "kind": "loop",
+    "group": "loop-defect",
+    "k": 1,
+    "t0": 3,
+    "tau": 3,
+    "reflection": "memory+last-1",
+    "r": 1,
+    "steer": 1.0,
+    "width": 8
+   },
+   "logical_qubits": 8,
+   "two_qubit_gates": 70,
+   "depth": 213,
+   "estimated_success": 0.742861585877262,
+   "physical_qubits": [
+    8,
+    7,
+    4,
+    5,
+    17,
+    6,
+    10,
+    9
+   ]
+  },
+  {
+   "name": "loop-nodefect-r0",
+   "meta": {
+    "kind": "loop",
+    "group": "loop-nodefect",
+    "k": 0,
+    "t0": 3,
+    "tau": 3,
+    "reflection": "full",
+    "r": 0,
+    "steer": null,
+    "width": 8
+   },
+   "logical_qubits": 8,
+   "two_qubit_gates": 21,
+   "depth": 72,
+   "estimated_success": 0.8765797121393016,
+   "physical_qubits": [
+    33,
+    55,
+    52,
+    53,
+    120,
+    54,
+    32,
+    34
+   ]
+  },
+  {
+   "name": "loop-nodefect-r1",
+   "meta": {
+    "kind": "loop",
+    "group": "loop-nodefect",
+    "k": 0,
+    "t0": 3,
+    "tau": 3,
+    "reflection": "memory+last-1",
+    "r": 1,
+    "steer": 0.49493050913358544,
+    "width": 7
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 29,
+   "depth": 114,
+   "estimated_success": 0.8472206325833334,
+   "physical_qubits": [
+    33,
+    53,
+    52,
+    55,
+    54,
+    39,
+    34
+   ]
+  },
+  {
+   "name": "catalog-r0",
+   "meta": {
+    "kind": "catalog",
+    "N": 8,
+    "query": "what do we pay staff per team",
+    "r": 0
+   },
+   "logical_qubits": 3,
+   "two_qubit_gates": 0,
+   "depth": 4,
+   "estimated_success": 0.9908679160948963,
+   "physical_qubits": [
+    120,
+    14,
+    6
+   ]
+  },
+  {
+   "name": "catalog-r1",
+   "meta": {
+    "kind": "catalog",
+    "N": 8,
+    "query": "what do we pay staff per team",
+    "r": 1
+   },
+   "logical_qubits": 3,
+   "two_qubit_gates": 32,
+   "depth": 130,
+   "estimated_success": 0.9225677913659012,
+   "physical_qubits": [
+    54,
+    53,
+    55
+   ]
+  },
+  {
+   "name": "catalog-r2",
+   "meta": {
+    "kind": "catalog",
+    "N": 8,
+    "query": "what do we pay staff per team",
+    "r": 2
+   },
+   "logical_qubits": 3,
+   "two_qubit_gates": 63,
+   "depth": 255,
+   "estimated_success": 0.8729190358626445,
+   "physical_qubits": [
+    54,
+    53,
+    55
+   ]
+  },
+  {
+   "name": "echo-T3-x1",
+   "meta": {
+    "kind": "echo",
+    "k": 1,
+    "T": 3,
+    "repeats": 1
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 26,
+   "depth": 110,
+   "estimated_success": 0.8963320666801875,
+   "physical_qubits": [
+    7,
+    6,
+    8,
+    17,
+    5
+   ]
+  },
+  {
+   "name": "echo-T3-x2",
+   "meta": {
+    "kind": "echo",
+    "k": 1,
+    "T": 3,
+    "repeats": 2
+   },
+   "logical_qubits": 5,
+   "two_qubit_gates": 52,
+   "depth": 219,
+   "estimated_success": 0.8422328896125892,
+   "physical_qubits": [
+    7,
+    6,
+    8,
+    17,
+    5
+   ]
+  },
+  {
+   "name": "echo-T5-x1",
+   "meta": {
+    "kind": "echo",
+    "k": 1,
+    "T": 5,
+    "repeats": 1
+   },
+   "logical_qubits": 7,
+   "two_qubit_gates": 54,
+   "depth": 176,
+   "estimated_success": 0.7796086844563684,
+   "physical_qubits": [
+    7,
+    8,
+    6,
+    17,
+    5,
+    9,
+    10
+   ]
+  }
+ ],
+ "calibrated_qubits": [
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  14,
+  17,
+  27,
+  28,
+  32,
+  33,
+  34,
+  39,
+  52,
+  53,
+  54,
+  55,
+  120,
+  127,
+  137,
+  145,
+  146,
+  147,
+  148,
+  149
+ ],
+ "shots": 4096
+}

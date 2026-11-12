@@ -1,0 +1,29 @@
+{
+  "schema": "campaign-independent-guard-review-v1",
+  "all_checks_passed": true,
+  "offline_tests_passed": 24,
+  "service_accessed": false,
+  "submission_performed": false,
+  "reviewed_sources": {
+    "hardware_campaign/campaign.py": "2f05cba032b6d0c9cc5ae184ea9118a266ef61c0bdc7a0428f6009285627a7c0",
+    "hardware_campaign/test_campaign.py": "7c301f5e043208635bd6797b78abb0b5cb20198e1e7330d598238cb3898965de"
+  },
+  "test_output_sha256": "1fb07be86703a9bd2c5ce7c0cdb9e95a442c62bcf104604731e37ffb4c1044e9",
+  "reviewed_plan": "hardware_campaign/runs/original_plain_v2/plan.json",
+  "reviewed_plan_sha256": "f8eb8023f26ab6b079204a0ffb2ce591dc8d1d6dfc9357bfd0635244eb59b2fa",
+  "actual_plan_local_hash_verification_passed": true,
+  "pubs": 47,
+  "science_pubs": 43,
+  "cap_seconds": 90,
+  "estimated_seconds": 25.198280704000002,
+  "scope": "Read-only local source/plan/hash review and mocked service tests. Parent owns live schema validation and actual submission.",
+  "findings": [
+    "Nested bundle and reference artifacts protected by hashes.",
+    "Exclusive campaign submission lock serializes quota reservation and intent creation.",
+    "Unresolved remote submission intent cannot be blindly resubmitted.",
+    "Finite nonnegative quota values, reservations and5-second buffer enforced.",
+    "Raw result PUB ordering and immutable output preserved; shots/backend checked.",
+    "Measurement/classical-bit mapping and per-wire terminal condition tested.",
+    "No remaining submission-safeguard blocker for the reviewed original plan."
+  ]
+}

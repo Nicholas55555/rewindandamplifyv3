@@ -1,0 +1,32 @@
+{
+  "schema": "independent-optical-controls-review-v1",
+  "all_checks_passed": true,
+  "circuits_checked": 33,
+  "author_tests_independently_run": 8,
+  "maximum_qpy_vs_saved_distribution_error": 1.5543122344752192e-15,
+  "maximum_independent_number_distribution_or_atomic_basis_error": 3.219646771412954e-15,
+  "source_hashes_checked": {
+    "hardware_campaign/optical_controls/models.py": "9068371b16051f723bb90dd3a5fed3a411ea1a59ae60d90011c6beba1358e81a",
+    "hardware_campaign/optical_controls/export_bundle.py": "e956e03fa44cd0b6fc003237734030a828d523468c9d8f9d6a5d3ab9b41c70ab",
+    "hardware_campaign/optical_controls/test_models.py": "e2a46e5ced4f2c3f77634ee9c67316e062d4620f587b37692b776fa3e1d37b91",
+    "hardware_campaign/optical_controls/PROTOCOL.md": "dc8212df08795d7cfa1a2b6683598478b37b783dbe8324eadc2ec702d8b76b6d",
+    "laser_sensor_viability/model.py": "751b3138d409bd3965870b517ce8da9257a94ba98118ec6428866f91973da5c8",
+    "quantum_lithography_poc/phase_inspection_followup/phase_model.py": "df08a8c3360b825cd1609504e19554fcf0569a20f2d6c6c40446e81886bdff16",
+    "quantum_lithography_poc/exposure_followup/model.py": "7943aefc4fbb91180505194c73834f01d7a97c8c044d9aa665e6124cc700a933"
+  },
+  "artifact_hashes_checked": {
+    "logical.qpy": "697bee113c843505601be20495ded861ce36be211f7d22c749b192519425f239",
+    "ideal_probabilities.npz": "f927664d1c43b8935831cb10bf22df1382afd39de880a7f5757eb17c71cd44d3"
+  },
+  "manifest_sha256": "961ce376e65847b770b4829f68be79cf351cb72b58a9ad72332e5af87fe8cbf1",
+  "reviewer_sha256": "c163277b3ba72bf938b26bcb1491246d15b4493e4cbc77ae3929fd056ac4e40d",
+  "findings": [
+    "Atomic full CPTP map, ground-state convention, preparation purification and separate synthetic readout are consistent.",
+    "Path/loss pairs encode surviving versus lost spatial modes; lost photon paths remain available as environment labels.",
+    "Identical single-particle transformations preserve the symmetric bosonic sector for stated number measurements.",
+    "Equal symmetric losses commute with the balanced beamsplitter; total object/detection loss can be placed after interference.",
+    "Source failure is charged as vacuum for the specified count instrument; no full optical vacuum/number coherence tomography is claimed.",
+    "Coherent sector aggregation keeps Poisson weights unnormalized and explicitly charges vacuum and omitted event/first/second-moment tails.",
+    "No material scientific blocker; hardware is a digital model-kernel test, not the complete optical diagnostic or phase-estimation experiment."
+  ]
+}

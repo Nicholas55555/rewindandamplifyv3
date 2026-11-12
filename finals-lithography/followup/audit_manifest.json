@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-11-11T04:43:55.952255+00:00",
+  "review_scope": "All current finals-lithography Python/JavaScript/HTML sources, tests, README and VIABILITY_COST_README, plus root QUANTUM_PHOTOLITHOGRAPHY_ROADMAP, read fresh before implementation.",
+  "preservation_note": "No edits made outside followup/. Reviewed original hashes are recorded at finalization, not represented as an independently captured before/after snapshot.",
+  "reviewed_original_files": {
+    "finals-lithography\\dose_sweep.py": "d606cbc02a6b816bebb0f1f5005e78d13efaecb292b13f25da56f6717773d7e1",
+    "finals-lithography\\index.html": "e5c572c935a2d9805265b5bc25533e4fc631f35905aed1f60505d24437415771",
+    "finals-lithography\\lithography.py": "d7f2dd4707275769b99e8eaf4dcdb85227540a3cc8de1c1f4ce0599d9120394e",
+    "finals-lithography\\oracle_comparison.py": "9056962eb3a8a776f65a467e398e3e1ca06d63d965a8fc3adc39906e6d8698e5",
+    "finals-lithography\\oracle_density_pilot.py": "dad10c7b49daa7dec76337b26de94327181ad7c8e2ae9ea0895495ebb557dc65",
+    "finals-lithography\\oracle_noise_pilot.py": "3d3b1b5cedbc648f0720cb9584f43ddcdb2a2fef2a07ee88c0e7a7a73fc3003f",
+    "finals-lithography\\plot_viability_cost.py": "7bdd33a16aa295b44b465654baea60f668e17a3f628c7acb4085d5f860fc0059",
+    "finals-lithography\\README.md": "c671740d1e52498c7a0b17b9717481eb261bd5eec321335b5b5e8a0ecb5aa23f",
+    "finals-lithography\\replication_check.py": "808a724b5e0838d3f6ec9fc9637a47ba8e357df61e9723bc4c02cd19b207cecb",
+    "finals-lithography\\scaling_study.py": "6f4f631dded1a9206bcfc407d5e8f314924c9b45e3bcfe59569bfa2b9370bcf9",
+    "finals-lithography\\spatial_model.py": "c86d14731d0d1f52e5b205438f3124bed9158e5b941c375a235369edad368093",
+    "finals-lithography\\test_browser.js": "9e058d2c2f6e3dbdc92c53ffb359c51dd6b80221e21984b6aaea1c61ac25499d",
+    "finals-lithography\\test_dose_sweep.py": "bb72917dd92030f50f124f084f29bad7ee8f28c6f761d94ee53c215c978c95a5",
+    "finals-lithography\\test_lithography.py": "c11c7b9dd5b6074c35dd1077bfd09b14221db90b5cbe22b4de58727989c6a022",
+    "finals-lithography\\test_oracle_comparison.py": "12c87d2d10756f15ad7c3a705c2d056fd47ed8ef2ef8850e193bd4174abd46af",
+    "finals-lithography\\test_oracle_density_pilot.py": "5703c904e22718e09f487f82ed681ad264d48c1128c8f4713e54340129c6556d",
+    "finals-lithography\\test_oracle_noise_pilot.py": "5a7069ba5080f14e2e04602efa423e6a609478070cade8564144194e1cbe177c",
+    "finals-lithography\\test_scaling_study.py": "6b47c583c75171acde95f71aff3b83e02e3083c31ce1e057e13906b040f9e6cf",
+    "finals-lithography\\test_spatial_model.py": "86a40e87a0a980c53c576617efb1bc29cac09491d99c86d51bbe492294bf8544",
+    "finals-lithography\\test_viability_cost_study.py": "177e19656dbce41a1e6f400571a174e3ffa49281d73d98c368d82304f2b6c6e0",
+    "finals-lithography\\VIABILITY_COST_README.md": "2bcd88c05f7f7b376ce85ca5890fd3a1e1430a40f837695b3d1e4073b31cf697",
+    "finals-lithography\\viability_cost_study.py": "0b0e6ed2e486cf97d2af3af1882caf415b8715c5fb161d706c8d162b3b69997c",
+    "QUANTUM_PHOTOLITHOGRAPHY_ROADMAP.md": "e5723da2959979c74ea308c2483b6478e3eae792e1d02eadd99dd210de2a8dae"
+  },
+  "current_followup_files": {
+    "correlated_spatial_bridge.png": "6c3209be3a5c786caf0b23d4f58097514b14c534555382f5be66eaf832c1f915",
+    "correlated_spatial_results.json": "de47b6353e0f0904c4618ab309340b60001f7f30884d1a87c1b65acc4e35852e",
+    "model.py": "b335ab34548dff297ed353a4a19ac995d199ad6982edb0714d21736c0338aefc",
+    "plot_results.py": "77221d700414d5210bded944c2f50080f587d28f1c95649950d0c98c8f592fab",
+    "quantum.py": "c46c334c15384687f7d482c0f1c1d200eb74b28e4ed1a5541cd2015f19957089",
+    "README.md": "f0eb8cb8ca59316efcc3b2f2953c6e271ab14e47b4c7e815bbc56b25a3f3c903",
+    "run_study.py": "bb8b19d91f400980f563959cb1c1020fb5497861076ea346693774bd52fb7058",
+    "spatial_coverage.png": "ca6e7e0f82704f56b896d761e5f12a1aab792afa1b1e07363f2a4c70b5656707",
+    "spatial_coverage.py": "7d83433aae4bb7cd221cb472f3fb6903fabb51de96c7730de7b007f04cc8f395",
+    "spatial_coverage_refined_results.json": "b16b3139fa0f60a108c6631f039a9819448b2686fb196d2ced16b26e1d860b2f",
+    "test_followup.py": "55e85656fc0c4741a112b61a5d20200ba5c9dbea28992a15258509d3d38dc9d2",
+    "test_results.txt": "a1c48ecd3ae6d8fdfb7006a8a5ebe3332b308b3b1fc808763fe38a03c22f434a",
+    "test_spatial_coverage.py": "37ee4ed351838a5188ba9fb49fb858a52ba137d6df10542d0a343e058cf3c4d1",
+    "validate_artifacts.py": "5e4d8c2166e63ecc38b79a09ef595b93e5f3a3c823dd6f5a8f5cc6f737f21790",
+    "validation.json": "cee83712e37b65e418838dcc4d06c587fe000f370ae8be9a1f590ace9066cadf"
+  },
+  "archived_runs": {
+    "results.json": "2dca28f85666ad09ec477672de2f44e6864d5232ce59ee5327d3ed34ff572832",
+    "spatial_coverage_refined_results.json": "08eb0364a5b9922b559bd04d7d184b5db8fab030a70ea629a1ed6b3c9ed6950c",
+    "spatial_coverage_results.json": "2c495a647c74f5175c9b631a01487c181335d9628a14eddc3b2c30b60168922c"
+  }
+}

@@ -1,0 +1,19 @@
+C:\Users\nicho\AppData\Local\Temp\rewind_audit_bh37e7ud\venv\Lib\site-packages\qiskit\circuit\library\standard_gates\ry.py:112: DeprecationWarning: ``qiskit.circuit.gate.Gate.control()``'s argument ``annotated`` is deprecated as of Qiskit 2.3. It will be removed in Qiskit 3.0. The method Gate.control() no longer accepts `annotated=None`. The new default is `annotated=True`, which represents the controlled gate as an `AnnotatedOperation` (unless a dedicated controlled-gate class already exists). You can explicitly set `annotated=False` to preserve the previous behavior. However, using `annotated=True` is recommended, as it defers construction of the controlled circuit to transpiler, and furthermore enables additional controlled-gate optimizations (typically leading to higher-quality circuits).
+  gate = super().control(
+test_count_validation_and_width_guards (test_adapters.AdapterTests.test_count_validation_and_width_guards) ... ok
+test_dirty_workspace_not_postselected (test_adapters.AdapterTests.test_dirty_workspace_not_postselected) ... ok
+test_marginal_little_endian_order (test_adapters.AdapterTests.test_marginal_little_endian_order) ... ok
+test_qpy_and_measurement_identity (test_adapters.AdapterTests.test_qpy_and_measurement_identity) ... ok
+test_real_computed_spatial_oracle (test_adapters.AdapterTests.test_real_computed_spatial_oracle) ... C:\Users\nicho\AppData\Local\Temp\rewind_audit_bh37e7ud\venv\Lib\site-packages\qiskit\circuit\library\standard_gates\ry.py:112: DeprecationWarning: ``qiskit.circuit.gate.Gate.control()``'s argument ``annotated`` is deprecated as of Qiskit 2.3. It will be removed in Qiskit 3.0. The method Gate.control() no longer accepts `annotated=None`. The new default is `annotated=True`, which represents the controlled gate as an `AnnotatedOperation` (unless a dedicated controlled-gate class already exists). You can explicitly set `annotated=False` to preserve the previous behavior. However, using `annotated=True` is recommended, as it defers construction of the controlled circuit to transpiler, and furthermore enables additional controlled-gate optimizations (typically leading to higher-quality circuits).
+  gate = super().control(
+ok
+test_real_optical_amplification_preserves_selected_z_distribution (test_adapters.AdapterTests.test_real_optical_amplification_preserves_selected_z_distribution) ... ok
+test_real_optical_instrument_vs_channel_reference (test_adapters.AdapterTests.test_real_optical_instrument_vs_channel_reference) ... ok
+test_score_empty_selected_records_is_defined (test_adapters.AdapterTests.test_score_empty_selected_records_is_defined) ... ok
+test_spatial_exact_joint_law_and_clean_padded_workspace (test_adapters.AdapterTests.test_spatial_exact_joint_law_and_clean_padded_workspace) ... ok
+test_spatial_import_restores_existing_generic_module (test_adapters.AdapterTests.test_spatial_import_restores_existing_generic_module) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.818s
+
+OK

@@ -1,0 +1,73 @@
+{
+  "model": {
+    "n_cavity": 3,
+    "physical_system_dimension": 12,
+    "padded_system_dimension": 16,
+    "system_qubits": 4,
+    "absolute_choi_cutoff": 1e-12,
+    "seed": 41,
+    "random_states": 8
+  },
+  "no_click": {
+    "rank_above_cutoff": 137,
+    "minimum_choi_eigenvalue": 1.570340672907532e-15,
+    "maximum_choi_eigenvalue": 4.679345670398275,
+    "choi_hermiticity_frobenius_error": 3.796129866115436e-15,
+    "discarded_positive_choi_eigenvalue_sum": 1.5737229985032367e-12,
+    "reconstructed_superoperator_frobenius_error": 8.905273649760332e-13,
+    "ranks_by_absolute_cutoff": {
+      "1e-08": 102,
+      "1e-10": 123,
+      "1e-12": 137,
+      "1e-14": 141
+    },
+    "corrected_superoperator_frobenius_error": 2.4316269983406213e-12
+  },
+  "click": {
+    "rank_above_cutoff": 133,
+    "minimum_choi_eigenvalue": -5.5092613095754285e-17,
+    "maximum_choi_eigenvalue": 2.7749965266160332,
+    "choi_hermiticity_frobenius_error": 6.966802544290671e-15,
+    "discarded_positive_choi_eigenvalue_sum": 1.1329045255859992e-12,
+    "reconstructed_superoperator_frobenius_error": 6.145021853112693e-13,
+    "ranks_by_absolute_cutoff": {
+      "1e-08": 99,
+      "1e-10": 120,
+      "1e-12": 133,
+      "1e-14": 139
+    },
+    "corrected_superoperator_frobenius_error": 7.57811330334176e-13
+  },
+  "normalization": {
+    "pre_normalization_completeness_spectral_error": 8.902751412142853e-13,
+    "right_normalization_spectral_change": 4.4552160089691447e-13
+  },
+  "dilation": {
+    "outcome_flag_qubits": 1,
+    "environment_qubits": 8,
+    "flag_and_environment_qubits": 9,
+    "total_qubits_per_step": 13,
+    "effective_rank_based_joint_ancilla_qubits": 9,
+    "isometry_shape": [
+      8192,
+      16
+    ],
+    "isometry_spectral_error": 3.1321457264148782e-15,
+    "full_unitary_constructed": false,
+    "gates_compiled": false
+  },
+  "checks": {
+    "outcome_state_frobenius_error_max": 2.2170723291799462e-13,
+    "outcome_probability_error_max": 7.760458942129844e-14,
+    "normalized_conditional_state_frobenius_error_max": 2.9405536734322954e-13,
+    "nonzero_conditional_states_checked": 16,
+    "original_total_trace_error_max": 3.3306690738754696e-16
+  },
+  "limitations": [
+    "Numerical effective ranks depend on absolute Choi cutoff; they are not certified exact ranks or a lower bound on every possible approximation.",
+    "For the retained trace-preserving approximation, the sum of its retained Choi ranks gives a lower bound on combined outcome-plus-environment dimension in exact arithmetic; it does not certify the exact rank of the original maps.",
+    "This is a classical matrix calculation on a finite truncated-cavity simulator, not a compiled circuit, optical processor, or physical rewind.",
+    "A reversible unitary extension, gate synthesis, repeated-step resource accounting and noise analysis have not been performed.",
+    "Retaining the environment and outcome per bin is required in this generic purification if one intends to reverse the entire modeled history."
+  ]
+}

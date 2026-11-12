@@ -1,0 +1,1406 @@
+{
+  "schema": "ra-real-hardware-plan-v1",
+  "created_utc": "2026-11-11T18:21:14.796865+00:00",
+  "label": "extensions_plain_v1",
+  "backend": "ibm_marrakesh",
+  "simulator": false,
+  "dry_run": false,
+  "plan": "open",
+  "bundle": "hardware_campaign/extensions/bundle_v1",
+  "manifest_sha256": "beed7d9ccda390c3e4e3941bf5ee6a04cc0afac50a0d1e86d579845a96258c41",
+  "reference_sha256": "ef48861890f1a92dd6959ce21d4ef0f2eff2e6e50f31e2d547915bec28a48428",
+  "reference_file": "ideal_probabilities.npz",
+  "checked_bundle_hashes": {
+    "finals-lithography/viability_cost_study.py": "0b0e6ed2e486cf97d2af3af1882caf415b8715c5fb161d706c8d162b3b69997c",
+    "finals-lithography/oracle_comparison.py": "9056962eb3a8a776f65a467e398e3e1ca06d63d965a8fc3adc39906e6d8698e5",
+    "finals-lithography/lithography.py": "d7f2dd4707275769b99e8eaf4dcdb85227540a3cc8de1c1f4ce0599d9120394e",
+    "rewindandamplify-main/experiments/e6_catalog.py": "7ec6fa2f6f19d8c105ba868e395030edaa44e4bf78ca4352d3518b7dafb9d794",
+    "rewindandamplify-main/qrsm_grover/search.py": "aa64753d37312fad2c6fac8a002e2017ef521902ad15506fcd9409fe0a6275af",
+    "rewindandamplify-main/qrsm_grover/model.py": "128207689429d05c6b9fe9a78a478884dfd51af83969ad5dbdc46cc69b12b11f",
+    "rewindandamplify-main/qrsm_grover/amplify.py": "e70d46eb7fbc435647fb8016f10b4a96ce869a8ec236575a8633fcb145fac539",
+    "rewindandamplify-main/qrsm_grover/fastsim.py": "43302120b99a6e6f396d0e7facbc7ebe90a78546800cf36eef7c33b92320d730",
+    "rewindandamplify-main/qrsm_grover/predicates.py": "c02edaaad6c4207bcb62523b19f73368d93d50b773578ce3cbca6d22b8cfc602",
+    "rewindandamplify-main/experiments/e7_resilience.py": "27064b828aa8dad2e054d20667467a84bbfacf049028a195c0d442f7ec650dda",
+    "hardware_campaign/extensions/adapters.py": "0a8b7dd7ce5b110ca7dbe83e87c96389f57d7687ecca4bf11da6ae6c41744212",
+    "hardware_campaign/extensions/export_bundle.py": "dcc4b6830965356240da672c557d5e62ea761b2d48cf02ec6ae29c076c14d057",
+    "hardware_campaign/extensions/test_adapters.py": "575432a8967479d000461cf8549201389bdfeb9fce5ea3b4d6c313343e754a81",
+    "hardware_campaign/extensions/PROTOCOL.md": "f091fe58ee28ed6b5dabf472b00bd474459b7aa4116ea7fb23273980d14a3cc4",
+    "hardware_campaign/extensions/bundle_v1/logical.qpy": "990a16d9089895f6c5ee73592dc78d4a52c18f94b5c242c989ccb5c150d16983",
+    "hardware_campaign/extensions/bundle_v1/ideal_probabilities.npz": "ef48861890f1a92dd6959ce21d4ef0f2eff2e6e50f31e2d547915bec28a48428"
+  },
+  "logical_qpy_sha256": {
+    "logical.qpy": "990a16d9089895f6c5ee73592dc78d4a52c18f94b5c242c989ccb5c150d16983"
+  },
+  "compiled_qpy_sha256": "147fd9181b5785987d8e24ba31adbce71bc3ead0df887e89d71af259420e084d",
+  "shots": 2048,
+  "max_execution_time": 90,
+  "mode": "plain",
+  "physical_patch": [
+    86,
+    87,
+    97,
+    107,
+    108,
+    109,
+    118,
+    129,
+    128,
+    127,
+    137,
+    147,
+    146,
+    145,
+    144,
+    143,
+    136
+  ],
+  "transpiler_seed": 20261111,
+  "pub_order_seed": 20261111,
+  "rep_delay_seconds": 0.00025,
+  "duration_estimate_seconds": 30.543577088006714,
+  "duration_estimate_caveat": "Calibrated critical path plus repetition delay; excludes service overhead and DD/twirling expansion. Cap is authoritative.",
+  "quota_at_prepare": {
+    "usage_consumed_seconds": 223,
+    "usage_limit_seconds": 600,
+    "usage_remaining_seconds": 377,
+    "usage_limit_reached": false,
+    "usage_period": {
+      "start_time": "2026-10-14T18:19:39.635Z",
+      "end_time": "2026-11-11T18:19:39.635Z"
+    }
+  },
+  "pubs": [
+    {
+      "kind": "science",
+      "name": "catalog_cost1024_r1",
+      "bundle_index": 13,
+      "logical_qubits": 10,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        87,
+        127,
+        128,
+        129,
+        118,
+        97,
+        109,
+        107,
+        108,
+        86
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127
+      ],
+      "gate_counts": {
+        "sx": 9113,
+        "cz": 4537,
+        "rz": 2957,
+        "x": 85,
+        "measure": 10,
+        "barrier": 1
+      },
+      "depth": 6267,
+      "duration_seconds": 0.0002878159999999852,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_statevector": "not run; logical exact reference and native instruction/wire checks retained"
+      },
+      "pub_index": 0
+    },
+    {
+      "kind": "calibration",
+      "name": "cal_alternating",
+      "prepared_bits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136
+      ],
+      "duration_seconds": 2.7200000000000002e-06,
+      "pub_index": 1
+    },
+    {
+      "kind": "science",
+      "name": "contact_n5_counter_r1",
+      "bundle_index": 7,
+      "logical_qubits": 8,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        109,
+        97,
+        107,
+        87,
+        86,
+        108,
+        129,
+        118
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129
+      ],
+      "gate_counts": {
+        "sx": 1035,
+        "rz": 685,
+        "cz": 466,
+        "x": 26,
+        "measure": 8,
+        "barrier": 1
+      },
+      "depth": 1392,
+      "duration_seconds": 4.8319999999999714e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 2.220446049250313e-15
+      },
+      "pub_index": 2
+    },
+    {
+      "kind": "science",
+      "name": "contact_n5_counter_r0",
+      "bundle_index": 6,
+      "logical_qubits": 8,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129
+      ],
+      "gate_counts": {
+        "sx": 10,
+        "rz": 10,
+        "measure": 8,
+        "barrier": 1
+      },
+      "depth": 5,
+      "duration_seconds": 2.756e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 5.551115123125783e-17
+      },
+      "pub_index": 3
+    },
+    {
+      "kind": "science",
+      "name": "horizon_T10_w8_r1",
+      "bundle_index": 23,
+      "logical_qubits": 17,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        118,
+        129,
+        145,
+        146,
+        97,
+        86,
+        87,
+        107,
+        108,
+        127,
+        128,
+        109,
+        137,
+        147,
+        144,
+        143,
+        136
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136
+      ],
+      "gate_counts": {
+        "sx": 1452,
+        "cz": 659,
+        "rz": 599,
+        "measure": 17,
+        "x": 15,
+        "barrier": 1
+      },
+      "depth": 919,
+      "duration_seconds": 3.6148000000000034e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_statevector": "not run; logical exact reference and native instruction/wire checks retained"
+      },
+      "pub_index": 4
+    },
+    {
+      "kind": "calibration",
+      "name": "cal_one",
+      "prepared_bits": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136
+      ],
+      "duration_seconds": 2.7200000000000002e-06,
+      "pub_index": 5
+    },
+    {
+      "kind": "science",
+      "name": "contact_n3_enumerated_r0",
+      "bundle_index": 0,
+      "logical_qubits": 3,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97
+      ],
+      "gate_counts": {
+        "sx": 6,
+        "rz": 6,
+        "measure": 3,
+        "barrier": 1
+      },
+      "depth": 5,
+      "duration_seconds": 2.756e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.3877787807814457e-16
+      },
+      "pub_index": 6
+    },
+    {
+      "kind": "science",
+      "name": "horizon_T10_w4_r2",
+      "bundle_index": 22,
+      "logical_qubits": 13,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        108,
+        109,
+        146,
+        147,
+        137,
+        127,
+        86,
+        87,
+        129,
+        118,
+        97,
+        107,
+        128
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        146
+      ],
+      "gate_counts": {
+        "sx": 865,
+        "rz": 457,
+        "cz": 368,
+        "measure": 13,
+        "x": 9,
+        "barrier": 1
+      },
+      "depth": 682,
+      "duration_seconds": 2.547600000000005e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 4.3021142204224816e-15
+      },
+      "pub_index": 7
+    },
+    {
+      "kind": "science",
+      "name": "catalog_cost1024_r0",
+      "bundle_index": 12,
+      "logical_qubits": 10,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127
+      ],
+      "gate_counts": {
+        "rz": 20,
+        "sx": 10,
+        "measure": 10,
+        "barrier": 1
+      },
+      "depth": 4,
+      "duration_seconds": 2.7200000000000002e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 5.421010862427522e-19
+      },
+      "pub_index": 8
+    },
+    {
+      "kind": "science",
+      "name": "contact_n7_enumerated_r1",
+      "bundle_index": 9,
+      "logical_qubits": 7,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        109,
+        86,
+        108,
+        87,
+        107,
+        97,
+        118
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 4949,
+        "rz": 3140,
+        "cz": 2337,
+        "x": 399,
+        "measure": 7,
+        "barrier": 1
+      },
+      "depth": 4720,
+      "duration_seconds": 0.0001704159999999911,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.3056890558214036e-14
+      },
+      "pub_index": 9
+    },
+    {
+      "kind": "science",
+      "name": "history_T8_full_r1",
+      "bundle_index": 17,
+      "logical_qubits": 17,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        129,
+        128,
+        87,
+        97,
+        107,
+        108,
+        109,
+        137,
+        127,
+        118,
+        86,
+        147,
+        146,
+        145,
+        143,
+        144,
+        136
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136
+      ],
+      "gate_counts": {
+        "sx": 1496,
+        "cz": 681,
+        "rz": 615,
+        "x": 19,
+        "measure": 17,
+        "barrier": 1
+      },
+      "depth": 1000,
+      "duration_seconds": 3.876399999999997e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_statevector": "not run; logical exact reference and native instruction/wire checks retained"
+      },
+      "pub_index": 10
+    },
+    {
+      "kind": "science",
+      "name": "history_T8_full_r3",
+      "bundle_index": 19,
+      "logical_qubits": 17,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        147,
+        118,
+        87,
+        97,
+        128,
+        107,
+        108,
+        109,
+        129,
+        146,
+        127,
+        86,
+        137,
+        144,
+        145,
+        143,
+        136
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136
+      ],
+      "gate_counts": {
+        "sx": 3742,
+        "cz": 1700,
+        "rz": 1526,
+        "x": 42,
+        "measure": 17,
+        "barrier": 1
+      },
+      "depth": 2604,
+      "duration_seconds": 9.904799999999838e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_statevector": "not run; logical exact reference and native instruction/wire checks retained"
+      },
+      "pub_index": 11
+    },
+    {
+      "kind": "science",
+      "name": "horizon_T10_w8_r2",
+      "bundle_index": 24,
+      "logical_qubits": 17,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        137,
+        129,
+        136,
+        144,
+        87,
+        107,
+        108,
+        109,
+        118,
+        127,
+        128,
+        147,
+        97,
+        86,
+        146,
+        145,
+        143
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136
+      ],
+      "gate_counts": {
+        "sx": 2334,
+        "cz": 1058,
+        "rz": 948,
+        "x": 27,
+        "measure": 17,
+        "barrier": 1
+      },
+      "depth": 1640,
+      "duration_seconds": 6.320799999999932e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_statevector": "not run; logical exact reference and native instruction/wire checks retained"
+      },
+      "pub_index": 12
+    },
+    {
+      "kind": "science",
+      "name": "horizon_T10_w4_r1",
+      "bundle_index": 21,
+      "logical_qubits": 13,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        108,
+        97,
+        146,
+        147,
+        137,
+        127,
+        86,
+        87,
+        129,
+        118,
+        107,
+        109,
+        128
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        146
+      ],
+      "gate_counts": {
+        "sx": 648,
+        "rz": 318,
+        "cz": 276,
+        "measure": 13,
+        "x": 4,
+        "barrier": 1
+      },
+      "depth": 479,
+      "duration_seconds": 1.8547999999999962e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.524958103184872e-15
+      },
+      "pub_index": 13
+    },
+    {
+      "kind": "science",
+      "name": "contact_n5_enumerated_r0",
+      "bundle_index": 4,
+      "logical_qubits": 5,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108
+      ],
+      "gate_counts": {
+        "sx": 10,
+        "rz": 10,
+        "measure": 5,
+        "barrier": 1
+      },
+      "depth": 5,
+      "duration_seconds": 2.756e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 5.551115123125783e-17
+      },
+      "pub_index": 14
+    },
+    {
+      "kind": "science",
+      "name": "history_T8_full_r0",
+      "bundle_index": 16,
+      "logical_qubits": 17,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        118,
+        97,
+        127,
+        128,
+        109,
+        108,
+        86,
+        87,
+        107,
+        129,
+        137,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136
+      ],
+      "gate_counts": {
+        "sx": 269,
+        "rz": 132,
+        "cz": 114,
+        "measure": 17,
+        "barrier": 1
+      },
+      "depth": 196,
+      "duration_seconds": 9.080000000000008e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 2.9559688030644793e-15
+      },
+      "pub_index": 15
+    },
+    {
+      "kind": "science",
+      "name": "catalog_semantic16_r1",
+      "bundle_index": 15,
+      "logical_qubits": 4,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        97,
+        86,
+        107,
+        87
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107
+      ],
+      "gate_counts": {
+        "sx": 240,
+        "rz": 164,
+        "cz": 107,
+        "x": 6,
+        "measure": 4,
+        "barrier": 1
+      },
+      "depth": 281,
+      "duration_seconds": 1.2555999999999993e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.2212453270876722e-15
+      },
+      "pub_index": 16
+    },
+    {
+      "kind": "science",
+      "name": "contact_n3_enumerated_r1",
+      "bundle_index": 1,
+      "logical_qubits": 3,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97
+      ],
+      "gate_counts": {
+        "sx": 118,
+        "rz": 88,
+        "cz": 50,
+        "x": 10,
+        "measure": 3,
+        "barrier": 1
+      },
+      "depth": 187,
+      "duration_seconds": 9.03600000000001e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.3306690738754696e-16
+      },
+      "pub_index": 17
+    },
+    {
+      "kind": "science",
+      "name": "contact_n3_counter_r0",
+      "bundle_index": 2,
+      "logical_qubits": 5,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108
+      ],
+      "gate_counts": {
+        "sx": 6,
+        "rz": 6,
+        "measure": 5,
+        "barrier": 1
+      },
+      "depth": 5,
+      "duration_seconds": 2.756e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.3877787807814457e-16
+      },
+      "pub_index": 18
+    },
+    {
+      "kind": "calibration",
+      "name": "cal_zero",
+      "prepared_bits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136
+      ],
+      "duration_seconds": 2.684e-06,
+      "pub_index": 19
+    },
+    {
+      "kind": "science",
+      "name": "contact_n3_counter_r1",
+      "bundle_index": 3,
+      "logical_qubits": 5,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        97,
+        87,
+        86,
+        107,
+        108
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108
+      ],
+      "gate_counts": {
+        "sx": 213,
+        "rz": 128,
+        "cz": 99,
+        "x": 11,
+        "measure": 5,
+        "barrier": 1
+      },
+      "depth": 273,
+      "duration_seconds": 1.2543999999999992e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.1379786002407855e-15
+      },
+      "pub_index": 20
+    },
+    {
+      "kind": "science",
+      "name": "history_T8_full_r2",
+      "bundle_index": 18,
+      "logical_qubits": 17,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        146,
+        128,
+        87,
+        97,
+        108,
+        107,
+        109,
+        129,
+        127,
+        145,
+        118,
+        86,
+        137,
+        144,
+        147,
+        143,
+        136
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136
+      ],
+      "gate_counts": {
+        "sx": 2667,
+        "cz": 1210,
+        "rz": 1085,
+        "x": 28,
+        "measure": 17,
+        "barrier": 1
+      },
+      "depth": 1860,
+      "duration_seconds": 7.226799999999909e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_statevector": "not run; logical exact reference and native instruction/wire checks retained"
+      },
+      "pub_index": 21
+    },
+    {
+      "kind": "science",
+      "name": "history_T8_steered_local_r1",
+      "bundle_index": 20,
+      "logical_qubits": 10,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        97,
+        109,
+        127,
+        86,
+        128,
+        129,
+        107,
+        108,
+        118,
+        87
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127
+      ],
+      "gate_counts": {
+        "sx": 720,
+        "rz": 356,
+        "cz": 302,
+        "measure": 10,
+        "x": 6,
+        "barrier": 1
+      },
+      "depth": 566,
+      "duration_seconds": 2.0599999999999982e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.0103029524088925e-14
+      },
+      "pub_index": 22
+    },
+    {
+      "kind": "science",
+      "name": "contact_n7_counter_r0",
+      "bundle_index": 10,
+      "logical_qubits": 10,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127
+      ],
+      "gate_counts": {
+        "sx": 14,
+        "rz": 14,
+        "measure": 10,
+        "barrier": 1
+      },
+      "depth": 5,
+      "duration_seconds": 2.756e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 2.7755575615628914e-17
+      },
+      "pub_index": 23
+    },
+    {
+      "kind": "calibration",
+      "name": "cal_complement",
+      "prepared_bits": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136
+      ],
+      "duration_seconds": 2.7200000000000002e-06,
+      "pub_index": 24
+    },
+    {
+      "kind": "science",
+      "name": "contact_n5_enumerated_r1",
+      "bundle_index": 5,
+      "logical_qubits": 5,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        87,
+        108,
+        97,
+        86,
+        107
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108
+      ],
+      "gate_counts": {
+        "sx": 1115,
+        "rz": 739,
+        "cz": 507,
+        "x": 48,
+        "measure": 5,
+        "barrier": 1
+      },
+      "depth": 1329,
+      "duration_seconds": 4.9155999999999704e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.4416913763379853e-15
+      },
+      "pub_index": 25
+    },
+    {
+      "kind": "science",
+      "name": "contact_n7_counter_r1",
+      "bundle_index": 11,
+      "logical_qubits": 10,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        107,
+        87,
+        97,
+        129,
+        118,
+        128,
+        127,
+        108,
+        109,
+        86
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127
+      ],
+      "gate_counts": {
+        "sx": 1573,
+        "rz": 970,
+        "cz": 727,
+        "x": 43,
+        "measure": 10,
+        "barrier": 1
+      },
+      "depth": 1951,
+      "duration_seconds": 6.853199999999917e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.164135620181696e-15
+      },
+      "pub_index": 26
+    },
+    {
+      "kind": "science",
+      "name": "contact_n7_enumerated_r0",
+      "bundle_index": 8,
+      "logical_qubits": 7,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 14,
+        "rz": 14,
+        "measure": 7,
+        "barrier": 1
+      },
+      "depth": 5,
+      "duration_seconds": 2.756e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 2.7755575615628914e-17
+      },
+      "pub_index": 27
+    },
+    {
+      "kind": "science",
+      "name": "catalog_cost1024_r25",
+      "bundle_index": 14,
+      "logical_qubits": 10,
+      "reference_marginal_qubits": null,
+      "measurement_physical_qubits": [
+        87,
+        97,
+        107,
+        109,
+        108,
+        129,
+        118,
+        127,
+        128,
+        86
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127
+      ],
+      "gate_counts": {
+        "sx": 204884,
+        "cz": 98680,
+        "rz": 85742,
+        "x": 3299,
+        "measure": 10,
+        "barrier": 1
+      },
+      "depth": 164387,
+      "duration_seconds": 0.0065922400000033065,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_statevector": "not run; logical exact reference and native instruction/wire checks retained"
+      },
+      "pub_index": 28
+    }
+  ]
+}

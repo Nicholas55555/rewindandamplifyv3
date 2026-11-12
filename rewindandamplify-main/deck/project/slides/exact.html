@@ -1,0 +1,14 @@
+<section id="exact" data-transition="fade" style="background:#F6F5F0;color:#12203A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:88px 128px 104px;display:flex;flex-direction:column;gap:32px">
+<h2 style="font-size:60px;font-weight:600;line-height:1.12;letter-spacing:-0.5px">Grover now searches the machine’s histories</h2>
+<div style="display:flex;gap:40px;flex:1;align-items:center">
+<div style="flex:none;background:#FCFCFB;border:1px solid #DDDAD0;border-radius:16px;padding:16px"><img src="/_blob/e56da2f9c99f3492835a22ca5b35524f" alt="Dots from real Qiskit circuits sit exactly on Grover's theoretical curves for three questions of different rarity" style="width:1200px;height:706px;object-fit:contain"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:60px;font-weight:600;line-height:1.05">8 × 10⁻¹⁵</p><p style="font-size:30px;line-height:1.26;color:#3B4658">largest gap from theory, over six questions</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:60px;font-weight:600;line-height:1.05">Exact</p><p style="font-size:30px;line-height:1.26;color:#3B4658">conditioning: matches keep their true relative odds, hidden qubits included</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:60px;font-weight:600;line-height:1.05">725×</p><p style="font-size:30px;line-height:1.26;color:#3B4658">fewer machine calls at p = 10⁻⁶: slope −0.50 against −1.00</p></div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:56px;width:1480px;font-size:24px;color:#6A7282">Qiskit grover_operator on the purified QRSM, T = 6, noiseless. Each iteration counts as two machine calls.</p>
+<p style="position:absolute;right:128px;bottom:56px;width:100px;text-align:right;font-size:24px;color:#6A7282">10</p>
+<aside>And it works. These dots are real Qiskit circuits, using Qiskit’s grover operator on the purified machine, and they sit right on Grover’s curve for all six questions we tried. The more important thing is on the right. Amplification doesn’t just find an answer, it reweights. Inside the matching histories, the relative odds never change. So every shot is an honest sample of the conditional distribution, with the hidden qubits right too. That’s conditioning. And it scales: at a one in a million event, it takes 725 times fewer machine calls, counting every rewind.</aside>
+</section>

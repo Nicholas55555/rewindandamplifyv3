@@ -1,0 +1,596 @@
+{
+  "schema_version": 1,
+  "evidence_type": "Reproduction of original model and archived IBM-surrogate counts; no new device acquisition",
+  "event": {
+    "selected_step": 3,
+    "lags": [
+      1,
+      2,
+      3
+    ],
+    "future_steps": [
+      4,
+      5,
+      6
+    ],
+    "meaning": "P(output bit at step3+lag is1 | output bit at step3 is1)",
+    "time_unit": "dimensionless model step; no calibrated physical seconds"
+  },
+  "click_definition": "A1 measurement on the modeled output/light ancilla. IBM uses superconducting qubits to represent these roles; this is not a detected optical photon.",
+  "models": {
+    "with_hidden_defect": {
+      "parameters": {
+        "drive_theta": 0.6,
+        "emission_gamma": 0.2,
+        "defect_couplings_phi": [
+          0.45
+        ],
+        "defect_rotations_zeta": [
+          0.3
+        ]
+      },
+      "original_event_probability": 0.03954181605860481,
+      "exact_conditional_probabilities": [
+        0.00974439133622769,
+        0.030175199595966665,
+        0.04667496342985298
+      ],
+      "ideal_circuits": {
+        "plain": {
+          "event_probability": 0.03954181605860478,
+          "conditional_probabilities": [
+            0.009744391336227695,
+            0.030175199595966682,
+            0.04667496342985302
+          ],
+          "circuit_qubits": 10,
+          "r": 0,
+          "reflection": "full",
+          "emission_override_at_step3": null,
+          "max_conditional_error": 4.163336342344337e-17
+        },
+        "full_steered": {
+          "event_probability": 0.964900217902672,
+          "conditional_probabilities": [
+            0.009744391336227695,
+            0.03017519959596666,
+            0.046674963429852986
+          ],
+          "circuit_qubits": 10,
+          "r": 1,
+          "reflection": "full",
+          "emission_override_at_step3": 1.0,
+          "max_conditional_error": 6.938893903907228e-18
+        },
+        "local_steered": {
+          "event_probability": 0.961017248342623,
+          "conditional_probabilities": [
+            0.009678655720122989,
+            0.030091841675670104,
+            0.04672970834406724
+          ],
+          "circuit_qubits": 8,
+          "r": 1,
+          "reflection": "memory+last-1",
+          "emission_override_at_step3": 1.0,
+          "max_conditional_error": 8.335792029656036e-05
+        },
+        "memory_only_steered": {
+          "event_probability": 0.9610172483426231,
+          "conditional_probabilities": [
+            0.009678655720122985,
+            0.0300918416756701,
+            0.04672970834406725
+          ],
+          "circuit_qubits": 8,
+          "r": 1,
+          "reflection": "memory",
+          "emission_override_at_step3": 1.0,
+          "max_conditional_error": 8.335792029656383e-05
+        }
+      }
+    },
+    "no_hidden_defect": {
+      "parameters": {
+        "drive_theta": 0.6,
+        "emission_gamma": 0.2,
+        "defect_couplings_phi": [],
+        "defect_rotations_zeta": []
+      },
+      "original_event_probability": 0.10102428336359567,
+      "exact_conditional_probabilities": [
+        0.017466438509032164,
+        0.057515205649054844,
+        0.10102428336359567
+      ],
+      "ideal_circuits": {
+        "plain": {
+          "event_probability": 0.10102428336359559,
+          "conditional_probabilities": [
+            0.017466438509032182,
+            0.05751520564905488,
+            0.10102428336359573
+          ],
+          "circuit_qubits": 8,
+          "r": 0,
+          "reflection": "full",
+          "emission_override_at_step3": null,
+          "max_conditional_error": 5.551115123125783e-17
+        },
+        "full_steered": {
+          "event_probability": 0.9999999999999983,
+          "conditional_probabilities": [
+            0.01746643850903217,
+            0.057515205649054865,
+            0.1010242833635957
+          ],
+          "circuit_qubits": 8,
+          "r": 1,
+          "reflection": "full",
+          "emission_override_at_step3": 0.49493050913358533,
+          "max_conditional_error": 2.7755575615628914e-17
+        },
+        "local_steered": {
+          "event_probability": 0.9808166205401566,
+          "conditional_probabilities": [
+            0.017466438509032175,
+            0.057515205649054865,
+            0.10102428336359572
+          ],
+          "circuit_qubits": 7,
+          "r": 1,
+          "reflection": "memory+last-1",
+          "emission_override_at_step3": 0.49493050913358533,
+          "max_conditional_error": 4.163336342344337e-17
+        },
+        "memory_only_steered": {
+          "event_probability": 0.7428602862805929,
+          "conditional_probabilities": [
+            0.0704132894455668,
+            0.018390911980474274,
+            0.008424406538322762
+          ],
+          "circuit_qubits": 7,
+          "r": 1,
+          "reflection": "memory",
+          "emission_override_at_step3": 0.49493050913358533,
+          "max_conditional_error": 0.09259987682527292
+        }
+      }
+    }
+  },
+  "hardware_jobs": [
+    {
+      "source": "rewindandamplify-main/results/hardware/raw_plain.json",
+      "job_id": "dbmfqlt8ft8s738uplmg",
+      "metadata": {
+        "backend": "ibm_kingston",
+        "mode": "real IBM Quantum hardware",
+        "job_id": "dbmfqlt8ft8s738uplmg",
+        "suppression": "plain",
+        "shots": 4096,
+        "qpu_seconds": 47,
+        "submitted": "2026-11-05 17:04:07",
+        "fetched": "2026-11-05 17:25:36"
+      },
+      "rows": [
+        {
+          "name": "loop-defect-r0",
+          "model_id": "with_hidden_defect",
+          "variant": "plain",
+          "shots": 4096,
+          "raw_selected_count": 290,
+          "raw_future_joint_counts": [
+            22,
+            29,
+            35
+          ],
+          "raw_event_probability": 0.07080078125,
+          "raw_conditional_probabilities": [
+            0.07586206896551724,
+            0.1,
+            0.1206896551724138
+          ],
+          "corrected_event_probability": 0.05348422972086327,
+          "corrected_conditional_probabilities": [
+            0.08042359571724843,
+            0.11951170234540384,
+            0.13645804159138264
+          ],
+          "two_qubit_gates": 34,
+          "physical_qubits": [
+            118,
+            108,
+            97,
+            106,
+            107,
+            128,
+            117,
+            110,
+            109,
+            129
+          ],
+          "logical_qubits": 10,
+          "source_meta": {
+            "kind": "loop",
+            "group": "loop-defect",
+            "k": 1,
+            "t0": 3,
+            "tau": 3,
+            "reflection": "full",
+            "r": 0,
+            "steer": null,
+            "width": 10
+          }
+        },
+        {
+          "name": "loop-defect-r1",
+          "model_id": "with_hidden_defect",
+          "variant": "local_steered",
+          "shots": 4096,
+          "raw_selected_count": 3354,
+          "raw_future_joint_counts": [
+            175,
+            232,
+            231
+          ],
+          "raw_event_probability": 0.81884765625,
+          "raw_conditional_probabilities": [
+            0.052176505664877755,
+            0.0691711389385808,
+            0.06887298747763863
+          ],
+          "corrected_event_probability": 0.8319982509070367,
+          "corrected_conditional_probabilities": [
+            0.04771627513307449,
+            0.06863930443020502,
+            0.0684039185617132
+          ],
+          "two_qubit_gates": 65,
+          "physical_qubits": [
+            143,
+            142,
+            140,
+            123,
+            145,
+            136,
+            141,
+            144
+          ],
+          "logical_qubits": 8,
+          "source_meta": {
+            "kind": "loop",
+            "group": "loop-defect",
+            "k": 1,
+            "t0": 3,
+            "tau": 3,
+            "reflection": "memory+last-1",
+            "r": 1,
+            "steer": 1.0,
+            "width": 8
+          }
+        },
+        {
+          "name": "loop-nodefect-r0",
+          "model_id": "no_hidden_defect",
+          "variant": "plain",
+          "shots": 4096,
+          "raw_selected_count": 503,
+          "raw_future_joint_counts": [
+            30,
+            36,
+            69
+          ],
+          "raw_event_probability": 0.122802734375,
+          "raw_conditional_probabilities": [
+            0.05964214711729622,
+            0.07157057654075547,
+            0.13717693836978131
+          ],
+          "corrected_event_probability": 0.12203893740327407,
+          "corrected_conditional_probabilities": [
+            0.04139672516113258,
+            0.07040616918257708,
+            0.13549834111279602
+          ],
+          "two_qubit_gates": 18,
+          "physical_qubits": [
+            109,
+            128,
+            129,
+            118,
+            23,
+            107,
+            110,
+            108
+          ],
+          "logical_qubits": 8,
+          "source_meta": {
+            "kind": "loop",
+            "group": "loop-nodefect",
+            "k": 0,
+            "t0": 3,
+            "tau": 3,
+            "reflection": "full",
+            "r": 0,
+            "steer": null,
+            "width": 8
+          }
+        },
+        {
+          "name": "loop-nodefect-r1",
+          "model_id": "no_hidden_defect",
+          "variant": "local_steered",
+          "shots": 4096,
+          "raw_selected_count": 3748,
+          "raw_future_joint_counts": [
+            143,
+            274,
+            396
+          ],
+          "raw_event_probability": 0.9150390625,
+          "raw_conditional_probabilities": [
+            0.03815368196371398,
+            0.07310565635005337,
+            0.1056563500533618
+          ],
+          "corrected_event_probability": 0.9331955621215974,
+          "corrected_conditional_probabilities": [
+            0.03426424692853423,
+            0.07127915057293169,
+            0.10569759647794165
+          ],
+          "two_qubit_gates": 29,
+          "physical_qubits": [
+            129,
+            109,
+            110,
+            107,
+            108,
+            118,
+            128
+          ],
+          "logical_qubits": 7,
+          "source_meta": {
+            "kind": "loop",
+            "group": "loop-nodefect",
+            "k": 0,
+            "t0": 3,
+            "tau": 3,
+            "reflection": "memory+last-1",
+            "r": 1,
+            "steer": 0.49493050913358544,
+            "width": 7
+          }
+        }
+      ]
+    },
+    {
+      "source": "rewindandamplify-main/results/hardware/raw_plain2.json",
+      "job_id": "dbmfv758ft8s738upsdg",
+      "metadata": {
+        "backend": "ibm_kingston",
+        "mode": "real IBM Quantum hardware",
+        "job_id": "dbmfv758ft8s738upsdg",
+        "suppression": "plain2",
+        "shots": 4096,
+        "qpu_seconds": 47,
+        "submitted": "2026-11-05 17:13:48",
+        "fetched": "2026-11-05 17:25:25"
+      },
+      "rows": [
+        {
+          "name": "loop-defect-r0",
+          "model_id": "with_hidden_defect",
+          "variant": "plain",
+          "shots": 4096,
+          "raw_selected_count": 299,
+          "raw_future_joint_counts": [
+            26,
+            18,
+            26
+          ],
+          "raw_event_probability": 0.072998046875,
+          "raw_conditional_probabilities": [
+            0.08695652173913043,
+            0.06020066889632107,
+            0.08695652173913043
+          ],
+          "corrected_event_probability": 0.053732913191685445,
+          "corrected_conditional_probabilities": [
+            0.10690634910688045,
+            0.06436185766418662,
+            0.08900300966867776
+          ],
+          "two_qubit_gates": 34,
+          "physical_qubits": [
+            118,
+            108,
+            97,
+            106,
+            107,
+            128,
+            117,
+            110,
+            109,
+            129
+          ],
+          "logical_qubits": 10,
+          "source_meta": {
+            "kind": "loop",
+            "group": "loop-defect",
+            "k": 1,
+            "t0": 3,
+            "tau": 3,
+            "reflection": "full",
+            "r": 0,
+            "steer": null,
+            "width": 10
+          }
+        },
+        {
+          "name": "loop-defect-r1",
+          "model_id": "with_hidden_defect",
+          "variant": "local_steered",
+          "shots": 4096,
+          "raw_selected_count": 3340,
+          "raw_future_joint_counts": [
+            189,
+            219,
+            204
+          ],
+          "raw_event_probability": 0.8154296875,
+          "raw_conditional_probabilities": [
+            0.05658682634730539,
+            0.0655688622754491,
+            0.06107784431137724
+          ],
+          "corrected_event_probability": 0.82636393621519,
+          "corrected_conditional_probabilities": [
+            0.04977538565354783,
+            0.06461701830650189,
+            0.06084899487237467
+          ],
+          "two_qubit_gates": 65,
+          "physical_qubits": [
+            143,
+            142,
+            140,
+            123,
+            145,
+            136,
+            141,
+            144
+          ],
+          "logical_qubits": 8,
+          "source_meta": {
+            "kind": "loop",
+            "group": "loop-defect",
+            "k": 1,
+            "t0": 3,
+            "tau": 3,
+            "reflection": "memory+last-1",
+            "r": 1,
+            "steer": 1.0,
+            "width": 8
+          }
+        },
+        {
+          "name": "loop-nodefect-r0",
+          "model_id": "no_hidden_defect",
+          "variant": "plain",
+          "shots": 4096,
+          "raw_selected_count": 510,
+          "raw_future_joint_counts": [
+            23,
+            61,
+            69
+          ],
+          "raw_event_probability": 0.12451171875,
+          "raw_conditional_probabilities": [
+            0.045098039215686274,
+            0.11960784313725491,
+            0.13529411764705881
+          ],
+          "corrected_event_probability": 0.1238160297544062,
+          "corrected_conditional_probabilities": [
+            0.023709000154523235,
+            0.11970296277271998,
+            0.13537782003262447
+          ],
+          "two_qubit_gates": 18,
+          "physical_qubits": [
+            109,
+            128,
+            129,
+            118,
+            23,
+            107,
+            110,
+            108
+          ],
+          "logical_qubits": 8,
+          "source_meta": {
+            "kind": "loop",
+            "group": "loop-nodefect",
+            "k": 0,
+            "t0": 3,
+            "tau": 3,
+            "reflection": "full",
+            "r": 0,
+            "steer": null,
+            "width": 8
+          }
+        },
+        {
+          "name": "loop-nodefect-r1",
+          "model_id": "no_hidden_defect",
+          "variant": "local_steered",
+          "shots": 4096,
+          "raw_selected_count": 3664,
+          "raw_future_joint_counts": [
+            199,
+            265,
+            383
+          ],
+          "raw_event_probability": 0.89453125,
+          "raw_conditional_probabilities": [
+            0.05431222707423581,
+            0.07232532751091703,
+            0.10453056768558952
+          ],
+          "corrected_event_probability": 0.9129741525166919,
+          "corrected_conditional_probabilities": [
+            0.051002724306202715,
+            0.07060531942441874,
+            0.10479685352240808
+          ],
+          "two_qubit_gates": 29,
+          "physical_qubits": [
+            129,
+            109,
+            110,
+            107,
+            108,
+            118,
+            128
+          ],
+          "logical_qubits": 7,
+          "source_meta": {
+            "kind": "loop",
+            "group": "loop-nodefect",
+            "k": 0,
+            "t0": 3,
+            "tau": 3,
+            "reflection": "memory+last-1",
+            "r": 1,
+            "steer": 0.49493050913358544,
+            "width": 7
+          }
+        }
+      ]
+    }
+  ],
+  "scope": [
+    "Defect/no-defect are deliberately specified model alternatives, not unknown physical defects discovered on IBM.",
+    "Exact full reflection preserves conditional future distributions; local reflection is approximate.",
+    "Raw and readout-corrected probabilities differ. Correction assumes independent single-qubit readout flips and clips probabilities.",
+    "Hardware layouts, widths and depths differ, so these are combined-design comparisons, not controlled causal estimates.",
+    "No calibrated optical source, source fault or photolithography measurement is present.",
+    "The finite-time conditional probabilities are not a stationary optical g2 measurement.",
+    "No standard-error significance claim or hidden-state tomography is made."
+  ],
+  "source_sha256": {
+    "research-validation/verify_original_after_click.py": "808bd4af7901ac679cb5c73e1a6b82e7ea47cbb6b9f414e8b831a2255caf3043",
+    "rewindandamplify-main/qrsm_grover/model.py": "128207689429d05c6b9fe9a78a478884dfd51af83969ad5dbdc46cc69b12b11f",
+    "rewindandamplify-main/qrsm_grover/queries.py": "d1f5a89f269adf3ac5e2ff179ea57a4feb42f84573bcce98a9a001035b96e2d6",
+    "rewindandamplify-main/qrsm_grover/amplify.py": "e70d46eb7fbc435647fb8016f10b4a96ce869a8ec236575a8633fcb145fac539",
+    "rewindandamplify-main/qrsm_grover/hardware.py": "42065f469c3613a9eda3ad2a54d048fca25691574114062ac79145e14e7a3623",
+    "rewindandamplify-main/results/e5_inside_loop/noiseless.json": "d80c40cbffc4ad40f1130f15ba82b07c882382d3ae8a051ab1e7c149c196ff06",
+    "rewindandamplify-main/results/hardware/raw_plain.json": "924539e9fa612941e21992b808b5f9b2bb20d8296836aef48c736f9e47ff3dc8",
+    "rewindandamplify-main/results/hardware/raw_plain2.json": "3c3a734a467402b5034fb31623b81e68e886c0c605ddfb40f07252c5bf2cfdf0",
+    "rewindandamplify-main/results/hardware/summary_plain.json": "2070b265889dbc6f2a088f47dfff7bc788fa763100ce996bfe6dfcbf1b38af5c",
+    "rewindandamplify-main/results/hardware/summary_plain2.json": "27b57128e22def5e3af84a550cc03209e2b2d20147cac4cb947687b90b0c0fb1"
+  },
+  "verified": true
+}

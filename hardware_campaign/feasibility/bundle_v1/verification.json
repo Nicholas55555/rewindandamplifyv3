@@ -1,0 +1,18 @@
+{
+  "schema": "ra-hardware-adapter-verification-v1",
+  "all_checks_passed": true,
+  "circuits": 19,
+  "source_files_checked": 8,
+  "maximum_independent_data_marginal_error": 4.20274925971853e-13,
+  "maximum_event_probability_error": 5.454525719983394e-13,
+  "maximum_ideal_dirty_workspace_probability_or_roundoff": 6.483702463810914e-14,
+  "measurement_wiring_all_checked": true,
+  "generic_resource_counts_all_checked": true,
+  "manifest_sha256": "afe39983884bc25f32193c839d55515997b323c437c7a41395bda1de5bafa599",
+  "artifact_sha256": {
+    "logical.qpy": "f5be891b51f9fccce85486d995884811ff6f9e635cbc14ba36e32d2d45377d6f",
+    "ideal_probabilities.npz": "1d3ef031c0484552a52036f9d4dd127d322c3b169df28aa7ca15d0767df10d3a"
+  },
+  "verifier_sha256": "3ca0ce4cd7d0fec4238c475ed440af4233e6fd599333422da28ff9f99a7233c2",
+  "scope": "Local immutable logical circuits and exact references; no hardware claim."
+}

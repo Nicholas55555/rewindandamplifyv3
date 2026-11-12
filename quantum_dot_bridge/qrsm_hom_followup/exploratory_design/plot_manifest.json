@@ -1,0 +1,10 @@
+{
+  "source_sha256": "afd4ab123424860bfc565a638340049c5fc3e854e52d217a94f873754a1c6c1f",
+  "design_results_sha256": "f936798c5c8f632e3262a620112b52948335a670471aba63ceddfc4b087211b3",
+  "validation_results_sha256": "0685e84da3427091baa743b03228939cf90126ac1cd0359fa692dab020a4ebd2",
+  "artifacts": {
+    "design_validation.png": "fc5b640432c3705a7c84b71a87aa13117f3c57245b7337daacadc3110c0f909e",
+    "design_validation.pdf": "525c601e2938529d5e1fc5b2ccbb3962085cc6528b3a0194fa934a17c0f19b40"
+  },
+  "scope": "Exact model-based design and conditional synthetic validation, not measured optical performance."
+}

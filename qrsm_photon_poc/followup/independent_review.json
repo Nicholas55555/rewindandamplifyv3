@@ -1,0 +1,97 @@
+{
+  "review_scope": "Read-only independent recount of frozen inference artifacts; writes only review JSON.\n\nThis is an independent arithmetic/provenance review using the frozen likelihood\nimplementation, not a second physical solver or a refit. No parameters are tuned.",
+  "reviewer": "independent collaborating agent",
+  "all_checks_passed": true,
+  "python": "3.12.10",
+  "numpy": "2.3.1",
+  "review_source_sha256": "486068edca320bc4e58cb45d5bd5c68c4c65299798815908f89cf447636cc95f",
+  "source_manifest_sha256": "4515e0bacf9737a1beee4a5cf6f9d6bb748f2baad5fa35a3f6d2a8b32fc81cfa",
+  "max_reproduced_heldout_score_error": 0.0,
+  "cases": [
+    {
+      "case": "controlled_411001_dead0_fit0",
+      "fit_sha256": "cd610f136a2ea37b651a3ec9b5c23058e1f9eb494f0c97e685c4af1659bf3198",
+      "canonical_parameter_audit_sha256": "7f44135847cab7c991e8911ec2997910b1b817debc2a516bcd65c67083b71c53",
+      "regenerated_train_and_test_hashes_match": true,
+      "training_likelihood_reproduced": true,
+      "all_six_score_vectors_reproduced": true,
+      "all_four_stratified_bootstrap_intervals_reproduced": true,
+      "audit_fit_and_source_hashes_match": true,
+      "physical_coordinate_standard_errors_recounted_when_available": true
+    },
+    {
+      "case": "controlled_411002_dead0_fit0",
+      "fit_sha256": "9f14b100aad52ea0ec27152524ffa35560f4591326be7eed421b8061f9e93a9b",
+      "canonical_parameter_audit_sha256": "d44da51e2c0737d15f28ec54ac43caad3155964bbdf13edbdd155af5ee90e2a0",
+      "regenerated_train_and_test_hashes_match": true,
+      "training_likelihood_reproduced": true,
+      "all_six_score_vectors_reproduced": true,
+      "all_four_stratified_bootstrap_intervals_reproduced": true,
+      "audit_fit_and_source_hashes_match": true,
+      "physical_coordinate_standard_errors_recounted_when_available": true
+    },
+    {
+      "case": "fixed_411001_dead0_fit0",
+      "fit_sha256": "8c457f5a74dc35f2b41cc7de1398a09bfec192c7c5e452a8b4b35564a8c43bf5",
+      "canonical_parameter_audit_sha256": "711915d14ae574e2ec8720d71851c9e8b9b12c1fa800f711c8cb66343684494e",
+      "regenerated_train_and_test_hashes_match": true,
+      "training_likelihood_reproduced": true,
+      "all_six_score_vectors_reproduced": true,
+      "all_four_stratified_bootstrap_intervals_reproduced": true,
+      "audit_fit_and_source_hashes_match": true,
+      "physical_coordinate_standard_errors_recounted_when_available": true
+    },
+    {
+      "case": "fixed_411002_dead0_fit0",
+      "fit_sha256": "f9c5a8ba8de9dfdbda0df0ec4bfaa49b9f2c4a649e8b614eeea27bbaf15e15cd",
+      "canonical_parameter_audit_sha256": "6275dd246b6fc9278f85bc7c0482087346a25e7744dd50511535ef325a55bb48",
+      "regenerated_train_and_test_hashes_match": true,
+      "training_likelihood_reproduced": true,
+      "all_six_score_vectors_reproduced": true,
+      "all_four_stratified_bootstrap_intervals_reproduced": true,
+      "audit_fit_and_source_hashes_match": true,
+      "physical_coordinate_standard_errors_recounted_when_available": true
+    },
+    {
+      "case": "fixed_411101_dead1_fit0",
+      "fit_sha256": "1caca96deb6b9719d4e0e76b4f1fdabf73e45c13feec606ab1073d2cc3caf91f",
+      "canonical_parameter_audit_sha256": "2f94748da49c19a0f312db6d7b0d5fb39b1d76ab7d58d1f0bc8186137e892fab",
+      "regenerated_train_and_test_hashes_match": true,
+      "training_likelihood_reproduced": true,
+      "all_six_score_vectors_reproduced": true,
+      "all_four_stratified_bootstrap_intervals_reproduced": true,
+      "audit_fit_and_source_hashes_match": true,
+      "physical_coordinate_standard_errors_recounted_when_available": true
+    },
+    {
+      "case": "fixed_411101_dead1_fit1",
+      "fit_sha256": "84a85bb5c07211efc39b4bdc5e36480268fcbf90869f96bc9dd947b567c773b6",
+      "canonical_parameter_audit_sha256": "ea1104b9725d594d79f2f27c5f5f0a1a2313b75c8b44195a78ef9462c3a7c0d4",
+      "regenerated_train_and_test_hashes_match": true,
+      "training_likelihood_reproduced": true,
+      "all_six_score_vectors_reproduced": true,
+      "all_four_stratified_bootstrap_intervals_reproduced": true,
+      "audit_fit_and_source_hashes_match": true,
+      "physical_coordinate_standard_errors_recounted_when_available": true
+    }
+  ],
+  "additional_descriptive_deadtime_comparison": {
+    "corrected_minus_omitted_mean_nats_per_record": 0.45841665599828957,
+    "bootstrap_95_percentile": [
+      0.3977746517572906,
+      0.5209871309558279
+    ],
+    "bootstrap_seed": 991112,
+    "bootstrap_replicates": 10000,
+    "same_train_and_test_records": true,
+    "scope": "Added after inspecting frozen results; descriptive paired comparison conditional on fitted models, not training or optimizer uncertainty."
+  },
+  "interpretation_limits": [
+    "Controls break tested exact sign symmetry; first controlled local detuning interval still crosses zero.",
+    "Both fixed-protocol QRSM-minus-HMM heldout intervals cross zero.",
+    "Controlled predictive gains compare shared physical parameters with separate control-specific HMMs.",
+    "Deadtime correction improves predictions but leaves dephasing at a search bound and detector efficiency biased.",
+    "Local curvature intervals are uncalibrated and may cross physical domains; they do not prove unique identification.",
+    "No physical data, cloud hardware, computational advantage, or lithography validation is implied."
+  ]
+}

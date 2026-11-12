@@ -1,0 +1,7 @@
+{
+  "status": "failed_serialization_readback_not_for_submission",
+  "error": "Qiskit2.6.1 qpy.load raised TypeError: Isometry.__init__() missing num_ancillas_zero and num_ancillas_dirty",
+  "numerical_checks": "Source statevector and direct instrument checks passed before export",
+  "resolution": "hardware_bundle_v2 stores the same validated circuit decomposed to generic u,cx gates before serialization",
+  "not_an_additional_experiment": true
+}

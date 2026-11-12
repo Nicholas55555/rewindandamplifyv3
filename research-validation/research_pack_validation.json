@@ -1,0 +1,12 @@
+{
+  "all_hashes_match": true,
+  "files_verified": 285,
+  "total_uncompressed_bytes": 111855006,
+  "scope": "Artifact integrity only; see study receipts for numerical validation.",
+  "archive": "Rewind_Amplify_Research_Followups.zip",
+  "archive_bytes": 27018351,
+  "archive_sha256": "cacadfe4e772dd53a84840f58c3b4c923456d14136ffd7fd7459e29f08cfff5a",
+  "manifest_sha256": "d5766a4bb50d3c780b4418b75490b6d90708fe74a7540aff9c5e924a857da622",
+  "exclusions": 68,
+  "created_utc": "2026-11-11T05:23:22.501555+00:00"
+}

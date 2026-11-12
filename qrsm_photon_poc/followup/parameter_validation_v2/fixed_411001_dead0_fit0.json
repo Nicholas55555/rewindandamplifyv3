@@ -1,0 +1,125 @@
+{
+  "case": "fixed_411001_dead0_fit0",
+  "fit_sha256": "8c457f5a74dc35f2b41cc7de1398a09bfec192c7c5e452a8b4b35564a8c43bf5",
+  "training_regeneration_matches": true,
+  "reproduced_negative_loglikelihood": 2800.2574871670745,
+  "parameter_order": [
+    "g_defect",
+    "defect_detuning",
+    "gamma_phi_emitter",
+    "detector_eta",
+    "drive"
+  ],
+  "boundary_parameters": [],
+  "derivative_note": "Live L-BFGS-B used jac=None and default absolute finite-difference eps. Its finite_diff_rel_step option did not take effect. This separate audit uses explicit central steps.",
+  "uncertainty_scope": "Local approximate likelihood curvature, conditional on family and calibration. Does not cover global aliases, boundaries, model mismatch or optimization uncertainty.",
+  "confidence_coverage_calibrated": false,
+  "fixed_protocol_sign_alias": true,
+  "profile_note": "One-start nuisance-optimized coarse coupling profile is a diagnostic, not a confidence or identified set.",
+  "hessian_scaled_coordinates": [
+    [
+      2325.170700714807,
+      -0.002815795596688986,
+      340.8980655876803,
+      -1020.7096743215516,
+      -1984.4561479658296
+    ],
+    [
+      -0.002815795596688986,
+      1.4047527656657621,
+      -0.0005488800525199622,
+      0.0009831637726165354,
+      0.00235741026699543
+    ],
+    [
+      340.8980655876803,
+      -0.0005488800525199622,
+      93.6786200327333,
+      -262.2959573272965,
+      -497.28169324225746
+    ],
+    [
+      -1020.7096743215516,
+      0.0009831637726165354,
+      -262.2959573272965,
+      771.7427906754892,
+      1422.8020618247683
+    ],
+    [
+      -1984.4561479658296,
+      0.00235741026699543,
+      -497.28169324225746,
+      1422.8020618247683,
+      2936.9880230660783
+    ]
+  ],
+  "eigenvalues": [
+    1.4047527429775293,
+    3.5431934522119137,
+    68.5683782412625,
+    664.3917433579901,
+    5391.076819460333
+  ],
+  "central_step_relative_disagreement": 3.957480315220548e-06,
+  "central_gradient_per_training_record": [
+    -3.850627194879053e-05,
+    -6.709418206204039e-09,
+    -6.612488808362589e-06,
+    1.940982959543665e-05,
+    1.6492142170439667e-05
+  ],
+  "normal_intervals_available": true,
+  "local_normal_approximate_95pct_intervals": {
+    "g_defect": {
+      "estimate": 0.6416314823092184,
+      "standard_error": 0.04301016718530389,
+      "interval": [
+        0.5573331036569786,
+        0.7259298609614582
+      ]
+    },
+    "defect_detuning": {
+      "estimate": -1.8330834313795563e-06,
+      "standard_error": 1.3499573167863987,
+      "interval": [
+        -2.6458695546510285,
+        2.645865888484166
+      ]
+    },
+    "gamma_phi_emitter": {
+      "estimate": 0.10658316234837283,
+      "standard_error": 0.10188147331976795,
+      "interval": [
+        -0.09310085605024528,
+        0.30626718074699094
+      ]
+    },
+    "detector_eta": {
+      "estimate": 0.808114301613591,
+      "standard_error": 0.11520690342082708,
+      "interval": [
+        0.5823129201383918,
+        1.0339156830887901
+      ]
+    },
+    "drive": {
+      "estimate": 1.2104210538830023,
+      "standard_error": 0.08727694752432831,
+      "interval": [
+        1.0393613800547312,
+        1.3814807277112733
+      ]
+    }
+  },
+  "intervals_leave_search_bounds": [
+    "defect_detuning",
+    "gamma_phi_emitter",
+    "detector_eta"
+  ],
+  "intervals_leave_physical_domain": [
+    "gamma_phi_emitter",
+    "detector_eta"
+  ],
+  "interval_warning": "Intervals crossing physical/search bounds expose weak identification and failure of a global Gaussian approximation. They are not calibrated physical confidence sets; no clipping is used to hide this.",
+  "audit_source_sha256": "37abfdf5501cd16900b27cb9b72a3a4a42aaaa8e11599a35d69451a53107c9d1"
+}

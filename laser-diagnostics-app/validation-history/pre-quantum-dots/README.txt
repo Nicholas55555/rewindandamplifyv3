@@ -1,0 +1,1 @@
+Historical validation and research screenshots from before the quantum-dot view. Their recorded hashes refer to that prior app revision, not current source files. Copied without changing historical receipt or image bytes.

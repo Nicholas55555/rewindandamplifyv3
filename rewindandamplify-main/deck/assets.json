@@ -1,0 +1,20 @@
+{
+  "/_blob/24b92c34e35fbe6aeaf5a71c1d28937a": "results/figures/fig_wall_prefix.png",
+  "/_blob/e56da2f9c99f3492835a22ca5b35524f": "results/figures/fig_curve.png",
+  "/_blob/5d5f5787e40cfe43ca5888ec9e0e6a8e": "results/figures/fig_reflection_map.png",
+  "/_blob/9ee2e617ccec9a7af3453df170b4df01": "results/figures/fig_catalog.png",
+  "/_blob/7fbaa1ba2b6b15955050bb7094140c5e": "results/figures/fig_future.png",
+  "/_blob/e0f815b005b367f2cb13c8f1dbc0b923": "results/figures/fig_horizon.png",
+  "/_blob/f951442ec8e692eef931722fe93db617": "results/figures/fig_wall.png",
+  "/_blob/7b0f04aa62406fbcf7cac338ce7a03d9": "results/figures/fig_catalog_cost.png",
+  "/_blob/e5a3cf2c137de3be52a1fba7d506139c": "results/figures/fig_resilience.png",
+  "/_blob/7bd401af382f829f4249ffe5580be00b": "results/figures/fig_hw_runs.png",
+  "/_blob/10575994605f8a8fca53597d7896c2bc": "deck/diagrams/variant_coherent.png",
+  "/_blob/de1ecc59c1e7a0779b1444bf3e5ecdeb": "deck/diagrams/variant_measured.png",
+  "/_blob/9c4324024291e935954f26d150463c46": "deck/diagrams/variant_hybrid.png",
+  "/_blob/ab2521e64575b3c58f7fa44699db4d49": "deck/diagrams/variant_free_unitary.png",
+  "/_blob/09c2d872ee00d6b44bc6349fce754bed": "deck/diagrams/variant_heads.png",
+  "/_blob/22d4c116c482881d35c4ff7bc721f27b": "deck/diagrams/variant_defects.png",
+  "/_blob/97e95791ff476407fa1ac2a12af0b757": "results/figures/fig_fingerprint.png",
+  "/_blob/8e209c424d62d99be6578b083cc252fa": "results/figures/fig_hw_builds.png"
+}

@@ -1,0 +1,12 @@
+1. the circuit's Kraus operators match v5's: largest difference 0.0e+00
+2-3. clicks against v5's exact filter
+| data | click rate (exact) | largest step z | gaps chi2 / dof, p | NLL per step (exact) | z | pass |
+|---|---|---|---|---|---|---|
+| ideal-k1-perfect | 0.0804 (0.0799) | 2.1 | 27.1 / 21, 0.169 | 0.26731 (0.26621) | +1.1 | yes |
+| ideal-k1-good | 0.0450 (0.0448) | 2.3 | 14.0 / 21, 0.868 | 0.18177 (0.18112) | +0.7 | yes |
+| ideal-k0-perfect | 0.1035 (0.1038) | 2.5 | 26.3 / 21, 0.197 | 0.30479 (0.30449) | +0.3 | yes |
+| ideal-k0-good | 0.0567 (0.0566) | 2.3 | 19.2 / 21, 0.574 | 0.21462 (0.21385) | +0.9 | yes |
+| device-k1 | 0.0913 (0.0835) | 5.1 | 454.0 / 21, 0.000 | 0.30357 (0.27701) | +26.4 | no |
+| device-k0 | 0.1108 (0.1071) | 4.1 | 780.4 / 21, 0.000 | 0.33129 (0.31671) | +16.1 | no |
+  saved results\1_qrsm_circuit\1_circuit_checks.png
+all asserted checks pass (the device rows are reported, not asserted)

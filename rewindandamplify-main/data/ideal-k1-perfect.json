@@ -1,0 +1,28 @@
+{
+ "source": "ideal",
+ "k_true": 1,
+ "truth": {
+  "theta": 0.6,
+  "gamma": 0.2,
+  "phi": [
+   0.45
+  ],
+  "zeta": [
+   0.3
+  ]
+ },
+ "detector": {
+  "eta": 1.0,
+  "p_dark": 0.0,
+  "how": "perfect"
+ },
+ "seconds": 0.4114188998937607,
+ "name": "ideal-k1-perfect",
+ "records": {
+  "train": 4096,
+  "val": 512,
+  "count": 4096
+ },
+ "steps": 64,
+ "click_rate": 0.08038150562959559
+}

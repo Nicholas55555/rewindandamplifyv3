@@ -1,0 +1,34 @@
+{
+ "rows": [
+  {
+   "T": 4,
+   "lookup_cz": 14,
+   "reader_cz": 160,
+   "counter_qubits": 3
+  },
+  {
+   "T": 6,
+   "lookup_cz": 62,
+   "reader_cz": 236,
+   "counter_qubits": 3
+  },
+  {
+   "T": 8,
+   "lookup_cz": 254,
+   "reader_cz": 584,
+   "counter_qubits": 4
+  },
+  {
+   "T": 10,
+   "lookup_cz": 1022,
+   "reader_cz": 724,
+   "counter_qubits": 4
+  },
+  {
+   "T": 12,
+   "lookup_cz": 4094,
+   "reader_cz": 864,
+   "counter_qubits": 4
+  }
+ ]
+}

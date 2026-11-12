@@ -1,0 +1,24 @@
+{
+  "case": "fixed_411101_dead1_fit1",
+  "fit_sha256": "84a85bb5c07211efc39b4bdc5e36480268fcbf90869f96bc9dd947b567c773b6",
+  "training_regeneration_matches": true,
+  "reproduced_negative_loglikelihood": 2368.5765789762036,
+  "parameter_order": [
+    "g_defect",
+    "defect_detuning",
+    "gamma_phi_emitter",
+    "detector_eta",
+    "drive"
+  ],
+  "boundary_parameters": [
+    "gamma_phi_emitter"
+  ],
+  "derivative_note": "Live L-BFGS-B used jac=None and default absolute finite-difference eps. Its finite_diff_rel_step option did not take effect. This separate audit uses explicit central steps.",
+  "uncertainty_scope": "Local approximate likelihood curvature, conditional on family and calibration. Does not cover global aliases, boundaries, model mismatch or optimization uncertainty.",
+  "confidence_coverage_calibrated": false,
+  "fixed_protocol_sign_alias": true,
+  "profile_note": "One-start nuisance-optimized coarse coupling profile is a diagnostic, not a confidence or identified set.",
+  "normal_intervals_available": false,
+  "reason": "At least one fitted parameter is on/near an optimization bound; regular unconstrained normal approximation is not reported.",
+  "audit_source_sha256": "37abfdf5501cd16900b27cb9b72a3a4a42aaaa8e11599a35d69451a53107c9d1"
+}

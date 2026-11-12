@@ -1,0 +1,126 @@
+{
+  "status": "pass",
+  "records": [
+    {
+      "source": "rewindandamplify-main/results/hardware/raw_plain.json",
+      "source_sha256": "924539e9fa612941e21992b808b5f9b2bb20d8296836aef48c736f9e47ff3dc8",
+      "job_id": "dbmfqlt8ft8s738uplmg",
+      "name": "click3-steered-memory+last-1-r1",
+      "event_qubit_index": 4,
+      "hits": 3525,
+      "shots": 4096,
+      "two_qubit_gates": 40,
+      "physical_qubits": [
+        142,
+        143,
+        136,
+        144,
+        141
+      ],
+      "raw": {
+        "hit": 0.860595703125,
+        "ideal_hit": 0.9610172483426239,
+        "tvd": 0.061476312834441375,
+        "ideal_tvd": 0.03528976823366473
+      },
+      "corrected": {
+        "hit": 0.8736194676463233,
+        "ideal_hit": 0.9610172483426239,
+        "tvd": 0.055313250543431065,
+        "ideal_tvd": 0.03528976823366473
+      }
+    },
+    {
+      "source": "rewindandamplify-main/results/hardware/raw_plain.json",
+      "source_sha256": "924539e9fa612941e21992b808b5f9b2bb20d8296836aef48c736f9e47ff3dc8",
+      "job_id": "dbmfqlt8ft8s738uplmg",
+      "name": "click3-steered-full-r1",
+      "event_qubit_index": 4,
+      "hits": 3215,
+      "shots": 4096,
+      "two_qubit_gates": 85,
+      "physical_qubits": [
+        143,
+        141,
+        123,
+        142,
+        136,
+        140,
+        144
+      ],
+      "raw": {
+        "hit": 0.784912109375,
+        "ideal_hit": 0.9649002179026728,
+        "tvd": 0.09437440797799496,
+        "ideal_tvd": 5.72797560251248e-17
+      },
+      "corrected": {
+        "hit": 0.7929178758556136,
+        "ideal_hit": 0.9649002179026728,
+        "tvd": 0.06897534230162003,
+        "ideal_tvd": 5.72797560251248e-17
+      }
+    },
+    {
+      "source": "rewindandamplify-main/results/hardware/raw_plain2.json",
+      "source_sha256": "3c3a734a467402b5034fb31623b81e68e886c0c605ddfb40f07252c5bf2cfdf0",
+      "job_id": "dbmfv758ft8s738upsdg",
+      "name": "click3-steered-memory+last-1-r1",
+      "event_qubit_index": 4,
+      "hits": 3574,
+      "shots": 4096,
+      "two_qubit_gates": 40,
+      "physical_qubits": [
+        142,
+        143,
+        136,
+        144,
+        141
+      ],
+      "raw": {
+        "hit": 0.87255859375,
+        "ideal_hit": 0.9610172483426239,
+        "tvd": 0.06481349587825265,
+        "ideal_tvd": 0.03528976823366473
+      },
+      "corrected": {
+        "hit": 0.8817561009358219,
+        "ideal_hit": 0.9610172483426239,
+        "tvd": 0.05679522425553762,
+        "ideal_tvd": 0.03528976823366473
+      }
+    },
+    {
+      "source": "rewindandamplify-main/results/hardware/raw_plain2.json",
+      "source_sha256": "3c3a734a467402b5034fb31623b81e68e886c0c605ddfb40f07252c5bf2cfdf0",
+      "job_id": "dbmfv758ft8s738upsdg",
+      "name": "click3-steered-full-r1",
+      "event_qubit_index": 4,
+      "hits": 3220,
+      "shots": 4096,
+      "two_qubit_gates": 85,
+      "physical_qubits": [
+        143,
+        141,
+        123,
+        142,
+        136,
+        140,
+        144
+      ],
+      "raw": {
+        "hit": 0.7861328125,
+        "ideal_hit": 0.9649002179026728,
+        "tvd": 0.09792096284985916,
+        "ideal_tvd": 5.72797560251248e-17
+      },
+      "corrected": {
+        "hit": 0.7933622588272469,
+        "ideal_hit": 0.9649002179026728,
+        "tvd": 0.0784015161302565,
+        "ideal_tvd": 5.72797560251248e-17
+      }
+    }
+  ],
+  "scope": "Archived counts, calibration correction and exact logical circuit reproduced. Layouts differ. No IBM API call or new hardware run."
+}

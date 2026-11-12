@@ -1,0 +1,176 @@
+{
+  "configuration": {
+    "absorption_probability": 0.8,
+    "failure": "number of absorptions < 2",
+    "grover_rounds": 1,
+    "simulator": "ideal Qiskit Statevector",
+    "compilation": "generic u,cx, optimization level 1, seed_transpiler 13, no backend",
+    "qiskit_version": "2.6.1",
+    "python_version": "3.12.10"
+  },
+  "rows": [
+    {
+      "sites": 3,
+      "enumerated": {
+        "style": "enumerated",
+        "data_qubits": 3,
+        "work_qubits": 0,
+        "total_qubits": 3,
+        "marked_probability_before": 0.10399999999999995,
+        "marked_probability_after": 0.6944138239999994,
+        "conditional_history_tv": 6.245004513516506e-17,
+        "maximum_basis_phase_error": 7.771561172376096e-16,
+        "dirty_work_probability": 0.0,
+        "generic_cx": 30,
+        "generic_depth": 55
+      },
+      "counter": {
+        "style": "counter",
+        "data_qubits": 3,
+        "work_qubits": 2,
+        "total_qubits": 5,
+        "marked_probability_before": 0.10399999999999995,
+        "marked_probability_after": 0.6944138240000002,
+        "conditional_history_tv": 4.163336342344337e-17,
+        "maximum_basis_phase_error": 0.0,
+        "dirty_work_probability": 0.0,
+        "generic_cx": 42,
+        "generic_depth": 71
+      },
+      "counter_minus_enumerated_cx": 12,
+      "counter_minus_enumerated_depth": 16
+    },
+    {
+      "sites": 4,
+      "enumerated": {
+        "style": "enumerated",
+        "data_qubits": 4,
+        "work_qubits": 0,
+        "total_qubits": 4,
+        "marked_probability_before": 0.02719999999999998,
+        "marked_probability_after": 0.22736581836799957,
+        "conditional_history_tv": 1.97758476261356e-16,
+        "maximum_basis_phase_error": 2.5541162674452484e-15,
+        "dirty_work_probability": 0.0,
+        "generic_cx": 84,
+        "generic_depth": 157
+      },
+      "counter": {
+        "style": "counter",
+        "data_qubits": 4,
+        "work_qubits": 3,
+        "total_qubits": 7,
+        "marked_probability_before": 0.02719999999999998,
+        "marked_probability_after": 0.22736581836799924,
+        "conditional_history_tv": 5.551115123125783e-17,
+        "maximum_basis_phase_error": 1.7773323534960884e-15,
+        "dirty_work_probability": 6.831289724197072e-32,
+        "generic_cx": 175,
+        "generic_depth": 302
+      },
+      "counter_minus_enumerated_cx": 91,
+      "counter_minus_enumerated_depth": 145
+    },
+    {
+      "sites": 5,
+      "enumerated": {
+        "style": "enumerated",
+        "data_qubits": 5,
+        "work_qubits": 0,
+        "total_qubits": 5,
+        "marked_probability_before": 0.006719999999999995,
+        "marked_probability_after": 0.05940105383116563,
+        "conditional_history_tv": 1.8735013540549517e-16,
+        "maximum_basis_phase_error": 1.9651653173423566e-14,
+        "dirty_work_probability": 0.0,
+        "generic_cx": 252,
+        "generic_depth": 449
+      },
+      "counter": {
+        "style": "counter",
+        "data_qubits": 5,
+        "work_qubits": 3,
+        "total_qubits": 8,
+        "marked_probability_before": 0.006719999999999995,
+        "marked_probability_after": 0.0594010538311676,
+        "conditional_history_tv": 2.7755575615628914e-16,
+        "maximum_basis_phase_error": 2.5538146298572528e-15,
+        "dirty_work_probability": 7.905664509873744e-32,
+        "generic_cx": 221,
+        "generic_depth": 379
+      },
+      "counter_minus_enumerated_cx": -31,
+      "counter_minus_enumerated_depth": -70
+    },
+    {
+      "sites": 6,
+      "enumerated": {
+        "style": "enumerated",
+        "data_qubits": 6,
+        "work_qubits": 0,
+        "total_qubits": 6,
+        "marked_probability_before": 0.0015999999999999981,
+        "marked_probability_after": 0.01433862553600002,
+        "conditional_history_tv": 1.8041124150158794e-16,
+        "maximum_basis_phase_error": 1.5582722720639764e-15,
+        "dirty_work_probability": 0.0,
+        "generic_cx": 656,
+        "generic_depth": 809
+      },
+      "counter": {
+        "style": "counter",
+        "data_qubits": 6,
+        "work_qubits": 3,
+        "total_qubits": 9,
+        "marked_probability_before": 0.0015999999999999981,
+        "marked_probability_after": 0.014338625535999978,
+        "conditional_history_tv": 2.220446049250313e-16,
+        "maximum_basis_phase_error": 2.664824363995612e-15,
+        "dirty_work_probability": 2.3880345522352124e-31,
+        "generic_cx": 269,
+        "generic_depth": 465
+      },
+      "counter_minus_enumerated_cx": -387,
+      "counter_minus_enumerated_depth": -344
+    },
+    {
+      "sites": 7,
+      "enumerated": {
+        "style": "enumerated",
+        "data_qubits": 7,
+        "work_qubits": 0,
+        "total_qubits": 7,
+        "marked_probability_before": 0.00037119999999999954,
+        "marked_probability_after": 0.003337493871799062,
+        "conditional_history_tv": 2.498001805406602e-16,
+        "maximum_basis_phase_error": 5.114876294337098e-15,
+        "dirty_work_probability": 0.0,
+        "generic_cx": 1098,
+        "generic_depth": 1162
+      },
+      "counter": {
+        "style": "counter",
+        "data_qubits": 7,
+        "work_qubits": 3,
+        "total_qubits": 10,
+        "marked_probability_before": 0.00037119999999999954,
+        "marked_probability_after": 0.003337493871799037,
+        "conditional_history_tv": 5.377642775528102e-16,
+        "maximum_basis_phase_error": 3.109615581511553e-15,
+        "dirty_work_probability": 2.5821679538587624e-31,
+        "generic_cx": 317,
+        "generic_depth": 549
+      },
+      "counter_minus_enumerated_cx": -781,
+      "counter_minus_enumerated_depth": -613
+    }
+  ],
+  "limitations": [
+    "Synthetic independent absorption bits and threshold; not a calibrated lithography process.",
+    "Oracle behavior is checked for every data basis state with counter initialized to zero.",
+    "Gate counts exclude device routing, noise, measurements, sampling repetitions and error correction.",
+    "The two implementations use different logical qubit counts; no runtime or real-device advantage is established.",
+    "Small n and compiler-specific decomposition do not establish a general scaling law.",
+    "No loading or coherent oracle for the separate spatial Poisson/blur model has been constructed."
+  ]
+}

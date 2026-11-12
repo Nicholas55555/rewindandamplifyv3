@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "videos": [
+    {
+      "file": "laser-diagnostic-lenses.mp4",
+      "decoded_all_frames": true,
+      "decoded_frames": 240,
+      "decode_errors": [],
+      "comparison": "Each decoded frame compared to the original GIF frame at the same timestamp; original675rows retained, no crop/scale.",
+      "maximum_frame_mean_absolute_rgb_error": 1.6505995884773663,
+      "mean_frame_mean_absolute_rgb_error": 1.6411465997942387,
+      "minimum_frame_psnr_db": 39.414518959548744,
+      "scene_checks": [
+        {
+          "time_seconds": 2.0,
+          "label": "Reference source",
+          "video_frame": 40,
+          "source_gif_frame": 20,
+          "decoded_png": "video-validation/laser-diagnostic-lenses-scene-1.png",
+          "mean_absolute_rgb_error": 1.6320411522633744,
+          "psnr_db": 39.51709373269672,
+          "decoded_rgb_sha256": "11a8f52ff09f607e6c4def92619512b9cfe1c101414763e18cbb646c1ef2efd5"
+        },
+        {
+          "time_seconds": 6.0,
+          "label": "Source shifts +5Hz",
+          "video_frame": 120,
+          "source_gif_frame": 60,
+          "decoded_png": "video-validation/laser-diagnostic-lenses-scene-2.png",
+          "mean_absolute_rgb_error": 1.644238683127572,
+          "psnr_db": 39.45347905142543,
+          "decoded_rgb_sha256": "5f52e2907d243fb400d20c43d89eef9c06dc53156d6322b7b41cfbf87f1570f8"
+        },
+        {
+          "time_seconds": 10.0,
+          "label": "Atomic reference also shifts +5Hz",
+          "video_frame": 200,
+          "source_gif_frame": 100,
+          "decoded_png": "video-validation/laser-diagnostic-lenses-scene-3.png",
+          "mean_absolute_rgb_error": 1.6467337448559671,
+          "psnr_db": 39.452941602737035,
+          "decoded_rgb_sha256": "04e0bcf65b2c17c1e62599edf134c15045d44094b85434ebdff9c582f9262c92"
+        }
+      ]
+    },
+    {
+      "file": "rewind-amplify.mp4",
+      "decoded_all_frames": true,
+      "decoded_frames": 240,
+      "decode_errors": [],
+      "comparison": "Each decoded frame compared to the original GIF frame at the same timestamp; original675rows retained, no crop/scale.",
+      "maximum_frame_mean_absolute_rgb_error": 1.605693827160494,
+      "mean_frame_mean_absolute_rgb_error": 1.590218707133059,
+      "minimum_frame_psnr_db": 39.86679328981204,
+      "scene_checks": [
+        {
+          "time_seconds": 1.5,
+          "label": "Prepare",
+          "video_frame": 30,
+          "source_gif_frame": 0,
+          "decoded_png": "video-validation/rewind-amplify-scene-1.png",
+          "mean_absolute_rgb_error": 1.5826995884773662,
+          "psnr_db": 40.568890451204,
+          "decoded_rgb_sha256": "9679987950de9f94373f2100d351da14116336298d42896269e171fb9d362d36"
+        },
+        {
+          "time_seconds": 4.5,
+          "label": "Mark",
+          "video_frame": 90,
+          "source_gif_frame": 1,
+          "decoded_png": "video-validation/rewind-amplify-scene-2.png",
+          "mean_absolute_rgb_error": 1.6001888888888889,
+          "psnr_db": 40.21274670605937,
+          "decoded_rgb_sha256": "69619f4ec0e2c0714d3ca2692b32daec12bc466e258b8053d3eae051eb4ca7a1"
+        },
+        {
+          "time_seconds": 7.5,
+          "label": "Rewind",
+          "video_frame": 150,
+          "source_gif_frame": 2,
+          "decoded_png": "video-validation/rewind-amplify-scene-3.png",
+          "mean_absolute_rgb_error": 1.5809559670781892,
+          "psnr_db": 40.55731778034779,
+          "decoded_rgb_sha256": "1a4332f7d5d49586441815bdf0f5a5ea69e42c02f32e91d0ecdc9353b6d79cb9"
+        },
+        {
+          "time_seconds": 10.5,
+          "label": "Amplify",
+          "video_frame": 210,
+          "source_gif_frame": 3,
+          "decoded_png": "video-validation/rewind-amplify-scene-4.png",
+          "mean_absolute_rgb_error": 1.595892181069959,
+          "psnr_db": 40.327409516879875,
+          "decoded_rgb_sha256": "c3b5d161e7f7368a4007daebd259363b01cff2f663c74dd139689e805ecdf2b6"
+        }
+      ]
+    }
+  ],
+  "all_checks_passed": true,
+  "scene_contact_sheet": "video-validation/scenes-contact-sheet.png"
+}

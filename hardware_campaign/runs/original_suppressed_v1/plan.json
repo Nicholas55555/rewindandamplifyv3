@@ -1,0 +1,1860 @@
+{
+  "schema": "ra-real-hardware-plan-v1",
+  "created_utc": "2026-11-11T18:08:23.869320+00:00",
+  "label": "original_suppressed_v1",
+  "backend": "ibm_marrakesh",
+  "simulator": false,
+  "dry_run": false,
+  "plan": "open",
+  "bundle": "hardware_campaign/original_bundle_v2",
+  "manifest_sha256": "876c4421860182e9d7195f1a06a6dbcf47db0cdf7cc8ce7bf7ede76289deb1f9",
+  "reference_sha256": "dc9dc374fbe818eabe14f72dfa3f62312bf26233b459aa2fe62b8403fc239753",
+  "reference_file": "ideal_probabilities.npz",
+  "checked_bundle_hashes": {
+    "rewindandamplify-main/qrsm_grover/__init__.py": "228acb3e0e4e06ff942fa5daade0848039492e5cef65ba51157ba3380bc829b3",
+    "rewindandamplify-main/qrsm_grover/amplify.py": "e70d46eb7fbc435647fb8016f10b4a96ce869a8ec236575a8633fcb145fac539",
+    "rewindandamplify-main/qrsm_grover/classical.py": "fc97d3b3d15e1ea98e2f82fa17e7bcb5003261d5eae3e7f31870da5cd16e1971",
+    "rewindandamplify-main/qrsm_grover/fastsim.py": "43302120b99a6e6f396d0e7facbc7ebe90a78546800cf36eef7c33b92320d730",
+    "rewindandamplify-main/qrsm_grover/hardware.py": "42065f469c3613a9eda3ad2a54d048fca25691574114062ac79145e14e7a3623",
+    "rewindandamplify-main/qrsm_grover/model.py": "128207689429d05c6b9fe9a78a478884dfd51af83969ad5dbdc46cc69b12b11f",
+    "rewindandamplify-main/qrsm_grover/predicates.py": "c02edaaad6c4207bcb62523b19f73368d93d50b773578ce3cbca6d22b8cfc602",
+    "rewindandamplify-main/qrsm_grover/queries.py": "d1f5a89f269adf3ac5e2ff179ea57a4feb42f84573bcce98a9a001035b96e2d6",
+    "rewindandamplify-main/qrsm_grover/search.py": "aa64753d37312fad2c6fac8a002e2017ef521902ad15506fcd9409fe0a6275af",
+    "hardware_campaign/build_original.py": "96dfd14bef49714a137eabfc3e56c92445b419d9d9f432698b9a056ef68bb241",
+    "hardware_campaign/original_bundle_v2/logical.qpy": "2f7b24c7232b4bb1dc107cd62ed265a68a8509ff8d10492a0b9ed2ec181ac0db",
+    "hardware_campaign/original_bundle_v2/ideal_probabilities.npz": "dc9dc374fbe818eabe14f72dfa3f62312bf26233b459aa2fe62b8403fc239753"
+  },
+  "logical_qpy_sha256": {
+    "logical.qpy": "2f7b24c7232b4bb1dc107cd62ed265a68a8509ff8d10492a0b9ed2ec181ac0db"
+  },
+  "compiled_qpy_sha256": "c3ef934cbf8d21021e6d23688a6ee88caa7c87e34eb1081667c63e4bceec4d5f",
+  "shots": 2048,
+  "max_execution_time": 90,
+  "mode": "suppressed",
+  "physical_patch": [
+    112,
+    111,
+    110,
+    109,
+    118,
+    129,
+    128,
+    127,
+    137,
+    147,
+    148
+  ],
+  "transpiler_seed": 20261111,
+  "pub_order_seed": 20261111,
+  "rep_delay_seconds": 0.00025,
+  "duration_estimate_seconds": 25.198280704000002,
+  "duration_estimate_caveat": "Calibrated critical path plus repetition delay; excludes service overhead and DD/twirling expansion. Cap is authoritative.",
+  "quota_at_prepare": {
+    "usage_consumed_seconds": 24,
+    "usage_limit_seconds": 600,
+    "usage_remaining_seconds": 576,
+    "usage_limit_reached": false,
+    "usage_period": {
+      "start_time": "2026-10-14T18:02:35.997Z",
+      "end_time": "2026-11-11T18:02:35.997Z"
+    }
+  },
+  "pubs": [
+    {
+      "kind": "science",
+      "name": "any3-nodefect-full-r0",
+      "bundle_index": 13,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        111,
+        112,
+        109,
+        110,
+        118
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 25,
+        "rz": 22,
+        "cz": 9,
+        "measure": 5,
+        "barrier": 1
+      },
+      "depth": 34,
+      "duration_seconds": 3.764e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.0547118733938987e-15
+      },
+      "pub_index": 0
+    },
+    {
+      "kind": "science",
+      "name": "catalog-r0",
+      "bundle_index": 33,
+      "logical_qubits": 3,
+      "measurement_physical_qubits": [
+        112,
+        111,
+        110
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110
+      ],
+      "gate_counts": {
+        "rz": 6,
+        "sx": 3,
+        "measure": 3,
+        "barrier": 1
+      },
+      "depth": 4,
+      "duration_seconds": 2.7200000000000002e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 0.0
+      },
+      "pub_index": 1
+    },
+    {
+      "kind": "science",
+      "name": "click3-full-r0",
+      "bundle_index": 0,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        110,
+        112,
+        118,
+        111,
+        109,
+        129,
+        128
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 63,
+        "rz": 41,
+        "cz": 22,
+        "measure": 7,
+        "barrier": 1
+      },
+      "depth": 71,
+      "duration_seconds": 4.852e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.0547118733938987e-15
+      },
+      "pub_index": 2
+    },
+    {
+      "kind": "science",
+      "name": "loop-nodefect-r1",
+      "bundle_index": 32,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        118,
+        112,
+        111,
+        110,
+        109,
+        128,
+        129
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 80,
+        "rz": 64,
+        "cz": 32,
+        "measure": 7,
+        "x": 4,
+        "barrier": 1
+      },
+      "depth": 113,
+      "duration_seconds": 6.516000000000003e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 2.7755575615628914e-15
+      },
+      "pub_index": 3
+    },
+    {
+      "kind": "science",
+      "name": "click5-steered-memory+last-1-r1",
+      "bundle_index": 27,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        110,
+        112,
+        128,
+        129,
+        118,
+        109,
+        111
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 406,
+        "rz": 229,
+        "cz": 163,
+        "measure": 7,
+        "x": 3,
+        "barrier": 1
+      },
+      "depth": 332,
+      "duration_seconds": 1.314399999999999e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.885780586188048e-15
+      },
+      "pub_index": 4
+    },
+    {
+      "kind": "science",
+      "name": "catalog-r1",
+      "bundle_index": 34,
+      "logical_qubits": 3,
+      "measurement_physical_qubits": [
+        110,
+        111,
+        112
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110
+      ],
+      "gate_counts": {
+        "sx": 83,
+        "rz": 67,
+        "cz": 35,
+        "x": 6,
+        "measure": 3,
+        "barrier": 1
+      },
+      "depth": 137,
+      "duration_seconds": 7.080000000000005e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.1086244689504383e-15
+      },
+      "pub_index": 5
+    },
+    {
+      "kind": "science",
+      "name": "any3-nodefect-full-r1",
+      "bundle_index": 14,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        110,
+        109,
+        112,
+        111,
+        118
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 144,
+        "rz": 106,
+        "cz": 59,
+        "measure": 5,
+        "x": 3,
+        "barrier": 1
+      },
+      "depth": 186,
+      "duration_seconds": 9.092000000000009e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.0547118733938987e-15
+      },
+      "pub_index": 6
+    },
+    {
+      "kind": "science",
+      "name": "click5-memory+last-1-r3",
+      "bundle_index": 26,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        110,
+        112,
+        128,
+        129,
+        118,
+        109,
+        111
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 846,
+        "rz": 518,
+        "cz": 333,
+        "x": 17,
+        "measure": 7,
+        "barrier": 1
+      },
+      "depth": 776,
+      "duration_seconds": 2.685600000000006e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 9.658940314238862e-15
+      },
+      "pub_index": 7
+    },
+    {
+      "kind": "science",
+      "name": "loop-defect-full-r1",
+      "bundle_index": 39,
+      "logical_qubits": 10,
+      "measurement_physical_qubits": [
+        118,
+        110,
+        137,
+        127,
+        128,
+        112,
+        147,
+        111,
+        109,
+        129
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147
+      ],
+      "gate_counts": {
+        "sx": 424,
+        "rz": 234,
+        "cz": 182,
+        "measure": 10,
+        "x": 3,
+        "barrier": 1
+      },
+      "depth": 354,
+      "duration_seconds": 1.4763999999999978e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 2.7755575615628914e-15
+      },
+      "pub_index": 8
+    },
+    {
+      "kind": "science",
+      "name": "click3-memory-r3",
+      "bundle_index": 12,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        110,
+        112,
+        118,
+        111,
+        109
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 369,
+        "rz": 246,
+        "cz": 139,
+        "measure": 5,
+        "x": 3,
+        "barrier": 1
+      },
+      "depth": 371,
+      "duration_seconds": 1.392399999999998e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 5.440092820663267e-15
+      },
+      "pub_index": 9
+    },
+    {
+      "kind": "science",
+      "name": "loop-defect-memory-r1",
+      "bundle_index": 40,
+      "logical_qubits": 8,
+      "measurement_physical_qubits": [
+        109,
+        112,
+        127,
+        128,
+        129,
+        110,
+        111,
+        118
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127
+      ],
+      "gate_counts": {
+        "sx": 240,
+        "rz": 151,
+        "cz": 93,
+        "measure": 8,
+        "barrier": 1
+      },
+      "depth": 218,
+      "duration_seconds": 9.41200000000001e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.7763568394002505e-15
+      },
+      "pub_index": 10
+    },
+    {
+      "kind": "science",
+      "name": "loop-nodefect-r0",
+      "bundle_index": 31,
+      "logical_qubits": 8,
+      "measurement_physical_qubits": [
+        128,
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        127
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127
+      ],
+      "gate_counts": {
+        "sx": 39,
+        "rz": 36,
+        "cz": 15,
+        "measure": 8,
+        "x": 1,
+        "barrier": 1
+      },
+      "depth": 47,
+      "duration_seconds": 4.387999999999999e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.0547118733938987e-15
+      },
+      "pub_index": 11
+    },
+    {
+      "kind": "science",
+      "name": "click5-full-r1",
+      "bundle_index": 25,
+      "logical_qubits": 11,
+      "measurement_physical_qubits": [
+        110,
+        118,
+        127,
+        128,
+        129,
+        109,
+        111,
+        112,
+        137,
+        147,
+        148
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        148
+      ],
+      "gate_counts": {
+        "sx": 634,
+        "rz": 365,
+        "cz": 266,
+        "measure": 11,
+        "x": 8,
+        "barrier": 1
+      },
+      "depth": 537,
+      "duration_seconds": 2.1047999999999992e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 4.052314039881821e-15
+      },
+      "pub_index": 12
+    },
+    {
+      "kind": "calibration",
+      "name": "cal_complement",
+      "prepared_bits": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "measurement_physical_qubits": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        148
+      ],
+      "duration_seconds": 2.7200000000000002e-06,
+      "pub_index": 13
+    },
+    {
+      "kind": "science",
+      "name": "click3-full-r2",
+      "bundle_index": 5,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        109,
+        111,
+        129,
+        110,
+        118,
+        112,
+        128
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 578,
+        "rz": 347,
+        "cz": 241,
+        "x": 10,
+        "measure": 7,
+        "barrier": 1
+      },
+      "depth": 573,
+      "duration_seconds": 2.2040000000000006e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 2.9976021664879227e-15
+      },
+      "pub_index": 14
+    },
+    {
+      "kind": "science",
+      "name": "loop-nodefect-memory-r1",
+      "bundle_index": 42,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        118,
+        112,
+        111,
+        110,
+        109,
+        128,
+        129
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 56,
+        "rz": 53,
+        "cz": 23,
+        "measure": 7,
+        "x": 5,
+        "barrier": 1
+      },
+      "depth": 79,
+      "duration_seconds": 5.436000000000002e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.2212453270876722e-15
+      },
+      "pub_index": 15
+    },
+    {
+      "kind": "calibration",
+      "name": "cal_one",
+      "prepared_bits": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "measurement_physical_qubits": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        148
+      ],
+      "duration_seconds": 2.7200000000000002e-06,
+      "pub_index": 16
+    },
+    {
+      "kind": "calibration",
+      "name": "cal_zero",
+      "prepared_bits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "measurement_physical_qubits": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        148
+      ],
+      "duration_seconds": 2.684e-06,
+      "pub_index": 17
+    },
+    {
+      "kind": "science",
+      "name": "any3-nodefect-full-r2",
+      "bundle_index": 15,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        109,
+        111,
+        110,
+        118,
+        112
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 275,
+        "rz": 189,
+        "cz": 116,
+        "x": 6,
+        "measure": 5,
+        "barrier": 1
+      },
+      "depth": 348,
+      "duration_seconds": 1.4871999999999976e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.4988010832439613e-15
+      },
+      "pub_index": 18
+    },
+    {
+      "kind": "science",
+      "name": "click3-steered-full-r0",
+      "bundle_index": 1,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        110,
+        112,
+        118,
+        111,
+        109,
+        129,
+        128
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 60,
+        "rz": 39,
+        "cz": 22,
+        "measure": 7,
+        "barrier": 1
+      },
+      "depth": 68,
+      "duration_seconds": 4.78e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.27675647831893e-15
+      },
+      "pub_index": 19
+    },
+    {
+      "kind": "science",
+      "name": "any3-memory-r3",
+      "bundle_index": 23,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        110,
+        112,
+        118,
+        111,
+        109
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 456,
+        "rz": 310,
+        "cz": 175,
+        "measure": 5,
+        "x": 4,
+        "barrier": 1
+      },
+      "depth": 483,
+      "duration_seconds": 1.779999999999995e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.7069679003611782e-15
+      },
+      "pub_index": 20
+    },
+    {
+      "kind": "science",
+      "name": "click5-full-r0",
+      "bundle_index": 24,
+      "logical_qubits": 11,
+      "measurement_physical_qubits": [
+        109,
+        112,
+        128,
+        129,
+        110,
+        111,
+        118,
+        127,
+        137,
+        147,
+        148
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        148
+      ],
+      "gate_counts": {
+        "sx": 132,
+        "rz": 75,
+        "cz": 51,
+        "measure": 11,
+        "barrier": 1
+      },
+      "depth": 117,
+      "duration_seconds": 6.408000000000004e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.3322676295501878e-15
+      },
+      "pub_index": 21
+    },
+    {
+      "kind": "science",
+      "name": "loop-nodefect-full-r1",
+      "bundle_index": 41,
+      "logical_qubits": 8,
+      "measurement_physical_qubits": [
+        128,
+        111,
+        110,
+        109,
+        112,
+        118,
+        129,
+        127
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127
+      ],
+      "gate_counts": {
+        "sx": 134,
+        "rz": 103,
+        "cz": 56,
+        "measure": 8,
+        "x": 4,
+        "barrier": 1
+      },
+      "depth": 175,
+      "duration_seconds": 8.780000000000007e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.9984014443252818e-15
+      },
+      "pub_index": 22
+    },
+    {
+      "kind": "science",
+      "name": "echo-T3-x1",
+      "bundle_index": 36,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        111,
+        112,
+        110,
+        109,
+        118
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 122,
+        "rz": 90,
+        "cz": 43,
+        "measure": 5,
+        "barrier": 3,
+        "x": 1
+      },
+      "depth": 141,
+      "duration_seconds": 6.844000000000004e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 4.008593379394129e-30
+      },
+      "pub_index": 23
+    },
+    {
+      "kind": "science",
+      "name": "click3-full-r3",
+      "bundle_index": 6,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        109,
+        111,
+        129,
+        110,
+        118,
+        112,
+        128
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 825,
+        "rz": 497,
+        "cz": 345,
+        "x": 15,
+        "measure": 7,
+        "barrier": 1
+      },
+      "depth": 828,
+      "duration_seconds": 3.080800000000011e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.887379141862766e-15
+      },
+      "pub_index": 24
+    },
+    {
+      "kind": "calibration",
+      "name": "cal_alternating",
+      "prepared_bits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "measurement_physical_qubits": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        148
+      ],
+      "duration_seconds": 2.7200000000000002e-06,
+      "pub_index": 25
+    },
+    {
+      "kind": "science",
+      "name": "click3-memory+last-1-r2",
+      "bundle_index": 8,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        111,
+        110,
+        118,
+        109,
+        112
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 302,
+        "rz": 215,
+        "cz": 113,
+        "x": 8,
+        "measure": 5,
+        "barrier": 1
+      },
+      "depth": 351,
+      "duration_seconds": 1.3599999999999982e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.219646771412954e-15
+      },
+      "pub_index": 26
+    },
+    {
+      "kind": "science",
+      "name": "any3-full-r2",
+      "bundle_index": 19,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        109,
+        111,
+        129,
+        110,
+        118,
+        112,
+        128
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 635,
+        "rz": 392,
+        "cz": 265,
+        "x": 10,
+        "measure": 7,
+        "barrier": 1
+      },
+      "depth": 650,
+      "duration_seconds": 2.4588000000000033e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.5543122344752192e-15
+      },
+      "pub_index": 27
+    },
+    {
+      "kind": "science",
+      "name": "any3-memory-r1",
+      "bundle_index": 21,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        110,
+        112,
+        118,
+        111,
+        109
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 194,
+        "rz": 132,
+        "cz": 73,
+        "measure": 5,
+        "x": 2,
+        "barrier": 1
+      },
+      "depth": 209,
+      "duration_seconds": 9.16800000000001e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.0408340855860843e-15
+      },
+      "pub_index": 28
+    },
+    {
+      "kind": "science",
+      "name": "click3-steered-full-r1",
+      "bundle_index": 3,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        109,
+        111,
+        129,
+        110,
+        118,
+        112,
+        128
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 298,
+        "rz": 181,
+        "cz": 125,
+        "measure": 7,
+        "x": 3,
+        "barrier": 1
+      },
+      "depth": 289,
+      "duration_seconds": 1.261599999999999e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.774758283725532e-15
+      },
+      "pub_index": 29
+    },
+    {
+      "kind": "science",
+      "name": "echo-T5-x1",
+      "bundle_index": 38,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        111,
+        112,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 259,
+        "rz": 156,
+        "cz": 101,
+        "measure": 7,
+        "barrier": 3
+      },
+      "depth": 231,
+      "duration_seconds": 9.92000000000001e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.120098726610746e-29
+      },
+      "pub_index": 30
+    },
+    {
+      "kind": "science",
+      "name": "any3-full-r1",
+      "bundle_index": 18,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        109,
+        111,
+        129,
+        110,
+        118,
+        112,
+        128
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 360,
+        "rz": 220,
+        "cz": 149,
+        "measure": 7,
+        "x": 5,
+        "barrier": 1
+      },
+      "depth": 357,
+      "duration_seconds": 1.4563999999999976e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.609823385706477e-15
+      },
+      "pub_index": 31
+    },
+    {
+      "kind": "science",
+      "name": "click3-memory+last-1-r3",
+      "bundle_index": 9,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        111,
+        110,
+        118,
+        109,
+        112
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 408,
+        "rz": 300,
+        "cz": 152,
+        "x": 13,
+        "measure": 5,
+        "barrier": 1
+      },
+      "depth": 493,
+      "duration_seconds": 1.7967999999999944e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.7763568394002505e-15
+      },
+      "pub_index": 32
+    },
+    {
+      "kind": "science",
+      "name": "any3-nodefect-full-r3",
+      "bundle_index": 16,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        111,
+        109,
+        110,
+        112,
+        118
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 413,
+        "rz": 274,
+        "cz": 176,
+        "x": 9,
+        "measure": 5,
+        "barrier": 1
+      },
+      "depth": 520,
+      "duration_seconds": 2.0999999999999992e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 7.771561172376096e-16
+      },
+      "pub_index": 33
+    },
+    {
+      "kind": "science",
+      "name": "catalog-r2",
+      "bundle_index": 35,
+      "logical_qubits": 3,
+      "measurement_physical_qubits": [
+        111,
+        112,
+        110
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110
+      ],
+      "gate_counts": {
+        "sx": 160,
+        "rz": 134,
+        "cz": 64,
+        "x": 10,
+        "measure": 3,
+        "barrier": 1
+      },
+      "depth": 255,
+      "duration_seconds": 1.0780000000000009e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 2.9976021664879227e-15
+      },
+      "pub_index": 34
+    },
+    {
+      "kind": "science",
+      "name": "loop-defect-r1",
+      "bundle_index": 30,
+      "logical_qubits": 8,
+      "measurement_physical_qubits": [
+        118,
+        111,
+        127,
+        128,
+        112,
+        109,
+        110,
+        129
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127
+      ],
+      "gate_counts": {
+        "sx": 251,
+        "rz": 168,
+        "cz": 98,
+        "measure": 8,
+        "x": 2,
+        "barrier": 1
+      },
+      "depth": 265,
+      "duration_seconds": 1.0920000000000007e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 2.275957200481571e-15
+      },
+      "pub_index": 35
+    },
+    {
+      "kind": "science",
+      "name": "click3-steered-memory+last-1-r1",
+      "bundle_index": 2,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        111,
+        110,
+        118,
+        109,
+        112
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 157,
+        "rz": 118,
+        "cz": 58,
+        "measure": 5,
+        "x": 3,
+        "barrier": 1
+      },
+      "depth": 189,
+      "duration_seconds": 8.476000000000008e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.6653345369377348e-15
+      },
+      "pub_index": 36
+    },
+    {
+      "kind": "science",
+      "name": "click3-full-r1",
+      "bundle_index": 4,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        118,
+        111,
+        109,
+        110,
+        129,
+        112,
+        128
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 331,
+        "rz": 197,
+        "cz": 137,
+        "measure": 7,
+        "x": 5,
+        "barrier": 1
+      },
+      "depth": 324,
+      "duration_seconds": 1.3583999999999984e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.4432899320127035e-15
+      },
+      "pub_index": 37
+    },
+    {
+      "kind": "science",
+      "name": "click3-memory-r2",
+      "bundle_index": 11,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        110,
+        112,
+        118,
+        111,
+        109
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 267,
+        "rz": 178,
+        "cz": 100,
+        "measure": 5,
+        "x": 2,
+        "barrier": 1
+      },
+      "depth": 271,
+      "duration_seconds": 1.0900000000000007e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 2.942091015256665e-15
+      },
+      "pub_index": 38
+    },
+    {
+      "kind": "science",
+      "name": "click3-memory+last-1-r1",
+      "bundle_index": 7,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        111,
+        110,
+        118,
+        109,
+        112
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 196,
+        "rz": 130,
+        "cz": 74,
+        "measure": 5,
+        "x": 3,
+        "barrier": 1
+      },
+      "depth": 209,
+      "duration_seconds": 9.23200000000001e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 2.609024107869118e-15
+      },
+      "pub_index": 39
+    },
+    {
+      "kind": "science",
+      "name": "echo-T3-x2",
+      "bundle_index": 37,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        111,
+        112,
+        110,
+        109,
+        118
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 243,
+        "rz": 184,
+        "cz": 85,
+        "barrier": 5,
+        "measure": 5,
+        "x": 2
+      },
+      "depth": 280,
+      "duration_seconds": 1.0864000000000006e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.7324607507765985e-29
+      },
+      "pub_index": 40
+    },
+    {
+      "kind": "science",
+      "name": "any3-full-r3",
+      "bundle_index": 20,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        109,
+        111,
+        129,
+        110,
+        118,
+        112,
+        128
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 910,
+        "rz": 564,
+        "cz": 381,
+        "x": 15,
+        "measure": 7,
+        "barrier": 1
+      },
+      "depth": 943,
+      "duration_seconds": 3.4612000000000095e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 2.6367796834847468e-15
+      },
+      "pub_index": 41
+    },
+    {
+      "kind": "science",
+      "name": "loop-defect-r0",
+      "bundle_index": 29,
+      "logical_qubits": 10,
+      "measurement_physical_qubits": [
+        129,
+        111,
+        127,
+        118,
+        109,
+        137,
+        147,
+        112,
+        110,
+        128
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147
+      ],
+      "gate_counts": {
+        "sx": 212,
+        "rz": 91,
+        "cz": 88,
+        "measure": 10,
+        "barrier": 1
+      },
+      "depth": 150,
+      "duration_seconds": 7.624000000000005e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.1086244689504383e-15
+      },
+      "pub_index": 42
+    },
+    {
+      "kind": "science",
+      "name": "click3-memory-r1",
+      "bundle_index": 10,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        110,
+        112,
+        118,
+        111,
+        109
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 165,
+        "rz": 110,
+        "cz": 61,
+        "measure": 5,
+        "x": 1,
+        "barrier": 1
+      },
+      "depth": 171,
+      "duration_seconds": 7.876000000000007e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 8.604228440844963e-16
+      },
+      "pub_index": 43
+    },
+    {
+      "kind": "science",
+      "name": "any3-memory-r2",
+      "bundle_index": 22,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        110,
+        112,
+        118,
+        111,
+        109
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 325,
+        "rz": 221,
+        "cz": 124,
+        "measure": 5,
+        "x": 3,
+        "barrier": 1
+      },
+      "depth": 346,
+      "duration_seconds": 1.3483999999999985e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.9984014443252818e-15
+      },
+      "pub_index": 44
+    },
+    {
+      "kind": "science",
+      "name": "any3-full-r0",
+      "bundle_index": 17,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        110,
+        112,
+        118,
+        111,
+        109,
+        129,
+        128
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128
+      ],
+      "gate_counts": {
+        "sx": 63,
+        "rz": 41,
+        "cz": 22,
+        "measure": 7,
+        "barrier": 1
+      },
+      "depth": 71,
+      "duration_seconds": 4.852e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 1.0547118733938987e-15
+      },
+      "pub_index": 45
+    },
+    {
+      "kind": "science",
+      "name": "click5-steered-full-r1",
+      "bundle_index": 28,
+      "logical_qubits": 11,
+      "measurement_physical_qubits": [
+        110,
+        118,
+        127,
+        128,
+        129,
+        109,
+        111,
+        112,
+        137,
+        147,
+        148
+      ],
+      "initial_layout": [
+        112,
+        111,
+        110,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        148
+      ],
+      "gate_counts": {
+        "sx": 634,
+        "rz": 369,
+        "cz": 266,
+        "measure": 11,
+        "x": 8,
+        "barrier": 1
+      },
+      "depth": 539,
+      "duration_seconds": 2.1047999999999992e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 6.328271240363392e-15
+      },
+      "pub_index": 46
+    }
+  ],
+  "paired_source_plan": "original_plain_v2",
+  "paired_source_plan_sha256": "f8eb8023f26ab6b079204a0ffb2ce591dc8d1d6dfc9357bfd0635244eb59b2fa"
+}

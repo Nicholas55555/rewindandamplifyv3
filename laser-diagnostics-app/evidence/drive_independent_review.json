@@ -1,0 +1,110 @@
+{
+  "status": "passed",
+  "all_checks_passed": true,
+  "reviewer": "independent visual_app agent",
+  "reviewed_utc": "2026-11-11T05:19:16.590974+00:00",
+  "results_sha256": "74847bbee9cbaf6fbd41d72ab2566839919de73d218e2690ad383c135495a069",
+  "provenance_sha256": "04f0bad0f78c8d0f296b195d3eec7ba6f864e552f30d87a85bfa15c40ada01cf",
+  "reviewed_source_sha256": {
+    "qrsm_photon_poc\\drive_diagnostics_followup\\run_study.py": "f8fea46074b915e85dd45a57a4bbf142abf8c8ef681f04e89d5fb32173cf5596",
+    "qrsm_photon_poc\\drive_diagnostics_followup\\model.py": "49dccebaaaa78318c70280e8a3ef6220511ea890e0cb5677658f2bdf526f9b3d",
+    "qrsm_photon_poc\\drive_diagnostics_followup\\test_model.py": "38958e4b748e34a7f75518f4785b98d5eeb03eb4aa841e310eea2215d9f4a1dc",
+    "qrsm_photon_poc\\drive_diagnostics_followup\\PROTOCOL.md": "791c295045799e8ca689459a6ebff7391d852d7cfca630ec7e80b2969789b180",
+    "qrsm_photon_poc\\qrsm_photon.py": "d93d976a1e31d0eb7d67a59754dbbcce14a9a1e1c38df60cf3e2f21ce8f4344a",
+    "qrsm_photon_poc\\followup\\inference_model.py": "56bea54d666e422f4061e600bbc12d2da9cd0620bb8cd2603d100df74c2c1d25",
+    "qrsm_photon_poc\\diagnostics_baselines\\compare.py": "4ef63ffddd4c023333501cebfe4e8e643a56893d73a96c407c1700e290f5a10f",
+    "qrsm_photon_poc\\diagnostics_baselines\\refine_replication.py": "2b601d343d3a32a67b561237b3d82674918a3c9433ca7d9baeb533d6883aa8e3"
+  },
+  "reviewed_artifact_sha256": {
+    "pipeline_0.json": "639b712e5414d84898dcdc0f7c5d7cd534d47edc8910f9195f575f5dfbd4ea85",
+    "pipeline_0_raw.npz": "99d38c1dd825feb64b700c2383c364ae6b766ae2832787f37d83f7d27fb5d359",
+    "pipeline_1.json": "ea49220501937b38c1287d14fd608400043ebe176452eaf5aad8fe6ccd38edab",
+    "pipeline_1_raw.npz": "3ef7af41bf783a3bbd3e3d11096706d02d51ca094aa6b869328a6a67b2269b80",
+    "pipeline_2.json": "e1d115f1e4a9028f01e19a7b5175755bc3f09b21e27a56d449abcc4797b48dac",
+    "pipeline_2_raw.npz": "43d3b9669848081d5e2acb6c64e4649e7373626bc52302e78c58f689e749e9da",
+    "pipeline_3.json": "fc0f73b97fb0ad9119a6b55dd656ecf900a97ed31992674ec9bd722abe82d7df",
+    "pipeline_3_raw.npz": "176d1f1ded8e6c4d67756e1664c47d2fc41303a1b807c68ab70d9307067adace"
+  },
+  "checks": {
+    "full_source_protocol_and_method_read": true,
+    "all_229_random_streams_unique_and_provenance_recomputed": true,
+    "complete_52_scenario_pipeline_raw_recount": true,
+    "heldout_records": 6656,
+    "heldout_bins": 638976,
+    "all_273_public_metric_values_denominators_and_pipeline_values": 273,
+    "independent_hmm_and_count_score_replay_all_records": true,
+    "physical_filter_sample_records_replayed": 24,
+    "null_score_sample_records_replayed": 8,
+    "maximum_absolute_replayed_score_difference": 2.842170943040401e-14,
+    "maximum_absolute_replayed_estimate_difference": 1.5543122344752192e-15,
+    "future_bit_causal_prefix_difference": {
+      "statistic": 0.0,
+      "estimate": 0.0
+    },
+    "afterpulse_and_deadtime_record_semantics": true,
+    "finite_nominal_null_order_statistic_rank": 245,
+    "fresh_exchangeable_null_record_false_alarm_bound": 0.04669260700389105,
+    "manual_onset_delay_boundary_cases": {
+      "eligible": 5,
+      "detections": 2,
+      "prealarms": 1,
+      "restricted_delay_mean": 25.8,
+      "passed": true
+    },
+    "nonideal_fitted_baseline_estimate_scoring_boundary_check": true,
+    "cutoff_summary_arithmetic": true,
+    "bootstrap_algorithm_source_review": "two-stage pipeline/record resampling; paired differences retain common records; only four pipeline clusters; coverage not calibrated"
+  },
+  "pipeline_checks": [
+    {
+      "pipeline": 0,
+      "complete_raw_recount": "passed",
+      "calibration_and_grid_selection": "passed",
+      "independent_hmm_and_count_history_replay": "passed",
+      "sample_quantum_filter_replay": "passed"
+    },
+    {
+      "pipeline": 1,
+      "complete_raw_recount": "passed",
+      "calibration_and_grid_selection": "passed",
+      "independent_hmm_and_count_history_replay": "passed",
+      "sample_quantum_filter_replay": "passed"
+    },
+    {
+      "pipeline": 2,
+      "complete_raw_recount": "passed",
+      "calibration_and_grid_selection": "passed",
+      "independent_hmm_and_count_history_replay": "passed",
+      "sample_quantum_filter_replay": "passed"
+    },
+    {
+      "pipeline": 3,
+      "complete_raw_recount": "passed",
+      "calibration_and_grid_selection": "passed",
+      "independent_hmm_and_count_history_replay": "passed",
+      "sample_quantum_filter_replay": "passed"
+    }
+  ],
+  "unit_tests": {
+    "tests_run": 10,
+    "passed": true,
+    "output": "test_afterpulse_readout_is_cause_mixture (drive_independent_test_model.ScheduleTests.test_afterpulse_readout_is_cause_mixture) ... ok\ntest_all_histories_normalize_for_latent_step_and_telegraph (drive_independent_test_model.ScheduleTests.test_all_histories_normalize_for_latent_step_and_telegraph) ... ok\ntest_all_main_random_streams_have_unique_explicit_namespaces (drive_independent_test_model.ScheduleTests.test_all_main_random_streams_have_unique_explicit_namespaces) ... ok\ntest_count_contrast_is_causal (drive_independent_test_model.ScheduleTests.test_count_contrast_is_causal) ... ok\ntest_dead_time_blind_channel_and_forbidden_adjacent_bits (drive_independent_test_model.ScheduleTests.test_dead_time_blind_channel_and_forbidden_adjacent_bits) ... ok\ntest_forward_matches_explicit_source_path_marginalization (drive_independent_test_model.ScheduleTests.test_forward_matches_explicit_source_path_marginalization) ... ok\ntest_hmm_prefix_matches_bruteforce_paths (drive_independent_test_model.ScheduleTests.test_hmm_prefix_matches_bruteforce_paths) ... ok\ntest_step_retains_physical_state_instead_of_resetting (drive_independent_test_model.ScheduleTests.test_step_retains_physical_state_instead_of_resetting) ... ok\ntest_threshold_strict_ties_conservative (drive_independent_test_model.ScheduleTests.test_threshold_strict_ties_conservative) ... ok\ntest_zero_drive_difference_has_identical_likelihood (drive_independent_test_model.ScheduleTests.test_zero_drive_difference_has_identical_likelihood) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.077s\n\nOK\n"
+  },
+  "scientific_findings": [
+    "The hidden quantum state is retained through drive changes; filtering sums source paths before applying each measurement instrument.",
+    "Inference receives observed bits and frozen calibrated model/schedule priors, not latent true schedules or nuisance onset. Truth is used only for held-out scoring.",
+    "Base instrument flags include dark counts; added afterpulse-only flags retain the underlying trajectory; blind bins use the full channel.",
+    "At this budget prompt source-change detection is weak; the nominal 20 percent step yields 19 of 512 physical-model detections within 32 bins.",
+    "Several drive-estimation RMSEs improve over the fitted constant baseline, while stable-source controls incur nonzero positive amplitude estimates.",
+    "Detector dark-count/afterpulse changes induce false source alarms; these are model-mismatch failures, not recovered causes."
+  ],
+  "limits": [
+    "All inference and data generation are classical local simulation of a finite quantum model. No physical laser, QPU, wavelength compatibility, wafer yield, dollar savings, or quantum advantage validated.",
+    "Four pipelines share fixed nominal physical parameters and use idealized finite detector calibration; nuisance parameters are not jointly identified.",
+    "The physical model has correct-family prior information and extra calibration; this is not a resource-matched optical receiver contest.",
+    "The evaluated source alternatives increase drive only. Conditional posterior means do not uniquely diagnose a real cause.",
+    "Hierarchical percentile interval coverage is uncalibrated, especially with four calibration clusters; numerical means and denominators were audited, not statistical coverage.",
+    "Cavity 4 versus 5 marginal differences are a sensitivity check, not proof of infinite-cutoff convergence."
+  ],
+  "no_source_or_numerical_result_edits": true
+}

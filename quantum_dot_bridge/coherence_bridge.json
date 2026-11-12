@@ -1,0 +1,8 @@
+{
+  "figure": "coherence_bridge.png",
+  "results": "results.json",
+  "results_sha256": "362d27539b5c35e45482644b94d70223b9809ac5a77b6c2bf2aa52a86aec7889",
+  "plot_source_sha256": "696920a7d6ca35db577c614ca95f11091d0e66e86dc00b257978e28b58e609d2",
+  "figure_sha256": "8adfaa4a0b5a78dc94eb87fa56b47f92ae38e04118d6d313bd9df41ef2f38722",
+  "scope": "Plot of saved synthetic benchmark values, no external experimental data fitted."
+}

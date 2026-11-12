@@ -1,0 +1,4067 @@
+{
+  "schema": "ra-offline-hardware-analysis-v1",
+  "run": "dots_selected_plain_v1",
+  "backend": "ibm_marrakesh",
+  "job_id": "dbqb5e6jjaos73agvij0",
+  "source_sha256": {
+    "hardware_campaign/analyze.py": "7174c7ca2a44c8bf70e2f61593d2fcf23572e1153a7ffd4516d49da6580a9457",
+    "hardware_campaign/feasibility/adapters.py": "9ba87e818b7915283983369531cd682c44a3bbe2cab286dd37ca4123ae964d88",
+    "hardware_campaign/optical_controls/analyze_counts.py": "b979182a04729aa79ba35d4fd942d37231d77448b4ba26849d1d40565a4afee7"
+  },
+  "input_sha256": {
+    "plan.json": "1c16f7a52ec6c0d9f1ebe4e05569abe618e74e55178b7c8db28fe0700adafff8",
+    "raw.json": "7b509275c705ed78a73f7bf6eb848d3782b3a2c214112abb501dec9507e6c544",
+    "manifest.json": "d0c3ae21ea96342ef48e62623df08f4f7b1b8ad9b4fbaaf16ff7427ae286492e",
+    "reference_npz": "3b97efbe793bbac8047dcd3b9263575c888bca78e4309edac98812522f180319"
+  },
+  "calibration": {
+    "independent_bit_error_estimates": {
+      "54": {
+        "e01": {
+          "probability": 0.002197265625,
+          "successes": 9,
+          "shots": 4096,
+          "wilson95": [
+            0.0011564392881765655,
+            0.0041709517926914125
+          ]
+        },
+        "e10": {
+          "probability": 0.006103515625,
+          "successes": 25,
+          "shots": 4096,
+          "wilson95": [
+            0.004137683601119058,
+            0.00899488734375388
+          ]
+        }
+      },
+      "53": {
+        "e01": {
+          "probability": 0.0009765625,
+          "successes": 4,
+          "shots": 4096,
+          "wilson95": [
+            0.000379829567061715,
+            0.0025084428063047127
+          ]
+        },
+        "e10": {
+          "probability": 0.0068359375,
+          "successes": 28,
+          "shots": 4096,
+          "wilson95": [
+            0.004733873030895345,
+            0.009862169138478523
+          ]
+        }
+      },
+      "39": {
+        "e01": {
+          "probability": 0.01513671875,
+          "successes": 62,
+          "shots": 4096,
+          "wilson95": [
+            0.011826124044008677,
+            0.01935592533637573
+          ]
+        },
+        "e10": {
+          "probability": 0.01171875,
+          "successes": 48,
+          "shots": 4096,
+          "wilson95": [
+            0.00885047381719605,
+            0.015502043182184016
+          ]
+        }
+      },
+      "33": {
+        "e01": {
+          "probability": 0.00830078125,
+          "successes": 34,
+          "shots": 4096,
+          "wilson95": [
+            0.00594629450988538,
+            0.011576690108490348
+          ]
+        },
+        "e10": {
+          "probability": 0.018798828125,
+          "successes": 77,
+          "shots": 4096,
+          "wilson95": [
+            0.01506804743850219,
+            0.023431358064386867
+          ]
+        }
+      },
+      "32": {
+        "e01": {
+          "probability": 0.013671875,
+          "successes": 56,
+          "shots": 4096,
+          "wilson95": [
+            0.01054387645975476,
+            0.017711230471627787
+          ]
+        },
+        "e10": {
+          "probability": 0.01416015625,
+          "successes": 58,
+          "shots": 4096,
+          "wilson95": [
+            0.010970229851119503,
+            0.018260524563263665
+          ]
+        }
+      },
+      "31": {
+        "e01": {
+          "probability": 0.003662109375,
+          "successes": 15,
+          "shots": 4096,
+          "wilson95": [
+            0.0022205922771783033,
+            0.006033741252691535
+          ]
+        },
+        "e10": {
+          "probability": 0.087646484375,
+          "successes": 359,
+          "shots": 4096,
+          "wilson95": [
+            0.07936830866779807,
+            0.09669739193817839
+          ]
+        }
+      },
+      "18": {
+        "e01": {
+          "probability": 0.00146484375,
+          "successes": 6,
+          "shots": 4096,
+          "wilson95": [
+            0.0006715185421635897,
+            0.0031924013142034585
+          ]
+        },
+        "e10": {
+          "probability": 0.010986328125,
+          "successes": 45,
+          "shots": 4096,
+          "wilson95": [
+            0.008221047888752987,
+            0.01466799788612615
+          ]
+        }
+      },
+      "11": {
+        "e01": {
+          "probability": 0.010498046875,
+          "successes": 43,
+          "shots": 4096,
+          "wilson95": [
+            0.007803362608721715,
+            0.014110035683156804
+          ]
+        },
+        "e10": {
+          "probability": 0.02197265625,
+          "successes": 90,
+          "shots": 4096,
+          "wilson95": [
+            0.017910997539834456,
+            0.02693011660255863
+          ]
+        }
+      },
+      "10": {
+        "e01": {
+          "probability": 0.000732421875,
+          "successes": 3,
+          "shots": 4096,
+          "wilson95": [
+            0.0002491200948151938,
+            0.0021513285370509242
+          ]
+        },
+        "e10": {
+          "probability": 0.0048828125,
+          "successes": 20,
+          "shots": 4096,
+          "wilson95": [
+            0.0031631598704827783,
+            0.007530292366888611
+          ]
+        }
+      },
+      "9": {
+        "e01": {
+          "probability": 0.005126953125,
+          "successes": 21,
+          "shots": 4096,
+          "wilson95": [
+            0.0033558642108143656,
+            0.007825411768057332
+          ]
+        },
+        "e10": {
+          "probability": 0.0322265625,
+          "successes": 132,
+          "shots": 4096,
+          "wilson95": [
+            0.027241336238722554,
+            0.03808837504668355
+          ]
+        }
+      },
+      "8": {
+        "e01": {
+          "probability": 0.00439453125,
+          "successes": 18,
+          "shots": 4096,
+          "wilson95": [
+            0.002781615150444107,
+            0.006936189603926662
+          ]
+        },
+        "e10": {
+          "probability": 0.01806640625,
+          "successes": 74,
+          "shots": 4096,
+          "wilson95": [
+            0.014416028944668636,
+            0.02261990533371949
+          ]
+        }
+      },
+      "7": {
+        "e01": {
+          "probability": 0.0244140625,
+          "successes": 100,
+          "shots": 4096,
+          "wilson95": [
+            0.020114624238054088,
+            0.0296047273193421
+          ]
+        },
+        "e10": {
+          "probability": 0.037109375,
+          "successes": 152,
+          "shots": 4096,
+          "wilson95": [
+            0.031740641817972134,
+            0.04334554429744017
+          ]
+        }
+      },
+      "6": {
+        "e01": {
+          "probability": 0.001708984375,
+          "successes": 7,
+          "shots": 4096,
+          "wilson95": [
+            0.0008280858168609898,
+            0.0035236577810063684
+          ]
+        },
+        "e10": {
+          "probability": 0.009033203125,
+          "successes": 37,
+          "shots": 4096,
+          "wilson95": [
+            0.006560810170804027,
+            0.01242564567207263
+          ]
+        }
+      },
+      "5": {
+        "e01": {
+          "probability": 0.001220703125,
+          "successes": 5,
+          "shots": 4096,
+          "wilson95": [
+            0.0005215205909937573,
+            0.0028545755238729804
+          ]
+        },
+        "e10": {
+          "probability": 0.0087890625,
+          "successes": 36,
+          "shots": 4096,
+          "wilson95": [
+            0.006355424717037815,
+            0.012143207384338531
+          ]
+        }
+      },
+      "4": {
+        "e01": {
+          "probability": 0.018310546875,
+          "successes": 75,
+          "shots": 4096,
+          "wilson95": [
+            0.014633183903943853,
+            0.022890574115944584
+          ]
+        },
+        "e10": {
+          "probability": 0.029052734375,
+          "successes": 119,
+          "shots": 4096,
+          "wilson95": [
+            0.024334000759731984,
+            0.034654001886170085
+          ]
+        }
+      },
+      "3": {
+        "e01": {
+          "probability": 0.00439453125,
+          "successes": 18,
+          "shots": 4096,
+          "wilson95": [
+            0.002781615150444107,
+            0.006936189603926662
+          ]
+        },
+        "e10": {
+          "probability": 0.005615234375,
+          "successes": 23,
+          "shots": 4096,
+          "wilson95": [
+            0.003744712895050349,
+            0.00841221056682197
+          ]
+        }
+      },
+      "16": {
+        "e01": {
+          "probability": 0.0107421875,
+          "successes": 44,
+          "shots": 4096,
+          "wilson95": [
+            0.008012003642312424,
+            0.014389218391066402
+          ]
+        },
+        "e10": {
+          "probability": 0.02880859375,
+          "successes": 118,
+          "shots": 4096,
+          "wilson95": [
+            0.0241109952204326,
+            0.03438918368396916
+          ]
+        }
+      },
+      "23": {
+        "e01": {
+          "probability": 0.081298828125,
+          "successes": 333,
+          "shots": 4096,
+          "wilson95": [
+            0.07331641041716883,
+            0.09006587290979959
+          ]
+        },
+        "e10": {
+          "probability": 0.04736328125,
+          "successes": 194,
+          "shots": 4096,
+          "wilson95": [
+            0.041271542412079414,
+            0.054303240846345906
+          ]
+        }
+      },
+      "22": {
+        "e01": {
+          "probability": 0.003662109375,
+          "successes": 15,
+          "shots": 4096,
+          "wilson95": [
+            0.0022205922771783033,
+            0.006033741252691535
+          ]
+        },
+        "e10": {
+          "probability": 0.013427734375,
+          "successes": 55,
+          "shots": 4096,
+          "wilson95": [
+            0.010331122163193216,
+            0.017436161026689018
+          ]
+        }
+      },
+      "21": {
+        "e01": {
+          "probability": 0.00390625,
+          "successes": 16,
+          "shots": 4096,
+          "wilson95": [
+            0.002405923039438864,
+            0.0063362342319312846
+          ]
+        },
+        "e10": {
+          "probability": 0.015625,
+          "successes": 64,
+          "shots": 4096,
+          "wilson95": [
+            0.012255565007829483,
+            0.01990213185555554
+          ]
+        }
+      },
+      "36": {
+        "e01": {
+          "probability": 0.035400390625,
+          "successes": 145,
+          "shots": 4096,
+          "wilson95": [
+            0.030162557344038075,
+            0.04150886258087206
+          ]
+        },
+        "e10": {
+          "probability": 0.0361328125,
+          "successes": 148,
+          "shots": 4096,
+          "wilson95": [
+            0.030838463484247167,
+            0.042296427665163894
+          ]
+        }
+      },
+      "41": {
+        "e01": {
+          "probability": 0.015625,
+          "successes": 64,
+          "shots": 4096,
+          "wilson95": [
+            0.012255565007829483,
+            0.01990213185555554
+          ]
+        },
+        "e10": {
+          "probability": 0.0546875,
+          "successes": 224,
+          "shots": 4096,
+          "wilson95": [
+            0.048132459168260984,
+            0.062077036335173634
+          ]
+        }
+      },
+      "42": {
+        "e01": {
+          "probability": 0.007080078125,
+          "successes": 29,
+          "shots": 4096,
+          "wilson95": [
+            0.004934210809760133,
+            0.010149655101114045
+          ]
+        },
+        "e10": {
+          "probability": 0.06640625,
+          "successes": 272,
+          "shots": 4096,
+          "wilson95": [
+            0.05918006475452954,
+            0.07444497034091994
+          ]
+        }
+      },
+      "43": {
+        "e01": {
+          "probability": 0.0048828125,
+          "successes": 20,
+          "shots": 4096,
+          "wilson95": [
+            0.0031631598704827783,
+            0.007530292366888611
+          ]
+        },
+        "e10": {
+          "probability": 0.0107421875,
+          "successes": 44,
+          "shots": 4096,
+          "wilson95": [
+            0.008012003642312424,
+            0.014389218391066402
+          ]
+        }
+      },
+      "56": {
+        "e01": {
+          "probability": 0.024658203125,
+          "successes": 101,
+          "shots": 4096,
+          "wilson95": [
+            0.020335690936602244,
+            0.029871484362294254
+          ]
+        },
+        "e10": {
+          "probability": 0.02001953125,
+          "successes": 82,
+          "shots": 4096,
+          "wilson95": [
+            0.01615827811132198,
+            0.024780246099068624
+          ]
+        }
+      },
+      "63": {
+        "e01": {
+          "probability": 0.0078125,
+          "successes": 32,
+          "shots": 4096,
+          "wilson95": [
+            0.005539509852396457,
+            0.011007827282978652
+          ]
+        },
+        "e10": {
+          "probability": 0.050537109375,
+          "successes": 207,
+          "shots": 4096,
+          "wilson95": [
+            0.04423987963168519,
+            0.05767661226624416
+          ]
+        }
+      },
+      "64": {
+        "e01": {
+          "probability": 0.01318359375,
+          "successes": 54,
+          "shots": 4096,
+          "wilson95": [
+            0.010118659410882703,
+            0.017160800037499223
+          ]
+        },
+        "e10": {
+          "probability": 0.015380859375,
+          "successes": 63,
+          "shots": 4096,
+          "wilson95": [
+            0.012040724876904885,
+            0.019629148244979834
+          ]
+        }
+      },
+      "65": {
+        "e01": {
+          "probability": 0.000732421875,
+          "successes": 3,
+          "shots": 4096,
+          "wilson95": [
+            0.0002491200948151938,
+            0.0021513285370509242
+          ]
+        },
+        "e10": {
+          "probability": 0.01123046875,
+          "successes": 46,
+          "shots": 4096,
+          "wilson95": [
+            0.008430482402087882,
+            0.014946387114291566
+          ]
+        }
+      },
+      "77": {
+        "e01": {
+          "probability": 0.012451171875,
+          "successes": 51,
+          "shots": 4096,
+          "wilson95": [
+            0.009483101104023409,
+            0.016332887119857586
+          ]
+        },
+        "e10": {
+          "probability": 0.0234375,
+          "successes": 96,
+          "shots": 4096,
+          "wilson95": [
+            0.019231598990288437,
+            0.028536457601106506
+          ]
+        }
+      }
+    },
+    "pattern_diagnostics": [
+      {
+        "name": "cal_one",
+        "per_qubit": [
+          {
+            "physical_qubit": 54,
+            "observed_error": 0.006103515625,
+            "independent_fit_error": 0.006103515625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 53,
+            "observed_error": 0.0068359375,
+            "independent_fit_error": 0.0068359375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 39,
+            "observed_error": 0.01171875,
+            "independent_fit_error": 0.01171875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 33,
+            "observed_error": 0.018798828125,
+            "independent_fit_error": 0.018798828125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 32,
+            "observed_error": 0.01416015625,
+            "independent_fit_error": 0.01416015625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 31,
+            "observed_error": 0.087646484375,
+            "independent_fit_error": 0.087646484375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 18,
+            "observed_error": 0.010986328125,
+            "independent_fit_error": 0.010986328125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 11,
+            "observed_error": 0.02197265625,
+            "independent_fit_error": 0.02197265625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 10,
+            "observed_error": 0.0048828125,
+            "independent_fit_error": 0.0048828125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 9,
+            "observed_error": 0.0322265625,
+            "independent_fit_error": 0.0322265625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 8,
+            "observed_error": 0.01806640625,
+            "independent_fit_error": 0.01806640625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 7,
+            "observed_error": 0.037109375,
+            "independent_fit_error": 0.037109375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 6,
+            "observed_error": 0.009033203125,
+            "independent_fit_error": 0.009033203125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 5,
+            "observed_error": 0.0087890625,
+            "independent_fit_error": 0.0087890625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 4,
+            "observed_error": 0.029052734375,
+            "independent_fit_error": 0.029052734375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 3,
+            "observed_error": 0.005615234375,
+            "independent_fit_error": 0.005615234375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 16,
+            "observed_error": 0.02880859375,
+            "independent_fit_error": 0.02880859375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 23,
+            "observed_error": 0.04736328125,
+            "independent_fit_error": 0.04736328125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 22,
+            "observed_error": 0.013427734375,
+            "independent_fit_error": 0.013427734375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 21,
+            "observed_error": 0.015625,
+            "independent_fit_error": 0.015625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 36,
+            "observed_error": 0.0361328125,
+            "independent_fit_error": 0.0361328125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 41,
+            "observed_error": 0.0546875,
+            "independent_fit_error": 0.0546875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 42,
+            "observed_error": 0.06640625,
+            "independent_fit_error": 0.06640625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 43,
+            "observed_error": 0.0107421875,
+            "independent_fit_error": 0.0107421875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 56,
+            "observed_error": 0.02001953125,
+            "independent_fit_error": 0.02001953125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 63,
+            "observed_error": 0.050537109375,
+            "independent_fit_error": 0.050537109375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 64,
+            "observed_error": 0.015380859375,
+            "independent_fit_error": 0.015380859375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 65,
+            "observed_error": 0.01123046875,
+            "independent_fit_error": 0.01123046875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 77,
+            "observed_error": 0.0234375,
+            "independent_fit_error": 0.0234375,
+            "residual": 0.0
+          }
+        ],
+        "maximum_absolute_pair_error_covariance": 0.001678466796875
+      },
+      {
+        "name": "cal_zero",
+        "per_qubit": [
+          {
+            "physical_qubit": 54,
+            "observed_error": 0.002197265625,
+            "independent_fit_error": 0.002197265625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 53,
+            "observed_error": 0.0009765625,
+            "independent_fit_error": 0.0009765625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 39,
+            "observed_error": 0.01513671875,
+            "independent_fit_error": 0.01513671875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 33,
+            "observed_error": 0.00830078125,
+            "independent_fit_error": 0.00830078125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 32,
+            "observed_error": 0.013671875,
+            "independent_fit_error": 0.013671875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 31,
+            "observed_error": 0.003662109375,
+            "independent_fit_error": 0.003662109375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 18,
+            "observed_error": 0.00146484375,
+            "independent_fit_error": 0.00146484375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 11,
+            "observed_error": 0.010498046875,
+            "independent_fit_error": 0.010498046875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 10,
+            "observed_error": 0.000732421875,
+            "independent_fit_error": 0.000732421875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 9,
+            "observed_error": 0.005126953125,
+            "independent_fit_error": 0.005126953125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 8,
+            "observed_error": 0.00439453125,
+            "independent_fit_error": 0.00439453125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 7,
+            "observed_error": 0.0244140625,
+            "independent_fit_error": 0.0244140625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 6,
+            "observed_error": 0.001708984375,
+            "independent_fit_error": 0.001708984375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 5,
+            "observed_error": 0.001220703125,
+            "independent_fit_error": 0.001220703125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 4,
+            "observed_error": 0.018310546875,
+            "independent_fit_error": 0.018310546875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 3,
+            "observed_error": 0.00439453125,
+            "independent_fit_error": 0.00439453125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 16,
+            "observed_error": 0.0107421875,
+            "independent_fit_error": 0.0107421875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 23,
+            "observed_error": 0.081298828125,
+            "independent_fit_error": 0.081298828125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 22,
+            "observed_error": 0.003662109375,
+            "independent_fit_error": 0.003662109375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 21,
+            "observed_error": 0.00390625,
+            "independent_fit_error": 0.00390625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 36,
+            "observed_error": 0.035400390625,
+            "independent_fit_error": 0.035400390625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 41,
+            "observed_error": 0.015625,
+            "independent_fit_error": 0.015625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 42,
+            "observed_error": 0.007080078125,
+            "independent_fit_error": 0.007080078125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 43,
+            "observed_error": 0.0048828125,
+            "independent_fit_error": 0.0048828125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 56,
+            "observed_error": 0.024658203125,
+            "independent_fit_error": 0.024658203125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 63,
+            "observed_error": 0.0078125,
+            "independent_fit_error": 0.0078125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 64,
+            "observed_error": 0.01318359375,
+            "independent_fit_error": 0.01318359375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 65,
+            "observed_error": 0.000732421875,
+            "independent_fit_error": 0.000732421875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 77,
+            "observed_error": 0.012451171875,
+            "independent_fit_error": 0.012451171875,
+            "residual": 0.0
+          }
+        ],
+        "maximum_absolute_pair_error_covariance": 0.0019214153289794922
+      },
+      {
+        "name": "cal_alternating",
+        "per_qubit": [
+          {
+            "physical_qubit": 54,
+            "observed_error": 0.003662109375,
+            "independent_fit_error": 0.002197265625,
+            "residual": 0.00146484375
+          },
+          {
+            "physical_qubit": 53,
+            "observed_error": 0.009521484375,
+            "independent_fit_error": 0.0068359375,
+            "residual": 0.002685546875
+          },
+          {
+            "physical_qubit": 39,
+            "observed_error": 0.012939453125,
+            "independent_fit_error": 0.01513671875,
+            "residual": -0.002197265625
+          },
+          {
+            "physical_qubit": 33,
+            "observed_error": 0.018310546875,
+            "independent_fit_error": 0.018798828125,
+            "residual": -0.00048828125
+          },
+          {
+            "physical_qubit": 32,
+            "observed_error": 0.015869140625,
+            "independent_fit_error": 0.013671875,
+            "residual": 0.002197265625
+          },
+          {
+            "physical_qubit": 31,
+            "observed_error": 0.08203125,
+            "independent_fit_error": 0.087646484375,
+            "residual": -0.005615234375
+          },
+          {
+            "physical_qubit": 18,
+            "observed_error": 0.001953125,
+            "independent_fit_error": 0.00146484375,
+            "residual": 0.00048828125
+          },
+          {
+            "physical_qubit": 11,
+            "observed_error": 0.022216796875,
+            "independent_fit_error": 0.02197265625,
+            "residual": 0.000244140625
+          },
+          {
+            "physical_qubit": 10,
+            "observed_error": 0.00244140625,
+            "independent_fit_error": 0.000732421875,
+            "residual": 0.001708984375
+          },
+          {
+            "physical_qubit": 9,
+            "observed_error": 0.029052734375,
+            "independent_fit_error": 0.0322265625,
+            "residual": -0.003173828125
+          },
+          {
+            "physical_qubit": 8,
+            "observed_error": 0.005126953125,
+            "independent_fit_error": 0.00439453125,
+            "residual": 0.000732421875
+          },
+          {
+            "physical_qubit": 7,
+            "observed_error": 0.037841796875,
+            "independent_fit_error": 0.037109375,
+            "residual": 0.000732421875
+          },
+          {
+            "physical_qubit": 6,
+            "observed_error": 0.00244140625,
+            "independent_fit_error": 0.001708984375,
+            "residual": 0.000732421875
+          },
+          {
+            "physical_qubit": 5,
+            "observed_error": 0.0068359375,
+            "independent_fit_error": 0.0087890625,
+            "residual": -0.001953125
+          },
+          {
+            "physical_qubit": 4,
+            "observed_error": 0.01611328125,
+            "independent_fit_error": 0.018310546875,
+            "residual": -0.002197265625
+          },
+          {
+            "physical_qubit": 3,
+            "observed_error": 0.006103515625,
+            "independent_fit_error": 0.005615234375,
+            "residual": 0.00048828125
+          },
+          {
+            "physical_qubit": 16,
+            "observed_error": 0.010986328125,
+            "independent_fit_error": 0.0107421875,
+            "residual": 0.000244140625
+          },
+          {
+            "physical_qubit": 23,
+            "observed_error": 0.05078125,
+            "independent_fit_error": 0.04736328125,
+            "residual": 0.00341796875
+          },
+          {
+            "physical_qubit": 22,
+            "observed_error": 0.00439453125,
+            "independent_fit_error": 0.003662109375,
+            "residual": 0.000732421875
+          },
+          {
+            "physical_qubit": 21,
+            "observed_error": 0.02099609375,
+            "independent_fit_error": 0.015625,
+            "residual": 0.00537109375
+          },
+          {
+            "physical_qubit": 36,
+            "observed_error": 0.04150390625,
+            "independent_fit_error": 0.035400390625,
+            "residual": 0.006103515625
+          },
+          {
+            "physical_qubit": 41,
+            "observed_error": 0.05126953125,
+            "independent_fit_error": 0.0546875,
+            "residual": -0.00341796875
+          },
+          {
+            "physical_qubit": 42,
+            "observed_error": 0.0087890625,
+            "independent_fit_error": 0.007080078125,
+            "residual": 0.001708984375
+          },
+          {
+            "physical_qubit": 43,
+            "observed_error": 0.01318359375,
+            "independent_fit_error": 0.0107421875,
+            "residual": 0.00244140625
+          },
+          {
+            "physical_qubit": 56,
+            "observed_error": 0.030029296875,
+            "independent_fit_error": 0.024658203125,
+            "residual": 0.00537109375
+          },
+          {
+            "physical_qubit": 63,
+            "observed_error": 0.05419921875,
+            "independent_fit_error": 0.050537109375,
+            "residual": 0.003662109375
+          },
+          {
+            "physical_qubit": 64,
+            "observed_error": 0.014404296875,
+            "independent_fit_error": 0.01318359375,
+            "residual": 0.001220703125
+          },
+          {
+            "physical_qubit": 65,
+            "observed_error": 0.01171875,
+            "independent_fit_error": 0.01123046875,
+            "residual": 0.00048828125
+          },
+          {
+            "physical_qubit": 77,
+            "observed_error": 0.009765625,
+            "independent_fit_error": 0.012451171875,
+            "residual": -0.002685546875
+          }
+        ],
+        "maximum_absolute_pair_error_covariance": 0.002633333206176758
+      },
+      {
+        "name": "cal_complement",
+        "per_qubit": [
+          {
+            "physical_qubit": 54,
+            "observed_error": 0.00537109375,
+            "independent_fit_error": 0.006103515625,
+            "residual": -0.000732421875
+          },
+          {
+            "physical_qubit": 53,
+            "observed_error": 0.0009765625,
+            "independent_fit_error": 0.0009765625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 39,
+            "observed_error": 0.01318359375,
+            "independent_fit_error": 0.01171875,
+            "residual": 0.00146484375
+          },
+          {
+            "physical_qubit": 33,
+            "observed_error": 0.016845703125,
+            "independent_fit_error": 0.00830078125,
+            "residual": 0.008544921875
+          },
+          {
+            "physical_qubit": 32,
+            "observed_error": 0.015380859375,
+            "independent_fit_error": 0.01416015625,
+            "residual": 0.001220703125
+          },
+          {
+            "physical_qubit": 31,
+            "observed_error": 0.00341796875,
+            "independent_fit_error": 0.003662109375,
+            "residual": -0.000244140625
+          },
+          {
+            "physical_qubit": 18,
+            "observed_error": 0.0087890625,
+            "independent_fit_error": 0.010986328125,
+            "residual": -0.002197265625
+          },
+          {
+            "physical_qubit": 11,
+            "observed_error": 0.011474609375,
+            "independent_fit_error": 0.010498046875,
+            "residual": 0.0009765625
+          },
+          {
+            "physical_qubit": 10,
+            "observed_error": 0.00537109375,
+            "independent_fit_error": 0.0048828125,
+            "residual": 0.00048828125
+          },
+          {
+            "physical_qubit": 9,
+            "observed_error": 0.004638671875,
+            "independent_fit_error": 0.005126953125,
+            "residual": -0.00048828125
+          },
+          {
+            "physical_qubit": 8,
+            "observed_error": 0.021484375,
+            "independent_fit_error": 0.01806640625,
+            "residual": 0.00341796875
+          },
+          {
+            "physical_qubit": 7,
+            "observed_error": 0.017333984375,
+            "independent_fit_error": 0.0244140625,
+            "residual": -0.007080078125
+          },
+          {
+            "physical_qubit": 6,
+            "observed_error": 0.00732421875,
+            "independent_fit_error": 0.009033203125,
+            "residual": -0.001708984375
+          },
+          {
+            "physical_qubit": 5,
+            "observed_error": 0.001220703125,
+            "independent_fit_error": 0.001220703125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 4,
+            "observed_error": 0.0234375,
+            "independent_fit_error": 0.029052734375,
+            "residual": -0.005615234375
+          },
+          {
+            "physical_qubit": 3,
+            "observed_error": 0.00390625,
+            "independent_fit_error": 0.00439453125,
+            "residual": -0.00048828125
+          },
+          {
+            "physical_qubit": 16,
+            "observed_error": 0.0302734375,
+            "independent_fit_error": 0.02880859375,
+            "residual": 0.00146484375
+          },
+          {
+            "physical_qubit": 23,
+            "observed_error": 0.081787109375,
+            "independent_fit_error": 0.081298828125,
+            "residual": 0.00048828125
+          },
+          {
+            "physical_qubit": 22,
+            "observed_error": 0.00927734375,
+            "independent_fit_error": 0.013427734375,
+            "residual": -0.004150390625
+          },
+          {
+            "physical_qubit": 21,
+            "observed_error": 0.0029296875,
+            "independent_fit_error": 0.00390625,
+            "residual": -0.0009765625
+          },
+          {
+            "physical_qubit": 36,
+            "observed_error": 0.029541015625,
+            "independent_fit_error": 0.0361328125,
+            "residual": -0.006591796875
+          },
+          {
+            "physical_qubit": 41,
+            "observed_error": 0.01416015625,
+            "independent_fit_error": 0.015625,
+            "residual": -0.00146484375
+          },
+          {
+            "physical_qubit": 42,
+            "observed_error": 0.0673828125,
+            "independent_fit_error": 0.06640625,
+            "residual": 0.0009765625
+          },
+          {
+            "physical_qubit": 43,
+            "observed_error": 0.005859375,
+            "independent_fit_error": 0.0048828125,
+            "residual": 0.0009765625
+          },
+          {
+            "physical_qubit": 56,
+            "observed_error": 0.0224609375,
+            "independent_fit_error": 0.02001953125,
+            "residual": 0.00244140625
+          },
+          {
+            "physical_qubit": 63,
+            "observed_error": 0.007080078125,
+            "independent_fit_error": 0.0078125,
+            "residual": -0.000732421875
+          },
+          {
+            "physical_qubit": 64,
+            "observed_error": 0.015380859375,
+            "independent_fit_error": 0.015380859375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 65,
+            "observed_error": 0.0009765625,
+            "independent_fit_error": 0.000732421875,
+            "residual": 0.000244140625
+          },
+          {
+            "physical_qubit": 77,
+            "observed_error": 0.0234375,
+            "independent_fit_error": 0.0234375,
+            "residual": 0.0
+          }
+        ],
+        "maximum_absolute_pair_error_covariance": 0.0011336207389831543
+      }
+    ],
+    "scope": "Preparation-plus-readout controls, not a pure readout channel measurement. Wilson intervals condition on stationary independent shots; pattern residuals/covariances are descriptive."
+  },
+  "rows": [
+    {
+      "name": "selected_four_coherent",
+      "bundle_index": 0,
+      "pub_index": 1,
+      "family": "selected_design_four_pair_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 22,
+      "native_two_qubit_gate_count": 256,
+      "compiled_depth": 534,
+      "circuit_duration_seconds": 2.119199999999999e-05,
+      "reference_marginal_qubits": [
+        6,
+        11,
+        16,
+        21,
+        0
+      ],
+      "raw_reference_marginal_z_tv": 0.27747988404894525,
+      "ideal_multinomial_expected_reference_marginal_tv_at_these_shots": 0.028897519569019658,
+      "full_z_reference_available": false,
+      "observables": {
+        "kind": "selected_design_four_pair_joint_photon_instrument",
+        "flag_history_tv": 0.24898923400496287,
+        "histories": {
+          "0000": {
+            "observed": {
+              "probability": 0.138427734375,
+              "successes": 567,
+              "shots": 4096,
+              "wilson95": [
+                0.12818994855597593,
+                0.149343090282065
+              ]
+            },
+            "ideal_probability": 0.32399599365334153,
+            "conditional_memory_zero": {
+              "probability": 0.6155202821869489,
+              "successes": 349,
+              "shots": 567,
+              "wilson95": [
+                0.5748283985539786,
+                0.6546573859414817
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.6359316254083277,
+            "conditional_memory_pauli": 0.23104056437389775,
+            "conditional_memory_pauli_interval95": [
+              0.1496567971079572,
+              0.3093147718829634
+            ]
+          },
+          "1000": {
+            "observed": {
+              "probability": 0.097900390625,
+              "successes": 401,
+              "shots": 4096,
+              "wilson95": [
+                0.0891726470391819,
+                0.10738165070980757
+              ]
+            },
+            "ideal_probability": 0.10713306195439452,
+            "conditional_memory_zero": {
+              "probability": 0.5910224438902744,
+              "successes": 237,
+              "shots": 401,
+              "wilson95": [
+                0.5422595857698226,
+                0.6380579148454789
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.6882211032207556,
+            "conditional_memory_pauli": 0.18204488778054873,
+            "conditional_memory_pauli_interval95": [
+              0.08451917153964517,
+              0.2761158296909578
+            ]
+          },
+          "0100": {
+            "observed": {
+              "probability": 0.122314453125,
+              "successes": 501,
+              "shots": 4096,
+              "wilson95": [
+                0.11263274145840207,
+                0.1327039304406184
+              ]
+            },
+            "ideal_probability": 0.08981085994526149,
+            "conditional_memory_zero": {
+              "probability": 0.590818363273453,
+              "successes": 296,
+              "shots": 501,
+              "wilson95": [
+                0.5472317774554427,
+                0.6330228320066551
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.7188906443859533,
+            "conditional_memory_pauli": 0.1816367265469061,
+            "conditional_memory_pauli_interval95": [
+              0.09446355491088543,
+              0.2660456640133102
+            ]
+          },
+          "1100": {
+            "observed": {
+              "probability": 0.090576171875,
+              "successes": 371,
+              "shots": 4096,
+              "wilson95": [
+                0.08216615932702825,
+                0.09975342617695193
+              ]
+            },
+            "ideal_probability": 0.04669750649757052,
+            "conditional_memory_zero": {
+              "probability": 0.5768194070080862,
+              "successes": 214,
+              "shots": 371,
+              "wilson95": [
+                0.5260101646839878,
+                0.6260541245206542
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.7247850616830068,
+            "conditional_memory_pauli": 0.1536388140161724,
+            "conditional_memory_pauli_interval95": [
+              0.052020329367975515,
+              0.25210824904130846
+            ]
+          },
+          "0010": {
+            "observed": {
+              "probability": 0.072509765625,
+              "successes": 297,
+              "shots": 4096,
+              "wilson95": [
+                0.06496209834704589,
+                0.08085853028591136
+              ]
+            },
+            "ideal_probability": 0.0898108599452615,
+            "conditional_memory_zero": {
+              "probability": 0.5993265993265994,
+              "successes": 178,
+              "shots": 297,
+              "wilson95": [
+                0.542669721341608,
+                0.653446865219571
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5160473036817572,
+            "conditional_memory_pauli": 0.19865319865319875,
+            "conditional_memory_pauli_interval95": [
+              0.08533944268321592,
+              0.3068937304391419
+            ]
+          },
+          "1010": {
+            "observed": {
+              "probability": 0.045654296875,
+              "successes": 187,
+              "shots": 4096,
+              "wilson95": [
+                0.039676468947259125,
+                0.052483548120664025
+              ]
+            },
+            "ideal_probability": 0.024302684944563335,
+            "conditional_memory_zero": {
+              "probability": 0.6096256684491979,
+              "successes": 114,
+              "shots": 187,
+              "wilson95": [
+                0.5381714283112519,
+                0.6766665856787885
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.535836954349703,
+            "conditional_memory_pauli": 0.2192513368983957,
+            "conditional_memory_pauli_interval95": [
+              0.07634285662250373,
+              0.3533331713575769
+            ]
+          },
+          "0110": {
+            "observed": {
+              "probability": 0.06103515625,
+              "successes": 250,
+              "shots": 4096,
+              "wilson95": [
+                0.054107027433741926,
+                0.06878588534870075
+              ]
+            },
+            "ideal_probability": 0.04001756410410909,
+            "conditional_memory_zero": {
+              "probability": 0.548,
+              "successes": 137,
+              "shots": 250,
+              "wilson95": [
+                0.48604464273690806,
+                0.6085025605115293
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5631276880304678,
+            "conditional_memory_pauli": 0.09600000000000009,
+            "conditional_memory_pauli_interval95": [
+              -0.027910714526183877,
+              0.21700512102305858
+            ]
+          },
+          "1110": {
+            "observed": {
+              "probability": 0.040283203125,
+              "successes": 165,
+              "shots": 4096,
+              "wilson95": [
+                0.034679916847212375,
+                0.04674797790770395
+              ]
+            },
+            "ideal_probability": 0.018816733288507546,
+            "conditional_memory_zero": {
+              "probability": 0.5818181818181818,
+              "successes": 96,
+              "shots": 165,
+              "wilson95": [
+                0.5055313557464033,
+                0.6543819747151239
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5647301120892771,
+            "conditional_memory_pauli": 0.16363636363636358,
+            "conditional_memory_pauli_interval95": [
+              0.011062711492806576,
+              0.3087639494302479
+            ]
+          },
+          "0001": {
+            "observed": {
+              "probability": 0.072509765625,
+              "successes": 297,
+              "shots": 4096,
+              "wilson95": [
+                0.06496209834704589,
+                0.08085853028591136
+              ]
+            },
+            "ideal_probability": 0.10713306195439451,
+            "conditional_memory_zero": {
+              "probability": 0.3501683501683502,
+              "successes": 104,
+              "shots": 297,
+              "wilson95": [
+                0.29814397176234975,
+                0.40601914342502443
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.10250617137513796,
+            "conditional_memory_pauli": -0.29966329966329963,
+            "conditional_memory_pauli_interval95": [
+              -0.4037120564753005,
+              -0.18796171314995114
+            ]
+          },
+          "1001": {
+            "observed": {
+              "probability": 0.041259765625,
+              "successes": 169,
+              "shots": 4096,
+              "wilson95": [
+                0.0355863874416206,
+                0.04779280227929697
+              ]
+            },
+            "ideal_probability": 0.02937530448843756,
+            "conditional_memory_zero": {
+              "probability": 0.3668639053254438,
+              "successes": 62,
+              "shots": 169,
+              "wilson95": [
+                0.2979122618338945,
+                0.44173353665081383
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.09685620822065903,
+            "conditional_memory_pauli": -0.26627218934911245,
+            "conditional_memory_pauli_interval95": [
+              -0.40417547633221096,
+              -0.11653292669837234
+            ]
+          },
+          "0101": {
+            "observed": {
+              "probability": 0.053466796875,
+              "successes": 219,
+              "shots": 4096,
+              "wilson95": [
+                0.04698636991961872,
+                0.06078400687631435
+              ]
+            },
+            "ideal_probability": 0.024302684944563325,
+            "conditional_memory_zero": {
+              "probability": 0.3835616438356164,
+              "successes": 84,
+              "shots": 219,
+              "wilson95": [
+                0.32169443843978973,
+                0.4494433010549227
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.11200634439677416,
+            "conditional_memory_pauli": -0.23287671232876717,
+            "conditional_memory_pauli_interval95": [
+              -0.35661112312042054,
+              -0.10111339789015461
+            ]
+          },
+          "1101": {
+            "observed": {
+              "probability": 0.042724609375,
+              "successes": 175,
+              "shots": 4096,
+              "wilson95": [
+                0.036947808831559584,
+                0.04935832333835985
+              ]
+            },
+            "ideal_probability": 0.012136790895046153,
+            "conditional_memory_zero": {
+              "probability": 0.3657142857142857,
+              "successes": 64,
+              "shots": 175,
+              "wilson95": [
+                0.29795235505406337,
+                0.4392450469917225
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.10936443464447212,
+            "conditional_memory_pauli": -0.26857142857142857,
+            "conditional_memory_pauli_interval95": [
+              -0.40409528989187327,
+              -0.12150990601655498
+            ]
+          },
+          "0011": {
+            "observed": {
+              "probability": 0.04443359375,
+              "successes": 182,
+              "shots": 4096,
+              "wilson95": [
+                0.03853861692443517,
+                0.05118228143598643
+              ]
+            },
+            "ideal_probability": 0.046697506497570526,
+            "conditional_memory_zero": {
+              "probability": 0.2967032967032967,
+              "successes": 54,
+              "shots": 182,
+              "wilson95": [
+                0.2350951767025297,
+                0.3667159559177884
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.13161474346245025,
+            "conditional_memory_pauli": -0.4065934065934066,
+            "conditional_memory_pauli_interval95": [
+              -0.5298096465949407,
+              -0.26656808816442323
+            ]
+          },
+          "1011": {
+            "observed": {
+              "probability": 0.02587890625,
+              "successes": 106,
+              "shots": 4096,
+              "wilson95": [
+                0.021442799690450102,
+                0.031203494315947943
+              ]
+            },
+            "ideal_probability": 0.012136790895046148,
+            "conditional_memory_zero": {
+              "probability": 0.4056603773584906,
+              "successes": 43,
+              "shots": 106,
+              "wilson95": [
+                0.31707488137537543,
+                0.5008445070347137
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.13181734337337936,
+            "conditional_memory_pauli": -0.18867924528301883,
+            "conditional_memory_pauli_interval95": [
+              -0.36585023724924914,
+              0.0016890140694274525
+            ]
+          },
+          "0111": {
+            "observed": {
+              "probability": 0.031005859375,
+              "successes": 127,
+              "shots": 4096,
+              "wilson95": [
+                0.026121376790622992,
+                0.03676921578728156
+              ]
+            },
+            "ideal_probability": 0.018816733288507543,
+            "conditional_memory_zero": {
+              "probability": 0.3464566929133858,
+              "successes": 44,
+              "shots": 127,
+              "wilson95": [
+                0.26930645861180574,
+                0.43262288128155474
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.13271698915437188,
+            "conditional_memory_pauli": -0.30708661417322836,
+            "conditional_memory_pauli_interval95": [
+              -0.4613870827763885,
+              -0.13475423743689052
+            ]
+          },
+          "1111": {
+            "observed": {
+              "probability": 0.02001953125,
+              "successes": 82,
+              "shots": 4096,
+              "wilson95": [
+                0.01615827811132198,
+                0.024780246099068624
+              ]
+            },
+            "ideal_probability": 0.008815862703424139,
+            "conditional_memory_zero": {
+              "probability": 0.24390243902439024,
+              "successes": 20,
+              "shots": 82,
+              "wilson95": [
+                0.16379885088671692,
+                0.34692707832040764
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.1326850327674153,
+            "conditional_memory_pauli": -0.5121951219512195,
+            "conditional_memory_pauli_interval95": [
+              -0.6724022982265662,
+              -0.3061458433591847
+            ]
+          }
+        },
+        "memory_measurement_basis": "Z",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": -0.0,
+        "mass_before_projection": 0.9999999999999999,
+        "projection_l1_change": 1.5872719805187785e-16,
+        "maximum_single_bit_assignment_condition_number": 1.0299011966817577,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "reference_marginal_z_tv": 0.2784634222303015,
+        "observables": {
+          "kind": "selected_design_four_pair_joint_photon_instrument",
+          "flag_history_tv": 0.25147654850889056,
+          "histories": {
+            "0000": {
+              "observed": {
+                "probability": 0.13627975222669364
+              },
+              "ideal_probability": 0.32399599365334153,
+              "conditional_memory_zero": {
+                "probability": 0.6143300899776768
+              },
+              "ideal_conditional_memory_zero": 0.6359316254083277,
+              "conditional_memory_pauli": 0.2286601799553536,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1000": {
+              "observed": {
+                "probability": 0.0977541088505464
+              },
+              "ideal_probability": 0.10713306195439452,
+              "conditional_memory_zero": {
+                "probability": 0.5878555014509291
+              },
+              "ideal_conditional_memory_zero": 0.6882211032207556,
+              "conditional_memory_pauli": 0.17571100290185826,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0100": {
+              "observed": {
+                "probability": 0.12144052084058718
+              },
+              "ideal_probability": 0.08981085994526149,
+              "conditional_memory_zero": {
+                "probability": 0.5882950338680765
+              },
+              "ideal_conditional_memory_zero": 0.7188906443859533,
+              "conditional_memory_pauli": 0.17659006773615293,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1100": {
+              "observed": {
+                "probability": 0.0911610818953771
+              },
+              "ideal_probability": 0.04669750649757052,
+              "conditional_memory_zero": {
+                "probability": 0.5735653112332678
+              },
+              "ideal_conditional_memory_zero": 0.7247850616830068,
+              "conditional_memory_pauli": 0.14713062246653563,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0010": {
+              "observed": {
+                "probability": 0.07213318553871942
+              },
+              "ideal_probability": 0.0898108599452615,
+              "conditional_memory_zero": {
+                "probability": 0.597994288662113
+              },
+              "ideal_conditional_memory_zero": 0.5160473036817572,
+              "conditional_memory_pauli": 0.19598857732422603,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1010": {
+              "observed": {
+                "probability": 0.04585258419281861
+              },
+              "ideal_probability": 0.024302684944563335,
+              "conditional_memory_zero": {
+                "probability": 0.6077500514167617
+              },
+              "ideal_conditional_memory_zero": 0.535836954349703,
+              "conditional_memory_pauli": 0.2155001028335235,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0110": {
+              "observed": {
+                "probability": 0.061216381660623084
+              },
+              "ideal_probability": 0.04001756410410909,
+              "conditional_memory_zero": {
+                "probability": 0.5438023714006058
+              },
+              "ideal_conditional_memory_zero": 0.5631276880304678,
+              "conditional_memory_pauli": 0.08760474280121167,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1110": {
+              "observed": {
+                "probability": 0.04082905146130126
+              },
+              "ideal_probability": 0.018816733288507546,
+              "conditional_memory_zero": {
+                "probability": 0.5802694658878507
+              },
+              "ideal_conditional_memory_zero": 0.5647301120892771,
+              "conditional_memory_pauli": 0.16053893177570133,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0001": {
+              "observed": {
+                "probability": 0.07229195532135271
+              },
+              "ideal_probability": 0.10713306195439451,
+              "conditional_memory_zero": {
+                "probability": 0.3392878487965331
+              },
+              "ideal_conditional_memory_zero": 0.10250617137513796,
+              "conditional_memory_pauli": -0.32142430240693376,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1001": {
+              "observed": {
+                "probability": 0.04127425541049678
+              },
+              "ideal_probability": 0.02937530448843756,
+              "conditional_memory_zero": {
+                "probability": 0.3562469420160271
+              },
+              "ideal_conditional_memory_zero": 0.09685620822065903,
+              "conditional_memory_pauli": -0.28750611596794584,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0101": {
+              "observed": {
+                "probability": 0.05336724488274326
+              },
+              "ideal_probability": 0.024302684944563325,
+              "conditional_memory_zero": {
+                "probability": 0.3739792091271668
+              },
+              "ideal_conditional_memory_zero": 0.11200634439677416,
+              "conditional_memory_pauli": -0.2520415817456664,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1101": {
+              "observed": {
+                "probability": 0.043397788340390334
+              },
+              "ideal_probability": 0.012136790895046153,
+              "conditional_memory_zero": {
+                "probability": 0.35570625269310047
+              },
+              "ideal_conditional_memory_zero": 0.10936443464447212,
+              "conditional_memory_pauli": -0.28858749461379907,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0011": {
+              "observed": {
+                "probability": 0.044834933558760164
+              },
+              "ideal_probability": 0.046697506497570526,
+              "conditional_memory_zero": {
+                "probability": 0.2832608581107344
+              },
+              "ideal_conditional_memory_zero": 0.13161474346245025,
+              "conditional_memory_pauli": -0.43347828377853115,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1011": {
+              "observed": {
+                "probability": 0.026284356253423475
+              },
+              "ideal_probability": 0.012136790895046148,
+              "conditional_memory_zero": {
+                "probability": 0.39880302254197386
+              },
+              "ideal_conditional_memory_zero": 0.13181734337337936,
+              "conditional_memory_pauli": -0.20239395491605228,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0111": {
+              "observed": {
+                "probability": 0.03140967716249045
+              },
+              "ideal_probability": 0.018816733288507543,
+              "conditional_memory_zero": {
+                "probability": 0.3372269867504029
+              },
+              "ideal_conditional_memory_zero": 0.13271698915437188,
+              "conditional_memory_pauli": -0.3255460264991942,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1111": {
+              "observed": {
+                "probability": 0.020473122403676138
+              },
+              "ideal_probability": 0.008815862703424139,
+              "conditional_memory_zero": {
+                "probability": 0.22837683265067113
+              },
+              "ideal_conditional_memory_zero": 0.1326850327674153,
+              "conditional_memory_pauli": -0.5432463346986578,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "Z",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    },
+    {
+      "name": "passive_four_classical",
+      "bundle_index": 3,
+      "pub_index": 3,
+      "family": "selected_design_four_pair_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 21,
+      "native_two_qubit_gate_count": 129,
+      "compiled_depth": 212,
+      "circuit_duration_seconds": 1.0796000000000006e-05,
+      "reference_marginal_qubits": [
+        4,
+        9,
+        14,
+        19,
+        0
+      ],
+      "raw_reference_marginal_z_tv": 0.05540493464251296,
+      "ideal_multinomial_expected_reference_marginal_tv_at_these_shots": 0.03282518246193772,
+      "full_z_reference_available": false,
+      "observables": {
+        "kind": "selected_design_four_pair_joint_photon_instrument",
+        "flag_history_tv": 0.043920969794137454,
+        "histories": {
+          "0000": {
+            "observed": {
+              "probability": 0.1630859375,
+              "successes": 668,
+              "shots": 4096,
+              "wilson95": [
+                0.15208849838658897,
+                0.17471473834298326
+              ]
+            },
+            "ideal_probability": 0.18811809562680282,
+            "conditional_memory_zero": {
+              "probability": 0.5134730538922155,
+              "successes": 343,
+              "shots": 668,
+              "wilson95": [
+                0.475601581394014,
+                0.5511904537858274
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000003,
+            "conditional_memory_pauli": 0.026946107784431073,
+            "conditional_memory_pauli_interval95": [
+              -0.04879683721197203,
+              0.10238090757165486
+            ]
+          },
+          "1000": {
+            "observed": {
+              "probability": 0.090576171875,
+              "successes": 371,
+              "shots": 4096,
+              "wilson95": [
+                0.08216615932702825,
+                0.09975342617695193
+              ]
+            },
+            "ideal_probability": 0.09752447327281738,
+            "conditional_memory_zero": {
+              "probability": 0.48247978436657685,
+              "successes": 179,
+              "shots": 371,
+              "wilson95": [
+                0.4320733473711371,
+                0.5332453235120148
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000002,
+            "conditional_memory_pauli": -0.035040431266846306,
+            "conditional_memory_pauli_interval95": [
+              -0.13585330525772576,
+              0.06649064702402963
+            ]
+          },
+          "0100": {
+            "observed": {
+              "probability": 0.098876953125,
+              "successes": 405,
+              "shots": 4096,
+              "wilson95": [
+                0.09010805866793745,
+                0.10839753404705327
+              ]
+            },
+            "ideal_probability": 0.09752447327281738,
+            "conditional_memory_zero": {
+              "probability": 0.5037037037037037,
+              "successes": 204,
+              "shots": 405,
+              "wilson95": [
+                0.45520383571764805,
+                0.552133971971067
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000003,
+            "conditional_memory_pauli": 0.007407407407407307,
+            "conditional_memory_pauli_interval95": [
+              -0.0895923285647039,
+              0.1042679439421339
+            ]
+          },
+          "1100": {
+            "observed": {
+              "probability": 0.056640625,
+              "successes": 232,
+              "shots": 4096,
+              "wilson95": [
+                0.04996819508745246,
+                0.06414389034798465
+              ]
+            },
+            "ideal_probability": 0.05055878784786802,
+            "conditional_memory_zero": {
+              "probability": 0.45689655172413796,
+              "successes": 106,
+              "shots": 232,
+              "wilson95": [
+                0.39401948432710054,
+                0.5211777837867911
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000003,
+            "conditional_memory_pauli": -0.08620689655172409,
+            "conditional_memory_pauli_interval95": [
+              -0.2119610313457989,
+              0.042355567573582276
+            ]
+          },
+          "0010": {
+            "observed": {
+              "probability": 0.087890625,
+              "successes": 360,
+              "shots": 4096,
+              "wilson95": [
+                0.07960135414733142,
+                0.09695217020014534
+              ]
+            },
+            "ideal_probability": 0.0975244732728174,
+            "conditional_memory_zero": {
+              "probability": 0.5694444444444444,
+              "successes": 205,
+              "shots": 360,
+              "wilson95": [
+                0.5178277001150945,
+                0.619594791983698
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000002,
+            "conditional_memory_pauli": 0.13888888888888884,
+            "conditional_memory_pauli_interval95": [
+              0.03565540023018898,
+              0.2391895839673961
+            ]
+          },
+          "1010": {
+            "observed": {
+              "probability": 0.051025390625,
+              "successes": 209,
+              "shots": 4096,
+              "wilson95": [
+                0.04469721025882503,
+                0.058194929122104944
+              ]
+            },
+            "ideal_probability": 0.05055878784786802,
+            "conditional_memory_zero": {
+              "probability": 0.5598086124401914,
+              "successes": 117,
+              "shots": 209,
+              "wilson95": [
+                0.4920304519259234,
+                0.6254278672310647
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000002,
+            "conditional_memory_pauli": 0.11961722488038284,
+            "conditional_memory_pauli_interval95": [
+              -0.015939096148153253,
+              0.2508557344621294
+            ]
+          },
+          "0110": {
+            "observed": {
+              "probability": 0.052978515625,
+              "successes": 217,
+              "shots": 4096,
+              "wilson95": [
+                0.04652821110035801,
+                0.060266518212574435
+              ]
+            },
+            "ideal_probability": 0.050558787847868034,
+            "conditional_memory_zero": {
+              "probability": 0.5622119815668203,
+              "successes": 122,
+              "shots": 217,
+              "wilson95": [
+                0.4956889419762738,
+                0.6265707104648102
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000002,
+            "conditional_memory_pauli": 0.12442396313364057,
+            "conditional_memory_pauli_interval95": [
+              -0.008622116047452444,
+              0.25314142092962033
+            ]
+          },
+          "1110": {
+            "observed": {
+              "probability": 0.028564453125,
+              "successes": 117,
+              "shots": 4096,
+              "wilson95": [
+                0.023888085979904983,
+                0.03412426918299647
+              ]
+            },
+            "ideal_probability": 0.026210764773832468,
+            "conditional_memory_zero": {
+              "probability": 0.49572649572649574,
+              "successes": 58,
+              "shots": 117,
+              "wilson95": [
+                0.40671780553433473,
+                0.5850068888730391
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000002,
+            "conditional_memory_pauli": -0.008547008547008517,
+            "conditional_memory_pauli_interval95": [
+              -0.18656438893133054,
+              0.17001377774607818
+            ]
+          },
+          "0001": {
+            "observed": {
+              "probability": 0.104248046875,
+              "successes": 427,
+              "shots": 4096,
+              "wilson95": [
+                0.0952576173318435,
+                0.11398009769615404
+              ]
+            },
+            "ideal_probability": 0.09752447327281741,
+            "conditional_memory_zero": {
+              "probability": 0.5152224824355972,
+              "successes": 220,
+              "shots": 427,
+              "wilson95": [
+                0.4678956907608247,
+                0.5622778214066992
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000001,
+            "conditional_memory_pauli": 0.030444964871194413,
+            "conditional_memory_pauli_interval95": [
+              -0.06420861847835058,
+              0.12455564281339848
+            ]
+          },
+          "1001": {
+            "observed": {
+              "probability": 0.05810546875,
+              "successes": 238,
+              "shots": 4096,
+              "wilson95": [
+                0.05134654530083021,
+                0.06569248258360874
+              ]
+            },
+            "ideal_probability": 0.05055878784786803,
+            "conditional_memory_zero": {
+              "probability": 0.5,
+              "successes": 119,
+              "shots": 238,
+              "wilson95": [
+                0.4369837263494548,
+                0.5630162736505452
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000001,
+            "conditional_memory_pauli": 0.0,
+            "conditional_memory_pauli_interval95": [
+              -0.12603254730109037,
+              0.12603254730109037
+            ]
+          },
+          "0101": {
+            "observed": {
+              "probability": 0.055419921875,
+              "successes": 227,
+              "shots": 4096,
+              "wilson95": [
+                0.04882057743485012,
+                0.06285238929308543
+              ]
+            },
+            "ideal_probability": 0.050558787847868034,
+            "conditional_memory_zero": {
+              "probability": 0.5947136563876652,
+              "successes": 135,
+              "shots": 227,
+              "wilson95": [
+                0.5297854798826973,
+                0.6564895515595541
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000001,
+            "conditional_memory_pauli": 0.18942731277533031,
+            "conditional_memory_pauli_interval95": [
+              0.059570959765394615,
+              0.31297910311910826
+            ]
+          },
+          "1101": {
+            "observed": {
+              "probability": 0.033203125,
+              "successes": 136,
+              "shots": 4096,
+              "wilson95": [
+                0.028138784376593545,
+                0.0391422218748138
+              ]
+            },
+            "ideal_probability": 0.026210764773832468,
+            "conditional_memory_zero": {
+              "probability": 0.5147058823529411,
+              "successes": 70,
+              "shots": 136,
+              "wilson95": [
+                0.43146624550741874,
+                0.5971375750886523
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000002,
+            "conditional_memory_pauli": 0.02941176470588225,
+            "conditional_memory_pauli_interval95": [
+              -0.1370675089851625,
+              0.19427515017730457
+            ]
+          },
+          "0011": {
+            "observed": {
+              "probability": 0.050048828125,
+              "successes": 205,
+              "shots": 4096,
+              "wilson95": [
+                0.04378272141038475,
+                0.05715812300454398
+              ]
+            },
+            "ideal_probability": 0.050558787847868034,
+            "conditional_memory_zero": {
+              "probability": 0.5317073170731708,
+              "successes": 109,
+              "shots": 205,
+              "wilson95": [
+                0.46344556669589115,
+                0.5988026098558799
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000001,
+            "conditional_memory_pauli": 0.06341463414634152,
+            "conditional_memory_pauli_interval95": [
+              -0.07310886660821769,
+              0.1976052197117597
+            ]
+          },
+          "1011": {
+            "observed": {
+              "probability": 0.0244140625,
+              "successes": 100,
+              "shots": 4096,
+              "wilson95": [
+                0.020114624238054088,
+                0.0296047273193421
+              ]
+            },
+            "ideal_probability": 0.026210764773832468,
+            "conditional_memory_zero": {
+              "probability": 0.5,
+              "successes": 50,
+              "shots": 100,
+              "wilson95": [
+                0.4038315303659956,
+                0.5961684696340044
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000001,
+            "conditional_memory_pauli": 0.0,
+            "conditional_memory_pauli_interval95": [
+              -0.19233693926800877,
+              0.19233693926800877
+            ]
+          },
+          "0111": {
+            "observed": {
+              "probability": 0.027587890625,
+              "successes": 113,
+              "shots": 4096,
+              "wilson95": [
+                0.022997436199112566,
+                0.03306362399778765
+              ]
+            },
+            "ideal_probability": 0.02621076477383247,
+            "conditional_memory_zero": {
+              "probability": 0.5663716814159292,
+              "successes": 64,
+              "shots": 113,
+              "wilson95": [
+                0.47430454749051754,
+                0.6540745411600198
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000001,
+            "conditional_memory_pauli": 0.1327433628318584,
+            "conditional_memory_pauli_interval95": [
+              -0.05139090501896493,
+              0.3081490823200397
+            ]
+          },
+          "1111": {
+            "observed": {
+              "probability": 0.017333984375,
+              "successes": 71,
+              "shots": 4096,
+              "wilson95": [
+                0.01376571558724534,
+                0.02180674746664186
+              ]
+            },
+            "ideal_probability": 0.013588225099390842,
+            "conditional_memory_zero": {
+              "probability": 0.5352112676056338,
+              "successes": 38,
+              "shots": 71,
+              "wilson95": [
+                0.42039236914515843,
+                0.6464155215452013
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5,
+            "conditional_memory_pauli": 0.07042253521126751,
+            "conditional_memory_pauli_interval95": [
+              -0.15921526170968314,
+              0.29283104309040264
+            ]
+          }
+        },
+        "memory_measurement_basis": "Z",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": -0.0,
+        "mass_before_projection": 0.9999999999999999,
+        "projection_l1_change": 1.5092094240998222e-16,
+        "maximum_single_bit_assignment_condition_number": 1.0299011966817577,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "reference_marginal_z_tv": 0.05594153112327616,
+        "observables": {
+          "kind": "selected_design_four_pair_joint_photon_instrument",
+          "flag_history_tv": 0.046121994899796764,
+          "histories": {
+            "0000": {
+              "observed": {
+                "probability": 0.16097531746948923
+              },
+              "ideal_probability": 0.18811809562680282,
+              "conditional_memory_zero": {
+                "probability": 0.5078478697106867
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000003,
+              "conditional_memory_pauli": 0.015695739421373478,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1000": {
+              "observed": {
+                "probability": 0.08992357008677918
+              },
+              "ideal_probability": 0.09752447327281738,
+              "conditional_memory_zero": {
+                "probability": 0.47519117582410964
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000002,
+              "conditional_memory_pauli": -0.04961764835178073,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0100": {
+              "observed": {
+                "probability": 0.09825391530422657
+              },
+              "ideal_probability": 0.09752447327281738,
+              "conditional_memory_zero": {
+                "probability": 0.4973127123391236
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000003,
+              "conditional_memory_pauli": -0.005374575321752784,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1100": {
+              "observed": {
+                "probability": 0.056674915000535286
+              },
+              "ideal_probability": 0.05055878784786802,
+              "conditional_memory_zero": {
+                "probability": 0.4486754422676721
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000003,
+              "conditional_memory_pauli": -0.10264911546465583,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0010": {
+              "observed": {
+                "probability": 0.08767766071412866
+              },
+              "ideal_probability": 0.0975244732728174,
+              "conditional_memory_zero": {
+                "probability": 0.5654128829040757
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000002,
+              "conditional_memory_pauli": 0.1308257658081513,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1010": {
+              "observed": {
+                "probability": 0.05135745424626692
+              },
+              "ideal_probability": 0.05055878784786802,
+              "conditional_memory_zero": {
+                "probability": 0.5556388151900913
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000002,
+              "conditional_memory_pauli": 0.11127763038018257,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0110": {
+              "observed": {
+                "probability": 0.053242574119508196
+              },
+              "ideal_probability": 0.050558787847868034,
+              "conditional_memory_zero": {
+                "probability": 0.5582846216637748
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000002,
+              "conditional_memory_pauli": 0.11656924332754959,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1110": {
+              "observed": {
+                "probability": 0.028819580639791183
+              },
+              "ideal_probability": 0.026210764773832468,
+              "conditional_memory_zero": {
+                "probability": 0.488261991130006
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000002,
+              "conditional_memory_pauli": -0.023476017739987975,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0001": {
+              "observed": {
+                "probability": 0.10431623313210317
+              },
+              "ideal_probability": 0.09752447327281741,
+              "conditional_memory_zero": {
+                "probability": 0.5094393044652413
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000001,
+              "conditional_memory_pauli": 0.018878608930482654,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1001": {
+              "observed": {
+                "probability": 0.05852972030384111
+              },
+              "ideal_probability": 0.05055878784786803,
+              "conditional_memory_zero": {
+                "probability": 0.4938549481479806
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000001,
+              "conditional_memory_pauli": -0.012290103704038824,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0101": {
+              "observed": {
+                "probability": 0.05565687579788804
+              },
+              "ideal_probability": 0.050558787847868034,
+              "conditional_memory_zero": {
+                "probability": 0.5924350664418156
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000001,
+              "conditional_memory_pauli": 0.1848701328836313,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1101": {
+              "observed": {
+                "probability": 0.03362259717147525
+              },
+              "ideal_probability": 0.026210764773832468,
+              "conditional_memory_zero": {
+                "probability": 0.5081536037559123
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000002,
+              "conditional_memory_pauli": 0.016307207511824684,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0011": {
+              "observed": {
+                "probability": 0.050579081277945144
+              },
+              "ideal_probability": 0.050558787847868034,
+              "conditional_memory_zero": {
+                "probability": 0.5263659470017702
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000001,
+              "conditional_memory_pauli": 0.05273189400354039,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1011": {
+              "observed": {
+                "probability": 0.02467926377607558
+              },
+              "ideal_probability": 0.026210764773832468,
+              "conditional_memory_zero": {
+                "probability": 0.49285028438625084
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000001,
+              "conditional_memory_pauli": -0.014299431227498327,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0111": {
+              "observed": {
+                "probability": 0.02794326062887659
+              },
+              "ideal_probability": 0.02621076477383247,
+              "conditional_memory_zero": {
+                "probability": 0.5621063998854577
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000001,
+              "conditional_memory_pauli": 0.12421279977091548,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1111": {
+              "observed": {
+                "probability": 0.017747980331069863
+              },
+              "ideal_probability": 0.013588225099390842,
+              "conditional_memory_zero": {
+                "probability": 0.5298445246526442
+              },
+              "ideal_conditional_memory_zero": 0.5,
+              "conditional_memory_pauli": 0.0596890493052884,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "Z",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    },
+    {
+      "name": "selected_four_classical",
+      "bundle_index": 1,
+      "pub_index": 4,
+      "family": "selected_design_four_pair_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 29,
+      "native_two_qubit_gate_count": 334,
+      "compiled_depth": 647,
+      "circuit_duration_seconds": 2.642800000000005e-05,
+      "reference_marginal_qubits": [
+        6,
+        13,
+        20,
+        27,
+        0
+      ],
+      "raw_reference_marginal_z_tv": 0.30707199190955486,
+      "ideal_multinomial_expected_reference_marginal_tv_at_these_shots": 0.02891435494853869,
+      "full_z_reference_available": false,
+      "observables": {
+        "kind": "selected_design_four_pair_joint_photon_instrument",
+        "flag_history_tv": 0.2862369421222696,
+        "histories": {
+          "0000": {
+            "observed": {
+              "probability": 0.122802734375,
+              "successes": 503,
+              "shots": 4096,
+              "wilson95": [
+                0.11310338900360983,
+                0.13320893037841125
+              ]
+            },
+            "ideal_probability": 0.3699807279217504,
+            "conditional_memory_zero": {
+              "probability": 0.6182902584493042,
+              "successes": 311,
+              "shots": 503,
+              "wilson95": [
+                0.5750905910029503,
+                0.6596968320245308
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.7367104105133426,
+            "conditional_memory_pauli": 0.23658051689860837,
+            "conditional_memory_pauli_interval95": [
+              0.1501811820059007,
+              0.31939366404906155
+            ]
+          },
+          "1000": {
+            "observed": {
+              "probability": 0.08349609375,
+              "successes": 342,
+              "shots": 4096,
+              "wilson95": [
+                0.07540967328493842,
+                0.09236302371553279
+              ]
+            },
+            "ideal_probability": 0.08984197428775946,
+            "conditional_memory_zero": {
+              "probability": 0.6491228070175439,
+              "successes": 222,
+              "shots": 342,
+              "wilson95": [
+                0.5971411655225717,
+                0.6977916639531542
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.6790299812140448,
+            "conditional_memory_pauli": 0.29824561403508776,
+            "conditional_memory_pauli_interval95": [
+              0.19428233104514336,
+              0.39558332790630835
+            ]
+          },
+          "0100": {
+            "observed": {
+              "probability": 0.079345703125,
+              "successes": 325,
+              "shots": 4096,
+              "wilson95": [
+                0.07145724362559759,
+                0.08802244976936834
+              ]
+            },
+            "ideal_probability": 0.07358494763345809,
+            "conditional_memory_zero": {
+              "probability": 0.6,
+              "successes": 195,
+              "shots": 325,
+              "wilson95": [
+                0.5458696105692185,
+                0.6517940302414806
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5902721150062236,
+            "conditional_memory_pauli": 0.19999999999999996,
+            "conditional_memory_pauli_interval95": [
+              0.09173922113843691,
+              0.3035880604829613
+            ]
+          },
+          "1100": {
+            "observed": {
+              "probability": 0.056640625,
+              "successes": 232,
+              "shots": 4096,
+              "wilson95": [
+                0.04996819508745246,
+                0.06414389034798465
+              ]
+            },
+            "ideal_probability": 0.04358013195654198,
+            "conditional_memory_zero": {
+              "probability": 0.5905172413793104,
+              "successes": 137,
+              "shots": 232,
+              "wilson95": [
+                0.5262671156919518,
+                0.6518186212688759
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5956997996367769,
+            "conditional_memory_pauli": 0.18103448275862077,
+            "conditional_memory_pauli_interval95": [
+              0.05253423138390367,
+              0.3036372425377518
+            ]
+          },
+          "0010": {
+            "observed": {
+              "probability": 0.113037109375,
+              "successes": 463,
+              "shots": 4096,
+              "wilson95": [
+                0.10370058414545652,
+                0.12309878557655218
+              ]
+            },
+            "ideal_probability": 0.07358494763345809,
+            "conditional_memory_zero": {
+              "probability": 0.6241900647948164,
+              "successes": 289,
+              "shots": 463,
+              "wilson95": [
+                0.5792217441953748,
+                0.6671145608331158
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.40790305715541864,
+            "conditional_memory_pauli": 0.24838012958963285,
+            "conditional_memory_pauli_interval95": [
+              0.1584434883907495,
+              0.33422912166623164
+            ]
+          },
+          "1010": {
+            "observed": {
+              "probability": 0.08154296875,
+              "successes": 334,
+              "shots": 4096,
+              "wilson95": [
+                0.07354890736866351,
+                0.0903211996998052
+              ]
+            },
+            "ideal_probability": 0.029319507930384053,
+            "conditional_memory_zero": {
+              "probability": 0.6167664670658682,
+              "successes": 206,
+              "shots": 334,
+              "wilson95": [
+                0.5635795252353369,
+                0.667298000194121
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.41597069638659706,
+            "conditional_memory_pauli": 0.23353293413173648,
+            "conditional_memory_pauli_interval95": [
+              0.12715905047067388,
+              0.334596000388242
+            ]
+          },
+          "0110": {
+            "observed": {
+              "probability": 0.06640625,
+              "successes": 272,
+              "shots": 4096,
+              "wilson95": [
+                0.05918006475452954,
+                0.07444497034091994
+              ]
+            },
+            "ideal_probability": 0.03844622257160642,
+            "conditional_memory_zero": {
+              "probability": 0.5992647058823529,
+              "successes": 163,
+              "shots": 272,
+              "wilson95": [
+                0.5400353566463558,
+                0.6557292692763259
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.42069643862899037,
+            "conditional_memory_pauli": 0.19852941176470584,
+            "conditional_memory_pauli_interval95": [
+              0.08007071329271165,
+              0.3114585385526518
+            ]
+          },
+          "1110": {
+            "observed": {
+              "probability": 0.05615234375,
+              "successes": 230,
+              "shots": 4096,
+              "wilson95": [
+                0.049509036332620285,
+                0.0636274016198162
+              ]
+            },
+            "ideal_probability": 0.022246804398051125,
+            "conditional_memory_zero": {
+              "probability": 0.6217391304347826,
+              "successes": 143,
+              "shots": 230,
+              "wilson95": [
+                0.5575504965910699,
+                0.6819279957276932
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.4205116921894227,
+            "conditional_memory_pauli": 0.24347826086956514,
+            "conditional_memory_pauli_interval95": [
+              0.11510099318213984,
+              0.3638559914553865
+            ]
+          },
+          "0001": {
+            "observed": {
+              "probability": 0.05712890625,
+              "successes": 234,
+              "shots": 4096,
+              "wilson95": [
+                0.05042750066641095,
+                0.06466023225202677
+              ]
+            },
+            "ideal_probability": 0.08984197428775942,
+            "conditional_memory_zero": {
+              "probability": 0.4230769230769231,
+              "successes": 99,
+              "shots": 234,
+              "wilson95": [
+                0.3615195800964547,
+                0.4871190879536771
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.10211313483371925,
+            "conditional_memory_pauli": -0.15384615384615385,
+            "conditional_memory_pauli_interval95": [
+              -0.27696083980709063,
+              -0.025761824092645824
+            ]
+          },
+          "1001": {
+            "observed": {
+              "probability": 0.04541015625,
+              "successes": 186,
+              "shots": 4096,
+              "wilson95": [
+                0.03944879745397491,
+                0.05222339587244794
+              ]
+            },
+            "ideal_probability": 0.027323105302240663,
+            "conditional_memory_zero": {
+              "probability": 0.41935483870967744,
+              "successes": 78,
+              "shots": 186,
+              "wilson95": [
+                0.35077392799205015,
+                0.4911994734642929
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.10920373160679205,
+            "conditional_memory_pauli": -0.16129032258064513,
+            "conditional_memory_pauli_interval95": [
+              -0.2984521440158997,
+              -0.01760105307141424
+            ]
+          },
+          "0101": {
+            "observed": {
+              "probability": 0.042724609375,
+              "successes": 175,
+              "shots": 4096,
+              "wilson95": [
+                0.036947808831559584,
+                0.04935832333835985
+              ]
+            },
+            "ideal_probability": 0.02931950793038405,
+            "conditional_memory_zero": {
+              "probability": 0.38285714285714284,
+              "successes": 67,
+              "shots": 175,
+              "wilson95": [
+                0.3140886983673994,
+                0.4566579715023287
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.11585330295153219,
+            "conditional_memory_pauli": -0.23428571428571432,
+            "conditional_memory_pauli_interval95": [
+              -0.3718226032652012,
+              -0.08668405699534265
+            ]
+          },
+          "1101": {
+            "observed": {
+              "probability": 0.03125,
+              "successes": 128,
+              "shots": 4096,
+              "wilson95": [
+                0.02634519929104107,
+                0.03703321702836379
+              ]
+            },
+            "ideal_probability": 0.01711289501311557,
+            "conditional_memory_zero": {
+              "probability": 0.359375,
+              "successes": 46,
+              "shots": 128,
+              "wilson95": [
+                0.2814673057552586,
+                0.4454774631966657
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.11553837063598223,
+            "conditional_memory_pauli": -0.28125,
+            "conditional_memory_pauli_interval95": [
+              -0.43706538848948284,
+              -0.1090450736066686
+            ]
+          },
+          "0011": {
+            "observed": {
+              "probability": 0.05859375,
+              "successes": 240,
+              "shots": 4096,
+              "wilson95": [
+                0.05180628094901181,
+                0.06620839441842777
+              ]
+            },
+            "ideal_probability": 0.04358013195654197,
+            "conditional_memory_zero": {
+              "probability": 0.42083333333333334,
+              "successes": 101,
+              "shots": 240,
+              "wilson95": [
+                0.3601022970721577,
+                0.4840587402519224
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.12286929623486505,
+            "conditional_memory_pauli": -0.15833333333333333,
+            "conditional_memory_pauli_interval95": [
+              -0.27979540585568463,
+              -0.03188251949615517
+            ]
+          },
+          "1011": {
+            "observed": {
+              "probability": 0.04150390625,
+              "successes": 170,
+              "shots": 4096,
+              "wilson95": [
+                0.035813150049827366,
+                0.04805386341259052
+              ]
+            },
+            "ideal_probability": 0.01711289501311557,
+            "conditional_memory_zero": {
+              "probability": 0.36470588235294116,
+              "successes": 62,
+              "shots": 170,
+              "wilson95": [
+                0.29607972201746413,
+                0.4393113618352896
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.12265741847982499,
+            "conditional_memory_pauli": -0.2705882352941177,
+            "conditional_memory_pauli_interval95": [
+              -0.40784055596507174,
+              -0.12137727632942075
+            ]
+          },
+          "0111": {
+            "observed": {
+              "probability": 0.03564453125,
+              "successes": 146,
+              "shots": 4096,
+              "wilson95": [
+                0.030387788741492207,
+                0.04177145492491823
+              ]
+            },
+            "ideal_probability": 0.02224680439805113,
+            "conditional_memory_zero": {
+              "probability": 0.4178082191780822,
+              "successes": 61,
+              "shots": 146,
+              "wilson95": [
+                0.3409187965919966,
+                0.4989119138876759
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.12253039192518012,
+            "conditional_memory_pauli": -0.1643835616438356,
+            "conditional_memory_pauli_interval95": [
+              -0.3181624068160068,
+              -0.002176172224648165
+            ]
+          },
+          "1111": {
+            "observed": {
+              "probability": 0.0283203125,
+              "successes": 116,
+              "shots": 4096,
+              "wilson95": [
+                0.023665274228573292,
+                0.033859257192827855
+              ]
+            },
+            "ideal_probability": 0.012877421765781369,
+            "conditional_memory_zero": {
+              "probability": 0.47413793103448276,
+              "successes": 55,
+              "shots": 116,
+              "wilson95": [
+                0.3855640504787933,
+                0.5643698033056708
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.12253539925376579,
+            "conditional_memory_pauli": -0.051724137931034475,
+            "conditional_memory_pauli_interval95": [
+              -0.22887189904241345,
+              0.12873960661134154
+            ]
+          }
+        },
+        "memory_measurement_basis": "Z",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": -0.0,
+        "mass_before_projection": 1.0000000000000002,
+        "projection_l1_change": 2.203098814490545e-16,
+        "maximum_single_bit_assignment_condition_number": 1.1530697299677843,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "reference_marginal_z_tv": 0.2984526602172636,
+        "observables": {
+          "kind": "selected_design_four_pair_joint_photon_instrument",
+          "flag_history_tv": 0.2768011327467185,
+          "histories": {
+            "0000": {
+              "observed": {
+                "probability": 0.12862109289326792
+              },
+              "ideal_probability": 0.3699807279217504,
+              "conditional_memory_zero": {
+                "probability": 0.6043557243726722
+              },
+              "ideal_conditional_memory_zero": 0.7367104105133426,
+              "conditional_memory_pauli": 0.2087114487453443,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1000": {
+              "observed": {
+                "probability": 0.0879816997140879
+              },
+              "ideal_probability": 0.08984197428775946,
+              "conditional_memory_zero": {
+                "probability": 0.6414512710272356
+              },
+              "ideal_conditional_memory_zero": 0.6790299812140448,
+              "conditional_memory_pauli": 0.2829025420544713,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0100": {
+              "observed": {
+                "probability": 0.08488115840056462
+              },
+              "ideal_probability": 0.07358494763345809,
+              "conditional_memory_zero": {
+                "probability": 0.5861640459872851
+              },
+              "ideal_conditional_memory_zero": 0.5902721150062236,
+              "conditional_memory_pauli": 0.17232809197457022,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1100": {
+              "observed": {
+                "probability": 0.0608558926797048
+              },
+              "ideal_probability": 0.04358013195654198,
+              "conditional_memory_zero": {
+                "probability": 0.574006273076602
+              },
+              "ideal_conditional_memory_zero": 0.5956997996367769,
+              "conditional_memory_pauli": 0.14801254615320403,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0010": {
+              "observed": {
+                "probability": 0.10804438287042978
+              },
+              "ideal_probability": 0.07358494763345809,
+              "conditional_memory_zero": {
+                "probability": 0.6126774097578649
+              },
+              "ideal_conditional_memory_zero": 0.40790305715541864,
+              "conditional_memory_pauli": 0.22535481951572978,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1010": {
+              "observed": {
+                "probability": 0.07931392858554177
+              },
+              "ideal_probability": 0.029319507930384053,
+              "conditional_memory_zero": {
+                "probability": 0.6004381035751808
+              },
+              "ideal_conditional_memory_zero": 0.41597069638659706,
+              "conditional_memory_pauli": 0.20087620715036159,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0110": {
+              "observed": {
+                "probability": 0.06368465580281005
+              },
+              "ideal_probability": 0.03844622257160642,
+              "conditional_memory_zero": {
+                "probability": 0.5840602647908274
+              },
+              "ideal_conditional_memory_zero": 0.42069643862899037,
+              "conditional_memory_pauli": 0.1681205295816548,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1110": {
+              "observed": {
+                "probability": 0.0559246258028903
+              },
+              "ideal_probability": 0.022246804398051125,
+              "conditional_memory_zero": {
+                "probability": 0.6116927666326725
+              },
+              "ideal_conditional_memory_zero": 0.4205116921894227,
+              "conditional_memory_pauli": 0.22338553326534494,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0001": {
+              "observed": {
+                "probability": 0.05626075114319523
+              },
+              "ideal_probability": 0.08984197428775942,
+              "conditional_memory_zero": {
+                "probability": 0.38443183048106466
+              },
+              "ideal_conditional_memory_zero": 0.10211313483371925,
+              "conditional_memory_pauli": -0.23113633903787068,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1001": {
+              "observed": {
+                "probability": 0.046163044679231525
+              },
+              "ideal_probability": 0.027323105302240663,
+              "conditional_memory_zero": {
+                "probability": 0.3835479805421822
+              },
+              "ideal_conditional_memory_zero": 0.10920373160679205,
+              "conditional_memory_pauli": -0.2329040389156356,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0101": {
+              "observed": {
+                "probability": 0.043868495337795355
+              },
+              "ideal_probability": 0.02931950793038405,
+              "conditional_memory_zero": {
+                "probability": 0.3400325083506876
+              },
+              "ideal_conditional_memory_zero": 0.11585330295153219,
+              "conditional_memory_pauli": -0.3199349832986248,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1101": {
+              "observed": {
+                "probability": 0.03241577773270738
+              },
+              "ideal_probability": 0.01711289501311557,
+              "conditional_memory_zero": {
+                "probability": 0.30948655170644607
+              },
+              "ideal_conditional_memory_zero": 0.11553837063598223,
+              "conditional_memory_pauli": -0.38102689658710787,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0011": {
+              "observed": {
+                "probability": 0.05422361196189196
+              },
+              "ideal_probability": 0.04358013195654197,
+              "conditional_memory_zero": {
+                "probability": 0.3829466578630926
+              },
+              "ideal_conditional_memory_zero": 0.12286929623486505,
+              "conditional_memory_pauli": -0.23410668427381476,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1011": {
+              "observed": {
+                "probability": 0.03829258705345276
+              },
+              "ideal_probability": 0.01711289501311557,
+              "conditional_memory_zero": {
+                "probability": 0.31051497017648966
+              },
+              "ideal_conditional_memory_zero": 0.12265741847982499,
+              "conditional_memory_pauli": -0.3789700596470207,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0111": {
+              "observed": {
+                "probability": 0.032812338415641046
+              },
+              "ideal_probability": 0.02224680439805113,
+              "conditional_memory_zero": {
+                "probability": 0.3840454858571919
+              },
+              "ideal_conditional_memory_zero": 0.12253039192518012,
+              "conditional_memory_pauli": -0.23190902828561621,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1111": {
+              "observed": {
+                "probability": 0.026655956926787537
+              },
+              "ideal_probability": 0.012877421765781369,
+              "conditional_memory_zero": {
+                "probability": 0.4568916121069925
+              },
+              "ideal_conditional_memory_zero": 0.12253539925376579,
+              "conditional_memory_pauli": -0.08621677578601505,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "Z",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    },
+    {
+      "name": "passive_four_coherent",
+      "bundle_index": 2,
+      "pub_index": 6,
+      "family": "selected_design_four_pair_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 14,
+      "native_two_qubit_gate_count": 77,
+      "compiled_depth": 173,
+      "circuit_duration_seconds": 8.376000000000008e-06,
+      "reference_marginal_qubits": [
+        4,
+        7,
+        10,
+        13,
+        0
+      ],
+      "raw_reference_marginal_z_tv": 0.0535086218253045,
+      "ideal_multinomial_expected_reference_marginal_tv_at_these_shots": 0.03282518246193772,
+      "full_z_reference_available": false,
+      "observables": {
+        "kind": "selected_design_four_pair_joint_photon_instrument",
+        "flag_history_tv": 0.02379134028982288,
+        "histories": {
+          "0000": {
+            "observed": {
+              "probability": 0.1845703125,
+              "successes": 756,
+              "shots": 4096,
+              "wilson95": [
+                0.17298704558415237,
+                0.1967446803974471
+              ]
+            },
+            "ideal_probability": 0.18811809562680282,
+            "conditional_memory_zero": {
+              "probability": 0.5740740740740741,
+              "successes": 434,
+              "shots": 756,
+              "wilson95": [
+                0.5385385022755541,
+                0.6088606672483473
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000001,
+            "conditional_memory_pauli": 0.14814814814814814,
+            "conditional_memory_pauli_interval95": [
+              0.07707700455110822,
+              0.21772133449669462
+            ]
+          },
+          "1000": {
+            "observed": {
+              "probability": 0.09375,
+              "successes": 384,
+              "shots": 4096,
+              "wilson95": [
+                0.08520028475326412,
+                0.1030610093902201
+              ]
+            },
+            "ideal_probability": 0.09752447327281738,
+            "conditional_memory_zero": {
+              "probability": 0.5494791666666666,
+              "successes": 211,
+              "shots": 384,
+              "wilson95": [
+                0.4994696981653183,
+                0.5985084811545157
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000001,
+            "conditional_memory_pauli": 0.09895833333333326,
+            "conditional_memory_pauli_interval95": [
+              -0.0010606036693634469,
+              0.19701696230903143
+            ]
+          },
+          "0100": {
+            "observed": {
+              "probability": 0.096435546875,
+              "successes": 395,
+              "shots": 4096,
+              "wilson95": [
+                0.08777005031887362,
+                0.105857304981114
+              ]
+            },
+            "ideal_probability": 0.09752447327281738,
+            "conditional_memory_zero": {
+              "probability": 0.5721518987341773,
+              "successes": 226,
+              "shots": 395,
+              "wilson95": [
+                0.5228953751835501,
+                0.620018553996579
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000003,
+            "conditional_memory_pauli": 0.14430379746835453,
+            "conditional_memory_pauli_interval95": [
+              0.04579075036710023,
+              0.24003710799315803
+            ]
+          },
+          "1100": {
+            "observed": {
+              "probability": 0.0439453125,
+              "successes": 180,
+              "shots": 4096,
+              "wilson95": [
+                0.03808383545489272,
+                0.050661415422528264
+              ]
+            },
+            "ideal_probability": 0.05055878784786803,
+            "conditional_memory_zero": {
+              "probability": 0.49444444444444446,
+              "successes": 89,
+              "shots": 180,
+              "wilson95": [
+                0.4222885232824806,
+                0.5668325378055374
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000002,
+            "conditional_memory_pauli": -0.011111111111111072,
+            "conditional_memory_pauli_interval95": [
+              -0.15542295343503876,
+              0.13366507561107488
+            ]
+          },
+          "0010": {
+            "observed": {
+              "probability": 0.0986328125,
+              "successes": 404,
+              "shots": 4096,
+              "wilson95": [
+                0.08987417998342107,
+                0.10814358899006934
+              ]
+            },
+            "ideal_probability": 0.0975244732728174,
+            "conditional_memory_zero": {
+              "probability": 0.5247524752475248,
+              "successes": 212,
+              "shots": 404,
+              "wilson95": [
+                0.4760525023073868,
+                0.5729861610443764
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000004,
+            "conditional_memory_pauli": 0.04950495049504955,
+            "conditional_memory_pauli_interval95": [
+              -0.04789499538522635,
+              0.14597232208875277
+            ]
+          },
+          "1010": {
+            "observed": {
+              "probability": 0.04638671875,
+              "successes": 190,
+              "shots": 4096,
+              "wilson95": [
+                0.04035978058165302,
+                0.053263707710771054
+              ]
+            },
+            "ideal_probability": 0.050558787847868034,
+            "conditional_memory_zero": {
+              "probability": 0.531578947368421,
+              "successes": 101,
+              "shots": 190,
+              "wilson95": [
+                0.46070349450552284,
+                0.6012027667917581
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000004,
+            "conditional_memory_pauli": 0.06315789473684208,
+            "conditional_memory_pauli_interval95": [
+              -0.07859301098895433,
+              0.2024055335835162
+            ]
+          },
+          "0110": {
+            "observed": {
+              "probability": 0.052978515625,
+              "successes": 217,
+              "shots": 4096,
+              "wilson95": [
+                0.04652821110035801,
+                0.060266518212574435
+              ]
+            },
+            "ideal_probability": 0.050558787847868034,
+            "conditional_memory_zero": {
+              "probability": 0.4700460829493088,
+              "successes": 102,
+              "shots": 217,
+              "wilson95": [
+                0.40473912015068125,
+                0.5363951212665748
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000002,
+            "conditional_memory_pauli": -0.05990783410138245,
+            "conditional_memory_pauli_interval95": [
+              -0.1905217596986375,
+              0.0727902425331497
+            ]
+          },
+          "1110": {
+            "observed": {
+              "probability": 0.026611328125,
+              "successes": 109,
+              "shots": 4096,
+              "wilson95": [
+                0.022108427188659532,
+                0.03200133804223944
+              ]
+            },
+            "ideal_probability": 0.026210764773832464,
+            "conditional_memory_zero": {
+              "probability": 0.5504587155963303,
+              "successes": 60,
+              "shots": 109,
+              "wilson95": [
+                0.456942160288216,
+                0.6405397414433016
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000003,
+            "conditional_memory_pauli": 0.10091743119266061,
+            "conditional_memory_pauli_interval95": [
+              -0.08611567942356801,
+              0.2810794828866032
+            ]
+          },
+          "0001": {
+            "observed": {
+              "probability": 0.09375,
+              "successes": 384,
+              "shots": 4096,
+              "wilson95": [
+                0.08520028475326412,
+                0.1030610093902201
+              ]
+            },
+            "ideal_probability": 0.09752447327281741,
+            "conditional_memory_zero": {
+              "probability": 0.5442708333333334,
+              "successes": 209,
+              "shots": 384,
+              "wilson95": [
+                0.4942646268881118,
+                0.5934000598717398
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.49999999999999983,
+            "conditional_memory_pauli": 0.08854166666666674,
+            "conditional_memory_pauli_interval95": [
+              -0.011470746223776418,
+              0.18680011974347965
+            ]
+          },
+          "1001": {
+            "observed": {
+              "probability": 0.05322265625,
+              "successes": 218,
+              "shots": 4096,
+              "wilson95": [
+                0.04675727047817991,
+                0.060525282576252844
+              ]
+            },
+            "ideal_probability": 0.05055878784786803,
+            "conditional_memory_zero": {
+              "probability": 0.5596330275229358,
+              "successes": 122,
+              "shots": 218,
+              "wilson95": [
+                0.4932662912659363,
+                0.6239345247502206
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5,
+            "conditional_memory_pauli": 0.11926605504587151,
+            "conditional_memory_pauli_interval95": [
+              -0.013467417468127407,
+              0.2478690495004412
+            ]
+          },
+          "0101": {
+            "observed": {
+              "probability": 0.056884765625,
+              "successes": 233,
+              "shots": 4096,
+              "wilson95": [
+                0.05019782963467251,
+                0.0644020795422649
+              ]
+            },
+            "ideal_probability": 0.050558787847868034,
+            "conditional_memory_zero": {
+              "probability": 0.5407725321888412,
+              "successes": 126,
+              "shots": 233,
+              "wilson95": [
+                0.4766418716760825,
+                0.603580569507175
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000002,
+            "conditional_memory_pauli": 0.0815450643776825,
+            "conditional_memory_pauli_interval95": [
+              -0.046716256647834964,
+              0.20716113901434996
+            ]
+          },
+          "1101": {
+            "observed": {
+              "probability": 0.028564453125,
+              "successes": 117,
+              "shots": 4096,
+              "wilson95": [
+                0.023888085979904983,
+                0.03412426918299647
+              ]
+            },
+            "ideal_probability": 0.026210764773832468,
+            "conditional_memory_zero": {
+              "probability": 0.48717948717948717,
+              "successes": 57,
+              "shots": 117,
+              "wilson95": [
+                0.3984677257503395,
+                0.5767063574717819
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000001,
+            "conditional_memory_pauli": -0.02564102564102566,
+            "conditional_memory_pauli_interval95": [
+              -0.20306454849932098,
+              0.1534127149435638
+            ]
+          },
+          "0011": {
+            "observed": {
+              "probability": 0.054931640625,
+              "successes": 225,
+              "shots": 4096,
+              "wilson95": [
+                0.048361793683114274,
+                0.06233552556182065
+              ]
+            },
+            "ideal_probability": 0.050558787847868034,
+            "conditional_memory_zero": {
+              "probability": 0.5022222222222222,
+              "successes": 113,
+              "shots": 225,
+              "wilson95": [
+                0.43740408637579675,
+                0.5669657511752894
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000002,
+            "conditional_memory_pauli": 0.004444444444444473,
+            "conditional_memory_pauli_interval95": [
+              -0.1251918272484065,
+              0.1339315023505787
+            ]
+          },
+          "1011": {
+            "observed": {
+              "probability": 0.027587890625,
+              "successes": 113,
+              "shots": 4096,
+              "wilson95": [
+                0.022997436199112566,
+                0.03306362399778765
+              ]
+            },
+            "ideal_probability": 0.026210764773832468,
+            "conditional_memory_zero": {
+              "probability": 0.5663716814159292,
+              "successes": 64,
+              "shots": 113,
+              "wilson95": [
+                0.47430454749051754,
+                0.6540745411600198
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000004,
+            "conditional_memory_pauli": 0.1327433628318584,
+            "conditional_memory_pauli_interval95": [
+              -0.05139090501896493,
+              0.3081490823200397
+            ]
+          },
+          "0111": {
+            "observed": {
+              "probability": 0.025390625,
+              "successes": 104,
+              "shots": 4096,
+              "wilson95": [
+                0.020999607767912647,
+                0.030671038755484777
+              ]
+            },
+            "ideal_probability": 0.02621076477383247,
+            "conditional_memory_zero": {
+              "probability": 0.5,
+              "successes": 52,
+              "shots": 104,
+              "wilson95": [
+                0.40563189843430686,
+                0.5943681015656932
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000001,
+            "conditional_memory_pauli": 0.0,
+            "conditional_memory_pauli_interval95": [
+              -0.18873620313138628,
+              0.1887362031313864
+            ]
+          },
+          "1111": {
+            "observed": {
+              "probability": 0.016357421875,
+              "successes": 67,
+              "shots": 4096,
+              "wilson95": [
+                0.012901468019013623,
+                0.020719700068872332
+              ]
+            },
+            "ideal_probability": 0.013588225099390838,
+            "conditional_memory_zero": {
+              "probability": 0.582089552238806,
+              "successes": 39,
+              "shots": 67,
+              "wilson95": [
+                0.4626993150297929,
+                0.692576990443277
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5000000000000002,
+            "conditional_memory_pauli": 0.16417910447761197,
+            "conditional_memory_pauli_interval95": [
+              -0.07460136994041422,
+              0.38515398088655406
+            ]
+          }
+        },
+        "memory_measurement_basis": "Z",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": -0.0,
+        "mass_before_projection": 1.0,
+        "projection_l1_change": 0.0,
+        "maximum_single_bit_assignment_condition_number": 1.0481543773611195,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "reference_marginal_z_tv": 0.0515699460319618,
+        "observables": {
+          "kind": "selected_design_four_pair_joint_photon_instrument",
+          "flag_history_tv": 0.030578119689994573,
+          "histories": {
+            "0000": {
+              "observed": {
+                "probability": 0.1806360801841136
+              },
+              "ideal_probability": 0.18811809562680282,
+              "conditional_memory_zero": {
+                "probability": 0.5700928924767275
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000001,
+              "conditional_memory_pauli": 0.1401857849534549,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1000": {
+              "observed": {
+                "probability": 0.09223598005894597
+              },
+              "ideal_probability": 0.09752447327281738,
+              "conditional_memory_zero": {
+                "probability": 0.5437507314137752
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000001,
+              "conditional_memory_pauli": 0.08750146282755034,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0100": {
+              "observed": {
+                "probability": 0.09555409892367808
+              },
+              "ideal_probability": 0.09752447327281738,
+              "conditional_memory_zero": {
+                "probability": 0.5696653031611119
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000003,
+              "conditional_memory_pauli": 0.13933060632222372,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1100": {
+              "observed": {
+                "probability": 0.043457986455856634
+              },
+              "ideal_probability": 0.05055878784786803,
+              "conditional_memory_zero": {
+                "probability": 0.48445376268738954
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000002,
+              "conditional_memory_pauli": -0.03109247462522091,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0010": {
+              "observed": {
+                "probability": 0.10007005228679419
+              },
+              "ideal_probability": 0.0975244732728174,
+              "conditional_memory_zero": {
+                "probability": 0.518232477421254
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000004,
+              "conditional_memory_pauli": 0.036464954842508,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1010": {
+              "observed": {
+                "probability": 0.047070416067202525
+              },
+              "ideal_probability": 0.050558787847868034,
+              "conditional_memory_zero": {
+                "probability": 0.5249181981803113
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000004,
+              "conditional_memory_pauli": 0.04983639636062254,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0110": {
+              "observed": {
+                "probability": 0.054463552461953876
+              },
+              "ideal_probability": 0.050558787847868034,
+              "conditional_memory_zero": {
+                "probability": 0.4602728056414737
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000002,
+              "conditional_memory_pauli": -0.07945438871705257,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1110": {
+              "observed": {
+                "probability": 0.0274489482346981
+              },
+              "ideal_probability": 0.026210764773832464,
+              "conditional_memory_zero": {
+                "probability": 0.5464107831870981
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000003,
+              "conditional_memory_pauli": 0.09282156637419625,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0001": {
+              "observed": {
+                "probability": 0.09228405630751553
+              },
+              "ideal_probability": 0.09752447327281741,
+              "conditional_memory_zero": {
+                "probability": 0.5389347400376375
+              },
+              "ideal_conditional_memory_zero": 0.49999999999999983,
+              "conditional_memory_pauli": 0.07786948007527505,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1001": {
+              "observed": {
+                "probability": 0.052926969151206885
+              },
+              "ideal_probability": 0.05055878784786803,
+              "conditional_memory_zero": {
+                "probability": 0.5545928765012733
+              },
+              "ideal_conditional_memory_zero": 0.5,
+              "conditional_memory_pauli": 0.10918575300254663,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0101": {
+              "observed": {
+                "probability": 0.05714905201399834
+              },
+              "ideal_probability": 0.050558787847868034,
+              "conditional_memory_zero": {
+                "probability": 0.5358232859756745
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000002,
+              "conditional_memory_pauli": 0.07164657195134905,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1101": {
+              "observed": {
+                "probability": 0.02866726561886209
+              },
+              "ideal_probability": 0.026210764773832468,
+              "conditional_memory_zero": {
+                "probability": 0.47680186536832037
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000001,
+              "conditional_memory_pauli": -0.04639626926335927,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0011": {
+              "observed": {
+                "probability": 0.056375246808984994
+              },
+              "ideal_probability": 0.050558787847868034,
+              "conditional_memory_zero": {
+                "probability": 0.49421942728847573
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000002,
+              "conditional_memory_pauli": -0.011561145423048536,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1011": {
+              "observed": {
+                "probability": 0.0283393944380794
+              },
+              "ideal_probability": 0.026210764773832468,
+              "conditional_memory_zero": {
+                "probability": 0.5620574206648625
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000004,
+              "conditional_memory_pauli": 0.12411484132972506,
+              "conditional_memory_pauli_interval95": null
+            },
+            "0111": {
+              "observed": {
+                "probability": 0.02620311822751603
+              },
+              "ideal_probability": 0.02621076477383247,
+              "conditional_memory_zero": {
+                "probability": 0.49152126939660495
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000001,
+              "conditional_memory_pauli": -0.016957461206790092,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1111": {
+              "observed": {
+                "probability": 0.01711778276059387
+              },
+              "ideal_probability": 0.013588225099390838,
+              "conditional_memory_zero": {
+                "probability": 0.5790910198827045
+              },
+              "ideal_conditional_memory_zero": 0.5000000000000002,
+              "conditional_memory_pauli": 0.158182039765409,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "Z",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    }
+  ],
+  "raw_quantum_usage": 11,
+  "raw_job_metrics": {
+    "caller": "qiskit_ibm_runtime~sampler.py",
+    "qiskit_version": "qiskit_ibm_runtime-0.51.0,qiskit-2.6.1*,qiskit_aer-0.18.2",
+    "timestamps": {
+      "created": "2026-11-11T18:23:52.41087Z",
+      "finished": "2026-11-11T18:24:07.756007Z",
+      "running": "2026-11-11T18:23:53.923902Z"
+    },
+    "usage": {
+      "qpu_charge_time_seconds": 11,
+      "value": 0.176447,
+      "unit": "resource_units",
+      "status": "complete",
+      "details": [
+        {
+          "value": 0.176447,
+          "unit": "resource_units",
+          "metric": {
+            "id": "caffe3ca-729c-5750-8777-df63bbf8bfd9",
+            "value": 11
+          }
+        }
+      ]
+    },
+    "circuits_execution_time_ns": 8870607360
+  },
+  "interpretation": [
+    "Raw estimates are primary; every submitted science circuit is retained.",
+    "More accepted events can be produced by noise without preserving the selected answer.",
+    "Full-Z and conditional TVs include shot noise and are not quantum-state fidelities.",
+    "Expected multinomial full-Z TV is a model-based sampling benchmark, not a confidence bound.",
+    "Wilson intervals are marginal binomial intervals, not simultaneous coverage or physical-model uncertainty.",
+    "Independent readout inversion is secondary, biased after projection, and excludes calibration uncertainty.",
+    "Superconducting model execution does not validate physical optical sensors, quantum-dot devices or wafer performance."
+  ],
+  "immutable_artifacts_verified_before_analysis": true
+}

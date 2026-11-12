@@ -1,0 +1,20 @@
+<section id="steer" data-transition="fade" style="background:#F6F5F0;color:#12203A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:88px 128px 104px;display:flex;flex-direction:column;gap:36px">
+<h2 style="font-size:60px;font-weight:600;line-height:1.12;letter-spacing:-0.5px">Move 2: Steer. Part of the rarity is free to remove</h2>
+<div style="display:flex;gap:56px;flex:1">
+<div style="flex:1.2;display:flex;flex-direction:column;gap:24px;justify-content:space-between">
+<p style="font-size:38px;font-weight:600">A click is rare for two reasons</p>
+<div style="display:flex;flex-direction:column;gap:6px"><h3 style="font-size:33px;font-weight:600;color:#B5431A">Did it emit? The emission factor</h3><p style="font-size:33px;line-height:1.28;color:#3B4658">Set by one gate angle. Turning it up scales every matching history by the same constant, so the answer stays <b>exact</b>.</p></div>
+<div style="display:flex;flex-direction:column;gap:6px"><h3 style="font-size:33px;font-weight:600;color:#1F66BD">Was it excited? The population factor</h3><p style="font-size:33px;line-height:1.28;color:#3B4658">No gate setting removes this. It is Grover’s real job.</p></div>
+<div style="background:#12203A;border-radius:14px;padding:24px 28px"><p style="font-size:33px;line-height:1.28;color:#F5F3EC">Tune p to exactly <b>1/4</b> and <b>one</b> iteration gives certainty, where textbook needs two or three.</p></div>
+</div>
+<div style="flex:1;background:#FCFCFB;border:1px solid #DDDAD0;border-radius:16px;padding:36px;display:flex;flex-direction:column;justify-content:space-between;gap:16px">
+<p style="font-size:29px;line-height:1.28;color:#3B4658">Machine calls per conditioned sample of a real 64-step record</p>
+<div style="display:flex;flex-direction:column;gap:2px"><p style="font-size:82px;font-weight:600;line-height:1.05;color:#6A7282">27,495,891</p><p style="font-size:31px;color:#3B4658">plain sampling</p></div>
+<div style="display:flex;flex-direction:column;gap:2px"><p style="font-size:82px;font-weight:600;line-height:1.05;color:#12203A">6,240</p><p style="font-size:31px;color:#3B4658">steered: 4,400× fewer, classical maths</p></div>
+<div style="display:flex;flex-direction:column;gap:2px"><p style="font-size:82px;font-weight:600;line-height:1.05;color:#B5431A">125</p><p style="font-size:31px;color:#3B4658">steered, then Grover: 50× fewer again</p></div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:56px;width:1480px;font-size:24px;color:#6A7282">Median of 4,096 held-out records, 5 clicks each. Steering sets every clicked step to emit with certainty. Exact for clicks at known steps.</p>
+<p style="position:absolute;right:128px;bottom:56px;width:100px;text-align:right;font-size:24px;color:#6A7282">12</p>
+<aside>We found this one by accident, chasing why a crude approximation gave an exact answer. A click is rare for two reasons. Was the emitter excited? And did it emit? The second is just one gate angle. Turn it up, and every history that clicks there scales by the same number, so the conditional answer stays exactly right. For a real 64-step record, that takes 27 million runs down to about six thousand. Then Grover takes what’s left down to 125 calls. To be clear on the credit: steering is classical importance sampling. And if you tune the chance to exactly a quarter, a single Grover iteration gives certainty.</aside>
+</section>

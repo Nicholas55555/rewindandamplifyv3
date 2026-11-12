@@ -1,0 +1,513 @@
+{
+  "review_scope": "All35 finalized PPTX slides imported, rendered and individually inspected at1280x720. All35 PDF pages rendered with Poppler at96dpi, with every embedded image and page bound verified. Changed and new pages compared with authored and preceding versions.",
+  "reviewed_slide_count": 35,
+  "visual_findings": [],
+  "rows": [
+    {
+      "slide": 1,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.5610206886574076
+    },
+    {
+      "slide": 2,
+      "final_matches_authored": false,
+      "accepted_import_render_difference": true,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 3.4928562644675925
+    },
+    {
+      "slide": 3,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.252566550925926
+    },
+    {
+      "slide": 4,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 4.029314236111111
+    },
+    {
+      "slide": 5,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 1.8695005063657408
+    },
+    {
+      "slide": 6,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.0592100694444446
+    },
+    {
+      "slide": 7,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.939968171296296
+    },
+    {
+      "slide": 8,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.456464482060185
+    },
+    {
+      "slide": 9,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.5552209924768516
+    },
+    {
+      "slide": 10,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 3.4327390769675925
+    },
+    {
+      "slide": 11,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.0719563802083334
+    },
+    {
+      "slide": 12,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.6261454716435186
+    },
+    {
+      "slide": 13,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.6517599826388887
+    },
+    {
+      "slide": 14,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.6277437789351854
+    },
+    {
+      "slide": 15,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.602339409722222
+    },
+    {
+      "slide": 16,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 3.0034950086805554
+    },
+    {
+      "slide": 17,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.776978081597222
+    },
+    {
+      "slide": 18,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.762139033564815
+    },
+    {
+      "slide": 19,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.955152994791667
+    },
+    {
+      "slide": 20,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.7884581163194446
+    },
+    {
+      "slide": 21,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.25186595775463
+    },
+    {
+      "slide": 22,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.6799909577546295
+    },
+    {
+      "slide": 23,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 3.042630208333333
+    },
+    {
+      "slide": 24,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 3.499540653935185
+    },
+    {
+      "slide": 25,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.4236082175925926
+    },
+    {
+      "slide": 26,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.964749710648148
+    },
+    {
+      "slide": 27,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.863835358796296
+    },
+    {
+      "slide": 28,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 3.1199880642361113
+    },
+    {
+      "slide": 29,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 3.4319835069444444
+    },
+    {
+      "slide": 30,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 3.0668077256944444
+    },
+    {
+      "slide": 31,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.563943142361111
+    },
+    {
+      "slide": 32,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 3.7529166666666667
+    },
+    {
+      "slide": 33,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 2.5665357349537037
+    },
+    {
+      "slide": 34,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 3.0029069010416665
+    },
+    {
+      "slide": 35,
+      "final_matches_authored": true,
+      "accepted_import_render_difference": false,
+      "pdf_embedded_image_matches_final": true,
+      "pdf_page_points": [
+        960.0,
+        540.0
+      ],
+      "pdf_raster_mean_absolute_rgb_error": 3.8681731047453702
+    }
+  ],
+  "native_powerpoint_opened": false,
+  "planned_talk_seconds": 560,
+  "timing_rehearsed": false,
+  "speaking_rates": [
+    {
+      "slide": 1,
+      "seconds": 15,
+      "words": 35,
+      "words_per_minute": 140.0
+    },
+    {
+      "slide": 2,
+      "seconds": 45,
+      "words": 104,
+      "words_per_minute": 138.7
+    },
+    {
+      "slide": 3,
+      "seconds": 35,
+      "words": 76,
+      "words_per_minute": 130.3
+    },
+    {
+      "slide": 4,
+      "seconds": 60,
+      "words": 130,
+      "words_per_minute": 130.0
+    },
+    {
+      "slide": 5,
+      "seconds": 45,
+      "words": 94,
+      "words_per_minute": 125.3
+    },
+    {
+      "slide": 6,
+      "seconds": 45,
+      "words": 95,
+      "words_per_minute": 126.7
+    },
+    {
+      "slide": 7,
+      "seconds": 55,
+      "words": 108,
+      "words_per_minute": 117.8
+    },
+    {
+      "slide": 8,
+      "seconds": 60,
+      "words": 127,
+      "words_per_minute": 127.0
+    },
+    {
+      "slide": 9,
+      "seconds": 45,
+      "words": 90,
+      "words_per_minute": 120.0
+    },
+    {
+      "slide": 10,
+      "seconds": 40,
+      "words": 92,
+      "words_per_minute": 138.0
+    },
+    {
+      "slide": 11,
+      "seconds": 45,
+      "words": 108,
+      "words_per_minute": 144.0
+    },
+    {
+      "slide": 12,
+      "seconds": 40,
+      "words": 94,
+      "words_per_minute": 141.0
+    },
+    {
+      "slide": 13,
+      "seconds": 30,
+      "words": 71,
+      "words_per_minute": 142.0
+    }
+  ],
+  "pdf": "Static image-based fallback without speaker notes",
+  "pptx_sha256": "cde68fee746f3abde22e2318729ea362c873833688e2327d81ece859e0594db7",
+  "pdf_sha256": "ebd0a9712e5a35b85bf62a2e2d1006280018a6e39af7ccc92340550572a297e3",
+  "pdf_raster_note": "Poppler interpolates the raster slightly. Every embedded PDF image preserves final slide pixels exactly.",
+  "accepted_import_difference": [
+    {
+      "slide": 2,
+      "bbox": [
+        724,
+        420,
+        1212,
+        501
+      ]
+    }
+  ],
+  "revision": "Fresh IBM campaign: selected precision follow-up, raw conditional answer quality, retained implementation failures, implemented joint-photon instrument, prospective acquisition/calibration limits, digital atomic/photon channels and coverage ledger.13main35total560seconds45second demo.",
+  "changed_from_previous_slides": [
+    5,
+    7,
+    8,
+    10,
+    13,
+    14,
+    15,
+    19,
+    21,
+    23,
+    24,
+    27,
+    30,
+    32,
+    33,
+    34,
+    35
+  ],
+  "unchanged_pixel_identical_slide_count": 18,
+  "validation_receipt": "visual_validation_ibm_campaign_v8.json",
+  "source_hash_count": 47
+}

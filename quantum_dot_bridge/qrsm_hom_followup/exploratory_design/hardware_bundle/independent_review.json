@@ -1,0 +1,24 @@
+{
+  "all_checks_passed": true,
+  "scope": "Independent actual serialized QPY MPS replay against exact CP instrument marginal; no cloud calls. Conditional memory experimentally Z only.",
+  "qpy_sha256": "24371c1d5ef7c2419d96ab88024ad42374ae1d676626a805da31630f8870dea2",
+  "manifest_sha256": "d0c3ae21ea96342ef48e62623df08f4f7b1b8ad9b4fbaaf16ff7427ae286492e",
+  "rows": [
+    {
+      "name": "selected_four_coherent",
+      "marginal_error": 2.6947444276004262e-11
+    },
+    {
+      "name": "selected_four_classical",
+      "marginal_error": 5.307643213825486e-12
+    },
+    {
+      "name": "passive_four_coherent",
+      "marginal_error": 2.5560109584432666e-13
+    },
+    {
+      "name": "passive_four_classical",
+      "marginal_error": 1.4303697115636282e-12
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "status": "passed",
+  "all_checks_passed": true,
+  "created_utc": "2026-11-11T17:29:10.215538+00:00",
+  "scope": "Explanatory bridge from quantum-dot findings to original QRSM components and proposed semiconductor photon-source QA. Copy/layout only; no experimental result, numerical app logic, original QRSM control, saved data or MP4 changed.",
+  "model_and_data_parity_tests": {
+    "run": "node --test laser-diagnostics-app/test_model.cjs",
+    "tests": 13,
+    "passed": 13,
+    "failed": 0
+  },
+  "package_checks": {
+    "html_ids": 115,
+    "local_links_checked": 41,
+    "evidence_and_media_hashes": 49,
+    "runtime_network_dependencies": 0,
+    "actual_h264_mp4_containers_checked": 2,
+    "external_csv_files": 6,
+    "raw_histogram_time_count_pairs_verified": 30000,
+    "analysis_independent_receipt_results_hash_verified": true
+  },
+  "deterministic_import": {
+    "passes": 2,
+    "generated_files_identical": 52,
+    "canonical_research_sources": 10
+  },
+  "browser_checks": {
+    "receipt": "research_browser_validation.json",
+    "sha256": "97be6eef624f9b5d42ee88919c3574ef79f50042d752189d482435a33f5a9312",
+    "selector_settings_or_combinations": 59,
+    "desktop_viewport": [
+      1440,
+      1000
+    ],
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "page_errors": 0,
+    "file_url_operation_verified": true,
+    "video_play_pause_seek_verified": true,
+    "keyboard_navigation_verified": true,
+    "reduced_motion_verified": true,
+    "source_hashes_current": true,
+    "explanatory_bridge_desktop_mobile_verified": true,
+    "checks": 10
+  },
+  "visual_review": {
+    "inspected": "Final focused QRSM-to-dot bridge screenshots on desktop1440 and mobile390, in addition to previous model/data visual review. No clipping or horizontal overflow observed.",
+    "screenshots_sha256": {
+      "preview-research-frequency.png": "64963dd2aedc652e7426384d49a1178b1ed6f9467aad177eeb3e35978201db4c",
+      "preview-research-drive.png": "3b72e9ecaacc958d0a9c6082538d118dd8359141184595855911379e2d89cabd",
+      "preview-research-phase.png": "ed65da3daca5737b74d071185f830998f7116f98f8e3f4c46f2b5ecba19cc3f5",
+      "preview-research-progress.png": "6f05416ef6bfcdb991f0ce1b56dc8fdbaa55d882a25a42091db75df5f1b4d158",
+      "preview-research-dot-bridge.png": "9268075128222669ea2735fe02f60529a869d50cb1bddb9219d2ff3609e274cb",
+      "preview-research-dot.png": "9a7c5b6e71f96545d0eb6ae13eaa531d1670c93cb9b9bb42a964548b9546cfdf",
+      "preview-research-dot-model.png": "f6b17ad8d0340fafb65d467ad11dc0c93e479fb9a97fa572d8599dc5e3e055bd",
+      "preview-research-dot-data.png": "4ae0b1c98b91e0108442db3a0982e9c8ef68f9a967c7880793b6113bebf04a69",
+      "preview-research-frequency-mobile.png": "da7bb682cc29a3adbf87d96f1cedf339f6d5a1682a18dd89d4b51e932d5ec4d4",
+      "preview-research-drive-mobile.png": "9043e072403baa2dbb3e533c1dadc458a5daccafa1742011652500a8b5d19c66",
+      "preview-research-phase-mobile.png": "aefcecc583eebca8f66bc5e5196cd545ec1bd953cf3281bb7c60c7889f096ae4",
+      "preview-research-progress-mobile.png": "dc23610321ced99ea422dfa23c5eaba85144516c15008eff24411d766ccc5d08",
+      "preview-research-dot-mobile.png": "080f85581570711d4fe93e2405fc7303d3674ff4f42b6120134ddd08996d1490",
+      "preview-research-dot-model-mobile.png": "d73d83b9928789d7f6a86cd445ae37b6c8415abae88d63ddc3f616f00a7d5fed",
+      "preview-research-dot-data-mobile.png": "b516172d0790c4f5cdfc09ae419b461fe82504648d787f0bc373dd0a5023a5b5",
+      "preview-research-dot-bridge-mobile.png": "5f8497856195cfa8c4e76683b5c8d6df61c82877c671446aacce592c14c7a18d"
+    }
+  },
+  "independent_scientific_copy_review": {
+    "reviewer": "realistic_sensor agent reviewed actual #dot-project-bridge and expanded README",
+    "status": "passed",
+    "precision_changes": [
+      "Cross-reference ideal0.5 explicitly assumes balanced inputs and splitter",
+      "Second-order correlation written g⁽²⁾(0)"
+    ],
+    "retained_boundaries": [
+      "Toy-model overlap is not device calibration",
+      "Classical trap pair law is not a coherent defect qubit or inferred switching rate",
+      "Collection loss charges eta² pair yield",
+      "External measurements and paper-reported visibility are separately attributed",
+      "New reanalysis is not an exact author-pipeline reproduction or independent experiment",
+      "95% conditional count/calibration intervals exclude unknown systematics",
+      "70-variant sensitivity range is not a confidence interval"
+    ],
+    "bridge_review": "Approved: three exact findings, proposed emitter/environment/measurement mapping, classical hidden Markov alternative, missing QRSM two-photon instrument, controlled device workflow and separate lithography transfer."
+  },
+  "historical_archive": "validation-history/before-qrsm-dot-bridge/",
+  "preserved_original_and_media_sha256": {
+    "app.js": "3074f27e3090f4172ff5b414bc55ff132846041c8bb61831f006f8d2689cdfca",
+    "model.js": "089dd4e315936efedbb398c7bac6772ed0939f4b3cfa366deeb36cdeee2ab37f",
+    "data.js": "0a3054e717bfcc1f9457236f7d2a43abe606d45ee4130fb1b3f0ecdb6438e300",
+    "assets/laser-diagnostic-lenses.mp4": "3275ebbec3613209b263783668eed1ff4df6f9072ec5f1d89612d6bcb2b7d9f3",
+    "assets/rewind-amplify.mp4": "683111dbefa451ccc898f23ce5350286d8aefa78ce6a87026a3052bdd50a8a54"
+  },
+  "evidence_manifest_sha256": "7baa9aaedef0906954e11cdee5f3024ff8a13635c640e33e04ee3781c9f3b210",
+  "source_sha256": {
+    "index.html": "f2328f51ede2d1ad3da1b3df838985bd4ec1d9143f57d0d74f671cf7fd19c4c0",
+    "styles.css": "dfa5c5e5776dfb90e4fb279f464d038035ffd0f6c3f7013392a9b49b0069c116",
+    "app.js": "3074f27e3090f4172ff5b414bc55ff132846041c8bb61831f006f8d2689cdfca",
+    "research.js": "b5fae2647d64a414edb5fd508f682fe056bc8d856352dd92a8df1e8a48f5aade",
+    "quantum-dots.js": "334f778ec835d36cbe20d1f7f355a4564465f602f0d0e242da2446ad8a0802fa",
+    "model.js": "089dd4e315936efedbb398c7bac6772ed0939f4b3cfa366deeb36cdeee2ab37f",
+    "data.js": "0a3054e717bfcc1f9457236f7d2a43abe606d45ee4130fb1b3f0ecdb6438e300",
+    "research-data.js": "72554ea8f8ec99287483d7812335757cd03a56c286a9eca0be3ff1734296be0f",
+    "import_results.py": "c1a112b4672b4a6e0429cdd3b3d914f02e62a353f6e5d95d05673b76f67f984f",
+    "test_model.cjs": "cebaf970548538fa31342345bbd78f22e982a47451d677a817be4abb342c6351",
+    "check_package.py": "8243afcafdfb4717da4559f07fc7d4c7868cee2859d4d8da3a5638768e692d67",
+    "check_browser.py": "b8ea995fb5341d89ab6f1035e61828e978a78bdc31bdd5c70db3ed5f4f505ac0",
+    "README.md": "536bb626d27efd1a3a270a85d9aaadb8d9afceed4e37f006ec54acf394255788"
+  },
+  "teardown": "Isolated headless Chrome closed after each verification. No HTTP server started; ordinary use requires no server.",
+  "copy_only_revision_checks": {
+    "numeric_logic_data_tests_and_packaging_source_unchanged_sha256": {
+      "app.js": "3074f27e3090f4172ff5b414bc55ff132846041c8bb61831f006f8d2689cdfca",
+      "model.js": "089dd4e315936efedbb398c7bac6772ed0939f4b3cfa366deeb36cdeee2ab37f",
+      "data.js": "0a3054e717bfcc1f9457236f7d2a43abe606d45ee4130fb1b3f0ecdb6438e300",
+      "research.js": "b5fae2647d64a414edb5fd508f682fe056bc8d856352dd92a8df1e8a48f5aade",
+      "quantum-dots.js": "334f778ec835d36cbe20d1f7f355a4564465f602f0d0e242da2446ad8a0802fa",
+      "research-data.js": "72554ea8f8ec99287483d7812335757cd03a56c286a9eca0be3ff1734296be0f",
+      "test_model.cjs": "cebaf970548538fa31342345bbd78f22e982a47451d677a817be4abb342c6351",
+      "import_results.py": "c1a112b4672b4a6e0429cdd3b3d914f02e62a353f6e5d95d05673b76f67f984f",
+      "check_package.py": "8243afcafdfb4717da4559f07fc7d4c7868cee2859d4d8da3a5638768e692d67"
+    },
+    "app_tests_unchanged": 13,
+    "no_scientific_experiments_run": true
+  },
+  "historical_archives": [
+    "validation-history/pre-quantum-dots/",
+    "validation-history/before-qrsm-dot-bridge/"
+  ]
+}

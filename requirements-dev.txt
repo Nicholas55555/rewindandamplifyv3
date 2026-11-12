@@ -1,0 +1,6 @@
+# Audited research environment, with Windows-only dependencies already marked.
+-r research-validation/research_requirements.txt
+
+# Original QRSM tests use local fake backends only; no IBM account is needed.
+qiskit-ibm-runtime==0.51.0
+pytest==9.2.0

@@ -1,0 +1,27 @@
+{
+  "all_checks_passed": true,
+  "compiled_qpy_sha256": "e659eb72f50788320699593e6053f2710c85340b1ce8c06b463e3fcfa7334b1a",
+  "method": "Aer MPS threshold1e-16; no bond cap;4096MiB; flags+memory in actual measurement mapping",
+  "rows": [
+    {
+      "name": "selected_four_coherent",
+      "compiled_marginal_max_error": 1.2947615202207885e-11,
+      "active_qubits": 22
+    },
+    {
+      "name": "passive_four_classical",
+      "compiled_marginal_max_error": 2.345207361642565e-13,
+      "active_qubits": 21
+    },
+    {
+      "name": "selected_four_classical",
+      "compiled_marginal_max_error": 1.1598458304895587e-11,
+      "active_qubits": 29
+    },
+    {
+      "name": "passive_four_coherent",
+      "compiled_marginal_max_error": 5.731443097900524e-12,
+      "active_qubits": 14
+    }
+  ]
+}

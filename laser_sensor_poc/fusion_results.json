@@ -1,0 +1,72 @@
+{
+  "seed": 540072,
+  "records_per_hypothesis": 1200,
+  "record_length": 128,
+  "true_switch_probability_persistent": 0.02,
+  "true_switch_probability_iid": 0.5,
+  "qubit_state_click_probabilities": [
+    0.3052908288456748,
+    0.6947091711543253
+  ],
+  "classical_state_click_probabilities": [
+    0.35,
+    0.65
+  ],
+  "same_records_for_all_sensor_comparisons": true,
+  "independence_assumption": "readouts independent conditional on shared hidden state",
+  "classifier": "matched known-parameter classical HMM, no fitting, fixed equal-prior zero LLR threshold",
+  "mean_observed_readout_by_class_qubit_then_classical": {
+    "persistent": [
+      0.49572916666666667,
+      0.49640625
+    ],
+    "iid": [
+      0.4990104166666667,
+      0.4997916666666667
+    ]
+  },
+  "hypothesis_results": {
+    "qubit_only": {
+      "true_positive_count": 1115,
+      "false_positive_count": 75,
+      "true_positive_rate": 0.9291666666666667,
+      "false_positive_rate": 0.0625,
+      "true_positive_wilson_95pct": [
+        0.9132406074406723,
+        0.9423537837086469
+      ],
+      "false_positive_wilson_95pct": [
+        0.050151184342747165,
+        0.07764094118464589
+      ]
+    },
+    "classical_only": {
+      "true_positive_count": 971,
+      "false_positive_count": 166,
+      "true_positive_rate": 0.8091666666666667,
+      "false_positive_rate": 0.13833333333333334,
+      "true_positive_wilson_95pct": [
+        0.785960422954526,
+        0.8303998083394496
+      ],
+      "false_positive_wilson_95pct": [
+        0.11995051588610828,
+        0.15902430788320332
+      ]
+    },
+    "joint": {
+      "true_positive_count": 1168,
+      "false_positive_count": 20,
+      "true_positive_rate": 0.9733333333333334,
+      "false_positive_rate": 0.016666666666666666,
+      "true_positive_wilson_95pct": [
+        0.9625976609335581,
+        0.9810481918291861
+      ],
+      "false_positive_wilson_95pct": [
+        0.01081468204022554,
+        0.025603285209084888
+      ]
+    }
+  }
+}

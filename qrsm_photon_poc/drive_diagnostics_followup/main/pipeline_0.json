@@ -1,0 +1,279 @@
+{
+  "seed": 620101,
+  "truth": {
+    "g_defect": 0.65,
+    "defect_detuning": 0.2,
+    "cavity_detuning": 0.0,
+    "g_cavity": 0.7,
+    "drive": 1.3,
+    "kappa": 1.4,
+    "detector_eta": 0.68,
+    "gamma_emitter": 0.07,
+    "gamma_defect": 0.025,
+    "gamma_phi_emitter": 0.035,
+    "gamma_phi_defect": 0.02,
+    "dark_rate": 0.018,
+    "dt": 1.0,
+    "n_cavity": 4
+  },
+  "calibrated_parameters": {
+    "g_defect": 0.65,
+    "defect_detuning": 0.2,
+    "cavity_detuning": 0.0,
+    "g_cavity": 0.7,
+    "drive": 1.3,
+    "kappa": 1.4,
+    "detector_eta": 0.6796820317968203,
+    "gamma_emitter": 0.07,
+    "gamma_defect": 0.025,
+    "gamma_phi_emitter": 0.035,
+    "gamma_phi_defect": 0.02,
+    "dark_rate": 0.018239427950252043,
+    "dt": 1.0,
+    "n_cavity": 4
+  },
+  "calibration": {
+    "eta_count": 6797,
+    "eta_trials": 10000,
+    "dark_count": 361,
+    "dark_trials": 20000,
+    "drive_grid": [
+      1.1,
+      1.3,
+      1.5
+    ],
+    "drive_negative_loglikelihood": [
+      6352.224282326175,
+      6289.568465877124,
+      6302.593383292109
+    ]
+  },
+  "source_training_fraction_grid": [
+    0.1,
+    0.2,
+    0.3
+  ],
+  "source_training_negative_loglikelihood": [
+    6403.047040607863,
+    6401.752653560588,
+    6403.096325752014
+  ],
+  "selected_fraction": 0.2,
+  "hmm_models": [
+    {
+      "initial": [
+        0.999999995877692,
+        2.061154304497476e-09,
+        2.0611536139418475e-09
+      ],
+      "transition": [
+        [
+          0.7853572181600469,
+          0.16674479318249577,
+          0.04789798865745731
+        ],
+        [
+          1.6849066733522083e-09,
+          0.18254192289090945,
+          0.8174580754241838
+        ],
+        [
+          0.6634000426329426,
+          0.1516360386329438,
+          0.1849639187341135
+        ]
+      ],
+      "emissions": [
+        0.01686802629170014,
+        2.0611536181902037e-09,
+        0.9999965231494199
+      ],
+      "em_fit": {
+        "initial": [
+          0.9999999999999843,
+          7.812499999999981e-15,
+          7.812499999999981e-15
+        ],
+        "transition": [
+          [
+            0.6410883250094516,
+            0.30431632353942756,
+            0.054595351451120856
+          ],
+          [
+            0.23259221552221532,
+            0.13297117979070971,
+            0.634436604687075
+          ],
+          [
+            0.6036275013216189,
+            0.22826067463220953,
+            0.1681118240461716
+          ]
+        ],
+        "emissions": [
+          0.015671756813384716,
+          0.05620035469849279,
+          0.863496977104139
+        ],
+        "train_log_likelihood": -6282.540440864386,
+        "selected_start": 2,
+        "converged": false,
+        "iterations": 400,
+        "starts": [
+          {
+            "start": 0,
+            "train_log_likelihood": -6283.520545788206,
+            "iterations": 400,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 1,
+            "train_log_likelihood": -6282.672194986552,
+            "iterations": 400,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 2,
+            "train_log_likelihood": -6282.540440864386,
+            "iterations": 400,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          }
+        ]
+      },
+      "refinement": {
+        "method": "L-BFGS-B on training log likelihood with analytic forward-backward gradient",
+        "optimization_success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "iterations": 155,
+        "max_iterations": 1000,
+        "train_before": -6282.540440864386,
+        "train_candidate": -6281.515873617832,
+        "accepted_candidate": true,
+        "train_selected": -6281.515873617832,
+        "max_abs_logit_gradient": 0.00018656973543329514,
+        "max_abs_logit": 20.0,
+        "bounds": [
+          -20,
+          20
+        ],
+        "note": "Only the top EM restart was refined; local convergence does not establish a global optimum."
+      }
+    },
+    {
+      "initial": [
+        0.054688120560539594,
+        0.9453038899071793,
+        7.989532281211594e-06
+      ],
+      "transition": [
+        [
+          0.1944235628508778,
+          0.10716070796804336,
+          0.6984157291810787
+        ],
+        [
+          0.08041037071099409,
+          0.6073708210580564,
+          0.31221880823094944
+        ],
+        [
+          0.24424025400690336,
+          0.0005705913486967743,
+          0.7551891546444
+        ]
+      ],
+      "emissions": [
+        0.9999999979388463,
+        2.0611536181902037e-09,
+        1.4663692986711983e-07
+      ],
+      "em_fit": {
+        "initial": [
+          0.02214992519654458,
+          0.9778449039494442,
+          5.1708540111599216e-06
+        ],
+        "transition": [
+          [
+            0.1666258613333769,
+            0.32585526350052535,
+            0.5075188751660977
+          ],
+          [
+            0.030527266626500994,
+            0.642422750289461,
+            0.327049983084038
+          ],
+          [
+            0.343912989060606,
+            0.0009319508326423217,
+            0.6551550601067516
+          ]
+        ],
+        "emissions": [
+          0.720108779862688,
+          0.043621975115134534,
+          0.08008117643959348
+        ],
+        "train_log_likelihood": -6406.442949130965,
+        "selected_start": 1,
+        "converged": false,
+        "iterations": 400,
+        "starts": [
+          {
+            "start": 0,
+            "train_log_likelihood": -6423.549733786126,
+            "iterations": 400,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 1,
+            "train_log_likelihood": -6406.442949130965,
+            "iterations": 400,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 2,
+            "train_log_likelihood": -6410.491092440592,
+            "iterations": 400,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          }
+        ]
+      },
+      "refinement": {
+        "method": "L-BFGS-B on training log likelihood with analytic forward-backward gradient",
+        "optimization_success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "iterations": 110,
+        "max_iterations": 1000,
+        "train_before": -6406.442949130965,
+        "train_candidate": -6405.602385123753,
+        "accepted_candidate": true,
+        "train_selected": -6405.602385123753,
+        "max_abs_logit_gradient": 0.0004686565525844344,
+        "max_abs_logit": 20.0,
+        "bounds": [
+          -20,
+          20
+        ],
+        "note": "Only the top EM restart was refined; local convergence does not establish a global optimum."
+      }
+    }
+  ],
+  "thresholds": {
+    "physical_history": 0.6708565810478291,
+    "classical_hmm": 0.6106841995337149,
+    "count_contrast": 0.4375
+  },
+  "raw_sha256": "99d38c1dd825feb64b700c2383c364ae6b766ae2832787f37d83f7d27fb5d359",
+  "elapsed_seconds": 50.16012250000131
+}

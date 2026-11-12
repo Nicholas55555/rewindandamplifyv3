@@ -1,0 +1,1251 @@
+{
+  "schema": "ra-comprehensive-research-hardware-coverage-v1",
+  "created_utc": "2026-11-11T18:07:10.555769+00:00",
+  "status": "evidence_updated; consult each family for completed scope and remaining gaps",
+  "family_count": 25,
+  "confirmed_device_qubits": 156,
+  "all_research_replicated": false,
+  "job_status_owner": "Counts and IDs derived offline from verified raw results; no full apparatus or inference claim follows from component execution.",
+  "scope": "All identified research families classified; this is not a statement that every future numerical family or physical experiment is complete.",
+  "families": [
+    {
+      "id": "core_purify_amplify",
+      "title": "Original purification and full/local amplitude amplification",
+      "canonical_paths": [
+        "rewindandamplify-main/docs/REPORT.md",
+        "rewindandamplify-main/qrsm_grover/model.py"
+      ],
+      "question": "Does reversible preparation preserve histories, and does amplification preserve the selected answer?",
+      "existing_evidence": "Exact dynamic/purified and Kraus checks; ideal full-amplification tests; short hardware builds.",
+      "existing_real_IBM": "Seven archived jobs include short versions.",
+      "new_hardware_classification": "planned_full_gate_execution",
+      "planned_bundle": "hardware_campaign/original_bundle_v2/manifest.json",
+      "planned_circuit_selectors": [
+        "click3-*",
+        "click5-*"
+      ],
+      "new_hardware_status": "complete_gate_model_execution",
+      "job_ids": [
+        "dbqarvmjjaos73agv2u0",
+        "dbqb1ifv5hds73dfo310",
+        "dbqauf9abdes73fnu9pg"
+      ],
+      "remaining_work": [
+        "New physical layout/calibration and independent repeats; local approximation differs from full target."
+      ],
+      "priority": "high",
+      "completed_evidence": [
+        {
+          "job_id": "dbqarvmjjaos73agv2u0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_plain_v2/raw.json",
+          "circuits": [
+            "click3-full-r0",
+            "click5-steered-memory+last-1-r1",
+            "click5-memory+last-1-r3",
+            "click3-memory-r3",
+            "click5-full-r1",
+            "click3-full-r2",
+            "click3-steered-full-r0",
+            "click5-full-r0",
+            "click3-full-r3",
+            "click3-memory+last-1-r2",
+            "click3-steered-full-r1",
+            "click3-memory+last-1-r3",
+            "click3-steered-memory+last-1-r1",
+            "click3-full-r1",
+            "click3-memory-r2",
+            "click3-memory+last-1-r1",
+            "click3-memory-r1",
+            "click5-steered-full-r1"
+          ],
+          "shots": 36864
+        },
+        {
+          "job_id": "dbqb1ifv5hds73dfo310",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_precision_v1/raw.json",
+          "circuits": [
+            "click3-steered-full-r1",
+            "click3-steered-memory+last-1-r1"
+          ],
+          "shots": 16384
+        },
+        {
+          "job_id": "dbqauf9abdes73fnu9pg",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_suppressed_v1/raw.json",
+          "circuits": [
+            "click3-full-r0",
+            "click5-steered-memory+last-1-r1",
+            "click5-memory+last-1-r3",
+            "click3-memory-r3",
+            "click5-full-r1",
+            "click3-full-r2",
+            "click3-steered-full-r0",
+            "click5-full-r0",
+            "click3-full-r3",
+            "click3-memory+last-1-r2",
+            "click3-steered-full-r1",
+            "click3-memory+last-1-r3",
+            "click3-steered-memory+last-1-r1",
+            "click3-full-r1",
+            "click3-memory-r2",
+            "click3-memory+last-1-r1",
+            "click3-memory-r1",
+            "click5-steered-full-r1"
+          ],
+          "shots": 36864
+        }
+      ],
+      "executed_scope": "executed_full_gate_execution"
+    },
+    {
+      "id": "core_cost_noise",
+      "title": "Original depth, usable answers and noise tradeoff",
+      "canonical_paths": [
+        "research-validation/hardware_verification.json"
+      ],
+      "question": "Does reducing gates improve usable output once bias and layout are counted?",
+      "existing_evidence": "Independent recount of two archived40/85-gate comparisons; raw86.06/78.49% first job.",
+      "existing_real_IBM": "Verified archived Kingston pair and repeat; physical layouts differ.",
+      "new_hardware_classification": "planned_full_gate_execution",
+      "planned_bundle": "hardware_campaign/original_bundle_v2/manifest.json",
+      "planned_circuit_selectors": [
+        "click3-steered-memory+last-1-r1",
+        "click3-steered-full-r1"
+      ],
+      "new_hardware_status": "complete_gate_model_execution",
+      "job_ids": [
+        "dbqarvmjjaos73agv2u0",
+        "dbqb1ifv5hds73dfo310",
+        "dbqauf9abdes73fnu9pg"
+      ],
+      "remaining_work": [
+        "Matched-layout blocks, raw/corrected distributions, calibration and shot costs; no total-time or dollar advantage established."
+      ],
+      "priority": "high",
+      "completed_evidence": [
+        {
+          "job_id": "dbqarvmjjaos73agv2u0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_plain_v2/raw.json",
+          "circuits": [
+            "click3-steered-full-r1",
+            "click3-steered-memory+last-1-r1"
+          ],
+          "shots": 4096
+        },
+        {
+          "job_id": "dbqb1ifv5hds73dfo310",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_precision_v1/raw.json",
+          "circuits": [
+            "click3-steered-full-r1",
+            "click3-steered-memory+last-1-r1"
+          ],
+          "shots": 16384
+        },
+        {
+          "job_id": "dbqauf9abdes73fnu9pg",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_suppressed_v1/raw.json",
+          "circuits": [
+            "click3-steered-full-r1",
+            "click3-steered-memory+last-1-r1"
+          ],
+          "shots": 4096
+        }
+      ],
+      "executed_scope": "executed_full_gate_execution"
+    },
+    {
+      "id": "core_after_click",
+      "title": "Original after-click conditional fingerprint",
+      "canonical_paths": [
+        "research-validation/original_after_click_verification.json"
+      ],
+      "question": "Does a selected event leave different future predictions under specified coupled/uncoupled models?",
+      "existing_evidence": "Exact conditional forecasts plus archived continued circuits.",
+      "existing_real_IBM": "Original known-model continued histories on Kingston/Marrakesh.",
+      "new_hardware_classification": "planned_full_gate_execution",
+      "planned_bundle": "hardware_campaign/original_bundle_v2/manifest.json",
+      "planned_circuit_selectors": [
+        "loop-*"
+      ],
+      "new_hardware_status": "complete_gate_model_execution",
+      "job_ids": [
+        "dbqarvmjjaos73agv2u0",
+        "dbqb1ifv5hds73dfo310",
+        "dbqauf9abdes73fnu9pg"
+      ],
+      "remaining_work": [
+        "Not discovery of a physical IBM defect; assess selected sample count and future-bit bias, full/local/memory-only controls."
+      ],
+      "priority": "high",
+      "completed_evidence": [
+        {
+          "job_id": "dbqarvmjjaos73agv2u0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_plain_v2/raw.json",
+          "circuits": [
+            "loop-nodefect-r1",
+            "loop-defect-full-r1",
+            "loop-defect-memory-r1",
+            "loop-nodefect-r0",
+            "loop-nodefect-memory-r1",
+            "loop-nodefect-full-r1",
+            "loop-defect-r1",
+            "loop-defect-r0"
+          ],
+          "shots": 16384
+        },
+        {
+          "job_id": "dbqb1ifv5hds73dfo310",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_precision_v1/raw.json",
+          "circuits": [
+            "loop-nodefect-r1",
+            "loop-defect-full-r1",
+            "loop-defect-memory-r1",
+            "loop-nodefect-r0",
+            "loop-nodefect-memory-r1",
+            "loop-nodefect-full-r1",
+            "loop-defect-r1",
+            "loop-defect-r0"
+          ],
+          "shots": 65536
+        },
+        {
+          "job_id": "dbqauf9abdes73fnu9pg",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_suppressed_v1/raw.json",
+          "circuits": [
+            "loop-nodefect-r1",
+            "loop-defect-full-r1",
+            "loop-defect-memory-r1",
+            "loop-nodefect-r0",
+            "loop-nodefect-memory-r1",
+            "loop-nodefect-full-r1",
+            "loop-defect-r1",
+            "loop-defect-r0"
+          ],
+          "shots": 16384
+        }
+      ],
+      "executed_scope": "executed_full_gate_execution"
+    },
+    {
+      "id": "core_echo_interference",
+      "title": "Original overshoot, echo, suppression and layout diagnostics",
+      "canonical_paths": [
+        "rewindandamplify-main/docs/REPORT.md"
+      ],
+      "question": "Can coherent interference and layout-dependent degradation be distinguished from inflated hit counts?",
+      "existing_evidence": "Original overshoot/echo/DD/twirling and post-hoc bad-layout investigation.",
+      "existing_real_IBM": "Actual archived circuits and repeated jobs.",
+      "new_hardware_classification": "planned_full_gate_execution",
+      "planned_bundle": "hardware_campaign/original_bundle_v2/manifest.json",
+      "planned_circuit_selectors": [
+        "any3-*",
+        "echo-*"
+      ],
+      "new_hardware_status": "complete_gate_model_execution",
+      "job_ids": [
+        "dbqarvmjjaos73agv2u0",
+        "dbqb1ifv5hds73dfo310",
+        "dbqauf9abdes73fnu9pg"
+      ],
+      "remaining_work": [
+        "One evening is limited temporal/device coverage; selected-layout rescue was post hoc; suppression is a separately specified execution option."
+      ],
+      "priority": "high",
+      "completed_evidence": [
+        {
+          "job_id": "dbqarvmjjaos73agv2u0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_plain_v2/raw.json",
+          "circuits": [
+            "any3-nodefect-full-r0",
+            "any3-nodefect-full-r1",
+            "any3-nodefect-full-r2",
+            "any3-memory-r3",
+            "echo-T3-x1",
+            "any3-full-r2",
+            "any3-memory-r1",
+            "echo-T5-x1",
+            "any3-full-r1",
+            "any3-nodefect-full-r3",
+            "echo-T3-x2",
+            "any3-full-r3",
+            "any3-memory-r2",
+            "any3-full-r0"
+          ],
+          "shots": 28672
+        },
+        {
+          "job_id": "dbqb1ifv5hds73dfo310",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_precision_v1/raw.json",
+          "circuits": [
+            "echo-T3-x1",
+            "echo-T5-x1"
+          ],
+          "shots": 16384
+        },
+        {
+          "job_id": "dbqauf9abdes73fnu9pg",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_suppressed_v1/raw.json",
+          "circuits": [
+            "any3-nodefect-full-r0",
+            "any3-nodefect-full-r1",
+            "any3-nodefect-full-r2",
+            "any3-memory-r3",
+            "echo-T3-x1",
+            "any3-full-r2",
+            "any3-memory-r1",
+            "echo-T5-x1",
+            "any3-full-r1",
+            "any3-nodefect-full-r3",
+            "echo-T3-x2",
+            "any3-full-r3",
+            "any3-memory-r2",
+            "any3-full-r0"
+          ],
+          "shots": 28672
+        }
+      ],
+      "executed_scope": "executed_full_gate_execution"
+    },
+    {
+      "id": "core_reader",
+      "title": "Recurrent/counting and catalogue reader oracles",
+      "canonical_paths": [
+        "rewindandamplify-main/qrsm_grover/predicates.py",
+        "rewindandamplify-main/docs/REPORT.md"
+      ],
+      "question": "Can a coherent reader mark history or catalogue predicates correctly at acceptable setup cost?",
+      "existing_evidence": "Ideal reversible counting; catalogue19/20 matches and explicit classical scan comparison.",
+      "existing_real_IBM": "Small catalogue r2 had target probability0.857 plain and0.823 suppressed.",
+      "new_hardware_classification": "planned_full_gate_execution",
+      "planned_bundle": "hardware_campaign/original_bundle_v2/manifest.json",
+      "planned_circuit_selectors": [
+        "catalog-*"
+      ],
+      "new_hardware_status": "complete_gate_model_execution",
+      "job_ids": [
+        "dbqb4vujjaos73agvhq0",
+        "dbqarvmjjaos73agv2u0",
+        "dbqauf9abdes73fnu9pg"
+      ],
+      "remaining_work": [
+        "The 1,024-entry32,800-CX circuit is a seeded random-diagonal cost benchmark, not a semantic database; all table compilation/setup is classical. Compact structured oracles and an end-to-end crossover remain open."
+      ],
+      "priority": "medium",
+      "supplementary_bundles": [
+        {
+          "manifest": "hardware_campaign/extensions/bundle_v1/manifest.json",
+          "selectors": [
+            "catalog_cost1024_*",
+            "catalog_semantic16_*"
+          ]
+        }
+      ],
+      "completed_evidence": [
+        {
+          "job_id": "dbqb4vujjaos73agvhq0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/extensions_plain_v1/raw.json",
+          "circuits": [
+            "catalog_cost1024_r1",
+            "catalog_cost1024_r0",
+            "catalog_semantic16_r1",
+            "catalog_cost1024_r25"
+          ],
+          "shots": 8192
+        },
+        {
+          "job_id": "dbqarvmjjaos73agv2u0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_plain_v2/raw.json",
+          "circuits": [
+            "catalog-r0",
+            "catalog-r1",
+            "catalog-r2"
+          ],
+          "shots": 6144
+        },
+        {
+          "job_id": "dbqauf9abdes73fnu9pg",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/original_suppressed_v1/raw.json",
+          "circuits": [
+            "catalog-r0",
+            "catalog-r1",
+            "catalog-r2"
+          ],
+          "shots": 6144
+        }
+      ],
+      "executed_scope": "executed_full_gate_execution"
+    },
+    {
+      "id": "core_long_horizon",
+      "title": "Long records, BBHT and bounded rewinding",
+      "canonical_paths": [
+        "rewindandamplify-main/docs/REPORT.md"
+      ],
+      "question": "Can steering and bounded rewind reduce long-history query cost without unacceptable bias?",
+      "existing_evidence": "Ideal scaling,64-step record call accounting and noiseless finite horizons.",
+      "existing_real_IBM": "No comparable long-horizon hardware result.",
+      "new_hardware_classification": "planned_component_execution",
+      "planned_bundle": "hardware_campaign/extensions/bundle_v1/manifest.json",
+      "planned_circuit_selectors": [
+        "history_T8_*",
+        "horizon_T10_*"
+      ],
+      "new_hardware_status": "component_executed_full_study_not_replicated",
+      "job_ids": [
+        "dbqb4vujjaos73agvhq0"
+      ],
+      "remaining_work": [
+        "Fixed rounds and finite windows do not execute the full adaptive BBHT algorithm or64-step record. Noisy/adaptive horizon, learned steering, conservation checks and beat_20 remain open."
+      ],
+      "priority": "medium",
+      "completed_evidence": [
+        {
+          "job_id": "dbqb4vujjaos73agvhq0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/extensions_plain_v1/raw.json",
+          "circuits": [
+            "horizon_T10_w8_r1",
+            "horizon_T10_w4_r2",
+            "history_T8_full_r1",
+            "history_T8_full_r3",
+            "horizon_T10_w8_r2",
+            "horizon_T10_w4_r1",
+            "history_T8_full_r0",
+            "history_T8_full_r2",
+            "history_T8_steered_local_r1"
+          ],
+          "shots": 18432
+        }
+      ],
+      "executed_scope": "executed_component_execution"
+    },
+    {
+      "id": "prior_identification",
+      "title": "Archived QRSM/free-unitary/LSTM defect learning",
+      "canonical_paths": [
+        "rewindandamplify-main/prior_work/hidden_defects/README.md"
+      ],
+      "question": "Can learned dynamics distinguish hidden coupling from preparation/readout/decoherence?",
+      "existing_evidence": "Archived ideal/FakeMarrakesh learner and count-selection results.",
+      "existing_real_IBM": "No such real-device fitting result is supplied by the later Grover jobs.",
+      "new_hardware_classification": "requires_reproducible_fitter_then_new_data",
+      "planned_bundle": null,
+      "planned_circuit_selectors": [],
+      "new_hardware_status": "not_in_current_bundles",
+      "job_ids": [],
+      "remaining_work": [
+        "Oldv5 dependencies absent; truth-informed candidate sizes; post-hoc gate-error model. Rebuild and use fresh blinded known-model data before physical interpretation."
+      ],
+      "priority": "medium",
+      "completed_evidence": []
+    },
+    {
+      "id": "contact_bernoulli",
+      "title": "Independent-site missing-contact model",
+      "canonical_paths": [
+        "finals-lithography/README.md"
+      ],
+      "question": "Can rare zero/one-absorption events be marked, amplified and sampled correctly?",
+      "existing_evidence": "3\u20137-site ideal oracles, classical/importance baselines and synthetic noise.",
+      "existing_real_IBM": "None.",
+      "new_hardware_classification": "planned_full_gate_execution",
+      "planned_bundle": "hardware_campaign/extensions/bundle_v1/manifest.json",
+      "planned_circuit_selectors": [
+        "contact_n3_*",
+        "contact_n5_*",
+        "contact_n7_*"
+      ],
+      "new_hardware_status": "complete_gate_model_execution",
+      "job_ids": [
+        "dbqb4vujjaos73agvhq0"
+      ],
+      "remaining_work": [
+        "Independent3/5/7-site plain and one-round queries are now validated. This is a mathematical absorption toy, distinct from correlated2x2 and physical resist."
+      ],
+      "priority": "medium",
+      "completed_evidence": [
+        {
+          "job_id": "dbqb4vujjaos73agvhq0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/extensions_plain_v1/raw.json",
+          "circuits": [
+            "contact_n5_counter_r1",
+            "contact_n5_counter_r0",
+            "contact_n3_enumerated_r0",
+            "contact_n7_enumerated_r1",
+            "contact_n5_enumerated_r0",
+            "contact_n3_enumerated_r1",
+            "contact_n3_counter_r0",
+            "contact_n3_counter_r1",
+            "contact_n7_counter_r0",
+            "contact_n5_enumerated_r1",
+            "contact_n7_counter_r1",
+            "contact_n7_enumerated_r0"
+          ],
+          "shots": 24576
+        }
+      ],
+      "executed_scope": "executed_full_gate_execution"
+    },
+    {
+      "id": "contact_round_cost",
+      "title": "Independent-site conditional cost and rounds",
+      "canonical_paths": [
+        "finals-lithography/VIABILITY_COST_README.md"
+      ],
+      "question": "Do noisy added rounds buy accurate conditional histories per resource?",
+      "existing_evidence": "Exact rejection-free classical sampler;5/7-site rounds0\u20133 density-noise sweep.",
+      "existing_real_IBM": "None.",
+      "new_hardware_classification": "planned_component_execution",
+      "planned_bundle": "hardware_campaign/extensions/bundle_v1/manifest.json",
+      "planned_circuit_selectors": [
+        "contact_n5_*",
+        "contact_n7_*"
+      ],
+      "new_hardware_status": "component_executed_full_study_not_replicated",
+      "job_ids": [
+        "dbqb4vujjaos73agvhq0"
+      ],
+      "remaining_work": [
+        "The new r0/r1 enum/counter comparison does not replicate all density-noise sweeps or r2/r3. Compare conditional bias and dirty work as well as accepted rate; no end-to-end crossover."
+      ],
+      "priority": "medium",
+      "completed_evidence": [
+        {
+          "job_id": "dbqb4vujjaos73agvhq0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/extensions_plain_v1/raw.json",
+          "circuits": [
+            "contact_n5_counter_r1",
+            "contact_n5_counter_r0",
+            "contact_n7_enumerated_r1",
+            "contact_n5_enumerated_r0",
+            "contact_n7_counter_r0",
+            "contact_n5_enumerated_r1",
+            "contact_n7_counter_r1",
+            "contact_n7_enumerated_r0"
+          ],
+          "shots": 16384
+        }
+      ],
+      "executed_scope": "executed_component_execution"
+    },
+    {
+      "id": "spatial_correlated",
+      "title": "Correlated2x2 latent-dose process",
+      "canonical_paths": [
+        "finals-lithography/followup/README.md"
+      ],
+      "question": "How does shared dose alter rare failures at fixed cell marginals, and can the oracle preserve their histories?",
+      "existing_evidence": "Exact2.61-fold probability change, event-preserving cap,9/14q ideal circuits and noise controls.",
+      "existing_real_IBM": "None before campaign.",
+      "new_hardware_classification": "planned_full_gate_execution",
+      "planned_bundle": "hardware_campaign/feasibility/bundle_v1/manifest.json",
+      "planned_circuit_selectors": [
+        "spatial2x2_*"
+      ],
+      "new_hardware_status": "complete_gate_model_execution",
+      "job_ids": [
+        "dbqatdpabdes73fnu7r0"
+      ],
+      "remaining_work": [
+        "Native depth/noise may limit useful results; report dirty work without postselection. Exact classical DP solves this model."
+      ],
+      "priority": "high",
+      "completed_evidence": [
+        {
+          "job_id": "dbqatdpabdes73fnu7r0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/spatial_plain_v1/raw.json",
+          "circuits": [
+            "spatial2x2_enumerated_r0",
+            "spatial2x2_enumerated_r2",
+            "spatial2x2_counter_r0",
+            "spatial2x2_enumerated_r1",
+            "spatial2x2_counter_r2",
+            "spatial2x2_counter_r1"
+          ],
+          "shots": 24576
+        }
+      ],
+      "executed_scope": "executed_full_gate_execution"
+    },
+    {
+      "id": "spatial_classical",
+      "title": "7x7 rare-event estimation and uncertainty",
+      "canonical_paths": [
+        "finals-lithography/followup/README.md"
+      ],
+      "question": "Can tuned importance sampling estimate the process tail with honest uncertainty and setup cost?",
+      "existing_evidence": "12million evaluation maps,80000 pilot maps, deterministic brackets and undercoverage checks.",
+      "existing_real_IBM": "Not a quantum circuit experiment.",
+      "new_hardware_classification": "classical_only",
+      "planned_bundle": null,
+      "planned_circuit_selectors": [],
+      "new_hardware_status": "not_in_current_bundles",
+      "job_ids": [],
+      "remaining_work": [
+        "Broader pilot/dose settings, actual process correlations, nonlinear material response and measured calibration."
+      ],
+      "priority": "medium",
+      "completed_evidence": []
+    },
+    {
+      "id": "spatial_full49",
+      "title": "Full49-cell constructive circuit",
+      "canonical_paths": [
+        "finals-lithography/full_spatial_circuit/README.md"
+      ],
+      "question": "Can the actual49-cell model be represented reversibly with bounded approximation and complete resources?",
+      "existing_evidence": "219q compact/389q explicit clean construction; QPY verification;2.874\u20133.382million constructive CX upper bounds.",
+      "existing_real_IBM": "None.",
+      "new_hardware_classification": "cannot_fit_confirmed_156qubit_device",
+      "planned_bundle": null,
+      "planned_circuit_selectors": [],
+      "new_hardware_status": "not_in_current_bundles",
+      "job_ids": [],
+      "remaining_work": [
+        "Full circuit exceeds156q. Optional preparation/arithmetic components would not replicate it. Optimized arithmetic or different model needed."
+      ],
+      "priority": "resource_limited",
+      "completed_evidence": []
+    },
+    {
+      "id": "quantum_exposure",
+      "title": "Quantum-light fringe and finite exposure",
+      "canonical_paths": [
+        "quantum_lithography_poc/README.md",
+        "quantum_lithography_poc/exposure_followup/README.md"
+      ],
+      "question": "What contrast, moment and finite-count tradeoffs survive fair photon/time budgets and stronger classical light?",
+      "existing_evidence": "G1/G2, five sources,140 sensitivity rows and540000 hypothetical activation trials.",
+      "existing_real_IBM": "None before campaign.",
+      "new_hardware_classification": "planned_component_execution",
+      "planned_bundle": "hardware_campaign/optical_controls/bundle_v2/manifest.json",
+      "planned_circuit_selectors": [
+        "noon_*",
+        "mixture_*",
+        "coherent_*"
+      ],
+      "new_hardware_status": "component_executed_full_study_not_replicated",
+      "job_ids": [
+        "dbqat8nv5hds73dfnsig"
+      ],
+      "remaining_work": [
+        "Interference/loss moments only. No actual32-cell exposure, chemistry, blur, material cross section, damage or development; no yield claim."
+      ],
+      "priority": "high_component",
+      "completed_evidence": [
+        {
+          "job_id": "dbqat8nv5hds73dfnsig",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/optical_controls_plain_v1/raw.json",
+          "circuits": [
+            "noon_phi0.35_plus_pi",
+            "coherent_phase0.35_plus_pi_N6",
+            "coherent_phase0.35_N7",
+            "mixture_phi_pi4",
+            "noon_eta0.48",
+            "noon_prep0.1",
+            "coherent_phase0.35_plus_pi_N8",
+            "coherent_phase0.35_N3",
+            "coherent_phase0.35_plus_pi_N3",
+            "coherent_phase0.35_plus_pi_N2",
+            "noon_phi_pi4",
+            "noon_phi0",
+            "coherent_phase0.35_N5",
+            "mixture_phi0",
+            "coherent_phase0.35_N8",
+            "coherent_phase0.35_N2",
+            "coherent_phase0.35_plus_pi_N7",
+            "coherent_phase0.35_plus_pi_N1",
+            "coherent_phase0.35_N4",
+            "coherent_phase0.35_plus_pi_N5",
+            "noon_phi0.35",
+            "coherent_phase0.35_N6",
+            "coherent_phase0.35_N1",
+            "coherent_phase0.35_plus_pi_N4"
+          ],
+          "shots": 49152
+        }
+      ],
+      "executed_scope": "executed_component_execution"
+    },
+    {
+      "id": "phase_inspection",
+      "title": "Local/global photon phase inspection",
+      "canonical_paths": [
+        "quantum_lithography_poc/phase_inspection_followup/README.md"
+      ],
+      "question": "Does phase precision survive loss/preparation cost and global ambiguity?",
+      "existing_evidence": "168000 finite-record estimates; charged10/90 hybrid and conditional efficient-case benefit.",
+      "existing_real_IBM": "None before campaign.",
+      "new_hardware_classification": "planned_component_execution",
+      "planned_bundle": "hardware_campaign/optical_controls/bundle_v2/manifest.json",
+      "planned_circuit_selectors": [
+        "noon_phi0.35",
+        "noon_phi0.35_plus_pi",
+        "noon_eta0.48",
+        "noon_prep0.1",
+        "coherent_*"
+      ],
+      "new_hardware_status": "component_executed_full_study_not_replicated",
+      "job_ids": [
+        "dbqat8nv5hds73dfnsig"
+      ],
+      "remaining_work": [
+        "Known-setting primitives do not replicate unknown-phase inference. Joint loss/dark/background/mode mismatch and stronger receiver comparisons remain; real test-object optics missing."
+      ],
+      "priority": "high_component",
+      "completed_evidence": [
+        {
+          "job_id": "dbqat8nv5hds73dfnsig",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/optical_controls_plain_v1/raw.json",
+          "circuits": [
+            "noon_phi0.35_plus_pi",
+            "coherent_phase0.35_plus_pi_N6",
+            "coherent_phase0.35_N7",
+            "noon_eta0.48",
+            "noon_prep0.1",
+            "coherent_phase0.35_plus_pi_N8",
+            "coherent_phase0.35_N3",
+            "coherent_phase0.35_plus_pi_N3",
+            "coherent_phase0.35_plus_pi_N2",
+            "coherent_phase0.35_N5",
+            "coherent_phase0.35_N8",
+            "coherent_phase0.35_N2",
+            "coherent_phase0.35_plus_pi_N7",
+            "coherent_phase0.35_plus_pi_N1",
+            "coherent_phase0.35_N4",
+            "coherent_phase0.35_plus_pi_N5",
+            "noon_phi0.35",
+            "coherent_phase0.35_N6",
+            "coherent_phase0.35_N1",
+            "coherent_phase0.35_plus_pi_N4"
+          ],
+          "shots": 40960
+        }
+      ],
+      "executed_scope": "executed_component_execution"
+    },
+    {
+      "id": "reset_sensor",
+      "title": "Reset-qubit stochastic sensor toy",
+      "canonical_paths": [
+        "laser_sensor_poc/README.md"
+      ],
+      "question": "Can a quantum-style observation channel add temporal information beyond its marginal count?",
+      "existing_evidence": "Known-parameter classical HMM inference on synthetic reset-qubit observations; pulse-area ambiguity.",
+      "existing_real_IBM": "None.",
+      "new_hardware_classification": "superseded_component_not_full_replication",
+      "planned_bundle": "hardware_campaign/optical_controls/bundle_v2/manifest.json",
+      "planned_circuit_selectors": [
+        "atomic_*"
+      ],
+      "new_hardware_status": "related_distinct_model_executed",
+      "job_ids": [
+        "dbqat8nv5hds73dfnsig"
+      ],
+      "remaining_work": [
+        "Finite-pulse adapter is a stronger distinct control, not this full toy benchmark. No calibrated coupling or fair whole-apparatus comparator."
+      ],
+      "priority": "low",
+      "completed_evidence": [
+        {
+          "job_id": "dbqat8nv5hds73dfnsig",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/optical_controls_plain_v1/raw.json",
+          "circuits": [
+            "atomic_d+0.5_X",
+            "atomic_power1.1_d+0.5_Z",
+            "atomic_d-5_Z",
+            "atomic_d+5_Z",
+            "atomic_d+0.5_Y",
+            "atomic_d-0.5_Z",
+            "atomic_d+0_Z",
+            "atomic_shortT2_d+5_Z",
+            "atomic_d+0.5_Z"
+          ],
+          "shots": 18432
+        }
+      ],
+      "executed_scope": "superseded_component_not_full_replication"
+    },
+    {
+      "id": "atomic_finite_pulse",
+      "title": "Finite-pulse atomic frequency response",
+      "canonical_paths": [
+        "laser_sensor_viability/README.md"
+      ],
+      "question": "Does the modeled finite interrogation encode frequency under damping, pulse and readout errors?",
+      "existing_evidence": "Bloch/Lindblad checks; known-onset calibrated benchmark; strong conventional reference wins.",
+      "existing_real_IBM": "None before campaign.",
+      "new_hardware_classification": "planned_component_execution",
+      "planned_bundle": "hardware_campaign/optical_controls/bundle_v2/manifest.json",
+      "planned_circuit_selectors": [
+        "atomic_*"
+      ],
+      "new_hardware_status": "component_executed_full_study_not_replicated",
+      "job_ids": [
+        "dbqat8nv5hds73dfnsig"
+      ],
+      "remaining_work": [
+        "No actual698nm atoms, optical coupling, reference stability or bandwidth measured. Hardware channels test model implementation only."
+      ],
+      "priority": "high",
+      "completed_evidence": [
+        {
+          "job_id": "dbqat8nv5hds73dfnsig",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/optical_controls_plain_v1/raw.json",
+          "circuits": [
+            "atomic_d+0.5_X",
+            "atomic_power1.1_d+0.5_Z",
+            "atomic_d-5_Z",
+            "atomic_d+5_Z",
+            "atomic_d+0.5_Y",
+            "atomic_d-0.5_Z",
+            "atomic_d+0_Z",
+            "atomic_shortT2_d+5_Z",
+            "atomic_d+0.5_Z"
+          ],
+          "shots": 18432
+        }
+      ],
+      "executed_scope": "executed_component_execution"
+    },
+    {
+      "id": "frequency_unknown_onset",
+      "title": "Unknown-onset online frequency monitor",
+      "canonical_paths": [
+        "laser_sensor_viability/followup/README.md"
+      ],
+      "question": "Does an extra atomic reference improve causal detection under session drift and confounders?",
+      "existing_evidence": "23040 heldout records; detection51.35/58.02/97.97%, FAR5.42/5.16/4.06 for C/CQ/CC.",
+      "existing_real_IBM": "None.",
+      "new_hardware_classification": "classical_analysis_with_component_only",
+      "planned_bundle": "hardware_campaign/optical_controls/bundle_v2/manifest.json",
+      "planned_circuit_selectors": [
+        "atomic_*"
+      ],
+      "new_hardware_status": "component_executed_full_study_not_replicated",
+      "job_ids": [
+        "dbqat8nv5hds73dfnsig"
+      ],
+      "remaining_work": [
+        "No full128-second hardware/optical acquisition replication. Common-path/reference ambiguity and complete resource match remain."
+      ],
+      "priority": "medium",
+      "completed_evidence": [
+        {
+          "job_id": "dbqat8nv5hds73dfnsig",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/optical_controls_plain_v1/raw.json",
+          "circuits": [
+            "atomic_d+0.5_X",
+            "atomic_power1.1_d+0.5_Z",
+            "atomic_d-5_Z",
+            "atomic_d+5_Z",
+            "atomic_d+0.5_Y",
+            "atomic_d-0.5_Z",
+            "atomic_d+0_Z",
+            "atomic_shortT2_d+5_Z",
+            "atomic_d+0.5_Z"
+          ],
+          "shots": 18432
+        }
+      ],
+      "executed_scope": "classical_analysis_with_component_only"
+    },
+    {
+      "id": "photon_dynamics",
+      "title": "Cavity photon model and numerical convergence",
+      "canonical_paths": [
+        "qrsm_photon_poc/README.md",
+        "qrsm_photon_poc/followup/README.md"
+      ],
+      "question": "Do the instrument and finite-cavity dynamics survive independent solvers and larger cutoffs?",
+      "existing_evidence": "QuTiP ODE/6000 jump checks, cavity2\u20136 sensitivity.",
+      "existing_real_IBM": "None before campaign.",
+      "new_hardware_classification": "planned_truncated_component_execution",
+      "planned_bundle": "hardware_campaign/feasibility/bundle_v1/manifest.json",
+      "planned_circuit_selectors": [
+        "optical_*bin_*_r0"
+      ],
+      "new_hardware_status": "component_executed_full_study_not_replicated",
+      "job_ids": [
+        "dbqavpfv5hds73dfo0cg"
+      ],
+      "remaining_work": [
+        "Hardwarecavity2 is a deliberately truncated model, not cavity4/6 or physical convergence. Absolute units and measured source remain missing."
+      ],
+      "priority": "medium",
+      "completed_evidence": [
+        {
+          "job_id": "dbqavpfv5hds73dfo0cg",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/optical_dilation_plain_v2/raw.json",
+          "circuits": [
+            "optical_2bin_0p03_last_r0",
+            "optical_1bin_0p03_last_r0",
+            "optical_3bin_0p003_last_r0",
+            "optical_3bin_0p03_last_r0",
+            "optical_1bin_0p003_last_r0"
+          ],
+          "shots": 2560
+        }
+      ],
+      "executed_scope": "executed_truncated_component_execution"
+    },
+    {
+      "id": "photon_inference",
+      "title": "Joint inference, classical baselines and detector confounding",
+      "canonical_paths": [
+        "qrsm_photon_poc/diagnostics_baselines/README.md",
+        "qrsm_photon_poc/followup/README.md"
+      ],
+      "question": "Can hidden coupling be inferred when efficiency, noise and readout dynamics are uncertain?",
+      "existing_evidence": "Fresh HMM/telegraph comparisons, sign symmetry, parameter boundaries, severe deadtime misattribution.",
+      "existing_real_IBM": "None.",
+      "new_hardware_classification": "classical_analysis_with_possible_emulated_records",
+      "planned_bundle": "hardware_campaign/feasibility/bundle_v1/manifest.json",
+      "planned_circuit_selectors": [
+        "optical_*"
+      ],
+      "new_hardware_status": "component_executed_full_study_not_replicated",
+      "job_ids": [
+        "dbqavpfv5hds73dfo0cg"
+      ],
+      "remaining_work": [
+        "No unknown-parameter fitting on hardware yet. Wider model families, calibrated uncertainty and independent optical data required."
+      ],
+      "priority": "high_research",
+      "completed_evidence": [
+        {
+          "job_id": "dbqavpfv5hds73dfo0cg",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/optical_dilation_plain_v2/raw.json",
+          "circuits": [
+            "optical_2bin_0p03_last_r0",
+            "optical_3bin_0p003_all_r1",
+            "optical_1bin_0p003_last_r1",
+            "optical_3bin_0p003_last_r1",
+            "optical_1bin_0p03_last_r0",
+            "optical_2bin_0p03_all_r1",
+            "optical_1bin_0p03_last_r1",
+            "optical_3bin_0p03_all_r1",
+            "optical_3bin_0p003_last_r0",
+            "optical_3bin_0p03_last_r0",
+            "optical_1bin_0p003_last_r0",
+            "optical_2bin_0p03_last_r1",
+            "optical_3bin_0p03_last_r1"
+          ],
+          "shots": 6656
+        }
+      ],
+      "executed_scope": "classical_analysis_with_possible_emulated_records"
+    },
+    {
+      "id": "drive_amplitude",
+      "title": "Retained-state time-varying drive monitor",
+      "canonical_paths": [
+        "qrsm_photon_poc/drive_diagnostics_followup/README.md"
+      ],
+      "question": "Can unknown steps/telegraph drive be separated from detector/sensor changes?",
+      "existing_evidence": "6656 heldout records; poor timely3.71% step detection at6.84% stable FAR; most estimation gain explained by prior.",
+      "existing_real_IBM": "None.",
+      "new_hardware_classification": "classical_only_not_replicated_by_static_channels",
+      "planned_bundle": null,
+      "planned_circuit_selectors": [],
+      "new_hardware_status": "not_in_current_bundles",
+      "job_ids": [],
+      "remaining_work": [
+        "Fresh acquisition/operating-point design, negative drive, nuisance-aware models and conventional optical monitor. Learned time-varying reversible oracle absent."
+      ],
+      "priority": "high_research",
+      "completed_evidence": []
+    },
+    {
+      "id": "multibin_query",
+      "title": "Optical dilation and multi-bin coherent queries",
+      "canonical_paths": [
+        "qrsm_photon_poc/multibin_followup/README.md"
+      ],
+      "question": "Does retained environment allow correct conditioning, and how does approximation/noise alter the answer?",
+      "existing_evidence": "Three-bin ideal all-branch/state checks and one-bin exact noise; direct classical recursion already efficient.",
+      "existing_real_IBM": "None before campaign.",
+      "new_hardware_classification": "planned_full_gate_execution_of_declared_ladder",
+      "planned_bundle": "hardware_campaign/feasibility/bundle_v1/manifest.json",
+      "planned_circuit_selectors": [
+        "optical_*"
+      ],
+      "new_hardware_status": "component_executed_full_study_not_replicated",
+      "job_ids": [
+        "dbqavpfv5hds73dfo0cg"
+      ],
+      "remaining_work": [
+        "1051\u201319864 genericCX ladder requires native resource/noise decisions. Z measurements are not full conditional-state fidelity; no three-bin density-noise result or crossover."
+      ],
+      "priority": "high_stress",
+      "completed_evidence": [
+        {
+          "job_id": "dbqavpfv5hds73dfo0cg",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/optical_dilation_plain_v2/raw.json",
+          "circuits": [
+            "optical_2bin_0p03_last_r0",
+            "optical_3bin_0p003_all_r1",
+            "optical_1bin_0p003_last_r1",
+            "optical_3bin_0p003_last_r1",
+            "optical_1bin_0p03_last_r0",
+            "optical_2bin_0p03_all_r1",
+            "optical_1bin_0p03_last_r1",
+            "optical_3bin_0p03_all_r1",
+            "optical_3bin_0p003_last_r0",
+            "optical_3bin_0p03_last_r0",
+            "optical_1bin_0p003_last_r0",
+            "optical_2bin_0p03_last_r1",
+            "optical_3bin_0p03_last_r1"
+          ],
+          "shots": 6656
+        }
+      ],
+      "executed_scope": "executed_full_gate_execution_of_declared_ladder"
+    },
+    {
+      "id": "dot_joint_instrument",
+      "title": "Quantum-dot overlap, pair memory and new joint instrument",
+      "canonical_paths": [
+        "quantum_dot_bridge/README.md",
+        "quantum_dot_bridge/qrsm_hom_followup/PROTOCOL.md",
+        "quantum_dot_bridge/qrsm_hom_followup/main/results.json"
+      ],
+      "question": "Which interference observations constrain a retained environment beyond equal individual photon marginals?",
+      "existing_evidence": "Earlier M1/.6 classical-memory example; now exact Gram-mode retained-memory instrument, bosonic checks and independently replayed30000 synthetic records. Passive models identical; controlled detection5.6% vs4.5% null.",
+      "existing_real_IBM": "None before campaign.",
+      "new_hardware_classification": "planned_full_gate_execution_of_small_emulator",
+      "planned_bundle": [
+        "quantum_dot_bridge/qrsm_hom_followup/hardware_bundle_v2/manifest.json",
+        "quantum_dot_bridge/qrsm_hom_followup/exploratory_design/hardware_bundle/manifest.json"
+      ],
+      "planned_circuit_selectors": [
+        "*"
+      ],
+      "new_hardware_status": "component_executed_full_study_not_replicated",
+      "job_ids": [
+        "dbqas3pabdes73fnu5n0",
+        "dbqb5e6jjaos73agvij0",
+        "dbqav0habdes73fnuaf0"
+      ],
+      "remaining_work": [
+        "No fitted real dot QRSM or general quantum-memory witness. Known interventions/parameters, nuisance flags6.6/6.55%, and weak64-pair test retained. Design/power followup active separately."
+      ],
+      "priority": "high",
+      "completed_evidence": [
+        {
+          "job_id": "dbqas3pabdes73fnu5n0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/dots_plain_v1/raw.json",
+          "circuits": [
+            "passive_coherent_Z",
+            "controlled_two_coherent_Y",
+            "controlled_one_coherent_Z",
+            "controlled_two_coherent_X",
+            "frozen_pair_p0.5",
+            "frozen_pair_p0",
+            "frozen_pair_p0.02",
+            "controlled_two_classical_Z",
+            "controlled_one_coherent_X",
+            "passive_classical_Z",
+            "controlled_one_classical_Z",
+            "frozen_pair_p0.1",
+            "controlled_one_coherent_Y",
+            "controlled_two_coherent_Z"
+          ],
+          "shots": 57344
+        },
+        {
+          "job_id": "dbqb5e6jjaos73agvij0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/dots_selected_plain_v1/raw.json",
+          "circuits": [
+            "selected_four_coherent",
+            "passive_four_classical",
+            "selected_four_classical",
+            "passive_four_coherent"
+          ],
+          "shots": 16384
+        },
+        {
+          "job_id": "dbqav0habdes73fnuaf0",
+          "backend": "ibm_marrakesh",
+          "raw_path": "hardware_campaign/runs/dots_suppressed_v1/raw.json",
+          "circuits": [
+            "passive_coherent_Z",
+            "controlled_two_coherent_Y",
+            "controlled_one_coherent_Z",
+            "controlled_two_coherent_X",
+            "frozen_pair_p0.5",
+            "frozen_pair_p0",
+            "frozen_pair_p0.02",
+            "controlled_two_classical_Z",
+            "controlled_one_coherent_X",
+            "passive_classical_Z",
+            "controlled_one_classical_Z",
+            "frozen_pair_p0.1",
+            "controlled_one_coherent_Y",
+            "controlled_two_coherent_Z"
+          ],
+          "shots": 57344
+        }
+      ],
+      "executed_scope": "executed_full_gate_execution_of_small_emulator"
+    },
+    {
+      "id": "external_count_compatibility",
+      "title": "External GaAs integrated counts and hBN g2 reference",
+      "canonical_paths": [
+        "external_data/gaas_qd5/DATA_USE.md",
+        "photon_reference/README.md"
+      ],
+      "question": "Are published observables compatible with the proposed measurement model?",
+      "existing_evidence": "Imported attributed experimental data; integrated GaAs singles become all-one bits; normalized hBN g2 is context.",
+      "existing_real_IBM": "External optical measurements are not IBM or team data.",
+      "new_hardware_classification": "external_data_classical_analysis_only",
+      "planned_bundle": null,
+      "planned_circuit_selectors": [],
+      "new_hardware_status": "not_in_current_bundles",
+      "job_ids": [],
+      "remaining_work": [
+        "Suitable time tags or calibrated aggregate-count forward model; cannot relabel fourfold coincidences as single-detector histories."
+      ],
+      "priority": "external_data",
+      "completed_evidence": []
+    },
+    {
+      "id": "external_hom_reanalysis",
+      "title": "External GaAs HOM conditional reanalysis",
+      "canonical_paths": [
+        "quantum_dot_bridge/hom_analysis/README.md",
+        "quantum_dot_bridge/hom_analysis/validation.json"
+      ],
+      "question": "What interference contrast follows under explicit normalization/calibration, and what is unidentified?",
+      "existing_evidence": "Six external histograms; contrasts0.8024/0.8258/0.7724 with conditional intervals, shared calibration and70 sensitivity variants.",
+      "existing_real_IBM": "Published optical experiment, not IBM or FGCU acquisition.",
+      "new_hardware_classification": "classical_external_reanalysis_not_hardware_replication",
+      "planned_bundle": null,
+      "planned_circuit_selectors": [],
+      "new_hardware_status": "not_in_current_bundles",
+      "job_ids": [],
+      "remaining_work": [
+        "Per-run normalization, time tags/repeats, polarization/routing and calibration; no unique microscopic cause or switching rate fit."
+      ],
+      "priority": "high_external",
+      "completed_evidence": []
+    },
+    {
+      "id": "industrial_transfer",
+      "title": "Physical sensor, semiconductor-source QA and lithography transfer",
+      "canonical_paths": [
+        "LASER_DIAGNOSTICS_ROADMAP.md",
+        "QUANTUM_PHOTOLITHOGRAPHY_ROADMAP.md",
+        "quantum_dot_bridge/README.md"
+      ],
+      "question": "Can a compatible additional measurement guide a real source/component/process decision?",
+      "existing_evidence": "Documented practical context and specific proposed semiconductor single-photon-source workflow.",
+      "existing_real_IBM": "No IBM circuit can establish physical optical/material transfer.",
+      "new_hardware_classification": "physical_inputs_required",
+      "planned_bundle": null,
+      "planned_circuit_selectors": [],
+      "new_hardware_status": "not_in_current_bundles",
+      "job_ids": [],
+      "remaining_work": [
+        "Select actual wavelength/measurand/tap/bandwidth; calibrated synchronized blinded interventions; material/process relation.193nmDUV,CO2drive,EUV and visible probes are distinct."
+      ],
+      "priority": "external_measurements",
+      "completed_evidence": []
+    }
+  ],
+  "reviewed_evidence_sha256": {
+    "RESEARCH_CONTINUATION_PLAN.md": "f459cfc713377583cf253f6e1bbe83e0bc346c0bac347f9646d666ebc5dcc9ba",
+    "RESEARCH_RESULTS.md": "c1babe8f588d3488dd9c38aca1c264be21f992eb7bff1ea1a82276fc1b279904",
+    "QUANTUM_PHOTOLITHOGRAPHY_ROADMAP.md": "e5723da2959979c74ea308c2483b6478e3eae792e1d02eadd99dd210de2a8dae",
+    "LASER_DIAGNOSTICS_ROADMAP.md": "407f376b41c9e3381fe3b6f6527282bd13f63172d822c88bec6e3146af17fe7c",
+    "LASER_SENSOR_RESEARCH_PLAN.md": "aa0d67df9088b8501cdcf983b4b291f27bf74a4bf448ba6f383d17cf77b57d30",
+    "research-validation/completion_audit.json": "21aa9b4fe5377ef5145a548c870139bfedef9e8037c58caaed8859e94b3b03c6",
+    "research-validation/completion_review.json": "004906b92942a98763660c34d4d9c3eb5c613058da42a771e90fcdc231b822cd",
+    "rewindandamplify-main/docs/REPORT.md": "22bb20d365666941591597204e70e27908b33e91c008000b6cf63fe4534ba671",
+    "rewindandamplify-main/qrsm_grover/model.py": "128207689429d05c6b9fe9a78a478884dfd51af83969ad5dbdc46cc69b12b11f",
+    "research-validation/hardware_verification.json": "4320db49880ab942fc524c43491b47ea697bec92b64dcb3c18ba04b44e06795a",
+    "research-validation/original_after_click_verification.json": "0db2be4bb4d6e1a6349383554c380d446c6ba4cac5112a710e8baef1e5b49481",
+    "rewindandamplify-main/qrsm_grover/predicates.py": "c02edaaad6c4207bcb62523b19f73368d93d50b773578ce3cbca6d22b8cfc602",
+    "rewindandamplify-main/prior_work/hidden_defects/README.md": "f59918d6a69c2926130d1874c9e1e262937aa7c58b2fc35c653a15c14aec7f4d",
+    "finals-lithography/README.md": "c671740d1e52498c7a0b17b9717481eb261bd5eec321335b5b5e8a0ecb5aa23f",
+    "finals-lithography/VIABILITY_COST_README.md": "2bcd88c05f7f7b376ce85ca5890fd3a1e1430a40f837695b3d1e4073b31cf697",
+    "finals-lithography/followup/README.md": "f0eb8cb8ca59316efcc3b2f2953c6e271ab14e47b4c7e815bbc56b25a3f3c903",
+    "finals-lithography/full_spatial_circuit/README.md": "e4cf82e75502e5b36952a0fd0e16910b2c68d17763f15536c44af8ef9f8f8f60",
+    "quantum_lithography_poc/README.md": "987caeeeab81b73bbb766f3bb2c9817cd25868223e6ca1de6cc37db2e07e0e57",
+    "quantum_lithography_poc/exposure_followup/README.md": "e73d3d0437d372fb7b741d174593cc993d83067429761d5736a2f8faf9eb83d3",
+    "quantum_lithography_poc/phase_inspection_followup/README.md": "51adb1ab3133d4be92bad651920d7e8c97f5d4ec1791511a1dcbecf4fbc78c8f",
+    "laser_sensor_poc/README.md": "0f54df5cabb39d3bc73a7c3c5fc2d40c25f666a4d61f1ebb85c842a9afdb9f23",
+    "laser_sensor_viability/README.md": "21fa3b86f8d2f6f9903b9fc312b748a85da0e79ce22cbd380e643239fabf5630",
+    "laser_sensor_viability/followup/README.md": "c445b3854af96d03a377e9dc58440c63d079465bb32eeb7af4ad4981fcf102a8",
+    "qrsm_photon_poc/README.md": "14e3b60b53f6581b78c2ec14a9642b21e116fcd1e6badb9d02b71d329c6301ce",
+    "qrsm_photon_poc/followup/README.md": "27a1f066d3875bbbfb2af882933edb79cf48d2df8a498231563506a9ac24cfb9",
+    "qrsm_photon_poc/diagnostics_baselines/README.md": "6402e6581a734c6042fdcf7698b0265f248d30a77fbe4b773258912c35f3e4cd",
+    "qrsm_photon_poc/drive_diagnostics_followup/README.md": "7160dd6c1577bb526d69e4554851158e6193d122e9bb7baf587192cf835ac523",
+    "qrsm_photon_poc/multibin_followup/README.md": "15120d8e6d161630475e0156b3f6c73a2372a96720d30799338e36e9b8f1be72",
+    "quantum_dot_bridge/README.md": "68b963e9b3c44397808023aaf333ceab28124c44f7c930e98912a5aedc431d22",
+    "quantum_dot_bridge/qrsm_hom_followup/PROTOCOL.md": "defed3a7f4c9f973f99bc360d4cb705287a009acde846cff5b7564d82a0bb994",
+    "quantum_dot_bridge/qrsm_hom_followup/main/results.json": "97473faba057d4f0624cb37b3c31d2355bcb0878e7425d64349b954ed12b65cd",
+    "external_data/gaas_qd5/DATA_USE.md": "53891bcf04f3b729e2da0d25d31657ff90b9d791fa64837f15b55ce19a04a6ff",
+    "photon_reference/README.md": "e3c1b3577ae18660934738ebe18a8f4cd413a3d45c6b79c2d5505bc19f5434c0",
+    "quantum_dot_bridge/hom_analysis/README.md": "b316f77cb49aa323220162d5962743c8d1ae13ba9fc5956d1396eaeccd4d0604",
+    "quantum_dot_bridge/hom_analysis/validation.json": "8a9db738bd5007c92a8cf134e3e40b27593e01d400ff55da7796dbc3363e1231"
+  },
+  "numbered_prior_roadmap_items": 22,
+  "prior_audit": "research-validation/completion_audit.json",
+  "remaining_local_research": [
+    "Slow spectral diffusion versus coherent-defect attribution",
+    "Thermal photons, multimode cavities and non-Markovian environments",
+    "Control/detuning optimization and stronger classical state-space methods",
+    "Joint phase/loss/dark-count inference and imperfect references",
+    "Learned time-varying reversible oracle and structure-aware synthesis",
+    "Noisy/adaptive rewind horizon, learned steering, conservation-based error detection",
+    "Broader rare-event proposal/dose/calibration robustness"
+  ],
+  "external_inputs": [
+    "Wavelength-compatible optical coupling, reference and detector calibration",
+    "Time-tagged/repeated synchronized sensor and strong-reference measurements",
+    "Blinded independent source/sensor/detector interventions",
+    "Measured material absorption/development/blur/damage and source-to-process transfer"
+  ],
+  "interpretation_rules": [
+    "Circuit-emulation success is not optical-device validation.",
+    "Component execution is not replication of an entire inference or materials study.",
+    "Classical analysis and published optical data remain separately attributed.",
+    "Record negative/inconclusive results and all actual budget exclusions.",
+    "Small model replacements do not stand in for the original49-cell construction."
+  ],
+  "extension_manifest_sha256": "beed7d9ccda390c3e4e3941bf5ee6a04cc0afac50a0d1e86d579845a96258c41",
+  "extension_independent_review": "hardware_campaign/extensions/independent_review.json",
+  "updated_utc": "2026-11-11T18:31:27.397732+00:00",
+  "completed_job_count": 10,
+  "new_campaign_qpu_seconds": 244
+}

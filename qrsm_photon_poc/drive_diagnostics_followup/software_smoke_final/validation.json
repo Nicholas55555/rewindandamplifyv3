@@ -1,0 +1,23 @@
+{
+  "all_checks_passed": true,
+  "source_manifest_matches": true,
+  "results_sha256": "22645a70b628bd8a84172fbcaed1996ac5f3b0e5e4559bfa4f69ea90b5e9feaa",
+  "review_source_sha256": "db189d9d2fa99c547d8ba74f12b59a9a25689fef5684cd179ce4a57a0b285824",
+  "artifact_sha256": {
+    "pipeline_0_raw.npz": "a0df56163402f9fd6331268a01e4c8b304116baf641939ed0435c3034b422ed8",
+    "pipeline_0.json": "e33f646f39b9a7a95c455b267a41182e2922b7f630aaa34624997d81acbd5654"
+  },
+  "pipeline_checks": [
+    {
+      "pipeline": 0,
+      "raw_hashes_thresholds_onsets_delay_estimation_and_detector_controls": "passed"
+    }
+  ],
+  "summary_metrics_recounted": true,
+  "unit_tests": {
+    "tests_run": 10,
+    "passed": true,
+    "output": "test_afterpulse_readout_is_cause_mixture (drive_diagnostics_test_model.ScheduleTests.test_afterpulse_readout_is_cause_mixture) ... ok\ntest_all_histories_normalize_for_latent_step_and_telegraph (drive_diagnostics_test_model.ScheduleTests.test_all_histories_normalize_for_latent_step_and_telegraph) ... ok\ntest_all_main_random_streams_have_unique_explicit_namespaces (drive_diagnostics_test_model.ScheduleTests.test_all_main_random_streams_have_unique_explicit_namespaces) ... ok\ntest_count_contrast_is_causal (drive_diagnostics_test_model.ScheduleTests.test_count_contrast_is_causal) ... ok\ntest_dead_time_blind_channel_and_forbidden_adjacent_bits (drive_diagnostics_test_model.ScheduleTests.test_dead_time_blind_channel_and_forbidden_adjacent_bits) ... ok\ntest_forward_matches_explicit_source_path_marginalization (drive_diagnostics_test_model.ScheduleTests.test_forward_matches_explicit_source_path_marginalization) ... ok\ntest_hmm_prefix_matches_bruteforce_paths (drive_diagnostics_test_model.ScheduleTests.test_hmm_prefix_matches_bruteforce_paths) ... ok\ntest_step_retains_physical_state_instead_of_resetting (drive_diagnostics_test_model.ScheduleTests.test_step_retains_physical_state_instead_of_resetting) ... ok\ntest_threshold_strict_ties_conservative (drive_diagnostics_test_model.ScheduleTests.test_threshold_strict_ties_conservative) ... ok\ntest_zero_drive_difference_has_identical_likelihood (drive_diagnostics_test_model.ScheduleTests.test_zero_drive_difference_has_identical_likelihood) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.080s\n\nOK\n"
+  },
+  "scope": "Independent recount from archived bits/scores plus exact unit tests; no refit or threshold changes. Bootstrap coverage and physical model correctness are not proved."
+}

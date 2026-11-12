@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "all_checks_passed": true,
+  "route": "Existing Python Playwright + installed system Chrome in an isolated headless profile, standalone file URL. Uses the previously verified local fallback; no user browser profile or account used.",
+  "route_note": "Previous QA found CUA IAB unavailable and bundled Chromium 138 lacked H.264 decoding. This revision uses installed Chrome directly; media bytes remain unchanged.",
+  "python": "3.12.10",
+  "chromium": "157.0.8103.39",
+  "checks": [
+    "All six frequency cases and both rules match frozen rates; task/false-alarm units visible",
+    "All 13 drive cases preserve eligible/null denominators, matched source-stable FAR and prior-only controls",
+    "All seven phase cases and both budgets show global error, branch errors, dose and time",
+    "Inference pairing and complete explicit circuit ledger visible",
+    "All four quantum-dot toy cases, four trap settings and six loss settings match frozen values; native keyboard selector works",
+    "All three external HOM pairs and both display windows retain raw counts, attribution and paper-reported labels; new extraction values/conditional intervals/protocol ranges match saved results",
+    "Original core controls unchanged; chapter arrows/Home/End and Ctrl+Home behave correctly; history link works",
+    "390x844 mobile: all five study views have no document horizontal overflow and readable HTML data",
+    "Reduced-motion preference disables historical autoplay-style controls; MP4s have no autoplay"
+  ],
+  "page_errors": [],
+  "network_requests": 0,
+  "videos": [
+    {
+      "id": "video-sensing",
+      "duration": 12,
+      "play_pause_seek": "passed"
+    },
+    {
+      "id": "video-quantum-extension",
+      "duration": 12,
+      "play_pause_seek": "passed"
+    }
+  ],
+  "screenshots": [
+    "preview-research-frequency.png",
+    "preview-research-drive.png",
+    "preview-research-phase.png",
+    "preview-research-progress.png",
+    "preview-research-dot.png",
+    "preview-research-dot-model.png",
+    "preview-research-dot-data.png",
+    "preview-research-frequency-mobile.png",
+    "preview-research-drive-mobile.png",
+    "preview-research-phase-mobile.png",
+    "preview-research-progress-mobile.png",
+    "preview-research-dot-mobile.png",
+    "preview-research-dot-model-mobile.png",
+    "preview-research-dot-data-mobile.png"
+  ],
+  "source_sha256": {
+    "index.html": "337c5cf82e2cf73eb9ae33c614ea67fe614e0bd79cc8feef6ac410d5f09487f6",
+    "app.js": "3074f27e3090f4172ff5b414bc55ff132846041c8bb61831f006f8d2689cdfca",
+    "research.js": "b5fae2647d64a414edb5fd508f682fe056bc8d856352dd92a8df1e8a48f5aade",
+    "quantum-dots.js": "334f778ec835d36cbe20d1f7f355a4564465f602f0d0e242da2446ad8a0802fa",
+    "styles.css": "2042284670c450c5c0b6150ffc31fc43b12e999a45691ebae305ac50201ed3a1",
+    "model.js": "089dd4e315936efedbb398c7bac6772ed0939f4b3cfa366deeb36cdeee2ab37f",
+    "data.js": "0a3054e717bfcc1f9457236f7d2a43abe606d45ee4130fb1b3f0ecdb6438e300",
+    "research-data.js": "72554ea8f8ec99287483d7812335757cd03a56c286a9eca0be3ff1734296be0f",
+    "check_browser.py": "ff55a9228eaf39d0050ce374b1a8986bc5b837c49b7d6b645f1b2b0c285d22d8"
+  },
+  "evidence_manifest_sha256": "c6a26a83d160f65c9dd7c1c03db8f7d97cc3abf3b67b5801b5f6dc31f4a12deb"
+}

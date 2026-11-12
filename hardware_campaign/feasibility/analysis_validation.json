@@ -1,0 +1,16 @@
+{
+  "schema": "hardware-analysis-delivery-verification-v1",
+  "all_checks_passed": true,
+  "jobs": 10,
+  "science_rows": 207,
+  "calibration_rows": 40,
+  "raw_shots_recounted": 688640,
+  "actual_qpu_seconds_reconciled": 244,
+  "event_predicates_recounted": 142,
+  "dot_history_and_conditional_memory_branches_recounted": 136,
+  "maximum_sparse_independent_tv_difference": 4.884981308350689e-15,
+  "summary_sha256": "3ab53e47a45bf0ec85629193e5eed54c006991868065e15524e94dc090830a85",
+  "report_sha256": "8adf8866f65ebbff0be71cf5094f5dd3214914775f666ef6ac013af64c5a362d",
+  "verifier_sha256": "9494a572ad5ef37026d27c8989faee984c1f62e1457d4d26a988b9e9f319314b",
+  "scope": "Source/artifact parity and independent sparse raw arithmetic. No service calls; no claim of independent experimental replication or full-state fidelity."
+}

@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "all_checks_passed": true,
+  "route": "Existing Python Playwright + installed system Chrome in an isolated headless profile, standalone file URL. CUA IAB unavailable and browser inventory empty; no user browser profile or account used.",
+  "route_note": "Initial bundled Chromium 138 lacked H.264 support (empty canPlayType); all final checks use installed Chrome. No media bytes were changed.",
+  "python": "3.12.10",
+  "chromium": "157.0.8103.39",
+  "checks": [
+    "All six frequency cases and both rules match frozen rates; task/false-alarm units visible",
+    "All 13 drive cases preserve eligible/null denominators, matched source-stable FAR and prior-only controls",
+    "All seven phase cases and both budgets show global error, branch errors, dose and time",
+    "Inference pairing and complete explicit circuit ledger visible",
+    "Original core controls unchanged; chapter arrows/Home/End and Ctrl+Home behave correctly; history link works",
+    "390x844 mobile: all four study views have no document horizontal overflow and readable HTML data",
+    "Reduced-motion preference disables historical autoplay-style controls; MP4s have no autoplay"
+  ],
+  "page_errors": [],
+  "network_requests": 0,
+  "videos": [
+    {
+      "id": "video-sensing",
+      "duration": 12,
+      "play_pause_seek": "passed"
+    },
+    {
+      "id": "video-quantum-extension",
+      "duration": 12,
+      "play_pause_seek": "passed"
+    }
+  ],
+  "screenshots": [
+    "preview-research-frequency.png",
+    "preview-research-drive.png",
+    "preview-research-phase.png",
+    "preview-research-progress.png",
+    "preview-research-frequency-mobile.png",
+    "preview-research-drive-mobile.png",
+    "preview-research-phase-mobile.png",
+    "preview-research-progress-mobile.png"
+  ],
+  "source_sha256": {
+    "index.html": "1b564deb021359f98234ce13d9f44b9d40cc3227e9f565f15b9eb67351cb2301",
+    "app.js": "3074f27e3090f4172ff5b414bc55ff132846041c8bb61831f006f8d2689cdfca",
+    "research.js": "e3eef2d289683aeb5c97cf3c5ed14c8273b6e40e354ea1a2aafb23f3b4a3da44",
+    "styles.css": "1f221c1e1adabd5e0c21a01666a4f00a1995e6cec9753ac42eda23ea6e22e2c3",
+    "model.js": "089dd4e315936efedbb398c7bac6772ed0939f4b3cfa366deeb36cdeee2ab37f",
+    "data.js": "0a3054e717bfcc1f9457236f7d2a43abe606d45ee4130fb1b3f0ecdb6438e300",
+    "research-data.js": "9a75b9a96d630941d6ecce145c8dda8defe103200183efab1a3cb953f7d3987d",
+    "check_browser.py": "536447b636abca9504a2986e8f69be5a7a6aed2afd6c226e1d07d556d08dab67"
+  },
+  "evidence_manifest_sha256": "39cddb6b17af48730894a87f73ba3863580cea47558ecdc560fbb9ddc20ae035",
+  "post_qa_document_refresh": {
+    "scope": "Final root documentation recopied after browser QA. All tested HTML, JS, CSS, numerical data and browser harness hashes remain identical.",
+    "previous_evidence_manifest_sha256": "6e3908acba02aafcf3b6e94652d16c27a536c5d226e7d304d6102d0ae5d8dd21",
+    "current_evidence_manifest_sha256": "39cddb6b17af48730894a87f73ba3863580cea47558ecdc560fbb9ddc20ae035",
+    "deterministic_import_twice": true,
+    "generated_files_compared": 33
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "cases": [
+    {
+      "kind": "ideal",
+      "cutoff": 0.03,
+      "file": "ideal_0p03.json",
+      "status": "completed",
+      "sha256": "666f5afb1f3e3fad6ca1d3a4d0a952efe0d561ad8bc4f393d5bd6e50e0343682"
+    },
+    {
+      "kind": "ideal",
+      "cutoff": 0.003,
+      "file": "ideal_0p003.json",
+      "status": "completed",
+      "sha256": "f335d05ee1051a4d9a36b4f062d955b92e7c04500e2b134837459c1034d32bcf"
+    },
+    {
+      "kind": "noise",
+      "cutoff": 0.03,
+      "file": "noise_0p03.json",
+      "status": "completed",
+      "sha256": "ea4be670a290f22cec1a4caecdc91f173f1175f9eb0cfc2a448c0905f49d4ff9"
+    },
+    {
+      "kind": "noise",
+      "cutoff": 0.003,
+      "file": "noise_0p003.json",
+      "status": "completed",
+      "sha256": "72f5b38e84e7490d1d8f82ef8d557655d961c9ec477e215d6784109706927249"
+    }
+  ],
+  "all_completed": true
+}

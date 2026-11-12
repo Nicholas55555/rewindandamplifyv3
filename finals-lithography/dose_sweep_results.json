@@ -1,0 +1,227 @@
+{
+  "model": "Synthetic spatial Poisson absorption, Gaussian blur and contact threshold",
+  "note": "Classical Monte Carlo, arbitrary dimensionless units; not a wafer measurement or quantum simulation.",
+  "doses": [
+    1.2,
+    1.35,
+    1.5,
+    1.65,
+    1.8
+  ],
+  "shots_per_method_per_repeat": 20000,
+  "independent_repeats_per_dose": 10,
+  "first_seed": 1000,
+  "proposal_multiplier": 0.6,
+  "rows": [
+    {
+      "dose_mean_per_cell": 1.2,
+      "direct": {
+        "mean_estimate": 0.055349999999999996,
+        "between_run_sd": 0.0021335937341073695,
+        "mean_estimate_se_from_repeats": 0.0006747015801242968,
+        "mean_within_run_se": 0.0016166290071587745,
+        "zero_failure_runs": 0,
+        "estimates": [
+          0.05805,
+          0.05395,
+          0.05395,
+          0.0544,
+          0.0537,
+          0.05995,
+          0.0563,
+          0.05345,
+          0.05495,
+          0.0548
+        ]
+      },
+      "importance": {
+        "mean_estimate": 0.0560599409981591,
+        "between_run_sd": 0.0016369263770744191,
+        "mean_estimate_se_from_repeats": 0.0005176415713562796,
+        "mean_within_run_se": 0.0017319540192340505,
+        "zero_failure_runs": 0,
+        "estimates": [
+          0.05487348515725991,
+          0.05692444526539219,
+          0.05558872634930235,
+          0.05452116100579547,
+          0.05712592037030898,
+          0.05385861864949364,
+          0.05481554983760359,
+          0.056101795748166844,
+          0.05907851695213082,
+          0.05771119064613719
+        ],
+        "median_event_weight_ess": 1027.845764808447
+      }
+    },
+    {
+      "dose_mean_per_cell": 1.35,
+      "direct": {
+        "mean_estimate": 0.017165000000000003,
+        "between_run_sd": 0.001268868699975604,
+        "mean_estimate_se_from_repeats": 0.0004012515143619746,
+        "mean_within_run_se": 0.0009178529046385154,
+        "zero_failure_runs": 0,
+        "estimates": [
+          0.0181,
+          0.01835,
+          0.0171,
+          0.01445,
+          0.01635,
+          0.0189,
+          0.01735,
+          0.01785,
+          0.0167,
+          0.0165
+        ]
+      },
+      "importance": {
+        "mean_estimate": 0.016461950377781122,
+        "between_run_sd": 0.00056362882978272,
+        "mean_estimate_se_from_repeats": 0.00017823508570487414,
+        "mean_within_run_se": 0.0006299359521490127,
+        "zero_failure_runs": 0,
+        "estimates": [
+          0.016706912239315294,
+          0.015671880168522598,
+          0.017059302031679994,
+          0.015496937249151188,
+          0.01646303494679011,
+          0.01601703360232993,
+          0.016439865530753724,
+          0.016819780304921126,
+          0.01711245734502287,
+          0.01683230035932436
+        ],
+        "median_event_weight_ess": 777.0814158887201
+      }
+    },
+    {
+      "dose_mean_per_cell": 1.5,
+      "direct": {
+        "mean_estimate": 0.004370000000000001,
+        "between_run_sd": 0.0003552776691859794,
+        "mean_estimate_se_from_repeats": 0.00011234866364235144,
+        "mean_within_run_se": 0.00046607679418769277,
+        "zero_failure_runs": 0,
+        "estimates": [
+          0.0049,
+          0.00385,
+          0.0043,
+          0.0044,
+          0.0039,
+          0.0047,
+          0.0041,
+          0.0047,
+          0.0046,
+          0.00425
+        ]
+      },
+      "importance": {
+        "mean_estimate": 0.004349867013981848,
+        "between_run_sd": 0.00033537119354559296,
+        "mean_estimate_se_from_repeats": 0.00010605368332132343,
+        "mean_within_run_se": 0.0002475821139557113,
+        "zero_failure_runs": 0,
+        "estimates": [
+          0.004665183265740501,
+          0.004596727330802796,
+          0.003855569749031435,
+          0.004675590469321318,
+          0.0038362488562718646,
+          0.004121836956488465,
+          0.004181322234573335,
+          0.004698593406944357,
+          0.004329955944952493,
+          0.004537641925691911
+        ],
+        "median_event_weight_ess": 395.40543867643
+      }
+    },
+    {
+      "dose_mean_per_cell": 1.65,
+      "direct": {
+        "mean_estimate": 0.0009350000000000001,
+        "between_run_sd": 0.00024500566886865655,
+        "mean_estimate_se_from_repeats": 7.74775953277964e-05,
+        "mean_within_run_se": 0.00021438039114520172,
+        "zero_failure_runs": 0,
+        "estimates": [
+          0.00125,
+          0.0012,
+          0.00055,
+          0.0007,
+          0.00095,
+          0.00085,
+          0.0009,
+          0.0007,
+          0.00125,
+          0.001
+        ]
+      },
+      "importance": {
+        "mean_estimate": 0.0009514391524147049,
+        "between_run_sd": 6.562076367349472e-05,
+        "mean_estimate_se_from_repeats": 2.0751107500788106e-05,
+        "mean_within_run_se": 5.851111065439993e-05,
+        "zero_failure_runs": 0,
+        "estimates": [
+          0.0009443561311515792,
+          0.0010115149587395602,
+          0.0008348509002214509,
+          0.0009374249265640419,
+          0.0009876498070207746,
+          0.0010197442919939916,
+          0.0009712447570171055,
+          0.0008522247961967466,
+          0.0009345891281591479,
+          0.0010207918270826503
+        ],
+        "median_event_weight_ess": 250.0896266769712
+      }
+    },
+    {
+      "dose_mean_per_cell": 1.8,
+      "direct": {
+        "mean_estimate": 0.00016,
+        "between_run_sd": 0.00010219806477837262,
+        "mean_estimate_se_from_repeats": 3.231786571610886e-05,
+        "mean_within_run_se": 8.497499842096072e-05,
+        "zero_failure_runs": 0,
+        "estimates": [
+          0.00025,
+          0.00015,
+          5e-05,
+          0.00035,
+          0.0002,
+          0.00025,
+          5e-05,
+          5e-05,
+          0.00015,
+          0.0001
+        ]
+      },
+      "importance": {
+        "mean_estimate": 0.00019770239509376745,
+        "between_run_sd": 2.3329080378711296e-05,
+        "mean_estimate_se_from_repeats": 7.37730297138712e-06,
+        "mean_within_run_se": 2.2454299224575983e-05,
+        "zero_failure_runs": 0,
+        "estimates": [
+          0.00023701398132940934,
+          0.00021002527953428404,
+          0.00017163127979852977,
+          0.00023092802191299037,
+          0.00016678014439588877,
+          0.00018017184907853013,
+          0.00019136381668396113,
+          0.00019301610012106466,
+          0.00020480812144937902,
+          0.00019128535663363733
+        ],
+        "median_event_weight_ess": 108.75115299785736
+      }
+    }
+  ]
+}

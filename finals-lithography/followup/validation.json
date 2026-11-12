@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "executed_utc": "2026-11-11T04:43:55.952255+00:00",
+  "behavioral_tests_run": 17,
+  "failures": 0,
+  "errors": 0,
+  "saved_artifact_checks": [
+    "all actual numerical source hashes match",
+    "six ideal amplification cases match formulas and conditional law",
+    "nine complete bounded density cases normalized; zero-noise matches ideal",
+    "default coverage numerical results identical before/after optional-argument fix",
+    "refined deterministic reference brackets and independent FFT checks",
+    "held-out run counts and pilot budgets",
+    "PNG signatures"
+  ],
+  "visual_review": "Both actual-result PNGs inspected; spacing adjusted for coverage labels.",
+  "limitations": [
+    "No cloud, QPU, wafer, or calibrated photonic device tested.",
+    "Longdouble may equal float64 precision on Windows; independent FFT check is separate.",
+    "Reference bounds evaluated in floating point, not certified interval arithmetic."
+  ]
+}

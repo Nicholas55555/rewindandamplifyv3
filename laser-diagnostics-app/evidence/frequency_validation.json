@@ -1,0 +1,332 @@
+{
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "check": "source_hash",
+      "path": "followup\\protocol.json",
+      "passed": true
+    },
+    {
+      "check": "source_hash",
+      "path": "followup\\run_followup.py",
+      "passed": true
+    },
+    {
+      "check": "source_hash",
+      "path": "model.py",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_nominal_sessions",
+      "method": "power_only",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_nominal_sessions",
+      "method": "classical",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_nominal_sessions",
+      "method": "quantum",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_nominal_sessions",
+      "method": "classical_quantum",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_nominal_sessions",
+      "method": "two_classical",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_nominal_sessions",
+      "method": "classical_quantum_agreement",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_nominal_sessions",
+      "method": "two_classical_agreement",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_short_coherence",
+      "method": "power_only",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_short_coherence",
+      "method": "classical",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_short_coherence",
+      "method": "quantum",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_short_coherence",
+      "method": "classical_quantum",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_short_coherence",
+      "method": "two_classical",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_short_coherence",
+      "method": "classical_quantum_agreement",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "unseen_short_coherence",
+      "method": "two_classical_agreement",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "atomic_reference_changes",
+      "method": "power_only",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "atomic_reference_changes",
+      "method": "classical",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "atomic_reference_changes",
+      "method": "quantum",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "atomic_reference_changes",
+      "method": "classical_quantum",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "atomic_reference_changes",
+      "method": "two_classical",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "atomic_reference_changes",
+      "method": "classical_quantum_agreement",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "atomic_reference_changes",
+      "method": "two_classical_agreement",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "primary_reference_changes",
+      "method": "power_only",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "primary_reference_changes",
+      "method": "classical",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "primary_reference_changes",
+      "method": "quantum",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "primary_reference_changes",
+      "method": "classical_quantum",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "primary_reference_changes",
+      "method": "two_classical",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "primary_reference_changes",
+      "method": "classical_quantum_agreement",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "primary_reference_changes",
+      "method": "two_classical_agreement",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "common_sampled_path_changes",
+      "method": "power_only",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "common_sampled_path_changes",
+      "method": "classical",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "common_sampled_path_changes",
+      "method": "quantum",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "common_sampled_path_changes",
+      "method": "classical_quantum",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "common_sampled_path_changes",
+      "method": "two_classical",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "common_sampled_path_changes",
+      "method": "classical_quantum_agreement",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "common_sampled_path_changes",
+      "method": "two_classical_agreement",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "source_power_changes_only_in_null",
+      "method": "power_only",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "source_power_changes_only_in_null",
+      "method": "classical",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "source_power_changes_only_in_null",
+      "method": "quantum",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "source_power_changes_only_in_null",
+      "method": "classical_quantum",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "source_power_changes_only_in_null",
+      "method": "two_classical",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "source_power_changes_only_in_null",
+      "method": "classical_quantum_agreement",
+      "passed": true
+    },
+    {
+      "check": "independent_outcome_recount",
+      "scenario": "source_power_changes_only_in_null",
+      "method": "two_classical_agreement",
+      "passed": true
+    }
+  ],
+  "records_per_class_per_scenario": 1920,
+  "bootstrap_boundary_supplement": [
+    {
+      "scenario": "unseen_short_coherence",
+      "method": "two_classical",
+      "metric": "no_alarm",
+      "observed": 0.0,
+      "independent_pipeline_count": 8,
+      "hoeffding_ci95": [
+        0.0,
+        0.48016139565996035
+      ],
+      "note": "Conservative distribution-free bounded-mean interval using independent pipeline averages; bootstrap degeneracy is not zero uncertainty."
+    },
+    {
+      "scenario": "common_sampled_path_changes",
+      "method": "two_classical",
+      "metric": "false_alarm_rate",
+      "observed": 1.0,
+      "independent_pipeline_count": 8,
+      "hoeffding_ci95": [
+        0.5198386043400396,
+        1.0
+      ],
+      "note": "Conservative distribution-free bounded-mean interval using independent pipeline averages; bootstrap degeneracy is not zero uncertainty."
+    },
+    {
+      "scenario": "source_power_changes_only_in_null",
+      "method": "power_only",
+      "metric": "false_alarm_rate",
+      "observed": 1.0,
+      "independent_pipeline_count": 8,
+      "hoeffding_ci95": [
+        0.5198386043400396,
+        1.0
+      ],
+      "note": "Conservative distribution-free bounded-mean interval using independent pipeline averages; bootstrap degeneracy is not zero uncertainty."
+    },
+    {
+      "scenario": "source_power_changes_only_in_null",
+      "method": "power_only",
+      "metric": "no_alarm",
+      "observed": 0.0,
+      "independent_pipeline_count": 8,
+      "hoeffding_ci95": [
+        0.0,
+        0.48016139565996035
+      ],
+      "note": "Conservative distribution-free bounded-mean interval using independent pipeline averages; bootstrap degeneracy is not zero uncertainty."
+    }
+  ],
+  "hoeffding_scope": "Independent calibration-pipeline means are bounded[0,1]; P(|samplemean-populationmean|>r)<=2exp(-2*R*r^2). Assumes independent identical simulated pipeline populations; does not validate physical model.",
+  "runtime": {
+    "python": "3.12.10",
+    "numpy": "2.3.1",
+    "matplotlib": "3.10.3"
+  },
+  "result_sha256": "c9c1821e404af0fb74c384ba82cfadb38d49be5a3d15fb8a0cfb7a9a1e445da9",
+  "outcomes_sha256": "896dddb923f9af204ba5809d35941981dcdd5a208fc831fae564756109102193",
+  "validator_sha256": "f167152d425162bce51b9b75086d89c3a0a25528b3fb7d38243c32f871037777"
+}

@@ -1,0 +1,113 @@
+{
+  "schema": "qrsm-hom-independent-main-review-v1",
+  "created_utc": "2026-11-11T18:04:16.475208+00:00",
+  "all_checks_passed": true,
+  "reviewer": "Separate optical-controls/audit agent; no author inference functions imported in replay",
+  "checks": [
+    "independent detector calibration draws and estimates",
+    "all30000 training/null/heldout records reproduced with independent matrix-update sampler",
+    "all24000 heldout likelihood ratios independently recomputed",
+    "both strict record-level thresholds and12flag counts/Wilson intervals recounted",
+    "all12 predictive score arrays replayed from saved physical/HMM/Markov models",
+    "selected HMM training scores and training-only start selection checked",
+    "31 distinct RNG namespaces checked",
+    "source/record/provenance hashes checked",
+    "19focused tests passed independently before main"
+  ],
+  "heldout_records_replayed": 24000,
+  "all_records_regenerated": 30000,
+  "rng_namespaces_checked": 31,
+  "maximum_numeric_discrepancy": 5.684341886080802e-14,
+  "maximum_independent_bosonic_instrument_error": 2.2264368478546093e-16,
+  "regimes": [
+    {
+      "regime": "passive",
+      "independent_threshold": 0.0,
+      "cases": [
+        {
+          "case": "coherent_nominal",
+          "independently_recounted_flags": 0,
+          "records": 2000
+        },
+        {
+          "case": "classical_nominal",
+          "independently_recounted_flags": 0,
+          "records": 2000
+        },
+        {
+          "case": "classical_readout_shift",
+          "independently_recounted_flags": 0,
+          "records": 2000
+        },
+        {
+          "case": "classical_loss_shift",
+          "independently_recounted_flags": 0,
+          "records": 2000
+        },
+        {
+          "case": "classical_mode_mismatch",
+          "independently_recounted_flags": 0,
+          "records": 2000
+        },
+        {
+          "case": "coherent_partial_dephasing",
+          "independently_recounted_flags": 0,
+          "records": 2000
+        }
+      ]
+    },
+    {
+      "regime": "controlled",
+      "independent_threshold": 0.1288183496978732,
+      "cases": [
+        {
+          "case": "coherent_nominal",
+          "independently_recounted_flags": 112,
+          "records": 2000
+        },
+        {
+          "case": "classical_nominal",
+          "independently_recounted_flags": 90,
+          "records": 2000
+        },
+        {
+          "case": "classical_readout_shift",
+          "independently_recounted_flags": 132,
+          "records": 2000
+        },
+        {
+          "case": "classical_loss_shift",
+          "independently_recounted_flags": 0,
+          "records": 2000
+        },
+        {
+          "case": "classical_mode_mismatch",
+          "independently_recounted_flags": 131,
+          "records": 2000
+        },
+        {
+          "case": "coherent_partial_dephasing",
+          "independently_recounted_flags": 102,
+          "records": 2000
+        }
+      ]
+    }
+  ],
+  "artifact_sha256": {
+    "results.json": "97473faba057d4f0624cb37b3c31d2355bcb0878e7425d64349b954ed12b65cd",
+    "records.npz": "049eca680e4772700d3e571b8de8e2cb5908f7c8eee62fc469557ef60ba68213",
+    "run_provenance.json": "63d0f57342b6e29ca5601780b284e30c73a21a817246f883f544b74a22c0ae34"
+  },
+  "reviewed_source_sha256": {
+    "physical_model.py": "36fa729ad3b0bed6d4eac4836cc7985cda97e3abd7cca96e6963e2adcd54cf98",
+    "circuits.py": "bdd2058e1478170fd990ca91f68e47c108adbe87b291d3d3bee6ad4d5eb045cd",
+    "inference.py": "a7fb1522f5051592496582f5abcec0ef4b52efebf364789e86675d67b049d0c9",
+    "run_research.py": "a5978cdb0c8f9229c610083eca5a00a13332fcd94df86068181d6d102d4b6afa",
+    "PROTOCOL.md": "defed3a7f4c9f973f99bc360d4cb705287a009acde846cff5b7564d82a0bb994",
+    "INFERENCE_NUMERICS.md": "e82ac17c4699602d6e7202ee14acfb33a0a820b53d78c91c87c2d475346bc979",
+    "test_physical.py": "44a79d0d402d1005aaadb2fec976632fa01f117692b2548474fc2ce3c13268b9",
+    "test_inference.py": "cfe2dadddc16f504af1c96edf11117d5d379dbda48841502e5aec3c23af6dd15"
+  },
+  "scope": "Conditional synthetic hypothesis/model checks, not physical quantum-dot validation. Passive law is identical; controlled discrimination is weak. Nuisance flags are not coherent-memory discoveries. HMM/physical prediction intervals condition on one calibration/training realization.",
+  "minor_note": "Passive context-HMM parameter count is the maximum3-context parameterization; only context0 is observed, so not all reported parameters are identified."
+}

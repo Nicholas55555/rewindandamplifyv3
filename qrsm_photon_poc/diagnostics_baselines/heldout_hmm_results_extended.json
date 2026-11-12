@@ -1,0 +1,1815 @@
+{
+  "data": {
+    "path": "C:\\Users\\nicho\\Downloads\\RewindandAmplifyV2codex\\qrsm_photon_poc\\synthetic_click_records.csv",
+    "sha256": "b29638d52b6085a2477899fee0effbc7525eada9f32994af4c6ee33ab969486d",
+    "records": 600,
+    "bins_per_record": 40,
+    "train_records": 420,
+    "heldout_records": 180,
+    "split": "first 70% train, final 30% held out; no held-out selection",
+    "origin": "synthetic records from the same known physical model family"
+  },
+  "physical_model": {
+    "fitted_parameter": "g_defect",
+    "fitted_g": 0.65,
+    "grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.15000000000000002,
+      0.2,
+      0.25,
+      0.30000000000000004,
+      0.35000000000000003,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6000000000000001,
+      0.65,
+      0.7000000000000001,
+      0.75,
+      0.8,
+      0.8500000000000001,
+      0.9,
+      0.9500000000000001,
+      1.0,
+      1.05,
+      1.1,
+      1.1500000000000001,
+      1.2000000000000002,
+      1.25
+    ],
+    "other_parameters": "fixed to synthetic generator values",
+    "training_total_log_likelihood": -8380.477676842058
+  },
+  "iid_train_click_rate": 0.20363095238095238,
+  "markov_initial": [
+    0.9715639810426541,
+    0.02843601895734597
+  ],
+  "markov_transition": [
+    [
+      0.7862179978537482,
+      0.21378200214625173
+    ],
+    [
+      0.8133612941881366,
+      0.1866387058118634
+    ]
+  ],
+  "hmm_training": {
+    "starts_per_model": 12,
+    "max_iterations": 1200,
+    "seed_base": 90210,
+    "convergence_tolerance_nats_per_training_record": 1e-07,
+    "fitted_parameters": {
+      "2_state": 5,
+      "3_state": 11
+    },
+    "selected_by": "maximum training likelihood",
+    "models": {
+      "hmm_2_state": {
+        "initial": [
+          0.00010728572827222668,
+          0.9998927142717278
+        ],
+        "transition": [
+          [
+            0.9999845594054911,
+            1.544059450885837e-05
+          ],
+          [
+            0.4809115865064408,
+            0.5190884134935593
+          ]
+        ],
+        "emissions": [
+          0.21342552596948308,
+          0.025096534542292853
+        ],
+        "train_log_likelihood": -8405.554387724878,
+        "selected_start": 6,
+        "converged": true,
+        "iterations": 402,
+        "starts": [
+          {
+            "start": 0,
+            "train_log_likelihood": -8425.036647273193,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 1,
+            "train_log_likelihood": -8405.590894441619,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 2,
+            "train_log_likelihood": -8423.979314878019,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 3,
+            "train_log_likelihood": -8405.554491108953,
+            "iterations": 673,
+            "converged": true,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 4,
+            "train_log_likelihood": -8405.554470866431,
+            "iterations": 980,
+            "converged": true,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 5,
+            "train_log_likelihood": -8405.554478144,
+            "iterations": 856,
+            "converged": true,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 6,
+            "train_log_likelihood": -8405.554387724878,
+            "iterations": 402,
+            "converged": true,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 7,
+            "train_log_likelihood": -8405.55448361422,
+            "iterations": 875,
+            "converged": true,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 8,
+            "train_log_likelihood": -8424.144689556142,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 9,
+            "train_log_likelihood": -8426.191906990898,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 10,
+            "train_log_likelihood": -8426.321762204741,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 11,
+            "train_log_likelihood": -8424.20312426784,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          }
+        ]
+      },
+      "hmm_3_state": {
+        "initial": [
+          2.705543802539115e-15,
+          0.9999631576654573,
+          3.684233453996959e-05
+        ],
+        "transition": [
+          [
+            0.4325863939882158,
+            0.00732183202962001,
+            0.560091773982164
+          ],
+          [
+            0.24528063855026316,
+            0.6760432838102893,
+            0.07867607763944755
+          ],
+          [
+            0.28373890579044403,
+            0.46833687755092407,
+            0.24792421665863196
+          ]
+        ],
+        "emissions": [
+          4.489861768686065e-06,
+          0.027322775567046678,
+          0.7298119661957577
+        ],
+        "train_log_likelihood": -8386.774320396838,
+        "selected_start": 1,
+        "converged": true,
+        "iterations": 1193,
+        "starts": [
+          {
+            "start": 0,
+            "train_log_likelihood": -8399.787889797155,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 1,
+            "train_log_likelihood": -8386.774320396838,
+            "iterations": 1193,
+            "converged": true,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 2,
+            "train_log_likelihood": -8388.02434968535,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 3,
+            "train_log_likelihood": -8390.167166712614,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 4,
+            "train_log_likelihood": -8386.849396164582,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 5,
+            "train_log_likelihood": -8390.050377112319,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 6,
+            "train_log_likelihood": -8387.096440018642,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 7,
+            "train_log_likelihood": -8387.53778886119,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 8,
+            "train_log_likelihood": -8387.448022781657,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 9,
+            "train_log_likelihood": -8387.281316829203,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 10,
+            "train_log_likelihood": -8387.143896132495,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 11,
+            "train_log_likelihood": -8386.971471371611,
+            "iterations": 1200,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "heldout_total_log_likelihoods": {
+    "physical_fixed_nuisance": -3549.0221886567597,
+    "bernoulli_iid": -3605.9189386169164,
+    "markov_1": -3576.4503452575045,
+    "hmm_2_state": -3564.9356421457296,
+    "hmm_3_state": -3554.7144251255677
+  },
+  "paired_physical_minus_baselines": {
+    "bernoulli_iid": {
+      "total_delta_nats": 56.8967499601557,
+      "mean_delta_nats_per_record": 0.31609305533419835,
+      "standard_error_nats_per_record": 0.04176998138852504,
+      "bootstrap_95_percentile_nats_per_record": [
+        0.23407685999633418,
+        0.3960985932610719
+      ],
+      "positive_record_fraction": 0.8055555555555556,
+      "n_heldout_records": 180,
+      "bootstrap_replicates": 5000,
+      "bootstrap_seed": 271828
+    },
+    "markov_1": {
+      "total_delta_nats": 27.428156600744636,
+      "mean_delta_nats_per_record": 0.15237864778191465,
+      "standard_error_nats_per_record": 0.028491249132394373,
+      "bootstrap_95_percentile_nats_per_record": [
+        0.09487985845313969,
+        0.20661291608588717
+      ],
+      "positive_record_fraction": 0.7555555555555555,
+      "n_heldout_records": 180,
+      "bootstrap_replicates": 5000,
+      "bootstrap_seed": 271828
+    },
+    "hmm_2_state": {
+      "total_delta_nats": 15.913453488969866,
+      "mean_delta_nats_per_record": 0.08840807493872148,
+      "standard_error_nats_per_record": 0.029202592735096365,
+      "bootstrap_95_percentile_nats_per_record": [
+        0.03079851995275942,
+        0.1452304154511856
+      ],
+      "positive_record_fraction": 0.6111111111111112,
+      "n_heldout_records": 180,
+      "bootstrap_replicates": 5000,
+      "bootstrap_seed": 271828
+    },
+    "hmm_3_state": {
+      "total_delta_nats": 5.69223646880763,
+      "mean_delta_nats_per_record": 0.03162353593782017,
+      "standard_error_nats_per_record": 0.015896931054101615,
+      "bootstrap_95_percentile_nats_per_record": [
+        0.000960633202307987,
+        0.06326970143481594
+      ],
+      "positive_record_fraction": 0.5888888888888889,
+      "n_heldout_records": 180,
+      "bootstrap_replicates": 5000,
+      "bootstrap_seed": 271828
+    }
+  },
+  "per_record_log_likelihoods": [
+    {
+      "sequence_index": 420,
+      "physical_fixed_nuisance": -16.62142884424038,
+      "bernoulli_iid": -17.290223361685324,
+      "markov_1": -17.019189873144462,
+      "hmm_2_state": -17.199391046426875,
+      "hmm_3_state": -16.764023301992474
+    },
+    {
+      "sequence_index": 421,
+      "physical_fixed_nuisance": -13.236778340223262,
+      "bernoulli_iid": -13.198963139197282,
+      "markov_1": -13.214181907689355,
+      "hmm_2_state": -13.002154064182822,
+      "hmm_3_state": -13.2785331026516
+    },
+    {
+      "sequence_index": 422,
+      "physical_fixed_nuisance": -17.202440309849962,
+      "bernoulli_iid": -17.290223361685324,
+      "markov_1": -17.358636718945785,
+      "hmm_2_state": -17.025129447613885,
+      "hmm_3_state": -17.411864965929496
+    },
+    {
+      "sequence_index": 423,
+      "physical_fixed_nuisance": -20.732950180163257,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -21.163644684400893,
+      "hmm_2_state": -20.999171220233137,
+      "hmm_3_state": -20.897470578494183
+    },
+    {
+      "sequence_index": 424,
+      "physical_fixed_nuisance": -18.49732103267068,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.626972707430824,
+      "hmm_2_state": -18.290425502285263,
+      "hmm_3_state": -18.37217705291564
+    },
+    {
+      "sequence_index": 425,
+      "physical_fixed_nuisance": -21.66686159389512,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.262257249985268,
+      "hmm_2_state": -22.60902161328987,
+      "hmm_3_state": -21.940910670432373
+    },
+    {
+      "sequence_index": 426,
+      "physical_fixed_nuisance": -18.986720404319268,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.555861850114535,
+      "hmm_2_state": -19.53554710870368,
+      "hmm_3_state": -19.143839498314026
+    },
+    {
+      "sequence_index": 427,
+      "physical_fixed_nuisance": -16.754574101653862,
+      "bernoulli_iid": -17.290223361685328,
+      "markov_1": -17.019189873144462,
+      "hmm_2_state": -17.020700817432786,
+      "hmm_3_state": -16.758845158004206
+    },
+    {
+      "sequence_index": 428,
+      "physical_fixed_nuisance": -16.469181695807258,
+      "bernoulli_iid": -17.290223361685324,
+      "markov_1": -17.019189873144466,
+      "hmm_2_state": -16.94270561972135,
+      "hmm_3_state": -16.6452436847865
+    },
+    {
+      "sequence_index": 429,
+      "physical_fixed_nuisance": -19.708736792089443,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.89530869591586,
+      "hmm_2_state": -19.54229782916302,
+      "hmm_3_state": -19.559330920159
+    },
+    {
+      "sequence_index": 430,
+      "physical_fixed_nuisance": -18.294463913298692,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.45724928453016,
+      "hmm_2_state": -18.287335385829564,
+      "hmm_3_state": -18.365240814922632
+    },
+    {
+      "sequence_index": 431,
+      "physical_fixed_nuisance": -14.869554881828362,
+      "bernoulli_iid": -14.562716546693297,
+      "markov_1": -14.482517896174393,
+      "hmm_2_state": -14.776111201974356,
+      "hmm_3_state": -15.135772100070243
+    },
+    {
+      "sequence_index": 432,
+      "physical_fixed_nuisance": -18.497556368862362,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.2875258616295,
+      "hmm_2_state": -18.713188045311707,
+      "hmm_3_state": -18.603029941439647
+    },
+    {
+      "sequence_index": 433,
+      "physical_fixed_nuisance": -18.229073435937217,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.321467163824384,
+      "hmm_2_state": -18.288938731597696,
+      "hmm_3_state": -18.308419291361812
+    },
+    {
+      "sequence_index": 434,
+      "physical_fixed_nuisance": -28.22011999207444,
+      "bernoulli_iid": -28.200250621653442,
+      "markov_1": -28.35394174132938,
+      "hmm_2_state": -27.46302659797094,
+      "hmm_3_state": -28.018550346152033
+    },
+    {
+      "sequence_index": 435,
+      "physical_fixed_nuisance": -16.920674795877435,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.954518609754974,
+      "hmm_2_state": -16.490348263263876,
+      "hmm_3_state": -17.18005588982881
+    },
+    {
+      "sequence_index": 436,
+      "physical_fixed_nuisance": -15.32383557971924,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.750853884659426,
+      "hmm_2_state": -15.716167655244067,
+      "hmm_3_state": -15.453932202570364
+    },
+    {
+      "sequence_index": 437,
+      "physical_fixed_nuisance": -21.95504296978076,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.431980672885928,
+      "hmm_2_state": -22.30191412908787,
+      "hmm_3_state": -22.149956830899534
+    },
+    {
+      "sequence_index": 438,
+      "physical_fixed_nuisance": -22.097485482840497,
+      "bernoulli_iid": -22.745236991669387,
+      "markov_1": -22.431980672885928,
+      "hmm_2_state": -22.30366466088153,
+      "hmm_3_state": -22.115471068400815
+    },
+    {
+      "sequence_index": 439,
+      "physical_fixed_nuisance": -22.211947698316557,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.77142751868725,
+      "hmm_2_state": -22.238403990830673,
+      "hmm_3_state": -22.41062715949717
+    },
+    {
+      "sequence_index": 440,
+      "physical_fixed_nuisance": -19.17478056716259,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.725585273015195,
+      "hmm_2_state": -19.631367655876677,
+      "hmm_3_state": -19.20185096263496
+    },
+    {
+      "sequence_index": 441,
+      "physical_fixed_nuisance": -15.573718825707115,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.75085388465943,
+      "hmm_2_state": -15.71611422015754,
+      "hmm_3_state": -15.716380307214063
+    },
+    {
+      "sequence_index": 442,
+      "physical_fixed_nuisance": -23.479846870242675,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.601704095786587,
+      "hmm_2_state": -23.006387225672047,
+      "hmm_3_state": -23.662430298464653
+    },
+    {
+      "sequence_index": 443,
+      "physical_fixed_nuisance": -22.564031980702918,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.635645397981477,
+      "hmm_2_state": -22.304862070592414,
+      "hmm_3_state": -22.199506855024353
+    },
+    {
+      "sequence_index": 444,
+      "physical_fixed_nuisance": -21.931533774292916,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.465921975080814,
+      "hmm_2_state": -22.613026874924522,
+      "hmm_3_state": -22.21754538896613
+    },
+    {
+      "sequence_index": 445,
+      "physical_fixed_nuisance": -13.107052824035998,
+      "bernoulli_iid": -13.198963139197282,
+      "markov_1": -13.214181907689357,
+      "hmm_2_state": -13.029064041885839,
+      "hmm_3_state": -13.221004246656607
+    },
+    {
+      "sequence_index": 446,
+      "physical_fixed_nuisance": -16.717776365611265,
+      "bernoulli_iid": -17.290223361685328,
+      "markov_1": -17.019189873144462,
+      "hmm_2_state": -17.192162478496336,
+      "hmm_3_state": -16.886390078149088
+    },
+    {
+      "sequence_index": 447,
+      "physical_fixed_nuisance": -15.490554345179742,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.750853884659428,
+      "hmm_2_state": -15.716890520997264,
+      "hmm_3_state": -15.389444267096113
+    },
+    {
+      "sequence_index": 448,
+      "physical_fixed_nuisance": -20.645209079634274,
+      "bernoulli_iid": -21.38148358417337,
+      "markov_1": -21.19758598659578,
+      "hmm_2_state": -20.896247969006712,
+      "hmm_3_state": -20.67787696937777
+    },
+    {
+      "sequence_index": 449,
+      "physical_fixed_nuisance": -19.84885157546848,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.7255852730152,
+      "hmm_2_state": -20.009556730539032,
+      "hmm_3_state": -19.973065271261795
+    },
+    {
+      "sequence_index": 450,
+      "physical_fixed_nuisance": -14.741677192072983,
+      "bernoulli_iid": -14.562716546693297,
+      "markov_1": -14.652241319075051,
+      "hmm_2_state": -14.306784685719967,
+      "hmm_3_state": -14.645282975945616
+    },
+    {
+      "sequence_index": 451,
+      "physical_fixed_nuisance": -21.051249346354307,
+      "bernoulli_iid": -21.38148358417337,
+      "markov_1": -21.163644684400893,
+      "hmm_2_state": -21.29922800613425,
+      "hmm_3_state": -21.29337959908372
+    },
+    {
+      "sequence_index": 452,
+      "physical_fixed_nuisance": -25.172416080504533,
+      "bernoulli_iid": -25.472743806661413,
+      "markov_1": -25.172317374951547,
+      "hmm_2_state": -25.21558869187012,
+      "hmm_3_state": -25.23962157943942
+    },
+    {
+      "sequence_index": 453,
+      "physical_fixed_nuisance": -22.558416035097213,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.60170409578659,
+      "hmm_2_state": -22.42200049375107,
+      "hmm_3_state": -22.743704609257556
+    },
+    {
+      "sequence_index": 454,
+      "physical_fixed_nuisance": -26.723828566485274,
+      "bernoulli_iid": -26.836497214157426,
+      "markov_1": -27.255329175745004,
+      "hmm_2_state": -26.158729319154826,
+      "hmm_3_state": -26.81449847489789
+    },
+    {
+      "sequence_index": 455,
+      "physical_fixed_nuisance": -20.62160279511039,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -21.163644684400893,
+      "hmm_2_state": -20.836163616027545,
+      "hmm_3_state": -20.87508250024164
+    },
+    {
+      "sequence_index": 456,
+      "physical_fixed_nuisance": -17.78022905306605,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.287525861629497,
+      "hmm_2_state": -18.28798657976927,
+      "hmm_3_state": -17.982141589649462
+    },
+    {
+      "sequence_index": 457,
+      "physical_fixed_nuisance": -18.32483633792384,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.491190586725047,
+      "hmm_2_state": -18.496241102954748,
+      "hmm_3_state": -18.24688901884764
+    },
+    {
+      "sequence_index": 458,
+      "physical_fixed_nuisance": -21.439665305922965,
+      "bernoulli_iid": -21.38148358417337,
+      "markov_1": -21.503091530202216,
+      "hmm_2_state": -20.997225036217543,
+      "hmm_3_state": -21.383544044719997
+    },
+    {
+      "sequence_index": 459,
+      "physical_fixed_nuisance": -22.139597888575107,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.465921975080818,
+      "hmm_2_state": -22.17648383644967,
+      "hmm_3_state": -22.02474297436654
+    },
+    {
+      "sequence_index": 460,
+      "physical_fixed_nuisance": -18.083130809838476,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.321467163824387,
+      "hmm_2_state": -18.231165748466303,
+      "hmm_3_state": -18.08036752805999
+    },
+    {
+      "sequence_index": 461,
+      "physical_fixed_nuisance": -22.777754556447782,
+      "bernoulli_iid": -24.1089903991654,
+      "markov_1": -23.530593238470306,
+      "hmm_2_state": -23.71679822779766,
+      "hmm_3_state": -23.218468152989175
+    },
+    {
+      "sequence_index": 462,
+      "physical_fixed_nuisance": -16.950737358665965,
+      "bernoulli_iid": -17.290223361685324,
+      "markov_1": -17.188913296045126,
+      "hmm_2_state": -16.922673942908382,
+      "hmm_3_state": -16.982410206202694
+    },
+    {
+      "sequence_index": 463,
+      "physical_fixed_nuisance": -23.658707924492457,
+      "bernoulli_iid": -24.1089903991654,
+      "markov_1": -23.870040084271626,
+      "hmm_2_state": -23.917071400314413,
+      "hmm_3_state": -23.70725780994353
+    },
+    {
+      "sequence_index": 464,
+      "physical_fixed_nuisance": -19.493688345427483,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.7255852730152,
+      "hmm_2_state": -19.566713407511777,
+      "hmm_3_state": -19.35453731433817
+    },
+    {
+      "sequence_index": 465,
+      "physical_fixed_nuisance": -23.08567363808362,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.43198067288593,
+      "hmm_2_state": -23.02922299488123,
+      "hmm_3_state": -23.277977321511997
+    },
+    {
+      "sequence_index": 466,
+      "physical_fixed_nuisance": -18.20062457960528,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.2875258616295,
+      "hmm_2_state": -18.690010848945793,
+      "hmm_3_state": -18.437399937082212
+    },
+    {
+      "sequence_index": 467,
+      "physical_fixed_nuisance": -19.586824417533975,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.725585273015195,
+      "hmm_2_state": -19.527314547441,
+      "hmm_3_state": -19.58006849162149
+    },
+    {
+      "sequence_index": 468,
+      "physical_fixed_nuisance": -20.800642548666666,
+      "bernoulli_iid": -21.38148358417337,
+      "markov_1": -20.993921261500233,
+      "hmm_2_state": -21.11264578143566,
+      "hmm_3_state": -20.741437718940055
+    },
+    {
+      "sequence_index": 469,
+      "physical_fixed_nuisance": -16.35765026993098,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.750853884659428,
+      "hmm_2_state": -16.490162503251792,
+      "hmm_3_state": -16.8700464021204
+    },
+    {
+      "sequence_index": 470,
+      "physical_fixed_nuisance": -19.643786096547558,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.725585273015195,
+      "hmm_2_state": -19.531455968094235,
+      "hmm_3_state": -19.49196405430288
+    },
+    {
+      "sequence_index": 471,
+      "physical_fixed_nuisance": -15.870868372883768,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.920577307560086,
+      "hmm_2_state": -15.62832701920953,
+      "hmm_3_state": -15.774270425868716
+    },
+    {
+      "sequence_index": 472,
+      "physical_fixed_nuisance": -22.25812526902456,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.43198067288593,
+      "hmm_2_state": -22.40986420163444,
+      "hmm_3_state": -22.234797732855814
+    },
+    {
+      "sequence_index": 473,
+      "physical_fixed_nuisance": -23.642325716953433,
+      "bernoulli_iid": -24.1089903991654,
+      "markov_1": -23.700316661370962,
+      "hmm_2_state": -23.714008326104178,
+      "hmm_3_state": -23.59186321964342
+    },
+    {
+      "sequence_index": 474,
+      "physical_fixed_nuisance": -17.772749521090134,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.2875258616295,
+      "hmm_2_state": -18.503791784956515,
+      "hmm_3_state": -17.917695221315732
+    },
+    {
+      "sequence_index": 475,
+      "physical_fixed_nuisance": -23.144525780807285,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.43198067288593,
+      "hmm_2_state": -23.021740526584384,
+      "hmm_3_state": -23.24094502392057
+    },
+    {
+      "sequence_index": 476,
+      "physical_fixed_nuisance": -18.934009331712424,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.555861850114535,
+      "hmm_2_state": -19.995494128868852,
+      "hmm_3_state": -19.400210344107606
+    },
+    {
+      "sequence_index": 477,
+      "physical_fixed_nuisance": -14.452948268824658,
+      "bernoulli_iid": -14.562716546693297,
+      "markov_1": -14.48251789617439,
+      "hmm_2_state": -14.582318997630065,
+      "hmm_3_state": -14.719894489080128
+    },
+    {
+      "sequence_index": 478,
+      "physical_fixed_nuisance": -16.974942158013114,
+      "bernoulli_iid": -17.290223361685328,
+      "markov_1": -17.019189873144462,
+      "hmm_2_state": -17.024953659184415,
+      "hmm_3_state": -16.979529751157433
+    },
+    {
+      "sequence_index": 479,
+      "physical_fixed_nuisance": -27.01688690808695,
+      "bernoulli_iid": -26.836497214157426,
+      "markov_1": -26.23698863834104,
+      "hmm_2_state": -26.94328690317525,
+      "hmm_3_state": -27.220585039124053
+    },
+    {
+      "sequence_index": 480,
+      "physical_fixed_nuisance": -18.026332109849623,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.2875258616295,
+      "hmm_2_state": -18.262381443678425,
+      "hmm_3_state": -18.053548142897426
+    },
+    {
+      "sequence_index": 481,
+      "physical_fixed_nuisance": -20.618032233549485,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -21.333368107301556,
+      "hmm_2_state": -20.9410574873112,
+      "hmm_3_state": -20.890761742177826
+    },
+    {
+      "sequence_index": 482,
+      "physical_fixed_nuisance": -19.44616846481615,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.725585273015195,
+      "hmm_2_state": -19.528937903905216,
+      "hmm_3_state": -19.310568294584805
+    },
+    {
+      "sequence_index": 483,
+      "physical_fixed_nuisance": -25.12522269529001,
+      "bernoulli_iid": -25.472743806661413,
+      "markov_1": -25.308099495657324,
+      "hmm_2_state": -24.78601648681746,
+      "hmm_3_state": -25.02163385831163
+    },
+    {
+      "sequence_index": 484,
+      "physical_fixed_nuisance": -19.879595285699903,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.89530869591586,
+      "hmm_2_state": -19.594855355003787,
+      "hmm_3_state": -19.66017695262754
+    },
+    {
+      "sequence_index": 485,
+      "physical_fixed_nuisance": -23.229469707454946,
+      "bernoulli_iid": -24.1089903991654,
+      "markov_1": -23.870040084271626,
+      "hmm_2_state": -23.610898438737856,
+      "hmm_3_state": -23.32344769962576
+    },
+    {
+      "sequence_index": 486,
+      "physical_fixed_nuisance": -17.88848660119007,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.2875258616295,
+      "hmm_2_state": -18.393120715218878,
+      "hmm_3_state": -18.060260193141772
+    },
+    {
+      "sequence_index": 487,
+      "physical_fixed_nuisance": -18.36390788001152,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.45724928453016,
+      "hmm_2_state": -18.504026864647223,
+      "hmm_3_state": -18.546060622967964
+    },
+    {
+      "sequence_index": 488,
+      "physical_fixed_nuisance": -20.650524126495707,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -20.993921261500233,
+      "hmm_2_state": -21.00197387688268,
+      "hmm_3_state": -20.626441647689994
+    },
+    {
+      "sequence_index": 489,
+      "physical_fixed_nuisance": -24.904460973912457,
+      "bernoulli_iid": -25.472743806661413,
+      "markov_1": -25.13837607275666,
+      "hmm_2_state": -24.78693994868989,
+      "hmm_3_state": -24.807955763637633
+    },
+    {
+      "sequence_index": 490,
+      "physical_fixed_nuisance": -14.705706363530448,
+      "bernoulli_iid": -14.562716546693297,
+      "markov_1": -14.652241319075051,
+      "hmm_2_state": -14.313659590047134,
+      "hmm_3_state": -14.634153091428413
+    },
+    {
+      "sequence_index": 491,
+      "physical_fixed_nuisance": -14.349885346467632,
+      "bernoulli_iid": -14.562716546693297,
+      "markov_1": -14.48251789617439,
+      "hmm_2_state": -14.41215725203741,
+      "hmm_3_state": -14.36717242423792
+    },
+    {
+      "sequence_index": 492,
+      "physical_fixed_nuisance": -19.402972669717247,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.7255852730152,
+      "hmm_2_state": -20.00924348560548,
+      "hmm_3_state": -19.65041689128748
+    },
+    {
+      "sequence_index": 493,
+      "physical_fixed_nuisance": -23.403073819155495,
+      "bernoulli_iid": -24.1089903991654,
+      "markov_1": -23.87004008427163,
+      "hmm_2_state": -23.716829217166477,
+      "hmm_3_state": -23.33937713675266
+    },
+    {
+      "sequence_index": 494,
+      "physical_fixed_nuisance": -18.315507472828493,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.491190586725047,
+      "hmm_2_state": -18.22448451859274,
+      "hmm_3_state": -18.234307821722794
+    },
+    {
+      "sequence_index": 495,
+      "physical_fixed_nuisance": -20.916633687714658,
+      "bernoulli_iid": -21.38148358417337,
+      "markov_1": -21.163644684400893,
+      "hmm_2_state": -20.936718057188127,
+      "hmm_3_state": -20.761932407381007
+    },
+    {
+      "sequence_index": 496,
+      "physical_fixed_nuisance": -14.940526420148625,
+      "bernoulli_iid": -14.562716546693297,
+      "markov_1": -14.821964741975714,
+      "hmm_2_state": -14.348696059962185,
+      "hmm_3_state": -14.926884788828026
+    },
+    {
+      "sequence_index": 497,
+      "physical_fixed_nuisance": -22.26391201626515,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.431980672885928,
+      "hmm_2_state": -22.412500592898702,
+      "hmm_3_state": -22.217264944700297
+    },
+    {
+      "sequence_index": 498,
+      "physical_fixed_nuisance": -12.050863181718507,
+      "bernoulli_iid": -11.83520973170127,
+      "markov_1": -11.94584591920432,
+      "hmm_2_state": -11.708740635117817,
+      "hmm_3_state": -12.097655181089403
+    },
+    {
+      "sequence_index": 499,
+      "physical_fixed_nuisance": -19.44897115350269,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.75952657521008,
+      "hmm_2_state": -19.704111319262466,
+      "hmm_3_state": -19.466610806630946
+    },
+    {
+      "sequence_index": 500,
+      "physical_fixed_nuisance": -19.125439773044658,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.725585273015195,
+      "hmm_2_state": -19.630643932158534,
+      "hmm_3_state": -19.20021888514353
+    },
+    {
+      "sequence_index": 501,
+      "physical_fixed_nuisance": -20.005416542892977,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.89530869591586,
+      "hmm_2_state": -19.81263919067405,
+      "hmm_3_state": -19.83282349122455
+    },
+    {
+      "sequence_index": 502,
+      "physical_fixed_nuisance": -16.062115762525213,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.92057730756009,
+      "hmm_2_state": -16.080464499802495,
+      "hmm_3_state": -16.135533088677196
+    },
+    {
+      "sequence_index": 503,
+      "physical_fixed_nuisance": -21.06705932114605,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -21.163644684400893,
+      "hmm_2_state": -21.300852563001293,
+      "hmm_3_state": -21.123760400428875
+    },
+    {
+      "sequence_index": 504,
+      "physical_fixed_nuisance": -17.171959088212823,
+      "bernoulli_iid": -17.290223361685324,
+      "markov_1": -17.358636718945785,
+      "hmm_2_state": -16.917363145536797,
+      "hmm_3_state": -17.136049278842677
+    },
+    {
+      "sequence_index": 505,
+      "physical_fixed_nuisance": -20.927009921416964,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -20.51649908085993,
+      "hmm_2_state": -21.046169876624532,
+      "hmm_3_state": -20.872762596091942
+    },
+    {
+      "sequence_index": 506,
+      "physical_fixed_nuisance": -26.642964018582823,
+      "bernoulli_iid": -25.472743806661413,
+      "markov_1": -25.00259395205089,
+      "hmm_2_state": -25.674978999283834,
+      "hmm_3_state": -26.13913124657362
+    },
+    {
+      "sequence_index": 507,
+      "physical_fixed_nuisance": -20.903909982701336,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -21.163644684400893,
+      "hmm_2_state": -20.846114475994902,
+      "hmm_3_state": -21.044841360469594
+    },
+    {
+      "sequence_index": 508,
+      "physical_fixed_nuisance": -19.51772362478998,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.895308695915855,
+      "hmm_2_state": -19.569304950488267,
+      "hmm_3_state": -19.447568285033356
+    },
+    {
+      "sequence_index": 509,
+      "physical_fixed_nuisance": -20.621768603927304,
+      "bernoulli_iid": -21.38148358417337,
+      "markov_1": -21.163644684400893,
+      "hmm_2_state": -21.107943187495835,
+      "hmm_3_state": -20.939282724766002
+    },
+    {
+      "sequence_index": 510,
+      "physical_fixed_nuisance": -21.012610454647213,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -20.99392126150023,
+      "hmm_2_state": -20.840290082474283,
+      "hmm_3_state": -20.935973610031443
+    },
+    {
+      "sequence_index": 511,
+      "physical_fixed_nuisance": -15.466706858844692,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.78479518685431,
+      "hmm_2_state": -15.716255457082097,
+      "hmm_3_state": -15.521541364186922
+    },
+    {
+      "sequence_index": 512,
+      "physical_fixed_nuisance": -23.025895259565754,
+      "bernoulli_iid": -24.1089903991654,
+      "markov_1": -23.530593238470303,
+      "hmm_2_state": -23.716811296283556,
+      "hmm_3_state": -23.29702641114079
+    },
+    {
+      "sequence_index": 513,
+      "physical_fixed_nuisance": -20.968922654806242,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -21.02786256369512,
+      "hmm_2_state": -20.896905166750535,
+      "hmm_3_state": -20.858104488150197
+    },
+    {
+      "sequence_index": 514,
+      "physical_fixed_nuisance": -19.719983376517597,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -20.065032118816514,
+      "hmm_2_state": -19.56928849582982,
+      "hmm_3_state": -19.71280905963877
+    },
+    {
+      "sequence_index": 515,
+      "physical_fixed_nuisance": -25.622329207608544,
+      "bernoulli_iid": -25.472743806661413,
+      "markov_1": -25.647546341458643,
+      "hmm_2_state": -25.020057773706636,
+      "hmm_3_state": -25.460706782278997
+    },
+    {
+      "sequence_index": 516,
+      "physical_fixed_nuisance": -22.672815304384915,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.12647512927949,
+      "hmm_2_state": -23.029130069905392,
+      "hmm_3_state": -23.08094589752769
+    },
+    {
+      "sequence_index": 517,
+      "physical_fixed_nuisance": -13.10248128042688,
+      "bernoulli_iid": -13.198963139197282,
+      "markov_1": -13.214181907689355,
+      "hmm_2_state": -13.170620806139453,
+      "hmm_3_state": -13.267046990429868
+    },
+    {
+      "sequence_index": 518,
+      "physical_fixed_nuisance": -19.951065725595498,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.895308695915855,
+      "hmm_2_state": -19.5911511850626,
+      "hmm_3_state": -19.607165878679083
+    },
+    {
+      "sequence_index": 519,
+      "physical_fixed_nuisance": -21.973107310139063,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -20.824197838599574,
+      "hmm_2_state": -21.76035277232327,
+      "hmm_3_state": -21.948018726939324
+    },
+    {
+      "sequence_index": 520,
+      "physical_fixed_nuisance": -18.783524613675734,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.555861850114535,
+      "hmm_2_state": -19.694805710442672,
+      "hmm_3_state": -19.06641439139887
+    },
+    {
+      "sequence_index": 521,
+      "physical_fixed_nuisance": -18.852958816137445,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.796696130331483,
+      "hmm_2_state": -18.221148078171417,
+      "hmm_3_state": -18.63487983444176
+    },
+    {
+      "sequence_index": 522,
+      "physical_fixed_nuisance": -21.595114071976965,
+      "bernoulli_iid": -21.38148358417337,
+      "markov_1": -21.163644684400897,
+      "hmm_2_state": -20.8573848849697,
+      "hmm_3_state": -21.363798735679595
+    },
+    {
+      "sequence_index": 523,
+      "physical_fixed_nuisance": -15.61140583995431,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.784795186854314,
+      "hmm_2_state": -15.654899984077554,
+      "hmm_3_state": -15.689395214643579
+    },
+    {
+      "sequence_index": 524,
+      "physical_fixed_nuisance": -25.233294854278622,
+      "bernoulli_iid": -25.472743806661413,
+      "markov_1": -25.17231737495155,
+      "hmm_2_state": -24.80860581002206,
+      "hmm_3_state": -24.764976203199424
+    },
+    {
+      "sequence_index": 525,
+      "physical_fixed_nuisance": -20.12209525369931,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -20.065032118816518,
+      "hmm_2_state": -19.802337186047353,
+      "hmm_3_state": -19.904788670547248
+    },
+    {
+      "sequence_index": 526,
+      "physical_fixed_nuisance": -18.312896481324856,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.62697270743082,
+      "hmm_2_state": -18.331800968053663,
+      "hmm_3_state": -18.19457636809419
+    },
+    {
+      "sequence_index": 527,
+      "physical_fixed_nuisance": -22.110818956797285,
+      "bernoulli_iid": -21.38148358417337,
+      "markov_1": -21.163644684400893,
+      "hmm_2_state": -21.337737665617347,
+      "hmm_3_state": -21.261416790835437
+    },
+    {
+      "sequence_index": 528,
+      "physical_fixed_nuisance": -20.255139401882044,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -20.065032118816518,
+      "hmm_2_state": -19.542677860534216,
+      "hmm_3_state": -19.802963533562753
+    },
+    {
+      "sequence_index": 529,
+      "physical_fixed_nuisance": -20.644104790228262,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -20.99392126150023,
+      "hmm_2_state": -21.106782031776916,
+      "hmm_3_state": -20.706145307843336
+    },
+    {
+      "sequence_index": 530,
+      "physical_fixed_nuisance": -17.88067697075728,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.321467163824387,
+      "hmm_2_state": -18.695597947461685,
+      "hmm_3_state": -18.22646549542631
+    },
+    {
+      "sequence_index": 531,
+      "physical_fixed_nuisance": -23.702384266941678,
+      "bernoulli_iid": -24.1089903991654,
+      "markov_1": -23.90398138646651,
+      "hmm_2_state": -23.480937596378453,
+      "hmm_3_state": -23.512943683039058
+    },
+    {
+      "sequence_index": 532,
+      "physical_fixed_nuisance": -14.39453534710289,
+      "bernoulli_iid": -14.562716546693299,
+      "markov_1": -14.482517896174393,
+      "hmm_2_state": -14.583225089084753,
+      "hmm_3_state": -14.545054202697308
+    },
+    {
+      "sequence_index": 533,
+      "physical_fixed_nuisance": -20.99184591642431,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -21.163644684400897,
+      "hmm_2_state": -20.896294847980826,
+      "hmm_3_state": -20.724226130383897
+    },
+    {
+      "sequence_index": 534,
+      "physical_fixed_nuisance": -19.518642364514548,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.7255852730152,
+      "hmm_2_state": -19.632262256248673,
+      "hmm_3_state": -19.36465174255341
+    },
+    {
+      "sequence_index": 535,
+      "physical_fixed_nuisance": -23.31907786686942,
+      "bernoulli_iid": -24.1089903991654,
+      "markov_1": -23.700316661370962,
+      "hmm_2_state": -23.508208347494264,
+      "hmm_3_state": -23.34354325884653
+    },
+    {
+      "sequence_index": 536,
+      "physical_fixed_nuisance": -19.179032836012958,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.725585273015195,
+      "hmm_2_state": -19.54188862693575,
+      "hmm_3_state": -19.204797964556754
+    },
+    {
+      "sequence_index": 537,
+      "physical_fixed_nuisance": -22.667593697639433,
+      "bernoulli_iid": -22.745236991669387,
+      "markov_1": -22.465921975080818,
+      "hmm_2_state": -22.603658401959272,
+      "hmm_3_state": -22.58899159103503
+    },
+    {
+      "sequence_index": 538,
+      "physical_fixed_nuisance": -21.910670923464018,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.296198552180154,
+      "hmm_2_state": -22.176532191009404,
+      "hmm_3_state": -21.870594755898814
+    },
+    {
+      "sequence_index": 539,
+      "physical_fixed_nuisance": -15.873423895515746,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.920577307560091,
+      "hmm_2_state": -15.677343701490605,
+      "hmm_3_state": -15.903959541957377
+    },
+    {
+      "sequence_index": 540,
+      "physical_fixed_nuisance": -24.830565393019626,
+      "bernoulli_iid": -25.472743806661413,
+      "markov_1": -24.968652649856,
+      "hmm_2_state": -25.031185238347142,
+      "hmm_3_state": -24.69264851779016
+    },
+    {
+      "sequence_index": 541,
+      "physical_fixed_nuisance": -26.492046110577185,
+      "bernoulli_iid": -26.83649721415743,
+      "markov_1": -26.746158907043018,
+      "hmm_2_state": -26.32775568866103,
+      "hmm_3_state": -26.461942729948518
+    },
+    {
+      "sequence_index": 542,
+      "physical_fixed_nuisance": -16.42449473169027,
+      "bernoulli_iid": -17.290223361685324,
+      "markov_1": -17.019189873144462,
+      "hmm_2_state": -16.983583283834015,
+      "hmm_3_state": -16.627893850449063
+    },
+    {
+      "sequence_index": 543,
+      "physical_fixed_nuisance": -15.448024798252185,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.750853884659428,
+      "hmm_2_state": -15.716336663152289,
+      "hmm_3_state": -15.47754339842184
+    },
+    {
+      "sequence_index": 544,
+      "physical_fixed_nuisance": -20.653903278090038,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -20.993921261500233,
+      "hmm_2_state": -20.936863104873872,
+      "hmm_3_state": -20.560023163726925
+    },
+    {
+      "sequence_index": 545,
+      "physical_fixed_nuisance": -21.9885978416453,
+      "bernoulli_iid": -22.74523699166938,
+      "markov_1": -22.465921975080814,
+      "hmm_2_state": -22.24014024778192,
+      "hmm_3_state": -21.853230266193087
+    },
+    {
+      "sequence_index": 546,
+      "physical_fixed_nuisance": -17.19421625360751,
+      "bernoulli_iid": -17.290223361685324,
+      "markov_1": -17.188913296045122,
+      "hmm_2_state": -16.959358510192594,
+      "hmm_3_state": -17.04723095910243
+    },
+    {
+      "sequence_index": 547,
+      "physical_fixed_nuisance": -18.85154330901273,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.796696130331483,
+      "hmm_2_state": -18.222989330556928,
+      "hmm_3_state": -18.497840754885637
+    },
+    {
+      "sequence_index": 548,
+      "physical_fixed_nuisance": -18.919245562079563,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.555861850114532,
+      "hmm_2_state": -19.63230593394689,
+      "hmm_3_state": -18.99272986461478
+    },
+    {
+      "sequence_index": 549,
+      "physical_fixed_nuisance": -20.863003532386944,
+      "bernoulli_iid": -21.38148358417337,
+      "markov_1": -21.163644684400893,
+      "hmm_2_state": -21.001954799573845,
+      "hmm_3_state": -20.780406723130326
+    },
+    {
+      "sequence_index": 550,
+      "physical_fixed_nuisance": -19.92844996484712,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.89530869591586,
+      "hmm_2_state": -19.9947830071363,
+      "hmm_3_state": -19.944462725098152
+    },
+    {
+      "sequence_index": 551,
+      "physical_fixed_nuisance": -18.48647326792625,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.457249284530157,
+      "hmm_2_state": -18.246827483572442,
+      "hmm_3_state": -18.282420402222932
+    },
+    {
+      "sequence_index": 552,
+      "physical_fixed_nuisance": -17.97371674203147,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.45724928453016,
+      "hmm_2_state": -18.391422629909897,
+      "hmm_3_state": -18.206234025226493
+    },
+    {
+      "sequence_index": 553,
+      "physical_fixed_nuisance": -25.471707663898886,
+      "bernoulli_iid": -25.472743806661413,
+      "markov_1": -25.13837607275666,
+      "hmm_2_state": -25.03862353491158,
+      "hmm_3_state": -24.88717731976258
+    },
+    {
+      "sequence_index": 554,
+      "physical_fixed_nuisance": -21.659842424104397,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.262257249985268,
+      "hmm_2_state": -22.313438826065337,
+      "hmm_3_state": -21.8524502311408
+    },
+    {
+      "sequence_index": 555,
+      "physical_fixed_nuisance": -19.704588497671153,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.89530869591586,
+      "hmm_2_state": -19.694840060179327,
+      "hmm_3_state": -19.68829502922309
+    },
+    {
+      "sequence_index": 556,
+      "physical_fixed_nuisance": -20.608654309442336,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -20.993921261500233,
+      "hmm_2_state": -21.10677095427108,
+      "hmm_3_state": -20.8443399376442
+    },
+    {
+      "sequence_index": 557,
+      "physical_fixed_nuisance": -16.776192955018455,
+      "bernoulli_iid": -17.290223361685328,
+      "markov_1": -17.019189873144466,
+      "hmm_2_state": -16.942690649108457,
+      "hmm_3_state": -16.827406242037476
+    },
+    {
+      "sequence_index": 558,
+      "physical_fixed_nuisance": -22.055814363008462,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.465921975080814,
+      "hmm_2_state": -22.412292295983853,
+      "hmm_3_state": -22.399167506868977
+    },
+    {
+      "sequence_index": 559,
+      "physical_fixed_nuisance": -14.373640230677786,
+      "bernoulli_iid": -14.562716546693297,
+      "markov_1": -14.482517896174391,
+      "hmm_2_state": -14.308485108454656,
+      "hmm_3_state": -14.348786654613917
+    },
+    {
+      "sequence_index": 560,
+      "physical_fixed_nuisance": -28.363461431090098,
+      "bernoulli_iid": -26.836497214157426,
+      "markov_1": -28.635685280472128,
+      "hmm_2_state": -28.471715634172963,
+      "hmm_3_state": -28.367174721041323
+    },
+    {
+      "sequence_index": 561,
+      "physical_fixed_nuisance": -21.756474518483035,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -21.163644684400893,
+      "hmm_2_state": -21.71171198676575,
+      "hmm_3_state": -21.994217324952267
+    },
+    {
+      "sequence_index": 562,
+      "physical_fixed_nuisance": -18.048245977783242,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.457249284530164,
+      "hmm_2_state": -18.290591402283866,
+      "hmm_3_state": -18.29211244416624
+    },
+    {
+      "sequence_index": 563,
+      "physical_fixed_nuisance": -18.185902158979786,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.45724928453016,
+      "hmm_2_state": -18.262532358494393,
+      "hmm_3_state": -18.190839821903282
+    },
+    {
+      "sequence_index": 564,
+      "physical_fixed_nuisance": -22.123063790935884,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.431980672885928,
+      "hmm_2_state": -22.609134779023712,
+      "hmm_3_state": -22.420947769724865
+    },
+    {
+      "sequence_index": 565,
+      "physical_fixed_nuisance": -16.466907789311268,
+      "bernoulli_iid": -17.290223361685324,
+      "markov_1": -17.019189873144466,
+      "hmm_2_state": -17.084785292661884,
+      "hmm_3_state": -16.56883051900328
+    },
+    {
+      "sequence_index": 566,
+      "physical_fixed_nuisance": -18.113581182761394,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.491190586725047,
+      "hmm_2_state": -18.286952649502986,
+      "hmm_3_state": -18.133985009118405
+    },
+    {
+      "sequence_index": 567,
+      "physical_fixed_nuisance": -17.969326682954726,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -17.979827103889857,
+      "hmm_2_state": -18.032062696920786,
+      "hmm_3_state": -17.920161170412886
+    },
+    {
+      "sequence_index": 568,
+      "physical_fixed_nuisance": -19.465904429194556,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.725585273015195,
+      "hmm_2_state": -19.535596463936436,
+      "hmm_3_state": -19.402133881649934
+    },
+    {
+      "sequence_index": 569,
+      "physical_fixed_nuisance": -20.315389095866045,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -20.993921261500233,
+      "hmm_2_state": -21.304637114935172,
+      "hmm_3_state": -20.682793113591366
+    },
+    {
+      "sequence_index": 570,
+      "physical_fixed_nuisance": -26.76574649931782,
+      "bernoulli_iid": -26.83649721415743,
+      "markov_1": -26.101206517635266,
+      "hmm_2_state": -26.97592504417721,
+      "hmm_3_state": -27.117708878600677
+    },
+    {
+      "sequence_index": 571,
+      "physical_fixed_nuisance": -20.614840621842298,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -20.99392126150023,
+      "hmm_2_state": -20.935760773459382,
+      "hmm_3_state": -20.577413570773587
+    },
+    {
+      "sequence_index": 572,
+      "physical_fixed_nuisance": -15.52056861292629,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.784795186854314,
+      "hmm_2_state": -15.779519032610157,
+      "hmm_3_state": -15.64271472429512
+    },
+    {
+      "sequence_index": 573,
+      "physical_fixed_nuisance": -24.25562821735788,
+      "bernoulli_iid": -24.1089903991654,
+      "markov_1": -24.243428232267835,
+      "hmm_2_state": -23.549642937404585,
+      "hmm_3_state": -23.862988800434433
+    },
+    {
+      "sequence_index": 574,
+      "physical_fixed_nuisance": -22.631701962045632,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.601704095786587,
+      "hmm_2_state": -22.161258024085853,
+      "hmm_3_state": -22.29351046164831
+    },
+    {
+      "sequence_index": 575,
+      "physical_fixed_nuisance": -23.424426256643407,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.77142751868725,
+      "hmm_2_state": -22.64077248054895,
+      "hmm_3_state": -22.804107717405866
+    },
+    {
+      "sequence_index": 576,
+      "physical_fixed_nuisance": -22.704348201864356,
+      "bernoulli_iid": -24.1089903991654,
+      "markov_1": -23.56453454066519,
+      "hmm_2_state": -23.718702460404135,
+      "hmm_3_state": -23.094974474903704
+    },
+    {
+      "sequence_index": 577,
+      "physical_fixed_nuisance": -25.634074247045792,
+      "bernoulli_iid": -25.472743806661413,
+      "markov_1": -25.68148764365353,
+      "hmm_2_state": -25.031131765354665,
+      "hmm_3_state": -25.63771716837424
+    },
+    {
+      "sequence_index": 578,
+      "physical_fixed_nuisance": -18.237180587205746,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.45724928453016,
+      "hmm_2_state": -18.286994730913957,
+      "hmm_3_state": -18.074678047435047
+    },
+    {
+      "sequence_index": 579,
+      "physical_fixed_nuisance": -17.79656676860369,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.287525861629497,
+      "hmm_2_state": -18.231177507674527,
+      "hmm_3_state": -17.892554430991296
+    },
+    {
+      "sequence_index": 580,
+      "physical_fixed_nuisance": -20.25605338769838,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -21.163644684400893,
+      "hmm_2_state": -20.940938851621766,
+      "hmm_3_state": -20.73344083277525
+    },
+    {
+      "sequence_index": 581,
+      "physical_fixed_nuisance": -16.903653897566272,
+      "bernoulli_iid": -17.290223361685324,
+      "markov_1": -17.05313117533935,
+      "hmm_2_state": -16.920086297791983,
+      "hmm_3_state": -16.860313554350814
+    },
+    {
+      "sequence_index": 582,
+      "physical_fixed_nuisance": -18.88790502604968,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.2875258616295,
+      "hmm_2_state": -19.099144497702927,
+      "hmm_3_state": -19.276939815729314
+    },
+    {
+      "sequence_index": 583,
+      "physical_fixed_nuisance": -12.100085094029776,
+      "bernoulli_iid": -11.83520973170127,
+      "markov_1": -11.979787221399205,
+      "hmm_2_state": -11.763989612915928,
+      "hmm_3_state": -12.246786449741975
+    },
+    {
+      "sequence_index": 584,
+      "physical_fixed_nuisance": -18.340626304733142,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.45724928453016,
+      "hmm_2_state": -18.221801654994948,
+      "hmm_3_state": -18.233230413450016
+    },
+    {
+      "sequence_index": 585,
+      "physical_fixed_nuisance": -14.387987479806927,
+      "bernoulli_iid": -14.562716546693297,
+      "markov_1": -14.482517896174391,
+      "hmm_2_state": -14.313707198408649,
+      "hmm_3_state": -14.344171511306888
+    },
+    {
+      "sequence_index": 586,
+      "physical_fixed_nuisance": -23.35837347991232,
+      "bernoulli_iid": -21.381483584173367,
+      "markov_1": -23.222894480730663,
+      "hmm_2_state": -23.201274787789608,
+      "hmm_3_state": -23.003639563716675
+    },
+    {
+      "sequence_index": 587,
+      "physical_fixed_nuisance": -22.6570358448084,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.431980672885935,
+      "hmm_2_state": -23.04261481653256,
+      "hmm_3_state": -23.182532734810323
+    },
+    {
+      "sequence_index": 588,
+      "physical_fixed_nuisance": -21.52690515758487,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.09253382708461,
+      "hmm_2_state": -22.41431563018694,
+      "hmm_3_state": -21.858673194437948
+    },
+    {
+      "sequence_index": 589,
+      "physical_fixed_nuisance": -13.162186477699592,
+      "bernoulli_iid": -13.198963139197282,
+      "markov_1": -13.214181907689357,
+      "hmm_2_state": -13.01346350756399,
+      "hmm_3_state": -13.316096010452316
+    },
+    {
+      "sequence_index": 590,
+      "physical_fixed_nuisance": -19.253218820259654,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -19.725585273015195,
+      "hmm_2_state": -19.696003521372518,
+      "hmm_3_state": -19.344624765767072
+    },
+    {
+      "sequence_index": 591,
+      "physical_fixed_nuisance": -21.936470751629923,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.431980672885928,
+      "hmm_2_state": -22.313407107958074,
+      "hmm_3_state": -22.085296036775826
+    },
+    {
+      "sequence_index": 592,
+      "physical_fixed_nuisance": -18.58176162316838,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.62697270743082,
+      "hmm_2_state": -18.227059106866463,
+      "hmm_3_state": -18.454776293816114
+    },
+    {
+      "sequence_index": 593,
+      "physical_fixed_nuisance": -14.458615817139968,
+      "bernoulli_iid": -14.562716546693297,
+      "markov_1": -14.48251789617439,
+      "hmm_2_state": -14.4116613195372,
+      "hmm_3_state": -14.572793566142956
+    },
+    {
+      "sequence_index": 594,
+      "physical_fixed_nuisance": -15.383208449718156,
+      "bernoulli_iid": -15.926469954189312,
+      "markov_1": -15.750853884659426,
+      "hmm_2_state": -15.677383284752292,
+      "hmm_3_state": -15.460687906350051
+    },
+    {
+      "sequence_index": 595,
+      "physical_fixed_nuisance": -19.813538721183967,
+      "bernoulli_iid": -20.017730176677354,
+      "markov_1": -20.098973421011404,
+      "hmm_2_state": -19.800319846616503,
+      "hmm_3_state": -19.93612538836031
+    },
+    {
+      "sequence_index": 596,
+      "physical_fixed_nuisance": -14.65208533142047,
+      "bernoulli_iid": -14.562716546693297,
+      "markov_1": -14.686182621269937,
+      "hmm_2_state": -14.377075295118487,
+      "hmm_3_state": -14.719211049206244
+    },
+    {
+      "sequence_index": 597,
+      "physical_fixed_nuisance": -17.71659374613213,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.321467163824387,
+      "hmm_2_state": -18.326834087754456,
+      "hmm_3_state": -17.819485200235988
+    },
+    {
+      "sequence_index": 598,
+      "physical_fixed_nuisance": -22.146659059297093,
+      "bernoulli_iid": -22.745236991669383,
+      "markov_1": -22.60170409578659,
+      "hmm_2_state": -22.242916877558724,
+      "hmm_3_state": -22.193258670779088
+    },
+    {
+      "sequence_index": 599,
+      "physical_fixed_nuisance": -17.660165384192737,
+      "bernoulli_iid": -18.65397676918134,
+      "markov_1": -18.2875258616295,
+      "hmm_2_state": -18.262800990057045,
+      "hmm_3_state": -17.866620645915074
+    }
+  ],
+  "limitations": [
+    "same-family synthetic data, not measured photons",
+    "held-out records are reused from the previous companion evaluation, not a newly untouched test set",
+    "physical model knows every nuisance parameter and the generating family",
+    "HMMs are fitted from finite random starts and are not all classical baselines",
+    "paired uncertainty conditions on the fitted models; it does not include model-selection, training-set, or misspecification uncertainty",
+    "one dataset/split and one physical parameter setting",
+    "no quantum-hardware experiment, speedup, or quantum advantage demonstrated"
+  ]
+}

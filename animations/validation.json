@@ -1,0 +1,22 @@
+{
+  "laser-diagnostic-lenses.gif": {
+    "size": [
+      1200,
+      675
+    ],
+    "frames": 120,
+    "duration_ms": 12000,
+    "loop": 0,
+    "bytes": 4348110
+  },
+  "rewind-amplify.gif": {
+    "size": [
+      1200,
+      675
+    ],
+    "frames": 4,
+    "duration_ms": 12000,
+    "loop": 0,
+    "bytes": 138042
+  }
+}

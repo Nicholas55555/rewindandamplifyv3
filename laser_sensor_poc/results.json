@@ -1,0 +1,29 @@
+{
+  "seed": 1945,
+  "records_per_hypothesis": 2000,
+  "record_length": 128,
+  "angle_center_radians": 1.5707963267948966,
+  "angle_delta_radians": 0.4,
+  "persistent_switch_probability": 0.02,
+  "iid_switch_probability": 0.5,
+  "state_emission_probabilities": [
+    0.3052908288456748,
+    0.6947091711543253
+  ],
+  "decision": "persistent if exact log likelihood ratio > 0; iid otherwise",
+  "persistent_correct": 1842,
+  "iid_correct": 1869,
+  "persistent_accuracy": 0.921,
+  "iid_accuracy": 0.9345,
+  "persistent_accuracy_95pct_wilson": [
+    0.9083551101095888,
+    0.9320307360795963
+  ],
+  "iid_accuracy_95pct_wilson": [
+    0.9228026146574697,
+    0.9445314712551214
+  ],
+  "balanced_accuracy": 0.92775,
+  "mean_readout_rate_persistent": 0.49963671875,
+  "mean_readout_rate_iid": 0.49813671875
+}

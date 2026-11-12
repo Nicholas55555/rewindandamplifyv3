@@ -1,0 +1,98 @@
+{
+  "status": "completed",
+  "seconds": 4.405999999999949,
+  "implementation_validation": {
+    "tolerance": 1e-08,
+    "errors": {
+      "retained_isometry_completeness_spectral_error": 3.0838721979001818e-15,
+      "compiled_isometry_spectral_error": 5.50244522342455e-13,
+      "compiled_inverse_vector_error_max": 5.515742061641413e-15,
+      "synthesized_vs_retained_state_error_max": 3.1585927346307334e-13,
+      "synthesized_vs_retained_probability_error_max": 1.021405182655144e-14
+    },
+    "passed": true
+  },
+  "model": {
+    "cavity_dimension": 2,
+    "system_dimension": 8,
+    "absolute_choi_cutoff": 0.03,
+    "retained_no_click_components": 7,
+    "retained_click_components": 4,
+    "system_qubits": 3,
+    "flag_qubits": 1,
+    "environment_qubits": 3,
+    "total_qubits": 7,
+    "isometry_shape": [
+      128,
+      8
+    ]
+  },
+  "approximation": {
+    "no_click_superoperator_frobenius_error": 0.09324592415432084,
+    "click_superoperator_frobenius_error": 0.08511155511201894,
+    "no_click_choi": {
+      "rank_above_cutoff": 7,
+      "minimum_choi_eigenvalue": 4.397061966273331e-11,
+      "maximum_choi_eigenvalue": 4.4860763969965625,
+      "choi_hermiticity_frobenius_error": 2.5833900775776952e-15,
+      "discarded_positive_choi_eigenvalue_sum": 0.09360151722665147,
+      "reconstructed_superoperator_frobenius_error": 0.03596284888575322,
+      "ranks_by_absolute_cutoff": {
+        "1e-08": 59,
+        "1e-10": 62,
+        "1e-12": 64,
+        "1e-14": 64
+      }
+    },
+    "click_choi": {
+      "rank_above_cutoff": 4,
+      "minimum_choi_eigenvalue": 1.0850295010245036e-12,
+      "maximum_choi_eigenvalue": 1.8397286734077114,
+      "choi_hermiticity_frobenius_error": 4.06043955513063e-15,
+      "discarded_positive_choi_eigenvalue_sum": 0.09129502345864568,
+      "reconstructed_superoperator_frobenius_error": 0.041501227237679086,
+      "ranks_by_absolute_cutoff": {
+        "1e-08": 54,
+        "1e-10": 62,
+        "1e-12": 64,
+        "1e-14": 64
+      }
+    },
+    "normalization": {
+      "pre_normalization_completeness_spectral_error": 0.05328349236369283,
+      "right_normalization_spectral_change": 0.027756009979740273
+    }
+  },
+  "synthesis": {
+    "compiler": "Qiskit Isometry, generic u,cx; optimization level 1; seed 13",
+    "compiled_cx": 1051,
+    "compiled_depth": 2080,
+    "compiled_instruction_count": 2155,
+    "common_phase_aligned_isometry_spectral_error": 5.50244522342455e-13,
+    "all_input_basis_columns_checked": 8,
+    "inverse_vector_error_max": 5.515742061641413e-15
+  },
+  "state_checks": {
+    "input_states": 6,
+    "nonzero_branches_compared": 12,
+    "synthesized_vs_retained_unnormalized_state_error_max": 3.1585927346307334e-13,
+    "synthesized_vs_retained_probability_error_max": 1.021405182655144e-14,
+    "synthesized_vs_original_unnormalized_state_error_max": 0.019490677510989946,
+    "synthesized_vs_original_probability_error_max": 0.002013833421711686,
+    "synthesized_vs_original_conditional_state_error_max": 0.04778678813987208
+  },
+  "limitations": [
+    "Aggressive absolute Choi cutoff discards components; the trace-preserving correction changes the original instrument.",
+    "Frobenius and sampled-state errors are not certified diamond-norm bounds.",
+    "This is a finite cutoff-2 synthetic system, not the cutoff-3 or a converged optical model.",
+    "The gate counts are generic and noiseless; no target routing, measurement, repetitions, resource estimation or quantum hardware.",
+    "Inversion applies to the simulated circuit and retained coherent environment, not a measured photon or a dissipative physical experiment."
+  ],
+  "worker_memory_limit_mb": 1024,
+  "environment": {
+    "qiskit_version": "2.6.1",
+    "python_version": "3.12.10",
+    "memory_limit_mb": 1024,
+    "timeout_seconds": 90.0
+  }
+}

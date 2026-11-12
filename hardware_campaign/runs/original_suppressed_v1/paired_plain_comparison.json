@@ -1,0 +1,118 @@
+{
+  "schema": "raw-exact-isa-suppression-comparison-v1",
+  "same_compiled_qpy": true,
+  "compiled_qpy_sha256": "c3ef934cbf8d21021e6d23688a6ee88caa7c87e34eb1081667c63e4bceec4d5f",
+  "raw_analysis_sha256": [
+    "6c1ea899f82178826725f49cbc5f5510c3342ff6e382d577397de94a48b96fd3",
+    "13b29cf6bddcdb0e5618fcb023dae3d7236358dd7d5ba8e8c919bfae2b9867b0"
+  ],
+  "hero": {
+    "click3-steered-memory+last-1-r1": {
+      "probability_difference": -0.00927734375,
+      "independent_shot_wilson_based_interval95": [
+        -0.03506753918025525,
+        0.016527398020557277
+      ],
+      "first": {
+        "successes": 1566,
+        "shots": 2048,
+        "probability": 0.7646484375
+      },
+      "second": {
+        "successes": 1585,
+        "shots": 2048,
+        "probability": 0.77392578125
+      },
+      "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+      "first_name": "click3-steered-memory+last-1-r1",
+      "second_name": "click3-steered-memory+last-1-r1",
+      "selected_history_tv_vs_unsteered": [
+        0.14502241212522146,
+        0.10706237006423308
+      ],
+      "native_two_qubit_gate_counts": [
+        58,
+        58
+      ],
+      "input_analysis_sha256": [
+        "13b29cf6bddcdb0e5618fcb023dae3d7236358dd7d5ba8e8c919bfae2b9867b0",
+        "6c1ea899f82178826725f49cbc5f5510c3342ff6e382d577397de94a48b96fd3"
+      ],
+      "source_sha256": "3ac4eaad4909619118d5821baab9d1e67f2640965ef7b892d006a84a0242d4d6"
+    },
+    "click3-steered-full-r1": {
+      "probability_difference": -0.02294921875,
+      "independent_shot_wilson_based_interval95": [
+        -0.05244209054625991,
+        0.0065999307376412054
+      ],
+      "first": {
+        "successes": 1269,
+        "shots": 2048,
+        "probability": 0.61962890625
+      },
+      "second": {
+        "successes": 1316,
+        "shots": 2048,
+        "probability": 0.642578125
+      },
+      "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer.",
+      "first_name": "click3-steered-full-r1",
+      "second_name": "click3-steered-full-r1",
+      "selected_history_tv_vs_unsteered": [
+        0.24391918123475656,
+        0.20100012235825088
+      ],
+      "native_two_qubit_gate_counts": [
+        125,
+        125
+      ],
+      "input_analysis_sha256": [
+        "13b29cf6bddcdb0e5618fcb023dae3d7236358dd7d5ba8e8c919bfae2b9867b0",
+        "6c1ea899f82178826725f49cbc5f5510c3342ff6e382d577397de94a48b96fd3"
+      ],
+      "source_sha256": "3ac4eaad4909619118d5821baab9d1e67f2640965ef7b892d006a84a0242d4d6"
+    }
+  },
+  "loop_step6_hypothesis_contrasts": {
+    "plain": {
+      "probability_difference": -0.02084785587018094,
+      "independent_shot_wilson_based_interval95": [
+        -0.04198615940023394,
+        0.0004964720037586058
+      ],
+      "first": {
+        "successes": 158,
+        "shots": 1574,
+        "probability": 0.10038119440914867
+      },
+      "second": {
+        "successes": 217,
+        "shots": 1790,
+        "probability": 0.1212290502793296
+      },
+      "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer."
+    },
+    "suppressed": {
+      "probability_difference": 0.0034102072082618784,
+      "independent_shot_wilson_based_interval95": [
+        -0.02245507908934427,
+        0.02949287123212272
+      ],
+      "first": {
+        "successes": 275,
+        "shots": 1547,
+        "probability": 0.1777634130575307
+      },
+      "second": {
+        "successes": 310,
+        "shots": 1778,
+        "probability": 0.17435320584926883
+      },
+      "scope": "Independent stationary Bernoulli shots; interval excludes between-circuit drift, calibration uncertainty, hardware context and model error. Increased event yield alone does not imply a correct selected answer."
+    }
+  },
+  "scope": "Descriptive comparison of separate jobs with identical pre-runtime ISA. DD/twirling alters runtime execution; independent-shot intervals exclude drift and calibration uncertainty.",
+  "plain_median_full_z_tv": 0.32072833910143617,
+  "suppressed_median_full_z_tv": 0.4208825126465864
+}

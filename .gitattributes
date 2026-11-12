@@ -1,0 +1,9 @@
+# Frozen evidence includes hashes of source text, JSON, notes and media.
+# Preserve exact bytes on Windows and Linux; do not normalize line endings.
+* -text
+*.py diff=python
+*.pdf binary
+*.pptx binary
+*.qpy binary
+*.npz binary
+*.npy binary

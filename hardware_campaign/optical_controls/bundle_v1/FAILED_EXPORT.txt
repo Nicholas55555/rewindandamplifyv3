@@ -1,0 +1,4 @@
+This first export is not a hardware-ready bundle. Qiskit2.6.1 QPY loading rejected
+the undecomposed Isometry instruction: missing num_ancillas_zero and num_ancillas_dirty.
+No job was submitted. Files are preserved as a failed serialization attempt.
+bundle_v2 exports a verified generic u/cx decomposition before QPY serialization.

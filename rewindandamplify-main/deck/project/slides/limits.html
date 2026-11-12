@@ -1,0 +1,14 @@
+<section id="limits" data-transition="fade" style="background:#F6F5F0;color:#12203A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:88px 128px 104px;display:flex;flex-direction:column;gap:22px">
+<h2 style="font-size:60px;font-weight:600;line-height:1.12;letter-spacing:-0.5px">What we don’t claim</h2>
+<table style="font-size:33px;color:#3B4658">
+<tr style="background:#ECEAE2"><th style="width:24%;color:#12203A">Claim</th><th style="width:76%;color:#12203A">The honest position</th></tr>
+<tr><td>A speedup</td><td>None today. An exact classical sampler gives a sample in about a millisecond here. Its cost grows about 6× per hidden qubit, so a crossover is plausible, but not shown.</td></tr>
+<tr><td>Rewinding a real chip</td><td>We rewind a model of the chip. A physical defect can’t be run backwards, so this queries what was learned from the clicks.</td></tr>
+<tr><td>Steering is quantum</td><td>It is classical importance sampling. Exact only for clicks at known steps, and it needs a rough value of p.</td></tr>
+<tr><td>Local reflection is exact</td><td>It is an approximation. Steered, its hit rate falls to 0.73 at T = 14, where the exact build stays at 1.0.</td></tr>
+<tr><td>A new algorithm</td><td>Amplified rejection sampling is known (Low, Yoder &amp; Chuang 2014). Ours is the mapping onto hidden quantum models, and the resilience work.</td></tr>
+<tr><td>Hardware at scale</td><td>Seven jobs on two chips in one evening: at most 11 qubits and 5 steps. At 5 steps the distribution error is still 0.14 to 0.21.</td></tr>
+</table>
+<p style="position:absolute;right:128px;bottom:56px;width:100px;text-align:right;font-size:24px;color:#6A7282">20</p>
+<aside>We want to be straight about the limits. No speedup today: a classical sampler gives an exact answer in about a millisecond. We rewind a model of the chip, never the chip, because a physical defect can’t run backwards. Steering is classical, and exact only for clicks at known steps. The local reflection is an approximation that drifts on long records. Our hardware runs are small: at most 11 qubits and 5 steps. And the core idea isn’t new: amplified rejection sampling was published in 2014. What’s ours is applying it to hidden quantum models, and the design work to make it survive noise.</aside>
+</section>

@@ -1,0 +1,797 @@
+{
+  "schema": "ra-real-hardware-plan-v1",
+  "created_utc": "2026-11-11T18:09:49.825764+00:00",
+  "label": "dots_suppressed_v1",
+  "backend": "ibm_marrakesh",
+  "simulator": false,
+  "dry_run": false,
+  "plan": "open",
+  "bundle": "quantum_dot_bridge/qrsm_hom_followup/hardware_bundle_v2",
+  "manifest_sha256": "74700362c2c9093cd6d7c3fcb7709242cf6b48abefe2f2751a19e1161afc48a4",
+  "reference_sha256": "c911de33d004b0f18f1ed09310ee5cfd2c254392444b56db8d17d66647fbeabe",
+  "reference_file": "ideal_probabilities.npz",
+  "checked_bundle_hashes": {
+    "quantum_dot_bridge/qrsm_hom_followup/PROTOCOL.md": "defed3a7f4c9f973f99bc360d4cb705287a009acde846cff5b7564d82a0bb994",
+    "quantum_dot_bridge/qrsm_hom_followup/physical_model.py": "36fa729ad3b0bed6d4eac4836cc7985cda97e3abd7cca96e6963e2adcd54cf98",
+    "quantum_dot_bridge/qrsm_hom_followup/circuits.py": "bdd2058e1478170fd990ca91f68e47c108adbe87b291d3d3bee6ad4d5eb045cd",
+    "quantum_dot_bridge/qrsm_hom_followup/test_physical.py": "44a79d0d402d1005aaadb2fec976632fa01f117692b2548474fc2ce3c13268b9",
+    "quantum_dot_bridge/qrsm_hom_followup/export_hardware.py": "8a827598066be440e8c0d60b223ab1b17b192cf79f090206481a4c3eaee45fbc",
+    "quantum_dot_bridge/qrsm_hom_followup/hardware_bundle_v2/logical.qpy": "2b9c1db7eaa55957b590ff09d134038a76bc2eb9366b899a1edb6f7858f461da",
+    "quantum_dot_bridge/qrsm_hom_followup/hardware_bundle_v2/ideal_probabilities.npz": "c911de33d004b0f18f1ed09310ee5cfd2c254392444b56db8d17d66647fbeabe"
+  },
+  "logical_qpy_sha256": {
+    "logical.qpy": "2b9c1db7eaa55957b590ff09d134038a76bc2eb9366b899a1edb6f7858f461da"
+  },
+  "compiled_qpy_sha256": "62e9a559cd538a755e5dbdd9a1c720a1d537544d5f08dd662b4e4e2e5b0b623d",
+  "shots": 4096,
+  "max_execution_time": 80,
+  "mode": "suppressed",
+  "physical_patch": [
+    86,
+    87,
+    97,
+    107,
+    108,
+    109,
+    118,
+    129,
+    128,
+    127,
+    137,
+    147,
+    148,
+    149,
+    150
+  ],
+  "transpiler_seed": 20261111,
+  "pub_order_seed": 20261111,
+  "rep_delay_seconds": 0.00025,
+  "duration_estimate_seconds": 18.965069824,
+  "duration_estimate_caveat": "Calibrated critical path plus repetition delay; excludes service overhead and DD/twirling expansion. Cap is authoritative.",
+  "quota_at_prepare": {
+    "usage_consumed_seconds": 24,
+    "usage_limit_seconds": 600,
+    "usage_remaining_seconds": 576,
+    "usage_limit_reached": false,
+    "usage_period": {
+      "start_time": "2026-10-14T18:03:23.242Z",
+      "end_time": "2026-11-11T18:03:23.242Z"
+    }
+  },
+  "pubs": [
+    {
+      "kind": "science",
+      "name": "passive_coherent_Z",
+      "bundle_index": 4,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        87,
+        86,
+        107,
+        97,
+        108
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108
+      ],
+      "gate_counts": {
+        "sx": 48,
+        "rz": 40,
+        "cz": 20,
+        "x": 5,
+        "measure": 5
+      },
+      "depth": 74,
+      "duration_seconds": 5.124e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.3306690738754696e-16
+      },
+      "pub_index": 0
+    },
+    {
+      "kind": "science",
+      "name": "controlled_two_coherent_Y",
+      "bundle_index": 13,
+      "logical_qubits": 12,
+      "measurement_physical_qubits": [
+        127,
+        86,
+        108,
+        97,
+        109,
+        87,
+        107,
+        137,
+        129,
+        147,
+        118,
+        128
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147
+      ],
+      "gate_counts": {
+        "sx": 284,
+        "rz": 204,
+        "cz": 125,
+        "x": 13,
+        "measure": 12
+      },
+      "depth": 279,
+      "duration_seconds": 1.2591999999999992e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 4.3021142204224816e-16
+      },
+      "pub_index": 1
+    },
+    {
+      "kind": "science",
+      "name": "controlled_one_coherent_Z",
+      "bundle_index": 6,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        108,
+        86,
+        109,
+        97,
+        118,
+        87,
+        107
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 139,
+        "rz": 98,
+        "cz": 62,
+        "x": 7,
+        "measure": 7
+      },
+      "depth": 171,
+      "duration_seconds": 8.73600000000001e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 9.71445146547012e-16
+      },
+      "pub_index": 2
+    },
+    {
+      "kind": "calibration",
+      "name": "cal_alternating",
+      "prepared_bits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        148,
+        149,
+        150
+      ],
+      "duration_seconds": 2.7200000000000002e-06,
+      "pub_index": 3
+    },
+    {
+      "kind": "science",
+      "name": "controlled_two_coherent_X",
+      "bundle_index": 12,
+      "logical_qubits": 12,
+      "measurement_physical_qubits": [
+        127,
+        86,
+        108,
+        97,
+        109,
+        87,
+        107,
+        137,
+        129,
+        147,
+        118,
+        128
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147
+      ],
+      "gate_counts": {
+        "sx": 284,
+        "rz": 206,
+        "cz": 125,
+        "x": 13,
+        "measure": 12
+      },
+      "depth": 280,
+      "duration_seconds": 1.2591999999999992e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 7.494005416219807e-16
+      },
+      "pub_index": 4
+    },
+    {
+      "kind": "science",
+      "name": "frozen_pair_p0.5",
+      "bundle_index": 3,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        86,
+        87,
+        107,
+        97,
+        108
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108
+      ],
+      "gate_counts": {
+        "sx": 42,
+        "rz": 36,
+        "cz": 21,
+        "x": 8,
+        "measure": 5
+      },
+      "depth": 68,
+      "duration_seconds": 4.948000000000001e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 4.440892098500626e-16
+      },
+      "pub_index": 5
+    },
+    {
+      "kind": "science",
+      "name": "frozen_pair_p0",
+      "bundle_index": 0,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        86,
+        87,
+        107,
+        97,
+        108
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108
+      ],
+      "gate_counts": {
+        "sx": 43,
+        "rz": 35,
+        "cz": 21,
+        "x": 7,
+        "measure": 5
+      },
+      "depth": 67,
+      "duration_seconds": 4.948000000000001e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 6.661338147750939e-16
+      },
+      "pub_index": 6
+    },
+    {
+      "kind": "calibration",
+      "name": "cal_one",
+      "prepared_bits": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        148,
+        149,
+        150
+      ],
+      "duration_seconds": 2.7200000000000002e-06,
+      "pub_index": 7
+    },
+    {
+      "kind": "calibration",
+      "name": "cal_complement",
+      "prepared_bits": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        148,
+        149,
+        150
+      ],
+      "duration_seconds": 2.7200000000000002e-06,
+      "pub_index": 8
+    },
+    {
+      "kind": "science",
+      "name": "frozen_pair_p0.02",
+      "bundle_index": 1,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        86,
+        87,
+        107,
+        97,
+        108
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108
+      ],
+      "gate_counts": {
+        "sx": 44,
+        "rz": 36,
+        "cz": 21,
+        "x": 8,
+        "measure": 5
+      },
+      "depth": 67,
+      "duration_seconds": 4.984e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 6.106226635438361e-16
+      },
+      "pub_index": 9
+    },
+    {
+      "kind": "science",
+      "name": "controlled_two_classical_Z",
+      "bundle_index": 9,
+      "logical_qubits": 15,
+      "measurement_physical_qubits": [
+        147,
+        86,
+        108,
+        97,
+        109,
+        87,
+        107,
+        118,
+        129,
+        148,
+        127,
+        149,
+        128,
+        137,
+        150
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        148,
+        149,
+        150
+      ],
+      "gate_counts": {
+        "sx": 342,
+        "rz": 226,
+        "cz": 156,
+        "x": 16,
+        "measure": 15
+      },
+      "depth": 343,
+      "duration_seconds": 1.5227999999999973e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.191891195797325e-16
+      },
+      "pub_index": 10
+    },
+    {
+      "kind": "science",
+      "name": "controlled_one_coherent_X",
+      "bundle_index": 10,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        108,
+        86,
+        109,
+        97,
+        118,
+        87,
+        107
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 139,
+        "rz": 99,
+        "cz": 62,
+        "x": 7,
+        "measure": 7
+      },
+      "depth": 171,
+      "duration_seconds": 8.73600000000001e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 8.049116928532385e-16
+      },
+      "pub_index": 11
+    },
+    {
+      "kind": "science",
+      "name": "passive_classical_Z",
+      "bundle_index": 5,
+      "logical_qubits": 6,
+      "measurement_physical_qubits": [
+        108,
+        86,
+        97,
+        87,
+        107,
+        109
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109
+      ],
+      "gate_counts": {
+        "sx": 64,
+        "rz": 43,
+        "cz": 30,
+        "measure": 6,
+        "x": 2
+      },
+      "depth": 75,
+      "duration_seconds": 5.396000000000001e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 3.0531133177191805e-16
+      },
+      "pub_index": 12
+    },
+    {
+      "kind": "science",
+      "name": "controlled_one_classical_Z",
+      "bundle_index": 7,
+      "logical_qubits": 8,
+      "measurement_physical_qubits": [
+        108,
+        86,
+        109,
+        97,
+        118,
+        87,
+        107,
+        129
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129
+      ],
+      "gate_counts": {
+        "sx": 161,
+        "rz": 104,
+        "cz": 75,
+        "measure": 8,
+        "x": 7
+      },
+      "depth": 193,
+      "duration_seconds": 9.70400000000001e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 4.440892098500626e-16
+      },
+      "pub_index": 13
+    },
+    {
+      "kind": "science",
+      "name": "frozen_pair_p0.1",
+      "bundle_index": 2,
+      "logical_qubits": 5,
+      "measurement_physical_qubits": [
+        86,
+        87,
+        107,
+        97,
+        108
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108
+      ],
+      "gate_counts": {
+        "sx": 44,
+        "rz": 36,
+        "cz": 21,
+        "x": 8,
+        "measure": 5
+      },
+      "depth": 67,
+      "duration_seconds": 4.984e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 4.996003610813204e-16
+      },
+      "pub_index": 14
+    },
+    {
+      "kind": "science",
+      "name": "controlled_one_coherent_Y",
+      "bundle_index": 11,
+      "logical_qubits": 7,
+      "measurement_physical_qubits": [
+        108,
+        86,
+        109,
+        97,
+        118,
+        87,
+        107
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118
+      ],
+      "gate_counts": {
+        "sx": 139,
+        "rz": 97,
+        "cz": 62,
+        "x": 7,
+        "measure": 7
+      },
+      "depth": 170,
+      "duration_seconds": 8.73600000000001e-06,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 9.71445146547012e-16
+      },
+      "pub_index": 15
+    },
+    {
+      "kind": "science",
+      "name": "controlled_two_coherent_Z",
+      "bundle_index": 8,
+      "logical_qubits": 12,
+      "measurement_physical_qubits": [
+        127,
+        86,
+        108,
+        97,
+        109,
+        87,
+        107,
+        137,
+        129,
+        147,
+        118,
+        128
+      ],
+      "initial_layout": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147
+      ],
+      "gate_counts": {
+        "sx": 284,
+        "rz": 205,
+        "cz": 125,
+        "x": 13,
+        "measure": 12
+      },
+      "depth": 280,
+      "duration_seconds": 1.2591999999999992e-05,
+      "validation": {
+        "logical_qpy_roundtrip": true,
+        "native_isa_checked": true,
+        "compiled_probability_max_error": 5.134781488891349e-16
+      },
+      "pub_index": 16
+    },
+    {
+      "kind": "calibration",
+      "name": "cal_zero",
+      "prepared_bits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "measurement_physical_qubits": [
+        86,
+        87,
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        137,
+        147,
+        148,
+        149,
+        150
+      ],
+      "duration_seconds": 2.684e-06,
+      "pub_index": 17
+    }
+  ],
+  "paired_source_plan": "dots_plain_v1",
+  "paired_source_plan_sha256": "305633d60869b73eedd73a1bc3e5b4c8410bc744d16d5acc71b18687fbb5b1d5"
+}

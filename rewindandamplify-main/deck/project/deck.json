@@ -1,0 +1,70 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-05T20:30:00Z"
+  },
+  "lists": "css",
+  "title": "Rewind & Amplify: Grover inside a quantum recurrent model",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "problem",
+    "realworld",
+    "qrsm",
+    "qrsmcircuit",
+    "wall",
+    "grover",
+    "grovercircuit",
+    "rewind",
+    "purify",
+    "exact",
+    "partial",
+    "architecture",
+    "steer",
+    "local",
+    "hero",
+    "fingerprint",
+    "search",
+    "demo",
+    "hardware",
+    "noise",
+    "limits",
+    "future",
+    "team",
+    "variants"
+  ],
+  "sections": {
+    "s1": {
+      "description": "The problem: rare events are the informative ones, and the most expensive to see",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "Fusing Grover with the QRSM: why it does not bolt on, and the fix that makes it exact",
+      "start": "grover"
+    },
+    "s3": {
+      "description": "A noise-resilient architecture: steer, then amplify locally",
+      "start": "architecture"
+    },
+    "s4": {
+      "description": "What it can answer: a physics fingerprint and a vague keyword search",
+      "start": "fingerprint"
+    },
+    "s5": {
+      "description": "Real IBM chips, what they taught us, honest limits, potential and the team",
+      "start": "hardware"
+    }
+  },
+  "faces": {
+    "ibm-plex-sans": {
+      "family": "IBM Plex Sans",
+      "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    },
+    "jetbrains-mono": {
+      "family": "JetBrains Mono",
+      "href": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap"
+    }
+  },
+  "designSystems": []
+}

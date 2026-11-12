@@ -1,0 +1,18 @@
+{
+  "returncode": 0,
+  "tests_passed": 10,
+  "all_checks_passed": true,
+  "command": [
+    "C:\\Users\\nicho\\AppData\\Local\\Temp\\rewind_audit_bh37e7ud\\venv\\Scripts\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "hardware_campaign/feasibility",
+    "-p",
+    "test_adapters.py",
+    "-v"
+  ],
+  "test_source_sha256": "cfbe8a29ffc655f9783f00739315c6bba29ff4bea800a06be75b84661bd95007",
+  "test_results_sha256": "6fb28d789bbf68497decb85b44dfe56647e1f19262f1e88a43f3a648680a5dc0"
+}

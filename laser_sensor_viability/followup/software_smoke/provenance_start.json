@@ -1,0 +1,96 @@
+{
+  "created_utc": "2026-11-11T04:30:50Z",
+  "mode": "software_smoke",
+  "source_sha256": {
+    "followup\\protocol.json": "31bc54cddcf173358d23ed42497593e3fbe70a7850cfa767d1cef018b7413291",
+    "followup\\run_followup.py": "439de6eb4445cff0713ddddc315d185bd5b36a94522ac7f07133b108c8176a61",
+    "model.py": "751b3138d409bd3965870b517ce8da9257a94ba98118ec6428866f91973da5c8"
+  },
+  "protocol": {
+    "title": "Unknown-onset laser-frequency monitoring across independent synthetic sessions",
+    "version": 1,
+    "status": "Specified before the first follow-up held-out evaluation; not an externally registered protocol",
+    "base_seed": 343050,
+    "outer_calibrations": 2,
+    "fit_sessions": 2,
+    "fit_records_per_session": 4,
+    "threshold_sessions": 24,
+    "threshold_records_per_session": 1,
+    "test_sessions": 2,
+    "test_records_per_class_per_session": 3,
+    "response_scan_repetitions_per_setting": 16,
+    "record_cycles": 128,
+    "window_cycles": 16,
+    "event_onset_inclusive_cycles": [
+      48,
+      96
+    ],
+    "nuisance_onset_inclusive_cycles": [
+      40,
+      104
+    ],
+    "frequency_step_magnitude_hz": 0.5,
+    "record_false_alarm_target": 0.05,
+    "restricted_delay_s": 32,
+    "bootstrap_repetitions": 30,
+    "session_distribution": {
+      "t2_log_sd": 0.2,
+      "reference_random_walk_log_sd": 0.25,
+      "readout_01_normal_sd": 0.004,
+      "readout_10_normal_sd": 0.006,
+      "reference_initial_offset_sd_hz": 0.15,
+      "diode_static_gain_log_sd": 0.01
+    },
+    "scenarios": [
+      {
+        "id": "unseen_nominal_sessions",
+        "description": "Session nuisance values are independently drawn from the calibration population; onset is hidden from the detector."
+      },
+      {
+        "id": "unseen_short_coherence",
+        "description": "Atomic T2 in new sessions is multiplied by0.06; calibration is frozen.",
+        "t2_multiplier": 0.06
+      },
+      {
+        "id": "atomic_reference_changes",
+        "description": "An independent random-sign0.7Hz atomic-reference step occurs in both null and source-event records.",
+        "nuisance": "atomic",
+        "magnitude": 0.7
+      },
+      {
+        "id": "primary_reference_changes",
+        "description": "An independent random-sign0.7Hz primary-reference step occurs in both populations.",
+        "nuisance": "primary",
+        "magnitude": 0.7
+      },
+      {
+        "id": "common_sampled_path_changes",
+        "description": "An independent random-sign0.7Hz common sampled-path step occurs in both populations and is indistinguishable from a source step by these observations.",
+        "nuisance": "path",
+        "magnitude": 0.7
+      },
+      {
+        "id": "source_power_changes_only_in_null",
+        "description": "A10% intensity step occurs in both populations; null records have no injected frequency step. This is a legitimate power event but a nuisance for source-frequency attribution.",
+        "nuisance": "power",
+        "magnitude": 0.1
+      }
+    ],
+    "algorithms": [
+      "power_only",
+      "classical",
+      "quantum",
+      "classical_quantum",
+      "two_classical",
+      "classical_quantum_agreement",
+      "two_classical_agreement"
+    ],
+    "detector": "Causal difference of current16-cycle mean and preceding16-cycle mean; first score at32s. Linear minimum-variance fusion fitted on null training contrasts with declared unit local frequency response. Agreement variants require same-sign contrasts from both frequency references and use the smaller standardized absolute contrast. Every method has an independent threshold calibrated on its own record-maximum score. The test onset is never supplied to the detector.",
+    "splitting": "Response scan, covariance fitting, threshold calibration, and test sessions use independent seed namespaces. One null record per threshold session ensures IID record maxima under the assumed session population. Whole test sessions and all eight calibration pipelines are held separate.",
+    "uncertainty": "Report aggregate counts and paired comparisons, per-calibration results, and hierarchical bootstrap intervals resampling independent calibration pipelines then sessions. These quantify simulation/calibration sampling under assumed populations, not model or hardware validity.",
+    "delay": "Only the first alarm counts. An alarm at or before source onset is a pre-onset failure. Report detection within32s, detected-only delay separately, and mean restricted delay with misses/pre-onset alarms charged32s. A null false alarm is any alarm in the128s record.",
+    "scope": "Reuses the frozen finite-pulse698nm surrogate,64 independent atoms,1s cycles and incomplete photon bookkeeping. No optical hardware, QPU, quantum algorithm, wafer-dose/critical-dimension model, or universal quantum advantage. The32s rolling contrast introduces smoothing and latency; a1Hz sampling rate does not resolve arbitrary fast laser noise. The agreement rule was motivated by earlier failures but is specified here before fresh data evaluation.",
+    "changes_after_holdout": "Any scientific rule changes require a separate output/version and fresh test seeds. Software fixes must retain the old run/provenance and explain their effect. Frozen parent results are never overwritten."
+  },
+  "first_heldout_evaluation_not_yet_started": true
+}

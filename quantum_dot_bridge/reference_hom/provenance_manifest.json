@@ -1,0 +1,262 @@
+{
+  "schema": "reference-hom-ingestion-v1",
+  "scope": "External experimental histogram ingestion and compatibility audit; no visibility estimate or physical fit",
+  "record_url": "https://zenodo.org/records/6337697",
+  "record_api_url": "https://zenodo.org/api/records/6337697",
+  "dataset_doi": "10.5281/zenodo.6337697",
+  "dataset_title": "Dataset for \"Fast and efficient demultiplexing of single photons from a GaAs quantum dot with resonantly enhanced electro-optic modulators\"",
+  "publication_date": "2022-03-17",
+  "source_authors": [
+    "Julian Münzberg",
+    "Franz Draxl",
+    "Saimon Filipe Covre da Silva",
+    "Yusuf Karli",
+    "Santanu Manna",
+    "Armando Rastelli",
+    "Gregor Weihs",
+    "Robert Keil"
+  ],
+  "paper_url": "https://arxiv.org/html/2203.08682v1",
+  "paper_version": "arXiv:2203.08682v1",
+  "license": {
+    "id": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "files": [
+    {
+      "path": "HOM_QD5_resonant_photon1+2_17-39-23.csv",
+      "source_url": "https://zenodo.org/api/records/6337697/files/HOM_QD5_resonant_photon1+2_17-39-23.csv/content",
+      "figure": "4a",
+      "excitation_pulse_separation_ns": 13.1,
+      "polarization": "co",
+      "source_bytes": 49130,
+      "zenodo_md5": "a0608db38ed887163fbd323ad4908233",
+      "local_md5": "a0608db38ed887163fbd323ad4908233",
+      "sha256": "060604e8aef06bf865229365f5ae3cabfe4986c85c548391693a48465a15181a",
+      "md5_matches_zenodo": true,
+      "shape": [
+        5000,
+        2
+      ],
+      "source_header": [
+        "Time (ps)",
+        "Counts"
+      ],
+      "axis_min_ps": -125000,
+      "axis_max_ps": 124950,
+      "axis_step_ps": 50,
+      "count_min": 0,
+      "count_max": 2805,
+      "count_sum": 225976,
+      "zero_count_bins": 1240,
+      "counts_nonnegative_integers": true,
+      "duration_seconds": null,
+      "duration_status": "not supplied in these CSV headers or mapping README",
+      "transformations": "none; raw source bytes unchanged"
+    },
+    {
+      "path": "HOM_QD5_resonant_photon1+2_dist_17-42-16.csv",
+      "source_url": "https://zenodo.org/api/records/6337697/files/HOM_QD5_resonant_photon1+2_dist_17-42-16.csv/content",
+      "figure": "4a",
+      "excitation_pulse_separation_ns": 13.1,
+      "polarization": "cross",
+      "source_bytes": 49016,
+      "zenodo_md5": "7f5ab09fcfd6cdf4bc092de1117e6834",
+      "local_md5": "7f5ab09fcfd6cdf4bc092de1117e6834",
+      "sha256": "f2aa4d585dc3fd0f95212fc986ed3d142dd0a579fb476856fb30fcdb3de1fe24",
+      "md5_matches_zenodo": true,
+      "shape": [
+        5000,
+        2
+      ],
+      "source_header": [
+        "Time (ps)",
+        "Counts"
+      ],
+      "axis_min_ps": -125000,
+      "axis_max_ps": 124950,
+      "axis_step_ps": 50,
+      "count_min": 0,
+      "count_max": 1954,
+      "count_sum": 174800,
+      "zero_count_bins": 1634,
+      "counts_nonnegative_integers": true,
+      "duration_seconds": null,
+      "duration_status": "not supplied in these CSV headers or mapping README",
+      "transformations": "none; raw source bytes unchanged"
+    },
+    {
+      "path": "HOM_QD5_resonant_photon1+3_17-50-06.csv",
+      "source_url": "https://zenodo.org/api/records/6337697/files/HOM_QD5_resonant_photon1+3_17-50-06.csv/content",
+      "figure": "4b",
+      "excitation_pulse_separation_ns": 26.2,
+      "polarization": "co",
+      "source_bytes": 49080,
+      "zenodo_md5": "3f501c856a54ee304af00b27b250c93e",
+      "local_md5": "3f501c856a54ee304af00b27b250c93e",
+      "sha256": "f13b91b12ba28e5fd3d86caf80c2163dec4667d0d4667f67a7dcd4a7165ca0b0",
+      "md5_matches_zenodo": true,
+      "shape": [
+        5000,
+        2
+      ],
+      "source_header": [
+        "Time (ps)",
+        "Counts"
+      ],
+      "axis_min_ps": -125000,
+      "axis_max_ps": 124950,
+      "axis_step_ps": 50,
+      "count_min": 0,
+      "count_max": 2729,
+      "count_sum": 209768,
+      "zero_count_bins": 1284,
+      "counts_nonnegative_integers": true,
+      "duration_seconds": null,
+      "duration_status": "not supplied in these CSV headers or mapping README",
+      "transformations": "none; raw source bytes unchanged"
+    },
+    {
+      "path": "HOM_QD5_resonant_photon1+3_dist_17-52-41.csv",
+      "source_url": "https://zenodo.org/api/records/6337697/files/HOM_QD5_resonant_photon1+3_dist_17-52-41.csv/content",
+      "figure": "4b",
+      "excitation_pulse_separation_ns": 26.2,
+      "polarization": "cross",
+      "source_bytes": 49131,
+      "zenodo_md5": "3867559ab693c857fd0e9e2d0c3d969d",
+      "local_md5": "3867559ab693c857fd0e9e2d0c3d969d",
+      "sha256": "f39e6607b75dd8e829e98025943c971a12589a83b25cc349ea7c7b06ffe48ac0",
+      "md5_matches_zenodo": true,
+      "shape": [
+        5000,
+        2
+      ],
+      "source_header": [
+        "Time (ps)",
+        "Counts"
+      ],
+      "axis_min_ps": -125000,
+      "axis_max_ps": 124950,
+      "axis_step_ps": 50,
+      "count_min": 0,
+      "count_max": 2759,
+      "count_sum": 236755,
+      "zero_count_bins": 1188,
+      "counts_nonnegative_integers": true,
+      "duration_seconds": null,
+      "duration_status": "not supplied in these CSV headers or mapping README",
+      "transformations": "none; raw source bytes unchanged"
+    },
+    {
+      "path": "HOM_QD5_resonant_photon1+4_17-57-10.csv",
+      "source_url": "https://zenodo.org/api/records/6337697/files/HOM_QD5_resonant_photon1+4_17-57-10.csv/content",
+      "figure": "4c",
+      "excitation_pulse_separation_ns": 39.4,
+      "polarization": "co",
+      "source_bytes": 49233,
+      "zenodo_md5": "a67bd07f2f91e5a0e28a0b51b27470dc",
+      "local_md5": "a67bd07f2f91e5a0e28a0b51b27470dc",
+      "sha256": "fe6a13209ccddd52a9a98e50e10302c1cd2dc0cbfc34f7eea79da811c5e7a201",
+      "md5_matches_zenodo": true,
+      "shape": [
+        5000,
+        2
+      ],
+      "source_header": [
+        "Time (ps)",
+        "Counts"
+      ],
+      "axis_min_ps": -125000,
+      "axis_max_ps": 124950,
+      "axis_step_ps": 50,
+      "count_min": 0,
+      "count_max": 3694,
+      "count_sum": 297422,
+      "zero_count_bins": 1279,
+      "counts_nonnegative_integers": true,
+      "duration_seconds": null,
+      "duration_status": "not supplied in these CSV headers or mapping README",
+      "transformations": "none; raw source bytes unchanged"
+    },
+    {
+      "path": "HOM_QD5_resonant_photon1+4_dist_18-00-48.csv",
+      "source_url": "https://zenodo.org/api/records/6337697/files/HOM_QD5_resonant_photon1+4_dist_18-00-48.csv/content",
+      "figure": "4c",
+      "excitation_pulse_separation_ns": 39.4,
+      "polarization": "cross",
+      "source_bytes": 49288,
+      "zenodo_md5": "8393de1731b15906a3b59d68f2c93287",
+      "local_md5": "8393de1731b15906a3b59d68f2c93287",
+      "sha256": "514b07b90ed44ff349aee5cc3cb60af81bdef1f907d1796182c8a3bdd9033f20",
+      "md5_matches_zenodo": true,
+      "shape": [
+        5000,
+        2
+      ],
+      "source_header": [
+        "Time (ps)",
+        "Counts"
+      ],
+      "axis_min_ps": -125000,
+      "axis_max_ps": 124950,
+      "axis_step_ps": 50,
+      "count_min": 0,
+      "count_max": 3762,
+      "count_sum": 326703,
+      "zero_count_bins": 1182,
+      "counts_nonnegative_integers": true,
+      "duration_seconds": null,
+      "duration_status": "not supplied in these CSV headers or mapping README",
+      "transformations": "none; raw source bytes unchanged"
+    }
+  ],
+  "all_axes_identical": true,
+  "all_checks_passed": true,
+  "metadata_snapshot": {
+    "path": "zenodo_record.json",
+    "sha256": "01b6a7b9d5b2888e420c02e442d1c5b38e0bd5c6877d34961730b96b833aa65a",
+    "saved_utc": "2026-11-11T16:22:21.628193+00:00"
+  },
+  "source_readme": {
+    "path": "source_readme.md",
+    "source_key": "readme.md",
+    "bytes": 5491,
+    "md5": "c96c377de1642b00591b717586874e08",
+    "sha256": "c78e606d37f50d11ef23b549e6ee296f64af5ebd98141980b7339f537b1ac256"
+  },
+  "paper_reported_corrected_visibility": [
+    {
+      "excitation_pulse_separation_ns": 13.1,
+      "value": 0.803,
+      "reported_parenthetical_uncertainty": 0.005
+    },
+    {
+      "excitation_pulse_separation_ns": 26.2,
+      "value": 0.826,
+      "reported_parenthetical_uncertainty": 0.004
+    },
+    {
+      "excitation_pulse_separation_ns": 39.4,
+      "value": 0.774,
+      "reported_parenthetical_uncertainty": 0.004
+    }
+  ],
+  "reported_values_note": "Transcribed from paper Sec. IV, not recomputed here; no monotonic trend inferred",
+  "compatibility": {
+    "appropriate_observable": "Co/cross coincidence-delay histograms for a two-photon interference measurement model",
+    "not_available": "Ordered per-shot photon records or underlying source-state trajectories",
+    "normalization_reproduced": false,
+    "missing_for_visibility_reproduction": [
+      "verified per-run duration/relative normalization",
+      "central and reference peak integration conventions",
+      "background treatment",
+      "uncertainty propagation and calibration association"
+    ],
+    "paper_corrections": "Sec. IV Eq. 4 uses beam-splitter R=.514(.007), T=1-R and g2(0)=.016(.001); this audit does not reapply them",
+    "team_data": false,
+    "team_fit": false,
+    "lithography_validation": false
+  },
+  "verified_utc": "2026-11-11T16:26:44.743996+00:00",
+  "audit_source_sha256": "09ff4390f4a21ea594e32f93b48a6bc0b903e71c2a71fdb9954fac92b5ace07f"
+}

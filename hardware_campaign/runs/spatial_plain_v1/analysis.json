@@ -1,0 +1,1039 @@
+{
+  "schema": "ra-offline-hardware-analysis-v1",
+  "run": "spatial_plain_v1",
+  "backend": "ibm_marrakesh",
+  "job_id": "dbqatdpabdes73fnu7r0",
+  "source_sha256": {
+    "hardware_campaign/analyze.py": "3a6b0d6851951bd84f9493be7b1788044a1a48b8c8dd1e0df54b04e2ea98dc37",
+    "hardware_campaign/feasibility/adapters.py": "9ba87e818b7915283983369531cd682c44a3bbe2cab286dd37ca4123ae964d88",
+    "hardware_campaign/optical_controls/analyze_counts.py": "b979182a04729aa79ba35d4fd942d37231d77448b4ba26849d1d40565a4afee7"
+  },
+  "input_sha256": {
+    "plan.json": "24c0a07b931fd3467c24d60b3a841bf7c50b357446c0f59269c997b8edd3ac73",
+    "raw.json": "94661eb7de4d6458a0e5633c44c3f9c0c4393f95771d9a266869af9b688f496b",
+    "manifest.json": "afe39983884bc25f32193c839d55515997b323c437c7a41395bda1de5bafa599",
+    "reference_npz": "1d3ef031c0484552a52036f9d4dd127d322c3b169df28aa7ca15d0767df10d3a"
+  },
+  "calibration": {
+    "independent_bit_error_estimates": {
+      "86": {
+        "e01": {
+          "probability": 0.001708984375,
+          "successes": 7,
+          "shots": 4096,
+          "wilson95": [
+            0.0008280858168609898,
+            0.0035236577810063684
+          ]
+        },
+        "e10": {
+          "probability": 0.02099609375,
+          "successes": 86,
+          "shots": 4096,
+          "wilson95": [
+            0.017033419158058095,
+            0.025856400018333753
+          ]
+        }
+      },
+      "87": {
+        "e01": {
+          "probability": 0.0078125,
+          "successes": 32,
+          "shots": 4096,
+          "wilson95": [
+            0.005539509852396457,
+            0.011007827282978652
+          ]
+        },
+        "e10": {
+          "probability": 0.00537109375,
+          "successes": 22,
+          "shots": 4096,
+          "wilson95": [
+            0.0035497403427024827,
+            0.008119359377669524
+          ]
+        }
+      },
+      "97": {
+        "e01": {
+          "probability": 0.0048828125,
+          "successes": 20,
+          "shots": 4096,
+          "wilson95": [
+            0.0031631598704827783,
+            0.007530292366888611
+          ]
+        },
+        "e10": {
+          "probability": 0.0087890625,
+          "successes": 36,
+          "shots": 4096,
+          "wilson95": [
+            0.006355424717037815,
+            0.012143207384338531
+          ]
+        }
+      },
+      "107": {
+        "e01": {
+          "probability": 0.001953125,
+          "successes": 8,
+          "shots": 4096,
+          "wilson95": [
+            0.0009900179449591885,
+            0.0038495493944084797
+          ]
+        },
+        "e10": {
+          "probability": 0.013671875,
+          "successes": 56,
+          "shots": 4096,
+          "wilson95": [
+            0.01054387645975476,
+            0.017711230471627787
+          ]
+        }
+      },
+      "108": {
+        "e01": {
+          "probability": 0.001953125,
+          "successes": 8,
+          "shots": 4096,
+          "wilson95": [
+            0.0009900179449591885,
+            0.0038495493944084797
+          ]
+        },
+        "e10": {
+          "probability": 0.015625,
+          "successes": 64,
+          "shots": 4096,
+          "wilson95": [
+            0.012255565007829483,
+            0.01990213185555554
+          ]
+        }
+      },
+      "109": {
+        "e01": {
+          "probability": 0.0068359375,
+          "successes": 28,
+          "shots": 4096,
+          "wilson95": [
+            0.004733873030895345,
+            0.009862169138478523
+          ]
+        },
+        "e10": {
+          "probability": 0.01416015625,
+          "successes": 58,
+          "shots": 4096,
+          "wilson95": [
+            0.010970229851119503,
+            0.018260524563263665
+          ]
+        }
+      },
+      "118": {
+        "e01": {
+          "probability": 0.00634765625,
+          "successes": 26,
+          "shots": 4096,
+          "wilson95": [
+            0.004335565780323295,
+            0.009284828906049952
+          ]
+        },
+        "e10": {
+          "probability": 0.031982421875,
+          "successes": 131,
+          "shots": 4096,
+          "wilson95": [
+            0.02701717683316579,
+            0.037824710710740006
+          ]
+        }
+      },
+      "129": {
+        "e01": {
+          "probability": 0.001953125,
+          "successes": 8,
+          "shots": 4096,
+          "wilson95": [
+            0.0009900179449591885,
+            0.0038495493944084797
+          ]
+        },
+        "e10": {
+          "probability": 0.01513671875,
+          "successes": 62,
+          "shots": 4096,
+          "wilson95": [
+            0.011826124044008677,
+            0.01935592533637573
+          ]
+        }
+      },
+      "128": {
+        "e01": {
+          "probability": 0.02392578125,
+          "successes": 98,
+          "shots": 4096,
+          "wilson95": [
+            0.01967285964881211,
+            0.029070844425583456
+          ]
+        },
+        "e10": {
+          "probability": 0.102294921875,
+          "successes": 419,
+          "shots": 4096,
+          "wilson95": [
+            0.0933841297268137,
+            0.11195099536918135
+          ]
+        }
+      },
+      "127": {
+        "e01": {
+          "probability": 0.022216796875,
+          "successes": 91,
+          "shots": 4096,
+          "wilson95": [
+            0.018130754347330184,
+            0.02719818353656321
+          ]
+        },
+        "e10": {
+          "probability": 0.0380859375,
+          "successes": 156,
+          "shots": 4096,
+          "wilson95": [
+            0.032643890796404854,
+            0.044393590285008694
+          ]
+        }
+      },
+      "137": {
+        "e01": {
+          "probability": 0.00244140625,
+          "successes": 10,
+          "shots": 4096,
+          "wilson95": [
+            0.0013266895763215114,
+            0.004488525246046777
+          ]
+        },
+        "e10": {
+          "probability": 0.01513671875,
+          "successes": 62,
+          "shots": 4096,
+          "wilson95": [
+            0.011826124044008677,
+            0.01935592533637573
+          ]
+        }
+      },
+      "147": {
+        "e01": {
+          "probability": 0.003662109375,
+          "successes": 15,
+          "shots": 4096,
+          "wilson95": [
+            0.0022205922771783033,
+            0.006033741252691535
+          ]
+        },
+        "e10": {
+          "probability": 0.11767578125,
+          "successes": 482,
+          "shots": 4096,
+          "wilson95": [
+            0.10816420807432102,
+            0.12790381273619358
+          ]
+        }
+      },
+      "148": {
+        "e01": {
+          "probability": 0.005615234375,
+          "successes": 23,
+          "shots": 4096,
+          "wilson95": [
+            0.003744712895050349,
+            0.00841221056682197
+          ]
+        },
+        "e10": {
+          "probability": 0.012939453125,
+          "successes": 53,
+          "shots": 4096,
+          "wilson95": [
+            0.009906496085844563,
+            0.016885139621037056
+          ]
+        }
+      },
+      "149": {
+        "e01": {
+          "probability": 0.00390625,
+          "successes": 16,
+          "shots": 4096,
+          "wilson95": [
+            0.002405923039438864,
+            0.0063362342319312846
+          ]
+        },
+        "e10": {
+          "probability": 0.010498046875,
+          "successes": 43,
+          "shots": 4096,
+          "wilson95": [
+            0.007803362608721715,
+            0.014110035683156804
+          ]
+        }
+      }
+    },
+    "pattern_diagnostics": [
+      {
+        "name": "cal_zero",
+        "per_qubit": [
+          {
+            "physical_qubit": 86,
+            "observed_error": 0.001708984375,
+            "independent_fit_error": 0.001708984375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 87,
+            "observed_error": 0.0078125,
+            "independent_fit_error": 0.0078125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 97,
+            "observed_error": 0.0048828125,
+            "independent_fit_error": 0.0048828125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 107,
+            "observed_error": 0.001953125,
+            "independent_fit_error": 0.001953125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 108,
+            "observed_error": 0.001953125,
+            "independent_fit_error": 0.001953125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 109,
+            "observed_error": 0.0068359375,
+            "independent_fit_error": 0.0068359375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 118,
+            "observed_error": 0.00634765625,
+            "independent_fit_error": 0.00634765625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 129,
+            "observed_error": 0.001953125,
+            "independent_fit_error": 0.001953125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 128,
+            "observed_error": 0.02392578125,
+            "independent_fit_error": 0.02392578125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 127,
+            "observed_error": 0.022216796875,
+            "independent_fit_error": 0.022216796875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 137,
+            "observed_error": 0.00244140625,
+            "independent_fit_error": 0.00244140625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 147,
+            "observed_error": 0.003662109375,
+            "independent_fit_error": 0.003662109375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 148,
+            "observed_error": 0.005615234375,
+            "independent_fit_error": 0.005615234375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 149,
+            "observed_error": 0.00390625,
+            "independent_fit_error": 0.00390625,
+            "residual": 0.0
+          }
+        ],
+        "maximum_absolute_pair_error_covariance": 0.0003364086151123047
+      },
+      {
+        "name": "cal_alternating",
+        "per_qubit": [
+          {
+            "physical_qubit": 86,
+            "observed_error": 0.00048828125,
+            "independent_fit_error": 0.001708984375,
+            "residual": -0.001220703125
+          },
+          {
+            "physical_qubit": 87,
+            "observed_error": 0.008056640625,
+            "independent_fit_error": 0.00537109375,
+            "residual": 0.002685546875
+          },
+          {
+            "physical_qubit": 97,
+            "observed_error": 0.004150390625,
+            "independent_fit_error": 0.0048828125,
+            "residual": -0.000732421875
+          },
+          {
+            "physical_qubit": 107,
+            "observed_error": 0.01513671875,
+            "independent_fit_error": 0.013671875,
+            "residual": 0.00146484375
+          },
+          {
+            "physical_qubit": 108,
+            "observed_error": 0.005615234375,
+            "independent_fit_error": 0.001953125,
+            "residual": 0.003662109375
+          },
+          {
+            "physical_qubit": 109,
+            "observed_error": 0.01513671875,
+            "independent_fit_error": 0.01416015625,
+            "residual": 0.0009765625
+          },
+          {
+            "physical_qubit": 118,
+            "observed_error": 0.0029296875,
+            "independent_fit_error": 0.00634765625,
+            "residual": -0.00341796875
+          },
+          {
+            "physical_qubit": 129,
+            "observed_error": 0.0107421875,
+            "independent_fit_error": 0.01513671875,
+            "residual": -0.00439453125
+          },
+          {
+            "physical_qubit": 128,
+            "observed_error": 0.028564453125,
+            "independent_fit_error": 0.02392578125,
+            "residual": 0.004638671875
+          },
+          {
+            "physical_qubit": 127,
+            "observed_error": 0.03955078125,
+            "independent_fit_error": 0.0380859375,
+            "residual": 0.00146484375
+          },
+          {
+            "physical_qubit": 137,
+            "observed_error": 0.00390625,
+            "independent_fit_error": 0.00244140625,
+            "residual": 0.00146484375
+          },
+          {
+            "physical_qubit": 147,
+            "observed_error": 0.10693359375,
+            "independent_fit_error": 0.11767578125,
+            "residual": -0.0107421875
+          },
+          {
+            "physical_qubit": 148,
+            "observed_error": 0.001708984375,
+            "independent_fit_error": 0.005615234375,
+            "residual": -0.00390625
+          },
+          {
+            "physical_qubit": 149,
+            "observed_error": 0.00830078125,
+            "independent_fit_error": 0.010498046875,
+            "residual": -0.002197265625
+          }
+        ],
+        "maximum_absolute_pair_error_covariance": 0.0016186237335205078
+      },
+      {
+        "name": "cal_complement",
+        "per_qubit": [
+          {
+            "physical_qubit": 86,
+            "observed_error": 0.02001953125,
+            "independent_fit_error": 0.02099609375,
+            "residual": -0.0009765625
+          },
+          {
+            "physical_qubit": 87,
+            "observed_error": 0.00537109375,
+            "independent_fit_error": 0.0078125,
+            "residual": -0.00244140625
+          },
+          {
+            "physical_qubit": 97,
+            "observed_error": 0.006103515625,
+            "independent_fit_error": 0.0087890625,
+            "residual": -0.002685546875
+          },
+          {
+            "physical_qubit": 107,
+            "observed_error": 0.0009765625,
+            "independent_fit_error": 0.001953125,
+            "residual": -0.0009765625
+          },
+          {
+            "physical_qubit": 108,
+            "observed_error": 0.0166015625,
+            "independent_fit_error": 0.015625,
+            "residual": 0.0009765625
+          },
+          {
+            "physical_qubit": 109,
+            "observed_error": 0.0048828125,
+            "independent_fit_error": 0.0068359375,
+            "residual": -0.001953125
+          },
+          {
+            "physical_qubit": 118,
+            "observed_error": 0.029052734375,
+            "independent_fit_error": 0.031982421875,
+            "residual": -0.0029296875
+          },
+          {
+            "physical_qubit": 129,
+            "observed_error": 0.00146484375,
+            "independent_fit_error": 0.001953125,
+            "residual": -0.00048828125
+          },
+          {
+            "physical_qubit": 128,
+            "observed_error": 0.1025390625,
+            "independent_fit_error": 0.102294921875,
+            "residual": 0.000244140625
+          },
+          {
+            "physical_qubit": 127,
+            "observed_error": 0.020751953125,
+            "independent_fit_error": 0.022216796875,
+            "residual": -0.00146484375
+          },
+          {
+            "physical_qubit": 137,
+            "observed_error": 0.01025390625,
+            "independent_fit_error": 0.01513671875,
+            "residual": -0.0048828125
+          },
+          {
+            "physical_qubit": 147,
+            "observed_error": 0.002685546875,
+            "independent_fit_error": 0.003662109375,
+            "residual": -0.0009765625
+          },
+          {
+            "physical_qubit": 148,
+            "observed_error": 0.007568359375,
+            "independent_fit_error": 0.012939453125,
+            "residual": -0.00537109375
+          },
+          {
+            "physical_qubit": 149,
+            "observed_error": 0.001708984375,
+            "independent_fit_error": 0.00390625,
+            "residual": -0.002197265625
+          }
+        ],
+        "maximum_absolute_pair_error_covariance": 0.0011060833930969238
+      },
+      {
+        "name": "cal_one",
+        "per_qubit": [
+          {
+            "physical_qubit": 86,
+            "observed_error": 0.02099609375,
+            "independent_fit_error": 0.02099609375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 87,
+            "observed_error": 0.00537109375,
+            "independent_fit_error": 0.00537109375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 97,
+            "observed_error": 0.0087890625,
+            "independent_fit_error": 0.0087890625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 107,
+            "observed_error": 0.013671875,
+            "independent_fit_error": 0.013671875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 108,
+            "observed_error": 0.015625,
+            "independent_fit_error": 0.015625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 109,
+            "observed_error": 0.01416015625,
+            "independent_fit_error": 0.01416015625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 118,
+            "observed_error": 0.031982421875,
+            "independent_fit_error": 0.031982421875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 129,
+            "observed_error": 0.01513671875,
+            "independent_fit_error": 0.01513671875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 128,
+            "observed_error": 0.102294921875,
+            "independent_fit_error": 0.102294921875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 127,
+            "observed_error": 0.0380859375,
+            "independent_fit_error": 0.0380859375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 137,
+            "observed_error": 0.01513671875,
+            "independent_fit_error": 0.01513671875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 147,
+            "observed_error": 0.11767578125,
+            "independent_fit_error": 0.11767578125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 148,
+            "observed_error": 0.012939453125,
+            "independent_fit_error": 0.012939453125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 149,
+            "observed_error": 0.010498046875,
+            "independent_fit_error": 0.010498046875,
+            "residual": 0.0
+          }
+        ],
+        "maximum_absolute_pair_error_covariance": 0.00276029109954834
+      }
+    ],
+    "scope": "Preparation-plus-readout controls, not a pure readout channel measurement. Wilson intervals condition on stationary independent shots; pattern residuals/covariances are descriptive."
+  },
+  "rows": [
+    {
+      "name": "spatial2x2_enumerated_r0",
+      "bundle_index": 13,
+      "pub_index": 3,
+      "family": "correlated_spatial_2x2",
+      "shots": 4096,
+      "logical_qubits": 9,
+      "raw_full_z_tv": 0.35874516504964726,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.11942156716225175,
+      "native_two_qubit_gate_count": 222,
+      "compiled_depth": 648,
+      "circuit_duration_seconds": 2.6396000000000054e-05,
+      "observables": {
+        "shots": 4096,
+        "accepted_shots": 116,
+        "raw_event_probability": 0.0283203125,
+        "raw_event_wilson95": [
+          0.023665274228573292,
+          0.033859257192827855
+        ],
+        "ideal_event_probability": 0.0037065659808740337,
+        "data_z_distribution_tv": 0.35874516504964815,
+        "selected_data_z_distribution_tv": 0.23595742047346902,
+        "selected_data_z_counts": {
+          "0": 26,
+          "1": 1,
+          "2": 39,
+          "3": 1,
+          "4": 15,
+          "5": 2,
+          "8": 15,
+          "9": 1,
+          "32": 12,
+          "33": 4
+        },
+        "dirty_workspace_shots": 0,
+        "dirty_workspace_fraction": 0.0,
+        "correction": "none; raw counts, no workspace postselection",
+        "interpretation": "Z-distribution discrepancy only, not density-state fidelity; conditional TV is sampling-noise biased."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": 0.002867654736659332,
+        "mass_before_projection": 1.0,
+        "projection_l1_change": 0.005735309473318613,
+        "maximum_single_bit_assignment_condition_number": 1.172072240900311,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.3520841132511778
+      }
+    },
+    {
+      "name": "spatial2x2_enumerated_r2",
+      "bundle_index": 15,
+      "pub_index": 4,
+      "family": "correlated_spatial_2x2",
+      "shots": 4096,
+      "logical_qubits": 9,
+      "raw_full_z_tv": 0.5197681893856888,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.11834312102418572,
+      "native_two_qubit_gate_count": 4254,
+      "compiled_depth": 9115,
+      "circuit_duration_seconds": 0.00033400799999999296,
+      "observables": {
+        "shots": 4096,
+        "accepted_shots": 110,
+        "raw_event_probability": 0.02685546875,
+        "raw_event_wilson95": [
+          0.022330520952623504,
+          0.032267068019775774
+        ],
+        "ideal_event_probability": 0.08994481958729342,
+        "data_z_distribution_tv": 0.5197681893856742,
+        "selected_data_z_distribution_tv": 0.2796122817657199,
+        "selected_data_z_counts": {
+          "0": 16,
+          "1": 7,
+          "2": 12,
+          "3": 10,
+          "4": 8,
+          "5": 7,
+          "8": 16,
+          "9": 8,
+          "32": 16,
+          "33": 10
+        },
+        "dirty_workspace_shots": 0,
+        "dirty_workspace_fraction": 0.0,
+        "correction": "none; raw counts, no workspace postselection",
+        "interpretation": "Z-distribution discrepancy only, not density-state fidelity; conditional TV is sampling-noise biased."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": -0.0,
+        "mass_before_projection": 1.0,
+        "projection_l1_change": 0.0,
+        "maximum_single_bit_assignment_condition_number": 1.172072240900311,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.5181907111206479
+      }
+    },
+    {
+      "name": "spatial2x2_counter_r0",
+      "bundle_index": 16,
+      "pub_index": 5,
+      "family": "correlated_spatial_2x2",
+      "shots": 4096,
+      "logical_qubits": 14,
+      "raw_full_z_tv": 0.36004823074141556,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.11942156716225175,
+      "native_two_qubit_gate_count": 222,
+      "compiled_depth": 648,
+      "circuit_duration_seconds": 2.6396000000000054e-05,
+      "observables": {
+        "shots": 4096,
+        "accepted_shots": 117,
+        "raw_event_probability": 0.028564453125,
+        "raw_event_wilson95": [
+          0.023888085979904983,
+          0.03412426918299647
+        ],
+        "ideal_event_probability": 0.0037065659808740337,
+        "data_z_distribution_tv": 0.3470160243498384,
+        "selected_data_z_distribution_tv": 0.3162357011037899,
+        "selected_data_z_counts": {
+          "0": 29,
+          "1": 2,
+          "2": 43,
+          "3": 6,
+          "4": 13,
+          "5": 1,
+          "8": 11,
+          "9": 1,
+          "32": 8,
+          "33": 3
+        },
+        "dirty_workspace_shots": 141,
+        "dirty_workspace_fraction": 0.034423828125,
+        "correction": "none; raw counts, no workspace postselection",
+        "interpretation": "Z-distribution discrepancy only, not density-state fidelity; conditional TV is sampling-noise biased."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": 0.042656232786298084,
+        "mass_before_projection": 0.9999999999999999,
+        "projection_l1_change": 0.08531246557259656,
+        "maximum_single_bit_assignment_condition_number": 1.1940981282995557,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.35695066366905615
+      }
+    },
+    {
+      "name": "spatial2x2_enumerated_r1",
+      "bundle_index": 14,
+      "pub_index": 6,
+      "family": "correlated_spatial_2x2",
+      "shots": 4096,
+      "logical_qubits": 9,
+      "raw_full_z_tv": 0.4921079174187542,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.11980201388102761,
+      "native_two_qubit_gate_count": 2171,
+      "compiled_depth": 5055,
+      "circuit_duration_seconds": 0.000184495999999989,
+      "observables": {
+        "shots": 4096,
+        "accepted_shots": 140,
+        "raw_event_probability": 0.0341796875,
+        "raw_event_wilson95": [
+          0.029037488565238835,
+          0.04019481265216975
+        ],
+        "ideal_event_probability": 0.03303018144527116,
+        "data_z_distribution_tv": 0.49210791741874843,
+        "selected_data_z_distribution_tv": 0.33805384020727836,
+        "selected_data_z_counts": {
+          "0": 23,
+          "1": 9,
+          "2": 17,
+          "3": 11,
+          "4": 11,
+          "5": 13,
+          "8": 12,
+          "9": 10,
+          "32": 18,
+          "33": 16
+        },
+        "dirty_workspace_shots": 0,
+        "dirty_workspace_fraction": 0.0,
+        "correction": "none; raw counts, no workspace postselection",
+        "interpretation": "Z-distribution discrepancy only, not density-state fidelity; conditional TV is sampling-noise biased."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": 0.00031082857212569423,
+        "mass_before_projection": 0.9999999999999999,
+        "projection_l1_change": 0.0006216571442513036,
+        "maximum_single_bit_assignment_condition_number": 1.172072240900311,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.48708169470912405
+      }
+    },
+    {
+      "name": "spatial2x2_counter_r2",
+      "bundle_index": 18,
+      "pub_index": 7,
+      "family": "correlated_spatial_2x2",
+      "shots": 4096,
+      "logical_qubits": 14,
+      "raw_full_z_tv": 0.8783450380643669,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.11834312102418572,
+      "native_two_qubit_gate_count": 5168,
+      "compiled_depth": 11471,
+      "circuit_duration_seconds": 0.00042439200000000645,
+      "observables": {
+        "shots": 4096,
+        "accepted_shots": 120,
+        "raw_event_probability": 0.029296875,
+        "raw_event_wilson95": [
+          0.024557101432008455,
+          0.03491872495539393
+        ],
+        "ideal_event_probability": 0.08994481958729342,
+        "data_z_distribution_tv": 0.5202671127075893,
+        "selected_data_z_distribution_tv": 0.31067288782632596,
+        "selected_data_z_counts": {
+          "0": 17,
+          "1": 10,
+          "2": 16,
+          "3": 8,
+          "4": 8,
+          "5": 17,
+          "8": 14,
+          "9": 10,
+          "32": 15,
+          "33": 5
+        },
+        "dirty_workspace_shots": 3561,
+        "dirty_workspace_fraction": 0.869384765625,
+        "correction": "none; raw counts, no workspace postselection",
+        "interpretation": "Z-distribution discrepancy only, not density-state fidelity; conditional TV is sampling-noise biased."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": 0.16362629455598282,
+        "mass_before_projection": 1.0,
+        "projection_l1_change": 0.32725258911196586,
+        "maximum_single_bit_assignment_condition_number": 1.1940981282995557,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.8914723884269221
+      }
+    },
+    {
+      "name": "spatial2x2_counter_r1",
+      "bundle_index": 17,
+      "pub_index": 8,
+      "family": "correlated_spatial_2x2",
+      "shots": 4096,
+      "logical_qubits": 14,
+      "raw_full_z_tv": 0.946902176971377,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.11980201388102754,
+      "native_two_qubit_gate_count": 2682,
+      "compiled_depth": 6105,
+      "circuit_duration_seconds": 0.0002258079999999828,
+      "observables": {
+        "shots": 4096,
+        "accepted_shots": 105,
+        "raw_event_probability": 0.025634765625,
+        "raw_event_wilson95": [
+          0.021221146731562557,
+          0.030937323533335177
+        ],
+        "ideal_event_probability": 0.03303018144527116,
+        "data_z_distribution_tv": 0.5019011915053946,
+        "selected_data_z_distribution_tv": 0.2765649991012707,
+        "selected_data_z_counts": {
+          "0": 12,
+          "1": 10,
+          "2": 13,
+          "3": 7,
+          "4": 8,
+          "5": 8,
+          "8": 14,
+          "9": 8,
+          "32": 17,
+          "33": 8
+        },
+        "dirty_workspace_shots": 3868,
+        "dirty_workspace_fraction": 0.9443359375,
+        "correction": "none; raw counts, no workspace postselection",
+        "interpretation": "Z-distribution discrepancy only, not density-state fidelity; conditional TV is sampling-noise biased."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": 0.1733867893505836,
+        "mass_before_projection": 1.0000000000000002,
+        "projection_l1_change": 0.34677357870116743,
+        "maximum_single_bit_assignment_condition_number": 1.1940981282995557,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.9500968260299605
+      }
+    }
+  ],
+  "raw_quantum_usage": 18,
+  "raw_job_metrics": {
+    "caller": "qiskit_ibm_runtime~sampler.py",
+    "qiskit_version": "qiskit_ibm_runtime-0.51.0,qiskit-2.6.1*,qiskit_aer-0.18.2",
+    "timestamps": {
+      "created": "2026-11-11T18:06:47.485929Z",
+      "finished": "2026-11-11T18:08:00.31546Z",
+      "running": "2026-11-11T18:06:49.585446Z"
+    },
+    "usage": {
+      "qpu_charge_time_seconds": 18,
+      "value": 0.293708,
+      "unit": "resource_units",
+      "status": "complete",
+      "details": [
+        {
+          "value": 0.293708,
+          "unit": "resource_units",
+          "metric": {
+            "id": "caffe3ca-729c-5750-8777-df63bbf8bfd9",
+            "value": 18
+          }
+        }
+      ]
+    },
+    "circuits_execution_time_ns": 15902112768
+  },
+  "interpretation": [
+    "Raw estimates are primary; every submitted science circuit is retained.",
+    "More accepted events can be produced by noise without preserving the selected answer.",
+    "Full-Z and conditional TVs include shot noise and are not quantum-state fidelities.",
+    "Expected multinomial full-Z TV is a model-based sampling benchmark, not a confidence bound.",
+    "Wilson intervals are marginal binomial intervals, not simultaneous coverage or physical-model uncertainty.",
+    "Independent readout inversion is secondary, biased after projection, and excludes calibration uncertainty.",
+    "Superconducting model execution does not validate physical optical sensors, quantum-dot devices or wafer performance."
+  ],
+  "immutable_artifacts_verified_before_analysis": true
+}

@@ -1,0 +1,437 @@
+{
+  "schema": "full-spatial-construction-v1",
+  "scope": "Full original7x7 independent Poisson blur/ROI process, approximated by capped counts and bounded positive lattice weights. Actual circuits constructed and serialized; no full statevector, density simulation, hardware or device claim.",
+  "configuration": {
+    "cells": 49,
+    "grid": [
+      7,
+      7
+    ],
+    "dose_for_saved_circuits": 1.5,
+    "count_bits": 4,
+    "cap": 15,
+    "response_threshold": 0.8,
+    "threshold_bits": 18,
+    "integer_threshold": 262144,
+    "real_weights": [
+      [
+        5.550775256447452e-05,
+        0.000622506192583698,
+        0.0018598500805211068,
+        0.0023724353324596254,
+        0.0018598500805211064,
+        0.0006225061925836979,
+        5.5507752564474505e-05
+      ],
+      [
+        0.000622506192583698,
+        0.006981258327022679,
+        0.02085777461548067,
+        0.02660629583669513,
+        0.02085777461548067,
+        0.006981258327022681,
+        0.0006225061925836979
+      ],
+      [
+        0.0018598500805211064,
+        0.020857774615480672,
+        0.06231638216655501,
+        0.0794911312429917,
+        0.06231638216655501,
+        0.020857774615480672,
+        0.0018598500805211064
+      ],
+      [
+        0.0023724353324596254,
+        0.026606295836695125,
+        0.07949113124299172,
+        0.10139933877101476,
+        0.07949113124299172,
+        0.026606295836695125,
+        0.0023724353324596254
+      ],
+      [
+        0.0018598500805211064,
+        0.020857774615480672,
+        0.062316382166554996,
+        0.07949113124299172,
+        0.062316382166554996,
+        0.02085777461548067,
+        0.0018598500805211064
+      ],
+      [
+        0.0006225061925836979,
+        0.00698125832702268,
+        0.020857774615480672,
+        0.026606295836695125,
+        0.02085777461548067,
+        0.00698125832702268,
+        0.000622506192583698
+      ],
+      [
+        5.550775256447452e-05,
+        0.000622506192583698,
+        0.0018598500805211064,
+        0.0023724353324596254,
+        0.0018598500805211064,
+        0.000622506192583698,
+        5.5507752564474505e-05
+      ]
+    ],
+    "integer_weights": {
+      "floor": [
+        [
+          18,
+          203,
+          609,
+          777,
+          609,
+          203,
+          18
+        ],
+        [
+          203,
+          2287,
+          6834,
+          8718,
+          6834,
+          2287,
+          203
+        ],
+        [
+          609,
+          6834,
+          20419,
+          26047,
+          20419,
+          6834,
+          609
+        ],
+        [
+          777,
+          8718,
+          26047,
+          33226,
+          26047,
+          8718,
+          777
+        ],
+        [
+          609,
+          6834,
+          20419,
+          26047,
+          20419,
+          6834,
+          609
+        ],
+        [
+          203,
+          2287,
+          6834,
+          8718,
+          6834,
+          2287,
+          203
+        ],
+        [
+          18,
+          203,
+          609,
+          777,
+          609,
+          203,
+          18
+        ]
+      ],
+      "ceil": [
+        [
+          19,
+          204,
+          610,
+          778,
+          610,
+          204,
+          19
+        ],
+        [
+          204,
+          2288,
+          6835,
+          8719,
+          6835,
+          2288,
+          204
+        ],
+        [
+          610,
+          6835,
+          20420,
+          26048,
+          20420,
+          6835,
+          610
+        ],
+        [
+          778,
+          8719,
+          26048,
+          33227,
+          26048,
+          8719,
+          778
+        ],
+        [
+          610,
+          6835,
+          20420,
+          26048,
+          20420,
+          6835,
+          610
+        ],
+        [
+          204,
+          2288,
+          6835,
+          8719,
+          6835,
+          2288,
+          204
+        ],
+        [
+          19,
+          204,
+          610,
+          778,
+          610,
+          204,
+          19
+        ]
+      ]
+    }
+  },
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.3.1",
+    "scipy": "1.18.1",
+    "qiskit": "2.6.1",
+    "qpy_version": 18
+  },
+  "bounds": [
+    {
+      "dose": 1.5,
+      "count_cap": 15,
+      "overflow_category_probability": 8.239722367590797e-11,
+      "per_cell_probability_count_value_changes": 7.678825671260364e-12,
+      "union_bound_any_count_value_changes": 3.7626245789175784e-10,
+      "exact_independent_any_count_value_changes": 3.762624578224158e-10,
+      "uncapped_integer_lattice_cdf": {
+        "floor": 0.004237128599287181,
+        "ceil": 0.004226948014934886
+      },
+      "finite_capped_integer_lattice_cdf": {
+        "floor": 0.004237128599302049,
+        "ceil": 0.004226948014949742
+      },
+      "original_process_probability_bracket": [
+        0.004226948014934886,
+        0.004237128599287181
+      ],
+      "bracket_width": 1.018058435229511e-05,
+      "relative_bracket_width": 0.002405598346118186,
+      "finite_circuit_event_absolute_error_upper": {
+        "floor": 1.0180584367162557e-05,
+        "ceil": 1.0180584337438937e-05
+      },
+      "ideal_one_round_analytic_prediction_not_statevector": {
+        "floor": 0.03770449630756864,
+        "ceil": 0.03761493035817893
+      }
+    },
+    {
+      "dose": 1.8,
+      "count_cap": 15,
+      "overflow_category_probability": 9.600435617769344e-10,
+      "per_cell_probability_count_value_changes": 1.0722253811493201e-10,
+      "union_bound_any_count_value_changes": 5.253904367631669e-09,
+      "exact_independent_any_count_value_changes": 5.253904354111581e-09,
+      "uncapped_integer_lattice_cdf": {
+        "floor": 0.00018094101689255818,
+        "ceil": 0.0001803041794618219
+      },
+      "finite_capped_integer_lattice_cdf": {
+        "floor": 0.00018094101690211778,
+        "ceil": 0.00018030417947136358
+      },
+      "original_process_probability_bracket": [
+        0.0001803041794618219,
+        0.00018094101689255818
+      ],
+      "bracket_width": 6.36837430736286e-07,
+      "relative_bracket_width": 0.0035257904446239392,
+      "finite_circuit_event_absolute_error_upper": {
+        "floor": 6.368374402958862e-07,
+        "ceil": 6.368374211946021e-07
+      },
+      "ideal_one_round_analytic_prediction_not_statevector": {
+        "floor": 0.0016276834952638518,
+        "ceil": 0.0016219574786968955
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "status": "failed",
+      "error": "QpyError: 'invalid instruction: Instruction has 195 but at most 31 are supported'",
+      "guard_timeout_seconds": 120,
+      "guard_rss_limit_mb": 1200,
+      "observed_peak_worker_rss_mb": 241.5234375,
+      "memory_guard_note": "RSS sampled every50ms; termination guard, not an OS hard limit; transient overshoot is possible.",
+      "weight_rounding": "floor",
+      "style": "compact"
+    },
+    {
+      "status": "memory_guard",
+      "guard_timeout_seconds": 120,
+      "guard_rss_limit_mb": 1200,
+      "observed_peak_worker_rss_mb": 1215.5,
+      "memory_guard_note": "RSS sampled every50ms; termination guard, not an OS hard limit; transient overshoot is possible.",
+      "weight_rounding": "floor",
+      "style": "clean"
+    },
+    {
+      "status": "failed",
+      "error": "QpyError: 'invalid instruction: Instruction has 195 but at most 31 are supported'",
+      "guard_timeout_seconds": 120,
+      "guard_rss_limit_mb": 1200,
+      "observed_peak_worker_rss_mb": 227.42578125,
+      "memory_guard_note": "RSS sampled every50ms; termination guard, not an OS hard limit; transient overshoot is possible.",
+      "weight_rounding": "ceil",
+      "style": "compact"
+    },
+    {
+      "status": "completed",
+      "seconds": 7.812999999998283,
+      "weight_rounding": "ceil",
+      "style": "clean",
+      "qubits": 389,
+      "metadata": {
+        "cells": 49,
+        "count_bits_per_cell": 4,
+        "data_qubits": 196,
+        "score_qubits": 23,
+        "extra_clean_qubits": 170,
+        "total_qubits": 389,
+        "maximum_encoded_score": 4912605,
+        "threshold": 262144,
+        "threshold_bits": 18,
+        "diffuser_clean_ancillas_required": 193,
+        "diffuser_score_qubits_reused": 23,
+        "oracle_clean_ancillas_reserved": 21,
+        "style": "clean"
+      },
+      "top_level_instruction_count": 399,
+      "recursive_operation_counts": {
+        "ccx": 473852,
+        "controlled_ry_1": 294,
+        "controlled_ry_2": 588,
+        "controlled_ry_3": 1176,
+        "cx": 2104,
+        "h": 4,
+        "ry": 147,
+        "x": 5400
+      },
+      "signature_before": "8721915ab3a7b2445587667d5dcde5e0a9b7288c912f71e1cc5b7109aff4bb70",
+      "signature_after": "8721915ab3a7b2445587667d5dcde5e0a9b7288c912f71e1cc5b7109aff4bb70",
+      "qpy_round_trip": "passed",
+      "qpy_file": "ceil_clean_389q.qpy",
+      "qpy_bytes": 37747934,
+      "qpy_sha256": "dc86f4de30cdf44720b0726dfee12efb49f7acd1122e7877980b1838f1186211",
+      "guard_timeout_seconds": 120,
+      "guard_rss_limit_mb": 1200,
+      "observed_peak_worker_rss_mb": 1086.5546875,
+      "memory_guard_note": "RSS sampled every50ms; termination guard, not an OS hard limit; transient overshoot is possible."
+    }
+  ],
+  "component_compilation": {
+    "status": "completed",
+    "seconds": 1.9370000000017171,
+    "cell_preparation": {
+      "qubits": 4,
+      "counts": {
+        "cx": 196,
+        "u": 161
+      },
+      "depth": 281
+    },
+    "exact_ccx_decomposition": {
+      "qubits": 3,
+      "counts": {
+        "u": 9,
+        "cx": 6
+      },
+      "depth": 11
+    },
+    "scope": "Only 4-qubit preparation and 3-qubit CCX compiled. Full circuit not transpiled.",
+    "guard_timeout_seconds": 30,
+    "guard_rss_limit_mb": 768,
+    "observed_peak_worker_rss_mb": 176.765625,
+    "memory_guard_note": "RSS sampled every50ms; termination guard, not an OS hard limit; transient overshoot is possible."
+  },
+  "explicit_synthesis_costs": {
+    "ceil": {
+      "adder_mcx_control_histogram": {
+        "1": 1052,
+        "2": 1052,
+        "3": 1052,
+        "4": 1052,
+        "5": 1052,
+        "6": 1051,
+        "7": 1042,
+        "8": 1025,
+        "9": 1000,
+        "10": 960,
+        "11": 920,
+        "12": 860,
+        "13": 795,
+        "14": 717,
+        "15": 618,
+        "16": 527,
+        "17": 433,
+        "18": 351,
+        "19": 282,
+        "20": 204,
+        "21": 125,
+        "22": 63,
+        "23": 17
+      },
+      "adder_direct_cx": 1052,
+      "adder_exact_ccx": 236730,
+      "oracle_direct_cx": 2104,
+      "oracle_exact_ccx": 473465,
+      "diffuser_exact_ccx": 387,
+      "mark_single_qubit_x": 10,
+      "mark_single_qubit_h": 2,
+      "diffuser_single_qubit_x": 392,
+      "diffuser_single_qubit_h": 2,
+      "complete_one_round_generic_cx_constructive_upper_bound": 2874028,
+      "complete_one_round_generic_u_constructive_upper_bound": 4293739,
+      "preparation_calls": 2,
+      "inverse_preparation_calls": 1,
+      "cells_prepared_per_call": 49,
+      "justification": "Concatenate actual4-qubit preparation synthesis, exact6-CX Toffolis in the explicit clean circuit, and nativeCX/single-qubit gates. A constructive unoptimized upper bound, not full transpilation or a lower bound.",
+      "omits": "Physical routing, scheduling, angle approximation, calibration, fault tolerance, noise, measurement latency."
+    }
+  },
+  "source_sha256": {
+    "circuit_model.py": "90677797288b337913f64983fde1cad9f5b013ed96ade74926e683dcfb32bc45",
+    "process_bounds.py": "3355a64b16858340c1128412152f0b7abec1f5d8c117541664fceed72b61c2a5",
+    "run_construction.py": "30b9acd202a59dd066c2211233fc4ac8ea2baade47dfadcec6466089705fae1d"
+  },
+  "imported_frozen_source_sha256": {
+    "spatial_model.py": "c86d14731d0d1f52e5b205438f3124bed9158e5b941c375a235369edad368093",
+    "followup\\spatial_coverage.py": "7d83433aae4bb7cd221cb472f3fb6903fabb51de96c7730de7b007f04cc8f395"
+  },
+  "all_constructions_completed": false
+}

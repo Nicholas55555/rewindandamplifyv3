@@ -1,0 +1,31 @@
+{
+  "schema": "qrsm-hom-validation-v1",
+  "checks": [
+    "19 focused physical/inference tests passed (independently repeated by reviewer)",
+    "Full exact replay including all HMM refits passed",
+    "Independent reviewer regenerated 30000 records and all 24000 heldout scores",
+    "Three-panel figure visually inspected; no clipped text or false empirical labels",
+    "Main and hardware source hashes and derived figure/independent receipt hashes verified"
+  ],
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.3.1",
+    "scipy": "1.18.1",
+    "qiskit": "2.6.1"
+  },
+  "source_sha256": {
+    "verify_results.py": "0c8b0a8d9a12c7d9854a2f3d19b56f9b4706c284af70bba0e7d002e2af8b7676",
+    "plot_results.py": "07618a4b9c6e894de10529f2dadd2f7e6220718408da68ff13e47e3b7bbe73b7"
+  },
+  "artifact_sha256": {
+    "main/results.json": "97473faba057d4f0624cb37b3c31d2355bcb0878e7425d64349b954ed12b65cd",
+    "main/records.npz": "049eca680e4772700d3e571b8de8e2cb5908f7c8eee62fc469557ef60ba68213",
+    "main/run_provenance.json": "63d0f57342b6e29ca5601780b284e30c73a21a817246f883f544b74a22c0ae34",
+    "main/independent_review.json": "61f7b16c96dd37a831021c1aa4095f5fd322546d0efeaee44d8f4c3f598cd74f",
+    "plot_manifest.json": "988fb7c6e337f2bb9e5379ee301f1aa142902d4afb626b35dc831b170cc76f0d",
+    "joint_photon_results.png": "c3d7374d51ceb7dcd8c272ef81e04aa1761731e6ed5878ed9efc5ce74fe76251",
+    "joint_photon_results.pdf": "036859fdd9d88b0729f1531af4545b2efa3cc04a9e8ff0193af1eb69ebe4a9ec",
+    "hardware_bundle_v2/manifest.json": "74700362c2c9093cd6d7c3fcb7709242cf6b48abefe2f2751a19e1161afc48a4"
+  },
+  "scope": "Numerical consistency and conditional synthetic evidence; not validation of an actual semiconductor device."
+}

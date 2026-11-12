@@ -1,0 +1,312 @@
+{
+  "schema": "bounded-local-research-completion-audit-v1",
+  "reviewed_utc": "2026-11-11T05:22:46.103233+00:00",
+  "status": "passed",
+  "report_review": {
+    "path": "RESEARCH_RESULTS.md",
+    "stable_sections_checked": true,
+    "material_open_findings": [],
+    "corrected_finding": "Low preparation success does not erase equal-dose phase precision in this source model; it costs time. The report now distinguishes equal-time from equal-dose comparison.",
+    "all_scientific_sections_checked": true,
+    "delivery_status_managed_separately": true,
+    "scope": "Scientific synthesis and numerical interpretation reviewed; delivery links/status and archive packaging are separate."
+  },
+  "roadmap_mapping": [
+    {
+      "id": "quantum_photolithography_next_1",
+      "request": "Add G1, incoherent and stronger classical controls; plot G1/G2 and mixed response.",
+      "status": "complete_bounded_simulation",
+      "evidence": [
+        "quantum_lithography_poc/exposure_followup/results.json",
+        "quantum_lithography_poc/exposure_followup/moments_supplement.json",
+        "quantum_lithography_poc/exposure_followup/raw_moments.png"
+      ],
+      "scope_or_remaining_work": "Five sources share a finite 32-cell geometry. Mixed activation coefficients are uncalibrated. Optical moments are separated from post-activation blur."
+    },
+    {
+      "id": "quantum_photolithography_next_2",
+      "request": "Sweep loss, jitter, background and preparation success; charge attempts and distinguish dose/time budgets.",
+      "status": "complete_bounded_simulation",
+      "evidence": [
+        "quantum_lithography_poc/exposure_followup/results.json",
+        "quantum_lithography_poc/exposure_followup/sensitivity.csv"
+      ],
+      "scope_or_remaining_work": "Nine cases and 140 sweep rows include asymmetry, fast jitter, blur, linear response, preparation and background. Pump/herald energy is unavailable; no full apparatus or arbitrary classical-optimum claim."
+    },
+    {
+      "id": "quantum_photolithography_next_3",
+      "request": "Report harmonics, visibility, mean/peak G2 per photon, rate assumptions and finite-count uncertainty; independently check moments.",
+      "status": "complete_bounded_simulation",
+      "evidence": [
+        "quantum_lithography_poc/exposure_followup/moments_supplement.csv",
+        "quantum_lithography_poc/exposure_followup/verification.json"
+      ],
+      "scope_or_remaining_work": "The derived 90-row supplement closes the raw-moment reporting omission without adding independent trials. Original 540,000 Poisson realizations remain the finite-count evidence."
+    },
+    {
+      "id": "quantum_photolithography_next_4",
+      "request": "Replace arbitrary coefficients with measured optics, material response, brightness, loss and development data.",
+      "status": "external_measurements_required",
+      "evidence": [
+        "quantum_lithography_poc/exposure_followup/README.md"
+      ],
+      "scope_or_remaining_work": "The roadmap explicitly permits stopping at sensitivity analysis when those inputs are unavailable. No feature-size, wafer-yield or throughput prediction is justified."
+    },
+    {
+      "id": "quantum_photolithography_inspection_followon",
+      "request": "Estimate a phase or geometry parameter at matched sample photon dose with loss, uncertainty and acquisition costs.",
+      "status": "complete_bounded_simulation",
+      "evidence": [
+        "quantum_lithography_poc/phase_inspection_followup/results.json",
+        "quantum_lithography_poc/phase_inspection_followup/verification.json"
+      ],
+      "scope_or_remaining_work": "Phase only, both modes illuminate the object, local prior and global ambiguity separated, charged hybrid pilots. Known symmetric losses/reference and ideal photon-number resolution remain assumptions. Low preparation success costs time at equal dose; it removes the equal-time benefit in tested cases."
+    },
+    {
+      "id": "laser_diagnostics_amplitude_1",
+      "request": "Define field-amplitude signal and distinguish amplitude from intensity.",
+      "status": "complete_bounded_simulation_negative_diagnostic_result",
+      "evidence": [
+        "qrsm_photon_poc/drive_diagnostics_followup/PROTOCOL.md",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/results.json",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/independent_review.json"
+      ],
+      "scope_or_remaining_work": "Effective Rabi-drive proxy; intensity proportional to squared drive only under fixed coupling. No watts, wavelength-specific response or pulse-energy conversion."
+    },
+    {
+      "id": "laser_diagnostics_amplitude_2",
+      "request": "Generate independent scheduled/telegraph records with precomputed instruments and retained hidden state.",
+      "status": "complete_bounded_simulation_negative_diagnostic_result",
+      "evidence": [
+        "qrsm_photon_poc/drive_diagnostics_followup/model.py",
+        "qrsm_photon_poc/drive_diagnostics_followup/test_model.py",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/results.json",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/independent_review.json"
+      ],
+      "scope_or_remaining_work": "State retained across source changes; latent schedules used only for scoring. All four main pipelines and the independent review passed."
+    },
+    {
+      "id": "laser_diagnostics_amplitude_3",
+      "request": "Independent calibration/training/heldout splits, schedules and parameter settings.",
+      "status": "complete_bounded_simulation_negative_diagnostic_result",
+      "evidence": [
+        "qrsm_photon_poc/drive_diagnostics_followup/run_study.py",
+        "qrsm_photon_poc/drive_diagnostics_followup/PROTOCOL.md",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/results.json",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/independent_review.json"
+      ],
+      "scope_or_remaining_work": "Four independent finite calibration/training/evaluation pipelines; 229 non-colliding random-stream namespaces verified. All pipelines share nominal physical values; scenario counterfactuals vary specified sources/nuisances. No broad unknown-family identification claim."
+    },
+    {
+      "id": "laser_diagnostics_amplitude_4",
+      "request": "Test detuning, collection/loss, dark counts, dead time and afterpulsing separately and combined.",
+      "status": "complete_bounded_simulation_negative_diagnostic_result",
+      "evidence": [
+        "qrsm_photon_poc/drive_diagnostics_followup/run_study.py",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/results.json",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/independent_review.json"
+      ],
+      "scope_or_remaining_work": "Declared13-case design includes abrupt emitter-detuning and detector changes. Abrupt detuning is not a full slow spectral-diffusion model. The main experiment retains all negative and nuisance-induced alarm results."
+    },
+    {
+      "id": "laser_diagnostics_amplitude_5",
+      "request": "Report bias/uncertainty, false alarms, delay, prediction and observation resources.",
+      "status": "complete_bounded_simulation_negative_diagnostic_result",
+      "evidence": [
+        "qrsm_photon_poc/drive_diagnostics_followup/run_study.py",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/results.json",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/independent_review.json",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/prior_only_estimation_control.json",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/prior_only_independent_review.json"
+      ],
+      "scope_or_remaining_work": "First-alarm detection, full-record false alarms, honest restricted delay, predictive likelihood, bias/RMSE and descriptive hierarchical intervals are reported. Binary fluorescence counts are not incident photons; physical bandwidth/time calibration remains external. Same-record HMM/count analysis is not a complete optical photodiode comparison. Post-holdout prior-only control shows most source-case estimation improvement came from the fitted source prior; it is labeled descriptive, with unchanged main results."
+    },
+    {
+      "id": "laser_stage_gate_1",
+      "request": "Choose compatible observable/platform and compare source changes against detector confounders.",
+      "status": "complete_bounded_frequency_and_amplitude_studies",
+      "evidence": [
+        "laser_sensor_viability/followup/README.md",
+        "qrsm_photon_poc/drive_diagnostics_followup/PROTOCOL.md",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/results.json",
+        "qrsm_photon_poc/drive_diagnostics_followup/main/independent_review.json"
+      ],
+      "scope_or_remaining_work": "Frequency surrogate: 23,040 held-out records, sessions, delay/FAR and C+C comparator. Amplitude surrogate: 6,656 held-out records, 13 cases, retained-state causal inference and nuisance controls. Neither validates a real sensor; the tested amplitude regime is a negative result."
+    },
+    {
+      "id": "laser_stage_gate_2",
+      "request": "Obtain synchronized sensor/reference records and detector calibration in a laboratory.",
+      "status": "external_measurements_required",
+      "evidence": [
+        "LASER_DIAGNOSTICS_ROADMAP.md"
+      ],
+      "scope_or_remaining_work": "No real source, atomic sensor, detector or wafer data were acquired by these runs."
+    },
+    {
+      "id": "laser_stage_gate_3",
+      "request": "Synthesize a coherent model and oracle for a scientifically defined inference task.",
+      "status": "bounded_static_query_complete_dynamic_integration_deferred",
+      "evidence": [
+        "qrsm_photon_poc/multibin_followup/README.md",
+        "finals-lithography/full_spatial_circuit/independent_review.json"
+      ],
+      "scope_or_remaining_work": "Static retained-instrument histories and full spatial process are constructed. A learned time-varying drive-schedule coherent oracle is not implemented. It is further local algorithm research, conditional on a useful identified diagnostic task and acceptable synthesis cost."
+    },
+    {
+      "id": "laser_stage_gate_4",
+      "request": "Select an actual industrial monitoring point, compatible signal and process metric.",
+      "status": "external_collaboration_required",
+      "evidence": [
+        "LASER_DIAGNOSTICS_ROADMAP.md"
+      ],
+      "scope_or_remaining_work": "Visible/near-IR laboratory models do not automatically transfer to 193 nm DUV, CO2 drive lasers or 13.5 nm EUV. Need source and process experts with measured transfer data."
+    },
+    {
+      "id": "qrsm_next_1",
+      "request": "Jointly infer coupling, detuning, dephasing, efficiency and drive, with uncertainty/degeneracy diagnostics.",
+      "status": "complete_bounded_inference_inconclusive_parameters",
+      "evidence": [
+        "qrsm_photon_poc/followup/inference_results/",
+        "qrsm_photon_poc/followup/parameter_validation_v2/",
+        "qrsm_photon_poc/followup/independent_review.json"
+      ],
+      "scope_or_remaining_work": "Six cases and regenerated score vectors verified. Boundary solutions, local-Hessian limitations and global detuning aliases are findings, not failed completion. No globally calibrated confidence sets claimed."
+    },
+    {
+      "id": "qrsm_next_2",
+      "request": "Fresh counterfactual datasets, rate-matched telegraph and stronger classical sequence models.",
+      "status": "bounded_hmm_telegraph_complete_broader_families_open",
+      "evidence": [
+        "qrsm_photon_poc/followup/README.md"
+      ],
+      "scope_or_remaining_work": "Fresh three-state HMM and two-state telegraph comparisons complete; arbitrary classical state-space families remain untested. Shared known physical structure is an information advantage, not a quantum computational speedup."
+    },
+    {
+      "id": "qrsm_next_3",
+      "request": "Controlled pulse sequences and detuning scans to reveal temporal fingerprints.",
+      "status": "partial_bounded_controls",
+      "evidence": [
+        "qrsm_photon_poc/followup/README.md",
+        "qrsm_photon_poc/drive_diagnostics_followup/PROTOCOL.md"
+      ],
+      "scope_or_remaining_work": "Three known per-record controls break a structural sign symmetry. A separate completed diagnostic study changes drive over time with unknown step/telegraph schedules. General temporal pulse optimization and broad detuning scans were not performed."
+    },
+    {
+      "id": "qrsm_next_4",
+      "request": "Test omitted physics: spectral diffusion, multimode, thermal photons, dead time, non-Markovian loss and cutoff.",
+      "status": "partial_bounded_robustness",
+      "evidence": [
+        "qrsm_photon_poc/followup/dynamics_results.json",
+        "qrsm_photon_poc/followup/README.md"
+      ],
+      "scope_or_remaining_work": "Independent solver/cutoff and deadtime checks complete. Slow stochastic diffusion, thermal/multimode fields and non-Markovian environments remain optional local-model research; not laboratory blockers."
+    },
+    {
+      "id": "qrsm_next_5",
+      "request": "Additional coherent bins, controlled approximations/noise and a useful comparison against exact classical inference.",
+      "status": "complete_bounded_comparison_no_crossover",
+      "evidence": [
+        "qrsm_photon_poc/multibin_followup/main/validation.json",
+        "qrsm_photon_poc/multibin_followup/README.md"
+      ],
+      "scope_or_remaining_work": "Three bins ideal, one bin noisy, branch-state preservation and approximation bias audited. Strong classical recursion answers tested tasks efficiently. No useful crossover; no three-bin noise result."
+    },
+    {
+      "id": "qrsm_next_6",
+      "request": "Fit appropriate fiber/lithography observable data without unsupported microscopic identification.",
+      "status": "external_data_required",
+      "evidence": [
+        "qrsm_photon_poc/README.md"
+      ],
+      "scope_or_remaining_work": "Synthetic fluorescence histories and literature context are not a physical source/defect dataset."
+    },
+    {
+      "id": "spatial_original_full_grid_gap",
+      "request": "Construct the actual 49-cell process with bounded approximation, coherent preparation/oracle and total resources.",
+      "status": "complete_construction_not_full_simulation",
+      "evidence": [
+        "finals-lithography/full_spatial_circuit/results.json",
+        "finals-lithography/full_spatial_circuit/independent_review.json"
+      ],
+      "scope_or_remaining_work": "Both 389-qubit explicit QPY artifacts independently loaded; 563 count maps per circuit, actual wiring/uncompute and primitive costs checked. Independent FFT verifies four DP probabilities. Compact serialization unsupported; no 389-qubit state/noise/hardware simulation."
+    },
+    {
+      "id": "spatial_classical_uncertainty_gap",
+      "request": "Improve and assess original importance sampling with tuning costs, repeats and probability reference.",
+      "status": "complete_bounded_simulation",
+      "evidence": [
+        "finals-lithography/followup/spatial_coverage_refined_results.json",
+        "finals-lithography/followup/validation.json"
+      ],
+      "scope_or_remaining_work": "12 million evaluation maps plus 80,000 pilot maps; original proposal undercoverage exposed and better frozen proposal tested.100 repeats do not prove universal interval calibration."
+    }
+  ],
+  "good_stopping_point": "Finish and verify the declared finite studies, preserve negative and inconclusive outcomes, charge resources, and state model boundaries. This is not completion of every imaginable lithography or sensor research direction.",
+  "future_local_research": [
+    "Slow stochastic spectral diffusion and its identifiability against coherent defects.",
+    "Thermal photons, extra cavity modes, non-Markovian loss and more realistic source/detector drift.",
+    "Arbitrary pulse/control optimization and richer classical state-space comparators.",
+    "Joint phase-and-loss inference, imperfect references/number detection and source-mode mismatch.",
+    "Structure-aware synthesis or learned time-varying schedule oracles, justified only by a useful task and comparative resource evidence.",
+    "Repeated pilot selections, further dose settings, calibrated correlated process models and optimized reversible arithmetic."
+  ],
+  "external_inputs": [
+    "Defined source wavelength, measurand, sampling location, allowed tap and required noise bandwidth.",
+    "Measured optical coupling, geometry, source brightness/success, phase/reference stability and preparation/detection resources.",
+    "Detector efficiency, dark counts, dead time and afterpulsing under actual timing conditions.",
+    "Synchronized candidate-sensor and strong conventional-reference records under blinded independent interventions.",
+    "Wavelength-specific material response, development/blur, feature geometry and source-to-process transfer data."
+  ],
+  "api_decision": "No additional IBM job is needed for the present stopping point. Hardware can test a justified shallow implementation question but cannot supply missing optical/material calibration.",
+  "reviewed_source_hashes": {
+    "RESEARCH_CONTINUATION_PLAN.md": "f459cfc713377583cf253f6e1bbe83e0bc346c0bac347f9646d666ebc5dcc9ba",
+    "QUANTUM_PHOTOLITHOGRAPHY_ROADMAP.md": "e5723da2959979c74ea308c2483b6478e3eae792e1d02eadd99dd210de2a8dae",
+    "LASER_DIAGNOSTICS_ROADMAP.md": "407f376b41c9e3381fe3b6f6527282bd13f63172d822c88bec6e3146af17fe7c",
+    "qrsm_photon_poc/README.md": "14e3b60b53f6581b78c2ec14a9642b21e116fcd1e6badb9d02b71d329c6301ce"
+  },
+  "independent_checks_already_available": [
+    "finals-lithography/full_spatial_circuit/independent_review.json",
+    "qrsm_photon_poc/followup/independent_review.json",
+    "quantum_lithography_poc/exposure_followup/verification.json",
+    "quantum_lithography_poc/exposure_followup/moments_supplement.json",
+    "quantum_lithography_poc/phase_inspection_followup/verification.json",
+    "laser_sensor_viability/followup/validation.json",
+    "qrsm_photon_poc/multibin_followup/main/validation.json",
+    "qrsm_photon_poc/drive_diagnostics_followup/main/independent_review.json",
+    "qrsm_photon_poc/drive_diagnostics_followup/main/prior_only_independent_review.json"
+  ],
+  "bounded_local_program_status": "complete",
+  "drive_result_synthesis": {
+    "main_independent_review_passed": true,
+    "prior_only_independent_review_passed": true,
+    "heldout_records": 6656,
+    "heldout_bins": 638976,
+    "pipelines": 4,
+    "scenarios": 13,
+    "independently_recounted_public_main_metrics": 273,
+    "timely_step_detections": {
+      "physical_history": "19/512",
+      "classical_hmm": "16/512",
+      "count_contrast": "9/512"
+    },
+    "physical_nominal_false_alarm_fraction": 0.068359375,
+    "interpretation": "The tested low-count retained-state monitor does not establish useful prompt amplitude diagnosis. Detector artifacts create false source alarms. This limits the specified operating point, not every sensor.",
+    "prior_control": "Post-holdout descriptive comparison. The same fitted source prior achieves step RMSE 0.11362168 versus observation-based 0.11250952. The small paired MSE gain is 0.000251494; other source-changing cases have worse observation-based RMSE than prior-only. No main data, fits or thresholds were altered.",
+    "future_requirements": "Further acquisition/operating-point or nuisance-aware studies must use newly defined calibration and holdout records; no retuning away the preserved negative result."
+  },
+  "reviewed_evidence_sha256": {
+    "finals-lithography/full_spatial_circuit/independent_review.json": "b0f8c67d2762832efd3cc890234c096e77d15d01da9fa56501a3b781816bf625",
+    "qrsm_photon_poc/followup/independent_review.json": "79c50d03fd8d3398ff9656b8acbed68c847e761c8495f6ded2a9fa93ebde1873",
+    "quantum_lithography_poc/exposure_followup/verification.json": "fad5b2b2432f3aa2a8ca32ddecb22352d97e6f4fc6a85e75ffcb91950fe1c66a",
+    "quantum_lithography_poc/exposure_followup/moments_supplement.json": "749037502583e965056a8b1de39637bc813f46e682c5c64c68e3b9bbdb65bd94",
+    "quantum_lithography_poc/phase_inspection_followup/verification.json": "191f6a2d53733ed5c78f1751ea5e484919d26226dc394aba8bb039c3812179bc",
+    "laser_sensor_viability/followup/validation.json": "2e40227fa2e04fbbe2809cc1a60d77e559a625e13034b3fd1f47448891b548c7",
+    "qrsm_photon_poc/multibin_followup/main/validation.json": "8dbbb3da3f64da09dd784bdfbc146d00e88f65d7d6f36091139c26745b063a22",
+    "qrsm_photon_poc/drive_diagnostics_followup/main/independent_review.json": "40df853d651ff4405d10aa6d4d14dfd2fc28853159bde2afe22cf2acad51b334",
+    "qrsm_photon_poc/drive_diagnostics_followup/main/prior_only_independent_review.json": "c634c70d8640d0f09e277c29e7d4a18e9d8bd8ebd61fe8606402d969ed263f3f",
+    "qrsm_photon_poc/drive_diagnostics_followup/main/results.json": "74847bbee9cbaf6fbd41d72ab2566839919de73d218e2690ad383c135495a069",
+    "qrsm_photon_poc/drive_diagnostics_followup/main/prior_only_estimation_control.json": "932e745a5f8107bbf37a05c97e7d53bfff8257a2d2b30c84405079b5c920a572"
+  },
+  "bounded_completion_rationale": "All seven studies in the continuation plan have completed their finite, testable local scope. Negative findings and unresolved identification are valid outcomes. Broader numbered-roadmap aspirations remain explicitly partial, optional local research or external-data work; completion does not assert exhaustive research or practical device viability.",
+  "delivery_scope": "This archived receipt certifies bounded local study completion only. Final archive extraction/delivery readiness is recorded separately in completion_review.json and the delivery receipt."
+}

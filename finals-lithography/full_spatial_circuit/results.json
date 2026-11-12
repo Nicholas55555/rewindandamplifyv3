@@ -1,0 +1,631 @@
+{
+  "schema": "full-spatial-construction-v1",
+  "scope": "Full original7x7 independent Poisson blur/ROI process, approximated by capped counts and bounded positive lattice weights. Actual circuits constructed and serialized; no full statevector, density simulation, hardware or device claim.",
+  "configuration": {
+    "cells": 49,
+    "grid": [
+      7,
+      7
+    ],
+    "dose_for_saved_circuits": 1.5,
+    "count_bits": 4,
+    "cap": 15,
+    "response_threshold": 0.8,
+    "threshold_bits": 18,
+    "integer_threshold": 262144,
+    "real_weights": [
+      [
+        5.550775256447452e-05,
+        0.000622506192583698,
+        0.0018598500805211068,
+        0.0023724353324596254,
+        0.0018598500805211064,
+        0.0006225061925836979,
+        5.5507752564474505e-05
+      ],
+      [
+        0.000622506192583698,
+        0.006981258327022679,
+        0.02085777461548067,
+        0.02660629583669513,
+        0.02085777461548067,
+        0.006981258327022681,
+        0.0006225061925836979
+      ],
+      [
+        0.0018598500805211064,
+        0.020857774615480672,
+        0.06231638216655501,
+        0.0794911312429917,
+        0.06231638216655501,
+        0.020857774615480672,
+        0.0018598500805211064
+      ],
+      [
+        0.0023724353324596254,
+        0.026606295836695125,
+        0.07949113124299172,
+        0.10139933877101476,
+        0.07949113124299172,
+        0.026606295836695125,
+        0.0023724353324596254
+      ],
+      [
+        0.0018598500805211064,
+        0.020857774615480672,
+        0.062316382166554996,
+        0.07949113124299172,
+        0.062316382166554996,
+        0.02085777461548067,
+        0.0018598500805211064
+      ],
+      [
+        0.0006225061925836979,
+        0.00698125832702268,
+        0.020857774615480672,
+        0.026606295836695125,
+        0.02085777461548067,
+        0.00698125832702268,
+        0.000622506192583698
+      ],
+      [
+        5.550775256447452e-05,
+        0.000622506192583698,
+        0.0018598500805211064,
+        0.0023724353324596254,
+        0.0018598500805211064,
+        0.000622506192583698,
+        5.5507752564474505e-05
+      ]
+    ],
+    "integer_weights": {
+      "floor": [
+        [
+          18,
+          203,
+          609,
+          777,
+          609,
+          203,
+          18
+        ],
+        [
+          203,
+          2287,
+          6834,
+          8718,
+          6834,
+          2287,
+          203
+        ],
+        [
+          609,
+          6834,
+          20419,
+          26047,
+          20419,
+          6834,
+          609
+        ],
+        [
+          777,
+          8718,
+          26047,
+          33226,
+          26047,
+          8718,
+          777
+        ],
+        [
+          609,
+          6834,
+          20419,
+          26047,
+          20419,
+          6834,
+          609
+        ],
+        [
+          203,
+          2287,
+          6834,
+          8718,
+          6834,
+          2287,
+          203
+        ],
+        [
+          18,
+          203,
+          609,
+          777,
+          609,
+          203,
+          18
+        ]
+      ],
+      "ceil": [
+        [
+          19,
+          204,
+          610,
+          778,
+          610,
+          204,
+          19
+        ],
+        [
+          204,
+          2288,
+          6835,
+          8719,
+          6835,
+          2288,
+          204
+        ],
+        [
+          610,
+          6835,
+          20420,
+          26048,
+          20420,
+          6835,
+          610
+        ],
+        [
+          778,
+          8719,
+          26048,
+          33227,
+          26048,
+          8719,
+          778
+        ],
+        [
+          610,
+          6835,
+          20420,
+          26048,
+          20420,
+          6835,
+          610
+        ],
+        [
+          204,
+          2288,
+          6835,
+          8719,
+          6835,
+          2288,
+          204
+        ],
+        [
+          19,
+          204,
+          610,
+          778,
+          610,
+          204,
+          19
+        ]
+      ]
+    }
+  },
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.3.1",
+    "scipy": "1.18.1",
+    "qiskit": "2.6.1",
+    "qpy_version": 18
+  },
+  "bounds": [
+    {
+      "dose": 1.5,
+      "count_cap": 15,
+      "overflow_category_probability": 8.239722367590797e-11,
+      "per_cell_probability_count_value_changes": 7.678825671260364e-12,
+      "union_bound_any_count_value_changes": 3.7626245789175784e-10,
+      "exact_independent_any_count_value_changes": 3.762624578224158e-10,
+      "uncapped_integer_lattice_cdf": {
+        "floor": 0.004237128599287181,
+        "ceil": 0.004226948014934886
+      },
+      "finite_capped_integer_lattice_cdf": {
+        "floor": 0.004237128599302049,
+        "ceil": 0.004226948014949742
+      },
+      "original_process_probability_bracket": [
+        0.004226948014934886,
+        0.004237128599287181
+      ],
+      "bracket_width": 1.018058435229511e-05,
+      "relative_bracket_width": 0.002405598346118186,
+      "finite_circuit_event_absolute_error_upper": {
+        "floor": 1.0180584367162557e-05,
+        "ceil": 1.0180584337438937e-05
+      },
+      "ideal_one_round_analytic_prediction_not_statevector": {
+        "floor": 0.03770449630756864,
+        "ceil": 0.03761493035817893
+      }
+    },
+    {
+      "dose": 1.8,
+      "count_cap": 15,
+      "overflow_category_probability": 9.600435617769344e-10,
+      "per_cell_probability_count_value_changes": 1.0722253811493201e-10,
+      "union_bound_any_count_value_changes": 5.253904367631669e-09,
+      "exact_independent_any_count_value_changes": 5.253904354111581e-09,
+      "uncapped_integer_lattice_cdf": {
+        "floor": 0.00018094101689255818,
+        "ceil": 0.0001803041794618219
+      },
+      "finite_capped_integer_lattice_cdf": {
+        "floor": 0.00018094101690211778,
+        "ceil": 0.00018030417947136358
+      },
+      "original_process_probability_bracket": [
+        0.0001803041794618219,
+        0.00018094101689255818
+      ],
+      "bracket_width": 6.36837430736286e-07,
+      "relative_bracket_width": 0.0035257904446239392,
+      "finite_circuit_event_absolute_error_upper": {
+        "floor": 6.368374402958862e-07,
+        "ceil": 6.368374211946021e-07
+      },
+      "ideal_one_round_analytic_prediction_not_statevector": {
+        "floor": 0.0016276834952638518,
+        "ceil": 0.0016219574786968955
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "status": "constructed_qpy_unsupported",
+      "constructed": true,
+      "error": "QpyError: 'invalid instruction: Instruction has 195 but at most 31 are supported'",
+      "qubits": 219,
+      "metadata": {
+        "cells": 49,
+        "count_bits_per_cell": 4,
+        "data_qubits": 196,
+        "score_qubits": 23,
+        "extra_clean_qubits": 0,
+        "total_qubits": 219,
+        "maximum_encoded_score": 4911870,
+        "threshold": 262144,
+        "threshold_bits": 18,
+        "diffuser_clean_ancillas_required": 193,
+        "diffuser_score_qubits_reused": 0,
+        "oracle_clean_ancillas_reserved": 0,
+        "style": "compact"
+      },
+      "top_level_instruction_count": 399,
+      "recursive_operation_counts": {
+        "abstract_mcx_10": 2136,
+        "abstract_mcx_11": 2056,
+        "abstract_mcx_12": 1936,
+        "abstract_mcx_13": 1806,
+        "abstract_mcx_14": 1650,
+        "abstract_mcx_15": 1460,
+        "abstract_mcx_16": 1278,
+        "abstract_mcx_17": 1090,
+        "abstract_mcx_18": 910,
+        "abstract_mcx_19": 756,
+        "abstract_mcx_195": 1,
+        "abstract_mcx_20": 576,
+        "abstract_mcx_21": 364,
+        "abstract_mcx_22": 202,
+        "abstract_mcx_23": 64,
+        "abstract_mcx_3": 2320,
+        "abstract_mcx_4": 2321,
+        "abstract_mcx_5": 2320,
+        "abstract_mcx_6": 2318,
+        "abstract_mcx_7": 2300,
+        "abstract_mcx_8": 2266,
+        "abstract_mcx_9": 2216,
+        "ccx": 2320,
+        "controlled_ry_1": 294,
+        "controlled_ry_2": 588,
+        "controlled_ry_3": 1176,
+        "cx": 2320,
+        "h": 4,
+        "ry": 147,
+        "x": 5400
+      },
+      "signature_before": "b238c638136cfabe6d2e6f0a87182b0a3f51c7414d987f99ec42646ae853384c",
+      "qpy_round_trip": "unsupported by installed QPY control-count representation",
+      "partial_file_not_a_valid_artifact": "floor_compact_219q.qpy.partial",
+      "seconds": 3.061999999998079,
+      "guard_timeout_seconds": 120,
+      "guard_rss_limit_mb": 1536,
+      "preflight_available_system_memory_mb": 13476.07421875,
+      "observed_peak_worker_rss_mb": 231.80859375,
+      "memory_guard_note": "RSS sampled every50ms; termination guard, not an OS hard limit; transient overshoot is possible.",
+      "weight_rounding": "floor",
+      "style": "compact"
+    },
+    {
+      "status": "completed",
+      "seconds": 8.5,
+      "weight_rounding": "floor",
+      "style": "clean",
+      "qubits": 389,
+      "constructed": true,
+      "metadata": {
+        "cells": 49,
+        "count_bits_per_cell": 4,
+        "data_qubits": 196,
+        "score_qubits": 23,
+        "extra_clean_qubits": 170,
+        "total_qubits": 389,
+        "maximum_encoded_score": 4911870,
+        "threshold": 262144,
+        "threshold_bits": 18,
+        "diffuser_clean_ancillas_required": 193,
+        "diffuser_score_qubits_reused": 23,
+        "oracle_clean_ancillas_reserved": 21,
+        "style": "clean"
+      },
+      "top_level_instruction_count": 399,
+      "recursive_operation_counts": {
+        "ccx": 558496,
+        "controlled_ry_1": 294,
+        "controlled_ry_2": 588,
+        "controlled_ry_3": 1176,
+        "cx": 2320,
+        "h": 4,
+        "ry": 147,
+        "x": 5400
+      },
+      "signature_before": "d9a70fa0bb15f32c8f908c11b2445b56101291aeb5045f6ad1f6eab20e8777dd",
+      "signature_after": "d9a70fa0bb15f32c8f908c11b2445b56101291aeb5045f6ad1f6eab20e8777dd",
+      "qpy_round_trip": "passed",
+      "qpy_file": "floor_clean_389q.qpy",
+      "qpy_bytes": 43696842,
+      "qpy_sha256": "876bcede2202d09fed6821ceb93ba821d9c68b56144f72033ca6438eb307991a",
+      "guard_timeout_seconds": 120,
+      "guard_rss_limit_mb": 1536,
+      "preflight_available_system_memory_mb": 13467.83203125,
+      "observed_peak_worker_rss_mb": 1215.1796875,
+      "memory_guard_note": "RSS sampled every50ms; termination guard, not an OS hard limit; transient overshoot is possible."
+    },
+    {
+      "status": "constructed_qpy_unsupported",
+      "constructed": true,
+      "error": "QpyError: 'invalid instruction: Instruction has 195 but at most 31 are supported'",
+      "qubits": 219,
+      "metadata": {
+        "cells": 49,
+        "count_bits_per_cell": 4,
+        "data_qubits": 196,
+        "score_qubits": 23,
+        "extra_clean_qubits": 0,
+        "total_qubits": 219,
+        "maximum_encoded_score": 4912605,
+        "threshold": 262144,
+        "threshold_bits": 18,
+        "diffuser_clean_ancillas_required": 193,
+        "diffuser_score_qubits_reused": 0,
+        "oracle_clean_ancillas_reserved": 0,
+        "style": "compact"
+      },
+      "top_level_instruction_count": 399,
+      "recursive_operation_counts": {
+        "abstract_mcx_10": 1920,
+        "abstract_mcx_11": 1840,
+        "abstract_mcx_12": 1720,
+        "abstract_mcx_13": 1590,
+        "abstract_mcx_14": 1434,
+        "abstract_mcx_15": 1236,
+        "abstract_mcx_16": 1054,
+        "abstract_mcx_17": 866,
+        "abstract_mcx_18": 702,
+        "abstract_mcx_19": 564,
+        "abstract_mcx_195": 1,
+        "abstract_mcx_20": 408,
+        "abstract_mcx_21": 250,
+        "abstract_mcx_22": 126,
+        "abstract_mcx_23": 34,
+        "abstract_mcx_3": 2104,
+        "abstract_mcx_4": 2105,
+        "abstract_mcx_5": 2104,
+        "abstract_mcx_6": 2102,
+        "abstract_mcx_7": 2084,
+        "abstract_mcx_8": 2050,
+        "abstract_mcx_9": 2000,
+        "ccx": 2104,
+        "controlled_ry_1": 294,
+        "controlled_ry_2": 588,
+        "controlled_ry_3": 1176,
+        "cx": 2104,
+        "h": 4,
+        "ry": 147,
+        "x": 5400
+      },
+      "signature_before": "5032e75e2509ed60e0bafc4f6fcd32f9ffd6f7958c834256b35ebd4da91a96de",
+      "qpy_round_trip": "unsupported by installed QPY control-count representation",
+      "partial_file_not_a_valid_artifact": "ceil_compact_219q.qpy.partial",
+      "seconds": 2.7179999999971187,
+      "guard_timeout_seconds": 120,
+      "guard_rss_limit_mb": 1536,
+      "preflight_available_system_memory_mb": 13381.16015625,
+      "observed_peak_worker_rss_mb": 223.27734375,
+      "memory_guard_note": "RSS sampled every50ms; termination guard, not an OS hard limit; transient overshoot is possible.",
+      "weight_rounding": "ceil",
+      "style": "compact"
+    },
+    {
+      "status": "completed",
+      "seconds": 7.937999999998283,
+      "weight_rounding": "ceil",
+      "style": "clean",
+      "qubits": 389,
+      "constructed": true,
+      "metadata": {
+        "cells": 49,
+        "count_bits_per_cell": 4,
+        "data_qubits": 196,
+        "score_qubits": 23,
+        "extra_clean_qubits": 170,
+        "total_qubits": 389,
+        "maximum_encoded_score": 4912605,
+        "threshold": 262144,
+        "threshold_bits": 18,
+        "diffuser_clean_ancillas_required": 193,
+        "diffuser_score_qubits_reused": 23,
+        "oracle_clean_ancillas_reserved": 21,
+        "style": "clean"
+      },
+      "top_level_instruction_count": 399,
+      "recursive_operation_counts": {
+        "ccx": 473852,
+        "controlled_ry_1": 294,
+        "controlled_ry_2": 588,
+        "controlled_ry_3": 1176,
+        "cx": 2104,
+        "h": 4,
+        "ry": 147,
+        "x": 5400
+      },
+      "signature_before": "6d872a9b89fd8c5d24c380a8f60b78d0cbf02dca6d6a0989400f1698aaed9633",
+      "signature_after": "6d872a9b89fd8c5d24c380a8f60b78d0cbf02dca6d6a0989400f1698aaed9633",
+      "qpy_round_trip": "passed",
+      "qpy_file": "ceil_clean_389q.qpy",
+      "qpy_bytes": 37656770,
+      "qpy_sha256": "38c2b602c2df43f7cf6681cce72ecb0be914599fc8f7a362fd6ed8f80be8273d",
+      "guard_timeout_seconds": 120,
+      "guard_rss_limit_mb": 1536,
+      "preflight_available_system_memory_mb": 13348.9453125,
+      "observed_peak_worker_rss_mb": 1107.3984375,
+      "memory_guard_note": "RSS sampled every50ms; termination guard, not an OS hard limit; transient overshoot is possible."
+    }
+  ],
+  "component_compilation": {
+    "status": "completed",
+    "seconds": 1.6719999999986612,
+    "cell_preparation": {
+      "qubits": 4,
+      "counts": {
+        "cx": 196,
+        "u": 161
+      },
+      "depth": 281
+    },
+    "exact_ccx_decomposition": {
+      "qubits": 3,
+      "counts": {
+        "u": 9,
+        "cx": 6
+      },
+      "depth": 11
+    },
+    "scope": "Only 4-qubit preparation and 3-qubit CCX compiled. Full circuit not transpiled.",
+    "guard_timeout_seconds": 30,
+    "guard_rss_limit_mb": 768,
+    "preflight_available_system_memory_mb": 13468.72265625,
+    "observed_peak_worker_rss_mb": 176.59765625,
+    "memory_guard_note": "RSS sampled every50ms; termination guard, not an OS hard limit; transient overshoot is possible."
+  },
+  "explicit_synthesis_costs": {
+    "floor": {
+      "adder_mcx_control_histogram": {
+        "1": 1160,
+        "2": 1160,
+        "3": 1160,
+        "4": 1160,
+        "5": 1160,
+        "6": 1159,
+        "7": 1150,
+        "8": 1133,
+        "9": 1108,
+        "10": 1068,
+        "11": 1028,
+        "12": 968,
+        "13": 903,
+        "14": 825,
+        "15": 730,
+        "16": 639,
+        "17": 545,
+        "18": 455,
+        "19": 378,
+        "20": 288,
+        "21": 182,
+        "22": 101,
+        "23": 32
+      },
+      "adder_direct_cx": 1160,
+      "adder_exact_ccx": 279052,
+      "oracle_direct_cx": 2320,
+      "oracle_exact_ccx": 558109,
+      "diffuser_exact_ccx": 387,
+      "mark_single_qubit_x": 10,
+      "mark_single_qubit_h": 2,
+      "diffuser_single_qubit_x": 392,
+      "diffuser_single_qubit_h": 2,
+      "complete_one_round_generic_cx_constructive_upper_bound": 3382108,
+      "complete_one_round_generic_u_constructive_upper_bound": 5050537,
+      "preparation_calls": 2,
+      "inverse_preparation_calls": 1,
+      "cells_prepared_per_call": 49,
+      "justification": "Concatenate actual4-qubit preparation synthesis, exact6-CX Toffolis in the explicit clean circuit, and nativeCX/single-qubit gates. A constructive unoptimized upper bound, not full transpilation or a lower bound.",
+      "omits": "Physical routing, scheduling, angle approximation, calibration, fault tolerance, noise, measurement latency."
+    },
+    "ceil": {
+      "adder_mcx_control_histogram": {
+        "1": 1052,
+        "2": 1052,
+        "3": 1052,
+        "4": 1052,
+        "5": 1052,
+        "6": 1051,
+        "7": 1042,
+        "8": 1025,
+        "9": 1000,
+        "10": 960,
+        "11": 920,
+        "12": 860,
+        "13": 795,
+        "14": 717,
+        "15": 618,
+        "16": 527,
+        "17": 433,
+        "18": 351,
+        "19": 282,
+        "20": 204,
+        "21": 125,
+        "22": 63,
+        "23": 17
+      },
+      "adder_direct_cx": 1052,
+      "adder_exact_ccx": 236730,
+      "oracle_direct_cx": 2104,
+      "oracle_exact_ccx": 473465,
+      "diffuser_exact_ccx": 387,
+      "mark_single_qubit_x": 10,
+      "mark_single_qubit_h": 2,
+      "diffuser_single_qubit_x": 392,
+      "diffuser_single_qubit_h": 2,
+      "complete_one_round_generic_cx_constructive_upper_bound": 2874028,
+      "complete_one_round_generic_u_constructive_upper_bound": 4288741,
+      "preparation_calls": 2,
+      "inverse_preparation_calls": 1,
+      "cells_prepared_per_call": 49,
+      "justification": "Concatenate actual4-qubit preparation synthesis, exact6-CX Toffolis in the explicit clean circuit, and nativeCX/single-qubit gates. A constructive unoptimized upper bound, not full transpilation or a lower bound.",
+      "omits": "Physical routing, scheduling, angle approximation, calibration, fault tolerance, noise, measurement latency."
+    }
+  },
+  "source_sha256": {
+    "circuit_model.py": "ca54b7d6dea0be05f8ff924263dec9fb23306cac3d795b9e307a4c83f5ab4d3d",
+    "process_bounds.py": "3355a64b16858340c1128412152f0b7abec1f5d8c117541664fceed72b61c2a5",
+    "run_construction.py": "63cf564a1204304ae0a57177b73fb9229fcaebef3c6099bbd8b8fb27ce6ba7d8"
+  },
+  "imported_frozen_source_sha256": {
+    "spatial_model.py": "c86d14731d0d1f52e5b205438f3124bed9158e5b941c375a235369edad368093",
+    "followup\\spatial_coverage.py": "7d83433aae4bb7cd221cb472f3fb6903fabb51de96c7730de7b007f04cc8f395"
+  },
+  "all_constructions_completed": true,
+  "all_explicit_qpy_roundtrips_completed": true,
+  "all_qpy_roundtrips_completed": false
+}

@@ -1,0 +1,2418 @@
+{
+  "schema": "ra-hardware-bundle-v1",
+  "bundle": "optical_controls",
+  "qpy_file": "logical.qpy",
+  "ideal_probabilities_file": "ideal_probabilities.npz",
+  "classical_register": "meas",
+  "bit_order": "Integer keys little-endian: classical bitj records logical qubitj; binary strings highest bit first.",
+  "circuits": [
+    {
+      "name": "atomic_d-5_Z",
+      "index": 0,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 4,
+      "metadata": {
+        "family": "atomic_finite_pulse",
+        "detuning_hz": -5,
+        "relative_intensity": 1.0,
+        "basis": "Z",
+        "config": {
+          "pulse_s": 0.0025,
+          "dark_s": 0.02,
+          "t1_s": 100.0,
+          "t2_s": 0.2,
+          "preparation_error": 0.01,
+          "readout_01": 0.02,
+          "readout_10": 0.04,
+          "lightshift_hz_per_relative_power": 3.0
+        },
+        "system_qubit": 0,
+        "environment_qubits": [
+          1,
+          2
+        ],
+        "preparation_environment_qubit": 3,
+        "ground_code": 1,
+        "excited_code": 0,
+        "source": "laser_sensor_viability/model.py",
+        "emulation_only": true
+      },
+      "reference": {
+        "bloch_xyz": [
+          0.02594197123831192,
+          0.6490062491631414,
+          -0.582779342706771
+        ],
+        "system_probability_zero_in_measurement_basis": 0.2086103286466145,
+        "born_excitation_probability": 0.2086103286466145,
+        "canonical_synthetic_readout_probability": 0.2160937089278176,
+        "canonical_strang16_probability": 0.21609360306496955,
+        "absolute_exact_vs_strang16": 1.0586284804325885e-07,
+        "choi_eigenvalues": [
+          0.002762089320162112,
+          0.009387221848583743,
+          0.10612303061951002,
+          1.8817276582117446
+        ],
+        "isometry_completeness_error": 1.3489323969187858e-15
+      },
+      "ideal_probability_key": "p000",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 18,
+          "cx": 11
+        },
+        "depth": 23,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "atomic_d-0.5_Z",
+      "index": 1,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 4,
+      "metadata": {
+        "family": "atomic_finite_pulse",
+        "detuning_hz": -0.5,
+        "relative_intensity": 1.0,
+        "basis": "Z",
+        "config": {
+          "pulse_s": 0.0025,
+          "dark_s": 0.02,
+          "t1_s": 100.0,
+          "t2_s": 0.2,
+          "preparation_error": 0.01,
+          "readout_01": 0.02,
+          "readout_10": 0.04,
+          "lightshift_hz_per_relative_power": 3.0
+        },
+        "system_qubit": 0,
+        "environment_qubits": [
+          1,
+          2
+        ],
+        "preparation_environment_qubit": 3,
+        "ground_code": 1,
+        "excited_code": 0,
+        "source": "laser_sensor_viability/model.py",
+        "emulation_only": true
+      },
+      "reference": {
+        "bloch_xyz": [
+          7.943211063442604e-06,
+          0.8679829069367977,
+          -0.06373712668360998
+        ],
+        "system_probability_zero_in_measurement_basis": 0.468131436658195,
+        "born_excitation_probability": 0.468131436658195,
+        "canonical_synthetic_readout_probability": 0.4600435504587033,
+        "canonical_strang16_probability": 0.46004358132219786,
+        "absolute_exact_vs_strang16": 3.08634945378472e-08,
+        "choi_eigenvalues": [
+          0.005896428487029044,
+          0.006433044103788024,
+          0.10595812135789329,
+          1.8817124060512893
+        ],
+        "isometry_completeness_error": 7.070879564155086e-16
+      },
+      "ideal_probability_key": "p001",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 18,
+          "cx": 11
+        },
+        "depth": 23,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "atomic_d+0_Z",
+      "index": 2,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 4,
+      "metadata": {
+        "family": "atomic_finite_pulse",
+        "detuning_hz": 0,
+        "relative_intensity": 1.0,
+        "basis": "Z",
+        "config": {
+          "pulse_s": 0.0025,
+          "dark_s": 0.02,
+          "t1_s": 100.0,
+          "t2_s": 0.2,
+          "preparation_error": 0.01,
+          "readout_01": 0.02,
+          "readout_10": 0.04,
+          "lightshift_hz_per_relative_power": 3.0
+        },
+        "system_qubit": 0,
+        "environment_qubits": [
+          1,
+          2
+        ],
+        "preparation_environment_qubit": 3,
+        "ground_code": 1,
+        "excited_code": 0,
+        "source": "laser_sensor_viability/model.py",
+        "emulation_only": true
+      },
+      "reference": {
+        "bloch_xyz": [
+          -0.004084761001529224,
+          0.870279333277738,
+          -3.2150092357462995e-05
+        ],
+        "system_probability_zero_in_measurement_basis": 0.49998392495382127,
+        "born_excitation_probability": 0.49998392495382127,
+        "canonical_synthetic_readout_probability": 0.48998488945659197,
+        "canonical_strang16_probability": 0.4899849431603612,
+        "absolute_exact_vs_strang16": 5.3703769209434427e-08,
+        "choi_eigenvalues": [
+          0.006000111060720856,
+          0.006350200005427489,
+          0.10593835877085639,
+          1.8817113301629949
+        ],
+        "isometry_completeness_error": 7.402707586983645e-16
+      },
+      "ideal_probability_key": "p002",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 18,
+          "cx": 11
+        },
+        "depth": 23,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "atomic_d+0.5_Z",
+      "index": 3,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 4,
+      "metadata": {
+        "family": "atomic_finite_pulse",
+        "detuning_hz": 0.5,
+        "relative_intensity": 1.0,
+        "basis": "Z",
+        "config": {
+          "pulse_s": 0.0025,
+          "dark_s": 0.02,
+          "t1_s": 100.0,
+          "t2_s": 0.2,
+          "preparation_error": 0.01,
+          "readout_01": 0.02,
+          "readout_10": 0.04,
+          "lightshift_hz_per_relative_power": 3.0
+        },
+        "system_qubit": 0,
+        "environment_qubits": [
+          1,
+          2
+        ],
+        "preparation_environment_qubit": 3,
+        "ground_code": 1,
+        "excited_code": 0,
+        "source": "laser_sensor_viability/model.py",
+        "emulation_only": true
+      },
+      "reference": {
+        "bloch_xyz": [
+          -0.008187732624618527,
+          0.8679421683184905,
+          0.06367274148186185
+        ],
+        "system_probability_zero_in_measurement_basis": 0.5318363707409309,
+        "born_excitation_probability": 0.5318363707409309,
+        "canonical_synthetic_readout_probability": 0.519926188496475,
+        "canonical_strang16_probability": 0.5199262651640657,
+        "absolute_exact_vs_strang16": 7.666759072044727e-08,
+        "choi_eigenvalues": [
+          0.005667405840855386,
+          0.006703552775922933,
+          0.10591861999768515,
+          1.8817104213855367
+        ],
+        "isometry_completeness_error": 6.871300782221712e-16
+      },
+      "ideal_probability_key": "p003",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 18,
+          "cx": 11
+        },
+        "depth": 23,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "atomic_d+5_Z",
+      "index": 4,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 4,
+      "metadata": {
+        "family": "atomic_finite_pulse",
+        "detuning_hz": 5,
+        "relative_intensity": 1.0,
+        "basis": "Z",
+        "config": {
+          "pulse_s": 0.0025,
+          "dark_s": 0.02,
+          "t1_s": 100.0,
+          "t2_s": 0.2,
+          "preparation_error": 0.01,
+          "readout_01": 0.02,
+          "readout_10": 0.04,
+          "lightshift_hz_per_relative_power": 3.0
+        },
+        "system_qubit": 0,
+        "environment_qubits": [
+          1,
+          2
+        ],
+        "preparation_environment_qubit": 3,
+        "ground_code": 1,
+        "excited_code": 0,
+        "source": "laser_sensor_viability/model.py",
+        "emulation_only": true
+      },
+      "reference": {
+        "bloch_xyz": [
+          -0.03513674159853435,
+          0.6485479064489066,
+          0.5827059928191999
+        ],
+        "system_probability_zero_in_measurement_basis": 0.7913529964096,
+        "born_excitation_probability": 0.7913529964096,
+        "canonical_synthetic_readout_probability": 0.763871816625024,
+        "canonical_strang16_probability": 0.7638720422321653,
+        "absolute_exact_vs_strang16": 2.2560714130204218e-07,
+        "choi_eigenvalues": [
+          0.0026850772509092163,
+          0.009849436755094877,
+          0.10575623928686897,
+          1.8817092467071266
+        ],
+        "isometry_completeness_error": 2.405705610186675e-16
+      },
+      "ideal_probability_key": "p004",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 18,
+          "cx": 11
+        },
+        "depth": 23,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "atomic_shortT2_d+5_Z",
+      "index": 5,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 4,
+      "metadata": {
+        "family": "atomic_finite_pulse",
+        "detuning_hz": 5,
+        "relative_intensity": 1.0,
+        "basis": "Z",
+        "config": {
+          "pulse_s": 0.0025,
+          "dark_s": 0.02,
+          "t1_s": 100.0,
+          "t2_s": 0.02,
+          "preparation_error": 0.01,
+          "readout_01": 0.02,
+          "readout_10": 0.04,
+          "lightshift_hz_per_relative_power": 3.0
+        },
+        "system_qubit": 0,
+        "environment_qubits": [
+          1,
+          2
+        ],
+        "preparation_environment_qubit": 3,
+        "ground_code": 1,
+        "excited_code": 0,
+        "source": "laser_sensor_viability/model.py",
+        "emulation_only": true
+      },
+      "reference": {
+        "bloch_xyz": [
+          -0.03953975822762058,
+          0.22157332776349603,
+          0.21003463058974914
+        ],
+        "system_probability_zero_in_measurement_basis": 0.6050173152948746,
+        "born_excitation_probability": 0.6050173152948746,
+        "canonical_synthetic_readout_probability": 0.588716276377182,
+        "canonical_strang16_probability": 0.5887204694373224,
+        "absolute_exact_vs_strang16": 4.193060140322835e-06,
+        "choi_eigenvalues": [
+          0.04560459497264615,
+          0.06987542784274922,
+          0.6374226266880221,
+          1.2470973504965819
+        ],
+        "isometry_completeness_error": 9.096040369901382e-16
+      },
+      "ideal_probability_key": "p005",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 18,
+          "cx": 11
+        },
+        "depth": 23,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "atomic_power1.1_d+0.5_Z",
+      "index": 6,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 4,
+      "metadata": {
+        "family": "atomic_finite_pulse",
+        "detuning_hz": 0.5,
+        "relative_intensity": 1.1,
+        "basis": "Z",
+        "config": {
+          "pulse_s": 0.0025,
+          "dark_s": 0.02,
+          "t1_s": 100.0,
+          "t2_s": 0.2,
+          "preparation_error": 0.01,
+          "readout_01": 0.02,
+          "readout_10": 0.04,
+          "lightshift_hz_per_relative_power": 3.0
+        },
+        "system_qubit": 0,
+        "environment_qubits": [
+          1,
+          2
+        ],
+        "preparation_environment_qubit": 3,
+        "ground_code": 1,
+        "excited_code": 0,
+        "source": "laser_sensor_viability/model.py",
+        "emulation_only": true
+      },
+      "reference": {
+        "bloch_xyz": [
+          0.0729181759334275,
+          0.865931110630789,
+          0.05310592184478648
+        ],
+        "system_probability_zero_in_measurement_basis": 0.5265529609223932,
+        "born_excitation_probability": 0.5265529609223932,
+        "canonical_synthetic_readout_probability": 0.5149597832670496,
+        "canonical_strang16_probability": 0.5149589107006182,
+        "absolute_exact_vs_strang16": 8.725664314424009e-07,
+        "choi_eigenvalues": [
+          0.005980396343354938,
+          0.006986509204864902,
+          0.1053526505687293,
+          1.881680443883051
+        ],
+        "isometry_completeness_error": 5.991605307709952e-16
+      },
+      "ideal_probability_key": "p006",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 18,
+          "cx": 11
+        },
+        "depth": 23,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "atomic_d+0.5_X",
+      "index": 7,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 4,
+      "metadata": {
+        "family": "atomic_finite_pulse",
+        "detuning_hz": 0.5,
+        "relative_intensity": 1.0,
+        "basis": "X",
+        "config": {
+          "pulse_s": 0.0025,
+          "dark_s": 0.02,
+          "t1_s": 100.0,
+          "t2_s": 0.2,
+          "preparation_error": 0.01,
+          "readout_01": 0.02,
+          "readout_10": 0.04,
+          "lightshift_hz_per_relative_power": 3.0
+        },
+        "system_qubit": 0,
+        "environment_qubits": [
+          1,
+          2
+        ],
+        "preparation_environment_qubit": 3,
+        "ground_code": 1,
+        "excited_code": 0,
+        "source": "laser_sensor_viability/model.py",
+        "emulation_only": true
+      },
+      "reference": {
+        "bloch_xyz": [
+          -0.008187732624618527,
+          0.8679421683184905,
+          0.06367274148186185
+        ],
+        "system_probability_zero_in_measurement_basis": 0.49590613368769076,
+        "born_excitation_probability": 0.5318363707409309,
+        "canonical_synthetic_readout_probability": 0.519926188496475,
+        "canonical_strang16_probability": 0.5199262651640657,
+        "absolute_exact_vs_strang16": 7.666759072044727e-08,
+        "choi_eigenvalues": [
+          0.005667405840855386,
+          0.006703552775922933,
+          0.10591861999768515,
+          1.8817104213855367
+        ],
+        "isometry_completeness_error": 6.871300782221712e-16
+      },
+      "ideal_probability_key": "p007",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 18,
+          "cx": 11
+        },
+        "depth": 23,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "atomic_d+0.5_Y",
+      "index": 8,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 4,
+      "metadata": {
+        "family": "atomic_finite_pulse",
+        "detuning_hz": 0.5,
+        "relative_intensity": 1.0,
+        "basis": "Y",
+        "config": {
+          "pulse_s": 0.0025,
+          "dark_s": 0.02,
+          "t1_s": 100.0,
+          "t2_s": 0.2,
+          "preparation_error": 0.01,
+          "readout_01": 0.02,
+          "readout_10": 0.04,
+          "lightshift_hz_per_relative_power": 3.0
+        },
+        "system_qubit": 0,
+        "environment_qubits": [
+          1,
+          2
+        ],
+        "preparation_environment_qubit": 3,
+        "ground_code": 1,
+        "excited_code": 0,
+        "source": "laser_sensor_viability/model.py",
+        "emulation_only": true
+      },
+      "reference": {
+        "bloch_xyz": [
+          -0.008187732624618527,
+          0.8679421683184905,
+          0.06367274148186185
+        ],
+        "system_probability_zero_in_measurement_basis": 0.9339710841592452,
+        "born_excitation_probability": 0.5318363707409309,
+        "canonical_synthetic_readout_probability": 0.519926188496475,
+        "canonical_strang16_probability": 0.5199262651640657,
+        "absolute_exact_vs_strang16": 7.666759072044727e-08,
+        "choi_eigenvalues": [
+          0.005667405840855386,
+          0.006703552775922933,
+          0.10591861999768515,
+          1.8817104213855367
+        ],
+        "isometry_completeness_error": 6.871300782221712e-16
+      },
+      "ideal_probability_key": "p008",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 18,
+          "cx": 11
+        },
+        "depth": 23,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "noon_phi0",
+      "index": 9,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 5,
+      "metadata": {
+        "family": "photon_noon_or_mixture",
+        "kind": "noon",
+        "photons_if_prepared": 2,
+        "phase_rad": 0,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "path_qubits": [
+          0,
+          1
+        ],
+        "loss_qubits": [
+          2,
+          3
+        ],
+        "source_success_qubit": 4,
+        "source": "quantum_lithography_poc/phase_inspection_followup/phase_model.py",
+        "emulation_only": true,
+        "incident_mean_photons_before_object_per_attempt": 2.0
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.03609999999999997,
+          "0,1": 0.15389999999999993,
+          "0,2": 0.32805,
+          "1,0": 0.15389999999999993,
+          "1,1": 3.107735407097039e-33,
+          "2,0": 0.32805
+        },
+        "moments": {
+          "mean_a": 0.8099999999999999,
+          "mean_b": 0.8099999999999999,
+          "factorial2_a": 0.6561,
+          "factorial2_b": 0.6561,
+          "cross_ab": 3.107735407097039e-33
+        },
+        "independent_fock_max_probability_error": 1.1102230246251565e-16
+      },
+      "ideal_probability_key": "p009",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 6,
+          "cx": 1
+        },
+        "depth": 3,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "noon_phi0.35",
+      "index": 10,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 5,
+      "metadata": {
+        "family": "photon_noon_or_mixture",
+        "kind": "noon",
+        "photons_if_prepared": 2,
+        "phase_rad": 0.35,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "path_qubits": [
+          0,
+          1
+        ],
+        "loss_qubits": [
+          2,
+          3
+        ],
+        "source_success_qubit": 4,
+        "source": "quantum_lithography_poc/phase_inspection_followup/phase_model.py",
+        "emulation_only": true,
+        "incident_mean_photons_before_object_per_attempt": 2.0
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.03609999999999997,
+          "0,1": 0.15389999999999995,
+          "0,2": 0.28947823976933823,
+          "1,0": 0.15389999999999995,
+          "1,1": 0.07714352046132361,
+          "2,0": 0.28947823976933823
+        },
+        "moments": {
+          "mean_a": 0.81,
+          "mean_b": 0.81,
+          "factorial2_a": 0.5789564795386765,
+          "factorial2_b": 0.5789564795386765,
+          "cross_ab": 0.07714352046132361
+        },
+        "independent_fock_max_probability_error": 8.326672684688674e-17
+      },
+      "ideal_probability_key": "p010",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 6,
+          "cx": 1
+        },
+        "depth": 3,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "noon_phi_pi4",
+      "index": 11,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 5,
+      "metadata": {
+        "family": "photon_noon_or_mixture",
+        "kind": "noon",
+        "photons_if_prepared": 2,
+        "phase_rad": 0.7853981633974483,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "path_qubits": [
+          0,
+          1
+        ],
+        "loss_qubits": [
+          2,
+          3
+        ],
+        "source_success_qubit": 4,
+        "source": "quantum_lithography_poc/phase_inspection_followup/phase_model.py",
+        "emulation_only": true,
+        "incident_mean_photons_before_object_per_attempt": 2.0
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.03609999999999997,
+          "0,1": 0.15389999999999995,
+          "0,2": 0.164025,
+          "1,0": 0.15389999999999995,
+          "1,1": 0.32805000000000006,
+          "2,0": 0.164025
+        },
+        "moments": {
+          "mean_a": 0.81,
+          "mean_b": 0.81,
+          "factorial2_a": 0.32805,
+          "factorial2_b": 0.32805,
+          "cross_ab": 0.32805000000000006
+        },
+        "independent_fock_max_probability_error": 1.1102230246251565e-16
+      },
+      "ideal_probability_key": "p011",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 6,
+          "cx": 1
+        },
+        "depth": 3,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "noon_phi0.35_plus_pi",
+      "index": 12,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 5,
+      "metadata": {
+        "family": "photon_noon_or_mixture",
+        "kind": "noon",
+        "photons_if_prepared": 2,
+        "phase_rad": 3.491592653589793,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "path_qubits": [
+          0,
+          1
+        ],
+        "loss_qubits": [
+          2,
+          3
+        ],
+        "source_success_qubit": 4,
+        "source": "quantum_lithography_poc/phase_inspection_followup/phase_model.py",
+        "emulation_only": true,
+        "incident_mean_photons_before_object_per_attempt": 2.0
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.03609999999999997,
+          "0,1": 0.15389999999999995,
+          "0,2": 0.28947823976933823,
+          "1,0": 0.15389999999999995,
+          "1,1": 0.07714352046132361,
+          "2,0": 0.28947823976933823
+        },
+        "moments": {
+          "mean_a": 0.81,
+          "mean_b": 0.81,
+          "factorial2_a": 0.5789564795386765,
+          "factorial2_b": 0.5789564795386765,
+          "cross_ab": 0.07714352046132361
+        },
+        "independent_fock_max_probability_error": 8.326672684688674e-17
+      },
+      "ideal_probability_key": "p012",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 6,
+          "cx": 1
+        },
+        "depth": 3,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "noon_eta0.48",
+      "index": 13,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 5,
+      "metadata": {
+        "family": "photon_noon_or_mixture",
+        "kind": "noon",
+        "photons_if_prepared": 2,
+        "phase_rad": 0.35,
+        "eta": 0.48,
+        "object_transmission": 0.6,
+        "detection_efficiency": 0.8,
+        "preparation_success": 1.0,
+        "path_qubits": [
+          0,
+          1
+        ],
+        "loss_qubits": [
+          2,
+          3
+        ],
+        "source_success_qubit": 4,
+        "source": "quantum_lithography_poc/phase_inspection_followup/phase_model.py",
+        "emulation_only": true,
+        "incident_mean_photons_before_object_per_attempt": 2.0
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.27040000000000003,
+          "0,1": 0.2496,
+          "0,2": 0.10165490998758651,
+          "1,0": 0.2496,
+          "1,1": 0.02709018002482694,
+          "2,0": 0.10165490998758651
+        },
+        "moments": {
+          "mean_a": 0.48,
+          "mean_b": 0.4799999999999999,
+          "factorial2_a": 0.20330981997517303,
+          "factorial2_b": 0.20330981997517303,
+          "cross_ab": 0.02709018002482694
+        },
+        "independent_fock_max_probability_error": 5.551115123125783e-17
+      },
+      "ideal_probability_key": "p013",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 6,
+          "cx": 1
+        },
+        "depth": 3,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "noon_prep0.1",
+      "index": 14,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 5,
+      "metadata": {
+        "family": "photon_noon_or_mixture",
+        "kind": "noon",
+        "photons_if_prepared": 2,
+        "phase_rad": 0.35,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 0.1,
+        "path_qubits": [
+          0,
+          1
+        ],
+        "loss_qubits": [
+          2,
+          3
+        ],
+        "source_success_qubit": 4,
+        "source": "quantum_lithography_poc/phase_inspection_followup/phase_model.py",
+        "emulation_only": true,
+        "incident_mean_photons_before_object_per_attempt": 0.2
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.90361,
+          "0,1": 0.015389999999999996,
+          "0,2": 0.028947823976933823,
+          "1,0": 0.015389999999999996,
+          "1,1": 0.007714352046132362,
+          "2,0": 0.028947823976933823
+        },
+        "moments": {
+          "mean_a": 0.081,
+          "mean_b": 0.081,
+          "factorial2_a": 0.057895647953867646,
+          "factorial2_b": 0.057895647953867646,
+          "cross_ab": 0.007714352046132362
+        },
+        "independent_fock_max_probability_error": 4.440892098500626e-16
+      },
+      "ideal_probability_key": "p014",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 6,
+          "cx": 1
+        },
+        "depth": 3,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "mixture_phi0",
+      "index": 15,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 6,
+      "metadata": {
+        "family": "photon_noon_or_mixture",
+        "kind": "mixture",
+        "photons_if_prepared": 2,
+        "phase_rad": 0,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "path_qubits": [
+          0,
+          1
+        ],
+        "loss_qubits": [
+          2,
+          3
+        ],
+        "source_success_qubit": 4,
+        "source": "quantum_lithography_poc/phase_inspection_followup/phase_model.py",
+        "emulation_only": true,
+        "incident_mean_photons_before_object_per_attempt": 2.0
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.03609999999999998,
+          "0,1": 0.15389999999999998,
+          "0,2": 0.16402500000000003,
+          "1,0": 0.15389999999999998,
+          "1,1": 0.3280500000000001,
+          "2,0": 0.16402500000000003
+        },
+        "moments": {
+          "mean_a": 0.8100000000000002,
+          "mean_b": 0.8100000000000002,
+          "factorial2_a": 0.32805000000000006,
+          "factorial2_b": 0.32805000000000006,
+          "cross_ab": 0.3280500000000001
+        },
+        "independent_fock_max_probability_error": 2.220446049250313e-16
+      },
+      "ideal_probability_key": "p015",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 6,
+          "cx": 2
+        },
+        "depth": 4,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "mixture_phi_pi4",
+      "index": 16,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 6,
+      "metadata": {
+        "family": "photon_noon_or_mixture",
+        "kind": "mixture",
+        "photons_if_prepared": 2,
+        "phase_rad": 0.7853981633974483,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "path_qubits": [
+          0,
+          1
+        ],
+        "loss_qubits": [
+          2,
+          3
+        ],
+        "source_success_qubit": 4,
+        "source": "quantum_lithography_poc/phase_inspection_followup/phase_model.py",
+        "emulation_only": true,
+        "incident_mean_photons_before_object_per_attempt": 2.0
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.03609999999999998,
+          "0,1": 0.15389999999999998,
+          "0,2": 0.16402500000000003,
+          "1,0": 0.15389999999999998,
+          "1,1": 0.3280500000000001,
+          "2,0": 0.16402500000000003
+        },
+        "moments": {
+          "mean_a": 0.8100000000000002,
+          "mean_b": 0.8100000000000002,
+          "factorial2_a": 0.32805000000000006,
+          "factorial2_b": 0.32805000000000006,
+          "cross_ab": 0.3280500000000001
+        },
+        "independent_fock_max_probability_error": 1.6653345369377348e-16
+      },
+      "ideal_probability_key": "p016",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 6,
+          "cx": 2
+        },
+        "depth": 4,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_N1",
+      "index": 17,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 3,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 1,
+        "phase_rad": 0.35,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.2706705664732254,
+        "path_qubits": [
+          0
+        ],
+        "loss_qubits": [
+          1
+        ],
+        "source_success_qubit": 2,
+        "incident_photons_before_object_per_sector_attempt": 1,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.18999999999999997,
+          "0,1": 0.024554051296811527,
+          "1,0": 0.7854459487031886
+        },
+        "moments": {
+          "mean_a": 0.7854459487031886,
+          "mean_b": 0.024554051296811527,
+          "factorial2_a": 0.0,
+          "factorial2_b": 0.0,
+          "cross_ab": 0.0
+        },
+        "independent_fock_max_probability_error": 5.551115123125783e-16
+      },
+      "ideal_probability_key": "p017",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 3
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_N2",
+      "index": 18,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 5,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 2,
+        "phase_rad": 0.35,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.2706705664732254,
+        "path_qubits": [
+          0,
+          1
+        ],
+        "loss_qubits": [
+          2,
+          3
+        ],
+        "source_success_qubit": 4,
+        "incident_photons_before_object_per_sector_attempt": 2,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.03609999999999998,
+          "0,1": 0.009330539492788397,
+          "0,2": 0.0006029014350864857,
+          "1,0": 0.2984694605072115,
+          "1,1": 0.03857176023066179,
+          "2,0": 0.6169253383342519
+        },
+        "moments": {
+          "mean_a": 1.570891897406377,
+          "mean_b": 0.04910810259362316,
+          "factorial2_a": 1.2338506766685038,
+          "factorial2_b": 0.0012058028701729714,
+          "cross_ab": 0.03857176023066179
+        },
+        "independent_fock_max_probability_error": 5.551115123125783e-16
+      },
+      "ideal_probability_key": "p018",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 5
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_N3",
+      "index": 19,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 7,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 3,
+        "phase_rad": 0.35,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.18044704431548356,
+        "path_qubits": [
+          0,
+          1,
+          2
+        ],
+        "loss_qubits": [
+          3,
+          4,
+          5
+        ],
+        "source_success_qubit": 6,
+        "incident_photons_before_object_per_sector_attempt": 3,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.006858999999999998,
+          "0,1": 0.002659203755444689,
+          "0,2": 0.0003436538179992823,
+          "0,3": 1.480367276403952e-05,
+          "1,0": 0.08506379624455532,
+          "1,1": 0.02198590333147722,
+          "1,2": 0.0014206394689679801,
+          "2,0": 0.3516474428505237,
+          "2,1": 0.04544404921128609,
+          "3,0": 0.4845615076469822
+        },
+        "moments": {
+          "mean_a": 2.3563378461095663,
+          "mean_b": 0.07366215389043465,
+          "factorial2_a": 3.7015520300055127,
+          "factorial2_b": 0.003617408610518762,
+          "cross_ab": 0.11571528069198536
+        },
+        "independent_fock_max_probability_error": 8.881784197001252e-16
+      },
+      "ideal_probability_key": "p019",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 7
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_N4",
+      "index": 20,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 9,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 4,
+        "phase_rad": 0.35,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.09022352215774178,
+        "path_qubits": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "loss_qubits": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "source_success_qubit": 8,
+        "incident_photons_before_object_per_sector_attempt": 4,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.0013032099999999978,
+          "0,1": 0.0006736649513793195,
+          "0,2": 0.0001305884508397185,
+          "0,3": 1.1250791300648484e-05,
+          "0,4": 3.6349014041064894e-07,
+          "1,0": 0.021549495048620654,
+          "1,1": 0.008354643265961338,
+          "1,2": 0.0010796859964156546,
+          "1,3": 4.6509939193753596e-05,
+          "2,0": 0.13362602828319883,
+          "2,1": 0.03453747740057742,
+          "2,2": 0.0022316710309374767,
+          "3,0": 0.368266745811706,
+          "3,1": 0.047591792460897335,
+          "4,0": 0.3805968730788309
+        },
+        "moments": {
+          "mean_a": 3.1417837948127527,
+          "mean_b": 0.09821620518724597,
+          "factorial2_a": 7.403104060011018,
+          "factorial2_b": 0.0072348172210370395,
+          "cross_ab": 0.23143056138397067
+        },
+        "independent_fock_max_probability_error": 3.3306690738754696e-16
+      },
+      "ideal_probability_key": "p020",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 9
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_N5",
+      "index": 21,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 11,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 5,
+        "phase_rad": 0.35,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.03608940886309672,
+        "path_qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "loss_qubits": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_success_qubit": 10,
+        "incident_photons_before_object_per_sector_attempt": 5,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.0002476098999999996,
+          "0,1": 0.00015999542595258854,
+          "0,2": 4.135300943257916e-05,
+          "0,3": 5.344125867813472e-06,
+          "0,4": 3.453156334011117e-07,
+          "0,5": 8.925155548330508e-09,
+          "1,0": 0.005118005074047405,
+          "1,1": 0.0026456370342210897,
+          "1,2": 0.0005128508482974406,
+          "1,3": 4.4184442234068324e-05,
+          "1,4": 1.4275092909683504e-06,
+          "2,0": 0.0423149089563463,
+          "2,1": 0.016405301765274268,
+          "2,2": 0.0021200874793906184,
+          "2,3": 9.13276082854195e-05,
+          "3,0": 0.17492670426056034,
+          "3,1": 0.04521220283785243,
+          "3,2": 0.0029214282834801974,
+          "4,0": 0.3615670294248894,
+          "4,1": 0.04672597572491844,
+          "5,0": 0.2989382720488694
+        },
+        "moments": {
+          "mean_a": 3.927229743515942,
+          "mean_b": 0.12277025648405762,
+          "factorial2_a": 12.338506766685033,
+          "factorial2_b": 0.012058028701728878,
+          "cross_ab": 0.3857176023066178
+        },
+        "independent_fock_max_probability_error": 6.661338147750939e-16
+      },
+      "ideal_probability_key": "p021",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 11
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_N6",
+      "index": 22,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 13,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 6,
+        "phase_rad": 0.35,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.012029802954365565,
+        "path_qubits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "loss_qubits": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "source_success_qubit": 12,
+        "incident_photons_before_object_per_sector_attempt": 6,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 4.704588099999993e-05,
+          "0,1": 3.6478957117190285e-05,
+          "0,2": 1.1785607688285902e-05,
+          "0,3": 2.030767829773419e-06,
+          "0,4": 1.9682991105211586e-07,
+          "0,5": 1.017467734710999e-08,
+          "0,6": 2.1914873783516433e-10,
+          "1,0": 0.0011669051568828082,
+          "1,1": 0.000754006554753011,
+          "1,2": 0.00019488332235302887,
+          "1,3": 2.5185132073420014e-05,
+          "1,4": 1.627360591708807e-06,
+          "1,5": 4.20613636317211e-08,
+          "2,0": 0.01205974905255869,
+          "2,1": 0.006234014670804224,
+          "2,2": 0.0012084498632526604,
+          "2,3": 0.000104113473445373,
+          "2,4": 3.3636941679842084e-06,
+          "3,0": 0.06647214761901293,
+          "3,1": 0.0257709556175759,
+          "3,2": 0.003330428243167452,
+          "3,3": 0.00014346579986505994,
+          "4,0": 0.2060932067721869,
+          "4,1": 0.05326761232640702,
+          "4,2": 0.0034419360145296752,
+          "5,0": 0.3407896301357111,
+          "5,1": 0.04404087399880887,
+          "6,0": 0.23479985469311618
+        },
+        "moments": {
+          "mean_a": 4.712675692219131,
+          "mean_b": 0.1473243077808696,
+          "factorial2_a": 18.507760150027554,
+          "factorial2_b": 0.018087043052594617,
+          "cross_ab": 0.5785764034599273
+        },
+        "independent_fock_max_probability_error": 8.326672684688674e-16
+      },
+      "ideal_probability_key": "p022",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 13
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_N7",
+      "index": 23,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 15,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 7,
+        "phase_rad": 0.35,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.0034370865583901616,
+        "path_qubits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "loss_qubits": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "source_success_qubit": 14,
+        "incident_photons_before_object_per_sector_attempt": 7,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 8.938717389999974e-06,
+          "0,1": 8.08616882764382e-06,
+          "0,2": 3.1349716450838613e-06,
+          "0,3": 6.752303033985816e-07,
+          "0,4": 8.726126056216703e-08,
+          "0,5": 6.766160425461809e-09,
+          "0,6": 2.914678071079789e-10,
+          "0,7": 5.380988849666319e-12,
+          "1,0": 0.00025866397644235553,
+          "1,1": 0.00020056574356430061,
+          "1,2": 6.479870468238131e-05,
+          "1,3": 1.1165408552548201e-05,
+          "1,4": 1.0821947934835642e-06,
+          "1,5": 5.5941613627079155e-08,
+          "1,6": 1.2049063609863515e-09,
+          "2,0": 0.0032078932479806077,
+          "2,1": 0.0020728098780424015,
+          "2,2": 0.0005357461060420081,
+          "2,3": 6.923545984117008e-05,
+          "2,4": 4.473713243414867e-06,
+          "2,5": 1.1562924680634129e-07,
+          "3,0": 0.02210198908332177,
+          "3,1": 0.011425123657125303,
+          "3,2": 0.002214734781706339,
+          "3,3": 0.0001908095138205268,
+          "3,4": 6.164666566140385e-06,
+          "4,0": 0.09136798833566943,
+          "4,1": 0.035422962197060634,
+          "4,2": 0.004577774899324434,
+          "4,3": 0.00019719810474257905,
+          "5,0": 0.2266251040402476,
+          "5,1": 0.058574362418415765,
+          "5,2": 0.0037848365776310773,
+          "6,0": 0.31228380674184414,
+          "6,1": 0.04035701373633068,
+          "7,0": 0.18442259462480529
+        },
+        "moments": {
+          "mean_a": 5.498121640922315,
+          "mean_b": 0.17187835907768068,
+          "factorial2_a": 25.910864210038554,
+          "factorial2_b": 0.025321860273630946,
+          "cross_ab": 0.8100069648438971
+        },
+        "independent_fock_max_probability_error": 6.106226635438361e-16
+      },
+      "ideal_probability_key": "p023",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 15
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_N8",
+      "index": 24,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 17,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 8,
+        "phase_rad": 0.35,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.0008592716395975402,
+        "path_qubits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "loss_qubits": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "source_success_qubit": 16,
+        "incident_photons_before_object_per_sector_attempt": 8,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 1.6983563040999952e-06,
+          "0,1": 1.7558538025740892e-06,
+          "0,2": 7.941928167546017e-07,
+          "0,3": 2.052700122333316e-07,
+          "0,4": 3.315927901447068e-08,
+          "0,5": 3.428187951752598e-09,
+          "0,6": 2.2151553943337106e-10,
+          "0,7": 8.179110265959367e-12,
+          "0,8": 1.3212852679119032e-13,
+          "1,0": 5.6167034884625766e-05,
+          "1,1": 5.0809988369622854e-05,
+          "1,2": 1.969880622344403e-05,
+          "1,3": 4.242855249968398e-06,
+          "1,4": 5.483120286985267e-07,
+          "1,5": 4.251562635686722e-08,
+          "1,6": 1.8314576696228176e-09,
+          "1,7": 3.3811810287918315e-11,
+          "2,0": 0.0008126662894884206,
+          "2,1": 0.0006301342029248903,
+          "2,2": 0.00020358352029596413,
+          "2,3": 3.507929965285983e-05,
+          "2,4": 3.4000220649957805e-06,
+          "2,5": 1.7575645514409188e-07,
+          "2,6": 3.785555275556713e-09,
+          "3,0": 0.006719004681329817,
+          "3,1": 0.004341546989707616,
+          "3,2": 0.001122132289397884,
+          "3,3": 0.0001450152305036011,
+          "3,4": 9.370293180537332e-06,
+          "3,5": 2.4218806254838563e-07,
+          "4,0": 0.034719835567554376,
+          "4,1": 0.01794763417984406,
+          "4,2": 0.0034791089234865874,
+          "4,3": 0.00029974111920871773,
+          "4,4": 9.68402475896615e-06,
+          "5,0": 0.11482338604705879,
+          "5,1": 0.044516515437995965,
+          "5,2": 0.00575295159799927,
+          "5,3": 0.0002478215239392075,
+          "6,0": 0.2373356931238015,
+          "6,1": 0.06134266087922262,
+          "6,2": 0.003963712741871983,
+          "7,0": 0.28032234382970395,
+          "7,1": 0.036226574789668405,
+          "8,0": 0.14485397979738374
+        },
+        "moments": {
+          "mean_a": 6.283567589625504,
+          "mean_b": 0.19643241037449255,
+          "factorial2_a": 34.547818946718074,
+          "factorial2_b": 0.033762480364842265,
+          "cross_ab": 1.0800092864585302
+        },
+        "independent_fock_max_probability_error": 8.187894806610529e-16
+      },
+      "ideal_probability_key": "p024",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 17
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_plus_pi_N1",
+      "index": 25,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 3,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 1,
+        "phase_rad": 3.491592653589793,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.2706705664732254,
+        "path_qubits": [
+          0
+        ],
+        "loss_qubits": [
+          1
+        ],
+        "source_success_qubit": 2,
+        "incident_photons_before_object_per_sector_attempt": 1,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.18999999999999997,
+          "0,1": 0.7854459487031886,
+          "1,0": 0.024554051296811527
+        },
+        "moments": {
+          "mean_a": 0.024554051296811527,
+          "mean_b": 0.7854459487031886,
+          "factorial2_a": 0.0,
+          "factorial2_b": 0.0,
+          "cross_ab": 0.0
+        },
+        "independent_fock_max_probability_error": 5.551115123125783e-16
+      },
+      "ideal_probability_key": "p025",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 3
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_plus_pi_N2",
+      "index": 26,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 5,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 2,
+        "phase_rad": 3.491592653589793,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.2706705664732254,
+        "path_qubits": [
+          0,
+          1
+        ],
+        "loss_qubits": [
+          2,
+          3
+        ],
+        "source_success_qubit": 4,
+        "incident_photons_before_object_per_sector_attempt": 2,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.03609999999999997,
+          "0,1": 0.2984694605072115,
+          "0,2": 0.6169253383342518,
+          "1,0": 0.009330539492788396,
+          "1,1": 0.03857176023066179,
+          "2,0": 0.0006029014350864823
+        },
+        "moments": {
+          "mean_a": 0.04910810259362315,
+          "mean_b": 1.570891897406377,
+          "factorial2_a": 0.0012058028701729647,
+          "factorial2_b": 1.2338506766685036,
+          "cross_ab": 0.03857176023066179
+        },
+        "independent_fock_max_probability_error": 4.440892098500626e-16
+      },
+      "ideal_probability_key": "p026",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 5
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_plus_pi_N3",
+      "index": 27,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 7,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 3,
+        "phase_rad": 3.491592653589793,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.18044704431548356,
+        "path_qubits": [
+          0,
+          1,
+          2
+        ],
+        "loss_qubits": [
+          3,
+          4,
+          5
+        ],
+        "source_success_qubit": 6,
+        "incident_photons_before_object_per_sector_attempt": 3,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.0068589999999999944,
+          "0,1": 0.08506379624455525,
+          "0,2": 0.35164744285052346,
+          "0,3": 0.48456150764698197,
+          "1,0": 0.00265920375544469,
+          "1,1": 0.021985903331477222,
+          "1,2": 0.0454440492112861,
+          "2,0": 0.0003436538179992809,
+          "2,1": 0.0014206394689679886,
+          "3,0": 1.480367276403467e-05
+        },
+        "moments": {
+          "mean_a": 0.07366215389043465,
+          "mean_b": 2.3563378461095654,
+          "factorial2_a": 0.003617408610518747,
+          "factorial2_b": 3.701552030005511,
+          "cross_ab": 0.1157152806919854
+        },
+        "independent_fock_max_probability_error": 6.661338147750939e-16
+      },
+      "ideal_probability_key": "p027",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 7
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_plus_pi_N4",
+      "index": 28,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 9,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 4,
+        "phase_rad": 3.491592653589793,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.09022352215774178,
+        "path_qubits": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "loss_qubits": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "source_success_qubit": 8,
+        "incident_photons_before_object_per_sector_attempt": 4,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.0013032099999999978,
+          "0,1": 0.021549495048620654,
+          "0,2": 0.13362602828319883,
+          "0,3": 0.368266745811706,
+          "0,4": 0.3805968730788309,
+          "1,0": 0.0006736649513793199,
+          "1,1": 0.008354643265961338,
+          "1,2": 0.03453747740057743,
+          "1,3": 0.04759179246089734,
+          "2,0": 0.00013058845083972016,
+          "2,1": 0.0010796859964156546,
+          "2,2": 0.002231671030937479,
+          "3,0": 1.1250791300653177e-05,
+          "3,1": 4.650993919375202e-05,
+          "4,0": 3.634901404160437e-07
+        },
+        "moments": {
+          "mean_a": 0.09821620518724603,
+          "mean_b": 3.141783794812752,
+          "factorial2_a": 0.007234817221037131,
+          "factorial2_b": 7.403104060011019,
+          "cross_ab": 0.2314305613839707
+        },
+        "independent_fock_max_probability_error": 3.3306690738754696e-16
+      },
+      "ideal_probability_key": "p028",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 9
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_plus_pi_N5",
+      "index": 29,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 11,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 5,
+        "phase_rad": 3.491592653589793,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.03608940886309672,
+        "path_qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "loss_qubits": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_success_qubit": 10,
+        "incident_photons_before_object_per_sector_attempt": 5,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 0.0002476098999999997,
+          "0,1": 0.005118005074047406,
+          "0,2": 0.042314908956346306,
+          "0,3": 0.1749267042605604,
+          "0,4": 0.3615670294248895,
+          "0,5": 0.2989382720488695,
+          "1,0": 0.00015999542595258862,
+          "1,1": 0.0026456370342210905,
+          "1,2": 0.016405301765274275,
+          "1,3": 0.04521220283785246,
+          "1,4": 0.046725975724918455,
+          "2,0": 4.135300943257911e-05,
+          "2,1": 0.0005128508482974394,
+          "2,2": 0.0021200874793906176,
+          "2,3": 0.002921428283480201,
+          "3,0": 5.344125867813633e-06,
+          "3,1": 4.4184442234065586e-05,
+          "3,2": 9.132760828541481e-05,
+          "4,0": 3.4531563340214304e-07,
+          "4,1": 1.427509290967771e-06,
+          "5,0": 8.925155549325766e-09
+        },
+        "moments": {
+          "mean_a": 0.12277025648405768,
+          "mean_b": 3.9272297435159422,
+          "factorial2_a": 0.012058028701728866,
+          "factorial2_b": 12.338506766685036,
+          "cross_ab": 0.38571760230661795
+        },
+        "independent_fock_max_probability_error": 7.771561172376096e-16
+      },
+      "ideal_probability_key": "p029",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 11
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_plus_pi_N6",
+      "index": 30,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 13,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 6,
+        "phase_rad": 3.491592653589793,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.012029802954365565,
+        "path_qubits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "loss_qubits": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "source_success_qubit": 12,
+        "incident_photons_before_object_per_sector_attempt": 6,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 4.7045880999999916e-05,
+          "0,1": 0.001166905156882808,
+          "0,2": 0.012059749052558688,
+          "0,3": 0.06647214761901293,
+          "0,4": 0.2060932067721869,
+          "0,5": 0.3407896301357111,
+          "0,6": 0.23479985469311618,
+          "1,0": 3.647895711719022e-05,
+          "1,1": 0.0007540065547530103,
+          "1,2": 0.006234014670804221,
+          "1,3": 0.02577095561757588,
+          "1,4": 0.05326761232640699,
+          "1,5": 0.04404087399880885,
+          "2,0": 1.178560768828538e-05,
+          "2,1": 0.00019488332235302735,
+          "2,2": 0.0012084498632526563,
+          "2,3": 0.0033304282431674418,
+          "2,4": 0.0034419360145296644,
+          "3,0": 2.0307678297709535e-06,
+          "3,1": 2.518513207341625e-05,
+          "3,2": 0.00010411347344537131,
+          "3,3": 0.00014346579986506007,
+          "4,0": 1.9682991104517075e-07,
+          "4,1": 1.6273605917016359e-06,
+          "4,2": 3.363694167982322e-06,
+          "5,0": 1.0174677336701039e-08,
+          "5,1": 4.2061363626361093e-08,
+          "6,0": 2.1914873133266476e-10
+        },
+        "moments": {
+          "mean_a": 0.14732430778086922,
+          "mean_b": 4.71267569221913,
+          "factorial2_a": 0.018087043052593815,
+          "factorial2_b": 18.507760150027554,
+          "cross_ab": 0.5785764034599269
+        },
+        "independent_fock_max_probability_error": 8.326672684688674e-16
+      },
+      "ideal_probability_key": "p030",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 13
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_plus_pi_N7",
+      "index": 31,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 15,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 7,
+        "phase_rad": 3.491592653589793,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.0034370865583901616,
+        "path_qubits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "loss_qubits": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "source_success_qubit": 14,
+        "incident_photons_before_object_per_sector_attempt": 7,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 8.938717389999984e-06,
+          "0,1": 0.00025866397644235586,
+          "0,2": 0.003207893247980612,
+          "0,3": 0.022101989083321796,
+          "0,4": 0.09136798833566954,
+          "0,5": 0.22662510404024797,
+          "0,6": 0.31228380674184464,
+          "0,7": 0.18442259462480556,
+          "1,0": 8.086168827643822e-06,
+          "1,1": 0.0002005657435643006,
+          "1,2": 0.002072809878042402,
+          "1,3": 0.011425123657125303,
+          "1,4": 0.03542296219706064,
+          "1,5": 0.058574362418415765,
+          "1,6": 0.04035701373633068,
+          "2,0": 3.13497164508387e-06,
+          "2,1": 6.479870468238131e-05,
+          "2,2": 0.000535746106042008,
+          "2,3": 0.002214734781706339,
+          "2,4": 0.004577774899324438,
+          "2,5": 0.003784836577631083,
+          "3,0": 6.752303033986473e-07,
+          "3,1": 1.1165408552548211e-05,
+          "3,2": 6.923545984116932e-05,
+          "3,3": 0.00019080951382052314,
+          "3,4": 0.00019719810474257395,
+          "4,0": 8.726126056244518e-08,
+          "4,1": 1.0821947934839765e-06,
+          "4,2": 4.473713243415974e-06,
+          "4,3": 6.164666566141599e-06,
+          "5,0": 6.7661604260909e-09,
+          "5,1": 5.5941613627338863e-08,
+          "5,2": 1.1562924680655728e-07,
+          "6,0": 2.9146780795866274e-10,
+          "6,1": 1.2049063610988903e-09,
+          "7,0": 5.380989351675006e-12
+        },
+        "moments": {
+          "mean_a": 0.1718783590776807,
+          "mean_b": 5.498121640922323,
+          "factorial2_a": 0.025321860273631022,
+          "factorial2_b": 25.91086421003859,
+          "cross_ab": 0.8100069648438972
+        },
+        "independent_fock_max_probability_error": 1.1657341758564144e-15
+      },
+      "ideal_probability_key": "p031",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 15
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    },
+    {
+      "name": "coherent_phase0.35_plus_pi_N8",
+      "index": 32,
+      "qpy_file": "logical.qpy",
+      "num_qubits": 17,
+      "metadata": {
+        "family": "photon_coherent_sector",
+        "kind": "coherent_sector",
+        "photons_if_prepared": 8,
+        "phase_rad": 3.491592653589793,
+        "eta": 0.81,
+        "object_transmission": 0.9,
+        "detection_efficiency": 0.9,
+        "preparation_success": 1.0,
+        "poisson_weight": 0.0008592716395975402,
+        "path_qubits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "loss_qubits": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "source_success_qubit": 16,
+        "incident_photons_before_object_per_sector_attempt": 8,
+        "emulation_only": true
+      },
+      "reference": {
+        "occupancy_probabilities": {
+          "0,0": 1.698356304099997e-06,
+          "0,1": 5.616703488462582e-05,
+          "0,2": 0.0008126662894884217,
+          "0,3": 0.006719004681329824,
+          "0,4": 0.03471983556755441,
+          "0,5": 0.11482338604705893,
+          "0,6": 0.2373356931238018,
+          "0,7": 0.28032234382970433,
+          "0,8": 0.14485397979738393,
+          "1,0": 1.7558538025740883e-06,
+          "1,1": 5.080998836962284e-05,
+          "1,2": 0.0006301342029248902,
+          "1,3": 0.0043415469897076136,
+          "1,4": 0.01794763417984406,
+          "1,5": 0.04451651543799598,
+          "1,6": 0.06134266087922263,
+          "1,7": 0.03622657478966842,
+          "2,0": 7.941928167545927e-07,
+          "2,1": 1.9698806223444044e-05,
+          "2,2": 0.0002035835202959636,
+          "2,3": 0.0011221322893978799,
+          "2,4": 0.0034791089234865727,
+          "2,5": 0.005752951597999243,
+          "2,6": 0.003963712741871965,
+          "3,0": 2.0527001223324974e-07,
+          "3,1": 4.242855249968832e-06,
+          "3,2": 3.507929965286123e-05,
+          "3,3": 0.00014501523050360272,
+          "3,4": 0.00029974111920871795,
+          "3,5": 0.00024782152393920697,
+          "4,0": 3.31592790139256e-08,
+          "4,1": 5.483120286996826e-07,
+          "4,2": 3.4000220649990403e-06,
+          "4,3": 9.37029318054061e-06,
+          "4,4": 9.684024758967025e-06,
+          "5,0": 3.4281879496624335e-09,
+          "5,1": 4.2515626358519885e-08,
+          "5,2": 1.7575645514768333e-07,
+          "5,3": 2.421880625504816e-07,
+          "6,0": 2.2151553470257621e-10,
+          "6,1": 1.8314576707741924e-09,
+          "6,2": 3.785555277060528e-09,
+          "7,0": 8.179104339155697e-12,
+          "7,1": 3.381181055947064e-11,
+          "8,0": 1.321253344846672e-13
+        },
+        "moments": {
+          "mean_a": 0.1964324103744924,
+          "mean_b": 6.283567589625512,
+          "factorial2_a": 0.03376248036484188,
+          "factorial2_b": 34.54781894671812,
+          "cross_ab": 1.0800092864585302
+        },
+        "independent_fock_max_probability_error": 1.1102230246251565e-15
+      },
+      "ideal_probability_key": "p032",
+      "generic_compilation": {
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "optimization_level": 1,
+        "seed": 13,
+        "gate_counts": {
+          "u": 17
+        },
+        "depth": 1,
+        "scope": "All-to-all generic estimate; not routed hardware cost."
+      }
+    }
+  ],
+  "coherent_sector_accounting": {
+    "cutoff": 8,
+    "input_mean_photons": 2.0,
+    "weights": [
+      0.1353352832366127,
+      0.2706705664732254,
+      0.2706705664732254,
+      0.18044704431548356,
+      0.09022352215774178,
+      0.03608940886309672,
+      0.012029802954365565,
+      0.0034370865583901616,
+      0.0008592716395975402
+    ],
+    "omitted_probability": 0.0002374473282611617,
+    "omitted_first_photon_moment": 0.002193437935717405,
+    "omitted_second_factorial_photon_moment": 0.01813522210499546,
+    "interpretation": "Original Poisson weights, no conditioning on retained sectors; event-TV omission bound is omitted_probability."
+  },
+  "vacuum_sector": {
+    "N": 0,
+    "probability": 0.1353352832366127,
+    "occupancy": [
+      0,
+      0
+    ],
+    "hardware_execution_required": false
+  },
+  "source_sha256": {
+    "hardware_campaign/optical_controls/models.py": "9068371b16051f723bb90dd3a5fed3a411ea1a59ae60d90011c6beba1358e81a",
+    "hardware_campaign/optical_controls/export_bundle.py": "e956e03fa44cd0b6fc003237734030a828d523468c9d8f9d6a5d3ab9b41c70ab",
+    "hardware_campaign/optical_controls/test_models.py": "e2a46e5ced4f2c3f77634ee9c67316e062d4620f587b37692b776fa3e1d37b91",
+    "hardware_campaign/optical_controls/PROTOCOL.md": "dc8212df08795d7cfa1a2b6683598478b37b783dbe8324eadc2ec702d8b76b6d",
+    "laser_sensor_viability/model.py": "751b3138d409bd3965870b517ce8da9257a94ba98118ec6428866f91973da5c8",
+    "quantum_lithography_poc/phase_inspection_followup/phase_model.py": "df08a8c3360b825cd1609504e19554fcf0569a20f2d6c6c40446e81886bdff16",
+    "quantum_lithography_poc/exposure_followup/model.py": "7943aefc4fbb91180505194c73834f01d7a97c8c044d9aa665e6124cc700a933"
+  },
+  "versions": {
+    "python": "3.12.10",
+    "qiskit": "2.6.1",
+    "numpy": "2.3.1",
+    "scipy": "1.18.1"
+  },
+  "validation": {
+    "qpy_roundtrip": true,
+    "all_independent_physics_comparisons_passed": true,
+    "full_z_references_saved": true
+  },
+  "scope": "Superconducting circuit emulation of specified atomic/photonic primitives. No actual optical sensor, exposure or phase-inspection experiment; no quantum advantage.",
+  "elapsed_s": 2.201464891433716,
+  "artifact_sha256": {
+    "logical.qpy": "697bee113c843505601be20495ded861ce36be211f7d22c749b192519425f239",
+    "ideal_probabilities.npz": "f927664d1c43b8935831cb10bf22df1382afd39de880a7f5757eb17c71cd44d3"
+  }
+}

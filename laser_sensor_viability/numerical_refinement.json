@@ -1,0 +1,1009 @@
+{
+  "reason": "Numerical refinement from4 to16 Strang substeps per finite pulse after independent Lindblad validation. Same model, seeds, calibration and test design; no parameter selection by performance.",
+  "preliminary_source_sha256": {
+    "run_experiment.py": "6e67511023c461785822e9c81e76635d432a06cda2578b218f06c2f1f4a8528d",
+    "model.py": "81c76f407aa480ff049bd0c07219a404f12f8977ac60923422cefd14f794e4e5"
+  },
+  "preliminary_scenarios": [
+    {
+      "id": "nominal",
+      "methods": {
+        "power_only": {
+          "detection_count": 192,
+          "false_alarm_count": 194,
+          "records_per_class": 4000,
+          "detection_rate": 0.048,
+          "false_alarm_rate": 0.0485,
+          "detection_ci95": [
+            0.04179809839755376,
+            0.055069238336336396
+          ],
+          "false_alarm_ci95": [
+            0.04226507035940136,
+            0.05560130693119909
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.5772693094270628,
+          "rmse_ci95": [
+            0.5692257493548826,
+            0.5852023218376431
+          ],
+          "bias_hz": 0.008957734004010913,
+          "mse_hz2": 0.333239855606398,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 1813,
+          "false_alarm_count": 189,
+          "records_per_class": 4000,
+          "detection_rate": 0.45325,
+          "false_alarm_rate": 0.04725,
+          "detection_ci95": [
+            0.43787519408683473,
+            0.46871451386075247
+          ],
+          "false_alarm_ci95": [
+            0.04109801024846582,
+            0.05427076565035889
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.27068724868297395,
+          "rmse_ci95": [
+            0.26463743335423123,
+            0.2766047759291246
+          ],
+          "bias_hz": -0.005363446534967041,
+          "mse_hz2": 0.0732715865995582,
+          "alarm_threshold": 0.5309248335258134
+        },
+        "quantum": {
+          "detection_count": 2753,
+          "false_alarm_count": 194,
+          "records_per_class": 4000,
+          "detection_rate": 0.68825,
+          "false_alarm_rate": 0.0485,
+          "detection_ci95": [
+            0.6737204255001256,
+            0.702418344101302
+          ],
+          "false_alarm_ci95": [
+            0.04226507035940136,
+            0.05560130693119909
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.19835895145060672,
+          "rmse_ci95": [
+            0.194140267524151,
+            0.20248976212840833
+          ],
+          "bias_hz": 0.001375495421802118,
+          "mse_hz2": 0.039346273620584155,
+          "alarm_threshold": 0.3960856361524297
+        },
+        "classical_quantum": {
+          "detection_count": 3398,
+          "false_alarm_count": 176,
+          "records_per_class": 4000,
+          "detection_rate": 0.8495,
+          "false_alarm_rate": 0.044,
+          "detection_ci95": [
+            0.838084194983546,
+            0.8602451541569527
+          ],
+          "false_alarm_ci95": [
+            0.03806966237940812,
+            0.05080534990079964
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.16341336160221578,
+          "rmse_ci95": [
+            0.15985957241529974,
+            0.16689149351441074
+          ],
+          "bias_hz": -0.0009716393349430506,
+          "mse_hz2": 0.026703926750136532,
+          "alarm_threshold": 0.3272485064825124
+        },
+        "two_classical": {
+          "detection_count": 4000,
+          "false_alarm_count": 229,
+          "records_per_class": 4000,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 0.05725,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.05046619153555666,
+            0.06488339549747402
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.08271292278917265,
+          "rmse_ci95": [
+            0.08090222476465514,
+            0.08448482242855515
+          ],
+          "bias_hz": -0.0009894981643876453,
+          "mse_hz2": 0.006841427596327637,
+          "alarm_threshold": 0.15830271504035817
+        }
+      }
+    },
+    {
+      "id": "short_coherence",
+      "methods": {
+        "power_only": {
+          "detection_count": 209,
+          "false_alarm_count": 203,
+          "records_per_class": 4000,
+          "detection_rate": 0.05225,
+          "false_alarm_rate": 0.05075,
+          "detection_ci95": [
+            0.045773352977234574,
+            0.05958582848869311
+          ],
+          "false_alarm_ci95": [
+            0.04436880356817323,
+            0.05799325622762358
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.5751054344016517,
+          "rmse_ci95": [
+            0.5670965348022857,
+            0.5830043238020325
+          ],
+          "bias_hz": 0.012366231307005208,
+          "mse_hz2": 0.3307462606783126,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 1827,
+          "false_alarm_count": 165,
+          "records_per_class": 4000,
+          "detection_rate": 0.45675,
+          "false_alarm_rate": 0.04125,
+          "detection_ci95": [
+            0.44136204856670835,
+            0.4722209432778509
+          ],
+          "false_alarm_ci95": [
+            0.03551453044904325,
+            0.047865758769257874
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.26728283002748265,
+          "rmse_ci95": [
+            0.2616234359896087,
+            0.2728248525995963
+          ],
+          "bias_hz": -0.017120735409954364,
+          "mse_hz2": 0.07144011122750017,
+          "alarm_threshold": 0.5309248335258134
+        },
+        "quantum": {
+          "detection_count": 178,
+          "false_alarm_count": 136,
+          "records_per_class": 4000,
+          "detection_rate": 0.0445,
+          "false_alarm_rate": 0.034,
+          "detection_ci95": [
+            0.03853497355178291,
+            0.05133907928513515
+          ],
+          "false_alarm_ci95": [
+            0.0288157726364185,
+            0.04007842850958329
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.5250636194761343,
+          "rmse_ci95": [
+            0.5165382104281137,
+            0.533452796564494
+          ],
+          "bias_hz": 0.008990410400519542,
+          "mse_hz2": 0.2756918044973788,
+          "alarm_threshold": 0.3960856361524297
+        },
+        "classical_quantum": {
+          "detection_count": 978,
+          "false_alarm_count": 129,
+          "records_per_class": 4000,
+          "detection_rate": 0.2445,
+          "false_alarm_rate": 0.03225,
+          "detection_ci95": [
+            0.2314301756075696,
+            0.2580600999134679
+          ],
+          "false_alarm_ci95": [
+            0.02720828160361763,
+            0.03818927759389812
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.3534450380553315,
+          "rmse_ci95": [
+            0.34746097668956943,
+            0.35932945819929646
+          ],
+          "bias_hz": -0.0002496136796115853,
+          "mse_hz2": 0.12492339492593472,
+          "alarm_threshold": 0.3272485064825124
+        },
+        "two_classical": {
+          "detection_count": 4000,
+          "false_alarm_count": 230,
+          "records_per_class": 4000,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 0.0575,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.050701252776744136,
+            0.06514785453464168
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.08205556616124807,
+          "rmse_ci95": [
+            0.08016963270413587,
+            0.0838991172073334
+          ],
+          "bias_hz": -0.00117310452376798,
+          "mse_hz2": 0.006733115938042959,
+          "alarm_threshold": 0.15830271504035817
+        }
+      }
+    },
+    {
+      "id": "atomic_reference_drift",
+      "methods": {
+        "power_only": {
+          "detection_count": 207,
+          "false_alarm_count": 220,
+          "records_per_class": 4000,
+          "detection_rate": 0.05175,
+          "false_alarm_rate": 0.055,
+          "detection_ci95": [
+            0.045304992146476264,
+            0.05905514876274112
+          ],
+          "false_alarm_ci95": [
+            0.04835239551328616,
+            0.06250150901454818
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.580302742366042,
+          "rmse_ci95": [
+            0.5722275629216425,
+            0.5882670837535068
+          ],
+          "bias_hz": 0.009834812865792223,
+          "mse_hz2": 0.33675127279754885,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 1759,
+          "false_alarm_count": 190,
+          "records_per_class": 4000,
+          "detection_rate": 0.43975,
+          "false_alarm_rate": 0.0475,
+          "detection_ci95": [
+            0.4244331089032879,
+            0.4551825040131212
+          ],
+          "false_alarm_ci95": [
+            0.04133132317032518,
+            0.05453697300685468
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.2664613557621567,
+          "rmse_ci95": [
+            0.26057075027356913,
+            0.27222452558702814
+          ],
+          "bias_hz": -0.006757332202512052,
+          "mse_hz2": 0.07100165411460663,
+          "alarm_threshold": 0.5309248335258134
+        },
+        "quantum": {
+          "detection_count": 2362,
+          "false_alarm_count": 3701,
+          "records_per_class": 4000,
+          "detection_rate": 0.5905,
+          "false_alarm_rate": 0.92525,
+          "detection_ci95": [
+            0.575181286670659,
+            0.605645054093905
+          ],
+          "false_alarm_ci95": [
+            0.9166857780572474,
+            0.9329982154248616
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.7220151147131169,
+          "rmse_ci95": [
+            0.7158154384223344,
+            0.7281620079794273
+          ],
+          "bias_hz": -0.012749310354925516,
+          "mse_hz2": 0.5213058258741953,
+          "alarm_threshold": 0.3960856361524297
+        },
+        "classical_quantum": {
+          "detection_count": 2127,
+          "false_alarm_count": 3073,
+          "records_per_class": 4000,
+          "detection_rate": 0.53175,
+          "false_alarm_rate": 0.76825,
+          "detection_ci95": [
+            0.5162633230168019,
+            0.5471757523343019
+          ],
+          "false_alarm_ci95": [
+            0.7549202392776547,
+            0.7810650193974203
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.47710997030924795,
+          "rmse_ci95": [
+            0.4720850331257104,
+            0.48208253342729596
+          ],
+          "bias_hz": -0.010583484921442959,
+          "mse_hz2": 0.22763392376849148,
+          "alarm_threshold": 0.3272485064825124
+        },
+        "two_classical": {
+          "detection_count": 3999,
+          "false_alarm_count": 226,
+          "records_per_class": 4000,
+          "detection_rate": 0.99975,
+          "false_alarm_rate": 0.0565,
+          "detection_ci95": [
+            0.9985851689339011,
+            0.9999558674980424
+          ],
+          "false_alarm_ci95": [
+            0.04976123892611694,
+            0.0640897872718483
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.08386017371119203,
+          "rmse_ci95": [
+            0.08201812423430004,
+            0.08566262176019089
+          ],
+          "bias_hz": 4.928830471347082e-05,
+          "mse_hz2": 0.007032528734871302,
+          "alarm_threshold": 0.15830271504035817
+        }
+      }
+    },
+    {
+      "id": "primary_reference_drift",
+      "methods": {
+        "power_only": {
+          "detection_count": 205,
+          "false_alarm_count": 193,
+          "records_per_class": 4000,
+          "detection_rate": 0.05125,
+          "false_alarm_rate": 0.04825,
+          "detection_ci95": [
+            0.0448368081964689,
+            0.05852429215603819
+          ],
+          "false_alarm_ci95": [
+            0.04203155996755503,
+            0.05533529704469027
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.5772117288290061,
+          "rmse_ci95": [
+            0.5692653962258446,
+            0.5850501418300592
+          ],
+          "bias_hz": 0.009161526302034378,
+          "mse_hz2": 0.33317337989777007,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 2172,
+          "false_alarm_count": 2965,
+          "records_per_class": 4000,
+          "detection_rate": 0.543,
+          "false_alarm_rate": 0.74125,
+          "detection_ci95": [
+            0.5275286268344727,
+            0.5583888610426132
+          ],
+          "false_alarm_ci95": [
+            0.7274511727278529,
+            0.754585895884866
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.7486638654073267,
+          "rmse_ci95": [
+            0.7404843315016224,
+            0.7567549943897792
+          ],
+          "bias_hz": -0.003417634537365899,
+          "mse_hz2": 0.5604975833666397,
+          "alarm_threshold": 0.5309248335258134
+        },
+        "quantum": {
+          "detection_count": 2790,
+          "false_alarm_count": 194,
+          "records_per_class": 4000,
+          "detection_rate": 0.6975,
+          "false_alarm_rate": 0.0485,
+          "detection_ci95": [
+            0.6830812287286131,
+            0.7115397911719549
+          ],
+          "false_alarm_ci95": [
+            0.04226507035940136,
+            0.05560130693119909
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.20105086685441942,
+          "rmse_ci95": [
+            0.1965343189765141,
+            0.20546815711994104
+          ],
+          "bias_hz": 0.0018357005982814333,
+          "mse_hz2": 0.040421451062913484,
+          "alarm_threshold": 0.3960856361524297
+        },
+        "classical_quantum": {
+          "detection_count": 2597,
+          "false_alarm_count": 1313,
+          "records_per_class": 4000,
+          "detection_rate": 0.64925,
+          "false_alarm_rate": 0.32825,
+          "detection_ci95": [
+            0.6343247467768565,
+            0.6638888594011676
+          ],
+          "false_alarm_ci95": [
+            0.31386877949726844,
+            0.3429607892727441
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.29707061190497297,
+          "rmse_ci95": [
+            0.29227448130682726,
+            0.3017905308190023
+          ],
+          "bias_hz": -1.3165666081077276e-05,
+          "mse_hz2": 0.08825094845759505,
+          "alarm_threshold": 0.3272485064825124
+        },
+        "two_classical": {
+          "detection_count": 3999,
+          "false_alarm_count": 343,
+          "records_per_class": 4000,
+          "detection_rate": 0.99975,
+          "false_alarm_rate": 0.08575,
+          "detection_ci95": [
+            0.9985851689339011,
+            0.9999558674980424
+          ],
+          "false_alarm_ci95": [
+            0.07746554972718939,
+            0.09482934903832832
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.0918646701573939,
+          "rmse_ci95": [
+            0.08983915986646462,
+            0.09384647356582647
+          ],
+          "bias_hz": -0.00010993231012830062,
+          "mse_hz2": 0.008439117623126777,
+          "alarm_threshold": 0.15830271504035817
+        }
+      }
+    },
+    {
+      "id": "shared_path_drift",
+      "methods": {
+        "power_only": {
+          "detection_count": 207,
+          "false_alarm_count": 202,
+          "records_per_class": 4000,
+          "detection_rate": 0.05175,
+          "false_alarm_rate": 0.0505,
+          "detection_ci95": [
+            0.045304992146476264,
+            0.05905514876274112
+          ],
+          "false_alarm_ci95": [
+            0.044134869278676186,
+            0.05772767023876546
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.5768510452474855,
+          "rmse_ci95": [
+            0.5688220391137128,
+            0.5847698219169242
+          ],
+          "bias_hz": 0.01054973874868035,
+          "mse_hz2": 0.33275712840311666,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 2244,
+          "false_alarm_count": 2961,
+          "records_per_class": 4000,
+          "detection_rate": 0.561,
+          "false_alarm_rate": 0.74025,
+          "detection_ci95": [
+            0.5455696113772652,
+            0.5763133365413913
+          ],
+          "false_alarm_ci95": [
+            0.7264351340330468,
+            0.7536038534662515
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.7405460023897669,
+          "rmse_ci95": [
+            0.7326606870296642,
+            0.7483482351099316
+          ],
+          "bias_hz": 6.200376694114907e-05,
+          "mse_hz2": 0.5484083816554646,
+          "alarm_threshold": 0.5309248335258134
+        },
+        "quantum": {
+          "detection_count": 2381,
+          "false_alarm_count": 3732,
+          "records_per_class": 4000,
+          "detection_rate": 0.59525,
+          "false_alarm_rate": 0.933,
+          "detection_ci95": [
+            0.5799545160527068,
+            0.6103627100006049
+          ],
+          "false_alarm_ci95": [
+            0.9248290243881785,
+            0.9403400977229401
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.7238692269738243,
+          "rmse_ci95": [
+            0.717862004927268,
+            0.7298270051191358
+          ],
+          "bias_hz": 0.004222473229542058,
+          "mse_hz2": 0.523986657759682,
+          "alarm_threshold": 0.3960856361524297
+        },
+        "classical_quantum": {
+          "detection_count": 2492,
+          "false_alarm_count": 3947,
+          "records_per_class": 4000,
+          "detection_rate": 0.623,
+          "false_alarm_rate": 0.98675,
+          "detection_ci95": [
+            0.6078700155332306,
+            0.6378939614175028
+          ],
+          "false_alarm_ci95": [
+            0.9827105578090429,
+            0.9898554241484327
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.7132910791681176,
+          "rmse_ci95": [
+            0.708397937742725,
+            0.7181508818093103
+          ],
+          "bias_hz": 0.002759878987775946,
+          "mse_hz2": 0.5087841636208178,
+          "alarm_threshold": 0.3272485064825124
+        },
+        "two_classical": {
+          "detection_count": 3390,
+          "false_alarm_count": 4000,
+          "records_per_class": 4000,
+          "detection_rate": 0.8475,
+          "false_alarm_rate": 1.0,
+          "detection_ci95": [
+            0.8360259826748121,
+            0.8583072042388454
+          ],
+          "false_alarm_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.7035419299860601,
+          "rmse_ci95": [
+            0.7010647962783861,
+            0.7060103723856792
+          ],
+          "bias_hz": 0.007199074622852481,
+          "mse_hz2": 0.49497124724851027,
+          "alarm_threshold": 0.15830271504035817
+        }
+      }
+    },
+    {
+      "id": "power_only_disturbance",
+      "methods": {
+        "power_only": {
+          "detection_count": 4000,
+          "false_alarm_count": 4000,
+          "records_per_class": 4000,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 1.0,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.576978674255002,
+          "rmse_ci95": [
+            0.5689163309030528,
+            0.5849299013744533
+          ],
+          "bias_hz": 0.008864409201132795,
+          "mse_hz2": 0.33290439054505977,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 1790,
+          "false_alarm_count": 229,
+          "records_per_class": 4000,
+          "detection_rate": 0.4475,
+          "false_alarm_rate": 0.05725,
+          "detection_ci95": [
+            0.4321484587461824,
+            0.46295228279923634
+          ],
+          "false_alarm_ci95": [
+            0.05046619153555666,
+            0.06488339549747402
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.27470460055275114,
+          "rmse_ci95": [
+            0.2686605373994413,
+            0.28061851466704146
+          ],
+          "bias_hz": -0.06987120654722452,
+          "mse_hz2": 0.07546261756484657,
+          "alarm_threshold": 0.5309248335258134
+        },
+        "quantum": {
+          "detection_count": 2757,
+          "false_alarm_count": 220,
+          "records_per_class": 4000,
+          "detection_rate": 0.68925,
+          "false_alarm_rate": 0.055,
+          "detection_ci95": [
+            0.6747320802629208,
+            0.7034047704519274
+          ],
+          "false_alarm_ci95": [
+            0.04835239551328616,
+            0.06250150901454818
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.2001659014167887,
+          "rmse_ci95": [
+            0.1957077391075017,
+            0.20452691029158288
+          ],
+          "bias_hz": 0.0018799485203064845,
+          "mse_hz2": 0.04006638808999557,
+          "alarm_threshold": 0.3960856361524297
+        },
+        "classical_quantum": {
+          "detection_count": 3392,
+          "false_alarm_count": 232,
+          "records_per_class": 4000,
+          "detection_rate": 0.848,
+          "false_alarm_rate": 0.058,
+          "detection_ci95": [
+            0.836540472975785,
+            0.8587917544945827
+          ],
+          "false_alarm_ci95": [
+            0.05117148941005461,
+            0.06567665845804152
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.16530146851500285,
+          "rmse_ci95": [
+            0.16167461451610238,
+            0.16885043679985745
+          ],
+          "bias_hz": -0.023256839554746892,
+          "mse_hz2": 0.02732457549321648,
+          "alarm_threshold": 0.3272485064825124
+        },
+        "two_classical": {
+          "detection_count": 4000,
+          "false_alarm_count": 275,
+          "records_per_class": 4000,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 0.06875,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.061315317094574856,
+            0.07701220274279269
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.08826497158811936,
+          "rmse_ci95": [
+            0.08635603614798412,
+            0.09013348678327658
+          ],
+          "bias_hz": -0.034011917594682785,
+          "mse_hz2": 0.007790705209451518,
+          "alarm_threshold": 0.15830271504035817
+        }
+      }
+    },
+    {
+      "id": "correlated_references",
+      "methods": {
+        "power_only": {
+          "detection_count": 187,
+          "false_alarm_count": 186,
+          "records_per_class": 4000,
+          "detection_rate": 0.04675,
+          "false_alarm_rate": 0.0465,
+          "detection_ci95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ],
+          "false_alarm_ci95": [
+            0.04039837476372546,
+            0.053471840300033796
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.5747529774032244,
+          "rmse_ci95": [
+            0.5667128443728775,
+            0.5826821793143717
+          ],
+          "bias_hz": 0.009142535450085348,
+          "mse_hz2": 0.33034098503387144,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 1810,
+          "false_alarm_count": 147,
+          "records_per_class": 4000,
+          "detection_rate": 0.4525,
+          "false_alarm_rate": 0.03675,
+          "detection_ci95": [
+            0.43712811087746667,
+            0.46796303623505514
+          ],
+          "false_alarm_ci95": [
+            0.03134969527109993,
+            0.043039228936808505
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.26107512377551323,
+          "rmse_ci95": [
+            0.2555814023031676,
+            0.26645560100239124
+          ],
+          "bias_hz": -0.007798130797425522,
+          "mse_hz2": 0.06816022025439956,
+          "alarm_threshold": 0.5309248335258134
+        },
+        "quantum": {
+          "detection_count": 2818,
+          "false_alarm_count": 210,
+          "records_per_class": 4000,
+          "detection_rate": 0.7045,
+          "false_alarm_rate": 0.0525,
+          "detection_ci95": [
+            0.6901696097164473,
+            0.7184379779780649
+          ],
+          "false_alarm_ci95": [
+            0.04600759897587289,
+            0.05985110276840995
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.19986113550755608,
+          "rmse_ci95": [
+            0.1953106806459493,
+            0.20431026650258027
+          ],
+          "bias_hz": -0.0015819313945236964,
+          "mse_hz2": 0.03994447348636969,
+          "alarm_threshold": 0.3960856361524297
+        },
+        "classical_quantum": {
+          "detection_count": 3287,
+          "false_alarm_count": 299,
+          "records_per_class": 4000,
+          "detection_rate": 0.82175,
+          "false_alarm_rate": 0.07475,
+          "detection_ci95": [
+            0.8095824791544102,
+            0.8333001190886669
+          ],
+          "false_alarm_ci95": [
+            0.06700178457513849,
+            0.08331422194275263
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.18459186348483964,
+          "rmse_ci95": [
+            0.18049700350353262,
+            0.1885978362968597
+          ],
+          "bias_hz": -0.003761178259180585,
+          "mse_hz2": 0.034074156064805676,
+          "alarm_threshold": 0.3272485064825124
+        },
+        "two_classical": {
+          "detection_count": 4000,
+          "false_alarm_count": 215,
+          "records_per_class": 4000,
+          "detection_rate": 1.0,
+          "false_alarm_rate": 0.05375,
+          "detection_ci95": [
+            0.9990405567102987,
+            1
+          ],
+          "false_alarm_ci95": [
+            0.04717947319582875,
+            0.061176829940229834
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.08177056848523265,
+          "rmse_ci95": [
+            0.07996384377602893,
+            0.08353822735346428
+          ],
+          "bias_hz": -0.00037182966976516895,
+          "mse_hz2": 0.0066864258703981235,
+          "alarm_threshold": 0.15830271504035817
+        }
+      }
+    },
+    {
+      "id": "gradual_source_change",
+      "methods": {
+        "power_only": {
+          "detection_count": 181,
+          "false_alarm_count": 220,
+          "records_per_class": 4000,
+          "detection_rate": 0.04525,
+          "false_alarm_rate": 0.055,
+          "detection_ci95": [
+            0.03923334996233639,
+            0.052139263709647124
+          ],
+          "false_alarm_ci95": [
+            0.04835239551328616,
+            0.06250150901454818
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.42901131093413675,
+          "rmse_ci95": [
+            0.42293689549572544,
+            0.4350009106281169
+          ],
+          "bias_hz": 0.0017738801524788332,
+          "mse_hz2": 0.18405070490942657,
+          "alarm_threshold": 0.015690059562710964
+        },
+        "classical": {
+          "detection_count": 1121,
+          "false_alarm_count": 166,
+          "records_per_class": 4000,
+          "detection_rate": 0.28025,
+          "false_alarm_rate": 0.0415,
+          "detection_ci95": [
+            0.2665477611332373,
+            0.2943739141925866
+          ],
+          "false_alarm_ci95": [
+            0.03574652025319747,
+            0.048133289243458804
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.26253712096792453,
+          "rmse_ci95": [
+            0.25682802761939516,
+            0.26812467995577066
+          ],
+          "bias_hz": -0.010250321148471108,
+          "mse_hz2": 0.06892573988612663,
+          "alarm_threshold": 0.5309248335258134
+        },
+        "quantum": {
+          "detection_count": 1878,
+          "false_alarm_count": 222,
+          "records_per_class": 4000,
+          "detection_rate": 0.4695,
+          "false_alarm_rate": 0.0555,
+          "detection_ci95": [
+            0.45407063576467427,
+            0.4849878902759976
+          ],
+          "false_alarm_ci95": [
+            0.04882185036972565,
+            0.06303109471481898
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.20216464137960177,
+          "rmse_ci95": [
+            0.19760959175870504,
+            0.20661929651715474
+          ],
+          "bias_hz": -6.241001161615523e-05,
+          "mse_hz2": 0.04087054222414299,
+          "alarm_threshold": 0.3960856361524297
+        },
+        "classical_quantum": {
+          "detection_count": 2470,
+          "false_alarm_count": 181,
+          "records_per_class": 4000,
+          "detection_rate": 0.6175,
+          "false_alarm_rate": 0.04525,
+          "detection_ci95": [
+            0.6023331225420133,
+            0.6324414082849069
+          ],
+          "false_alarm_ci95": [
+            0.03923334996233639,
+            0.052139263709647124
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.16264797770315068,
+          "rmse_ci95": [
+            0.15908330917759086,
+            0.16613617921138135
+          ],
+          "bias_hz": -0.0036201856986936855,
+          "mse_hz2": 0.026454364650924597,
+          "alarm_threshold": 0.3272485064825124
+        },
+        "two_classical": {
+          "detection_count": 3984,
+          "false_alarm_count": 188,
+          "records_per_class": 4000,
+          "detection_rate": 0.996,
+          "false_alarm_rate": 0.047,
+          "detection_ci95": [
+            0.9935119313640512,
+            0.9975363008925648
+          ],
+          "false_alarm_ci95": [
+            0.04086474761936001,
+            0.05400450800110956
+          ],
+          "estimation_records": 4000,
+          "rmse_hz": 0.0821426349932806,
+          "rmse_ci95": [
+            0.0803550159254603,
+            0.08389217116571532
+          ],
+          "bias_hz": -6.468226695761114e-05,
+          "mse_hz2": 0.006747412483639326,
+          "alarm_threshold": 0.15830271504035817
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "checked_utc": "2026-11-11T18:17:29.842990+00:00",
+  "plan": "open",
+  "account_local": false,
+  "quota": {
+    "usage_consumed_seconds": 185,
+    "usage_limit_seconds": 600,
+    "usage_remaining_seconds": 415,
+    "usage_limit_reached": false,
+    "usage_period": {
+      "start_time": "2026-10-14T18:17:29.578Z",
+      "end_time": "2026-11-11T18:17:29.578Z"
+    }
+  },
+  "backends": [
+    {
+      "name": "ibm_fez",
+      "num_qubits": 156,
+      "simulator": false,
+      "operational": true,
+      "pending_jobs": 0
+    },
+    {
+      "name": "ibm_kingston",
+      "num_qubits": 156,
+      "simulator": false,
+      "operational": true,
+      "pending_jobs": 20
+    },
+    {
+      "name": "ibm_marrakesh",
+      "num_qubits": 156,
+      "simulator": false,
+      "operational": true,
+      "pending_jobs": 3
+    }
+  ]
+}

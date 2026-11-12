@@ -1,0 +1,38 @@
+{
+  "created_utc": "2026-11-11T04:43:35Z",
+  "source_sha256": {
+    "multibin_followup\\PROTOCOL.md": "f2c1e359e0a9a1b3b52e17f67c8b187de364f7eebe6920a7a6f685a24f14ad24",
+    "multibin_followup\\model.py": "f078ccc75a9b16c9855668a2e3e85d679b418aed2b7cdc44b292c25bef005ab8",
+    "multibin_followup\\run_suite.py": "08dcd5850e6b09274795cbebd6804ba8e83a3124c5a8c17ad9964443f8718d74",
+    "qrsm_photon.py": "d93d976a1e31d0eb7d67a59754dbbcce14a9a1e1c38df60cf3e2f21ce8f4344a",
+    "dilation_feasibility.py": "2670d6f5eae1e4c16cf3e608f1c74038d056701512b33800b2753134cfb8b3b9",
+    "dilation_synthesis.py": "9ce17e0dd0ae06fe991bad927a3bf555066430ced46b101a7aed81fbab214a9f"
+  },
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.3.1",
+    "scipy": "1.18.1",
+    "qiskit": "2.6.1",
+    "qiskit_aer": "0.18.2"
+  },
+  "worker_timeout_seconds": 240,
+  "worker_memory_limit_mib": 2048,
+  "matrix": [
+    {
+      "kind": "ideal",
+      "cutoff": 0.03
+    },
+    {
+      "kind": "ideal",
+      "cutoff": 0.003
+    },
+    {
+      "kind": "noise",
+      "cutoff": 0.03
+    },
+    {
+      "kind": "noise",
+      "cutoff": 0.003
+    }
+  ]
+}

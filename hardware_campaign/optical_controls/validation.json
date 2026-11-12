@@ -1,0 +1,28 @@
+{
+  "all_checks_passed": true,
+  "circuit_count": 33,
+  "maximum_probability_error": 3.219646771412954e-15,
+  "source_and_artifact_hashes_passed": true,
+  "measurement_wiring_passed": true,
+  "full_statevector_references_passed": true,
+  "independent_bloch_and_number_targets_passed": true,
+  "manifest_sha256": "961ce376e65847b770b4829f68be79cf351cb72b58a9ad72332e5af87fe8cbf1",
+  "no_account_or_hardware_access": true,
+  "created_utc": "2026-11-11T18:02:23.991020+00:00",
+  "test_count": 12,
+  "test_command": "python -m unittest discover -s hardware_campaign/optical_controls -p 'test_*.py' -v",
+  "test_status": "12 tests passed in the current session",
+  "independent_review": "hardware_campaign/feasibility/optical_controls_independent_review.json",
+  "independent_review_sha256": "503a5ccbef491d4a2f3dd161707c676825794024c1fd4e5348107fabc3b08d77",
+  "source_sha256": {
+    "hardware_campaign/optical_controls/analyze_counts.py": "b979182a04729aa79ba35d4fd942d37231d77448b4ba26849d1d40565a4afee7",
+    "hardware_campaign/optical_controls/export_bundle.py": "e956e03fa44cd0b6fc003237734030a828d523468c9d8f9d6a5d3ab9b41c70ab",
+    "hardware_campaign/optical_controls/models.py": "9068371b16051f723bb90dd3a5fed3a411ea1a59ae60d90011c6beba1358e81a",
+    "hardware_campaign/optical_controls/test_analysis.py": "353b4a57febef3d7d57ab21b6bd0fbaa4565b96d797dd71fcd8196c44fc75fe3",
+    "hardware_campaign/optical_controls/test_models.py": "e2a46e5ced4f2c3f77634ee9c67316e062d4620f587b37692b776fa3e1d37b91",
+    "hardware_campaign/optical_controls/verify_bundle.py": "af15f3e09fd3cc80ba2561f77e8c454c9eed96ad69efc6dee71ba85f621bd3d8",
+    "hardware_campaign/optical_controls/README.md": "2cbbf7300a2c2a741b78ab6248a0b1f1356daf85979c22b9fed35d3a0bec7036",
+    "hardware_campaign/optical_controls/PROTOCOL.md": "dc8212df08795d7cfa1a2b6683598478b37b783dbe8324eadc2ec702d8b76b6d"
+  },
+  "scope": "Validated logical primitive emulations only; no hardware observations or physical optics validation in this receipt."
+}

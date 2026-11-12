@@ -1,0 +1,41 @@
+{
+  "all_checks_passed": true,
+  "source_manifest_matches": true,
+  "results_sha256": "74847bbee9cbaf6fbd41d72ab2566839919de73d218e2690ad383c135495a069",
+  "review_source_sha256": "db189d9d2fa99c547d8ba74f12b59a9a25689fef5684cd179ce4a57a0b285824",
+  "artifact_sha256": {
+    "pipeline_0_raw.npz": "99d38c1dd825feb64b700c2383c364ae6b766ae2832787f37d83f7d27fb5d359",
+    "pipeline_0.json": "639b712e5414d84898dcdc0f7c5d7cd534d47edc8910f9195f575f5dfbd4ea85",
+    "pipeline_1_raw.npz": "3ef7af41bf783a3bbd3e3d11096706d02d51ca094aa6b869328a6a67b2269b80",
+    "pipeline_1.json": "ea49220501937b38c1287d14fd608400043ebe176452eaf5aad8fe6ccd38edab",
+    "pipeline_2_raw.npz": "43d3b9669848081d5e2acb6c64e4649e7373626bc52302e78c58f689e749e9da",
+    "pipeline_2.json": "e1d115f1e4a9028f01e19a7b5175755bc3f09b21e27a56d449abcc4797b48dac",
+    "pipeline_3_raw.npz": "176d1f1ded8e6c4d67756e1664c47d2fc41303a1b807c68ab70d9307067adace",
+    "pipeline_3.json": "fc0f73b97fb0ad9119a6b55dd656ecf900a97ed31992674ec9bd722abe82d7df"
+  },
+  "pipeline_checks": [
+    {
+      "pipeline": 0,
+      "raw_hashes_thresholds_onsets_delay_estimation_and_detector_controls": "passed"
+    },
+    {
+      "pipeline": 1,
+      "raw_hashes_thresholds_onsets_delay_estimation_and_detector_controls": "passed"
+    },
+    {
+      "pipeline": 2,
+      "raw_hashes_thresholds_onsets_delay_estimation_and_detector_controls": "passed"
+    },
+    {
+      "pipeline": 3,
+      "raw_hashes_thresholds_onsets_delay_estimation_and_detector_controls": "passed"
+    }
+  ],
+  "summary_metrics_recounted": true,
+  "unit_tests": {
+    "tests_run": 10,
+    "passed": true,
+    "output": "test_afterpulse_readout_is_cause_mixture (drive_diagnostics_test_model.ScheduleTests.test_afterpulse_readout_is_cause_mixture) ... ok\ntest_all_histories_normalize_for_latent_step_and_telegraph (drive_diagnostics_test_model.ScheduleTests.test_all_histories_normalize_for_latent_step_and_telegraph) ... ok\ntest_all_main_random_streams_have_unique_explicit_namespaces (drive_diagnostics_test_model.ScheduleTests.test_all_main_random_streams_have_unique_explicit_namespaces) ... ok\ntest_count_contrast_is_causal (drive_diagnostics_test_model.ScheduleTests.test_count_contrast_is_causal) ... ok\ntest_dead_time_blind_channel_and_forbidden_adjacent_bits (drive_diagnostics_test_model.ScheduleTests.test_dead_time_blind_channel_and_forbidden_adjacent_bits) ... ok\ntest_forward_matches_explicit_source_path_marginalization (drive_diagnostics_test_model.ScheduleTests.test_forward_matches_explicit_source_path_marginalization) ... ok\ntest_hmm_prefix_matches_bruteforce_paths (drive_diagnostics_test_model.ScheduleTests.test_hmm_prefix_matches_bruteforce_paths) ... ok\ntest_step_retains_physical_state_instead_of_resetting (drive_diagnostics_test_model.ScheduleTests.test_step_retains_physical_state_instead_of_resetting) ... ok\ntest_threshold_strict_ties_conservative (drive_diagnostics_test_model.ScheduleTests.test_threshold_strict_ties_conservative) ... ok\ntest_zero_drive_difference_has_identical_likelihood (drive_diagnostics_test_model.ScheduleTests.test_zero_drive_difference_has_identical_likelihood) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.069s\n\nOK\n"
+  },
+  "scope": "Independent recount from archived bits/scores plus exact unit tests; no refit or threshold changes. Bootstrap coverage and physical model correctness are not proved."
+}

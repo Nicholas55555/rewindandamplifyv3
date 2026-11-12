@@ -1,0 +1,54 @@
+{
+  "config": {
+    "seeds": [
+      729901
+    ],
+    "steps": 96,
+    "cavity": 2,
+    "response_records": 16,
+    "train_each_class": 16,
+    "null_calibration": 24,
+    "test_each_scenario": 12,
+    "efficiency_trials": 10000,
+    "dark_trials": 20000,
+    "hmm_starts": 1,
+    "hmm_iterations": 30,
+    "bootstrap": 50,
+    "alpha": 0.05
+  },
+  "cases": {
+    "stable_source": {},
+    "source_step_20pct": {
+      "source": "step",
+      "fraction": 0.2
+    },
+    "stable_source_efficiency_loss": {
+      "nuisance": {
+        "eta_factor": 0.8
+      }
+    },
+    "stable_source_afterpulse": {
+      "nuisance": {
+        "afterpulse": 0.1
+      }
+    }
+  },
+  "source_sha256": {
+    "qrsm_photon_poc\\drive_diagnostics_followup\\run_study.py": "2829b616e9a68bc028859f9585058716c8bcd6dbf764053c4746e5e177675b11",
+    "qrsm_photon_poc\\drive_diagnostics_followup\\model.py": "ddd52cc9a9868fa195bb47a76ed47c51f495e28c625ae0b511667a290d5d9f11",
+    "qrsm_photon_poc\\drive_diagnostics_followup\\test_model.py": "64e863c0f150aeb0a305fdb9163b8b97d92f9d7207fa9fd3239b4cb57f07c2e5",
+    "qrsm_photon_poc\\drive_diagnostics_followup\\PROTOCOL.md": "cf8f4dc72a4aed3de5a2b1f4d2a4462264e1319b60f9dc3b140c08c1458df192",
+    "qrsm_photon_poc\\qrsm_photon.py": "d93d976a1e31d0eb7d67a59754dbbcce14a9a1e1c38df60cf3e2f21ce8f4344a",
+    "qrsm_photon_poc\\followup\\inference_model.py": "56bea54d666e422f4061e600bbc12d2da9cd0620bb8cd2603d100df74c2c1d25",
+    "qrsm_photon_poc\\diagnostics_baselines\\compare.py": "4ef63ffddd4c023333501cebfe4e8e643a56893d73a96c407c1700e290f5a10f",
+    "qrsm_photon_poc\\diagnostics_baselines\\refine_replication.py": "2b601d343d3a32a67b561237b3d82674918a3c9433ca7d9baeb533d6883aa8e3"
+  },
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.3.1",
+    "scipy": "1.18.1"
+  },
+  "mode": "software_smoke_not_evidence",
+  "pid": 37368,
+  "wall_time_limit_seconds": 180
+}

@@ -1,0 +1,171 @@
+<title>Rewind and Amplify Results</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column, with charts allowed to run wider than the text. */
+:root {
+  --bg: #eef1f4; --panel: #fbfcfd; --ink: #13233f; --ink2: #47556b; --line: #d5dbe3; --accent: #c8481a; --blue: #1f66bd;
+  --good: #0b6e4f; --bad: #a32f22; --chart-bg: #fcfcfb;
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif; --mono: "IBM Plex Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e1520; --panel: #172232; --ink: #e8edf5; --ink2: #aebbcc; --line: #2d3b4f; --accent: #f4834a; --blue: #6aaef2;
+  --good: #4ecb9f; --bad: #f08a7a; --chart-bg: #fcfcfb; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0e1520; --panel: #172232; --ink: #e8edf5; --ink2: #aebbcc; --line: #2d3b4f; --accent: #f4834a; --blue: #6aaef2;
+  --good: #4ecb9f; --bad: #f08a7a; --chart-bg: #fcfcfb; color-scheme: dark }
+* { box-sizing: border-box }
+[hidden] { display: none !important }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55;
+  padding-block: 32px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+main { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px }
+h1 { font-size: clamp(32px, 5.5vw, 46px); line-height: 1.08; font-weight: 600; letter-spacing: -0.01em; margin: 0; text-wrap: balance }
+h2 { font-size: 26px; line-height: 1.2; font-weight: 600; margin: 0; text-wrap: balance }
+p { margin: 0; max-width: 68ch }
+.stack { display: flex; flex-direction: column; gap: 14px; min-width: 0 }
+.lede { color: var(--ink2); font-size: 19px }
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px }
+@media (max-width: 720px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 4px; min-width: 0 }
+.tile b { font-size: 30px; line-height: 1.1; font-weight: 600 }
+.tile span { font-size: 14.5px; color: var(--ink2); line-height: 1.35 }
+.moves { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px }
+@media (max-width: 600px) { .moves { grid-template-columns: minmax(0, 1fr) } }
+.move { border-left: 3px solid var(--accent); padding: 2px 0 2px 14px; min-width: 0 }
+.move b { display: block; font-weight: 600 }
+.move span { color: var(--ink2); font-size: 15.5px }
+figure { margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0 }
+figure img { width: 100%; height: auto; background: var(--chart-bg); border: 1px solid var(--line); border-radius: 10px; padding: 8px }
+figcaption { font-size: 15px; color: var(--ink2); max-width: 72ch }
+.scroll { overflow-x: auto }
+table { border-collapse: collapse; width: 100%; font-size: 15px }
+th { text-align: left; font-weight: 500; color: var(--ink2); padding: 7px 10px; border-bottom: 1px solid var(--line); white-space: nowrap }
+td { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; font-variant-numeric: tabular-nums }
+.held { color: var(--good); font-weight: 500; white-space: nowrap }
+.missed { color: var(--bad); font-weight: 500; white-space: nowrap }
+.part { color: var(--ink2); font-weight: 500; white-space: nowrap }
+.note { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px }
+ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; max-width: 68ch }
+footer { font-size: 14px; color: var(--ink2) }
+a { color: var(--blue) }
+code { font-family: var(--mono); font-size: 0.92em }
+</style>
+
+<main>
+<header class="stack">
+  <p style="font-size:14px;letter-spacing:.04em;color:var(--accent);font-weight:500">FGCU QUANTUM HACKATHON, IBM QISKIT FALL FEST 2026</p>
+  <h1>Rewind and Amplify: the results</h1>
+  <p class="lede">We fused Grover’s algorithm with a quantum recurrent state machine, the model from our hidden-defect project. It didn’t bolt on, and noise punishes it. So we redesigned it around noise. This page is what we found, including what we got wrong.</p>
+</header>
+
+<section class="tiles" aria-label="Headline results">
+  <div class="tile"><b>220,000×</b><span>fewer machine calls to condition on a real 64-step record, most of it from steering</span></div>
+  <div class="tile"><b>3 to 5×</b><span>fewer two-qubit gates than textbook Grover, with better answers on five IBM device models</span></div>
+  <div class="tile"><b>2.4σ → 7.1σ</b><span>clearer separation of a hidden defect from none, at equal shots</span></div>
+  <div class="tile"><b>0.87</b><span>chance of a rare event on a real IBM chip with 40 gates, against 0.59 for textbook Grover with 213</span></div>
+</section>
+
+<section class="stack">
+  <h2>The problem</h2>
+  <p>The most useful events in a quantum system are often rare. Our model only generates, so asking “what happens around this rare event?” means running it and throwing away every run that doesn’t match. Matching one real 64-step click record takes about 27 million runs. Grover’s algorithm promises the square root of that, but it has to run the machine backwards, and the machine resets a qubit every step. You can’t Grover what you can’t rewind.</p>
+</section>
+
+<section class="stack">
+  <h2>Four moves</h2>
+  <div class="moves">
+    <div class="move"><b>1. Purify</b><span>A fresh qubit replaces every reset. The run becomes one reversible circuit that holds every click history at once.</span></div>
+    <div class="move"><b>2. Steer</b><span>Tune one gate so the event is common. Part of the rarity disappears for free, and conditional answers stay exact.</span></div>
+    <div class="move"><b>3. Amplify locally</b><span>One iteration, with a reflection on 3 qubits at any record length.</span></div>
+    <div class="move"><b>4. Verify</b><span>The event is measured, so a failed shot shows itself and is dropped.</span></div>
+  </div>
+  <figure><img src="figs/fig_circuit_hybrid.png" alt="One step of the hybrid QRSM as a circuit: the defect and emitter are rotated, a partial swap joins them, a second partial swap passes energy to the light, and the light is read and reset"><figcaption>One step of the hybrid QRSM. The memory is never measured. The light is read and reset, so information leaves.</figcaption></figure>
+  <figure><img src="figs/fig_circuit_grover.png" alt="The Grover circuit: A prepares the state, then the oracle, A dagger, the reflection R zero and A again repeat r times, and the result is measured"><figcaption>Grover’s circuit. The A† is why a machine that resets can’t be used directly, and why move 1 comes first.</figcaption></figure>
+</section>
+
+<section class="stack">
+  <h2>It works exactly</h2>
+  <p>Purifying changes nothing: amplitudes match the exact model to 4 × 10<sup>-16</sup>, and the two circuits click alike over a million shots each. Then Qiskit’s own Grover operator follows the textbook curve on the machine’s histories, within 8 × 10<sup>-15</sup> on six questions.</p>
+  <figure><img src="figs/fig_curve.png" alt="Dots from real Qiskit circuits sit on Grover's curves for three questions of different rarity"><figcaption>Dots are real Qiskit circuits; lines are theory. Amplification reweights without reshaping, so every shot is an exact conditional sample, hidden qubits included.</figcaption></figure>
+</section>
+
+<section class="stack">
+  <h2>What it costs</h2>
+  <p>Scaling follows theory: the log-log slope is −0.50 against −1.00 for plain sampling, out to one-in-a-million events. With p unknown, the standard schedule costs about twice as much and still scales as the square root.</p>
+  <figure><img src="figs/fig_wall.png" alt="Machine calls per conditioned sample against rarity: plain sampling climbs twice as steeply as Grover"><figcaption>Each Grover iteration counts as two machine calls, because it runs the machine forwards and backwards.</figcaption></figure>
+  <p>For a real 64-step record, steering every clicked step takes 27.5 million runs down to 6,240. Grover then takes that to 125 calls. Steering is classical importance sampling, and it does most of the work: about 4,400 times, against about 50 times from Grover.</p>
+</section>
+
+<section class="stack">
+  <h2>Resilience under noise</h2>
+  <p>We tested on five IBM device snapshots, none of them the one we developed the idea on. Each circuit was compiled for the device and simulated with its noise model.</p>
+  <figure><img src="figs/fig_resilience.png" alt="For records of 3 to 6 steps, steering plus the local reflection uses about a fifth of textbook Grover's gates, with a higher hit rate and lower distribution error"><figcaption>Dots are medians over five devices; bars are the range. Textbook runs at its peak r, which is 2 at T = 6, hence the dip. Plain sampling has the lowest distortion, but keeps only 5 to 9% of its shots.</figcaption></figure>
+  <div class="scroll"><table aria-label="Median results on five device models">
+    <thead><tr><th>Record length</th><th>Build</th><th>Two-qubit gates</th><th>Chance of the event</th><th>Distribution error</th></tr></thead>
+    <tbody><tr><td>3</td><td>Textbook Grover</td><td>213</td><td>0.76</td><td>0.131</td></tr><tr><td>3</td><td>Steer + local</td><td>40</td><td>0.89</td><td>0.060</td></tr><tr><td>4</td><td>Textbook Grover</td><td>329</td><td>0.72</td><td>0.202</td></tr><tr><td>4</td><td>Steer + local</td><td>63</td><td>0.88</td><td>0.103</td></tr><tr><td>5</td><td>Textbook Grover</td><td>456</td><td>0.68</td><td>0.275</td></tr><tr><td>5</td><td>Steer + local</td><td>88</td><td>0.89</td><td>0.147</td></tr><tr><td>6</td><td>Textbook Grover</td><td>376</td><td>0.69</td><td>0.242</td></tr><tr><td>6</td><td>Steer + local</td><td>109</td><td>0.86</td><td>0.166</td></tr></tbody>
+  </table></div>
+  <p>A cheaper, slightly approximate circuit beats the exact one, because the error it adds is smaller than the noise it avoids.</p>
+</section>
+
+<section class="stack">
+  <h2>The reflection we got wrong first</h2>
+  <p>Our first shortcut watched only the two memory qubits. The hit rate looked fine. Then a harder test showed it scrambled the hidden state: with no defect, the clicks after a click came out as [0.091, 0.029, 0.009] where the truth is [0.018, 0.058, 0.101]. Hit rate alone would never have shown that. The maths pointed at the fix, which is to watch the light the question reads as well.</p>
+  <figure><img src="figs/fig_reflection_map.png" alt="As records grow, the local reflection stays close to exact on hit rate and hidden-state fidelity, while memory-only falls behind"><figcaption>Green is the fix: 3 qubits at any length. It stays near exact on short records and drifts on long ones.</figcaption></figure>
+</section>
+
+<section class="stack">
+  <h2>What it can answer</h2>
+  <p>A physics question: what happens right after a rare click? With no defect, a click wipes the machine, so what follows simply restarts the run. A hidden defect remembers across the click. That’s a fingerprint of hidden memory, and you can only read it by conditioning. So we amplify the click and keep running the machine: Grover inside the recurrent loop.</p>
+  <figure><img src="figs/fig_fingerprint.png" alt="The click correlation g2 after a click differs with and without a hidden defect"><figcaption>Exact curves. Right after a click the rate is low, because an atom can’t click twice at once.</figcaption></figure>
+  <figure><img src="figs/fig_after_click.png" alt="On noisy device models, estimates of the click rate after a click from plain sampling and from the steered, amplified build, against the exact answer"><figcaption>On noisy device models at 4,096 shots. Both estimates are biased upward by false clicks, and amplifying keeps about 15 times more shots. Telling a defect from none at τ = 3 goes from 2.4 to 7.1 standard errors, averaged over five snapshots.</figcaption></figure>
+</section>
+
+<section class="stack">
+  <h2>The other slot: a QRSM as the oracle</h2>
+  <p>Grover has two slots: what to search, and what counts as a match. Timofey’s idea fills the second. A reader QRSM reads a vague request token by token, turning the phase of each entry that matches. It found the right table for 19 of 20 vague requests.</p>
+  <figure><img src="figs/fig_catalog.png" alt="Probabilities of catalogue entries at 0, 1 and 3 iterations for the request how much did we sell in each area"><figcaption>“how much did we sell in each area” becomes [sales, region]. Partial matches get a partial boost at first, which is what makes a vague search possible.</figcaption></figure>
+  <p>This shows the architecture and no more. The oracle is compiled from the catalogue, so classical code has already read every entry: 1,024 entries takes 32,800 two-qubit gates, against a 1,024-step scan.</p>
+</section>
+
+<section class="stack">
+  <h2>On real IBM chips</h2>
+  <p>On 5 November 2026 we ran the same 39 circuits on two 156-qubit IBM chips: seven jobs, 337 seconds of device time, at most 11 qubits per circuit. We committed our predictions first.</p>
+  <figure><img src="figs/fig_hw_builds.png" alt="The chance of a rare event on ibm_kingston: plain sampling 0.06, textbook Grover 0.59 with 213 gates, steer plus local 0.87 with 40 gates"><figcaption>Dark bars have no error suppression, and light bars have DD and twirling. Diamonds are the device’s noise model. Black ticks are the noiseless answer.</figcaption></figure>
+  <p>On ibm_kingston, steer + local won 20 of 20 comparisons across five jobs. The chip punished depth about 3 times harder per gate than its noise model said, so the lead came out about twice what simulation predicted.</p>
+  <figure><img src="figs/fig_hw_runs.png" alt="Seven real jobs side by side: steer plus local leads in every Kingston job, and the after-click separation is about 6 standard errors without suppression"><figcaption>Each row is one job. On the right: how clearly the job tells a hidden defect from none, in standard errors. The dashed line is 3.</figcaption></figure>
+  <p><b>The fingerprint came through.</b> Telling a defect from none reached 5.7 and 6.8 standard errors on Kingston, and 6.6 on Marrakesh, where plain sampling never passed 2. It’s fragile: dynamical decoupling erased it. We predicted twirling would, and we were wrong.</p>
+  <p><b>Calibration hid a bad patch.</b> On Marrakesh, the compiler chose the qubits that looked best in the calibration data, and they did far worse than the others we used: 1.5% to 3.4% error per gate, against about 0.2% reported. Our echo circuits caught it. Moving off those five qubits recovered the result. We picked them after seeing the data, so that job tests the explanation, and it isn’t a clean replication.</p>
+  <div class="scroll"><table aria-label="Hardware predictions against outcomes">
+    <thead><tr><th>Prediction, logged before the jobs</th><th>Outcome</th><th>Verdict</th></tr></thead>
+    <tbody><tr><td>H1: T = 3: steer + local beats textbook r = 3 on hit rate and TVD, in both jobs</td><td>plain: hit 0.874 vs 0.589, TVD 0.055 vs 0.263; suppressed: hit 0.831 vs 0.620, TVD 0.067 vs 0.240</td><td class="held">Held</td></tr><tr><td>H2: T = 3: steer + local reaches a hit rate of at least 0.75 in either job</td><td>best 0.874</td><td class="held">Held</td></tr><tr><td>H3: No defect: hit rate at least 0.75 at r = 1, then back to 0.45 or less at r = 3, in either job</td><td>plain: 0.214 0.887 0.715 0.547; suppressed: 0.211 0.849 0.748 0.457</td><td class="part">Partly</td></tr><tr><td>H4: The device falls short of its noise model: below it on at least 70% of circuits with ideal hit 0.5 or more, by a median of at least 0.02</td><td>below on 79%, median shortfall 0.032</td><td class="held">Held</td></tr><tr><td>H5: DD + twirling lowers TVD on at least 60% of circuits with 100 or more two-qubit gates</td><td>50% of 12</td><td class="part">Partly</td></tr><tr><td>H6: Defect against no defect at tau = 3: amplified separation at least 3 standard errors, and above plain sampling, in either job</td><td>plain: 5.7 vs 0.0; suppressed: 1.0 vs 1.2</td><td class="held">Held</td></tr><tr><td>H7: Catalogue, r = 2: the right entry on top with a hit rate of at least 0.70 in either job</td><td>plain: 0.857; suppressed: 0.823</td><td class="held">Held</td></tr><tr><td>H8: T = 5: steer + local reaches at least 0.60 and beats the same steer with the textbook reflection, in either job</td><td>plain: 0.750 vs 0.645; suppressed: 0.781 vs 0.612</td><td class="held">Held</td></tr><tr><td>H9: Echo: the all-in error per two-qubit gate is above the reported median and at most 1%, on all three echoes</td><td>0.52%, 0.64%, 0.40% against 0.18% reported</td><td class="held">Held</td></tr><tr><td>F1: A second plain run repeats both T = 3 hit rates to within 0.05</td><td>resilient 0.874 then 0.882; textbook 0.589 then 0.551</td><td class="held">Held</td></tr><tr><td>F2: The repeat again puts no defect above defect at tau = 3, by at least 3 standard errors</td><td>6.8 standard errors, the right way round</td><td class="held">Held</td></tr><tr><td>F3: Twirling, not DD, is what erases the separation: DD alone keeps at least 3 standard errors, and twirling alone doesn't</td><td>DD alone 0.1, twirling alone 2.6</td><td class="missed">Missed</td></tr><tr><td>F4: A second chip: steer + local beats its rival on hit rate and TVD at T = 3 and T = 5, on ibm_marrakesh</td><td>T = 3: 0.809 vs 0.372, TVD 0.360 vs 0.663; T = 5: 0.563 vs 0.581, TVD 0.512 vs 0.665</td><td class="part">Partly</td></tr><tr><td>F5: A second chip: steer + local reaches at least 0.70 at T = 3</td><td>0.809</td><td class="held">Held</td></tr><tr><td>F6: Off qubits 5, 6, 7, 8 and 17, the echo's all-in error per two-qubit gate on ibm_marrakesh falls below 1%, from 1.5% to 3.4%</td><td>0.92%, 0.79%, 0.73%</td><td class="held">Held</td></tr><tr><td>F7: Off those qubits, steer + local beats its rival on hit rate and TVD at T = 3 and T = 5, with TVD at T = 3 of 0.15 or less</td><td>T = 3: 0.815 vs 0.513, TVD 0.115 vs 0.291; T = 5: 0.679 vs 0.536, TVD 0.207 vs 0.538</td><td class="held">Held</td></tr></tbody>
+  </table></div>
+</section>
+
+<section class="stack">
+  <h2>What we predicted, and what happened</h2>
+  <p>We wrote expectations down before each simulated run too. Some were wrong.</p>
+  <div class="scroll"><table aria-label="Predictions against outcomes">
+    <thead><tr><th>Prediction</th><th>Outcome</th><th>Verdict</th></tr></thead>
+    <tbody><tr><td>Purified and dynamic circuits agree; amplitudes within 1e-12</td><td>largest error 3.9e-16; chi-square p = 0.61</td><td class="held">Held</td></tr><tr><td>Circuits follow Grover's curve and give exact conditionals, within 1e-9</td><td>worst error 8e-15</td><td class="held">Held</td></tr><tr><td>Slopes: -1.00 sampling, -0.50 ± 0.02 Grover, -0.5 ± 0.1 unknown p</td><td>-1.00, -0.50, -0.52</td><td class="held">Held</td></tr><tr><td>Unknown p costs 2 to 6 times the known-p cost</td><td>median 2.0, range 1.2 to 2.1</td><td class="held">Held</td></tr><tr><td>Median 64-step record costs 1e6 to 1e8 runs</td><td>2.75e+07</td><td class="held">Held</td></tr><tr><td>The classical sampler's set-up grows about 8 times per hidden qubit</td><td>5.7 times at the largest sizes, with parallel linear algebra</td><td class="part">Partly</td></tr><tr><td>Memory reflection keeps at least 80% of the gain, with TVD below 0.1, for single-event questions at T up to 6</td><td>median 88%, worst 63%; worst TVD 0.12</td><td class="part">Partly</td></tr><tr><td>Memory reflection loses most of the gain on multi-click questions</td><td>best hit rate from 0.21 (rare, short) to about 1 (common, long): it depends on p</td><td class="part">Partly</td></tr><tr><td>The leak predicts the damage: Spearman at least 0.7</td><td>0.82</td><td class="held">Held</td></tr><tr><td>Noisy, r ≥ 2: memory reflection wins hit rate in at least 80% of cells</td><td>73%</td><td class="missed">Missed</td></tr><tr><td>Noisy, r ≥ 2: memory reflection wins TVD in at least 80% of cells</td><td>100%</td><td class="held">Held</td></tr><tr><td>Noisy, r = 1: hit rates split about evenly</td><td>memory reflection won 3%</td><td class="missed">Missed</td></tr><tr><td>Local reflection beats textbook on hit rate and TVD in at least 80% of cells at r ≥ 2</td><td>hit rate 100%, TVD 100%, in 32 cells</td><td class="held">Held</td></tr><tr><td>Local reflection has lower TVD than memory only in at least 60% of cells</td><td>38%, in 40 cells</td><td class="missed">Missed</td></tr><tr><td>Local reflection, noiseless: hit within 0.03 of exact for T up to 6, and TVD below 0.05 for T up to 8</td><td>largest hit gap 0.022; largest TVD 0.31</td><td class="part">Partly</td></tr><tr><td>Steer + full, r = 1: hit within 1e-9 of 1 wherever reachable, and TVD below 1e-9</td><td>hit 1.000, TVD 0, at T = 5 to 14</td><td class="held">Held</td></tr><tr><td>Steer + local uses at least 3 times fewer gates in every cell</td><td>2.9 to 5.3 times</td><td class="missed">Missed</td></tr><tr><td>Steer + local has a higher hit rate than textbook in at least 80% of cells</td><td>100%</td><td class="held">Held</td></tr><tr><td>Steer + local has a lower TVD than textbook in at least 70% of cells</td><td>100%</td><td class="held">Held</td></tr><tr><td>After a click, 4,096 shots: amplification has lower RMSE at tau = 2 and 3 on at least 4 of 5 snapshots</td><td>4 of 5 with a defect, 5 of 5 without</td><td class="held">Held</td></tr><tr><td>Over a large shot budget plain sampling wins, because it has lower bias</td><td>its bias was larger: mean 0.035 against 0.019, because false clicks swamp a rare event</td><td class="missed">Missed</td></tr><tr><td>The resilient lead shrinks on the best devices, but survives</td><td>at T = 5 the hit-rate lead is 0.25 on the noisiest device and 0.19 on the best</td><td class="held">Held</td></tr><tr><td>The keyword search's top result agrees with the classical score</td><td>100% agreement</td><td class="held">Held</td></tr><tr><td>At a fixed rewind depth the hit rate stays within 0.05 as T grows</td><td>4 steps: 0.073; 6 steps: 0.037; 8 steps: 0.064; 10 steps: 0.067</td><td class="part">Partly</td></tr><tr><td>Steering a 64-step record gives 1e3 to 1e5 runs</td><td>6,240</td><td class="held">Held</td></tr></tbody>
+  </table></div>
+</section>
+
+<section class="stack">
+  <h2>What we don’t claim</h2>
+  <ul>
+    <li><b>No speedup.</b> An exact classical sampler gives a sample in about a millisecond here. Its cost grew about 6 times per hidden qubit, so a crossover is plausible but not shown.</li>
+    <li><b>Small hardware runs.</b> seven jobs on two chips in one evening, at most 11 qubits and 5 steps. Everything else here is simulation, including the IBM noise models.</li>
+    <li><b>No rewinding of real chips.</b> We rewind a model learned from clicks. A physical defect can’t be run backwards.</li>
+    <li><b>Steering is classical.</b> It is exact only for clicks at known steps, and needs a rough value of p.</li>
+    <li><b>The local reflection is an approximation.</b> Steered, its hit rate falls to 0.73 at T = 14.</li>
+    <li><b>The core idea isn’t new.</b> Amplified rejection sampling goes back to Low, Yoder and Chuang (2014). Ours is the mapping onto hidden quantum models, and the resilience work.</li>
+  </ul>
+</section>
+
+<section class="stack">
+  <h2>Why it could matter</h2>
+  <p>Conditioning on a 64-step record takes about 2.7 million gates as textbook Grover, and about 40,000 once steered. IBM’s published 2029 target of 200 logical qubits and 100 million gates would, by our rough estimate, fit a machine with 50 hidden qubits and a 150-step record, whose memory alone would take about 18 petabytes classically. That is where our classical baseline stops working.</p>
+  <figure><img src="figs/fig_horizon.png" alt="Hit rate at a fixed rewind depth stays roughly flat as records grow"><figcaption>A machine that forgets may not need its whole past rewound. Rewinding 8 steps held the hit rate at 0.80 to 0.87 out to T = 18, though the distortion of older history grows.</figcaption></figure>
+</section>
+
+<footer>Code, tests and every result: the project’s GitHub repository, in <code>docs/REPORT.md</code> and <code>docs/design_log.md</code>. Built with AI assistance from Claude, as the event’s rules allow.</footer>
+</main>

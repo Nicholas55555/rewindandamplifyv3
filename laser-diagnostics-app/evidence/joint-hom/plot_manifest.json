@@ -1,0 +1,10 @@
+{
+  "source_sha256": "07618a4b9c6e894de10529f2dadd2f7e6220718408da68ff13e47e3b7bbe73b7",
+  "results_sha256": "97473faba057d4f0624cb37b3c31d2355bcb0878e7425d64349b954ed12b65cd",
+  "hardware_manifest_sha256": "74700362c2c9093cd6d7c3fcb7709242cf6b48abefe2f2751a19e1161afc48a4",
+  "artifacts": {
+    "joint_photon_results.png": "c3d7374d51ceb7dcd8c272ef81e04aa1761731e6ed5878ed9efc5ce74fe76251",
+    "joint_photon_results.pdf": "036859fdd9d88b0729f1531af4545b2efa3cc04a9e8ff0193af1eb69ebe4a9ec"
+  },
+  "scope": "Saved ideal digital-model probabilities and synthetic held-out results, not physical-device performance"
+}

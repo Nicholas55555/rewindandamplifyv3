@@ -1,0 +1,16 @@
+{
+  "all_checks_passed": true,
+  "tests_passed": 7,
+  "exported_circuits": 25,
+  "maximum_probability_error": 1.4210854715202004e-14,
+  "source_sha256": {
+    "hardware_campaign/extensions/adapters.py": "0a8b7dd7ce5b110ca7dbe83e87c96389f57d7687ecca4bf11da6ae6c41744212",
+    "hardware_campaign/extensions/export_bundle.py": "dcc4b6830965356240da672c557d5e62ea761b2d48cf02ec6ae29c076c14d057",
+    "hardware_campaign/extensions/test_adapters.py": "575432a8967479d000461cf8549201389bdfeb9fce5ea3b4d6c313343e754a81",
+    "hardware_campaign/extensions/verify_bundle.py": "ce6751a1302128305a5e8d4e3ab0f3a79dc683e562f2e945aa09bf857ae92dcc"
+  },
+  "manifest_sha256": "beed7d9ccda390c3e4e3941bf5ee6a04cc0afac50a0d1e86d579845a96258c41",
+  "independent_review_sha256": "0d838aabda85b98ddea0295e01e0f2319203dca9359f472c32992621933d9b5c",
+  "validation": "All25 serialized circuits and independent references replayed; source/artifact hashes, terminal identity measurement wiring, QPY equality and clean workspace checked.",
+  "scope": "Logical verification only. Root owns native compilation and actual job evidence."
+}

@@ -1,0 +1,321 @@
+<title>Rewind and Amplify Lab</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one instrument per band. Controls beside a raster of shots, numbers under it. */
+:root {
+  --bg: #e9edf2; --panel: #f8fafb; --ink: #13233f; --ink2: #475569; --line: #d3dae3;
+  --click: #d9531e; --tick: #b4bfcc; --row-hit: #fbe3d7; --blue: #1f66bd; --exact: #13233f; --good: #0b6e4f;
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif; --mono: "IBM Plex Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e1520; --panel: #172232; --ink: #e8edf5; --ink2: #a9b6c7; --line: #2c3a4e;
+  --click: #f4834a; --tick: #3b4a5f; --row-hit: #4a2c1f; --blue: #6aaef2; --exact: #e8edf5; --good: #4ecb9f; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0e1520; --panel: #172232; --ink: #e8edf5; --ink2: #a9b6c7; --line: #2c3a4e;
+  --click: #f4834a; --tick: #3b4a5f; --row-hit: #4a2c1f; --blue: #6aaef2; --exact: #e8edf5; --good: #4ecb9f; color-scheme: dark }
+* { box-sizing: border-box }
+[hidden] { display: none !important }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.5;
+  padding-block: 28px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.wrap { max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px }
+h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.08; font-weight: 600; letter-spacing: -0.01em; margin: 0; text-wrap: balance }
+h2 { font-size: 22px; font-weight: 600; margin: 0; text-wrap: balance }
+p { margin: 0 }
+.lede { color: var(--ink2); max-width: 66ch }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 16px; min-width: 0 }
+.split { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 24px }
+@media (max-width: 760px) { .split { grid-template-columns: minmax(0, 1fr) } }
+.controls { display: flex; flex-direction: column; gap: 16px; min-width: 0 }
+.field { display: flex; flex-direction: column; gap: 6px }
+.label { font-size: 13px; color: var(--ink2); letter-spacing: 0.02em }
+.seg { display: flex; flex-direction: column; gap: 4px }
+.seg button { font: inherit; text-align: left; padding: 9px 11px; border-radius: 7px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer }
+.seg button small { display: block; color: var(--ink2); font-size: 13px }
+.seg button[aria-pressed="true"] { border-color: var(--click); box-shadow: inset 0 0 0 1px var(--click) }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px }
+input[type=range] { width: 100%; accent-color: var(--click) }
+.row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px }
+.value { font-family: var(--mono); font-size: 14px; font-variant-numeric: tabular-nums }
+.raster-box { display: flex; flex-direction: column; gap: 8px; min-width: 0 }
+canvas { width: 100%; height: 280px; display: block; border-radius: 6px }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px }
+@media (max-width: 560px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+.stat b { display: block; font-size: 28px; font-weight: 600; line-height: 1.15 }
+.stat span { font-size: 13px; color: var(--ink2) }
+table { border-collapse: collapse; width: 100%; font-size: 14px }
+th { text-align: left; font-weight: 500; color: var(--ink2); padding: 4px 8px; border-bottom: 1px solid var(--line) }
+td { padding: 5px 8px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; vertical-align: middle }
+td.mono { font-family: var(--mono); letter-spacing: 0.12em; white-space: nowrap }
+.scroll { overflow-x: auto }
+.bar { height: 10px; border-radius: 0 3px 3px 0; background: var(--click); min-width: 1px }
+.bar.exact { background: var(--exact) }
+.bars { display: flex; flex-direction: column; gap: 3px; min-width: 120px }
+.note { font-size: 14px; color: var(--ink2); max-width: 72ch }
+.query { display: flex; gap: 8px; flex-wrap: wrap }
+.query input { flex: 1 1 260px; min-width: 0; font: inherit; padding: 10px 12px; border-radius: 7px; border: 1px solid var(--line); background: var(--bg); color: var(--ink) }
+.chips { display: flex; gap: 6px; flex-wrap: wrap }
+.chip { font-family: var(--mono); font-size: 13px; padding: 2px 8px; border-radius: 5px; background: var(--row-hit); color: var(--ink) }
+.suggest { font: inherit; font-size: 14px; background: none; border: none; color: var(--blue); cursor: pointer; padding: 0; text-align: left; text-decoration: underline }
+.entries { display: grid; gap: 4px }
+.entry { display: grid; grid-template-columns: minmax(0, 1fr) minmax(70px, 34%) 48px; gap: 10px; align-items: center; font-size: 14px }
+.entry code { font-family: var(--mono); font-size: 13px; overflow-wrap: anywhere }
+.entry .pct { font-family: var(--mono); font-size: 13px; text-align: right; font-variant-numeric: tabular-nums }
+.track { height: 12px; background: var(--bg); border-radius: 3px; overflow: hidden }
+.fill { height: 100%; background: var(--tick) }
+.fill.top { background: var(--click) } .fill.part { background: var(--blue) }
+footer { font-size: 13px; color: var(--ink2); max-width: 78ch }
+@media (prefers-reduced-motion: no-preference) { .fill, .bar { transition: width .25s ease } }
+</style>
+
+<div class="wrap">
+  <header style="display:flex;flex-direction:column;gap:10px">
+    <h1>Rewind and Amplify Lab</h1>
+    <p class="lede">A quantum recurrent state machine emits a click, or no click, at each step. A click at one chosen step is rare, so most runs tell you nothing about it. Change the build and watch what happens to 48 runs of the machine. Everything here is simulated exactly in your browser.</p>
+  </header>
+
+  <p class="note"><b>On a real chip:</b> on IBM’s ibm_kingston, 3 steps, steer + local reached 0.87 with 40 two-qubit gates, and textbook Grover 0.59 with 213. This page simulates the same circuits with a simple noise model.</p>
+
+  <section class="panel" aria-labelledby="t1">
+    <h2 id="t1">Ask about a rare click</h2>
+    <div class="split">
+      <div class="controls">
+        <div class="field">
+          <div class="row"><label class="label" for="T">Steps in the record</label><span class="value" id="Tv"></span></div>
+          <input id="T" type="range" min="3" max="10" step="1" value="6">
+        </div>
+        <div class="field">
+          <span class="label" id="buildlabel">Build</span>
+          <div class="seg" role="group" aria-labelledby="buildlabel" id="builds"></div>
+        </div>
+        <div class="field" id="rfield">
+          <div class="row"><label class="label" for="r">Grover iterations</label><span class="value" id="rv"></span></div>
+          <input id="r" type="range" min="0" max="5" step="1" value="2">
+        </div>
+        <div class="field">
+          <div class="row"><label class="label" for="eps">Error per two-qubit gate</label><span class="value" id="epsv"></span></div>
+          <input id="eps" type="range" min="0" max="10" step="0.5" value="2">
+        </div>
+      </div>
+      <div class="raster-box">
+        <div class="row"><span class="label">48 runs, one per row. Time runs left to right; a tick is a click. A shaded row has the click we asked about.</span></div>
+        <canvas id="raster" height="280" role="img" aria-label="A raster of 48 simulated runs of the machine"></canvas>
+        <div class="stats">
+          <div class="stat"><b id="sHit"></b><span>of runs have the click</span></div>
+          <div class="stat"><b id="sTvd"></b><span>distance from the exact answer</span></div>
+          <div class="stat"><b id="sFid"></b><span>hidden-state fidelity</span></div>
+          <div class="stat"><b id="sCz"></b><span>two-qubit gates, before routing</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="note" id="say"></p>
+    <div class="scroll">
+      <table id="hist" aria-label="Most likely records with the click: exact share against this build's share"></table>
+    </div>
+    <p class="note" id="noiseNote"></p>
+  </section>
+
+  <section class="panel" aria-labelledby="t2">
+    <h2 id="t2">Find a table from a vague request</h2>
+    <p class="note">A classical step turns the request into catalogue keywords. A reader reads them one at a time, turning the phase of each entry that contains them. Grover turns phase into probability, and an entry that matches only part of the request gets only part of the boost.</p>
+    <div class="query">
+      <input id="q" type="text" aria-label="Your request" value="how much did we sell in each area">
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="field" style="max-width:320px">
+      <div class="row"><label class="label" for="r2">Grover iterations</label><span class="value" id="r2v"></span></div>
+      <input id="r2" type="range" min="0" max="6" step="1" value="3">
+    </div>
+    <div class="entries" id="entries"></div>
+    <div class="row" style="flex-wrap:wrap;justify-content:flex-start;gap:14px" id="sugg"></div>
+    <p class="note">A plain scan of 16 names is far faster than this. The oracle here is compiled from the catalogue, so classical code has already read every entry. This shows the architecture; it is not a speedup.</p>
+  </section>
+
+  <footer>Built for the FGCU Quantum Hackathon (IBM Qiskit Fall Fest, November 2026). The machine is theta 0.6, gamma 0.2, phi 0.45, zeta 0.3. The noise line is a simple estimate that treats any gate error as scrambling the run; the full results use IBM device noise models.</footer>
+</div>
+
+<script>
+const DATA = {"gamma": 0.2, "W": [[[0.9446090901443596, -0.14276370081881548], [-0.29220183329241467, 0.04416198779168268], [0.0, 0.0], [0.0, 0.0]], [[0.26311229409029474, -0.03976553394115496], [0.8505705180764871, -0.12855116072344688], [0.4108723974209646, 0.062097289378351954], [-0.12709772648631582, -0.019208942607222886]], [[-0.12709772648631582, 0.019208942607222886], [-0.4108723974209646, 0.062097289378351954], [0.8505705180764871, 0.12855116072344688], [-0.26311229409029474, -0.03976553394115496]], [[0.0, 0.0], [0.0, 0.0], [0.29220183329241467, 0.04416198779168268], [0.9446090901443596, 0.14276370081881548]]], "catalog": ["quarterly_sales_by_region", "monthly_sales_by_product", "customer_churn_by_region", "employee_payroll_by_department", "website_traffic_by_day", "warehouse_inventory_by_product", "support_tickets_by_customer", "marketing_spend_by_channel", "qubit_t1_times_by_device", "qubit_readout_errors_by_device", "shipping_costs_by_region", "product_returns_by_month", "energy_usage_by_building", "student_grades_by_course", "sensor_faults_by_device", "annual_revenue_by_department"], "synonyms": {"sell": "sales", "sold": "sales", "selling": "sales", "sale": "sales", "revenue": "sales", "income": "sales", "area": "region", "areas": "region", "place": "region", "places": "region", "territory": "region", "regions": "region", "location": "region", "staff": "employee", "worker": "employee", "workers": "employee", "people": "employee", "employees": "employee", "pay": "payroll", "salary": "payroll", "salaries": "payroll", "wages": "payroll", "stock": "inventory", "goods": "inventory", "clients": "customer", "customers": "customer", "client": "customer", "leaving": "churn", "lost": "churn", "visits": "traffic", "visitors": "traffic", "site": "website", "web": "website", "machine": "device", "machines": "device", "devices": "device", "chip": "device", "chips": "device", "qubits": "qubit", "decoherence": "t1", "lifetime": "t1", "mistakes": "errors", "failures": "faults", "broken": "faults", "items": "product", "products": "product", "ads": "marketing", "advertising": "marketing", "power": "energy", "electricity": "energy", "tickets": "tickets", "complaints": "tickets", "quarter": "quarterly", "yearly": "annual", "year": "annual", "month": "monthly", "daily": "day", "marks": "grades", "class": "course", "classes": "course", "pupils": "student", "students": "student", "team": "department", "teams": "department", "delivery": "shipping", "freight": "shipping", "refunds": "returns", "returned": "returns"}, "stop": ["a", "all", "an", "and", "any", "are", "at", "by", "can", "could", "did", "do", "does", "each", "find", "for", "from", "get", "give", "how", "i", "in", "is", "it", "last", "many", "me", "much", "my", "need", "of", "on", "or", "our", "per", "please", "show", "the", "their", "this", "to", "us", "want", "was", "we", "were", "what", "which", "who", "why", "with", "you", "your"]};
+
+// ---- the purified machine: state index = lights (high bits) then memory (low 2 bits), as in Qiskit
+const DIM = 4;
+function emission(alpha) {            // 4x4 on (e, l) in the order index = l*2 + e
+  const c = Math.cos(alpha), s = Math.sin(alpha), E = [[1,0,0,0],[0,c,0,0],[0,0,0,0],[0,0,0,0]];
+  E[2][1] = s;                        // |e=1,l=0> -> c|1,0> + s|0,1>
+  E[3][2] = 1;                        // |e=0,l=1> -> |1,1>
+  E[1][3] = -s; E[2][3] = c;          // |e=1,l=1> -> -s|1,0> + c|0,1>
+  return E;
+}
+function stepMatrix(gamma) {          // V = E . (W on the memory), rows and columns (l, m), m = d*2 + e
+  const a = Math.asin(Math.sqrt(gamma)), E = emission(a), W = DATA.W, re = [], im = [];
+  for (let i = 0; i < 8; i++) { re.push(new Float64Array(8)); im.push(new Float64Array(8)); }
+  for (let lo = 0; lo < 2; lo++) for (let d = 0; d < 2; d++) for (let eo = 0; eo < 2; eo++) {
+    const row = lo*4 + d*2 + eo;
+    for (let li = 0; li < 2; li++) for (let ei = 0; ei < 2; ei++) {
+      const coef = E[lo*2 + eo][li*2 + ei]; if (!coef) continue;
+      const mid = d*2 + ei;           // E leaves the defect alone
+      for (let m = 0; m < 4; m++) { re[row][li*4 + m] += coef * W[mid][m][0]; im[row][li*4 + m] += coef * W[mid][m][1]; }
+    }
+  }
+  return {re, im};
+}
+function dagger(V) { const re = [], im = [];
+  for (let i = 0; i < 8; i++) { re.push(new Float64Array(8)); im.push(new Float64Array(8));
+    for (let j = 0; j < 8; j++) { re[i][j] = V.re[j][i]; im[i][j] = -V.im[j][i]; } }
+  return {re, im}; }
+function apply(st, U, t, T) {         // U on the memory and light t
+  const size = st.re.length, re = new Float64Array(size), im = new Float64Array(size);
+  const stride = DIM << t, block = stride * 2;
+  for (let base = 0; base < size; base += block) for (let low = 0; low < stride; low += DIM) {
+    const i0 = base + low, i1 = i0 + stride, ar = new Float64Array(8), ai = new Float64Array(8);
+    for (let m = 0; m < 4; m++) { ar[m] = st.re[i0+m]; ai[m] = st.im[i0+m]; ar[4+m] = st.re[i1+m]; ai[4+m] = st.im[i1+m]; }
+    for (let r = 0; r < 8; r++) { let sr = 0, si = 0;
+      for (let c = 0; c < 8; c++) { const ur = U.re[r][c], ui = U.im[r][c]; sr += ur*ar[c] - ui*ai[c]; si += ur*ai[c] + ui*ar[c]; }
+      const idx = r < 4 ? i0 + r : i1 + r - 4; re[idx] = sr; im[idx] = si; }
+  }
+  return {re, im};
+}
+function forward(st, Vs, T) { for (let t = 0; t < T; t++) st = apply(st, Vs[t], t, T); return st; }
+function backward(st, Vd, T) { for (let t = T-1; t >= 0; t--) st = apply(st, Vd[t], t, T); return st; }
+function zero(T) { const size = DIM << T, s = {re: new Float64Array(size), im: new Float64Array(size)}; s.re[0] = 1; return s; }
+function clickRate(T) { const V = stepMatrix(DATA.gamma), Vs = Array(T).fill(V); const st = forward(zero(T), Vs, T);
+  let p = 0; const size = st.re.length, bit = DIM << (T-1);
+  for (let i = 0; i < size; i++) if (i & bit) p += st.re[i]**2 + st.im[i]**2; return p; }
+function build(T, gammaLast, r, watch) {
+  const V = stepMatrix(DATA.gamma), Vs = Array(T).fill(V); Vs[T-1] = stepMatrix(gammaLast);
+  const Vd = Vs.map(dagger), bit = DIM << (T-1), size = DIM << T;
+  let st = forward(zero(T), Vs, T);
+  for (let k = 0; k < r; k++) {
+    for (let i = 0; i < size; i++) if (i & bit) { st.re[i] = -st.re[i]; st.im[i] = -st.im[i]; }
+    st = backward(st, Vd, T);
+    for (let i = 0; i < size; i++) if ((i & watch) === 0) { st.re[i] = -st.re[i]; st.im[i] = -st.im[i]; }
+    st = forward(st, Vs, T);
+    for (let i = 0; i < size; i++) { st.re[i] = -st.re[i]; st.im[i] = -st.im[i]; }
+  }
+  return st;
+}
+function histories(st, T) { const n = 1 << T, P = new Float64Array(n);
+  for (let y = 0; y < n; y++) for (let m = 0; m < 4; m++) { const i = y*4 + m; P[y] += st.re[i]**2 + st.im[i]**2; }
+  return P; }
+function fidelity(st, ex, T) { const n = 1 << T, bit = 1 << (T-1); let tot = 0, acc = 0;
+  for (let y = 0; y < n; y++) { if (!(y & bit)) continue; let wa = 0, wb = 0, or = 0, oi = 0;
+    for (let m = 0; m < 4; m++) { const i = y*4 + m; wa += st.re[i]**2 + st.im[i]**2; wb += ex.re[i]**2 + ex.im[i]**2;
+      or += st.re[i]*ex.re[i] + st.im[i]*ex.im[i]; oi += st.re[i]*ex.im[i] - st.im[i]*ex.re[i]; }
+    if (wa < 1e-14 || wb < 1e-14) continue; tot += wa; acc += wa * (or*or + oi*oi) / (wa*wb); }
+  return tot ? acc / tot : 1; }
+
+// ---- the page
+const BUILDS = [
+  {id: "plain", name: "Plain sampling", note: "Run it and keep what matches"},
+  {id: "textbook", name: "Textbook Grover", note: "Reflect about the whole start state"},
+  {id: "local", name: "Local reflection", note: "Watch the memory and the question's light"},
+  {id: "steered", name: "Steer, then 1 iteration", note: "Exact, and one iteration is enough"},
+  {id: "steeredlocal", name: "Steer + local reflection", note: "The resilient build"},
+];
+let state = {T: 6, r: 2, build: "steeredlocal", eps: 0.2, seed: 1};
+const $ = id => document.getElementById(id);
+function rng(seed) { let s = seed >>> 0 || 1; return () => { s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return s / 4294967296; }; }
+function css(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+
+function compute() {
+  const {T, build: b} = state, g = DATA.gamma, p = clickRate(T);
+  const steer = Math.min(1, 0.25 * g / p);
+  const steered = b === "steered" || b === "steeredlocal";
+  const local = b === "local" || b === "steeredlocal";
+  const r = b === "plain" ? 0 : steered ? 1 : state.r;
+  const allBits = (DIM << T) - 1, watchLocal = 3 | (DIM << (T-1));
+  const st = build(T, steered ? steer : g, r, local ? watchLocal : allBits);
+  const ex = build(T, g, 0, allBits);
+  const P = histories(st, T), E = histories(ex, T), bit = 1 << (T-1);
+  let hit = 0, pe = 0; for (let y = 0; y < P.length; y++) if (y & bit) { hit += P[y]; pe += E[y]; }
+  let tvd = 0; for (let y = 0; y < P.length; y++) if (y & bit) tvd += Math.abs(P[y]/hit - E[y]/pe); tvd /= 2;
+  const call = 4*T, mcz = 6*(2 + T - 2) + 1, cz = call + r*(2*call + (local ? 7 : mcz));
+  return {T, p, steer, r, steered, local, P, E, hit, pe, tvd, fid: fidelity(st, ex, T), cz, bit};
+}
+function drawRaster(res) {
+  const c = $("raster"), dpr = window.devicePixelRatio || 1, w = c.clientWidth, h = c.clientHeight;
+  c.width = w*dpr; c.height = h*dpr; const x = c.getContext("2d"); x.scale(dpr, dpr);
+  const rows = 48, rh = h/rows, T = res.T, left = 2, cw = (w - left*2)/T, rand = rng(state.seed*7919 + T*31 + res.r*17);
+  const cum = new Float64Array(res.P.length); let s = 0; for (let i = 0; i < cum.length; i++) { s += res.P[i]; cum[i] = s; }
+  x.clearRect(0, 0, w, h);
+  const hitCol = css("--row-hit"), click = css("--click"), tick = css("--tick"), panel = css("--bg");
+  x.fillStyle = panel; x.fillRect(0, 0, w, h);
+  for (let i = 0; i < rows; i++) {
+    const u = rand()*s; let lo = 0, hi = cum.length-1; while (lo < hi) { const m = (lo+hi) >> 1; if (cum[m] < u) lo = m+1; else hi = m; }
+    const y = lo, top = i*rh;
+    if (y & res.bit) { x.fillStyle = hitCol; x.fillRect(0, top, w, rh-1); }
+    for (let t = 0; t < T; t++) if ((y >> t) & 1) {
+      x.fillStyle = (t === T-1) ? click : tick === "" ? click : (t === T-1 ? click : css("--ink2"));
+      x.fillRect(left + t*cw + cw*0.5 - 3, top + 1, 6, rh-3);
+    }
+  }
+  x.strokeStyle = css("--line"); x.lineWidth = 1;
+  for (let t = 1; t < T; t++) { x.beginPath(); x.moveTo(left + t*cw, 0); x.lineTo(left + t*cw, h); x.stroke(); }
+}
+const pct = v => (v >= 0.9995 ? "100" : (v*100).toFixed(v < 0.1 ? 1 : 0)) + "%";
+function renderHist(res) {
+  const n = res.P.length, ids = [];
+  for (let y = 0; y < n; y++) if (y & res.bit) ids.push(y);
+  ids.sort((a, b) => res.E[b] - res.E[a]);
+  const top = ids.slice(0, 5), max = Math.max(...top.map(y => Math.max(res.E[y]/res.pe, res.P[y]/res.hit)));
+  const rec = y => { let s = ""; for (let t = 0; t < res.T; t++) s += (y >> t) & 1 ? "|" : "·"; return s; };
+  $("hist").innerHTML = "<thead><tr><th>Record with the click</th><th>Exact share</th><th>This build</th><th style=\"width:42%\">Exact (dark) against this build</th></tr></thead><tbody>" +
+    top.map(y => { const e = res.E[y]/res.pe, a = res.P[y]/res.hit;
+      return `<tr><td class="mono">${rec(y)}</td><td>${(e*100).toFixed(1)}%</td><td>${(a*100).toFixed(1)}%</td><td><div class="bars"><div class="bar exact" style="width:${100*e/max}%"></div><div class="bar" style="width:${100*a/max}%"></div></div></td></tr>`; }).join("") + "</tbody>";
+}
+function render() {
+  const res = compute();
+  $("Tv").textContent = state.T; $("rv").textContent = res.r; $("epsv").textContent = state.eps.toFixed(2) + "%";
+  $("rfield").hidden = state.build === "plain" || state.build === "steered" || state.build === "steeredlocal";
+  $("sHit").textContent = pct(res.hit); $("sTvd").textContent = res.tvd.toFixed(3); $("sFid").textContent = res.fid.toFixed(3);
+  $("sCz").textContent = res.cz.toLocaleString("en-US");
+  const lines = {
+    plain: `Only ${pct(res.p)} of runs have a click at step ${res.T}, so about ${(1/res.p).toFixed(0)} runs are spent per useful one.`,
+    textbook: `Each iteration runs the machine backwards and forwards and reflects about the whole start state. Exact, and the peak is near r = ${Math.max(1, Math.round(Math.PI/(4*Math.asin(Math.sqrt(res.p))) - 0.5))}. Go past it and the chance falls again.`,
+    local: "The reflection now watches 3 qubits at any record length. It stays close to exact on short records and drifts on long ones.",
+    steered: res.steer < 1 ? `Steering sets the last emission from ${DATA.gamma} to ${res.steer.toFixed(3)}, so the chance becomes 1/4, and one iteration lands on certainty. Every matching record scales by the same factor, so the answer stays exact.` : `The last emission goes all the way to 1 and the chance reaches ${pct(res.p/DATA.gamma)}. One iteration gives ${pct(res.hit)}, and every matching record scales by the same factor, so the answer stays exact.`,
+    steeredlocal: `Steer so one iteration is enough, then reflect on 3 qubits. This is the cheapest build that stays close to the exact answer, and it drifts on long records: compare the distance above at 6 and at 10 steps.`,
+  };
+  $("say").textContent = lines[state.build];
+  const surv = Math.pow(1 - state.eps/100, res.cz);
+  $("noiseNote").textContent = state.eps > 0 ? `At ${state.eps.toFixed(2)}% error per gate, about ${pct(surv)} of runs of this ${res.cz.toLocaleString("en-US")}-gate circuit finish with no gate error at all.` : "With perfect gates every run is clean.";
+  drawRaster(res); renderHist(res);
+  document.querySelectorAll("#builds button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.id === state.build)));
+  document.body.dataset.check = JSON.stringify({p6: clickRate(6), hit: res.hit});
+}
+BUILDS.forEach(b => { const el = document.createElement("button"); el.type = "button"; el.dataset.id = b.id; el.innerHTML = `${b.name}<small>${b.note}</small>`;
+  el.addEventListener("click", () => { state.build = b.id; state.seed++; render(); }); $("builds").append(el); });
+$("T").addEventListener("input", e => { state.T = +e.target.value; render(); });
+$("r").addEventListener("input", e => { state.r = +e.target.value; render(); });
+$("eps").addEventListener("input", e => { state.eps = +e.target.value/10*0.5*2; render(); });
+window.addEventListener("resize", () => drawRaster(compute()));
+
+// ---- the catalogue search, the same logic as qrsm_grover/search.py
+function tokensOf(name) { return name.toLowerCase().split(/[^a-z0-9]+/).filter(t => t && !DATA.stop.includes(t)); }
+const VOCAB = new Set(DATA.catalog.flatMap(tokensOf));
+function tokenise(req) { const out = [];
+  for (let w of req.toLowerCase().match(/[a-z0-9]+/g) || []) { if (DATA.stop.includes(w)) continue; w = DATA.synonyms[w] || w; if (VOCAB.has(w) && !out.includes(w)) out.push(w); }
+  return out; }
+function search() {
+  const q = tokenise($("q").value), N = DATA.catalog.length, r = +$("r2").value;
+  $("r2v").textContent = r;
+  $("chips").innerHTML = q.length ? q.map(t => `<span class="chip">${t}</span>`).join("") : '<span class="note">No catalogue keywords found. Try another request.</span>';
+  const score = DATA.catalog.map(n => q.length ? q.filter(t => tokensOf(n).includes(t)).length / q.length : 0);
+  let re = new Float64Array(N).fill(1/Math.sqrt(N)), im = new Float64Array(N);
+  for (let k = 0; k < r; k++) {
+    let mr = 0, mi = 0;
+    for (let i = 0; i < N; i++) { const a = Math.PI*score[i], c = Math.cos(a), s = Math.sin(a), x = re[i]*c - im[i]*s, y = re[i]*s + im[i]*c; re[i] = x; im[i] = y; mr += x; mi += y; }
+    mr /= N; mi /= N;
+    for (let i = 0; i < N; i++) { re[i] = 2*mr - re[i]; im[i] = 2*mi - im[i]; }
+  }
+  const P = re.map((v, i) => v*v + im[i]*im[i]), order = [...P.keys()].sort((a, b) => P[b] - P[a] || score[b] - score[a]).slice(0, 8);
+  const max = Math.max(0.3, ...P);
+  $("entries").innerHTML = order.map(i => `<div class="entry"><code>${DATA.catalog[i]}</code><div class="track"><div class="fill ${score[i] === 1 ? "top" : score[i] > 0 ? "part" : ""}" style="width:${100*P[i]/max}%"></div></div><span class="pct">${(P[i]*100).toFixed(1)}%</span></div>`).join("");
+}
+$("q").addEventListener("input", search); $("r2").addEventListener("input", search);
+["how much did we sell in each area", "what do we pay staff per team", "chip errors at readout", "which clients are leaving by location"].forEach(s => {
+  const b = document.createElement("button"); b.type = "button"; b.className = "suggest"; b.textContent = s;
+  b.addEventListener("click", () => { $("q").value = s; search(); }); $("sugg").append(b); });
+render(); search();
+</script>

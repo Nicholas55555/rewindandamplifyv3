@@ -1,0 +1,23 @@
+{
+  "scope": "Unnormalized raw-count replot, not a HOM-visibility reproduction",
+  "source_sha256": {
+    "HOM_QD5_resonant_photon1+2_17-39-23.csv": "060604e8aef06bf865229365f5ae3cabfe4986c85c548391693a48465a15181a",
+    "HOM_QD5_resonant_photon1+2_dist_17-42-16.csv": "f2aa4d585dc3fd0f95212fc986ed3d142dd0a579fb476856fb30fcdb3de1fe24",
+    "HOM_QD5_resonant_photon1+3_17-50-06.csv": "f13b91b12ba28e5fd3d86caf80c2163dec4667d0d4667f67a7dcd4a7165ca0b0",
+    "HOM_QD5_resonant_photon1+3_dist_17-52-41.csv": "f39e6607b75dd8e829e98025943c971a12589a83b25cc349ea7c7b06ffe48ac0",
+    "HOM_QD5_resonant_photon1+4_17-57-10.csv": "fe6a13209ccddd52a9a98e50e10302c1cd2dc0cbfc34f7eea79da811c5e7a201",
+    "HOM_QD5_resonant_photon1+4_dist_18-00-48.csv": "514b07b90ed44ff349aee5cc3cb60af81bdef1f907d1796182c8a3bdd9033f20"
+  },
+  "script_sha256": "6a572253ff96de7aa3ae1f1a90e7d3ffbbb32002202d13c5043d10d9e4c68d29",
+  "matplotlib_version": "3.10.3",
+  "axis_transform": "Time (ps) divided by 1000 for ns display; no source-grid shift",
+  "counts_transform": "none; no exposure normalization, smoothing, subtraction or rebinning",
+  "central_plot_limits_ns": [
+    -2,
+    2
+  ],
+  "output_sha256": {
+    "raw_hom_histograms.png": "35aaffa7bfb92b380c41bd3e008e90bb3756a1a6f4978a911e931a5436e24476",
+    "raw_hom_histograms.pdf": "93bf6602db3419977bb378136c1da94638d79f78280d1791ddd13bb4315271c9"
+  }
+}

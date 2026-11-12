@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "scope": "Replacement MP4 players in the evidence chapter",
+  "method": "Observed Chromium browser playback via supported computer-use API, using local preview with HTTP byte-range support.",
+  "checks": [
+    "Both video streams load with duration12seconds and dimensions1200x676, readyState4 and no media error",
+    "Both videos play to their12second end and show different first/final scenes",
+    "Native scrubbers seek both clips to about6.11seconds and pause there",
+    "Both clips resume after seeking and replay from the beginning",
+    "No console warning or error observed",
+    "Visible controls, direct open/download links, poster images and descriptions are present"
+  ],
+  "asset_sha256": {
+    "laser-diagnostic-lenses.mp4": "3275ebbec3613209b263783668eed1ff4df6f9072ec5f1d89612d6bcb2b7d9f3",
+    "rewind-amplify.mp4": "683111dbefa451ccc898f23ce5350286d8aefa78ce6a87026a3052bdd50a8a54",
+    "video_manifest.json": "e5f3e695b04a5f1c35aa4d8c75fbb48ba3e38d68c05e837c6540187d0df55a85"
+  },
+  "screenshots": [
+    "preview-videos.jpg"
+  ],
+  "preview_note": "An initial basic Python HTTP preview did not support byte ranges, limiting seekable ranges to0. The media-capable local preview returned range responses, after which both complete0to12second ranges and native seeking were verified. Normal offline playback needs no server.",
+  "limits": [
+    "Actual presentation computer and native PowerPoint playback not tested.",
+    "Browser verification used localhost because the automation browser restricts direct file URLs."
+  ],
+  "temporary_preview_server": "stopped after verification"
+}

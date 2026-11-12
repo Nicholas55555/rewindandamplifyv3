@@ -1,0 +1,29 @@
+test_bundle_checks_nested_source_and_artifact_hashes (test_campaign.CampaignPersistenceTests.test_bundle_checks_nested_source_and_artifact_hashes) ... ok
+test_changed_plan_after_intent_is_rejected (test_campaign.CampaignPersistenceTests.test_changed_plan_after_intent_is_rejected) ... ok
+test_existing_remote_intent_reconciles_same_job (test_campaign.CampaignPersistenceTests.test_existing_remote_intent_reconciles_same_job) ... ok
+test_fetch_does_not_request_results_of_nonterminal_job (test_campaign.CampaignPersistenceTests.test_fetch_does_not_request_results_of_nonterminal_job) ... ok
+test_fetch_preserves_existing_raw_file (test_campaign.CampaignPersistenceTests.test_fetch_preserves_existing_raw_file) ... ok
+test_fetch_preserves_randomized_pub_order_and_raw_counts (test_campaign.CampaignPersistenceTests.test_fetch_preserves_randomized_pub_order_and_raw_counts) ... ok
+test_fetch_rejects_shot_mismatch_without_raw_file (test_campaign.CampaignPersistenceTests.test_fetch_rejects_shot_mismatch_without_raw_file) ... ok
+test_fetch_rejects_wrong_backend_without_raw_file (test_campaign.CampaignPersistenceTests.test_fetch_rejects_wrong_backend_without_raw_file) ... ok
+test_global_submission_lock_is_exclusive_and_released (test_campaign.CampaignPersistenceTests.test_global_submission_lock_is_exclusive_and_released) ... ok
+test_global_submission_lock_releases_on_failure (test_campaign.CampaignPersistenceTests.test_global_submission_lock_releases_on_failure) ... ok
+test_unresolved_intent_never_blindly_resubmits (test_campaign.CampaignPersistenceTests.test_unresolved_intent_never_blindly_resubmits) ... ok
+test_verify_plan_protects_saved_reference_file (test_campaign.CampaignPersistenceTests.test_verify_plan_protects_saved_reference_file) ... ok
+test_calibrated_duration_is_critical_path_not_sum (test_campaign.CampaignUnitTests.test_calibrated_duration_is_critical_path_not_sum) ... ok
+test_compaction_preserves_nonidentity_classical_bit_order (test_campaign.CampaignUnitTests.test_compaction_preserves_nonidentity_classical_bit_order) ... ok
+test_duplicate_measurement_is_rejected (test_campaign.CampaignUnitTests.test_duplicate_measurement_is_rejected) ... ok
+test_independent_wire_gate_after_terminal_measurement_is_valid (test_campaign.CampaignUnitTests.test_independent_wire_gate_after_terminal_measurement_is_valid) ... ok
+test_missing_measurement_is_rejected (test_campaign.CampaignUnitTests.test_missing_measurement_is_rejected) ... ok
+test_quota_fails_closed_on_nonfinite_or_negative_values (test_campaign.CampaignUnitTests.test_quota_fails_closed_on_nonfinite_or_negative_values) ... ok
+test_quota_reserves_other_jobs_and_buffer (test_campaign.CampaignUnitTests.test_quota_reserves_other_jobs_and_buffer) ... ok
+test_reference_keys_accommodate_frozen_bundle_schemas (test_campaign.CampaignUnitTests.test_reference_keys_accommodate_frozen_bundle_schemas) ... ok
+test_remaining_requires_authoritative_known_schema (test_campaign.CampaignUnitTests.test_remaining_requires_authoritative_known_schema) ... ok
+test_remote_reconciliation_rejects_multiple_tag_matches (test_campaign.CampaignUnitTests.test_remote_reconciliation_rejects_multiple_tag_matches) ... ok
+test_reuse_of_measured_quantum_wire_is_rejected (test_campaign.CampaignUnitTests.test_reuse_of_measured_quantum_wire_is_rejected) ... ok
+test_submission_options_have_positive_shots_and_twirling_multiple (test_campaign.CampaignUnitTests.test_submission_options_have_positive_shots_and_twirling_multiple) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.325s
+
+OK

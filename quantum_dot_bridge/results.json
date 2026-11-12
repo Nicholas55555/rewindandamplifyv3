@@ -1,0 +1,842 @@
+{
+  "assumptions": [
+    "Parameters are illustrative, not calibrated to the retained GaAs dataset or any fabricated device.",
+    "Ideal unit excitation is independent of photon frequency. Real narrowband resonant excitation can change brightness under detuning.",
+    "No nonradiative decay, multiphoton/re-excitation, dark counts, timing jitter, phonon sidebands or polarization mismatch.",
+    "Independent Markov fast dephasing baths; a quasi-static trap endpoint remains fixed throughout each photon wavepacket.",
+    "The two photon wavepackets are temporally aligned at the balanced beamsplitter; the input emission separation is compensated.",
+    "Independent sampled pairs are not overlapping adjacent pairs drawn from one continuous trap trajectory."
+  ],
+  "benchmark_cases": [
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "case": "ideal",
+      "coincidence_probability_per_excitation_pair": 0.0,
+      "conditional_coincidence_probability": 0.0,
+      "conditional_overlap": 1.0,
+      "differential_angular_detuning_per_s": 0.0,
+      "differential_detuning_hz": 0,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "first": {
+        "frequency_offset_hz": 0.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 0
+      },
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "second": {
+        "frequency_offset_hz": 0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 0
+      },
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "case": "pure_dephasing",
+      "coincidence_probability_per_excitation_pair": 0.010000000000000002,
+      "conditional_coincidence_probability": 0.25,
+      "conditional_overlap": 0.5,
+      "differential_angular_detuning_per_s": 0.0,
+      "differential_detuning_hz": 0,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "first": {
+        "frequency_offset_hz": 0.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 499999999.99999994
+      },
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "second": {
+        "frequency_offset_hz": 0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 499999999.99999994
+      },
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "case": "differential_detuning",
+      "coincidence_probability_per_excitation_pair": 0.016000000000000004,
+      "conditional_coincidence_probability": 0.4,
+      "conditional_overlap": 0.2,
+      "differential_angular_detuning_per_s": 1999999999.9999995,
+      "differential_detuning_hz": 318309886.1837906,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "first": {
+        "frequency_offset_hz": 0.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 0
+      },
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "second": {
+        "frequency_offset_hz": 318309886.1837906,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 0
+      },
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "case": "combined_dephasing_and_detuning",
+      "coincidence_probability_per_excitation_pair": 0.015000000000000003,
+      "conditional_coincidence_probability": 0.375,
+      "conditional_overlap": 0.25000000000000006,
+      "differential_angular_detuning_per_s": 1999999999.9999995,
+      "differential_detuning_hz": 318309886.1837906,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "first": {
+        "frequency_offset_hz": 0.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 499999999.99999994
+      },
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "second": {
+        "frequency_offset_hz": 318309886.1837906,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 499999999.99999994
+      },
+      "single_photon_survival_probability": 0.2
+    }
+  ],
+  "classical_trap_pair_comparison": [
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coincidence_probability_per_excitation_pair": 0.0,
+      "conditional_coincidence_probability": 0.0,
+      "conditional_overlap": 1.0,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "each_single_photon_marginal_offset_probabilities": [
+        0.5,
+        0.5
+      ],
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "joint_endpoint_probabilities": [
+        [
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.5
+        ]
+      ],
+      "label": "Correlated quasi-static offsets",
+      "sampling_check": {
+        "binomial_standard_error_at_model_probability": 0.0,
+        "both_survived_pairs": 4036,
+        "coincidence_pairs": 0,
+        "coincidence_per_pair_wilson95": [
+          0.0,
+          3.841311258303962e-05
+        ],
+        "conditional_coincidence_wilson95": [
+          0.0,
+          0.0009508934595209381
+        ],
+        "emitted_photons": 200000,
+        "expected_coincidence_per_excitation_pair": 0.0,
+        "expected_pair_overlap": 1.0,
+        "first_trap_positive_count": 49835,
+        "independent_excitation_pairs": 100000,
+        "mean_sampled_pair_overlap": 1.0,
+        "observed_coincidence_per_excitation_pair": 0.0,
+        "observed_conditional_coincidence_rate": 0.0,
+        "observed_pair_survival_rate": 0.04036,
+        "sampling_error_in_standard_errors": null,
+        "sampling_error_per_pair": 0.0,
+        "second_trap_positive_count": 49835,
+        "seed": 17222236480659058712,
+        "seed_spawn_keys": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "survived_photons": 40108,
+        "switched_pair_count": 0,
+        "uncertainty_scope": "Binomial sampling of independent simulated pairs; no physical-model uncertainty or calibrated device coverage."
+      },
+      "single_photon_survival_probability": 0.2,
+      "switch_probability_between_endpoints": 0,
+      "trap_offset_hz": 159154943.0918953
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coincidence_probability_per_excitation_pair": 0.00032000000000000035,
+      "conditional_coincidence_probability": 0.008000000000000007,
+      "conditional_overlap": 0.984,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "each_single_photon_marginal_offset_probabilities": [
+        0.5,
+        0.5
+      ],
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "joint_endpoint_probabilities": [
+        [
+          0.49,
+          0.01
+        ],
+        [
+          0.01,
+          0.49
+        ]
+      ],
+      "label": "Correlated quasi-static offsets",
+      "sampling_check": {
+        "binomial_standard_error_at_model_probability": 5.6559490803931424e-05,
+        "both_survived_pairs": 4080,
+        "coincidence_pairs": 30,
+        "coincidence_per_pair_wilson95": [
+          0.00021015868125411394,
+          0.0004282313834613758
+        ],
+        "conditional_coincidence_wilson95": [
+          0.005155442603513209,
+          0.010477255057362654
+        ],
+        "emitted_photons": 200000,
+        "expected_coincidence_per_excitation_pair": 0.00032000000000000035,
+        "expected_pair_overlap": 0.984,
+        "first_trap_positive_count": 49988,
+        "independent_excitation_pairs": 100000,
+        "mean_sampled_pair_overlap": 0.9836720000000001,
+        "observed_coincidence_per_excitation_pair": 0.0003,
+        "observed_conditional_coincidence_rate": 0.007352941176470588,
+        "observed_pair_survival_rate": 0.0408,
+        "sampling_error_in_standard_errors": -0.35360997271584677,
+        "sampling_error_per_pair": -2.0000000000000378e-05,
+        "second_trap_positive_count": 49957,
+        "seed": 17122423474096635952,
+        "seed_spawn_keys": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "survived_photons": 40193,
+        "switched_pair_count": 2041,
+        "uncertainty_scope": "Binomial sampling of independent simulated pairs; no physical-model uncertainty or calibrated device coverage."
+      },
+      "single_photon_survival_probability": 0.2,
+      "switch_probability_between_endpoints": 0.02,
+      "trap_offset_hz": 159154943.0918953
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coincidence_probability_per_excitation_pair": 0.0015999999999999994,
+      "conditional_coincidence_probability": 0.03999999999999998,
+      "conditional_overlap": 0.92,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "each_single_photon_marginal_offset_probabilities": [
+        0.5,
+        0.5
+      ],
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "joint_endpoint_probabilities": [
+        [
+          0.45,
+          0.05
+        ],
+        [
+          0.05,
+          0.45
+        ]
+      ],
+      "label": "Correlated quasi-static offsets",
+      "sampling_check": {
+        "binomial_standard_error_at_model_probability": 0.00012638987301204156,
+        "both_survived_pairs": 4065,
+        "coincidence_pairs": 169,
+        "coincidence_per_pair_wilson95": [
+          0.0014538479819530478,
+          0.0019644352943094614
+        ],
+        "conditional_coincidence_wilson95": [
+          0.0358585190032278,
+          0.0481559264551049
+        ],
+        "emitted_photons": 200000,
+        "expected_coincidence_per_excitation_pair": 0.0015999999999999994,
+        "expected_pair_overlap": 0.92,
+        "first_trap_positive_count": 49772,
+        "independent_excitation_pairs": 100000,
+        "mean_sampled_pair_overlap": 0.92108,
+        "observed_coincidence_per_excitation_pair": 0.00169,
+        "observed_conditional_coincidence_rate": 0.04157441574415744,
+        "observed_pair_survival_rate": 0.04065,
+        "sampling_error_in_standard_errors": 0.7120823674807085,
+        "sampling_error_per_pair": 9.000000000000067e-05,
+        "second_trap_positive_count": 49737,
+        "seed": 2005918109193442945,
+        "seed_spawn_keys": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "survived_photons": 40305,
+        "switched_pair_count": 9865,
+        "uncertainty_scope": "Binomial sampling of independent simulated pairs; no physical-model uncertainty or calibrated device coverage."
+      },
+      "single_photon_survival_probability": 0.2,
+      "switch_probability_between_endpoints": 0.1,
+      "trap_offset_hz": 159154943.0918953
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coincidence_probability_per_excitation_pair": 0.008000000000000002,
+      "conditional_coincidence_probability": 0.2,
+      "conditional_overlap": 0.6,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "each_single_photon_marginal_offset_probabilities": [
+        0.5,
+        0.5
+      ],
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "joint_endpoint_probabilities": [
+        [
+          0.25,
+          0.25
+        ],
+        [
+          0.25,
+          0.25
+        ]
+      ],
+      "label": "Fresh independent offsets",
+      "sampling_check": {
+        "binomial_standard_error_at_model_probability": 0.00028170906978654416,
+        "both_survived_pairs": 3994,
+        "coincidence_pairs": 791,
+        "coincidence_per_pair_wilson95": [
+          0.007379537986866223,
+          0.008478267430275757
+        ],
+        "conditional_coincidence_wilson95": [
+          0.18598019337199667,
+          0.21069423085304367
+        ],
+        "emitted_photons": 200000,
+        "expected_coincidence_per_excitation_pair": 0.008000000000000002,
+        "expected_pair_overlap": 0.6,
+        "first_trap_positive_count": 49991,
+        "independent_excitation_pairs": 100000,
+        "mean_sampled_pair_overlap": 0.6008960000000001,
+        "observed_coincidence_per_excitation_pair": 0.00791,
+        "observed_conditional_coincidence_rate": 0.19804707060590887,
+        "observed_pair_survival_rate": 0.03994,
+        "sampling_error_in_standard_errors": -0.3194785317639794,
+        "sampling_error_per_pair": -9.000000000000154e-05,
+        "second_trap_positive_count": 50317,
+        "seed": 6265653257790825165,
+        "seed_spawn_keys": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "survived_photons": 39997,
+        "switched_pair_count": 49888,
+        "uncertainty_scope": "Binomial sampling of independent simulated pairs; no physical-model uncertainty or calibrated device coverage."
+      },
+      "single_photon_survival_probability": 0.2,
+      "switch_probability_between_endpoints": 0.5,
+      "trap_offset_hz": 159154943.0918953
+    }
+  ],
+  "collection_loss_sweep": [
+    {
+      "both_photons_survive_probability": 0.0,
+      "coincidence_probability_per_excitation_pair": 0.0,
+      "conditional_coincidence_probability": 0.25,
+      "conditional_overlap": 0.5,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.0,
+      "emitted_photons_per_excitation": 1.0,
+      "expected_excitation_pairs_per_surviving_pair": null,
+      "hom_observable_with_nonzero_efficiency": false,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_per_s": 499999999.99999994,
+      "single_photon_survival_probability": 0.0
+    },
+    {
+      "both_photons_survive_probability": 0.010000000000000002,
+      "coincidence_probability_per_excitation_pair": 0.0025000000000000005,
+      "conditional_coincidence_probability": 0.25,
+      "conditional_overlap": 0.5,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.005000000000000001,
+      "emitted_photons_per_excitation": 1.0,
+      "expected_excitation_pairs_per_surviving_pair": 99.99999999999999,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_per_s": 499999999.99999994,
+      "single_photon_survival_probability": 0.1
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coincidence_probability_per_excitation_pair": 0.010000000000000002,
+      "conditional_coincidence_probability": 0.25,
+      "conditional_overlap": 0.5,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "expected_excitation_pairs_per_surviving_pair": 24.999999999999996,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_per_s": 499999999.99999994,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.25,
+      "coincidence_probability_per_excitation_pair": 0.0625,
+      "conditional_coincidence_probability": 0.25,
+      "conditional_overlap": 0.5,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.125,
+      "emitted_photons_per_excitation": 1.0,
+      "expected_excitation_pairs_per_surviving_pair": 4.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_per_s": 499999999.99999994,
+      "single_photon_survival_probability": 0.5
+    },
+    {
+      "both_photons_survive_probability": 0.6400000000000001,
+      "coincidence_probability_per_excitation_pair": 0.16000000000000003,
+      "conditional_coincidence_probability": 0.25,
+      "conditional_overlap": 0.5,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.32000000000000006,
+      "emitted_photons_per_excitation": 1.0,
+      "expected_excitation_pairs_per_surviving_pair": 1.5624999999999998,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_per_s": 499999999.99999994,
+      "single_photon_survival_probability": 0.8
+    },
+    {
+      "both_photons_survive_probability": 1.0,
+      "coincidence_probability_per_excitation_pair": 0.25,
+      "conditional_coincidence_probability": 0.25,
+      "conditional_overlap": 0.5,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.5,
+      "emitted_photons_per_excitation": 1.0,
+      "expected_excitation_pairs_per_surviving_pair": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_per_s": 499999999.99999994,
+      "single_photon_survival_probability": 1.0
+    }
+  ],
+  "config": {
+    "detuning_and_trap_pure_dephasing_per_s": 0.0,
+    "fixed_efficiency_except_loss_sweep": 0.2,
+    "lifetime_s": 1e-09,
+    "master_seed": 20261111,
+    "radiative_rate_per_s": 999999999.9999999,
+    "sampled_independent_pairs_per_trap_setting": 100000
+  },
+  "definitions": {
+    "brightness": "Exactly one emitted photon/excitation and g2(0)=0 are imposed assumptions, not estimated outcomes.",
+    "coherence": "1/T2 = Gamma/2 + gamma_pure; Gamma = 1/T1.",
+    "coincidence": "Conditional on both surviving: (1-M)/2. Per excitation pair: eta^2*(1-M)/2.",
+    "efficiency": "Independent per-photon survival to an otherwise ideal balanced-beamsplitter apparatus.",
+    "equal_emitter_overlap": "Gamma*(Gamma+2*gamma_pure)/((Gamma+2*gamma_pure)^2+delta_angular^2)",
+    "frequency": "Offsets in Hz; delta_angular = 2*pi*(nu_a-nu_b) in rad/s.",
+    "trap": "Classical \u00b1offset endpoints with uniform marginals and explicitly specified probability of different endpoints; not a fitted switching rate."
+  },
+  "dephasing_sweep": [
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coherence_time_s": 2e-09,
+      "coincidence_probability_per_excitation_pair": 0.0,
+      "conditional_coincidence_probability": 0.0,
+      "conditional_overlap": 1.0,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_over_radiative_rate": 0,
+      "pure_dephasing_per_s": 0.0,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coherence_time_s": 1.8181818181818182e-09,
+      "coincidence_probability_per_excitation_pair": 0.0018181818181818214,
+      "conditional_coincidence_probability": 0.045454545454545525,
+      "conditional_overlap": 0.909090909090909,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_over_radiative_rate": 0.05,
+      "pure_dephasing_per_s": 50000000.0,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coherence_time_s": 1.6666666666666667e-09,
+      "coincidence_probability_per_excitation_pair": 0.0033333333333333353,
+      "conditional_coincidence_probability": 0.08333333333333337,
+      "conditional_overlap": 0.8333333333333333,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_over_radiative_rate": 0.1,
+      "pure_dephasing_per_s": 100000000.0,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coherence_time_s": 1.3333333333333335e-09,
+      "coincidence_probability_per_excitation_pair": 0.006666666666666666,
+      "conditional_coincidence_probability": 0.16666666666666663,
+      "conditional_overlap": 0.6666666666666667,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_over_radiative_rate": 0.25,
+      "pure_dephasing_per_s": 249999999.99999997,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coherence_time_s": 1e-09,
+      "coincidence_probability_per_excitation_pair": 0.010000000000000002,
+      "conditional_coincidence_probability": 0.25,
+      "conditional_overlap": 0.5,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_over_radiative_rate": 0.5,
+      "pure_dephasing_per_s": 499999999.99999994,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coherence_time_s": 6.666666666666667e-10,
+      "coincidence_probability_per_excitation_pair": 0.013333333333333336,
+      "conditional_coincidence_probability": 0.3333333333333333,
+      "conditional_overlap": 0.33333333333333337,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_over_radiative_rate": 1,
+      "pure_dephasing_per_s": 999999999.9999999,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coherence_time_s": 4.0000000000000007e-10,
+      "coincidence_probability_per_excitation_pair": 0.016000000000000004,
+      "conditional_coincidence_probability": 0.4,
+      "conditional_overlap": 0.19999999999999998,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "pure_dephasing_over_radiative_rate": 2,
+      "pure_dephasing_per_s": 1999999999.9999998,
+      "single_photon_survival_probability": 0.2
+    }
+  ],
+  "differential_detuning_sweep": [
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coincidence_probability_per_excitation_pair": 0.0,
+      "conditional_coincidence_probability": 0.0,
+      "conditional_overlap": 1.0,
+      "differential_angular_detuning_per_s": 0.0,
+      "differential_detuning_hz": 0,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coincidence_probability_per_excitation_pair": 0.00048159728338533777,
+      "conditional_coincidence_probability": 0.012039932084633442,
+      "conditional_overlap": 0.9759201358307331,
+      "differential_angular_detuning_per_s": 157079632.67948964,
+      "differential_detuning_hz": 25000000.0,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coincidence_probability_per_excitation_pair": 0.0017966032470744955,
+      "conditional_coincidence_probability": 0.04491508117686238,
+      "conditional_overlap": 0.9101698376462752,
+      "differential_angular_detuning_per_s": 314159265.3589793,
+      "differential_detuning_hz": 50000000.0,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coincidence_probability_per_excitation_pair": 0.005660863993502047,
+      "conditional_coincidence_probability": 0.14152159983755114,
+      "conditional_overlap": 0.7169568003248977,
+      "differential_angular_detuning_per_s": 628318530.7179586,
+      "differential_detuning_hz": 100000000.0,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coincidence_probability_per_excitation_pair": 0.014231991217159984,
+      "conditional_coincidence_probability": 0.3557997804289995,
+      "conditional_overlap": 0.2884004391420009,
+      "differential_angular_detuning_per_s": 1570796326.7948966,
+      "differential_detuning_hz": 250000000.0,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coincidence_probability_per_excitation_pair": 0.018160006632992498,
+      "conditional_coincidence_probability": 0.4540001658248124,
+      "conditional_overlap": 0.09199966835037522,
+      "differential_angular_detuning_per_s": 3141592653.589793,
+      "differential_detuning_hz": 500000000.0,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "single_photon_survival_probability": 0.2
+    },
+    {
+      "both_photons_survive_probability": 0.04000000000000001,
+      "coincidence_probability_per_excitation_pair": 0.01950590953936285,
+      "conditional_coincidence_probability": 0.48764773848407117,
+      "conditional_overlap": 0.024704523031857637,
+      "differential_angular_detuning_per_s": 6283185307.179586,
+      "differential_detuning_hz": 1000000000.0,
+      "distinguishable_control_coincidence_per_excitation_pair": 0.020000000000000004,
+      "emitted_photons_per_excitation": 1.0,
+      "hom_observable_with_nonzero_efficiency": true,
+      "ideal_g2_zero_imposed": 0.0,
+      "single_photon_survival_probability": 0.2
+    }
+  ],
+  "independent_quadrature_validation": [
+    {
+      "absolute_analytic_discrepancy": 7.550760017238645e-11,
+      "analytic_overlap": 1.0,
+      "case": "transform_limited",
+      "check_passed": true,
+      "first": {
+        "frequency_offset_hz": 0.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 0.0
+      },
+      "observed_order_refinement_difference": 8.881784197001252e-16,
+      "quadrature192": {
+        "absolute_truncation_bound": 7.550269088415679e-11,
+        "order": 192,
+        "overlap": 0.9999999999244924,
+        "window_s": 2.4000000000000003e-08
+      },
+      "quadrature96": {
+        "absolute_truncation_bound": 7.550269088415679e-11,
+        "order": 96,
+        "overlap": 0.9999999999244915,
+        "window_s": 2.4000000000000003e-08
+      },
+      "second": {
+        "frequency_offset_hz": 0.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 0.0
+      }
+    },
+    {
+      "absolute_analytic_discrepancy": 3.3861802251067274e-15,
+      "analytic_overlap": 0.5,
+      "case": "markov_dephasing",
+      "check_passed": true,
+      "first": {
+        "frequency_offset_hz": 0.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 499999999.99999994
+      },
+      "observed_order_refinement_difference": 1.7208456881689926e-15,
+      "quadrature192": {
+        "absolute_truncation_bound": 7.550269088415679e-11,
+        "order": 192,
+        "overlap": 0.4999999999999966,
+        "window_s": 2.4000000000000003e-08
+      },
+      "quadrature96": {
+        "absolute_truncation_bound": 7.550269088415679e-11,
+        "order": 96,
+        "overlap": 0.4999999999999949,
+        "window_s": 2.4000000000000003e-08
+      },
+      "second": {
+        "frequency_offset_hz": 0.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 499999999.99999994
+      }
+    },
+    {
+      "absolute_analytic_discrepancy": 6.287470544208418e-13,
+      "analytic_overlap": 0.09928152307422156,
+      "case": "differential_detuning",
+      "check_passed": true,
+      "first": {
+        "frequency_offset_hz": 0.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 0.0
+      },
+      "observed_order_refinement_difference": 4.524158825347513e-15,
+      "quadrature192": {
+        "absolute_truncation_bound": 7.550269088415679e-11,
+        "order": 192,
+        "overlap": 0.09928152307359281,
+        "window_s": 2.4000000000000003e-08
+      },
+      "quadrature96": {
+        "absolute_truncation_bound": 7.550269088415679e-11,
+        "order": 96,
+        "overlap": 0.09928152307358828,
+        "window_s": 2.4000000000000003e-08
+      },
+      "second": {
+        "frequency_offset_hz": 500000000.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 100000000.0
+      }
+    },
+    {
+      "absolute_analytic_discrepancy": 6.52145004664817e-13,
+      "analytic_overlap": 0.8333333333333333,
+      "case": "common_frequency_shift",
+      "check_passed": true,
+      "first": {
+        "frequency_offset_hz": 500000000.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 100000000.0
+      },
+      "observed_order_refinement_difference": 3.3306690738754696e-16,
+      "quadrature192": {
+        "absolute_truncation_bound": 7.550269088415679e-11,
+        "order": 192,
+        "overlap": 0.8333333333326811,
+        "window_s": 2.4000000000000003e-08
+      },
+      "quadrature96": {
+        "absolute_truncation_bound": 7.550269088415679e-11,
+        "order": 96,
+        "overlap": 0.8333333333326808,
+        "window_s": 2.4000000000000003e-08
+      },
+      "second": {
+        "frequency_offset_hz": 500000000.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 100000000.0
+      }
+    },
+    {
+      "absolute_analytic_discrepancy": 2.3314683517128287e-15,
+      "analytic_overlap": 0.2533340178728718,
+      "case": "unequal_lifetimes_crosscheck",
+      "check_passed": true,
+      "first": {
+        "frequency_offset_hz": 0.0,
+        "lifetime_s": 1e-09,
+        "pure_dephasing_per_s": 0.0
+      },
+      "observed_order_refinement_difference": 4.274358644806853e-15,
+      "quadrature192": {
+        "absolute_truncation_bound": 6.041078239666916e-13,
+        "order": 192,
+        "overlap": 0.25333401787286947,
+        "window_s": 3.3599999999999996e-08
+      },
+      "quadrature96": {
+        "absolute_truncation_bound": 6.041078239666916e-13,
+        "order": 96,
+        "overlap": 0.2533340178728652,
+        "window_s": 3.3599999999999996e-08
+      },
+      "second": {
+        "frequency_offset_hz": 250000000.0,
+        "lifetime_s": 1.4e-09,
+        "pure_dephasing_per_s": 299999999.99999994
+      }
+    }
+  ],
+  "limitations": [
+    "HOM degradation alone does not identify a unique defect, trap, laser fluctuation or physical noise cause.",
+    "Common-mode shifts cancel from this pair overlap. Counts/HOM require independent references and controls to attribute laser versus dot frequency changes.",
+    "Loss reduces acquisition yield; unchanged conditional overlap does not imply unchanged measurement cost.",
+    "Correlated pair states cannot generally be replaced by a product of their single-photon marginals.",
+    "No quantum-computing advantage, device diagnosis, defect fit, lithography-yield or industrial-performance claim."
+  ],
+  "provenance": {
+    "all_quadrature_checks_passed": true,
+    "numpy": "2.3.1",
+    "python": "3.12.10",
+    "sampling_rng": "NumPy default_rng(PCG64), SeedSequence parent/child streams",
+    "source_sha256": {
+      "PROTOCOL.md": "214cfc2df08598130c2dda2ad4f9b776ca798a0c1826d15ae8fc98acd0675d9f",
+      "model.py": "63a3048d2bb7f2036391ff6a9792b7d255dbcabc5be64fe57080a42e5b25a198",
+      "requirements.txt": "e7cde78e6f22fdc04063da4ccee86375d9ec15d574fa7f0a225a29830b02b63e",
+      "run_study.py": "f1aef0702c72a14e30d555163a7ff629cde05b4ac1858febfbb2eaed5df07e78",
+      "test_model.py": "7b8264144a58b38564e665b43a61f4a20ba986f4e805be35a9ad27246ebcd078"
+    }
+  },
+  "schema_version": 1,
+  "status": "Classical calculation of known quantum-optics formulas; synthetic sampling only.",
+  "study": "Illustrative quantum-dot single-photon coherence bridge"
+}

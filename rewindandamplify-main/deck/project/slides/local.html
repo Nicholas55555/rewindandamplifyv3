@@ -1,0 +1,10 @@
+<section id="local" data-transition="fade" style="background:#F6F5F0;color:#12203A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:88px 128px 104px;display:flex;flex-direction:column;gap:22px">
+<h2 style="font-size:60px;font-weight:600;line-height:1.12;letter-spacing:-0.5px">Move 3: Reflect only where the question looks</h2>
+<div style="background:#FCFCFB;border:1px solid #DDDAD0;border-radius:16px;padding:10px;display:flex;justify-content:center"><img src="/_blob/5d5f5787e40cfe43ca5888ec9e0e6a8e" alt="As records grow, the reflection on memory plus the question's light stays close to the exact one on hit rate and hidden-state fidelity, while memory-only falls far behind on fidelity" style="width:1500px;height:622px;object-fit:contain"></div>
+<div style="display:flex;gap:40px;flex:1">
+<p style="flex:1;font-size:31px;line-height:1.28;color:#3B4658"><b>Watching only the memory</b> looked great on hit rate, then failed: it scrambled the hidden state. Our own test caught it.</p>
+<p style="flex:1;font-size:31px;line-height:1.28;color:#3B4658"><b>Adding the question’s light</b> fixes it: <b>3 qubits</b> at any length, in place of every qubit. It drifts on long records.</p>
+</div>
+<p style="position:absolute;right:128px;bottom:56px;width:100px;text-align:right;font-size:24px;color:#6A7282">13</p>
+<aside>Move three attacks the most expensive gate in Grover: the reflection, which has to check every qubit. So we asked how much it really needs to look at. Watching only the two memory qubits looked great. The hit rate held up. Then a harder test showed the hidden state was scrambled, on the right here in yellow. Hit rate alone would never have shown that. The maths said why: what’s missed is the light the question marks. So watch that too. That’s the green line: three qubits, whatever the record length, and almost exact on short records. It does drift on long ones, and we’ll say so.</aside>
+</section>

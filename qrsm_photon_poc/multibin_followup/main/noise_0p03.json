@@ -1,0 +1,235 @@
+{
+  "kind": "one_bin_exact_density_noise",
+  "instrument": {
+    "choi_absolute_cutoff": 0.03,
+    "retained_ranks": [
+      7,
+      4
+    ],
+    "choi_reports": [
+      {
+        "rank_above_cutoff": 7,
+        "minimum_choi_eigenvalue": 4.397058821575905e-11,
+        "maximum_choi_eigenvalue": 4.486076396996565,
+        "choi_hermiticity_frobenius_error": 2.624525527237796e-15,
+        "discarded_positive_choi_eigenvalue_sum": 0.09360151722665226,
+        "reconstructed_superoperator_frobenius_error": 0.035962848885753206,
+        "ranks_by_absolute_cutoff": {
+          "1e-08": 59,
+          "1e-10": 62,
+          "1e-12": 64,
+          "1e-14": 64
+        }
+      },
+      {
+        "rank_above_cutoff": 4,
+        "minimum_choi_eigenvalue": 1.0849377592244287e-12,
+        "maximum_choi_eigenvalue": 1.8397286734077123,
+        "choi_hermiticity_frobenius_error": 3.85189533185268e-15,
+        "discarded_positive_choi_eigenvalue_sum": 0.09129502345864382,
+        "reconstructed_superoperator_frobenius_error": 0.04150122723767934,
+        "ranks_by_absolute_cutoff": {
+          "1e-08": 54,
+          "1e-10": 62,
+          "1e-12": 64,
+          "1e-14": 64
+        }
+      }
+    ],
+    "normalization": {
+      "pre_normalization_completeness_spectral_error": 0.05328349236369204,
+      "right_normalization_spectral_change": 0.027756009979739097
+    },
+    "map_frobenius_errors": [
+      0.09324592415431623,
+      0.08511155511201594
+    ],
+    "isometry_completeness_spectral_error": 3.7875732375875564e-15
+  },
+  "retained_event_probability": 0.022465340472073714,
+  "original_cavity2_event_probability": 0.02330001009706261,
+  "ideal_retained_vs_original_conditional_trace_distance": 0.01466188768156048,
+  "circuits": {
+    "preparation": {
+      "qubits": 7,
+      "cx_gates": 1051,
+      "u_gates": 1104,
+      "depth": 2080,
+      "instructions": 2155,
+      "basis": [
+        "u",
+        "cx"
+      ],
+      "routing": "none, generic all-to-all"
+    },
+    "amplified": {
+      "qubits": 7,
+      "cx_gates": 3269,
+      "u_gates": 3443,
+      "depth": 6337,
+      "instructions": 6712,
+      "basis": [
+        "u",
+        "cx"
+      ],
+      "routing": "none, generic all-to-all"
+    }
+  },
+  "cases": [
+    {
+      "circuit": "preparation",
+      "depolarizing_strength_cx": 0.0,
+      "depolarizing_strength_u": 0.0,
+      "readout_01": 0.01,
+      "readout_10": 0.02,
+      "before_readout_acceptance": 0.022465340472071844,
+      "recorded_acceptance": 0.031791380257909625,
+      "ideal_retained_acceptance": 0.022465340472073714,
+      "conditional_trace_distance_before_readout_vs_retained": 4.105669811828634e-13,
+      "conditional_trace_distance_after_readout_vs_retained": 0.020099338388143193,
+      "conditional_trace_distance_after_readout_vs_original_cavity2": 0.0338952996450818,
+      "false_flag_fraction_among_recorded_clicks": 0.3074841833218972,
+      "density_trace_error": 5.553378945398969e-15,
+      "density_hermiticity_frobenius_error": 3.1537588647951324e-15,
+      "minimum_density_eigenvalue": -2.1169420274331686e-15,
+      "exact_density_simulation_seconds": 0.2063516999987769
+    },
+    {
+      "circuit": "amplified",
+      "depolarizing_strength_cx": 0.0,
+      "depolarizing_strength_u": 0.0,
+      "readout_01": 0.01,
+      "readout_10": 0.02,
+      "before_readout_acceptance": 0.19025687677822045,
+      "recorded_acceptance": 0.19454917047487374,
+      "ideal_retained_acceptance": 0.1902568767782255,
+      "conditional_trace_distance_before_readout_vs_retained": 4.017213739585349e-13,
+      "conditional_trace_distance_after_readout_vs_retained": 0.0027206762529588587,
+      "conditional_trace_distance_after_readout_vs_original_cavity2": 0.017164578393020248,
+      "false_flag_fraction_among_recorded_clicks": 0.041621515077410805,
+      "density_trace_error": 6.995478196250177e-15,
+      "density_hermiticity_frobenius_error": 5.399752297597147e-15,
+      "minimum_density_eigenvalue": -2.8873862197631e-15,
+      "exact_density_simulation_seconds": 0.6774583000005805
+    },
+    {
+      "circuit": "preparation",
+      "depolarizing_strength_cx": 1e-05,
+      "depolarizing_strength_u": 1.0000000000000002e-06,
+      "readout_01": 0.01,
+      "readout_10": 0.02,
+      "before_readout_acceptance": 0.025305806481977822,
+      "recorded_acceptance": 0.03454663228751843,
+      "ideal_retained_acceptance": 0.022465340472073714,
+      "conditional_trace_distance_before_readout_vs_retained": 0.080332329100584,
+      "conditional_trace_distance_after_readout_vs_retained": 0.06090969476002222,
+      "conditional_trace_distance_after_readout_vs_original_cavity2": 0.062353757384617715,
+      "false_flag_fraction_among_recorded_clicks": 0.28213870035319477,
+      "density_trace_error": 5.329431380410085e-15,
+      "density_hermiticity_frobenius_error": 2.906986220686141e-15,
+      "minimum_density_eigenvalue": 6.733943291567012e-07,
+      "exact_density_simulation_seconds": 0.6519584000016039
+    },
+    {
+      "circuit": "amplified",
+      "depolarizing_strength_cx": 1e-05,
+      "depolarizing_strength_u": 1.0000000000000002e-06,
+      "readout_01": 0.01,
+      "readout_10": 0.02,
+      "before_readout_acceptance": 0.1945671535885381,
+      "recorded_acceptance": 0.1987301389808818,
+      "ideal_retained_acceptance": 0.1902568767782255,
+      "conditional_trace_distance_before_readout_vs_retained": 0.0354635367162745,
+      "conditional_trace_distance_after_readout_vs_retained": 0.03450165550268083,
+      "conditional_trace_distance_after_readout_vs_original_cavity2": 0.03309852773174992,
+      "false_flag_fraction_among_recorded_clicks": 0.04052897313622508,
+      "density_trace_error": 1.8541247201958794e-14,
+      "density_hermiticity_frobenius_error": 5.565363914772277e-15,
+      "minimum_density_eigenvalue": 1.7648401937329642e-05,
+      "exact_density_simulation_seconds": 1.9807865000002494
+    },
+    {
+      "circuit": "preparation",
+      "depolarizing_strength_cx": 0.0001,
+      "depolarizing_strength_u": 1e-05,
+      "readout_01": 0.01,
+      "readout_10": 0.02,
+      "before_readout_acceptance": 0.050037869961144954,
+      "recorded_acceptance": 0.058536733862309696,
+      "ideal_retained_acceptance": 0.022465340472073714,
+      "conditional_trace_distance_before_readout_vs_retained": 0.3986608054120725,
+      "conditional_trace_distance_after_readout_vs_retained": 0.34026800528958356,
+      "conditional_trace_distance_after_readout_vs_original_cavity2": 0.33340274398326775,
+      "false_flag_fraction_among_recorded_clicks": 0.16228478552856546,
+      "density_trace_error": 9.081706722415056e-14,
+      "density_hermiticity_frobenius_error": 2.286291056074135e-15,
+      "minimum_density_eigenvalue": 1.7932498312796358e-05,
+      "exact_density_simulation_seconds": 0.6473827999980131
+    },
+    {
+      "circuit": "amplified",
+      "depolarizing_strength_cx": 0.0001,
+      "depolarizing_strength_u": 1e-05,
+      "readout_01": 0.01,
+      "readout_10": 0.02,
+      "before_readout_acceptance": 0.23159245963271316,
+      "recorded_acceptance": 0.23464468584372894,
+      "ideal_retained_acceptance": 0.1902568767782255,
+      "conditional_trace_distance_before_readout_vs_retained": 0.2801712754224416,
+      "conditional_trace_distance_after_readout_vs_retained": 0.27594338198369883,
+      "conditional_trace_distance_after_readout_vs_original_cavity2": 0.26868436008491847,
+      "false_flag_fraction_among_recorded_clicks": 0.03274770692564323,
+      "density_trace_error": 2.8066457291482833e-13,
+      "density_hermiticity_frobenius_error": 4.041787164764614e-15,
+      "minimum_density_eigenvalue": 0.0002808307781148022,
+      "exact_density_simulation_seconds": 2.0015392000022985
+    },
+    {
+      "circuit": "preparation",
+      "depolarizing_strength_cx": 0.001,
+      "depolarizing_strength_u": 0.0001,
+      "readout_01": 0.01,
+      "readout_10": 0.02,
+      "before_readout_acceptance": 0.23180127440741535,
+      "recorded_acceptance": 0.2348472361751915,
+      "ideal_retained_acceptance": 0.022465340472073714,
+      "conditional_trace_distance_before_readout_vs_retained": 0.71042692489984,
+      "conditional_trace_distance_after_readout_vs_retained": 0.6994680697284555,
+      "conditional_trace_distance_after_readout_vs_original_cavity2": 0.6918730963483457,
+      "false_flag_fraction_among_recorded_clicks": 0.03271057126767213,
+      "density_trace_error": 1.4177553113781118e-13,
+      "density_hermiticity_frobenius_error": 1.7178243928367254e-15,
+      "minimum_density_eigenvalue": 0.0008028100777323205,
+      "exact_density_simulation_seconds": 0.6939743000002636
+    },
+    {
+      "circuit": "amplified",
+      "depolarizing_strength_cx": 0.001,
+      "depolarizing_strength_u": 0.0001,
+      "readout_01": 0.01,
+      "readout_10": 0.02,
+      "before_readout_acceptance": 0.4376421232816734,
+      "recorded_acceptance": 0.43451285958321884,
+      "ideal_retained_acceptance": 0.1902568767782255,
+      "conditional_trace_distance_before_readout_vs_retained": 0.8065765594636275,
+      "conditional_trace_distance_after_readout_vs_retained": 0.8058154017953727,
+      "conditional_trace_distance_after_readout_vs_original_cavity2": 0.7981841082653913,
+      "false_flag_fraction_among_recorded_clicks": 0.012942260840272925,
+      "density_trace_error": 4.366507207636233e-13,
+      "density_hermiticity_frobenius_error": 3.953162575475733e-16,
+      "minimum_density_eigenvalue": 0.004737588262524769,
+      "exact_density_simulation_seconds": 2.0411189000005834
+    }
+  ],
+  "implementation_validation": {
+    "tolerance": 1e-08,
+    "maximum_error": 4.105669811828634e-13,
+    "passed": true
+  },
+  "elapsed_seconds": 11.136567000001378,
+  "noise_scope": "Generic independent gate depolarization and classical flag confusion. No device calibration, routing, idle T1/T2 or15/18qubit noisy query simulated.",
+  "status": "completed",
+  "branch_archive": "noise_0p03.npz",
+  "branch_archive_sha256": "d0aa80c20a50842cf4eb4567779f4c07c5e2e566e42161d9954e793d1c8e9b19",
+  "memory_limit_mib": 2048
+}

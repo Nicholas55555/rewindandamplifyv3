@@ -1,0 +1,23 @@
+<section id="architecture" data-transition="fade" style="background:#F6F5F0;color:#12203A;font-family:'IBM Plex Sans', Arial, sans-serif;padding:88px 128px 104px;display:flex;flex-direction:column;justify-content:space-between;gap:18px">
+<h2 style="font-size:60px;font-weight:600;line-height:1.12;letter-spacing:-0.5px">Noise punishes depth, so we redesigned around it</h2>
+<div style="display:flex;gap:48px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:4px;flex:none"><p style="font-size:124px;font-weight:600;line-height:1;color:#1F66BD">456</p><p style="font-size:28px;color:#3B4658">two-qubit gates: textbook, T = 5</p></div>
+<p style="font-size:38px;line-height:1.28;color:#3B4658;flex:1">Grover is famously fragile. Each iteration rewinds the whole history and checks every qubit. At 0.2% error per gate, only about 40% of those runs finish clean.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<h3 style="font-size:36px;font-weight:600;color:#B5431A">The resilient architecture: four moves</h3>
+<div style="display:flex;gap:16px;align-items:stretch">
+<div style="flex:1;background:#FCFCFB;border:1px solid #DDDAD0;border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:14px"><div style="display:flex;flex-direction:column;gap:10px"><h3 style="font-size:40px;font-weight:600">1 Purify</h3><p style="font-size:33px;line-height:1.26;color:#3B4658">Fresh qubits replace resets, so the machine can be rewound.</p></div><p style="font-size:35px;font-weight:600;line-height:1.2;color:#B5431A">Price: one qubit per step</p></div>
+<div style="flex:1;background:#12203A;border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:14px"><div style="display:flex;flex-direction:column;gap:10px"><h3 style="font-size:40px;font-weight:600;color:#F5F3EC">2 Steer</h3><p style="font-size:33px;line-height:1.26;color:#CBD5E4">Tune one gate so the event is common. Free, and exact.</p></div><p style="font-size:35px;font-weight:600;line-height:1.2;color:#F2935F">4,400× fewer runs on a real record</p></div>
+<div style="flex:1;background:#12203A;border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:14px"><div style="display:flex;flex-direction:column;gap:10px"><h3 style="font-size:40px;font-weight:600;color:#F5F3EC">3 Amplify locally</h3><p style="font-size:33px;line-height:1.26;color:#CBD5E4">One iteration, with a reflection on 3 qubits at any length.</p></div><p style="font-size:35px;font-weight:600;line-height:1.2;color:#F2935F">With steering: 3 to 5× fewer gates</p></div>
+<div style="flex:1;background:#FCFCFB;border:1px solid #DDDAD0;border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:14px"><div style="display:flex;flex-direction:column;gap:10px"><h3 style="font-size:40px;font-weight:600">4 Verify</h3><p style="font-size:33px;line-height:1.26;color:#3B4658">The click is measured, so a failed shot shows itself and is dropped.</p></div><p style="font-size:35px;font-weight:600;line-height:1.2;color:#B5431A">On a real chip: 87% of shots kept</p></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;gap:20px"><p style="width:280px;font-size:30px;font-weight:600;color:#1F66BD">Textbook Grover</p><div style="width:1130px;height:46px;background:#2A78D6;border-radius:8px"></div><p style="font-size:30px;font-weight:600;color:#12203A">213 gates</p></div>
+<div style="display:flex;align-items:center;gap:20px"><p style="width:280px;font-size:30px;font-weight:600;color:#B5431A">Resilient build</p><div style="width:212px;height:46px;background:#EB6834;border-radius:8px"></div><p style="font-size:30px;font-weight:600;color:#12203A">40 gates</p></div>
+</div>
+<p style="position:absolute;left:128px;bottom:56px;width:1480px;font-size:24px;color:#6A7282">Bars: two-qubit gates for one rare click at T = 3, compiled for ibm_kingston.</p>
+<p style="position:absolute;right:128px;bottom:56px;width:100px;text-align:right;font-size:24px;color:#6A7282">11</p>
+<aside>Now the honest problem. Grover is famously fragile, because every iteration rewinds the whole history and checks every qubit. Compiled for an IBM chip, the textbook version at five steps needs 456 two-qubit gates. At today’s error rates, most of those runs have a mistake in them. We don’t need this to be practical on today’s chips. But it made us ask a better question: what would a version built around noise look like? We ended up with four moves. Purify you’ve seen. Steer, and amplify locally, are new, and they’re the next two slides.</aside>
+</section>

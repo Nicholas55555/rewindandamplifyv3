@@ -1,0 +1,49 @@
+Rewind & Amplify: Grover's algorithm inside a quantum recurrent state machine
+
+1. A rare event in a 6-step run of the hidden-defect machine
+   Question: what do the runs with a click at step 6 look like? Only 8.0% of runs have one.
+   The reset is gone: each step gets a fresh light, so the 6-step run is one reversible circuit A.
+
+   1000 shots each, on Aer. Usable shots are the ones with the click:
+
+   plain sampling               ███·································   7.8%   distance from the exact answer 0.077
+   steer + 1 Grover iteration   ████████████████████████████████████ 100.0%   distance from the exact answer 0.010
+   steer + local reflection     ███████████████████████████████████·  96.8%   distance from the exact answer 0.054
+
+   Steering tuned the last emission from γ = 0.2 to 0.623, so p' = 1/4 and one iteration is enough.
+   That scales every matching history by the same factor, so the answer stays exact.
+   Most likely runs with that click: 000001 (89%), 000101 (3%), 000011 (3%)
+
+2. Grover inside the loop: what happens right after the click?
+   Amplify the click at step 3, then keep running the machine on fresh lights.
+
+   With no hidden defect, a click wipes the machine, so what follows just restarts the run.
+   A hidden defect remembers across the click. That difference is a fingerprint of hidden memory.
+
+                P(click 1, 2, 3 steps later | click)       usable shots
+   no defect    amplified 0.016  0.065  0.096   7,838 of 8,000
+                exact     0.017  0.058  0.101
+   one defect   amplified 0.011  0.027  0.045   7,669 of 8,000
+                exact     0.010  0.030  0.047
+
+3. The reader in the oracle slot: search an unsorted catalogue from a vague request
+   Request: "how much did we sell in each area"
+   Classical step, tokenising: ['sales', 'region']
+   The reader reads 2 token(s), turning the phase of each of the 16 entries that contains them.
+
+   After 3 Grover iterations, from 1000 shots on Aer:
+
+   quarterly_sales_by_region          ████████████████████████······  81.4%   keyword score 1.00
+   customer_churn_by_region           ██····························   6.0%   keyword score 0.50
+   shipping_costs_by_region           ██····························   5.4%   keyword score 0.50
+   monthly_sales_by_product           █·····························   4.7%   keyword score 0.50
+
+   Every entry started at 6.2%. Partial matches get a partial boost: that is the vague part.
+
+The honest part
+   At this size a classical program answers all of this in about a millisecond, and exactly.
+   The classical cost grew about 6 times per hidden qubit in our tests; these circuits grow slowly with it.
+   So this shows an architecture that could matter for large hidden memories on future hardware,
+   not a speedup today. The keyword search compiles its oracle from the catalogue, so it has no speedup at all
+   on arbitrary data. See docs/REPORT.md.
+

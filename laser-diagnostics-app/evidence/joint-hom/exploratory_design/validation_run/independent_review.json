@@ -1,0 +1,59 @@
+{
+  "all_checks_passed": true,
+  "reviewer": "independent visual_deck agent",
+  "source_sha256": {
+    "review_script": "28a067d30f8a974418e242f82e22316229649b4fa12efb9db13c2abeb8798d20"
+  },
+  "input_sha256": {
+    "results.json": "0685e84da3427091baa743b03228939cf90126ac1cd0359fa692dab020a4ebd2",
+    "records.npz": "15e5348f1118e49f0c37bd90c61f9aee3c8c1ab443224a6d2255debf0f64c7eb",
+    "provenance.json": "4a3800b8d41d50222e249612a1937e475fb4d14f713c7faea0b08be12ae0d65e"
+  },
+  "checks": [
+    "All source/protocol/design hashes and73 unique RNG namespaces.",
+    "Independent bosonic density-map propagation of nominal, calibrated and all nuisance four-pair laws.",
+    "All40,000 training/prediction blocks and96,000 null/heldout record count vectors replay exactly.",
+    "All6 thresholds,42 case flags, exact-log4 flags, Wilson intervals and source budgets independently recounted.",
+    "Independent explicit four-step HMM forward scoring; training-only selected starts; all20 starts reached200-iteration cap.",
+    "All six prediction laws, per-block scores and paired intervals checked."
+  ],
+  "maximum_numeric_difference": 3.0886404545071855e-13,
+  "budgets": [
+    {
+      "blocks": 16,
+      "nominal_flag_rate": 0.117,
+      "null_flag_rate": 0.0495
+    },
+    {
+      "blocks": 64,
+      "nominal_flag_rate": 0.197,
+      "null_flag_rate": 0.046
+    },
+    {
+      "blocks": 256,
+      "nominal_flag_rate": 0.498,
+      "null_flag_rate": 0.059
+    },
+    {
+      "blocks": 646,
+      "nominal_flag_rate": 0.7975,
+      "null_flag_rate": 0.0485
+    },
+    {
+      "blocks": 1024,
+      "nominal_flag_rate": 0.924,
+      "null_flag_rate": 0.044
+    },
+    {
+      "blocks": 1911,
+      "nominal_flag_rate": 0.998,
+      "null_flag_rate": 0.052
+    }
+  ],
+  "scope": [
+    "Prospective simulation conditional on exploratorily selected design, known source model and perfect between-block resets.",
+    "Nominal simple-hypothesis power does not certify quantum memory or distinguish all classical nuisance explanations.",
+    "All20 HMM starts reaching iteration cap does not establish globally optimal classical fitting.",
+    "No optical physical measurement or quantum computational advantage."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "all_checks_passed": true,
+  "created_utc": "2026-11-11T05:44:14.878188+00:00",
+  "scope": "Offline presentation app integration; no scientific model, original QRSM dataset, archived hardware result or MP4 bytes changed.",
+  "model_and_data_parity_tests": {
+    "run": "node --test laser-diagnostics-app/test_model.cjs",
+    "tests": 9,
+    "passed": 9,
+    "failed": 0
+  },
+  "package_checks": {
+    "html_ids": 87,
+    "local_links_checked": 33,
+    "evidence_and_media_hashes": 30,
+    "runtime_network_dependencies": 0,
+    "actual_h264_mp4_containers_checked": 2
+  },
+  "deterministic_import": {
+    "passes": 2,
+    "generated_files_identical": 33,
+    "canonical_research_sources": 7
+  },
+  "browser_checks": {
+    "receipt": "research_browser_validation.json",
+    "sha256": "a283170aa3653bf32e8ef81c5d4beab5b4b92abbecd63affb83b17c3f4f31891",
+    "selector_combinations": 39,
+    "desktop_viewport": [
+      1440,
+      1000
+    ],
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "page_errors": 0,
+    "file_url_operation_verified": true,
+    "video_play_pause_seek_verified": true,
+    "keyboard_navigation_verified": true,
+    "reduced_motion_verified": true
+  },
+  "visual_review": {
+    "all_eight_research_screenshots_inspected": true,
+    "no_observed_clipping_or_horizontal_overflow": true,
+    "screenshots_sha256": {
+      "preview-research-frequency.png": "ba08fa6d61baa0bc84f3c14a8ba952dded06c1c70511b991e36299298df0bdc9",
+      "preview-research-drive.png": "bc7dcc3cce4eb843b71aeb03d9fb8a6674ab493663c35e567291c6aad7f59583",
+      "preview-research-phase.png": "17730694d215bf9b8f5dede627e5556c324d87f766fedc92668890d82cf66bd9",
+      "preview-research-progress.png": "44e4034804bc2d712dcee7cfbfb7a8b64f76149348d1f511785b7a2c27830e68",
+      "preview-research-frequency-mobile.png": "c6552883ba460c96a1041afc31b2176d5515a233dface099439eb6294e71bddc",
+      "preview-research-drive-mobile.png": "47d8ae112fd2697666c31333d602a55591ef8a158b0c7e7b7f0fb85e0068c81b",
+      "preview-research-phase-mobile.png": "5cb90ef1bfbeae14921b80f495cd3a7d9a50392729b38940785f24cc17041979",
+      "preview-research-progress-mobile.png": "e374d368b8c367b899d4232c3418427eea5c194d76e8bb13b7f5c8dab4e13e4b"
+    }
+  },
+  "independent_scientific_copy_review": {
+    "reviewer": "realistic_sensor agent",
+    "status": "passed",
+    "corrected_points": [
+      "Source-case drive rates include matched separate source-stable false alarms",
+      "Bootstrap coverage explicitly uncalibrated",
+      "Paired dead-time fits use the same training and holdout cohorts"
+    ],
+    "retained_boundaries": [
+      "Unknown onset versus earlier known-onset benchmark",
+      "Same-record algorithms versus added physical channels",
+      "Prior-only post-holdout control",
+      "Global phase ambiguity and object-incident photon budgets",
+      "389-qubit construction not full-state or noisy validation"
+    ]
+  },
+  "evidence_manifest_sha256": "39cddb6b17af48730894a87f73ba3863580cea47558ecdc560fbb9ddc20ae035",
+  "source_sha256": {
+    "index.html": "1b564deb021359f98234ce13d9f44b9d40cc3227e9f565f15b9eb67351cb2301",
+    "styles.css": "1f221c1e1adabd5e0c21a01666a4f00a1995e6cec9753ac42eda23ea6e22e2c3",
+    "app.js": "3074f27e3090f4172ff5b414bc55ff132846041c8bb61831f006f8d2689cdfca",
+    "research.js": "e3eef2d289683aeb5c97cf3c5ed14c8273b6e40e354ea1a2aafb23f3b4a3da44",
+    "model.js": "089dd4e315936efedbb398c7bac6772ed0939f4b3cfa366deeb36cdeee2ab37f",
+    "data.js": "0a3054e717bfcc1f9457236f7d2a43abe606d45ee4130fb1b3f0ecdb6438e300",
+    "research-data.js": "9a75b9a96d630941d6ecce145c8dda8defe103200183efab1a3cb953f7d3987d",
+    "import_results.py": "f3f2e8731be6df1e21d4917c3a28c10b79ac4bb04f98b000b97423202934d144",
+    "test_model.cjs": "4c816adb82d9b88f249ae7dc2ce3bb16eb3b72a04635844a8fa7ec00a2eebfce",
+    "check_package.py": "554ce641f8e041f2a641ea0dfb41acc75c326bd11ee52b12f2e6c7745909dc91",
+    "check_browser.py": "536447b636abca9504a2986e8f69be5a7a6aed2afd6c226e1d07d556d08dab67",
+    "README.md": "75d6eb449243a713f7dca274a2ed00c990a554affdd1c5ae2c6ff94a0a82b41b"
+  },
+  "teardown": "Isolated headless Chrome closed. Owned local HTTP server session56392 interrupted and terminal exit confirmed; ordinary app operation needs no server."
+}

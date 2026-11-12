@@ -1,0 +1,45 @@
+RAW OPTICAL-MOMENT SUPPLEMENT (derived only)
+
+This supplement reads the nine frozen exposure setups and all five source methods.
+No experiment was rerun, no finite-count data added, and no original file changed.
+The 90 rows are 9 cases x 5 methods x 2 averaging conventions, not new trials.
+
+G1=<n> and G2=<n(n-1)> describe one of the 32 fixed spatial cells. They are
+dimensionless number moments per attempted clock, not photon probabilities or
+material activation counts. Harmonic h is the coefficient of cos(h*phase).
+The tables give raw-after-loss coefficients and fast-jitter/pixel-averaged ones.
+Material blur acts AFTER activation and is excluded from the plotted moments.
+Its contribution to the saved activation field was independently reconstructed.
+
+The source denominator counts all mean emitted photons before propagation loss;
+the sample denominator counts mean incident photons summed over all 32 cells.
+Consequently G1/sample_photons sums to one across cells. G2/sample_photons is a
+response-relevant ratio, NOT a pair-event probability or a universal efficiency.
+The per-cell mean is a spatial/phase mean; peak is the continuous phase maximum.
+The raw JSON also stores the actual 32 cell values and both cosine coefficients.
+
+For p<1, failed quantum preparation emits vacuum but still charges clock time.
+Per-clock moments and photons both scale with p; their ratio cancels p. This
+does NOT mean source inefficiency is free: matching photon dose takes longer,
+and a per-clock material background accumulates longer, as the original study
+shows. Pump/herald energy is unknown and excluded. Both positive phase-cycle
+exposures are charged at half the budget; there is no dose subtraction.
+The 10%-duty comparator retains the mean photons but uses 10x peak intensity;
+its pair moment is 10x larger. This is a declared extra peak-power allowance,
+not an optimized bound over all classical sources.
+
+The figure's first row uses unit transmission, no jitter and no aperture average;
+the second uses 0.8 transmission in each arm, 0.15 rad fast Gaussian jitter and
+one-cell aperture averaging. The 40 nm post-activation blur is intentionally not
+shown as optical G2. Slow correlated phase drift is outside the mean-rate model.
+The assumed wavelength is 800 nm and the illustrative period is 800 nm, not EUV.
+
+Numerical checks: positivity, summed G1 conservation, independent discrete
+Fourier recovery, two-exposure phase averaging, duty-factor accounting, source
+success normalization, and exact reconstruction of all 45 frozen response
+coefficient sets. The original ten tests include independent loss/Fock checks.
+No new scientific claim or fabrication validation follows from this supplement.
+
+Reproduce with the study's recorded environment: python moment_supplement.py
+The script refuses to overwrite its four outputs. Copy the input directory or
+use a fresh output destination to rerun; original results and source stay fixed.

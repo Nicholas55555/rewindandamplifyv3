@@ -1,0 +1,4138 @@
+{
+  "config": {
+    "generation": "independent train and held-out records from the existing synthetic generator",
+    "generator_parameters": {
+      "g_defect": 0.65,
+      "defect_detuning": 0.2,
+      "cavity_detuning": 0.0,
+      "g_cavity": 0.7,
+      "drive": 1.3,
+      "kappa": 1.4,
+      "detector_eta": 0.68,
+      "gamma_emitter": 0.07,
+      "gamma_defect": 0.025,
+      "gamma_phi_emitter": 0.035,
+      "gamma_phi_defect": 0.02,
+      "dark_rate": 0.018,
+      "dt": 1.0,
+      "n_cavity": 3
+    },
+    "seeds": [
+      31001,
+      31002,
+      31003
+    ],
+    "n_train": 400,
+    "n_test": 150,
+    "bins": 40,
+    "hmm_starts": 6,
+    "hmm_max_iterations": 800,
+    "bootstrap_replicates_per_seed": 2000,
+    "numpy_version": "2.3.1",
+    "scipy_version": "1.16.0",
+    "source_data": "new in-memory simulated records; prior CSVs unmodified",
+    "execution_note": "Numerical analysis completed and JSON was saved; initial CLI console summary raised a Windows encoding error afterwards. Source print was fixed; fitted coupling is separately recorded as g_hat.",
+    "refinement": "Selected best training EM restart, then local L-BFGS-B training-only polish."
+  },
+  "replicates": [
+    {
+      "seed": 31001,
+      "test_seed": 1031001,
+      "train_records": 400,
+      "test_records": 150,
+      "bins": 40,
+      "training_click_fraction": 0.19975,
+      "test_click_fraction": 0.2025,
+      "train_binary_array_sha256": "c9f06093ba805f84b38b784564478e44a884f8ee9124db10f61ac8b4801beb3d",
+      "test_binary_array_sha256": "5c4354e4ff4d5376366f06b27e87de9612bb1b234cfa1a9dec24b40f870dcc91",
+      "known_nuisance_fit": {
+        "g_hat": 0.65,
+        "train_log_likelihood": -7875.21530992015,
+        "g_grid": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6000000000000001,
+          0.65,
+          0.7000000000000001,
+          0.75,
+          0.8,
+          0.8500000000000001,
+          0.9,
+          0.9500000000000001,
+          1.0,
+          1.05,
+          1.1,
+          1.1500000000000001,
+          1.2000000000000002,
+          1.25
+        ],
+        "fixed_nuisance": {
+          "defect_detuning": 0.2,
+          "cavity_detuning": 0.0,
+          "g_cavity": 0.7,
+          "drive": 1.3,
+          "kappa": 1.4,
+          "detector_eta": 0.68,
+          "gamma_emitter": 0.07,
+          "gamma_defect": 0.025,
+          "gamma_phi_emitter": 0.035,
+          "gamma_phi_defect": 0.02,
+          "dark_rate": 0.018,
+          "dt": 1.0,
+          "n_cavity": 3
+        }
+      },
+      "mismatched_nuisance_fit": {
+        "g_hat": 0.45,
+        "train_log_likelihood": -7884.05046890279,
+        "g_grid": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6000000000000001,
+          0.65,
+          0.7000000000000001,
+          0.75,
+          0.8,
+          0.8500000000000001,
+          0.9,
+          0.9500000000000001,
+          1.0,
+          1.05,
+          1.1,
+          1.1500000000000001,
+          1.2000000000000002,
+          1.25
+        ],
+        "fixed_nuisance": {
+          "defect_detuning": 0.2,
+          "cavity_detuning": 0.0,
+          "g_cavity": 0.7,
+          "drive": 1.3,
+          "kappa": 1.4,
+          "detector_eta": 0.54,
+          "gamma_emitter": 0.07,
+          "gamma_defect": 0.025,
+          "gamma_phi_emitter": 0.035,
+          "gamma_phi_defect": 0.02,
+          "dark_rate": 0.035,
+          "dt": 1.0,
+          "n_cavity": 3
+        }
+      },
+      "markov_fit": {
+        "initial": [
+          0.80025,
+          0.19975
+        ],
+        "transition": [
+          [
+            0.791228116441316,
+            0.2087718835586841
+          ],
+          [
+            0.836393991578658,
+            0.163606008421342
+          ]
+        ],
+        "training_click_rate": 0.19975,
+        "alpha": 1.045165875137342,
+        "training_log_likelihood": -7984.023904896656,
+        "stationary_click_rate": 0.19975,
+        "optimizer_success": true
+      },
+      "hmm3_fit": {
+        "initial": [
+          0.8464916033852535,
+          2.5e-15,
+          0.15350839661474402
+        ],
+        "transition": [
+          [
+            0.5570343826406293,
+            0.043079229400709684,
+            0.39988638795866094
+          ],
+          [
+            0.3734552830258092,
+            0.2554663478802857,
+            0.3710783690939052
+          ],
+          [
+            0.056049327971896934,
+            0.5942182568751088,
+            0.3497324151529943
+          ]
+        ],
+        "emissions": [
+          0.009157064107984652,
+          0.651631527988159,
+          0.0003909488468924002
+        ],
+        "train_log_likelihood": -7880.491732472319,
+        "selected_start": 5,
+        "converged": false,
+        "iterations": 800,
+        "starts": [
+          {
+            "start": 0,
+            "train_log_likelihood": -7883.633757380778,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 1,
+            "train_log_likelihood": -7880.784567260305,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 2,
+            "train_log_likelihood": -7880.575694124434,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 3,
+            "train_log_likelihood": -7880.5646956184555,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 4,
+            "train_log_likelihood": -7881.21774581196,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 5,
+            "train_log_likelihood": -7880.491732472319,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          }
+        ]
+      },
+      "heldout_total_nats": {
+        "physical_known_nuisance": -2975.78208218536,
+        "physical_mismatched_detector": -2980.8263903791867,
+        "markov_rate_matched": -3016.2638942700114,
+        "hmm_3_state": -2985.26372352531
+      },
+      "paired_differences": {
+        "known_physical_minus_hmm3": {
+          "total_delta_nats": 9.481641339950277,
+          "mean_delta_nats_per_record": 0.06321094226633518,
+          "standard_error_nats_per_record": 0.02166529231166291,
+          "bootstrap_95_percentile_nats_per_record": [
+            0.02143474095707837,
+            0.10782771971631148
+          ],
+          "positive_record_fraction": 0.5466666666666666,
+          "n_heldout_records": 150,
+          "bootstrap_replicates": 2000,
+          "bootstrap_seed": 271828
+        },
+        "mismatched_physical_minus_hmm3": {
+          "total_delta_nats": 4.437333146123493,
+          "mean_delta_nats_per_record": 0.029582220974156616,
+          "standard_error_nats_per_record": 0.024434542311561076,
+          "bootstrap_95_percentile_nats_per_record": [
+            -0.01324732557387607,
+            0.08218228785399544
+          ],
+          "positive_record_fraction": 0.37333333333333335,
+          "n_heldout_records": 150,
+          "bootstrap_replicates": 2000,
+          "bootstrap_seed": 271828
+        },
+        "known_minus_mismatched_physical": {
+          "total_delta_nats": 5.044308193826785,
+          "mean_delta_nats_per_record": 0.033628721292178566,
+          "standard_error_nats_per_record": 0.01569961895289599,
+          "bootstrap_95_percentile_nats_per_record": [
+            0.0017996326126801057,
+            0.06415676557126643
+          ],
+          "positive_record_fraction": 0.54,
+          "n_heldout_records": 150,
+          "bootstrap_replicates": 2000,
+          "bootstrap_seed": 271828
+        },
+        "hmm3_minus_rate_matched_markov": {
+          "total_delta_nats": 31.000170744701414,
+          "mean_delta_nats_per_record": 0.2066678049646761,
+          "standard_error_nats_per_record": 0.056182227657920684,
+          "bootstrap_95_percentile_nats_per_record": [
+            0.08813054352783667,
+            0.30742827245831345
+          ],
+          "positive_record_fraction": 0.8733333333333333,
+          "n_heldout_records": 150,
+          "bootstrap_replicates": 2000,
+          "bootstrap_seed": 271828
+        }
+      },
+      "per_record_log_likelihoods": [
+        {
+          "record_index": 0,
+          "physical_known_nuisance": -20.278874090659645,
+          "physical_mismatched_detector": -20.40439887625911,
+          "markov_rate_matched": -20.84689658008219,
+          "hmm_3_state": -20.374028970525835
+        },
+        {
+          "record_index": 1,
+          "physical_known_nuisance": -20.4733070912133,
+          "physical_mismatched_detector": -20.626857902659548,
+          "markov_rate_matched": -21.146191087680748,
+          "hmm_3_state": -20.59118442851329
+        },
+        {
+          "record_index": 2,
+          "physical_known_nuisance": -19.739869523374317,
+          "physical_mismatched_detector": -19.430691790173253,
+          "markov_rate_matched": -19.869360428935657,
+          "hmm_3_state": -19.602224304190678
+        },
+        {
+          "record_index": 3,
+          "physical_known_nuisance": -22.88341779414478,
+          "physical_mismatched_detector": -22.862249832179874,
+          "markov_rate_matched": -22.42302174642584,
+          "hmm_3_state": -22.949588259227706
+        },
+        {
+          "record_index": 4,
+          "physical_known_nuisance": -22.06780127689095,
+          "physical_mismatched_detector": -21.572119206864937,
+          "markov_rate_matched": -20.168654936534214,
+          "hmm_3_state": -21.01711734080909
+        },
+        {
+          "record_index": 5,
+          "physical_known_nuisance": -20.734056732579557,
+          "physical_mismatched_detector": -20.575675451244518,
+          "markov_rate_matched": -20.168654936534214,
+          "hmm_3_state": -20.86857739733298
+        },
+        {
+          "record_index": 6,
+          "physical_known_nuisance": -25.077462769783278,
+          "physical_mismatched_detector": -25.17155113392791,
+          "markov_rate_matched": -25.874566586711687,
+          "hmm_3_state": -25.2216007383702
+        },
+        {
+          "record_index": 7,
+          "physical_known_nuisance": -17.951982421036014,
+          "physical_mismatched_detector": -18.018894199538877,
+          "markov_rate_matched": -18.29323526259201,
+          "hmm_3_state": -18.087662244268788
+        },
+        {
+          "record_index": 8,
+          "physical_known_nuisance": -19.288732192994875,
+          "physical_mismatched_detector": -19.22829720306135,
+          "markov_rate_matched": -19.62557938906635,
+          "hmm_3_state": -19.24556772332776
+        },
+        {
+          "record_index": 9,
+          "physical_known_nuisance": -19.509845030918946,
+          "physical_mismatched_detector": -19.7094638209986,
+          "markov_rate_matched": -20.16865493653421,
+          "hmm_3_state": -19.66641186480633
+        },
+        {
+          "record_index": 10,
+          "physical_known_nuisance": -15.274039245565035,
+          "physical_mismatched_detector": -15.429603461429222,
+          "markov_rate_matched": -15.739573945101828,
+          "hmm_3_state": -15.38627487670002
+        },
+        {
+          "record_index": 11,
+          "physical_known_nuisance": -18.383774753439084,
+          "physical_mismatched_detector": -18.351271046190558,
+          "markov_rate_matched": -18.592529770190566,
+          "hmm_3_state": -18.37184762716752
+        },
+        {
+          "record_index": 12,
+          "physical_known_nuisance": -25.60913266536004,
+          "physical_mismatched_detector": -25.93369706453149,
+          "markov_rate_matched": -26.552808230259668,
+          "hmm_3_state": -25.919410283256965
+        },
+        {
+          "record_index": 13,
+          "physical_known_nuisance": -21.726802132933976,
+          "physical_mismatched_detector": -21.70990673506215,
+          "markov_rate_matched": -21.4454855952793,
+          "hmm_3_state": -21.93423061300885
+        },
+        {
+          "record_index": 14,
+          "physical_known_nuisance": -18.412853767928215,
+          "physical_mismatched_detector": -18.54501112160732,
+          "markov_rate_matched": -18.891824277789123,
+          "hmm_3_state": -18.577039525771134
+        },
+        {
+          "record_index": 15,
+          "physical_known_nuisance": -18.96427972804344,
+          "physical_mismatched_detector": -19.15237429809559,
+          "markov_rate_matched": -19.5700659213371,
+          "hmm_3_state": -18.996383600982963
+        },
+        {
+          "record_index": 16,
+          "physical_known_nuisance": -23.3016734653117,
+          "physical_mismatched_detector": -23.50157644215538,
+          "markov_rate_matched": -24.054660380498735,
+          "hmm_3_state": -23.400308937985002
+        },
+        {
+          "record_index": 17,
+          "physical_known_nuisance": -25.68735472207983,
+          "physical_mismatched_detector": -25.954724927528094,
+          "markov_rate_matched": -26.552808230259668,
+          "hmm_3_state": -25.946529017729894
+        },
+        {
+          "record_index": 18,
+          "physical_known_nuisance": -18.130165609831625,
+          "physical_mismatched_detector": -18.167009325854888,
+          "markov_rate_matched": -18.29323526259201,
+          "hmm_3_state": -18.018031421258634
+        },
+        {
+          "record_index": 19,
+          "physical_known_nuisance": -20.577602453031044,
+          "physical_mismatched_detector": -20.85452747422733,
+          "markov_rate_matched": -21.201704555409997,
+          "hmm_3_state": -20.665375207182805
+        },
+        {
+          "record_index": 20,
+          "physical_known_nuisance": -24.94580436825865,
+          "physical_mismatched_detector": -25.210079862680757,
+          "markov_rate_matched": -25.87456658671169,
+          "hmm_3_state": -25.060500197223703
+        },
+        {
+          "record_index": 21,
+          "physical_known_nuisance": -22.969383282356127,
+          "physical_mismatched_detector": -22.931790457274115,
+          "markov_rate_matched": -22.722316254024395,
+          "hmm_3_state": -23.196811683615962
+        },
+        {
+          "record_index": 22,
+          "physical_known_nuisance": -17.730400987884302,
+          "physical_mismatched_detector": -17.941852041418993,
+          "markov_rate_matched": -18.348748730321258,
+          "hmm_3_state": -17.829969334137132
+        },
+        {
+          "record_index": 23,
+          "physical_known_nuisance": -15.840807708569939,
+          "physical_mismatched_detector": -15.832382684011419,
+          "markov_rate_matched": -16.038868452700385,
+          "hmm_3_state": -15.79946457322517
+        },
+        {
+          "record_index": 24,
+          "physical_known_nuisance": -23.80488124433612,
+          "physical_mismatched_detector": -23.768966492093107,
+          "markov_rate_matched": -24.298441420368043,
+          "hmm_3_state": -23.783837932707208
+        },
+        {
+          "record_index": 25,
+          "physical_known_nuisance": -22.91294454840126,
+          "physical_mismatched_detector": -23.107143850753932,
+          "markov_rate_matched": -23.755365872900178,
+          "hmm_3_state": -23.08606241853512
+        },
+        {
+          "record_index": 26,
+          "physical_known_nuisance": -19.023007959647394,
+          "physical_mismatched_detector": -19.312643350622334,
+          "markov_rate_matched": -19.869360428935657,
+          "hmm_3_state": -19.280053307270258
+        },
+        {
+          "record_index": 27,
+          "physical_known_nuisance": -13.1078145274446,
+          "physical_mismatched_detector": -13.056116187559915,
+          "markov_rate_matched": -13.185912627611645,
+          "hmm_3_state": -13.115010458921319
+        },
+        {
+          "record_index": 28,
+          "physical_known_nuisance": -23.148033384379186,
+          "physical_mismatched_detector": -23.0456557845405,
+          "markov_rate_matched": -23.69985240517093,
+          "hmm_3_state": -22.98231223662198
+        },
+        {
+          "record_index": 29,
+          "physical_known_nuisance": -20.661899984991113,
+          "physical_mismatched_detector": -20.709801515157174,
+          "markov_rate_matched": -21.146191087680748,
+          "hmm_3_state": -20.604349868470262
+        },
+        {
+          "record_index": 30,
+          "physical_known_nuisance": -17.77181323807214,
+          "physical_mismatched_detector": -17.860676606576032,
+          "markov_rate_matched": -18.29323526259201,
+          "hmm_3_state": -17.787501489456737
+        },
+        {
+          "record_index": 31,
+          "physical_known_nuisance": -24.56169377000444,
+          "physical_mismatched_detector": -25.085220177979814,
+          "markov_rate_matched": -25.87456658671169,
+          "hmm_3_state": -25.298197209404343
+        },
+        {
+          "record_index": 32,
+          "physical_known_nuisance": -19.38370843836081,
+          "physical_mismatched_detector": -19.393269910383403,
+          "markov_rate_matched": -19.869360428935657,
+          "hmm_3_state": -19.416203700626752
+        },
+        {
+          "record_index": 33,
+          "physical_known_nuisance": -16.372521257587433,
+          "physical_mismatched_detector": -16.621201958915943,
+          "markov_rate_matched": -17.01640460384692,
+          "hmm_3_state": -16.60502653179728
+        },
+        {
+          "record_index": 34,
+          "physical_known_nuisance": -16.648312679666297,
+          "physical_mismatched_detector": -16.69754834746157,
+          "markov_rate_matched": -17.01640460384692,
+          "hmm_3_state": -16.587073132766626
+        },
+        {
+          "record_index": 35,
+          "physical_known_nuisance": -24.27518016734588,
+          "physical_mismatched_detector": -25.04423755299541,
+          "markov_rate_matched": -25.495619450762263,
+          "hmm_3_state": -24.96822001027914
+        },
+        {
+          "record_index": 36,
+          "physical_known_nuisance": -19.59437961961786,
+          "physical_mismatched_detector": -19.74626182836172,
+          "markov_rate_matched": -20.168654936534214,
+          "hmm_3_state": -19.583864694474048
+        },
+        {
+          "record_index": 37,
+          "physical_known_nuisance": -20.607622392261693,
+          "physical_mismatched_detector": -20.795178476227072,
+          "markov_rate_matched": -21.146191087680748,
+          "hmm_3_state": -20.62020807223304
+        },
+        {
+          "record_index": 38,
+          "physical_known_nuisance": -15.808225786883153,
+          "physical_mismatched_detector": -15.864607117149612,
+          "markov_rate_matched": -16.09438192042963,
+          "hmm_3_state": -15.8895940041799
+        },
+        {
+          "record_index": 39,
+          "physical_known_nuisance": -23.343555510460714,
+          "physical_mismatched_detector": -23.265910515613868,
+          "markov_rate_matched": -23.755365872900178,
+          "hmm_3_state": -23.22821511487029
+        },
+        {
+          "record_index": 40,
+          "physical_known_nuisance": -18.039095387876607,
+          "physical_mismatched_detector": -18.13685375475897,
+          "markov_rate_matched": -18.29323526259201,
+          "hmm_3_state": -18.075354622255155
+        },
+        {
+          "record_index": 41,
+          "physical_known_nuisance": -18.46950229334411,
+          "physical_mismatched_detector": -18.307717937353402,
+          "markov_rate_matched": -18.592529770190566,
+          "hmm_3_state": -18.332856486082946
+        },
+        {
+          "record_index": 42,
+          "physical_known_nuisance": -14.27923566380249,
+          "physical_mismatched_detector": -14.292059798469523,
+          "markov_rate_matched": -14.462743286356737,
+          "hmm_3_state": -14.263356822045914
+        },
+        {
+          "record_index": 43,
+          "physical_known_nuisance": -18.23868983666032,
+          "physical_mismatched_detector": -18.27308655170384,
+          "markov_rate_matched": -18.592529770190566,
+          "hmm_3_state": -18.19455286522266
+        },
+        {
+          "record_index": 44,
+          "physical_known_nuisance": -22.311949689795505,
+          "physical_mismatched_detector": -22.305300092259113,
+          "markov_rate_matched": -22.722316254024395,
+          "hmm_3_state": -22.237267157186757
+        },
+        {
+          "record_index": 45,
+          "physical_known_nuisance": -20.709604064103804,
+          "physical_mismatched_detector": -20.675433409756653,
+          "markov_rate_matched": -21.146191087680748,
+          "hmm_3_state": -20.636806598580577
+        },
+        {
+          "record_index": 46,
+          "physical_known_nuisance": -23.587414051133972,
+          "physical_mismatched_detector": -23.405302569892903,
+          "markov_rate_matched": -23.69985240517093,
+          "hmm_3_state": -23.35445851144097
+        },
+        {
+          "record_index": 47,
+          "physical_known_nuisance": -19.856407466383278,
+          "physical_mismatched_detector": -19.801844124938942,
+          "markov_rate_matched": -20.168654936534214,
+          "hmm_3_state": -19.801426439399997
+        },
+        {
+          "record_index": 48,
+          "physical_known_nuisance": -19.191437139280094,
+          "physical_mismatched_detector": -19.28074420733037,
+          "markov_rate_matched": -19.5700659213371,
+          "hmm_3_state": -19.112904003881358
+        },
+        {
+          "record_index": 49,
+          "physical_known_nuisance": -18.85173981158112,
+          "physical_mismatched_detector": -19.161341298423526,
+          "markov_rate_matched": -19.62557938906635,
+          "hmm_3_state": -19.10190790585839
+        },
+        {
+          "record_index": 50,
+          "physical_known_nuisance": -23.032014081559645,
+          "physical_mismatched_detector": -22.559589881217224,
+          "markov_rate_matched": -20.90241004781144,
+          "hmm_3_state": -24.083549776441068
+        },
+        {
+          "record_index": 51,
+          "physical_known_nuisance": -19.857203301959803,
+          "physical_mismatched_detector": -19.864153534485737,
+          "markov_rate_matched": -20.16865493653421,
+          "hmm_3_state": -19.751348016513283
+        },
+        {
+          "record_index": 52,
+          "physical_known_nuisance": -20.475401278531923,
+          "physical_mismatched_detector": -20.880811749011997,
+          "markov_rate_matched": -21.445485595279305,
+          "hmm_3_state": -20.93970573647175
+        },
+        {
+          "record_index": 53,
+          "physical_known_nuisance": -16.489921790085276,
+          "physical_mismatched_detector": -16.657405825671617,
+          "markov_rate_matched": -17.01640460384692,
+          "hmm_3_state": -16.581509321554954
+        },
+        {
+          "record_index": 54,
+          "physical_known_nuisance": -18.250178381080723,
+          "physical_mismatched_detector": -18.36043422385749,
+          "markov_rate_matched": -18.648043237919815,
+          "hmm_3_state": -18.27700926125398
+        },
+        {
+          "record_index": 55,
+          "physical_known_nuisance": -20.85359746646573,
+          "physical_mismatched_detector": -21.009813779596712,
+          "markov_rate_matched": -21.744780102877858,
+          "hmm_3_state": -21.261025233304025
+        },
+        {
+          "record_index": 56,
+          "physical_known_nuisance": -19.439882578211993,
+          "physical_mismatched_detector": -18.82607845123299,
+          "markov_rate_matched": -17.071918071576167,
+          "hmm_3_state": -20.321501455283574
+        },
+        {
+          "record_index": 57,
+          "physical_known_nuisance": -14.859723875323862,
+          "physical_mismatched_detector": -14.750884861420063,
+          "markov_rate_matched": -14.762037793955292,
+          "hmm_3_state": -14.894569143814767
+        },
+        {
+          "record_index": 58,
+          "physical_known_nuisance": -15.423742205885565,
+          "physical_mismatched_detector": -15.501203493920984,
+          "markov_rate_matched": -15.739573945101828,
+          "hmm_3_state": -15.443847029411028
+        },
+        {
+          "record_index": 59,
+          "physical_known_nuisance": -21.22159704679496,
+          "physical_mismatched_detector": -21.290355091837498,
+          "markov_rate_matched": -21.800293570607106,
+          "hmm_3_state": -21.428111182806163
+        },
+        {
+          "record_index": 60,
+          "physical_known_nuisance": -19.907950064046982,
+          "physical_mismatched_detector": -19.789071623586896,
+          "markov_rate_matched": -20.16865493653421,
+          "hmm_3_state": -19.751544031676804
+        },
+        {
+          "record_index": 61,
+          "physical_known_nuisance": -21.171389141979276,
+          "physical_mismatched_detector": -21.15272757146118,
+          "markov_rate_matched": -21.4454855952793,
+          "hmm_3_state": -21.052083473066073
+        },
+        {
+          "record_index": 62,
+          "physical_known_nuisance": -24.734262367636802,
+          "physical_mismatched_detector": -24.267372000244652,
+          "markov_rate_matched": -22.777829721753644,
+          "hmm_3_state": -25.777834877018797
+        },
+        {
+          "record_index": 63,
+          "physical_known_nuisance": -21.46457528884196,
+          "physical_mismatched_detector": -21.53930837551254,
+          "markov_rate_matched": -21.80029357060711,
+          "hmm_3_state": -21.62068225694525
+        },
+        {
+          "record_index": 64,
+          "physical_known_nuisance": -19.54042946583935,
+          "physical_mismatched_detector": -19.532300873537725,
+          "markov_rate_matched": -19.869360428935657,
+          "hmm_3_state": -19.524331517376417
+        },
+        {
+          "record_index": 65,
+          "physical_known_nuisance": -23.719018197527078,
+          "physical_mismatched_detector": -23.763864431976952,
+          "markov_rate_matched": -24.054660380498735,
+          "hmm_3_state": -23.71235836113369
+        },
+        {
+          "record_index": 66,
+          "physical_known_nuisance": -18.974361677468597,
+          "physical_mismatched_detector": -18.87772252366013,
+          "markov_rate_matched": -19.191118785387676,
+          "hmm_3_state": -18.94932382174473
+        },
+        {
+          "record_index": 67,
+          "physical_known_nuisance": -19.186394743492734,
+          "physical_mismatched_detector": -19.12878367245894,
+          "markov_rate_matched": -19.5700659213371,
+          "hmm_3_state": -19.12297294252799
+        },
+        {
+          "record_index": 68,
+          "physical_known_nuisance": -19.248777807016115,
+          "physical_mismatched_detector": -19.271097480196005,
+          "markov_rate_matched": -19.869360428935654,
+          "hmm_3_state": -19.365195396373025
+        },
+        {
+          "record_index": 69,
+          "physical_known_nuisance": -24.081797811163636,
+          "physical_mismatched_detector": -24.039767172587062,
+          "markov_rate_matched": -23.755365872900178,
+          "hmm_3_state": -24.090692542416555
+        },
+        {
+          "record_index": 70,
+          "physical_known_nuisance": -20.747875004121802,
+          "physical_mismatched_detector": -20.92529247366273,
+          "markov_rate_matched": -21.445485595279305,
+          "hmm_3_state": -20.794221880485797
+        },
+        {
+          "record_index": 71,
+          "physical_known_nuisance": -22.02484006744567,
+          "physical_mismatched_detector": -21.90287475659681,
+          "markov_rate_matched": -22.17924070655653,
+          "hmm_3_state": -21.88058687647129
+        },
+        {
+          "record_index": 72,
+          "physical_known_nuisance": -17.868307410364846,
+          "physical_mismatched_detector": -18.002928403906783,
+          "markov_rate_matched": -18.29323526259201,
+          "hmm_3_state": -17.989820322229246
+        },
+        {
+          "record_index": 73,
+          "physical_known_nuisance": -15.685159692440026,
+          "physical_mismatched_detector": -15.689095683745725,
+          "markov_rate_matched": -15.739573945101828,
+          "hmm_3_state": -15.685944327392793
+        },
+        {
+          "record_index": 74,
+          "physical_known_nuisance": -18.38060968323225,
+          "physical_mismatched_detector": -18.507528513315684,
+          "markov_rate_matched": -18.891824277789123,
+          "hmm_3_state": -18.479240294066052
+        },
+        {
+          "record_index": 75,
+          "physical_known_nuisance": -20.605437632312096,
+          "physical_mismatched_detector": -20.744068763067997,
+          "markov_rate_matched": -21.146191087680748,
+          "hmm_3_state": -20.61401759797739
+        },
+        {
+          "record_index": 76,
+          "physical_known_nuisance": -19.70461437727121,
+          "physical_mismatched_detector": -19.760798428698337,
+          "markov_rate_matched": -20.168654936534214,
+          "hmm_3_state": -19.77697105942596
+        },
+        {
+          "record_index": 77,
+          "physical_known_nuisance": -25.09570765490593,
+          "physical_mismatched_detector": -25.376336533952543,
+          "markov_rate_matched": -25.87456658671169,
+          "hmm_3_state": -25.207567532953462
+        },
+        {
+          "record_index": 78,
+          "physical_known_nuisance": -22.002587045985525,
+          "physical_mismatched_detector": -21.917928515013575,
+          "markov_rate_matched": -22.42302174642584,
+          "hmm_3_state": -21.919325795972014
+        },
+        {
+          "record_index": 79,
+          "physical_known_nuisance": -19.04270475017612,
+          "physical_mismatched_detector": -18.72730247933977,
+          "markov_rate_matched": -17.071918071576167,
+          "hmm_3_state": -20.076881675633622
+        },
+        {
+          "record_index": 80,
+          "physical_known_nuisance": -14.40669463723387,
+          "physical_mismatched_detector": -14.292498694203799,
+          "markov_rate_matched": -14.462743286356737,
+          "hmm_3_state": -14.39232536521893
+        },
+        {
+          "record_index": 81,
+          "physical_known_nuisance": -19.843460652336717,
+          "physical_mismatched_detector": -20.031333407999,
+          "markov_rate_matched": -19.62557938906635,
+          "hmm_3_state": -20.07820206494953
+        },
+        {
+          "record_index": 82,
+          "physical_known_nuisance": -23.195942269041087,
+          "physical_mismatched_detector": -23.188956216518203,
+          "markov_rate_matched": -23.755365872900178,
+          "hmm_3_state": -23.120562904940055
+        },
+        {
+          "record_index": 83,
+          "physical_known_nuisance": -19.194628045470175,
+          "physical_mismatched_detector": -19.460898739440065,
+          "markov_rate_matched": -19.869360428935657,
+          "hmm_3_state": -19.350714509286632
+        },
+        {
+          "record_index": 84,
+          "physical_known_nuisance": -21.023690443652473,
+          "physical_mismatched_detector": -21.009760562416616,
+          "markov_rate_matched": -21.445485595279305,
+          "hmm_3_state": -21.02003004466279
+        },
+        {
+          "record_index": 85,
+          "physical_known_nuisance": -20.278559389151084,
+          "physical_mismatched_detector": -20.255534917330618,
+          "markov_rate_matched": -20.767243951731324,
+          "hmm_3_state": -20.34072843691742
+        },
+        {
+          "record_index": 86,
+          "physical_known_nuisance": -22.737588222087556,
+          "physical_mismatched_detector": -22.648308926053886,
+          "markov_rate_matched": -23.02161076162295,
+          "hmm_3_state": -22.5850378512974
+        },
+        {
+          "record_index": 87,
+          "physical_known_nuisance": -17.170483327258165,
+          "physical_mismatched_detector": -17.11393864370197,
+          "markov_rate_matched": -17.315699111445475,
+          "hmm_3_state": -17.0239394227613
+        },
+        {
+          "record_index": 88,
+          "physical_known_nuisance": -14.316096897754974,
+          "physical_mismatched_detector": -14.321007290502209,
+          "markov_rate_matched": -14.462743286356735,
+          "hmm_3_state": -14.285940365073488
+        },
+        {
+          "record_index": 89,
+          "physical_known_nuisance": -17.263848550740075,
+          "physical_mismatched_detector": -17.3413904539407,
+          "markov_rate_matched": -17.614993619044032,
+          "hmm_3_state": -17.309134360544768
+        },
+        {
+          "record_index": 90,
+          "physical_known_nuisance": -18.27184502683594,
+          "physical_mismatched_detector": -18.243134748414107,
+          "markov_rate_matched": -18.592529770190566,
+          "hmm_3_state": -18.237826281628273
+        },
+        {
+          "record_index": 91,
+          "physical_known_nuisance": -18.075840432030375,
+          "physical_mismatched_detector": -17.988166302854754,
+          "markov_rate_matched": -17.315699111445475,
+          "hmm_3_state": -18.069737413259894
+        },
+        {
+          "record_index": 92,
+          "physical_known_nuisance": -17.843673717085604,
+          "physical_mismatched_detector": -17.91720949912214,
+          "markov_rate_matched": -18.29323526259201,
+          "hmm_3_state": -17.81589792600518
+        },
+        {
+          "record_index": 93,
+          "physical_known_nuisance": -18.02125526969611,
+          "physical_mismatched_detector": -17.782176781698794,
+          "markov_rate_matched": -17.01640460384692,
+          "hmm_3_state": -17.934966379574803
+        },
+        {
+          "record_index": 94,
+          "physical_known_nuisance": -19.79772047633382,
+          "physical_mismatched_detector": -19.905919794578832,
+          "markov_rate_matched": -20.16865493653421,
+          "hmm_3_state": -19.756030468971804
+        },
+        {
+          "record_index": 95,
+          "physical_known_nuisance": -17.510878136434567,
+          "physical_mismatched_detector": -17.327680075650576,
+          "markov_rate_matched": -17.61499361904403,
+          "hmm_3_state": -17.440426542271293
+        },
+        {
+          "record_index": 96,
+          "physical_known_nuisance": -14.852356903057967,
+          "physical_mismatched_detector": -14.731381491798045,
+          "markov_rate_matched": -14.76203779395529,
+          "hmm_3_state": -14.830248431832903
+        },
+        {
+          "record_index": 97,
+          "physical_known_nuisance": -19.885181105642438,
+          "physical_mismatched_detector": -19.818749422810956,
+          "markov_rate_matched": -20.16865493653421,
+          "hmm_3_state": -19.92472976866364
+        },
+        {
+          "record_index": 98,
+          "physical_known_nuisance": -20.79438585240362,
+          "physical_mismatched_detector": -20.753539715521754,
+          "markov_rate_matched": -20.84689658008219,
+          "hmm_3_state": -20.571416118322556
+        },
+        {
+          "record_index": 99,
+          "physical_known_nuisance": -15.562851490040288,
+          "physical_mismatched_detector": -15.49526828937061,
+          "markov_rate_matched": -15.739573945101828,
+          "hmm_3_state": -15.528115414132083
+        },
+        {
+          "record_index": 100,
+          "physical_known_nuisance": -18.494374823842683,
+          "physical_mismatched_detector": -18.567854573074452,
+          "markov_rate_matched": -18.891824277789123,
+          "hmm_3_state": -18.549098828604457
+        },
+        {
+          "record_index": 101,
+          "physical_known_nuisance": -15.880647989337907,
+          "physical_mismatched_detector": -15.857371340520391,
+          "markov_rate_matched": -16.038868452700385,
+          "hmm_3_state": -15.885572269049598
+        },
+        {
+          "record_index": 102,
+          "physical_known_nuisance": -23.297549760204785,
+          "physical_mismatched_detector": -23.250591534257133,
+          "markov_rate_matched": -23.755365872900178,
+          "hmm_3_state": -23.23830128809181
+        },
+        {
+          "record_index": 103,
+          "physical_known_nuisance": -18.00296190932641,
+          "physical_mismatched_detector": -18.21703756416943,
+          "markov_rate_matched": -18.592529770190563,
+          "hmm_3_state": -18.08925516405545
+        },
+        {
+          "record_index": 104,
+          "physical_known_nuisance": -21.068383794745714,
+          "physical_mismatched_detector": -20.703533551787896,
+          "markov_rate_matched": -20.52346291186202,
+          "hmm_3_state": -20.445070422828017
+        },
+        {
+          "record_index": 105,
+          "physical_known_nuisance": -13.190297137911793,
+          "physical_mismatched_detector": -13.114934675383747,
+          "markov_rate_matched": -13.185912627611646,
+          "hmm_3_state": -13.113013042333215
+        },
+        {
+          "record_index": 106,
+          "physical_known_nuisance": -26.62233094205182,
+          "physical_mismatched_detector": -26.863495359657797,
+          "markov_rate_matched": -26.552808230259668,
+          "hmm_3_state": -26.963932004344116
+        },
+        {
+          "record_index": 107,
+          "physical_known_nuisance": -17.960977754535502,
+          "physical_mismatched_detector": -17.99697664187483,
+          "markov_rate_matched": -18.29323526259201,
+          "hmm_3_state": -17.935487658696964
+        },
+        {
+          "record_index": 108,
+          "physical_known_nuisance": -17.86306933819696,
+          "physical_mismatched_detector": -18.034014417654475,
+          "markov_rate_matched": -18.29323526259201,
+          "hmm_3_state": -17.951940958194065
+        },
+        {
+          "record_index": 109,
+          "physical_known_nuisance": -20.87113719466077,
+          "physical_mismatched_detector": -20.835709537031168,
+          "markov_rate_matched": -21.201704555409997,
+          "hmm_3_state": -20.71869347242788
+        },
+        {
+          "record_index": 110,
+          "physical_known_nuisance": -19.710040345413,
+          "physical_mismatched_detector": -19.700823436759503,
+          "markov_rate_matched": -20.168654936534214,
+          "hmm_3_state": -19.69762710935017
+        },
+        {
+          "record_index": 111,
+          "physical_known_nuisance": -26.260980017137786,
+          "physical_mismatched_detector": -26.214670958234066,
+          "markov_rate_matched": -26.852102737858225,
+          "hmm_3_state": -26.274298567952506
+        },
+        {
+          "record_index": 112,
+          "physical_known_nuisance": -18.333151516958168,
+          "physical_mismatched_detector": -18.312833410748986,
+          "markov_rate_matched": -18.592529770190566,
+          "hmm_3_state": -18.307234194854722
+        },
+        {
+          "record_index": 113,
+          "physical_known_nuisance": -18.60079162955887,
+          "physical_mismatched_detector": -18.553699037307688,
+          "markov_rate_matched": -18.891824277789123,
+          "hmm_3_state": -18.478548799799626
+        },
+        {
+          "record_index": 114,
+          "physical_known_nuisance": -14.380825297118788,
+          "physical_mismatched_detector": -14.343317660977467,
+          "markov_rate_matched": -14.462743286356737,
+          "hmm_3_state": -14.272295994604239
+        },
+        {
+          "record_index": 115,
+          "physical_known_nuisance": -20.952199022744907,
+          "physical_mismatched_detector": -20.959578198389575,
+          "markov_rate_matched": -21.445485595279305,
+          "hmm_3_state": -21.090180754432918
+        },
+        {
+          "record_index": 116,
+          "physical_known_nuisance": -17.63222577114,
+          "physical_mismatched_detector": -17.849484906832128,
+          "markov_rate_matched": -18.29323526259201,
+          "hmm_3_state": -17.777333284510256
+        },
+        {
+          "record_index": 117,
+          "physical_known_nuisance": -18.13721873448542,
+          "physical_mismatched_detector": -18.241578891239314,
+          "markov_rate_matched": -18.592529770190566,
+          "hmm_3_state": -18.10857142476506
+        },
+        {
+          "record_index": 118,
+          "physical_known_nuisance": -18.09714431343377,
+          "physical_mismatched_detector": -18.06458113212615,
+          "markov_rate_matched": -18.348748730321258,
+          "hmm_3_state": -18.037680259434765
+        },
+        {
+          "record_index": 119,
+          "physical_known_nuisance": -19.768022407400537,
+          "physical_mismatched_detector": -19.745528028795302,
+          "markov_rate_matched": -20.16865493653421,
+          "hmm_3_state": -19.677692808196824
+        },
+        {
+          "record_index": 120,
+          "physical_known_nuisance": -23.526915013062272,
+          "physical_mismatched_detector": -23.450602616861413,
+          "markov_rate_matched": -23.69985240517093,
+          "hmm_3_state": -23.171294204678627
+        },
+        {
+          "record_index": 121,
+          "physical_known_nuisance": -13.203332439721668,
+          "physical_mismatched_detector": -13.122753525507708,
+          "markov_rate_matched": -13.185912627611646,
+          "hmm_3_state": -13.137491647557829
+        },
+        {
+          "record_index": 122,
+          "physical_known_nuisance": -15.577655197238544,
+          "physical_mismatched_detector": -15.560152994912505,
+          "markov_rate_matched": -15.739573945101828,
+          "hmm_3_state": -15.514320952487648
+        },
+        {
+          "record_index": 123,
+          "physical_known_nuisance": -26.308272533215135,
+          "physical_mismatched_detector": -25.821892595889835,
+          "markov_rate_matched": -24.65324939569585,
+          "hmm_3_state": -27.546391519903466
+        },
+        {
+          "record_index": 124,
+          "physical_known_nuisance": -18.738472519577822,
+          "physical_mismatched_detector": -18.70151190729388,
+          "markov_rate_matched": -18.89182427778912,
+          "hmm_3_state": -18.80468688276506
+        },
+        {
+          "record_index": 125,
+          "physical_known_nuisance": -24.825218352741057,
+          "physical_mismatched_detector": -25.073288277299742,
+          "markov_rate_matched": -25.87456658671169,
+          "hmm_3_state": -25.193659715082713
+        },
+        {
+          "record_index": 126,
+          "physical_known_nuisance": -20.971630271595266,
+          "physical_mismatched_detector": -20.9498461423131,
+          "markov_rate_matched": -21.445485595279305,
+          "hmm_3_state": -20.94141895181816
+        },
+        {
+          "record_index": 127,
+          "physical_known_nuisance": -19.292756733651977,
+          "physical_mismatched_detector": -19.46378371629305,
+          "markov_rate_matched": -19.869360428935654,
+          "hmm_3_state": -19.31663667580645
+        },
+        {
+          "record_index": 128,
+          "physical_known_nuisance": -15.496392682537822,
+          "physical_mismatched_detector": -15.501463364590922,
+          "markov_rate_matched": -15.739573945101828,
+          "hmm_3_state": -15.53699486145639
+        },
+        {
+          "record_index": 129,
+          "physical_known_nuisance": -19.68732553136106,
+          "physical_mismatched_detector": -19.807126909355308,
+          "markov_rate_matched": -20.168654936534214,
+          "hmm_3_state": -19.720374219188944
+        },
+        {
+          "record_index": 130,
+          "physical_known_nuisance": -24.84997695366905,
+          "physical_mismatched_detector": -25.034358458582595,
+          "markov_rate_matched": -25.575272079113134,
+          "hmm_3_state": -25.026719601456673
+        },
+        {
+          "record_index": 131,
+          "physical_known_nuisance": -25.325186141015113,
+          "physical_mismatched_detector": -25.61773482817415,
+          "markov_rate_matched": -26.173861094310244,
+          "hmm_3_state": -25.667710664154278
+        },
+        {
+          "record_index": 132,
+          "physical_known_nuisance": -22.699195998548557,
+          "physical_mismatched_detector": -22.79351395358609,
+          "markov_rate_matched": -22.42302174642584,
+          "hmm_3_state": -22.841940605896195
+        },
+        {
+          "record_index": 133,
+          "physical_known_nuisance": -19.08493820525826,
+          "physical_mismatched_detector": -19.10291760965963,
+          "markov_rate_matched": -18.592529770190566,
+          "hmm_3_state": -19.23360654551744
+        },
+        {
+          "record_index": 134,
+          "physical_known_nuisance": -20.57376635404975,
+          "physical_mismatched_detector": -20.696098160774106,
+          "markov_rate_matched": -21.146191087680748,
+          "hmm_3_state": -20.673622751137273
+        },
+        {
+          "record_index": 135,
+          "physical_known_nuisance": -17.940582840323128,
+          "physical_mismatched_detector": -17.96344957654889,
+          "markov_rate_matched": -18.29323526259201,
+          "hmm_3_state": -17.846061440608196
+        },
+        {
+          "record_index": 136,
+          "physical_known_nuisance": -18.377536158452344,
+          "physical_mismatched_detector": -18.272537027015403,
+          "markov_rate_matched": -18.29323526259201,
+          "hmm_3_state": -18.20617249419331
+        },
+        {
+          "record_index": 137,
+          "physical_known_nuisance": -17.306080644121604,
+          "physical_mismatched_detector": -17.390600846686276,
+          "markov_rate_matched": -17.61499361904403,
+          "hmm_3_state": -17.44104664472967
+        },
+        {
+          "record_index": 138,
+          "physical_known_nuisance": -22.646688084781704,
+          "physical_mismatched_detector": -22.592634877096827,
+          "markov_rate_matched": -23.02161076162295,
+          "hmm_3_state": -22.610787388732586
+        },
+        {
+          "record_index": 139,
+          "physical_known_nuisance": -14.383284630757277,
+          "physical_mismatched_detector": -14.332001297650203,
+          "markov_rate_matched": -14.462743286356737,
+          "hmm_3_state": -14.273852884168734
+        },
+        {
+          "record_index": 140,
+          "physical_known_nuisance": -18.38114669891968,
+          "physical_mismatched_detector": -18.38327777712058,
+          "markov_rate_matched": -18.89182427778912,
+          "hmm_3_state": -18.60568648867359
+        },
+        {
+          "record_index": 141,
+          "physical_known_nuisance": -20.89316936744953,
+          "physical_mismatched_detector": -20.610312841116535,
+          "markov_rate_matched": -21.146191087680748,
+          "hmm_3_state": -20.667717053892808
+        },
+        {
+          "record_index": 142,
+          "physical_known_nuisance": -18.28948461471204,
+          "physical_mismatched_detector": -18.358249667022793,
+          "markov_rate_matched": -18.592529770190566,
+          "hmm_3_state": -18.315344715002112
+        },
+        {
+          "record_index": 143,
+          "physical_known_nuisance": -26.165242540173935,
+          "physical_mismatched_detector": -26.939321227407625,
+          "markov_rate_matched": -27.506205220784583,
+          "hmm_3_state": -26.763559392101428
+        },
+        {
+          "record_index": 144,
+          "physical_known_nuisance": -18.81692981070002,
+          "physical_mismatched_detector": -19.066243351035848,
+          "markov_rate_matched": -19.5700659213371,
+          "hmm_3_state": -18.992716613627053
+        },
+        {
+          "record_index": 145,
+          "physical_known_nuisance": -23.071851612736626,
+          "physical_mismatched_detector": -23.20385669022332,
+          "markov_rate_matched": -23.699852405170926,
+          "hmm_3_state": -22.999978608713008
+        },
+        {
+          "record_index": 146,
+          "physical_known_nuisance": -21.24863189421867,
+          "physical_mismatched_detector": -21.245922606399652,
+          "markov_rate_matched": -21.744780102877858,
+          "hmm_3_state": -21.186277240875878
+        },
+        {
+          "record_index": 147,
+          "physical_known_nuisance": -20.587344566287232,
+          "physical_mismatched_detector": -20.79394068010471,
+          "markov_rate_matched": -21.146191087680748,
+          "hmm_3_state": -20.7467754350507
+        },
+        {
+          "record_index": 148,
+          "physical_known_nuisance": -18.885169024057397,
+          "physical_mismatched_detector": -19.065968577775273,
+          "markov_rate_matched": -19.5700659213371,
+          "hmm_3_state": -18.90383764208178
+        },
+        {
+          "record_index": 149,
+          "physical_known_nuisance": -20.2464386091554,
+          "physical_mismatched_detector": -20.10952849911138,
+          "markov_rate_matched": -20.467949444132767,
+          "hmm_3_state": -20.102666802181858
+        }
+      ],
+      "hmm3_refinement": {
+        "method": "L-BFGS-B on training log likelihood with analytic forward-backward gradient",
+        "optimization_success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "iterations": 170,
+        "max_iterations": 1000,
+        "train_before": -7880.491732472319,
+        "train_candidate": -7880.211922586065,
+        "accepted_candidate": true,
+        "train_selected": -7880.211922586065,
+        "max_abs_logit_gradient": 0.00020234996918588877,
+        "max_abs_logit": 20.0,
+        "bounds": [
+          -20,
+          20
+        ],
+        "note": "Only the top EM restart was refined; local convergence does not establish a global optimum."
+      },
+      "hmm3_refined_parameters": {
+        "initial": [
+          0.8887256012070718,
+          2.2935362968398384e-10,
+          0.11127439856357466
+        ],
+        "transition": [
+          [
+            0.7821313474215553,
+            4.490607615522851e-10,
+            0.21786865212938397
+          ],
+          [
+            0.6048857264560419,
+            0.16665023641341753,
+            0.22846403713054056
+          ],
+          [
+            8.589703589198655e-10,
+            0.7331743575906633,
+            0.26682564155036625
+          ]
+        ],
+        "emissions": [
+          0.00903425691255582,
+          0.9999999955785088,
+          2.0611536181902037e-09
+        ]
+      }
+    },
+    {
+      "seed": 31002,
+      "test_seed": 1031002,
+      "train_records": 400,
+      "test_records": 150,
+      "bins": 40,
+      "training_click_fraction": 0.20075,
+      "test_click_fraction": 0.19416666666666665,
+      "train_binary_array_sha256": "01e4fd7c9064258c382f9cc0b09b5223e8d2d0282da131507d8857b8a2f0be4c",
+      "test_binary_array_sha256": "690de6a093646ac0e4719ca97c99f1cef3f4b846d25137cd7426c549c5577cf8",
+      "known_nuisance_fit": {
+        "g_hat": 0.65,
+        "train_log_likelihood": -7921.091820196174,
+        "g_grid": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6000000000000001,
+          0.65,
+          0.7000000000000001,
+          0.75,
+          0.8,
+          0.8500000000000001,
+          0.9,
+          0.9500000000000001,
+          1.0,
+          1.05,
+          1.1,
+          1.1500000000000001,
+          1.2000000000000002,
+          1.25
+        ],
+        "fixed_nuisance": {
+          "defect_detuning": 0.2,
+          "cavity_detuning": 0.0,
+          "g_cavity": 0.7,
+          "drive": 1.3,
+          "kappa": 1.4,
+          "detector_eta": 0.68,
+          "gamma_emitter": 0.07,
+          "gamma_defect": 0.025,
+          "gamma_phi_emitter": 0.035,
+          "gamma_phi_defect": 0.02,
+          "dark_rate": 0.018,
+          "dt": 1.0,
+          "n_cavity": 3
+        }
+      },
+      "mismatched_nuisance_fit": {
+        "g_hat": 0.45,
+        "train_log_likelihood": -7927.030121151183,
+        "g_grid": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6000000000000001,
+          0.65,
+          0.7000000000000001,
+          0.75,
+          0.8,
+          0.8500000000000001,
+          0.9,
+          0.9500000000000001,
+          1.0,
+          1.05,
+          1.1,
+          1.1500000000000001,
+          1.2000000000000002,
+          1.25
+        ],
+        "fixed_nuisance": {
+          "defect_detuning": 0.2,
+          "cavity_detuning": 0.0,
+          "g_cavity": 0.7,
+          "drive": 1.3,
+          "kappa": 1.4,
+          "detector_eta": 0.54,
+          "gamma_emitter": 0.07,
+          "gamma_defect": 0.025,
+          "gamma_phi_emitter": 0.035,
+          "gamma_phi_defect": 0.02,
+          "dark_rate": 0.035,
+          "dt": 1.0,
+          "n_cavity": 3
+        }
+      },
+      "markov_fit": {
+        "initial": [
+          0.79925,
+          0.20075
+        ],
+        "transition": [
+          [
+            0.7912674939699657,
+            0.20873250603003432
+          ],
+          [
+            0.8310309113051304,
+            0.1689690886948696
+          ]
+        ],
+        "training_click_rate": 0.20075,
+        "alpha": 1.0397634173351646,
+        "training_log_likelihood": -8010.112997852855,
+        "stationary_click_rate": 0.20075,
+        "optimizer_success": true
+      },
+      "hmm3_fit": {
+        "initial": [
+          2.5e-15,
+          0.9999999999987643,
+          1.2330308826604917e-12
+        ],
+        "transition": [
+          [
+            0.17508180413433633,
+            0.621592878782809,
+            0.20332531708285465
+          ],
+          [
+            0.055689304296329935,
+            0.7558920950499031,
+            0.18841860065376717
+          ],
+          [
+            0.5697060882144517,
+            0.0023245297931035126,
+            0.42796938199244483
+          ]
+        ],
+        "emissions": [
+          0.89847043032039,
+          0.03612611696940325,
+          0.006288630089989889
+        ],
+        "train_log_likelihood": -7919.930868075568,
+        "selected_start": 0,
+        "converged": false,
+        "iterations": 800,
+        "starts": [
+          {
+            "start": 0,
+            "train_log_likelihood": -7919.930868075568,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 1,
+            "train_log_likelihood": -7920.30592904183,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 2,
+            "train_log_likelihood": -7920.224056818494,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 3,
+            "train_log_likelihood": -7921.992460729458,
+            "iterations": 703,
+            "converged": true,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 4,
+            "train_log_likelihood": -7934.274060004409,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 5,
+            "train_log_likelihood": -7953.148012411226,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          }
+        ]
+      },
+      "heldout_total_nats": {
+        "physical_known_nuisance": -2908.56290120745,
+        "physical_mismatched_detector": -2911.0103015677623,
+        "markov_rate_matched": -2945.257987842283,
+        "hmm_3_state": -2912.5289121220803
+      },
+      "paired_differences": {
+        "known_physical_minus_hmm3": {
+          "total_delta_nats": 3.9660109146300133,
+          "mean_delta_nats_per_record": 0.026440072764200087,
+          "standard_error_nats_per_record": 0.01815918695087882,
+          "bootstrap_95_percentile_nats_per_record": [
+            -0.008795262185580677,
+            0.06276258541074235
+          ],
+          "positive_record_fraction": 0.5333333333333333,
+          "n_heldout_records": 150,
+          "bootstrap_replicates": 2000,
+          "bootstrap_seed": 271828
+        },
+        "mismatched_physical_minus_hmm3": {
+          "total_delta_nats": 1.518610554317549,
+          "mean_delta_nats_per_record": 0.010124070362116993,
+          "standard_error_nats_per_record": 0.01907095935961741,
+          "bootstrap_95_percentile_nats_per_record": [
+            -0.026040823394543416,
+            0.04742544393250604
+          ],
+          "positive_record_fraction": 0.4666666666666667,
+          "n_heldout_records": 150,
+          "bootstrap_replicates": 2000,
+          "bootstrap_seed": 271828
+        },
+        "known_minus_mismatched_physical": {
+          "total_delta_nats": 2.4474003603124643,
+          "mean_delta_nats_per_record": 0.016316002402083096,
+          "standard_error_nats_per_record": 0.014236446584689979,
+          "bootstrap_95_percentile_nats_per_record": [
+            -0.011833234023983698,
+            0.044773476382797835
+          ],
+          "positive_record_fraction": 0.54,
+          "n_heldout_records": 150,
+          "bootstrap_replicates": 2000,
+          "bootstrap_seed": 271828
+        },
+        "hmm3_minus_rate_matched_markov": {
+          "total_delta_nats": 32.729075720203,
+          "mean_delta_nats_per_record": 0.21819383813468665,
+          "standard_error_nats_per_record": 0.04073075756252277,
+          "bootstrap_95_percentile_nats_per_record": [
+            0.1373818545474364,
+            0.2944859141815014
+          ],
+          "positive_record_fraction": 0.76,
+          "n_heldout_records": 150,
+          "bootstrap_replicates": 2000,
+          "bootstrap_seed": 271828
+        }
+      },
+      "per_record_log_likelihoods": [
+        {
+          "record_index": 0,
+          "physical_known_nuisance": -22.000418465820825,
+          "physical_mismatched_detector": -22.02319972941592,
+          "markov_rate_matched": -22.450614992465102,
+          "hmm_3_state": -22.007367661912447
+        },
+        {
+          "record_index": 1,
+          "physical_known_nuisance": -16.754326264443133,
+          "physical_mismatched_detector": -16.71768046313805,
+          "markov_rate_matched": -17.056039852011843,
+          "hmm_3_state": -16.874167794284283
+        },
+        {
+          "record_index": 2,
+          "physical_known_nuisance": -21.15882179187648,
+          "physical_mismatched_detector": -21.034581442903296,
+          "markov_rate_matched": -21.427432051219828,
+          "hmm_3_state": -21.272101327153702
+        },
+        {
+          "record_index": 3,
+          "physical_known_nuisance": -15.759404182931533,
+          "physical_mismatched_detector": -15.675361757193263,
+          "markov_rate_matched": -15.772488235672137,
+          "hmm_3_state": -15.790560812531568
+        },
+        {
+          "record_index": 4,
+          "physical_known_nuisance": -22.27432163244486,
+          "physical_mismatched_detector": -22.15482071387799,
+          "markov_rate_matched": -22.450614992465106,
+          "hmm_3_state": -22.278565921951795
+        },
+        {
+          "record_index": 5,
+          "physical_known_nuisance": -18.531251479033855,
+          "physical_mismatched_detector": -18.38906700592694,
+          "markov_rate_matched": -18.64899105283267,
+          "hmm_3_state": -18.528118965091465
+        },
+        {
+          "record_index": 6,
+          "physical_known_nuisance": -14.738317926124758,
+          "physical_mismatched_detector": -14.653528565104711,
+          "markov_rate_matched": -14.749305294426863,
+          "hmm_3_state": -14.733087831519189
+        },
+        {
+          "record_index": 7,
+          "physical_known_nuisance": -21.075486403440213,
+          "physical_mismatched_detector": -21.006730013431515,
+          "markov_rate_matched": -21.427432051219828,
+          "hmm_3_state": -21.10195348337192
+        },
+        {
+          "record_index": 8,
+          "physical_known_nuisance": -22.749370072115646,
+          "physical_mismatched_detector": -22.695391931075676,
+          "markov_rate_matched": -23.020383252040656,
+          "hmm_3_state": -22.844416283968528
+        },
+        {
+          "record_index": 9,
+          "physical_known_nuisance": -19.676267128924103,
+          "physical_mismatched_detector": -19.79519880105384,
+          "markov_rate_matched": -20.14388043488012,
+          "hmm_3_state": -19.521444869689077
+        },
+        {
+          "record_index": 10,
+          "physical_known_nuisance": -25.097970616676516,
+          "physical_mismatched_detector": -25.133220178354467,
+          "markov_rate_matched": -25.538455575333387,
+          "hmm_3_state": -25.45721798396439
+        },
+        {
+          "record_index": 11,
+          "physical_known_nuisance": -20.344378084380004,
+          "physical_mismatched_detector": -20.43963396170409,
+          "markov_rate_matched": -20.906694701030965,
+          "hmm_3_state": -20.243046709125352
+        },
+        {
+          "record_index": 12,
+          "physical_known_nuisance": -19.459033936976354,
+          "physical_mismatched_detector": -19.6060950900369,
+          "markov_rate_matched": -19.883511759785694,
+          "hmm_3_state": -19.508856906551017
+        },
+        {
+          "record_index": 13,
+          "physical_known_nuisance": -18.933428138383814,
+          "physical_mismatched_detector": -18.758471983032585,
+          "markov_rate_matched": -18.86032881854041,
+          "hmm_3_state": -18.626616359835918
+        },
+        {
+          "record_index": 14,
+          "physical_known_nuisance": -17.938799681724404,
+          "physical_mismatched_detector": -17.922070428277756,
+          "markov_rate_matched": -17.31640852710628,
+          "hmm_3_state": -18.166835607580758
+        },
+        {
+          "record_index": 15,
+          "physical_known_nuisance": -19.277170755114646,
+          "physical_mismatched_detector": -19.279421938449147,
+          "markov_rate_matched": -19.672173994077937,
+          "hmm_3_state": -19.215675949848638
+        },
+        {
+          "record_index": 16,
+          "physical_known_nuisance": -18.282761117532424,
+          "physical_mismatched_detector": -18.538173867106522,
+          "markov_rate_matched": -18.860328818540413,
+          "hmm_3_state": -18.37829605940495
+        },
+        {
+          "record_index": 17,
+          "physical_known_nuisance": -19.500616277280884,
+          "physical_mismatched_detector": -19.514088063119832,
+          "markov_rate_matched": -19.883511759785694,
+          "hmm_3_state": -19.457187290894872
+        },
+        {
+          "record_index": 18,
+          "physical_known_nuisance": -21.53001246455825,
+          "physical_mismatched_detector": -21.54930610587931,
+          "markov_rate_matched": -21.167063376125395,
+          "hmm_3_state": -21.71485785722235
+        },
+        {
+          "record_index": 19,
+          "physical_known_nuisance": -20.820187287946034,
+          "physical_mismatched_detector": -21.02201766280322,
+          "markov_rate_matched": -21.476462960606515,
+          "hmm_3_state": -20.851569024837637
+        },
+        {
+          "record_index": 20,
+          "physical_known_nuisance": -16.013241899212527,
+          "physical_mismatched_detector": -15.889094402808176,
+          "markov_rate_matched": -16.03285691076657,
+          "hmm_3_state": -16.03565492206459
+        },
+        {
+          "record_index": 21,
+          "physical_known_nuisance": -19.395005788620924,
+          "physical_mismatched_detector": -19.43516584987886,
+          "markov_rate_matched": -19.672173994077948,
+          "hmm_3_state": -19.39199000932404
+        },
+        {
+          "record_index": 22,
+          "physical_known_nuisance": -16.88779021634625,
+          "physical_mismatched_detector": -16.82752907920639,
+          "markov_rate_matched": -17.056039852011843,
+          "hmm_3_state": -16.889549787367002
+        },
+        {
+          "record_index": 23,
+          "physical_known_nuisance": -25.89214429531126,
+          "physical_mismatched_detector": -25.771021475472498,
+          "markov_rate_matched": -25.066749134531207,
+          "hmm_3_state": -26.00833927341563
+        },
+        {
+          "record_index": 24,
+          "physical_known_nuisance": -18.102848674886417,
+          "physical_mismatched_detector": -17.766260894786573,
+          "markov_rate_matched": -17.576777202200702,
+          "hmm_3_state": -17.751479950235677
+        },
+        {
+          "record_index": 25,
+          "physical_known_nuisance": -20.85634272977693,
+          "physical_mismatched_detector": -20.97585772015584,
+          "markov_rate_matched": -21.427432051219828,
+          "hmm_3_state": -20.693990313363553
+        },
+        {
+          "record_index": 26,
+          "physical_known_nuisance": -19.687633765986124,
+          "physical_mismatched_detector": -19.72962268259002,
+          "markov_rate_matched": -20.143880434880113,
+          "hmm_3_state": -19.656609228705612
+        },
+        {
+          "record_index": 27,
+          "physical_known_nuisance": -19.653997788807338,
+          "physical_mismatched_detector": -19.5726396576328,
+          "markov_rate_matched": -19.93254266917237,
+          "hmm_3_state": -19.45566223796471
+        },
+        {
+          "record_index": 28,
+          "physical_known_nuisance": -17.75805778644378,
+          "physical_mismatched_detector": -17.437110991910235,
+          "markov_rate_matched": -17.31640852710628,
+          "hmm_3_state": -17.543675623557284
+        },
+        {
+          "record_index": 29,
+          "physical_known_nuisance": -15.627848015477445,
+          "physical_mismatched_detector": -15.570007417601818,
+          "markov_rate_matched": -15.77248823567214,
+          "hmm_3_state": -15.688188005946307
+        },
+        {
+          "record_index": 30,
+          "physical_known_nuisance": -18.301801481488262,
+          "physical_mismatched_detector": -18.624324771770098,
+          "markov_rate_matched": -18.9093597279271,
+          "hmm_3_state": -18.42975992504249
+        },
+        {
+          "record_index": 31,
+          "physical_known_nuisance": -21.853074721891495,
+          "physical_mismatched_detector": -21.73651023476656,
+          "markov_rate_matched": -22.190246317370676,
+          "hmm_3_state": -21.934068822586305
+        },
+        {
+          "record_index": 32,
+          "physical_known_nuisance": -18.16110170987388,
+          "physical_mismatched_detector": -18.15872120180712,
+          "markov_rate_matched": -18.599960143445983,
+          "hmm_3_state": -17.973394436637832
+        },
+        {
+          "record_index": 33,
+          "physical_known_nuisance": -19.756602968606494,
+          "physical_mismatched_detector": -19.831249398470877,
+          "markov_rate_matched": -20.143880434880117,
+          "hmm_3_state": -19.699183307398876
+        },
+        {
+          "record_index": 34,
+          "physical_known_nuisance": -19.89564715472336,
+          "physical_mismatched_detector": -20.191590916527005,
+          "markov_rate_matched": -20.453280019361245,
+          "hmm_3_state": -20.104098962599547
+        },
+        {
+          "record_index": 35,
+          "physical_known_nuisance": -19.141458219613646,
+          "physical_mismatched_detector": -19.319018878338202,
+          "markov_rate_matched": -19.672173994077937,
+          "hmm_3_state": -19.406692314081525
+        },
+        {
+          "record_index": 36,
+          "physical_known_nuisance": -22.093600420181485,
+          "physical_mismatched_detector": -22.25973638893449,
+          "markov_rate_matched": -21.687800726314258,
+          "hmm_3_state": -22.38683961927284
+        },
+        {
+          "record_index": 37,
+          "physical_known_nuisance": -18.314945921865075,
+          "physical_mismatched_detector": -18.300446441611722,
+          "markov_rate_matched": -18.59996014344598,
+          "hmm_3_state": -18.364963848960002
+        },
+        {
+          "record_index": 38,
+          "physical_known_nuisance": -20.753801521476635,
+          "physical_mismatched_detector": -20.682617018409456,
+          "markov_rate_matched": -21.167063376125398,
+          "hmm_3_state": -20.55470376299636
+        },
+        {
+          "record_index": 39,
+          "physical_known_nuisance": -22.137583280101516,
+          "physical_mismatched_detector": -21.93689718227324,
+          "markov_rate_matched": -22.450614992465106,
+          "hmm_3_state": -22.0672460359141
+        },
+        {
+          "record_index": 40,
+          "physical_known_nuisance": -13.149449864704941,
+          "physical_mismatched_detector": -13.111796737524882,
+          "markov_rate_matched": -13.20538500299272,
+          "hmm_3_state": -13.179906398987153
+        },
+        {
+          "record_index": 41,
+          "physical_known_nuisance": -18.252025373998368,
+          "physical_mismatched_detector": -18.28674087143604,
+          "markov_rate_matched": -18.599960143445976,
+          "hmm_3_state": -18.19495065554049
+        },
+        {
+          "record_index": 42,
+          "physical_known_nuisance": -16.602799368335674,
+          "physical_mismatched_detector": -16.475191299099237,
+          "markov_rate_matched": -15.772488235672135,
+          "hmm_3_state": -16.80759714132365
+        },
+        {
+          "record_index": 43,
+          "physical_known_nuisance": -20.89546273977783,
+          "physical_mismatched_detector": -20.723003025714693,
+          "markov_rate_matched": -21.167063376125398,
+          "hmm_3_state": -20.808083765844096
+        },
+        {
+          "record_index": 44,
+          "physical_known_nuisance": -16.985448109944073,
+          "physical_mismatched_detector": -17.151149098852276,
+          "markov_rate_matched": -17.316408527106276,
+          "hmm_3_state": -16.789449286543285
+        },
+        {
+          "record_index": 45,
+          "physical_known_nuisance": -15.549437743096837,
+          "physical_mismatched_detector": -15.564616811073961,
+          "markov_rate_matched": -15.772488235672139,
+          "hmm_3_state": -15.538567348263681
+        },
+        {
+          "record_index": 46,
+          "physical_known_nuisance": -19.715632346321076,
+          "physical_mismatched_detector": -19.553557021397097,
+          "markov_rate_matched": -18.599960143445983,
+          "hmm_3_state": -19.652716611861557
+        },
+        {
+          "record_index": 47,
+          "physical_known_nuisance": -18.350597105433355,
+          "physical_mismatched_detector": -18.501378536134165,
+          "markov_rate_matched": -18.9093597279271,
+          "hmm_3_state": -18.69660780927356
+        },
+        {
+          "record_index": 48,
+          "physical_known_nuisance": -21.0028140406252,
+          "physical_mismatched_detector": -20.963507292924845,
+          "markov_rate_matched": -21.47646296060651,
+          "hmm_3_state": -20.888502238136738
+        },
+        {
+          "record_index": 49,
+          "physical_known_nuisance": -19.49626571817599,
+          "physical_mismatched_detector": -19.55670938247947,
+          "markov_rate_matched": -19.93254266917237,
+          "hmm_3_state": -19.481630267925908
+        },
+        {
+          "record_index": 50,
+          "physical_known_nuisance": -22.677200323232054,
+          "physical_mismatched_detector": -22.39547093219659,
+          "markov_rate_matched": -22.450614992465102,
+          "hmm_3_state": -22.552350287117893
+        },
+        {
+          "record_index": 51,
+          "physical_known_nuisance": -14.350875954042861,
+          "physical_mismatched_detector": -14.366139623223335,
+          "markov_rate_matched": -14.488936619332428,
+          "hmm_3_state": -14.131207156026221
+        },
+        {
+          "record_index": 52,
+          "physical_known_nuisance": -23.97075920593888,
+          "physical_mismatched_detector": -24.029809953084996,
+          "markov_rate_matched": -24.254903958993676,
+          "hmm_3_state": -23.772685184206075
+        },
+        {
+          "record_index": 53,
+          "physical_known_nuisance": -21.997463870007326,
+          "physical_mismatched_detector": -21.708149355473736,
+          "markov_rate_matched": -20.24194225365349,
+          "hmm_3_state": -21.734758614127685
+        },
+        {
+          "record_index": 54,
+          "physical_known_nuisance": -21.88441811469144,
+          "physical_mismatched_detector": -21.99175377096883,
+          "markov_rate_matched": -22.71098366755954,
+          "hmm_3_state": -21.60832922037376
+        },
+        {
+          "record_index": 55,
+          "physical_known_nuisance": -20.59999547416612,
+          "physical_mismatched_detector": -20.584792005680967,
+          "markov_rate_matched": -21.167063376125395,
+          "hmm_3_state": -20.610846722865585
+        },
+        {
+          "record_index": 56,
+          "physical_known_nuisance": -30.651766023911204,
+          "physical_mismatched_detector": -30.722394912446322,
+          "markov_rate_matched": -31.242430300267777,
+          "hmm_3_state": -31.488287384608793
+        },
+        {
+          "record_index": 57,
+          "physical_known_nuisance": -14.284528147371528,
+          "physical_mismatched_detector": -14.310789862371715,
+          "markov_rate_matched": -14.488936619332431,
+          "hmm_3_state": -14.17249152569002
+        },
+        {
+          "record_index": 58,
+          "physical_known_nuisance": -21.092806134963123,
+          "physical_mismatched_detector": -21.151066142922797,
+          "markov_rate_matched": -21.47646296060651,
+          "hmm_3_state": -21.09587188631734
+        },
+        {
+          "record_index": 59,
+          "physical_known_nuisance": -24.746910620502447,
+          "physical_mismatched_detector": -24.421280007786645,
+          "markov_rate_matched": -23.020383252040656,
+          "hmm_3_state": -24.205416740306134
+        },
+        {
+          "record_index": 60,
+          "physical_known_nuisance": -15.78120819126513,
+          "physical_mismatched_detector": -15.631791207131744,
+          "markov_rate_matched": -15.772488235672137,
+          "hmm_3_state": -15.90459381025165
+        },
+        {
+          "record_index": 61,
+          "physical_known_nuisance": -22.62995525501719,
+          "physical_mismatched_detector": -22.734271087085453,
+          "markov_rate_matched": -23.473797933710383,
+          "hmm_3_state": -22.77593349867167
+        },
+        {
+          "record_index": 62,
+          "physical_known_nuisance": -22.182215141397553,
+          "physical_mismatched_detector": -21.932864921823565,
+          "markov_rate_matched": -22.190246317370676,
+          "hmm_3_state": -22.310044734146715
+        },
+        {
+          "record_index": 63,
+          "physical_known_nuisance": -18.828379794827644,
+          "physical_mismatched_detector": -19.090726897836458,
+          "markov_rate_matched": -19.623143084691254,
+          "hmm_3_state": -18.90590221598535
+        },
+        {
+          "record_index": 64,
+          "physical_known_nuisance": -18.877886551755225,
+          "physical_mismatched_detector": -18.86405105941906,
+          "markov_rate_matched": -19.120697493634847,
+          "hmm_3_state": -18.905467853087963
+        },
+        {
+          "record_index": 65,
+          "physical_known_nuisance": -14.312080082744012,
+          "physical_mismatched_detector": -14.349699965722474,
+          "markov_rate_matched": -14.488936619332431,
+          "hmm_3_state": -14.456960658052374
+        },
+        {
+          "record_index": 66,
+          "physical_known_nuisance": -21.311475561523416,
+          "physical_mismatched_detector": -21.271531504766003,
+          "markov_rate_matched": -21.427432051219828,
+          "hmm_3_state": -21.45131832102109
+        },
+        {
+          "record_index": 67,
+          "physical_known_nuisance": -14.243449616226657,
+          "physical_mismatched_detector": -14.313205252270347,
+          "markov_rate_matched": -14.48893661933243,
+          "hmm_3_state": -14.154564401488443
+        },
+        {
+          "record_index": 68,
+          "physical_known_nuisance": -16.836822789030546,
+          "physical_mismatched_detector": -16.739063185522227,
+          "markov_rate_matched": -17.05603985201184,
+          "hmm_3_state": -16.74924887874844
+        },
+        {
+          "record_index": 69,
+          "physical_known_nuisance": -21.367518893964697,
+          "physical_mismatched_detector": -21.184774789584257,
+          "markov_rate_matched": -21.476462960606515,
+          "hmm_3_state": -21.709078708949555
+        },
+        {
+          "record_index": 70,
+          "physical_known_nuisance": -19.60156762147484,
+          "physical_mismatched_detector": -19.736254620159247,
+          "markov_rate_matched": -20.14388043488012,
+          "hmm_3_state": -19.523843600519825
+        },
+        {
+          "record_index": 71,
+          "physical_known_nuisance": -14.519978926955003,
+          "physical_mismatched_detector": -14.397102301275698,
+          "markov_rate_matched": -14.488936619332428,
+          "hmm_3_state": -14.531505572188063
+        },
+        {
+          "record_index": 72,
+          "physical_known_nuisance": -22.485343710935307,
+          "physical_mismatched_detector": -22.507000942822334,
+          "markov_rate_matched": -23.020383252040656,
+          "hmm_3_state": -22.09004272260249
+        },
+        {
+          "record_index": 73,
+          "physical_known_nuisance": -20.381174856184124,
+          "physical_mismatched_detector": -20.48983891374344,
+          "markov_rate_matched": -21.167063376125398,
+          "hmm_3_state": -20.31985057779996
+        },
+        {
+          "record_index": 74,
+          "physical_known_nuisance": -11.931042373550083,
+          "physical_mismatched_detector": -11.874181323486896,
+          "markov_rate_matched": -11.921833386653013,
+          "hmm_3_state": -12.30417026029913
+        },
+        {
+          "record_index": 75,
+          "physical_known_nuisance": -20.265998983100378,
+          "physical_mismatched_detector": -20.405104206758878,
+          "markov_rate_matched": -20.90669470103097,
+          "hmm_3_state": -20.423775456223513
+        },
+        {
+          "record_index": 76,
+          "physical_known_nuisance": -14.449473926232915,
+          "physical_mismatched_detector": -14.33661919364684,
+          "markov_rate_matched": -14.488936619332431,
+          "hmm_3_state": -14.692563924841327
+        },
+        {
+          "record_index": 77,
+          "physical_known_nuisance": -18.050028570199938,
+          "physical_mismatched_detector": -18.700484530336666,
+          "markov_rate_matched": -19.120697493634843,
+          "hmm_3_state": -18.70715607622735
+        },
+        {
+          "record_index": 78,
+          "physical_known_nuisance": -15.612420495849648,
+          "physical_mismatched_detector": -15.552057217115625,
+          "markov_rate_matched": -15.772488235672137,
+          "hmm_3_state": -15.846800942739495
+        },
+        {
+          "record_index": 79,
+          "physical_known_nuisance": -28.290657530898606,
+          "physical_mismatched_detector": -27.70565635447619,
+          "markov_rate_matched": -28.62629615820167,
+          "hmm_3_state": -27.942494667457133
+        },
+        {
+          "record_index": 80,
+          "physical_known_nuisance": -19.231227321547696,
+          "physical_mismatched_detector": -19.376446522147514,
+          "markov_rate_matched": -19.62314308469126,
+          "hmm_3_state": -19.507092555158252
+        },
+        {
+          "record_index": 81,
+          "physical_known_nuisance": -17.281206244718557,
+          "physical_mismatched_detector": -17.351246660004467,
+          "markov_rate_matched": -17.57677720220071,
+          "hmm_3_state": -17.230917975427587
+        },
+        {
+          "record_index": 82,
+          "physical_known_nuisance": -23.329451932242115,
+          "physical_mismatched_detector": -22.84850093829086,
+          "markov_rate_matched": -21.26512519489877,
+          "hmm_3_state": -22.71441304680782
+        },
+        {
+          "record_index": 83,
+          "physical_known_nuisance": -19.748923744453293,
+          "physical_mismatched_detector": -19.77809023826211,
+          "markov_rate_matched": -20.143880434880117,
+          "hmm_3_state": -19.729398054886687
+        },
+        {
+          "record_index": 84,
+          "physical_known_nuisance": -17.7394495629804,
+          "physical_mismatched_detector": -17.901394331083107,
+          "markov_rate_matched": -18.388622377738233,
+          "hmm_3_state": -17.88948469292776
+        },
+        {
+          "record_index": 85,
+          "physical_known_nuisance": -17.17018088114361,
+          "physical_mismatched_detector": -17.11244177688052,
+          "markov_rate_matched": -17.365439436492963,
+          "hmm_3_state": -17.348785631851946
+        },
+        {
+          "record_index": 86,
+          "physical_known_nuisance": -19.383588363354004,
+          "physical_mismatched_detector": -19.331731335680807,
+          "markov_rate_matched": -19.672173994077944,
+          "hmm_3_state": -19.52608109834283
+        },
+        {
+          "record_index": 87,
+          "physical_known_nuisance": -19.11623969603229,
+          "physical_mismatched_detector": -19.212732277678043,
+          "markov_rate_matched": -19.67217399407794,
+          "hmm_3_state": -19.016160799989827
+        },
+        {
+          "record_index": 88,
+          "physical_known_nuisance": -17.15873133583677,
+          "physical_mismatched_detector": -17.053203459165,
+          "markov_rate_matched": -17.316408527106283,
+          "hmm_3_state": -16.999149021910423
+        },
+        {
+          "record_index": 89,
+          "physical_known_nuisance": -26.17433724026893,
+          "physical_mismatched_detector": -26.523043356090884,
+          "markov_rate_matched": -27.082375866767524,
+          "hmm_3_state": -27.099816439805373
+        },
+        {
+          "record_index": 90,
+          "physical_known_nuisance": -23.14021068248861,
+          "physical_mismatched_detector": -23.38323199668716,
+          "markov_rate_matched": -23.994535283899246,
+          "hmm_3_state": -23.33260849990641
+        },
+        {
+          "record_index": 91,
+          "physical_known_nuisance": -13.503697473142603,
+          "physical_mismatched_detector": -13.282739699516036,
+          "markov_rate_matched": -13.465753678087156,
+          "hmm_3_state": -13.967250758991991
+        },
+        {
+          "record_index": 92,
+          "physical_known_nuisance": -23.737533734404902,
+          "physical_mismatched_detector": -23.866289401948883,
+          "markov_rate_matched": -24.51527263408811,
+          "hmm_3_state": -23.520707915148986
+        },
+        {
+          "record_index": 93,
+          "physical_known_nuisance": -15.38890435119116,
+          "physical_mismatched_detector": -15.54261489619013,
+          "markov_rate_matched": -15.772488235672137,
+          "hmm_3_state": -15.162389723177641
+        },
+        {
+          "record_index": 94,
+          "physical_known_nuisance": -18.2231121503841,
+          "physical_mismatched_detector": -18.059173996375723,
+          "markov_rate_matched": -17.31640852710628,
+          "hmm_3_state": -18.42900522293714
+        },
+        {
+          "record_index": 95,
+          "physical_known_nuisance": -16.751598345176298,
+          "physical_mismatched_detector": -16.89796839869001,
+          "markov_rate_matched": -17.05603985201184,
+          "hmm_3_state": -16.77030173251404
+        },
+        {
+          "record_index": 96,
+          "physical_known_nuisance": -17.795251184418447,
+          "physical_mismatched_detector": -17.863625920029303,
+          "markov_rate_matched": -18.339591468351543,
+          "hmm_3_state": -17.67279602327571
+        },
+        {
+          "record_index": 97,
+          "physical_known_nuisance": -16.841344167847925,
+          "physical_mismatched_detector": -16.738287430567954,
+          "markov_rate_matched": -17.05603985201184,
+          "hmm_3_state": -16.812179624183095
+        },
+        {
+          "record_index": 98,
+          "physical_known_nuisance": -16.95774031752134,
+          "physical_mismatched_detector": -17.014716562336265,
+          "markov_rate_matched": -17.316408527106272,
+          "hmm_3_state": -16.80865908462933
+        },
+        {
+          "record_index": 99,
+          "physical_known_nuisance": -22.427868119680465,
+          "physical_mismatched_detector": -22.77518301881967,
+          "markov_rate_matched": -22.97135234265397,
+          "hmm_3_state": -22.428852439450846
+        },
+        {
+          "record_index": 100,
+          "physical_known_nuisance": -21.390728981524205,
+          "physical_mismatched_detector": -21.59616960351523,
+          "markov_rate_matched": -21.167063376125395,
+          "hmm_3_state": -21.356735207495667
+        },
+        {
+          "record_index": 101,
+          "physical_known_nuisance": -15.625139543700882,
+          "physical_mismatched_detector": -15.524282495377882,
+          "markov_rate_matched": -15.772488235672137,
+          "hmm_3_state": -15.707335172720686
+        },
+        {
+          "record_index": 102,
+          "physical_known_nuisance": -18.206551452054413,
+          "physical_mismatched_detector": -18.26450150807496,
+          "markov_rate_matched": -18.599960143445983,
+          "hmm_3_state": -18.350472544332042
+        },
+        {
+          "record_index": 103,
+          "physical_known_nuisance": -17.16238493941126,
+          "physical_mismatched_detector": -16.966877475311698,
+          "markov_rate_matched": -17.05603985201184,
+          "hmm_3_state": -17.300165830280815
+        },
+        {
+          "record_index": 104,
+          "physical_known_nuisance": -14.356192100322371,
+          "physical_mismatched_detector": -14.337442162906116,
+          "markov_rate_matched": -14.48893661933243,
+          "hmm_3_state": -14.319056296519083
+        },
+        {
+          "record_index": 105,
+          "physical_known_nuisance": -29.6821261287685,
+          "physical_mismatched_detector": -29.677979149921565,
+          "markov_rate_matched": -30.170216449635813,
+          "hmm_3_state": -30.224049085122875
+        },
+        {
+          "record_index": 106,
+          "physical_known_nuisance": -25.238765583673818,
+          "physical_mismatched_detector": -25.272278221341153,
+          "markov_rate_matched": -25.79882425042782,
+          "hmm_3_state": -25.107927609552544
+        },
+        {
+          "record_index": 107,
+          "physical_known_nuisance": -18.45304971225973,
+          "physical_mismatched_detector": -18.356905475944796,
+          "markov_rate_matched": -18.648991052832667,
+          "hmm_3_state": -18.239177665835488
+        },
+        {
+          "record_index": 108,
+          "physical_known_nuisance": -15.528488105601603,
+          "physical_mismatched_detector": -15.552351417915085,
+          "markov_rate_matched": -15.772488235672137,
+          "hmm_3_state": -15.54044948570861
+        },
+        {
+          "record_index": 109,
+          "physical_known_nuisance": -13.338958713695645,
+          "physical_mismatched_detector": -13.15674998493632,
+          "markov_rate_matched": -13.205385002992719,
+          "hmm_3_state": -13.673123404085272
+        },
+        {
+          "record_index": 110,
+          "physical_known_nuisance": -17.8508816939551,
+          "physical_mismatched_detector": -18.051859349144948,
+          "markov_rate_matched": -18.339591468351554,
+          "hmm_3_state": -17.87744173474872
+        },
+        {
+          "record_index": 111,
+          "physical_known_nuisance": -22.4378977700698,
+          "physical_mismatched_detector": -22.49023433937016,
+          "markov_rate_matched": -22.97135234265397,
+          "hmm_3_state": -22.288850180670313
+        },
+        {
+          "record_index": 112,
+          "physical_known_nuisance": -20.199628147514357,
+          "physical_mismatched_detector": -20.360531637117997,
+          "markov_rate_matched": -20.906694701030965,
+          "hmm_3_state": -20.216042794459113
+        },
+        {
+          "record_index": 113,
+          "physical_known_nuisance": -16.448632798534188,
+          "physical_mismatched_detector": -16.43571788521026,
+          "markov_rate_matched": -15.772488235672137,
+          "hmm_3_state": -16.552892598251198
+        },
+        {
+          "record_index": 114,
+          "physical_known_nuisance": -18.239639415063895,
+          "physical_mismatched_detector": -18.219307840858423,
+          "markov_rate_matched": -18.599960143445976,
+          "hmm_3_state": -17.93928605352746
+        },
+        {
+          "record_index": 115,
+          "physical_known_nuisance": -17.47295048000266,
+          "physical_mismatched_detector": -17.158448205930604,
+          "markov_rate_matched": -17.105070761398533,
+          "hmm_3_state": -17.632549949535143
+        },
+        {
+          "record_index": 116,
+          "physical_known_nuisance": -16.342977726807344,
+          "physical_mismatched_detector": -16.646922324436602,
+          "markov_rate_matched": -17.056039852011843,
+          "hmm_3_state": -16.446406702974606
+        },
+        {
+          "record_index": 117,
+          "physical_known_nuisance": -17.576967731801258,
+          "physical_mismatched_detector": -17.85305622303521,
+          "markov_rate_matched": -18.33959146835155,
+          "hmm_3_state": -17.571058398223286
+        },
+        {
+          "record_index": 118,
+          "physical_known_nuisance": -16.64770619568917,
+          "physical_mismatched_detector": -16.781534637076128,
+          "markov_rate_matched": -17.05603985201184,
+          "hmm_3_state": -16.628332019583112
+        },
+        {
+          "record_index": 119,
+          "physical_known_nuisance": -19.12183741256301,
+          "physical_mismatched_detector": -19.195343151107856,
+          "markov_rate_matched": -19.623143084691254,
+          "hmm_3_state": -19.089510512159436
+        },
+        {
+          "record_index": 120,
+          "physical_known_nuisance": -19.0100898964969,
+          "physical_mismatched_detector": -19.285993794564256,
+          "markov_rate_matched": -19.672173994077944,
+          "hmm_3_state": -19.07860740844402
+        },
+        {
+          "record_index": 121,
+          "physical_known_nuisance": -15.609933978345312,
+          "physical_mismatched_detector": -15.573630250817759,
+          "markov_rate_matched": -15.77248823567214,
+          "hmm_3_state": -15.868012361989292
+        },
+        {
+          "record_index": 122,
+          "physical_known_nuisance": -16.864957941292527,
+          "physical_mismatched_detector": -17.009326775837287,
+          "markov_rate_matched": -17.316408527106276,
+          "hmm_3_state": -16.699855920895438
+        },
+        {
+          "record_index": 123,
+          "physical_known_nuisance": -21.702394109250765,
+          "physical_mismatched_detector": -21.607310002485598,
+          "markov_rate_matched": -21.99720031079538,
+          "hmm_3_state": -21.359723762402524
+        },
+        {
+          "record_index": 124,
+          "physical_known_nuisance": -17.85414742403306,
+          "physical_mismatched_detector": -17.982071224292365,
+          "markov_rate_matched": -18.33959146835155,
+          "hmm_3_state": -17.80471433964415
+        },
+        {
+          "record_index": 125,
+          "physical_known_nuisance": -24.225383661275316,
+          "physical_mismatched_detector": -24.209762677925294,
+          "markov_rate_matched": -23.734166608804813,
+          "hmm_3_state": -24.350923728712267
+        },
+        {
+          "record_index": 126,
+          "physical_known_nuisance": -22.6938627900279,
+          "physical_mismatched_detector": -22.351084004628408,
+          "markov_rate_matched": -22.97135234265397,
+          "hmm_3_state": -22.51184486383468
+        },
+        {
+          "record_index": 127,
+          "physical_known_nuisance": -18.784712801844467,
+          "physical_mismatched_detector": -19.10202478233723,
+          "markov_rate_matched": -19.623143084691257,
+          "hmm_3_state": -18.894723006464947
+        },
+        {
+          "record_index": 128,
+          "physical_known_nuisance": -19.937673375192684,
+          "physical_mismatched_detector": -20.388557486124764,
+          "markov_rate_matched": -20.955725610417648,
+          "hmm_3_state": -20.052764935884426
+        },
+        {
+          "record_index": 129,
+          "physical_known_nuisance": -17.624146011498393,
+          "physical_mismatched_detector": -17.8290445191607,
+          "markov_rate_matched": -18.33959146835155,
+          "hmm_3_state": -17.590224174490658
+        },
+        {
+          "record_index": 130,
+          "physical_known_nuisance": -20.823689840425345,
+          "physical_mismatched_detector": -20.977699427939356,
+          "markov_rate_matched": -21.42743205121983,
+          "hmm_3_state": -20.670900410571388
+        },
+        {
+          "record_index": 131,
+          "physical_known_nuisance": -23.189517051649545,
+          "physical_mismatched_detector": -23.399011126134926,
+          "markov_rate_matched": -23.734166608804816,
+          "hmm_3_state": -23.419790812910158
+        },
+        {
+          "record_index": 132,
+          "physical_known_nuisance": -19.27957232701187,
+          "physical_mismatched_detector": -19.12710227345647,
+          "markov_rate_matched": -18.599960143445983,
+          "hmm_3_state": -19.793708140590464
+        },
+        {
+          "record_index": 133,
+          "physical_known_nuisance": -21.94411294752167,
+          "physical_mismatched_detector": -22.13317809652532,
+          "markov_rate_matched": -22.49964590185179,
+          "hmm_3_state": -22.213868893806495
+        },
+        {
+          "record_index": 134,
+          "physical_known_nuisance": -18.084161298014322,
+          "physical_mismatched_detector": -18.010605031913602,
+          "markov_rate_matched": -18.33959146835155,
+          "hmm_3_state": -17.907027547283114
+        },
+        {
+          "record_index": 135,
+          "physical_known_nuisance": -20.25318032478895,
+          "physical_mismatched_detector": -20.30253749969104,
+          "markov_rate_matched": -19.88351175978569,
+          "hmm_3_state": -20.680262341466197
+        },
+        {
+          "record_index": 136,
+          "physical_known_nuisance": -23.803918303393203,
+          "physical_mismatched_detector": -23.833266044188107,
+          "markov_rate_matched": -24.25490395899368,
+          "hmm_3_state": -23.620519870343585
+        },
+        {
+          "record_index": 137,
+          "physical_known_nuisance": -20.70731224699921,
+          "physical_mismatched_detector": -20.947155432010625,
+          "markov_rate_matched": -21.427432051219828,
+          "hmm_3_state": -20.818155958905876
+        },
+        {
+          "record_index": 138,
+          "physical_known_nuisance": -22.206058802150412,
+          "physical_mismatched_detector": -22.338581291113695,
+          "markov_rate_matched": -22.710983667559535,
+          "hmm_3_state": -22.229378000230724
+        },
+        {
+          "record_index": 139,
+          "physical_known_nuisance": -19.138347085083037,
+          "physical_mismatched_detector": -19.284898261556336,
+          "markov_rate_matched": -19.623143084691254,
+          "hmm_3_state": -19.28835747088886
+        },
+        {
+          "record_index": 140,
+          "physical_known_nuisance": -18.456686615945625,
+          "physical_mismatched_detector": -18.30820277604102,
+          "markov_rate_matched": -18.59996014344598,
+          "hmm_3_state": -18.22085933832021
+        },
+        {
+          "record_index": 141,
+          "physical_known_nuisance": -20.580088991888815,
+          "physical_mismatched_detector": -20.554680133977524,
+          "markov_rate_matched": -20.90669470103097,
+          "hmm_3_state": -20.80069821904342
+        },
+        {
+          "record_index": 142,
+          "physical_known_nuisance": -15.55102141860296,
+          "physical_mismatched_detector": -15.575899663865334,
+          "markov_rate_matched": -15.772488235672137,
+          "hmm_3_state": -15.537888300018302
+        },
+        {
+          "record_index": 143,
+          "physical_known_nuisance": -21.14851545057822,
+          "physical_mismatched_detector": -21.28559153990223,
+          "markov_rate_matched": -21.687800726314258,
+          "hmm_3_state": -21.341858595497662
+        },
+        {
+          "record_index": 144,
+          "physical_known_nuisance": -21.10350774241599,
+          "physical_mismatched_detector": -21.118240559646306,
+          "markov_rate_matched": -21.476462960606515,
+          "hmm_3_state": -21.34226729742958
+        },
+        {
+          "record_index": 145,
+          "physical_known_nuisance": -17.722036034630957,
+          "physical_mismatched_detector": -17.933350874335463,
+          "markov_rate_matched": -18.33959146835155,
+          "hmm_3_state": -17.74128890341752
+        },
+        {
+          "record_index": 146,
+          "physical_known_nuisance": -21.897657268932665,
+          "physical_mismatched_detector": -22.07083578927691,
+          "markov_rate_matched": -22.710983667559535,
+          "hmm_3_state": -21.840233245966516
+        },
+        {
+          "record_index": 147,
+          "physical_known_nuisance": -21.025607466526957,
+          "physical_mismatched_detector": -20.8624662810253,
+          "markov_rate_matched": -21.21609428551208,
+          "hmm_3_state": -20.839609414251264
+        },
+        {
+          "record_index": 148,
+          "physical_known_nuisance": -19.712236479103716,
+          "physical_mismatched_detector": -19.704910006093243,
+          "markov_rate_matched": -20.14388043488012,
+          "hmm_3_state": -19.530538485274718
+        },
+        {
+          "record_index": 149,
+          "physical_known_nuisance": -20.804062819889637,
+          "physical_mismatched_detector": -20.78307021130551,
+          "markov_rate_matched": -21.167063376125395,
+          "hmm_3_state": -20.72978457117707
+        }
+      ],
+      "hmm3_refinement": {
+        "method": "L-BFGS-B on training log likelihood with analytic forward-backward gradient",
+        "optimization_success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "iterations": 140,
+        "max_iterations": 1000,
+        "train_before": -7919.930868075568,
+        "train_candidate": -7919.8497933173785,
+        "accepted_candidate": true,
+        "train_selected": -7919.8497933173785,
+        "max_abs_logit_gradient": 0.0002612565504023223,
+        "max_abs_logit": 20.0,
+        "bounds": [
+          -20,
+          20
+        ],
+        "note": "Only the top EM restart was refined; local convergence does not establish a global optimum."
+      },
+      "hmm3_refined_parameters": {
+        "initial": [
+          1.669415998821282e-09,
+          0.9999999962694304,
+          2.061153614749281e-09
+        ],
+        "transition": [
+          [
+            0.16117444587803753,
+            0.6631118669085646,
+            0.17571368721339775
+          ],
+          [
+            0.04943627611836842,
+            0.7905794404861173,
+            0.15998428339551443
+          ],
+          [
+            0.5977507321062211,
+            2.1168307430751515e-08,
+            0.40224924672547135
+          ]
+        ],
+        "emissions": [
+          0.9999999979388463,
+          0.03613397553562956,
+          2.0611536181902037e-09
+        ]
+      }
+    },
+    {
+      "seed": 31003,
+      "test_seed": 1031003,
+      "train_records": 400,
+      "test_records": 150,
+      "bins": 40,
+      "training_click_fraction": 0.202125,
+      "test_click_fraction": 0.19933333333333333,
+      "train_binary_array_sha256": "e93e76d9e0b426eb5aa32ee9ea08ee7497a7e6aefd725ba9f87a99c2d0a6ef2a",
+      "test_binary_array_sha256": "e75a49ec082fce3ee67dba25eef58ab80a7978b63ea9af6218287b80a744c0f0",
+      "known_nuisance_fit": {
+        "g_hat": 0.65,
+        "train_log_likelihood": -7933.438423305617,
+        "g_grid": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6000000000000001,
+          0.65,
+          0.7000000000000001,
+          0.75,
+          0.8,
+          0.8500000000000001,
+          0.9,
+          0.9500000000000001,
+          1.0,
+          1.05,
+          1.1,
+          1.1500000000000001,
+          1.2000000000000002,
+          1.25
+        ],
+        "fixed_nuisance": {
+          "defect_detuning": 0.2,
+          "cavity_detuning": 0.0,
+          "g_cavity": 0.7,
+          "drive": 1.3,
+          "kappa": 1.4,
+          "detector_eta": 0.68,
+          "gamma_emitter": 0.07,
+          "gamma_defect": 0.025,
+          "gamma_phi_emitter": 0.035,
+          "gamma_phi_defect": 0.02,
+          "dark_rate": 0.018,
+          "dt": 1.0,
+          "n_cavity": 3
+        }
+      },
+      "mismatched_nuisance_fit": {
+        "g_hat": 0.45,
+        "train_log_likelihood": -7945.750239435649,
+        "g_grid": [
+          0.0,
+          0.05,
+          0.1,
+          0.15000000000000002,
+          0.2,
+          0.25,
+          0.30000000000000004,
+          0.35000000000000003,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6000000000000001,
+          0.65,
+          0.7000000000000001,
+          0.75,
+          0.8,
+          0.8500000000000001,
+          0.9,
+          0.9500000000000001,
+          1.0,
+          1.05,
+          1.1,
+          1.1500000000000001,
+          1.2000000000000002,
+          1.25
+        ],
+        "fixed_nuisance": {
+          "defect_detuning": 0.2,
+          "cavity_detuning": 0.0,
+          "g_cavity": 0.7,
+          "drive": 1.3,
+          "kappa": 1.4,
+          "detector_eta": 0.54,
+          "gamma_emitter": 0.07,
+          "gamma_defect": 0.025,
+          "gamma_phi_emitter": 0.035,
+          "gamma_phi_defect": 0.02,
+          "dark_rate": 0.035,
+          "dt": 1.0,
+          "n_cavity": 3
+        }
+      },
+      "markov_fit": {
+        "initial": [
+          0.797875,
+          0.202125
+        ],
+        "transition": [
+          [
+            0.7905483951635961,
+            0.2094516048364039
+          ],
+          [
+            0.8267962855106779,
+            0.17320371448932215
+          ]
+        ],
+        "training_click_rate": 0.202125,
+        "alpha": 1.0362478903470818,
+        "training_log_likelihood": -8042.584526622487,
+        "stationary_click_rate": 0.202125,
+        "optimizer_success": true
+      },
+      "hmm3_fit": {
+        "initial": [
+          2.500000000000001e-15,
+          0.171665763149559,
+          0.8283342368504385
+        ],
+        "transition": [
+          [
+            0.2501542849457506,
+            0.3739630257566599,
+            0.37588268929758956
+          ],
+          [
+            0.4951585529440565,
+            0.498421562564845,
+            0.006419884491098512
+          ],
+          [
+            0.041756117827668124,
+            0.36600562592551056,
+            0.5922382562468214
+          ]
+        ],
+        "emissions": [
+          0.6941452058786591,
+          0.001677488249544431,
+          0.018213530433968415
+        ],
+        "train_log_likelihood": -7940.613023632993,
+        "selected_start": 1,
+        "converged": false,
+        "iterations": 800,
+        "starts": [
+          {
+            "start": 0,
+            "train_log_likelihood": -7952.547339438439,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 1,
+            "train_log_likelihood": -7940.613023632993,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 2,
+            "train_log_likelihood": -7940.695971158224,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 3,
+            "train_log_likelihood": -7941.79658538166,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 4,
+            "train_log_likelihood": -7940.961138604247,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          },
+          {
+            "start": 5,
+            "train_log_likelihood": -7965.929241153771,
+            "iterations": 800,
+            "converged": false,
+            "largest_em_step_decline": 0.0
+          }
+        ]
+      },
+      "heldout_total_nats": {
+        "physical_known_nuisance": -2949.326158642692,
+        "physical_mismatched_detector": -2956.949504621318,
+        "markov_rate_matched": -2995.161040114407,
+        "hmm_3_state": -2954.60680933654
+      },
+      "paired_differences": {
+        "known_physical_minus_hmm3": {
+          "total_delta_nats": 5.280650693848855,
+          "mean_delta_nats_per_record": 0.03520433795899237,
+          "standard_error_nats_per_record": 0.02187038928247535,
+          "bootstrap_95_percentile_nats_per_record": [
+            -0.006562126442482374,
+            0.07953843112800145
+          ],
+          "positive_record_fraction": 0.5933333333333334,
+          "n_heldout_records": 150,
+          "bootstrap_replicates": 2000,
+          "bootstrap_seed": 271828
+        },
+        "mismatched_physical_minus_hmm3": {
+          "total_delta_nats": -2.3426952847770455,
+          "mean_delta_nats_per_record": -0.015617968565180303,
+          "standard_error_nats_per_record": 0.025429504338220096,
+          "bootstrap_95_percentile_nats_per_record": [
+            -0.05964913477200049,
+            0.03784447055028121
+          ],
+          "positive_record_fraction": 0.42,
+          "n_heldout_records": 150,
+          "bootstrap_replicates": 2000,
+          "bootstrap_seed": 271828
+        },
+        "known_minus_mismatched_physical": {
+          "total_delta_nats": 7.623345978625901,
+          "mean_delta_nats_per_record": 0.050822306524172675,
+          "standard_error_nats_per_record": 0.017554574372787086,
+          "bootstrap_95_percentile_nats_per_record": [
+            0.015371570106105816,
+            0.08446046212683558
+          ],
+          "positive_record_fraction": 0.58,
+          "n_heldout_records": 150,
+          "bootstrap_replicates": 2000,
+          "bootstrap_seed": 271828
+        },
+        "hmm3_minus_rate_matched_markov": {
+          "total_delta_nats": 40.55423077786644,
+          "mean_delta_nats_per_record": 0.2703615385191096,
+          "standard_error_nats_per_record": 0.04956581061261583,
+          "bootstrap_95_percentile_nats_per_record": [
+            0.16719006606386333,
+            0.35545096011919713
+          ],
+          "positive_record_fraction": 0.8466666666666667,
+          "n_heldout_records": 150,
+          "bootstrap_replicates": 2000,
+          "bootstrap_seed": 271828
+        }
+      },
+      "per_record_log_likelihoods": [
+        {
+          "record_index": 0,
+          "physical_known_nuisance": -17.55172182083735,
+          "physical_mismatched_detector": -17.885332736387735,
+          "markov_rate_matched": -18.375730009603107,
+          "hmm_3_state": -17.738940987051542
+        },
+        {
+          "record_index": 1,
+          "physical_known_nuisance": -23.805664267320882,
+          "physical_mismatched_detector": -23.712981279139523,
+          "markov_rate_matched": -24.21390801712538,
+          "hmm_3_state": -23.510100336476924
+        },
+        {
+          "record_index": 2,
+          "physical_known_nuisance": -16.820543170784603,
+          "physical_mismatched_detector": -17.02179603049307,
+          "markov_rate_matched": -17.327183029670007,
+          "hmm_3_state": -16.91189585284113
+        },
+        {
+          "record_index": 3,
+          "physical_known_nuisance": -14.191578745395864,
+          "physical_mismatched_detector": -14.035025040017405,
+          "markov_rate_matched": -13.242119182562204,
+          "hmm_3_state": -14.402677492632492
+        },
+        {
+          "record_index": 4,
+          "physical_known_nuisance": -16.479416611514615,
+          "physical_mismatched_detector": -16.61653422146807,
+          "markov_rate_matched": -17.092327302842882,
+          "hmm_3_state": -16.612336272404168
+        },
+        {
+          "record_index": 5,
+          "physical_known_nuisance": -19.08930280429086,
+          "physical_mismatched_detector": -19.391120215320253,
+          "markov_rate_matched": -19.938819902649822,
+          "hmm_3_state": -19.120799530308023
+        },
+        {
+          "record_index": 6,
+          "physical_known_nuisance": -18.314556822514152,
+          "physical_mismatched_detector": -18.286585216142957,
+          "markov_rate_matched": -18.61058573643023,
+          "hmm_3_state": -18.33328788972423
+        },
+        {
+          "record_index": 7,
+          "physical_known_nuisance": -15.597585949626732,
+          "physical_mismatched_detector": -15.619806452899313,
+          "markov_rate_matched": -15.853756055542018,
+          "hmm_3_state": -15.523512865283237
+        },
+        {
+          "record_index": 8,
+          "physical_known_nuisance": -15.280809519328029,
+          "physical_mismatched_detector": -15.478194274368999,
+          "markov_rate_matched": -15.808924596082656,
+          "hmm_3_state": -15.376811620502128
+        },
+        {
+          "record_index": 9,
+          "physical_known_nuisance": -19.10431358949761,
+          "physical_mismatched_detector": -19.421839961562455,
+          "markov_rate_matched": -19.93881990264982,
+          "hmm_3_state": -19.114630697336324
+        },
+        {
+          "record_index": 10,
+          "physical_known_nuisance": -20.17612564062679,
+          "physical_mismatched_detector": -19.898989015689505,
+          "markov_rate_matched": -19.89398844319046,
+          "hmm_3_state": -19.878530587876497
+        },
+        {
+          "record_index": 11,
+          "physical_known_nuisance": -18.11512546290888,
+          "physical_mismatched_detector": -18.088978399552182,
+          "markov_rate_matched": -18.37573000960311,
+          "hmm_3_state": -18.215314065302678
+        },
+        {
+          "record_index": 12,
+          "physical_known_nuisance": -18.221935053421962,
+          "physical_mismatched_detector": -18.237136775175742,
+          "markov_rate_matched": -18.610585736430227,
+          "hmm_3_state": -18.266534810288952
+        },
+        {
+          "record_index": 13,
+          "physical_known_nuisance": -16.987703302868784,
+          "physical_mismatched_detector": -16.995361838399468,
+          "markov_rate_matched": -17.327183029670007,
+          "hmm_3_state": -16.844025861661184
+        },
+        {
+          "record_index": 14,
+          "physical_known_nuisance": -20.38788162629549,
+          "physical_mismatched_detector": -20.48120788449394,
+          "markov_rate_matched": -20.987366882582922,
+          "hmm_3_state": -20.36573147240704
+        },
+        {
+          "record_index": 15,
+          "physical_known_nuisance": -21.03210381083739,
+          "physical_mismatched_detector": -21.224640078948426,
+          "markov_rate_matched": -21.64710260360493,
+          "hmm_3_state": -21.17392467451757
+        },
+        {
+          "record_index": 16,
+          "physical_known_nuisance": -22.752417177887054,
+          "physical_mismatched_detector": -22.77907447613646,
+          "markov_rate_matched": -23.16536103719228,
+          "hmm_3_state": -22.773087598954483
+        },
+        {
+          "record_index": 17,
+          "physical_known_nuisance": -15.581670737076339,
+          "physical_mismatched_detector": -15.672765374309828,
+          "markov_rate_matched": -15.808924596082655,
+          "hmm_3_state": -15.701735065720836
+        },
+        {
+          "record_index": 18,
+          "physical_known_nuisance": -22.396679753428998,
+          "physical_mismatched_detector": -22.44197886380755,
+          "markov_rate_matched": -22.7404810429974,
+          "hmm_3_state": -22.41971361677186
+        },
+        {
+          "record_index": 19,
+          "physical_known_nuisance": -20.408407999774866,
+          "physical_mismatched_detector": -20.533635895544744,
+          "markov_rate_matched": -20.94253542312356,
+          "hmm_3_state": -20.68386950845244
+        },
+        {
+          "record_index": 20,
+          "physical_known_nuisance": -19.53709034232858,
+          "physical_mismatched_detector": -19.54227605473396,
+          "markov_rate_matched": -19.89398844319046,
+          "hmm_3_state": -19.447063728143068
+        },
+        {
+          "record_index": 21,
+          "physical_known_nuisance": -16.96480115777215,
+          "physical_mismatched_detector": -16.94764906990202,
+          "markov_rate_matched": -17.327183029670007,
+          "hmm_3_state": -16.942983736465276
+        },
+        {
+          "record_index": 22,
+          "physical_known_nuisance": -19.655952827078252,
+          "physical_mismatched_detector": -20.07786858461607,
+          "markov_rate_matched": -20.363699896844704,
+          "hmm_3_state": -19.74815453256017
+        },
+        {
+          "record_index": 23,
+          "physical_known_nuisance": -18.148796048509638,
+          "physical_mismatched_detector": -18.71946315626519,
+          "markov_rate_matched": -18.845441463257355,
+          "hmm_3_state": -18.278124717530382
+        },
+        {
+          "record_index": 24,
+          "physical_known_nuisance": -18.571257905943686,
+          "physical_mismatched_detector": -18.56310383933533,
+          "markov_rate_matched": -18.845441463257355,
+          "hmm_3_state": -18.23446084962245
+        },
+        {
+          "record_index": 25,
+          "physical_known_nuisance": -16.550267797646733,
+          "physical_mismatched_detector": -16.720001693115655,
+          "markov_rate_matched": -17.092327302842882,
+          "hmm_3_state": -16.51058815580907
+        },
+        {
+          "record_index": 26,
+          "physical_known_nuisance": -19.612738292493372,
+          "physical_mismatched_detector": -19.6576194848926,
+          "markov_rate_matched": -20.12884417001758,
+          "hmm_3_state": -19.402700797598584
+        },
+        {
+          "record_index": 27,
+          "physical_known_nuisance": -14.184160905911785,
+          "physical_mismatched_detector": -14.274913794848484,
+          "markov_rate_matched": -14.52552188932243,
+          "hmm_3_state": -14.314155357867518
+        },
+        {
+          "record_index": 28,
+          "physical_known_nuisance": -20.75599029528479,
+          "physical_mismatched_detector": -20.717269221021905,
+          "markov_rate_matched": -21.177391149950683,
+          "hmm_3_state": -20.63586721643254
+        },
+        {
+          "record_index": 29,
+          "physical_known_nuisance": -17.907332412229934,
+          "physical_mismatched_detector": -18.227368877887955,
+          "markov_rate_matched": -18.61058573643023,
+          "hmm_3_state": -18.138520466281683
+        },
+        {
+          "record_index": 30,
+          "physical_known_nuisance": -21.387531049699867,
+          "physical_mismatched_detector": -21.505251270639636,
+          "markov_rate_matched": -21.881958330432052,
+          "hmm_3_state": -21.217393193887276
+        },
+        {
+          "record_index": 31,
+          "physical_known_nuisance": -25.12758802764696,
+          "physical_mismatched_detector": -25.101861685450306,
+          "markov_rate_matched": -25.73216645071273,
+          "hmm_3_state": -24.852204923294522
+        },
+        {
+          "record_index": 32,
+          "physical_known_nuisance": -20.027842982049116,
+          "physical_mismatched_detector": -20.29125941705504,
+          "markov_rate_matched": -20.942535423123562,
+          "hmm_3_state": -20.11021107575259
+        },
+        {
+          "record_index": 33,
+          "physical_known_nuisance": -16.748092706358364,
+          "physical_mismatched_detector": -16.787729005526785,
+          "markov_rate_matched": -17.137158762302246,
+          "hmm_3_state": -16.813128876007898
+        },
+        {
+          "record_index": 34,
+          "physical_known_nuisance": -21.00556155127038,
+          "physical_mismatched_detector": -21.01675111727657,
+          "markov_rate_matched": -21.412246876777804,
+          "hmm_3_state": -20.973773997076552
+        },
+        {
+          "record_index": 35,
+          "physical_known_nuisance": -23.58162061085999,
+          "physical_mismatched_detector": -23.644250064308032,
+          "markov_rate_matched": -24.213908017125384,
+          "hmm_3_state": -23.44071271640739
+        },
+        {
+          "record_index": 36,
+          "physical_known_nuisance": -14.560126619108878,
+          "physical_mismatched_detector": -14.450505486063678,
+          "markov_rate_matched": -14.525521889322428,
+          "hmm_3_state": -14.758601449078371
+        },
+        {
+          "record_index": 37,
+          "physical_known_nuisance": -18.089858082385593,
+          "physical_mismatched_detector": -18.228856696833397,
+          "markov_rate_matched": -18.610585736430227,
+          "hmm_3_state": -17.858067013352798
+        },
+        {
+          "record_index": 38,
+          "physical_known_nuisance": -19.405138352569416,
+          "physical_mismatched_detector": -19.409622222452505,
+          "markov_rate_matched": -19.893988443190455,
+          "hmm_3_state": -19.367394194082667
+        },
+        {
+          "record_index": 39,
+          "physical_known_nuisance": -23.885828283181826,
+          "physical_mismatched_detector": -23.719293688435762,
+          "markov_rate_matched": -22.93050531036516,
+          "hmm_3_state": -23.622786421688513
+        },
+        {
+          "record_index": 40,
+          "physical_known_nuisance": -14.297883566178657,
+          "physical_mismatched_detector": -14.310448444818759,
+          "markov_rate_matched": -14.525521889322428,
+          "hmm_3_state": -14.410016641660377
+        },
+        {
+          "record_index": 41,
+          "physical_known_nuisance": -21.348634233413478,
+          "physical_mismatched_detector": -21.41533686011862,
+          "markov_rate_matched": -21.69193406306429,
+          "hmm_3_state": -21.274542340338606
+        },
+        {
+          "record_index": 42,
+          "physical_known_nuisance": -17.969424363663926,
+          "physical_mismatched_detector": -18.05174713391799,
+          "markov_rate_matched": -18.37573000960311,
+          "hmm_3_state": -18.183643440568943
+        },
+        {
+          "record_index": 43,
+          "physical_known_nuisance": -16.41491710369161,
+          "physical_mismatched_detector": -16.70437892367285,
+          "markov_rate_matched": -17.137158762302246,
+          "hmm_3_state": -16.617103289015613
+        },
+        {
+          "record_index": 44,
+          "physical_known_nuisance": -18.695836903870944,
+          "physical_mismatched_detector": -18.57280632075851,
+          "markov_rate_matched": -18.84544146325735,
+          "hmm_3_state": -18.568133078247758
+        },
+        {
+          "record_index": 45,
+          "physical_known_nuisance": -15.855203672771998,
+          "physical_mismatched_detector": -15.856127160308056,
+          "markov_rate_matched": -16.04378032290978,
+          "hmm_3_state": -15.70748455930472
+        },
+        {
+          "record_index": 46,
+          "physical_known_nuisance": -16.36897246802574,
+          "physical_mismatched_detector": -16.079517694489926,
+          "markov_rate_matched": -16.278636049736903,
+          "hmm_3_state": -16.214056425694885
+        },
+        {
+          "record_index": 47,
+          "physical_known_nuisance": -23.139029986017704,
+          "physical_mismatched_detector": -22.525517155042305,
+          "markov_rate_matched": -21.032198342042282,
+          "hmm_3_state": -23.301954111925426
+        },
+        {
+          "record_index": 48,
+          "physical_known_nuisance": -16.903384126242322,
+          "physical_mismatched_detector": -16.792467698557854,
+          "markov_rate_matched": -17.092327302842882,
+          "hmm_3_state": -16.999235165270868
+        },
+        {
+          "record_index": 49,
+          "physical_known_nuisance": -20.050769702392582,
+          "physical_mismatched_detector": -20.38486240295289,
+          "markov_rate_matched": -20.94253542312356,
+          "hmm_3_state": -20.26748392532204
+        },
+        {
+          "record_index": 50,
+          "physical_known_nuisance": -15.284068357532979,
+          "physical_mismatched_detector": -15.4312704062447,
+          "markov_rate_matched": -15.808924596082655,
+          "hmm_3_state": -15.451414158691946
+        },
+        {
+          "record_index": 51,
+          "physical_known_nuisance": -32.08208733632656,
+          "physical_mismatched_detector": -31.925957355327895,
+          "markov_rate_matched": -32.084887371348614,
+          "hmm_3_state": -31.410652875798306
+        },
+        {
+          "record_index": 52,
+          "physical_known_nuisance": -21.09880793606927,
+          "physical_mismatched_detector": -21.062637482708688,
+          "markov_rate_matched": -21.412246876777807,
+          "hmm_3_state": -21.057774421261456
+        },
+        {
+          "record_index": 53,
+          "physical_known_nuisance": -21.45313678748365,
+          "physical_mismatched_detector": -21.438004891415797,
+          "markov_rate_matched": -21.69193406306429,
+          "hmm_3_state": -21.52922912582209
+        },
+        {
+          "record_index": 54,
+          "physical_known_nuisance": -13.342050712335412,
+          "physical_mismatched_detector": -13.186076317683373,
+          "markov_rate_matched": -13.242119182562202,
+          "hmm_3_state": -13.505333009463278
+        },
+        {
+          "record_index": 55,
+          "physical_known_nuisance": -18.30295347395289,
+          "physical_mismatched_detector": -18.314853139294346,
+          "markov_rate_matched": -18.61058573643023,
+          "hmm_3_state": -18.18764858793362
+        },
+        {
+          "record_index": 56,
+          "physical_known_nuisance": -16.293063164718966,
+          "physical_mismatched_detector": -16.133086184934793,
+          "markov_rate_matched": -16.278636049736903,
+          "hmm_3_state": -16.41994664012416
+        },
+        {
+          "record_index": 57,
+          "physical_known_nuisance": -23.47800221792436,
+          "physical_mismatched_detector": -23.590695150730166,
+          "markov_rate_matched": -23.979052290298256,
+          "hmm_3_state": -23.837443001543292
+        },
+        {
+          "record_index": 58,
+          "physical_known_nuisance": -20.92904543344402,
+          "physical_mismatched_detector": -20.940829896777494,
+          "markov_rate_matched": -21.45707833623717,
+          "hmm_3_state": -20.52786144197531
+        },
+        {
+          "record_index": 59,
+          "physical_known_nuisance": -20.755967203444918,
+          "physical_mismatched_detector": -20.820034093703384,
+          "markov_rate_matched": -21.177391149950683,
+          "hmm_3_state": -20.93216350395953
+        },
+        {
+          "record_index": 60,
+          "physical_known_nuisance": -19.409254924114983,
+          "physical_mismatched_detector": -19.35836212358071,
+          "markov_rate_matched": -19.703964175822694,
+          "hmm_3_state": -19.288424825703604
+        },
+        {
+          "record_index": 61,
+          "physical_known_nuisance": -23.374655854008513,
+          "physical_mismatched_detector": -23.409794536919378,
+          "markov_rate_matched": -23.97905229029826,
+          "hmm_3_state": -23.375594502643438
+        },
+        {
+          "record_index": 62,
+          "physical_known_nuisance": -20.961983683537724,
+          "physical_mismatched_detector": -20.8494403577441,
+          "markov_rate_matched": -20.363699896844707,
+          "hmm_3_state": -20.970467730185664
+        },
+        {
+          "record_index": 63,
+          "physical_known_nuisance": -25.87992379643621,
+          "physical_mismatched_detector": -26.319157390153777,
+          "markov_rate_matched": -26.436733631194098,
+          "hmm_3_state": -25.835839388337618
+        },
+        {
+          "record_index": 64,
+          "physical_known_nuisance": -23.043814381471556,
+          "physical_mismatched_detector": -22.941712499673585,
+          "markov_rate_matched": -23.509340836644014,
+          "hmm_3_state": -23.25829745282726
+        },
+        {
+          "record_index": 65,
+          "physical_known_nuisance": -20.93095666328763,
+          "physical_mismatched_detector": -21.104009624632987,
+          "markov_rate_matched": -21.412246876777807,
+          "hmm_3_state": -20.934589785726942
+        },
+        {
+          "record_index": 66,
+          "physical_known_nuisance": -19.350942644697152,
+          "physical_mismatched_detector": -19.478486285650447,
+          "markov_rate_matched": -19.89398844319046,
+          "hmm_3_state": -19.345627878148132
+        },
+        {
+          "record_index": 67,
+          "physical_known_nuisance": -19.053904499982227,
+          "physical_mismatched_detector": -19.02010936946884,
+          "markov_rate_matched": -19.080297190084476,
+          "hmm_3_state": -18.77014880275042
+        },
+        {
+          "record_index": 68,
+          "physical_known_nuisance": -19.59251790383679,
+          "physical_mismatched_detector": -19.778904201904737,
+          "markov_rate_matched": -20.12884417001758,
+          "hmm_3_state": -19.63522496629955
+        },
+        {
+          "record_index": 69,
+          "physical_known_nuisance": -18.01982119470208,
+          "physical_mismatched_detector": -17.941872686013454,
+          "markov_rate_matched": -18.375730009603107,
+          "hmm_3_state": -18.074489625506082
+        },
+        {
+          "record_index": 70,
+          "physical_known_nuisance": -19.028993392114362,
+          "physical_mismatched_detector": -19.288925394499874,
+          "markov_rate_matched": -19.659132716363334,
+          "hmm_3_state": -19.333651003150067
+        },
+        {
+          "record_index": 71,
+          "physical_known_nuisance": -19.479450001404587,
+          "physical_mismatched_detector": -19.465152382391626,
+          "markov_rate_matched": -19.93881990264982,
+          "hmm_3_state": -19.433930219708763
+        },
+        {
+          "record_index": 72,
+          "physical_known_nuisance": -18.66284502549205,
+          "physical_mismatched_detector": -18.586147495777457,
+          "markov_rate_matched": -18.84544146325735,
+          "hmm_3_state": -18.510000800270895
+        },
+        {
+          "record_index": 73,
+          "physical_known_nuisance": -10.915578238908822,
+          "physical_mismatched_detector": -10.705821548007867,
+          "markov_rate_matched": -10.67531376904175,
+          "hmm_3_state": -11.192268290788554
+        },
+        {
+          "record_index": 74,
+          "physical_known_nuisance": -18.384612619107138,
+          "physical_mismatched_detector": -18.310129765419056,
+          "markov_rate_matched": -18.61058573643023,
+          "hmm_3_state": -18.866566544026835
+        },
+        {
+          "record_index": 75,
+          "physical_known_nuisance": -20.62581291741567,
+          "physical_mismatched_detector": -20.69049906091422,
+          "markov_rate_matched": -21.177391149950683,
+          "hmm_3_state": -20.557309625991557
+        },
+        {
+          "record_index": 76,
+          "physical_known_nuisance": -17.115004369433734,
+          "physical_mismatched_detector": -17.17773034524038,
+          "markov_rate_matched": -17.327183029670007,
+          "hmm_3_state": -17.21515256281584
+        },
+        {
+          "record_index": 77,
+          "physical_known_nuisance": -18.074366245027775,
+          "physical_mismatched_detector": -18.246537962045778,
+          "markov_rate_matched": -18.61058573643023,
+          "hmm_3_state": -18.11928704036007
+        },
+        {
+          "record_index": 78,
+          "physical_known_nuisance": -19.52692735058377,
+          "physical_mismatched_detector": -19.54405701223293,
+          "markov_rate_matched": -19.89398844319046,
+          "hmm_3_state": -19.737894384933377
+        },
+        {
+          "record_index": 79,
+          "physical_known_nuisance": -15.870632783178868,
+          "physical_mismatched_detector": -15.851098866327256,
+          "markov_rate_matched": -16.04378032290978,
+          "hmm_3_state": -15.704016698614211
+        },
+        {
+          "record_index": 80,
+          "physical_known_nuisance": -14.274224921213284,
+          "physical_mismatched_detector": -14.34235787667336,
+          "markov_rate_matched": -14.525521889322428,
+          "hmm_3_state": -14.22809533361556
+        },
+        {
+          "record_index": 81,
+          "physical_known_nuisance": -27.274475472158382,
+          "physical_mismatched_detector": -26.879761056121804,
+          "markov_rate_matched": -27.06040061693232,
+          "hmm_3_state": -26.56960419773742
+        },
+        {
+          "record_index": 82,
+          "physical_known_nuisance": -19.903567493458155,
+          "physical_mismatched_detector": -19.87445668075822,
+          "markov_rate_matched": -20.128844170017583,
+          "hmm_3_state": -20.052656067358676
+        },
+        {
+          "record_index": 83,
+          "physical_known_nuisance": -14.478602556210092,
+          "physical_mismatched_detector": -14.383813872492698,
+          "markov_rate_matched": -14.52552188932243,
+          "hmm_3_state": -14.540702518843885
+        },
+        {
+          "record_index": 84,
+          "physical_known_nuisance": -21.392057485980942,
+          "physical_mismatched_detector": -21.7684486944444,
+          "markov_rate_matched": -22.460793856710907,
+          "hmm_3_state": -21.632505727233696
+        },
+        {
+          "record_index": 85,
+          "physical_known_nuisance": -20.800523586917947,
+          "physical_mismatched_detector": -21.078591204228353,
+          "markov_rate_matched": -21.412246876777807,
+          "hmm_3_state": -21.14298044998948
+        },
+        {
+          "record_index": 86,
+          "physical_known_nuisance": -19.911571954573468,
+          "physical_mismatched_detector": -19.967299489443782,
+          "markov_rate_matched": -20.12884417001758,
+          "hmm_3_state": -20.043173746473983
+        },
+        {
+          "record_index": 87,
+          "physical_known_nuisance": -18.68390906600127,
+          "physical_mismatched_detector": -18.618146442486847,
+          "markov_rate_matched": -18.845441463257355,
+          "hmm_3_state": -18.65546007449599
+        },
+        {
+          "record_index": 88,
+          "physical_known_nuisance": -16.822895384776032,
+          "physical_mismatched_detector": -16.779572135071064,
+          "markov_rate_matched": -17.092327302842882,
+          "hmm_3_state": -16.81684023282401
+        },
+        {
+          "record_index": 89,
+          "physical_known_nuisance": -19.4581224442994,
+          "physical_mismatched_detector": -19.307156871668376,
+          "markov_rate_matched": -19.703964175822694,
+          "hmm_3_state": -19.447785545317803
+        },
+        {
+          "record_index": 90,
+          "physical_known_nuisance": -24.132680703240784,
+          "physical_mismatched_detector": -24.664837889765135,
+          "markov_rate_matched": -25.307286456517847,
+          "hmm_3_state": -24.55793488514159
+        },
+        {
+          "record_index": 91,
+          "physical_known_nuisance": -20.823106834252147,
+          "physical_mismatched_detector": -20.65696183826993,
+          "markov_rate_matched": -20.987366882582922,
+          "hmm_3_state": -20.658586732775497
+        },
+        {
+          "record_index": 92,
+          "physical_known_nuisance": -15.199124642719388,
+          "physical_mismatched_detector": -15.494809583058387,
+          "markov_rate_matched": -15.808924596082655,
+          "hmm_3_state": -15.393716142377242
+        },
+        {
+          "record_index": 93,
+          "physical_known_nuisance": -22.13484401307242,
+          "physical_mismatched_detector": -23.13877649968093,
+          "markov_rate_matched": -23.16536103719228,
+          "hmm_3_state": -22.521058386937057
+        },
+        {
+          "record_index": 94,
+          "physical_known_nuisance": -20.561658365537692,
+          "physical_mismatched_detector": -20.910242559302677,
+          "markov_rate_matched": -21.412246876777807,
+          "hmm_3_state": -21.170899135865408
+        },
+        {
+          "record_index": 95,
+          "physical_known_nuisance": -21.288756705836064,
+          "physical_mismatched_detector": -21.70069718941653,
+          "markov_rate_matched": -22.46079385671091,
+          "hmm_3_state": -21.441283529665863
+        },
+        {
+          "record_index": 96,
+          "physical_known_nuisance": -13.210939467631778,
+          "physical_mismatched_detector": -13.10365822891129,
+          "markov_rate_matched": -13.242119182562202,
+          "hmm_3_state": -13.348438429625563
+        },
+        {
+          "record_index": 97,
+          "physical_known_nuisance": -22.35884154908533,
+          "physical_mismatched_detector": -22.29288240768056,
+          "markov_rate_matched": -22.695649583538035,
+          "hmm_3_state": -22.234210898844815
+        },
+        {
+          "record_index": 98,
+          "physical_known_nuisance": -19.1629260336165,
+          "physical_mismatched_detector": -19.47946787614634,
+          "markov_rate_matched": -19.893988443190455,
+          "hmm_3_state": -19.192664966570327
+        },
+        {
+          "record_index": 99,
+          "physical_known_nuisance": -24.63072939384431,
+          "physical_mismatched_detector": -25.29854041140701,
+          "markov_rate_matched": -25.497310723885608,
+          "hmm_3_state": -25.102635868940364
+        },
+        {
+          "record_index": 100,
+          "physical_known_nuisance": -22.920859447459954,
+          "physical_mismatched_detector": -22.869071169795756,
+          "markov_rate_matched": -23.210192496651644,
+          "hmm_3_state": -22.602094942912277
+        },
+        {
+          "record_index": 101,
+          "physical_known_nuisance": -16.97725638238951,
+          "physical_mismatched_detector": -17.00550026703424,
+          "markov_rate_matched": -17.092327302842882,
+          "hmm_3_state": -17.039836476574294
+        },
+        {
+          "record_index": 102,
+          "physical_known_nuisance": -21.974254946424605,
+          "physical_mismatched_detector": -22.01925435020549,
+          "markov_rate_matched": -22.460793856710907,
+          "hmm_3_state": -21.951732773237197
+        },
+        {
+          "record_index": 103,
+          "physical_known_nuisance": -18.884194744183233,
+          "physical_mismatched_detector": -18.742127583614455,
+          "markov_rate_matched": -18.61058573643023,
+          "hmm_3_state": -18.47632151014446
+        },
+        {
+          "record_index": 104,
+          "physical_known_nuisance": -19.727215271985113,
+          "physical_mismatched_detector": -19.590804080010905,
+          "markov_rate_matched": -19.893988443190455,
+          "hmm_3_state": -19.8368036283232
+        },
+        {
+          "record_index": 105,
+          "physical_known_nuisance": -27.196272956592768,
+          "physical_mismatched_detector": -27.52169317791029,
+          "markov_rate_matched": -27.015569157472957,
+          "hmm_3_state": -27.288807003311188
+        },
+        {
+          "record_index": 106,
+          "physical_known_nuisance": -20.303615962538203,
+          "physical_mismatched_detector": -20.36121079874842,
+          "markov_rate_matched": -19.893988443190455,
+          "hmm_3_state": -20.394788919566878
+        },
+        {
+          "record_index": 107,
+          "physical_known_nuisance": -19.799538080548707,
+          "physical_mismatched_detector": -19.80231239554338,
+          "markov_rate_matched": -20.12884417001758,
+          "hmm_3_state": -19.893413329140383
+        },
+        {
+          "record_index": 108,
+          "physical_known_nuisance": -23.425267975418897,
+          "physical_mismatched_detector": -23.327052907113494,
+          "markov_rate_matched": -23.979052290298256,
+          "hmm_3_state": -23.152800152603547
+        },
+        {
+          "record_index": 109,
+          "physical_known_nuisance": -20.49002439609807,
+          "physical_mismatched_detector": -20.686019274600426,
+          "markov_rate_matched": -21.177391149950683,
+          "hmm_3_state": -20.614349795140928
+        },
+        {
+          "record_index": 110,
+          "physical_known_nuisance": -18.72021905434314,
+          "physical_mismatched_detector": -18.73483321937193,
+          "markov_rate_matched": -18.845441463257355,
+          "hmm_3_state": -18.75880071167271
+        },
+        {
+          "record_index": 111,
+          "physical_known_nuisance": -18.080343676280805,
+          "physical_mismatched_detector": -17.9766504470045,
+          "markov_rate_matched": -18.37573000960311,
+          "hmm_3_state": -17.97850549760958
+        },
+        {
+          "record_index": 112,
+          "physical_known_nuisance": -19.74132253174629,
+          "physical_mismatched_detector": -20.251670524403178,
+          "markov_rate_matched": -20.598555623671828,
+          "hmm_3_state": -20.37017265017252
+        },
+        {
+          "record_index": 113,
+          "physical_known_nuisance": -22.855006463424026,
+          "physical_mismatched_detector": -23.03414477245679,
+          "markov_rate_matched": -22.69564958353803,
+          "hmm_3_state": -22.668502811125546
+        },
+        {
+          "record_index": 114,
+          "physical_known_nuisance": -19.523634802576314,
+          "physical_mismatched_detector": -19.611595401495173,
+          "markov_rate_matched": -19.89398844319046,
+          "hmm_3_state": -19.595632449950482
+        },
+        {
+          "record_index": 115,
+          "physical_known_nuisance": -20.305927664447058,
+          "physical_mismatched_detector": -20.218801316381228,
+          "markov_rate_matched": -20.128844170017576,
+          "hmm_3_state": -19.802570534776635
+        },
+        {
+          "record_index": 116,
+          "physical_known_nuisance": -17.21547859784477,
+          "physical_mismatched_detector": -17.36489331001978,
+          "markov_rate_matched": -17.562038756497127,
+          "hmm_3_state": -17.11979801854291
+        },
+        {
+          "record_index": 117,
+          "physical_known_nuisance": -27.543906924962922,
+          "physical_mismatched_detector": -27.61707201642815,
+          "markov_rate_matched": -28.29897186423318,
+          "hmm_3_state": -27.60843495430315
+        },
+        {
+          "record_index": 118,
+          "physical_known_nuisance": -24.067895123075942,
+          "physical_mismatched_detector": -23.872087489431422,
+          "markov_rate_matched": -23.74419656347114,
+          "hmm_3_state": -23.82089748950288
+        },
+        {
+          "record_index": 119,
+          "physical_known_nuisance": -24.122184980600267,
+          "physical_mismatched_detector": -24.116670060667847,
+          "markov_rate_matched": -23.7890280229305,
+          "hmm_3_state": -24.265787957148458
+        },
+        {
+          "record_index": 120,
+          "physical_known_nuisance": -18.451661336598665,
+          "physical_mismatched_detector": -18.37905784638645,
+          "markov_rate_matched": -18.610585736430235,
+          "hmm_3_state": -18.469982073469865
+        },
+        {
+          "record_index": 121,
+          "physical_known_nuisance": -20.97763806387383,
+          "physical_mismatched_detector": -20.89813391969966,
+          "markov_rate_matched": -21.412246876777804,
+          "hmm_3_state": -20.85544821727556
+        },
+        {
+          "record_index": 122,
+          "physical_known_nuisance": -20.259032696489673,
+          "physical_mismatched_detector": -20.534140909153113,
+          "markov_rate_matched": -21.17739114995068,
+          "hmm_3_state": -20.306763743989002
+        },
+        {
+          "record_index": 123,
+          "physical_known_nuisance": -23.10137297269149,
+          "physical_mismatched_detector": -23.37399846374458,
+          "markov_rate_matched": -22.930505310365156,
+          "hmm_3_state": -23.18788862325238
+        },
+        {
+          "record_index": 124,
+          "physical_known_nuisance": -17.823751078710707,
+          "physical_mismatched_detector": -17.999960347964095,
+          "markov_rate_matched": -18.42056146906247,
+          "hmm_3_state": -17.698507175025526
+        },
+        {
+          "record_index": 125,
+          "physical_known_nuisance": -15.27404565530573,
+          "physical_mismatched_detector": -15.485706378626046,
+          "markov_rate_matched": -15.808924596082656,
+          "hmm_3_state": -15.466561329893088
+        },
+        {
+          "record_index": 126,
+          "physical_known_nuisance": -25.250444329767802,
+          "physical_mismatched_detector": -25.140947339306067,
+          "markov_rate_matched": -25.73216645071273,
+          "hmm_3_state": -25.08164259523599
+        },
+        {
+          "record_index": 127,
+          "physical_known_nuisance": -14.658413604437541,
+          "physical_mismatched_detector": -14.503683635865768,
+          "markov_rate_matched": -14.525521889322428,
+          "hmm_3_state": -14.864032935662538
+        },
+        {
+          "record_index": 128,
+          "physical_known_nuisance": -17.428406264395516,
+          "physical_mismatched_detector": -17.81449462146164,
+          "markov_rate_matched": -18.375730009603107,
+          "hmm_3_state": -17.618341617568547
+        },
+        {
+          "record_index": 129,
+          "physical_known_nuisance": -27.81349936329724,
+          "physical_mismatched_detector": -27.819947843292255,
+          "markov_rate_matched": -28.29897186423318,
+          "hmm_3_state": -28.028744562105913
+        },
+        {
+          "record_index": 130,
+          "physical_known_nuisance": -19.289587970017088,
+          "physical_mismatched_detector": -19.265371554762712,
+          "markov_rate_matched": -19.659132716363334,
+          "hmm_3_state": -19.367724535489536
+        },
+        {
+          "record_index": 131,
+          "physical_known_nuisance": -24.60154829490191,
+          "physical_mismatched_detector": -24.78876708328922,
+          "markov_rate_matched": -25.307286456517847,
+          "hmm_3_state": -24.84304553928372
+        },
+        {
+          "record_index": 132,
+          "physical_known_nuisance": -27.84152488543796,
+          "physical_mismatched_detector": -27.537837722962166,
+          "markov_rate_matched": -28.29897186423318,
+          "hmm_3_state": -27.562476326165772
+        },
+        {
+          "record_index": 133,
+          "physical_known_nuisance": -19.5885287053908,
+          "physical_mismatched_detector": -19.451453371926846,
+          "markov_rate_matched": -18.61058573643023,
+          "hmm_3_state": -19.217107611439452
+        },
+        {
+          "record_index": 134,
+          "physical_known_nuisance": -25.478999614423163,
+          "physical_mismatched_detector": -25.39614734427521,
+          "markov_rate_matched": -26.011853636999216,
+          "hmm_3_state": -25.323023289926205
+        },
+        {
+          "record_index": 135,
+          "physical_known_nuisance": -21.265862376424067,
+          "physical_mismatched_detector": -21.07549961691778,
+          "markov_rate_matched": -21.177391149950683,
+          "hmm_3_state": -21.186635831713623
+        },
+        {
+          "record_index": 136,
+          "physical_known_nuisance": -17.03682969043706,
+          "physical_mismatched_detector": -17.09338188850486,
+          "markov_rate_matched": -17.327183029670007,
+          "hmm_3_state": -16.800124599381828
+        },
+        {
+          "record_index": 137,
+          "physical_known_nuisance": -20.088666287379883,
+          "physical_mismatched_detector": -20.15267952332233,
+          "markov_rate_matched": -20.363699896844704,
+          "hmm_3_state": -20.31989248705625
+        },
+        {
+          "record_index": 138,
+          "physical_known_nuisance": -18.331323432738355,
+          "physical_mismatched_detector": -18.21159700734784,
+          "markov_rate_matched": -18.375730009603107,
+          "hmm_3_state": -18.392054204551275
+        },
+        {
+          "record_index": 139,
+          "physical_known_nuisance": -20.47928183617241,
+          "physical_mismatched_detector": -19.775893891304687,
+          "markov_rate_matched": -17.372014489129366,
+          "hmm_3_state": -22.531912290867787
+        },
+        {
+          "record_index": 140,
+          "physical_known_nuisance": -17.785806239490906,
+          "physical_mismatched_detector": -17.898891370293683,
+          "markov_rate_matched": -18.37573000960311,
+          "hmm_3_state": -17.95763015403519
+        },
+        {
+          "record_index": 141,
+          "physical_known_nuisance": -22.48488688458071,
+          "physical_mismatched_detector": -22.206383994466208,
+          "markov_rate_matched": -22.695649583538035,
+          "hmm_3_state": -22.410884749736148
+        },
+        {
+          "record_index": 142,
+          "physical_known_nuisance": -16.53446339282623,
+          "physical_mismatched_detector": -16.668901349321708,
+          "markov_rate_matched": -17.092327302842882,
+          "hmm_3_state": -16.468199233607624
+        },
+        {
+          "record_index": 143,
+          "physical_known_nuisance": -21.965146953090454,
+          "physical_mismatched_detector": -22.19433206104664,
+          "markov_rate_matched": -22.69564958353803,
+          "hmm_3_state": -22.056977661414315
+        },
+        {
+          "record_index": 144,
+          "physical_known_nuisance": -17.144048248255466,
+          "physical_mismatched_detector": -17.11704580176404,
+          "markov_rate_matched": -17.327183029670007,
+          "hmm_3_state": -17.19457991636875
+        },
+        {
+          "record_index": 145,
+          "physical_known_nuisance": -18.266781029362438,
+          "physical_mismatched_detector": -18.183505536062466,
+          "markov_rate_matched": -18.37573000960311,
+          "hmm_3_state": -18.32587594257115
+        },
+        {
+          "record_index": 146,
+          "physical_known_nuisance": -21.20808436122657,
+          "physical_mismatched_detector": -21.102437107348994,
+          "markov_rate_matched": -21.457078336237167,
+          "hmm_3_state": -21.51528922824524
+        },
+        {
+          "record_index": 147,
+          "physical_known_nuisance": -18.067644475195536,
+          "physical_mismatched_detector": -18.254060736723396,
+          "markov_rate_matched": -18.61058573643023,
+          "hmm_3_state": -17.922995350040317
+        },
+        {
+          "record_index": 148,
+          "physical_known_nuisance": -15.493440759050978,
+          "physical_mismatched_detector": -15.55580009524936,
+          "markov_rate_matched": -15.808924596082655,
+          "hmm_3_state": -15.590116236681409
+        },
+        {
+          "record_index": 149,
+          "physical_known_nuisance": -15.589102428545344,
+          "physical_mismatched_detector": -15.575000807087854,
+          "markov_rate_matched": -15.808924596082656,
+          "hmm_3_state": -15.854810699928919
+        }
+      ],
+      "hmm3_refinement": {
+        "method": "L-BFGS-B on training log likelihood with analytic forward-backward gradient",
+        "optimization_success": true,
+        "status": 0,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "iterations": 167,
+        "max_iterations": 1000,
+        "train_before": -7940.613023632993,
+        "train_candidate": -7940.442352699265,
+        "accepted_candidate": true,
+        "train_selected": -7940.442352699265,
+        "max_abs_logit_gradient": 0.0015831153755243577,
+        "max_abs_logit": 20.0,
+        "bounds": [
+          -20,
+          20
+        ],
+        "note": "Only the top EM restart was refined; local convergence does not establish a global optimum."
+      },
+      "hmm3_refined_parameters": {
+        "initial": [
+          1.795131582356163e-09,
+          0.12906463326475462,
+          0.8709353649401138
+        ],
+        "transition": [
+          [
+            0.17580381071113516,
+            0.24263189493014944,
+            0.5815642943587154
+          ],
+          [
+            0.6169582384776394,
+            0.3830416750795974,
+            8.644276311784963e-08
+          ],
+          [
+            1.6034513763435637e-09,
+            0.22206119806272642,
+            0.7779388003338222
+          ]
+        ],
+        "emissions": [
+          0.9999999979388463,
+          2.0611536181902037e-09,
+          0.018006964907088554
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "all datasets share one synthetic generator and one fixed physical parameter set",
+    "true physical family and most nuisance parameters are assumed known",
+    "mismatch is one deliberately chosen detector error, not an uncertainty distribution",
+    "3-state Bernoulli HMM and first-order Markov chain are not exhaustive classical baselines",
+    "training convergence and random-start search do not prove a global optimum",
+    "paired bootstrap intervals condition on each fitted model and omit training/model-selection uncertainty",
+    "only three simulated replicates; do not infer real-device performance",
+    "no measured optical system, quantum hardware, or computational quantum speedup demonstrated"
+  ]
+}

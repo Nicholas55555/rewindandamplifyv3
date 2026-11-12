@@ -1,0 +1,39 @@
+{
+  "schema": "exposure-followup-verification-v1",
+  "cases": 9,
+  "method_case_pairs": 45,
+  "sensitivity_rows": 140,
+  "poisson_realizations": 540000,
+  "source_hashes_match": true,
+  "photon_budgets_match_within_case": true,
+  "attempt_clocks_match_within_case": true,
+  "weak_regime_all_cases": true,
+  "unit_tests_passed": 10,
+  "max_harmonic_mc_deviation_standard_errors": 2.615224310699027,
+  "max_guard_accuracy_mc_deviation_standard_errors": 2.6174923111337276,
+  "max_all_guard_mc_deviation_analytic_standard_errors": 2.826201121133589,
+  "visual_review": "All three generated figures individually inspected; axes, titles, units and legends readable.",
+  "independent_physics_review": "realistic_sensor agent checked local G1/G2, Kraus normalization and phase/duty cycling; no blocker. Review caveats: fast averaged jitter, Poisson weak-event approximation, extra classical peak brightness, fixed phenomenological cells. These are explicit in README.",
+  "limitations": [
+    "No physical resist or source calibration.",
+    "No fabricated structures or manufacturing benefit.",
+    "No optimal classical bound.",
+    "Source pump/herald energy and apparatus resources unknown.",
+    "Poisson approximation omits slow common drift and exact joint photodetection correlations."
+  ],
+  "sha256": {
+    "model.py": "7943aefc4fbb91180505194c73834f01d7a97c8c044d9aa665e6124cc700a933",
+    "test_model.py": "057036cccb9ad3ea7ab2614e9ee223d63c30c43bdf99ff28cfad43270b4c6174",
+    "run_study.py": "913efb053eab9d025a7cf9377196b3355536c80794356962cf5136f2efbb0e7b",
+    "verify_results.py": "142d5e3fb2b185761ba34df7522594dc572c46e2a121e7d7e75b24718f962506",
+    "README.md": "e73d3d0437d372fb7b741d174593cc993d83067429761d5736a2f8faf9eb83d3",
+    "requirements.txt": "ee51afafe3eace7540be2e3d5a4955d15522fa3cf7063ed29550949880eeb2f4",
+    "results.json": "b1ed512117235c49140512e1a1b3d9abc7b28c45b14c7b6d12d3682f61b7fa3b",
+    "sensitivity.csv": "d5d05f4b2308137a5bc5beec341f7894317714159c2642d97bf0178c9d2eea6b",
+    "run_summary.json": "5828d63ce29c90f40b1c5875cfdfdc2a5256e3f21d872db5e4cb306fe84725ee",
+    "test_results.txt": "0deee65098a503819c8364d3eb5b97f306ca3769f53fe1c857d48faf21d5f4f4",
+    "exposure_tradeoffs.png": "e11fd74f52f73f34e6db2a3127e657140d95c94c6b9fb304508ff8cea39f81eb",
+    "loss_blur_preparation.png": "6afd5afde94bf3ada9ee4113607d505eb655e5f2415c44e4c6a0fa46f699d7e8",
+    "threshold_dose_tradeoff.png": "497ea7a9d733880755066dcc4a187bec22eda5e4c5abad69fae1262e79d7c2da"
+  }
+}

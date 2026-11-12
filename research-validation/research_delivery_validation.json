@@ -1,0 +1,94 @@
+{
+  "schema": "research-delivery-check-v1",
+  "executed_utc": "2026-11-11T05:23:41.658767+00:00",
+  "archive": "Rewind_Amplify_Research_Followups.zip",
+  "archive_sha256": "cacadfe4e772dd53a84840f58c3b4c923456d14136ffd7fd7459e29f08cfff5a",
+  "extraction_directory": "C:\\Users\\nicho\\AppData\\Local\\Temp\\rewind_research_verify_s0tz5f10",
+  "zip_integrity": {
+    "all_hashes_match": true,
+    "files_verified": 285,
+    "total_uncompressed_bytes": 111855006,
+    "scope": "Artifact integrity only; see study receipts for numerical validation."
+  },
+  "extracted_integrity": {
+    "all_hashes_match": true,
+    "files_verified": 285,
+    "total_uncompressed_bytes": 111855006,
+    "scope": "Artifact integrity only; see study receipts for numerical validation."
+  },
+  "integrity_after_tests": {
+    "all_hashes_match": true,
+    "files_verified": 285,
+    "total_uncompressed_bytes": 111855006,
+    "scope": "Artifact integrity only; see study receipts for numerical validation."
+  },
+  "all_checks_passed": true,
+  "focused_tests_passed": 79,
+  "suites": [
+    {
+      "suite": "finals-lithography/followup",
+      "pattern": "test_*.py",
+      "returncode": 0,
+      "passed": true,
+      "tests": 17,
+      "output": "test_oracle_marks_every_basis_component_and_uncomputes (test_followup.CircuitTests.test_oracle_marks_every_basis_component_and_uncomputes) ... ok\ntest_preparation_all_512_amplitudes (test_followup.CircuitTests.test_preparation_all_512_amplitudes) ... C:\\Users\\nicho\\AppData\\Local\\Temp\\rewind_audit_bh37e7ud\\venv\\Lib\\site-packages\\qiskit\\circuit\\library\\standard_gates\\ry.py:112: DeprecationWarning: ``qiskit.circuit.gate.Gate.control()``'s argument ``annotated`` is deprecated as of Qiskit 2.3. It will be removed in Qiskit 3.0. The method Gate.control() no longer accepts `annotated=None`. The new default is `annotated=True`, which represents the controlled gate as an `AnnotatedOperation` (unless a dedicated controlled-gate class already exists). You can explicitly set `annotated=False` to preserve the previous behavior. However, using `annotated=True` is recommended, as it defers construction of the controlled circuit to transpiler, and furthermore enables additional controlled-gate optimizations (typically leading to higher-quality circuits).\n  gate = super().control(\nok\ntest_two_rounds_preserve_conditioned_maps (test_followup.CircuitTests.test_two_rounds_preserve_conditioned_maps) ... C:\\Users\\nicho\\AppData\\Local\\Temp\\rewind_audit_bh37e7ud\\venv\\Lib\\site-packages\\qiskit\\circuit\\library\\standard_gates\\ry.py:112: DeprecationWarning: ``qiskit.circuit.gate.Gate.control()``'s argument ``annotated`` is deprecated as of Qiskit 2.3. It will be removed in Qiskit 3.0. The method Gate.control() no longer accepts `annotated=None`. The new default is `annotated=True`, which represents the controlled gate as an `AnnotatedOperation` (unless a dedicated controlled-gate class already exists). You can explicitly set `annotated=False` to preserve the previous behavior. However, using `annotated=True` is recommended, as it defers construction of the controlled circuit to transpiler, and furthermore enables additional controlled-gate optimizations (typically leading to higher-quality circuits).\n  gate = super().control(\nok\ntest_weighted_adder_maps_all_populated_components (test_followup.CircuitTests.test_weighted_adder_maps_all_populated_components) ... ok\ntest_cap_matches_poisson_tail_and_event_is_exact (test_followup.ModelTests.test_cap_matches_poisson_tail_and_event_is_exact) ... ok\ntest_conditional_sampler_no_rejection_and_correct_law (test_followup.ModelTests.test_conditional_sampler_no_rejection_and_correct_law) ... ok\ntest_independent_control_same_marginals_and_different_joint (test_followup.ModelTests.test_independent_control_same_marginals_and_different_joint) ... ok\ntest_readout_bit_order_and_normalization (test_followup.ModelTests.test_readout_bit_order_and_normalization) ... ok\ntest_coverage_bracket_and_zero_hit_interval (test_spatial_coverage.CoverageTests.test_coverage_bracket_and_zero_hit_interval) ... ok\ntest_fft_inversion_agrees_with_recurrence_and_negligible_alias (test_spatial_coverage.CoverageTests.test_fft_inversion_agrees_with_recurrence_and_negligible_alias) ... ok\ntest_lattice_recurrence_matches_poisson_closed_form (test_spatial_coverage.CoverageTests.test_lattice_recurrence_matches_poisson_closed_form) ... ok\ntest_linear_response_matches_original_for_random_maps (test_spatial_coverage.CoverageTests.test_linear_response_matches_original_for_random_maps) ... ok\ntest_longdouble_and_float64_recurrence_agree (test_spatial_coverage.CoverageTests.test_longdouble_and_float64_recurrence_agree) ... ok\ntest_no_tilt_monte_carlo_matches_known_poisson_event (test_spatial_coverage.CoverageTests.test_no_tilt_monte_carlo_matches_known_poisson_event) ... ok\ntest_nonunit_weights_and_zero_weight_tail (test_spatial_coverage.CoverageTests.test_nonunit_weights_and_zero_weight_tail) ... ok\ntest_pilot_respects_nondefault_threshold (test_spatial_coverage.CoverageTests.test_pilot_respects_nondefault_threshold) ... ok\ntest_rounding_bounds_contain_known_nonlattice_probability (test_spatial_coverage.CoverageTests.test_rounding_bounds_contain_known_nonlattice_probability) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 6.416s\n\nOK\n"
+    },
+    {
+      "suite": "finals-lithography/full_spatial_circuit",
+      "pattern": "test_full_spatial.py",
+      "returncode": 0,
+      "passed": true,
+      "tests": 8,
+      "output": "test_actual_small_oracle_and_grover_preserve_predicate (test_full_spatial.FullSpatialTests.test_actual_small_oracle_and_grover_preserve_predicate) ... ok\ntest_clean_chain_has_no_hidden_relative_phases (test_full_spatial.FullSpatialTests.test_clean_chain_has_no_hidden_relative_phases) ... ok\ntest_clean_toffoli_chain_exhaustive_small_and_large_control_edges (test_full_spatial.FullSpatialTests.test_clean_toffoli_chain_exhaustive_small_and_large_control_edges) ... ok\ntest_controlled_carry_addition_exhaustive_modular_arithmetic (test_full_spatial.FullSpatialTests.test_controlled_carry_addition_exhaustive_modular_arithmetic) ... ok\ntest_exact_four_bit_poisson_preparation (test_full_spatial.FullSpatialTests.test_exact_four_bit_poisson_preparation) ... ok\ntest_finite_classical_dp_matches_complete_small_enumeration (test_full_spatial.FullSpatialTests.test_finite_classical_dp_matches_complete_small_enumeration) ... ok\ntest_full_register_ledger_no_overflow_and_real_ancillas (test_full_spatial.FullSpatialTests.test_full_register_ledger_no_overflow_and_real_ancillas) ... ok\ntest_tail_bound_counts_changes_above_cap_not_overflow_category (test_full_spatial.FullSpatialTests.test_tail_bound_counts_changes_above_cap_not_overflow_category) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.378s\n\nOK\n"
+    },
+    {
+      "suite": "laser_sensor_viability/followup",
+      "pattern": "test_followup.py",
+      "returncode": 0,
+      "passed": true,
+      "tests": 9,
+      "output": "test_cluster_bootstrap_retains_pipeline_variation (test_followup.CausalDetectorTests.test_cluster_bootstrap_retains_pipeline_variation) ... ok\ntest_early_alarm_never_counts_as_detection (test_followup.CausalDetectorTests.test_early_alarm_never_counts_as_detection) ... ok\ntest_first_alarm_and_strict_threshold (test_followup.CausalDetectorTests.test_first_alarm_and_strict_threshold) ... ok\ntest_fusion_unit_response_and_agreement_veto (test_followup.CausalDetectorTests.test_fusion_unit_response_and_agreement_veto) ... ok\ntest_maximum_calibration_controls_record_not_pointwise_false_alarms (test_followup.CausalDetectorTests.test_maximum_calibration_controls_record_not_pointwise_false_alarms) ... ok\ntest_no_lookahead (test_followup.CausalDetectorTests.test_no_lookahead) ... ok\ntest_step_appears_only_after_measurement_and_peaks_after_one_window (test_followup.CausalDetectorTests.test_step_appears_only_after_measurement_and_peaks_after_one_window) ... ok\ntest_frequency_event_does_not_change_power_observation (test_followup.SimulationTests.test_frequency_event_does_not_change_power_observation) ... ok\ntest_onset_nuisance_independence_and_session_reproducibility (test_followup.SimulationTests.test_onset_nuisance_independence_and_session_reproducibility) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.365s\n\nOK\n"
+    },
+    {
+      "suite": "qrsm_photon_poc/drive_diagnostics_followup",
+      "pattern": "test_model.py",
+      "returncode": 0,
+      "passed": true,
+      "tests": 10,
+      "output": "test_afterpulse_readout_is_cause_mixture (test_model.ScheduleTests.test_afterpulse_readout_is_cause_mixture) ... ok\ntest_all_histories_normalize_for_latent_step_and_telegraph (test_model.ScheduleTests.test_all_histories_normalize_for_latent_step_and_telegraph) ... ok\ntest_all_main_random_streams_have_unique_explicit_namespaces (test_model.ScheduleTests.test_all_main_random_streams_have_unique_explicit_namespaces) ... ok\ntest_count_contrast_is_causal (test_model.ScheduleTests.test_count_contrast_is_causal) ... ok\ntest_dead_time_blind_channel_and_forbidden_adjacent_bits (test_model.ScheduleTests.test_dead_time_blind_channel_and_forbidden_adjacent_bits) ... ok\ntest_forward_matches_explicit_source_path_marginalization (test_model.ScheduleTests.test_forward_matches_explicit_source_path_marginalization) ... ok\ntest_hmm_prefix_matches_bruteforce_paths (test_model.ScheduleTests.test_hmm_prefix_matches_bruteforce_paths) ... ok\ntest_step_retains_physical_state_instead_of_resetting (test_model.ScheduleTests.test_step_retains_physical_state_instead_of_resetting) ... ok\ntest_threshold_strict_ties_conservative (test_model.ScheduleTests.test_threshold_strict_ties_conservative) ... ok\ntest_zero_drive_difference_has_identical_likelihood (test_model.ScheduleTests.test_zero_drive_difference_has_identical_likelihood) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.118s\n\nOK\n"
+    },
+    {
+      "suite": "qrsm_photon_poc/followup",
+      "pattern": "test_*.py",
+      "returncode": 0,
+      "passed": true,
+      "tests": 9,
+      "output": "test_control_preserves_trace_and_probability (test_inference_model.InstrumentTests.test_control_preserves_trace_and_probability) ... ok\ntest_deadtime_evolves_unconditionally_in_blind_bin (test_inference_model.InstrumentTests.test_deadtime_evolves_unconditionally_in_blind_bin) ... ok\ntest_deadtime_normalizes_and_forbids_adjacent_clicks (test_inference_model.InstrumentTests.test_deadtime_normalizes_and_forbids_adjacent_clicks) ... ok\ntest_likelihood_sum_matches_original (test_inference_model.InstrumentTests.test_likelihood_sum_matches_original) ... ok\ntest_parameter_coordinates_roundtrip (test_inference_model.InstrumentTests.test_parameter_coordinates_roundtrip) ... ok\ntest_samples_agree_with_exact_records (test_inference_model.InstrumentTests.test_samples_agree_with_exact_records) ... ok\ntest_uncontrolled_matches_original (test_inference_model.InstrumentTests.test_uncontrolled_matches_original) ... ok\ntest_fixed_protocol_detuning_sign_is_global_alias (test_parameter_diagnostics.DiagnosticsTests.test_fixed_protocol_detuning_sign_is_global_alias) ... ok\ntest_hessian_against_analytic_nonlinear_function (test_parameter_diagnostics.DiagnosticsTests.test_hessian_against_analytic_nonlinear_function) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.288s\n\nOK\n"
+    },
+    {
+      "suite": "qrsm_photon_poc/multibin_followup",
+      "pattern": "test_model.py",
+      "returncode": 0,
+      "passed": true,
+      "tests": 7,
+      "output": "test_all_eight_branches_and_conditional_states (test_model.MultibinTests.test_all_eight_branches_and_conditional_states) ... ok\ntest_density_partial_trace_preserves_complex_coherence (test_model.MultibinTests.test_density_partial_trace_preserves_complex_coherence) ... ok\ntest_event_recursion_equals_history_sum (test_model.MultibinTests.test_event_recursion_equals_history_sum) ... ok\ntest_exact_density_depolarization_definition (test_model.MultibinTests.test_exact_density_depolarization_definition) ... ok\ntest_full_amplification_preserves_every_conditional_history (test_model.MultibinTests.test_full_amplification_preserves_every_conditional_history) ... ok\ntest_memory_guards (test_model.MultibinTests.test_memory_guards) ... ok\ntest_readout_conditions_mixed_true_flags (test_model.MultibinTests.test_readout_conditions_mixed_true_flags) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 1.975s\n\nOK\n"
+    },
+    {
+      "suite": "quantum_lithography_poc/exposure_followup",
+      "pattern": "test_model.py",
+      "returncode": 0,
+      "passed": true,
+      "tests": 10,
+      "output": "test_blur_and_pixel_averaging_match_numeric_integrals (test_model.ModelTests.test_blur_and_pixel_averaging_match_numeric_integrals) ... ok\ntest_classical_phase_cycle_and_duty_charge_every_exposure (test_model.ModelTests.test_classical_phase_cycle_and_duty_charge_every_exposure) ... ok\ntest_equal_photon_budget_costs_more_attempts_when_preparation_fails (test_model.ModelTests.test_equal_photon_budget_costs_more_attempts_when_preparation_fails) ... ok\ntest_invalid_inputs (test_model.ModelTests.test_invalid_inputs) ... ok\ntest_jitter_matches_independent_gaussian_quadrature (test_model.ModelTests.test_jitter_matches_independent_gaussian_quadrature) ... ok\ntest_loss_limits_and_weak_response (test_model.ModelTests.test_loss_limits_and_weak_response) ... ok\ntest_old_normalized_output_limit (test_model.ModelTests.test_old_normalized_output_limit) ... ok\ntest_poisson_statistics_and_threshold_are_independently_correct (test_model.ModelTests.test_poisson_statistics_and_threshold_are_independently_correct) ... ok\ntest_quantum_moments_against_independent_loss_kraus_calculation (test_model.ModelTests.test_quantum_moments_against_independent_loss_kraus_calculation) ... ok\ntest_spatial_mode_columns_are_orthogonal_and_conserve_dose (test_model.ModelTests.test_spatial_mode_columns_are_orthogonal_and_conserve_dose) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.071s\n\nOK\n"
+    },
+    {
+      "suite": "quantum_lithography_poc/phase_inspection_followup",
+      "pattern": "test_phase_model.py",
+      "returncode": 0,
+      "passed": true,
+      "tests": 9,
+      "output": "test_charged_coarse_record_resolves_global_branch (test_phase_model.PhaseTests.test_charged_coarse_record_resolves_global_branch) ... ok\ntest_exact_finite_records_and_estimator_convergence (test_phase_model.PhaseTests.test_exact_finite_records_and_estimator_convergence) ... ok\ntest_global_ambiguity_is_not_given_to_estimator (test_phase_model.PhaseTests.test_global_ambiguity_is_not_given_to_estimator) ... ok\ntest_independent_fock_beamsplitter_limit (test_phase_model.PhaseTests.test_independent_fock_beamsplitter_limit) ... ok\ntest_known_fisher_limits_and_loss_scaling (test_phase_model.PhaseTests.test_known_fisher_limits_and_loss_scaling) ... ok\ntest_loss_matches_independent_binomial_thinning_of_fock_outputs (test_phase_model.PhaseTests.test_loss_matches_independent_binomial_thinning_of_fock_outputs) ... ok\ntest_probabilities_conserve_and_count_losses (test_phase_model.PhaseTests.test_probabilities_conserve_and_count_losses) ... ok\ntest_sample_dose_counted_before_object_and_detector_loss (test_phase_model.PhaseTests.test_sample_dose_counted_before_object_and_detector_loss) ... ok\ntest_wrap_and_invalid_settings (test_phase_model.PhaseTests.test_wrap_and_invalid_settings) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.066s\n\nOK\n"
+    }
+  ],
+  "scope": "Portable extraction/import, focused mathematical tests and post-test integrity. Previously saved independent study receipts cover full-result validation."
+}

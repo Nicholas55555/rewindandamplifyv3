@@ -1,0 +1,37 @@
+{
+  "config": {
+    "seeds": [
+      411001,
+      411002
+    ],
+    "train_records": 240,
+    "test_records": 240,
+    "bins": 24,
+    "cavity_dimension": 4,
+    "joint_starts": 3,
+    "joint_maxfun": 900,
+    "hmm_states": 3,
+    "hmm_starts": 5,
+    "hmm_iterations": 1200,
+    "coupling_profile_grid": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0,
+      1.2
+    ],
+    "scope": "Exploratory synthetic study. Design informed by earlier numerical cutoff check. Fresh holdouts."
+  },
+  "source_sha256": {
+    "run_inference.py": "0dc4884954022dec1f302db758c44ec79760c06cef5136e39a647ce925f61a93",
+    "inference_model.py": "56bea54d666e422f4061e600bbc12d2da9cd0620bb8cd2603d100df74c2c1d25",
+    "PROTOCOL.md": "7800532b7b4137420a91240f7c4c5dea0724d149919c1a7f923969bdcc284a84"
+  },
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.3.1",
+    "scipy": "1.18.1"
+  }
+}

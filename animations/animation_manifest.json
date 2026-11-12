@@ -1,0 +1,22 @@
+{
+  "dimensions": [
+    1200,
+    675
+  ],
+  "duration_seconds": 12,
+  "sensor": {
+    "type": "analytical explanatory schematic",
+    "tau_seconds": 0.02,
+    "T2_seconds": 0.2,
+    "readout_0_to_1": 0.02,
+    "readout_1_to_0": 0.04,
+    "scenes": "zero detuning; +5 Hz source; +5 Hz source plus +5 Hz atomic reference"
+  },
+  "quantum": {
+    "type": "saved ideal Qiskit result schematic",
+    "source": "qrsm_photon_poc/generated/two_bin_double.json",
+    "p_before": 0.0017263984682337737,
+    "p_after": 0.015466137701138622
+  },
+  "note": "Animation is explanatory, not a laboratory or physical device recording."
+}

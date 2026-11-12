@@ -1,0 +1,51 @@
+{
+  "created_utc": "2026-11-11T18:00:30.902383+00:00",
+  "source_sha256": {
+    "physical_model.py": "36fa729ad3b0bed6d4eac4836cc7985cda97e3abd7cca96e6963e2adcd54cf98",
+    "circuits.py": "bdd2058e1478170fd990ca91f68e47c108adbe87b291d3d3bee6ad4d5eb045cd",
+    "inference.py": "a7fb1522f5051592496582f5abcec0ef4b52efebf364789e86675d67b049d0c9",
+    "run_research.py": "a5978cdb0c8f9229c610083eca5a00a13332fcd94df86068181d6d102d4b6afa",
+    "PROTOCOL.md": "defed3a7f4c9f973f99bc360d4cb705287a009acde846cff5b7564d82a0bb994",
+    "INFERENCE_NUMERICS.md": "e82ac17c4699602d6e7202ee14acfb33a0a820b53d78c91c87c2d475346bc979",
+    "test_physical.py": "44a79d0d402d1005aaadb2fec976632fa01f117692b2548474fc2ce3c13268b9",
+    "test_inference.py": "cfe2dadddc16f504af1c96edf11117d5d379dbda48841502e5aec3c23af6dd15"
+  },
+  "master_seed": 20261112031,
+  "seed_namespaces": {
+    "detector_calibration": [
+      1,
+      "parameter0to2"
+    ],
+    "training": [
+      10,
+      "regime0to1"
+    ],
+    "null_threshold": [
+      20,
+      "regime0to1"
+    ],
+    "heldout": [
+      30,
+      "regime0to1",
+      "case0to5"
+    ],
+    "HMM_initialization": [
+      50,
+      "regime0to1",
+      "states2or4",
+      "start0to2"
+    ]
+  },
+  "record_counts": {
+    "training": 1000,
+    "null_threshold": 2000,
+    "heldout_per_case": 2000,
+    "pair_trials_per_record": 64
+  },
+  "environment": {
+    "python": "3.12.10",
+    "numpy": "2.3.1",
+    "scipy": "1.18.1",
+    "qiskit": "2.6.1"
+  }
+}

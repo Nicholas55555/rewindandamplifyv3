@@ -1,0 +1,2627 @@
+{
+  "schema": "ra-offline-hardware-analysis-v1",
+  "run": "dots_plain_v1",
+  "backend": "ibm_marrakesh",
+  "job_id": "dbqas3pabdes73fnu5n0",
+  "source_sha256": {
+    "hardware_campaign/analyze.py": "3a6b0d6851951bd84f9493be7b1788044a1a48b8c8dd1e0df54b04e2ea98dc37",
+    "hardware_campaign/feasibility/adapters.py": "9ba87e818b7915283983369531cd682c44a3bbe2cab286dd37ca4123ae964d88",
+    "hardware_campaign/optical_controls/analyze_counts.py": "b979182a04729aa79ba35d4fd942d37231d77448b4ba26849d1d40565a4afee7"
+  },
+  "input_sha256": {
+    "plan.json": "305633d60869b73eedd73a1bc3e5b4c8410bc744d16d5acc71b18687fbb5b1d5",
+    "raw.json": "adcbe5f462646079c87a8c9b400050038ef67007081e68ac0a6f54beccbb05c3",
+    "manifest.json": "74700362c2c9093cd6d7c3fcb7709242cf6b48abefe2f2751a19e1161afc48a4",
+    "reference_npz": "c911de33d004b0f18f1ed09310ee5cfd2c254392444b56db8d17d66647fbeabe"
+  },
+  "calibration": {
+    "independent_bit_error_estimates": {
+      "86": {
+        "e01": {
+          "probability": 0.000244140625,
+          "successes": 1,
+          "shots": 4096,
+          "wilson95": [
+            4.309811523941186e-05,
+            0.0013817030336260863
+          ]
+        },
+        "e10": {
+          "probability": 0.013671875,
+          "successes": 56,
+          "shots": 4096,
+          "wilson95": [
+            0.01054387645975476,
+            0.017711230471627787
+          ]
+        }
+      },
+      "87": {
+        "e01": {
+          "probability": 0.005615234375,
+          "successes": 23,
+          "shots": 4096,
+          "wilson95": [
+            0.003744712895050349,
+            0.00841221056682197
+          ]
+        },
+        "e10": {
+          "probability": 0.00634765625,
+          "successes": 26,
+          "shots": 4096,
+          "wilson95": [
+            0.004335565780323295,
+            0.009284828906049952
+          ]
+        }
+      },
+      "97": {
+        "e01": {
+          "probability": 0.001220703125,
+          "successes": 5,
+          "shots": 4096,
+          "wilson95": [
+            0.0005215205909937573,
+            0.0028545755238729804
+          ]
+        },
+        "e10": {
+          "probability": 0.005615234375,
+          "successes": 23,
+          "shots": 4096,
+          "wilson95": [
+            0.003744712895050349,
+            0.00841221056682197
+          ]
+        }
+      },
+      "107": {
+        "e01": {
+          "probability": 0.002197265625,
+          "successes": 9,
+          "shots": 4096,
+          "wilson95": [
+            0.0011564392881765655,
+            0.0041709517926914125
+          ]
+        },
+        "e10": {
+          "probability": 0.01025390625,
+          "successes": 42,
+          "shots": 4096,
+          "wilson95": [
+            0.007595138472931719,
+            0.013830436077446488
+          ]
+        }
+      },
+      "108": {
+        "e01": {
+          "probability": 0.001220703125,
+          "successes": 5,
+          "shots": 4096,
+          "wilson95": [
+            0.0005215205909937573,
+            0.0028545755238729804
+          ]
+        },
+        "e10": {
+          "probability": 0.018798828125,
+          "successes": 77,
+          "shots": 4096,
+          "wilson95": [
+            0.01506804743850219,
+            0.023431358064386867
+          ]
+        }
+      },
+      "109": {
+        "e01": {
+          "probability": 0.00634765625,
+          "successes": 26,
+          "shots": 4096,
+          "wilson95": [
+            0.004335565780323295,
+            0.009284828906049952
+          ]
+        },
+        "e10": {
+          "probability": 0.017333984375,
+          "successes": 71,
+          "shots": 4096,
+          "wilson95": [
+            0.01376571558724534,
+            0.02180674746664186
+          ]
+        }
+      },
+      "118": {
+        "e01": {
+          "probability": 0.005859375,
+          "successes": 24,
+          "shots": 4096,
+          "wilson95": [
+            0.003940714277798989,
+            0.008704032925573639
+          ]
+        },
+        "e10": {
+          "probability": 0.02490234375,
+          "successes": 102,
+          "shots": 4096,
+          "wilson95": [
+            0.020556878222953816,
+            0.030138120817442986
+          ]
+        }
+      },
+      "129": {
+        "e01": {
+          "probability": 0.001953125,
+          "successes": 8,
+          "shots": 4096,
+          "wilson95": [
+            0.0009900179449591885,
+            0.0038495493944084797
+          ]
+        },
+        "e10": {
+          "probability": 0.01611328125,
+          "successes": 66,
+          "shots": 4096,
+          "wilson95": [
+            0.01268594169611479,
+            0.020447402650270854
+          ]
+        }
+      },
+      "128": {
+        "e01": {
+          "probability": 0.0322265625,
+          "successes": 132,
+          "shots": 4096,
+          "wilson95": [
+            0.027241336238722554,
+            0.03808837504668355
+          ]
+        },
+        "e10": {
+          "probability": 0.02978515625,
+          "successes": 122,
+          "shots": 4096,
+          "wilson95": [
+            0.02500358363123029,
+            0.03544789023917271
+          ]
+        }
+      },
+      "127": {
+        "e01": {
+          "probability": 0.0185546875,
+          "successes": 76,
+          "shots": 4096,
+          "wilson95": [
+            0.014850524581988338,
+            0.02316105717940041
+          ]
+        },
+        "e10": {
+          "probability": 0.0341796875,
+          "successes": 140,
+          "shots": 4096,
+          "wilson95": [
+            0.029037488565238835,
+            0.04019481265216975
+          ]
+        }
+      },
+      "137": {
+        "e01": {
+          "probability": 0.009033203125,
+          "successes": 37,
+          "shots": 4096,
+          "wilson95": [
+            0.006560810170804027,
+            0.01242564567207263
+          ]
+        },
+        "e10": {
+          "probability": 0.020751953125,
+          "successes": 85,
+          "shots": 4096,
+          "wilson95": [
+            0.016814398921352457,
+            0.02558759651353908
+          ]
+        }
+      },
+      "147": {
+        "e01": {
+          "probability": 0.002685546875,
+          "successes": 11,
+          "shots": 4096,
+          "wilson95": [
+            0.0015002563109177591,
+            0.004802782252950839
+          ]
+        },
+        "e10": {
+          "probability": 0.1240234375,
+          "successes": 508,
+          "shots": 4096,
+          "wilson95": [
+            0.11428023243457144,
+            0.13447120565495121
+          ]
+        }
+      },
+      "148": {
+        "e01": {
+          "probability": 0.00244140625,
+          "successes": 10,
+          "shots": 4096,
+          "wilson95": [
+            0.0013266895763215114,
+            0.004488525246046777
+          ]
+        },
+        "e10": {
+          "probability": 0.00830078125,
+          "successes": 34,
+          "shots": 4096,
+          "wilson95": [
+            0.00594629450988538,
+            0.011576690108490348
+          ]
+        }
+      },
+      "149": {
+        "e01": {
+          "probability": 0.00390625,
+          "successes": 16,
+          "shots": 4096,
+          "wilson95": [
+            0.002405923039438864,
+            0.0063362342319312846
+          ]
+        },
+        "e10": {
+          "probability": 0.0107421875,
+          "successes": 44,
+          "shots": 4096,
+          "wilson95": [
+            0.008012003642312424,
+            0.014389218391066402
+          ]
+        }
+      },
+      "150": {
+        "e01": {
+          "probability": 0.026611328125,
+          "successes": 109,
+          "shots": 4096,
+          "wilson95": [
+            0.022108427188659532,
+            0.03200133804223944
+          ]
+        },
+        "e10": {
+          "probability": 0.01806640625,
+          "successes": 74,
+          "shots": 4096,
+          "wilson95": [
+            0.014416028944668636,
+            0.02261990533371949
+          ]
+        }
+      }
+    },
+    "pattern_diagnostics": [
+      {
+        "name": "cal_alternating",
+        "per_qubit": [
+          {
+            "physical_qubit": 86,
+            "observed_error": 0.0009765625,
+            "independent_fit_error": 0.000244140625,
+            "residual": 0.000732421875
+          },
+          {
+            "physical_qubit": 87,
+            "observed_error": 0.00732421875,
+            "independent_fit_error": 0.00634765625,
+            "residual": 0.0009765625
+          },
+          {
+            "physical_qubit": 97,
+            "observed_error": 0.00439453125,
+            "independent_fit_error": 0.001220703125,
+            "residual": 0.003173828125
+          },
+          {
+            "physical_qubit": 107,
+            "observed_error": 0.01025390625,
+            "independent_fit_error": 0.01025390625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 108,
+            "observed_error": 0.0009765625,
+            "independent_fit_error": 0.001220703125,
+            "residual": -0.000244140625
+          },
+          {
+            "physical_qubit": 109,
+            "observed_error": 0.02001953125,
+            "independent_fit_error": 0.017333984375,
+            "residual": 0.002685546875
+          },
+          {
+            "physical_qubit": 118,
+            "observed_error": 0.003662109375,
+            "independent_fit_error": 0.005859375,
+            "residual": -0.002197265625
+          },
+          {
+            "physical_qubit": 129,
+            "observed_error": 0.01513671875,
+            "independent_fit_error": 0.01611328125,
+            "residual": -0.0009765625
+          },
+          {
+            "physical_qubit": 128,
+            "observed_error": 0.033447265625,
+            "independent_fit_error": 0.0322265625,
+            "residual": 0.001220703125
+          },
+          {
+            "physical_qubit": 127,
+            "observed_error": 0.03515625,
+            "independent_fit_error": 0.0341796875,
+            "residual": 0.0009765625
+          },
+          {
+            "physical_qubit": 137,
+            "observed_error": 0.0078125,
+            "independent_fit_error": 0.009033203125,
+            "residual": -0.001220703125
+          },
+          {
+            "physical_qubit": 147,
+            "observed_error": 0.125,
+            "independent_fit_error": 0.1240234375,
+            "residual": 0.0009765625
+          },
+          {
+            "physical_qubit": 148,
+            "observed_error": 0.0009765625,
+            "independent_fit_error": 0.00244140625,
+            "residual": -0.00146484375
+          },
+          {
+            "physical_qubit": 149,
+            "observed_error": 0.011474609375,
+            "independent_fit_error": 0.0107421875,
+            "residual": 0.000732421875
+          },
+          {
+            "physical_qubit": 150,
+            "observed_error": 0.026611328125,
+            "independent_fit_error": 0.026611328125,
+            "residual": 0.0
+          }
+        ],
+        "maximum_absolute_pair_error_covariance": 0.0006712079048156738
+      },
+      {
+        "name": "cal_one",
+        "per_qubit": [
+          {
+            "physical_qubit": 86,
+            "observed_error": 0.013671875,
+            "independent_fit_error": 0.013671875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 87,
+            "observed_error": 0.00634765625,
+            "independent_fit_error": 0.00634765625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 97,
+            "observed_error": 0.005615234375,
+            "independent_fit_error": 0.005615234375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 107,
+            "observed_error": 0.01025390625,
+            "independent_fit_error": 0.01025390625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 108,
+            "observed_error": 0.018798828125,
+            "independent_fit_error": 0.018798828125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 109,
+            "observed_error": 0.017333984375,
+            "independent_fit_error": 0.017333984375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 118,
+            "observed_error": 0.02490234375,
+            "independent_fit_error": 0.02490234375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 129,
+            "observed_error": 0.01611328125,
+            "independent_fit_error": 0.01611328125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 128,
+            "observed_error": 0.02978515625,
+            "independent_fit_error": 0.02978515625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 127,
+            "observed_error": 0.0341796875,
+            "independent_fit_error": 0.0341796875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 137,
+            "observed_error": 0.020751953125,
+            "independent_fit_error": 0.020751953125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 147,
+            "observed_error": 0.1240234375,
+            "independent_fit_error": 0.1240234375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 148,
+            "observed_error": 0.00830078125,
+            "independent_fit_error": 0.00830078125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 149,
+            "observed_error": 0.0107421875,
+            "independent_fit_error": 0.0107421875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 150,
+            "observed_error": 0.01806640625,
+            "independent_fit_error": 0.01806640625,
+            "residual": 0.0
+          }
+        ],
+        "maximum_absolute_pair_error_covariance": 0.0021085739135742188
+      },
+      {
+        "name": "cal_complement",
+        "per_qubit": [
+          {
+            "physical_qubit": 86,
+            "observed_error": 0.01220703125,
+            "independent_fit_error": 0.013671875,
+            "residual": -0.00146484375
+          },
+          {
+            "physical_qubit": 87,
+            "observed_error": 0.006591796875,
+            "independent_fit_error": 0.005615234375,
+            "residual": 0.0009765625
+          },
+          {
+            "physical_qubit": 97,
+            "observed_error": 0.009765625,
+            "independent_fit_error": 0.005615234375,
+            "residual": 0.004150390625
+          },
+          {
+            "physical_qubit": 107,
+            "observed_error": 0.000732421875,
+            "independent_fit_error": 0.002197265625,
+            "residual": -0.00146484375
+          },
+          {
+            "physical_qubit": 108,
+            "observed_error": 0.0185546875,
+            "independent_fit_error": 0.018798828125,
+            "residual": -0.000244140625
+          },
+          {
+            "physical_qubit": 109,
+            "observed_error": 0.006591796875,
+            "independent_fit_error": 0.00634765625,
+            "residual": 0.000244140625
+          },
+          {
+            "physical_qubit": 118,
+            "observed_error": 0.01904296875,
+            "independent_fit_error": 0.02490234375,
+            "residual": -0.005859375
+          },
+          {
+            "physical_qubit": 129,
+            "observed_error": 0.001953125,
+            "independent_fit_error": 0.001953125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 128,
+            "observed_error": 0.018798828125,
+            "independent_fit_error": 0.02978515625,
+            "residual": -0.010986328125
+          },
+          {
+            "physical_qubit": 127,
+            "observed_error": 0.017822265625,
+            "independent_fit_error": 0.0185546875,
+            "residual": -0.000732421875
+          },
+          {
+            "physical_qubit": 137,
+            "observed_error": 0.01806640625,
+            "independent_fit_error": 0.020751953125,
+            "residual": -0.002685546875
+          },
+          {
+            "physical_qubit": 147,
+            "observed_error": 0.001220703125,
+            "independent_fit_error": 0.002685546875,
+            "residual": -0.00146484375
+          },
+          {
+            "physical_qubit": 148,
+            "observed_error": 0.01123046875,
+            "independent_fit_error": 0.00830078125,
+            "residual": 0.0029296875
+          },
+          {
+            "physical_qubit": 149,
+            "observed_error": 0.00341796875,
+            "independent_fit_error": 0.00390625,
+            "residual": -0.00048828125
+          },
+          {
+            "physical_qubit": 150,
+            "observed_error": 0.013427734375,
+            "independent_fit_error": 0.01806640625,
+            "residual": -0.004638671875
+          }
+        ],
+        "maximum_absolute_pair_error_covariance": 0.0007764101028442383
+      },
+      {
+        "name": "cal_zero",
+        "per_qubit": [
+          {
+            "physical_qubit": 86,
+            "observed_error": 0.000244140625,
+            "independent_fit_error": 0.000244140625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 87,
+            "observed_error": 0.005615234375,
+            "independent_fit_error": 0.005615234375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 97,
+            "observed_error": 0.001220703125,
+            "independent_fit_error": 0.001220703125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 107,
+            "observed_error": 0.002197265625,
+            "independent_fit_error": 0.002197265625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 108,
+            "observed_error": 0.001220703125,
+            "independent_fit_error": 0.001220703125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 109,
+            "observed_error": 0.00634765625,
+            "independent_fit_error": 0.00634765625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 118,
+            "observed_error": 0.005859375,
+            "independent_fit_error": 0.005859375,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 129,
+            "observed_error": 0.001953125,
+            "independent_fit_error": 0.001953125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 128,
+            "observed_error": 0.0322265625,
+            "independent_fit_error": 0.0322265625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 127,
+            "observed_error": 0.0185546875,
+            "independent_fit_error": 0.0185546875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 137,
+            "observed_error": 0.009033203125,
+            "independent_fit_error": 0.009033203125,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 147,
+            "observed_error": 0.002685546875,
+            "independent_fit_error": 0.002685546875,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 148,
+            "observed_error": 0.00244140625,
+            "independent_fit_error": 0.00244140625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 149,
+            "observed_error": 0.00390625,
+            "independent_fit_error": 0.00390625,
+            "residual": 0.0
+          },
+          {
+            "physical_qubit": 150,
+            "observed_error": 0.026611328125,
+            "independent_fit_error": 0.026611328125,
+            "residual": 0.0
+          }
+        ],
+        "maximum_absolute_pair_error_covariance": 0.0003795623779296875
+      }
+    ],
+    "scope": "Preparation-plus-readout controls, not a pure readout channel measurement. Wilson intervals condition on stationary independent shots; pattern residuals/covariances are descriptive."
+  },
+  "rows": [
+    {
+      "name": "passive_coherent_Z",
+      "bundle_index": 4,
+      "pub_index": 0,
+      "family": "sequential_emitter_environment_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 5,
+      "raw_full_z_tv": 0.19407228581248498,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.021788775350439875,
+      "native_two_qubit_gate_count": 20,
+      "compiled_depth": 74,
+      "circuit_duration_seconds": 5.124e-06,
+      "observables": {
+        "kind": "sequential_emitter_environment_joint_photon_instrument",
+        "flag_history_tv": 0.066748046875001,
+        "histories": {
+          "0": {
+            "observed": {
+              "probability": 0.833251953125,
+              "successes": 3413,
+              "shots": 4096,
+              "wilson95": [
+                0.8215254984383661,
+                0.844353908709557
+              ]
+            },
+            "ideal_probability": 0.900000000000002,
+            "conditional_memory_zero": {
+              "probability": 0.5024904775857018,
+              "successes": 1715,
+              "shots": 3413,
+              "wilson95": [
+                0.4857228033731831,
+                0.5192525518503126
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.49999999999999994,
+            "conditional_memory_pauli": 0.004980955171403512,
+            "conditional_memory_pauli_interval95": [
+              -0.028554393253633847,
+              0.03850510370062521
+            ]
+          },
+          "1": {
+            "observed": {
+              "probability": 0.166748046875,
+              "successes": 683,
+              "shots": 4096,
+              "wilson95": [
+                0.15564609129044296,
+                0.17847450156163389
+              ]
+            },
+            "ideal_probability": 0.10000000000000003,
+            "conditional_memory_zero": {
+              "probability": 0.5021961932650073,
+              "successes": 343,
+              "shots": 683,
+              "wilson95": [
+                0.4647913088484325,
+                0.5395765113544291
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5,
+            "conditional_memory_pauli": 0.004392386530014614,
+            "conditional_memory_pauli_interval95": [
+              -0.07041738230313499,
+              0.07915302270885816
+            ]
+          }
+        },
+        "memory_measurement_basis": "Z",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": -0.0,
+        "mass_before_projection": 0.9999999999999999,
+        "projection_l1_change": 1.6132928326584306e-16,
+        "maximum_single_bit_assignment_condition_number": 1.0272768684662494,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.1862416899266665,
+        "observables": {
+          "kind": "sequential_emitter_environment_joint_photon_instrument",
+          "flag_history_tv": 0.06890881913303536,
+          "histories": {
+            "0": {
+              "observed": {
+                "probability": 0.8310911808669657
+              },
+              "ideal_probability": 0.900000000000002,
+              "conditional_memory_zero": {
+                "probability": 0.5021511330594531
+              },
+              "ideal_conditional_memory_zero": 0.49999999999999994,
+              "conditional_memory_pauli": 0.004302266118906273,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1": {
+              "observed": {
+                "probability": 0.16890881913303438
+              },
+              "ideal_probability": 0.10000000000000003,
+              "conditional_memory_zero": {
+                "probability": 0.5018503090165483
+              },
+              "ideal_conditional_memory_zero": 0.5,
+              "conditional_memory_pauli": 0.0037006180330965144,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "Z",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    },
+    {
+      "name": "controlled_two_coherent_Y",
+      "bundle_index": 13,
+      "pub_index": 1,
+      "family": "sequential_emitter_environment_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 12,
+      "raw_full_z_tv": 0.5284891855022759,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.14111318104438508,
+      "native_two_qubit_gate_count": 125,
+      "compiled_depth": 279,
+      "circuit_duration_seconds": 1.2591999999999992e-05,
+      "observables": {
+        "kind": "sequential_emitter_environment_joint_photon_instrument",
+        "flag_history_tv": 0.11460937500000025,
+        "histories": {
+          "00": {
+            "observed": {
+              "probability": 0.416015625,
+              "successes": 1704,
+              "shots": 4096,
+              "wilson95": [
+                0.40100651705520574,
+                0.4311821158686876
+              ]
+            },
+            "ideal_probability": 0.5306250000000037,
+            "conditional_memory_zero": {
+              "probability": 0.4841549295774648,
+              "successes": 825,
+              "shots": 1704,
+              "wilson95": [
+                0.46048902659728463,
+                0.5078921133960679
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.4428770051685173,
+            "conditional_memory_pauli": -0.03169014084507038,
+            "conditional_memory_pauli_interval95": [
+              -0.07902194680543073,
+              0.015784226792135758
+            ]
+          },
+          "10": {
+            "observed": {
+              "probability": 0.21142578125,
+              "successes": 866,
+              "shots": 4096,
+              "wilson95": [
+                0.19919454516063484,
+                0.22419779238599874
+              ]
+            },
+            "ideal_probability": 0.19437500000000132,
+            "conditional_memory_zero": {
+              "probability": 0.45265588914549654,
+              "successes": 392,
+              "shots": 866,
+              "wilson95": [
+                0.41978607616615526,
+                0.48594387132200745
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.4331684575857668,
+            "conditional_memory_pauli": -0.09468822170900693,
+            "conditional_memory_pauli_interval95": [
+              -0.16042784766768947,
+              -0.028112257355985104
+            ]
+          },
+          "01": {
+            "observed": {
+              "probability": 0.239501953125,
+              "successes": 981,
+              "shots": 4096,
+              "wilson95": [
+                0.22667999550436452,
+                0.2528120723148047
+              ]
+            },
+            "ideal_probability": 0.1943750000000013,
+            "conditional_memory_zero": {
+              "probability": 0.6187563710499491,
+              "successes": 607,
+              "shots": 981,
+              "wilson95": [
+                0.587955867351839,
+                0.6486304358679784
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.6559402656332108,
+            "conditional_memory_pauli": 0.23751274209989814,
+            "conditional_memory_pauli_interval95": [
+              0.17591173470367805,
+              0.29726087173595683
+            ]
+          },
+          "11": {
+            "observed": {
+              "probability": 0.133056640625,
+              "successes": 545,
+              "shots": 4096,
+              "wilson95": [
+                0.12299848905057073,
+                0.14380242747446334
+              ]
+            },
+            "ideal_probability": 0.08062500000000056,
+            "conditional_memory_zero": {
+              "probability": 0.6238532110091743,
+              "successes": 340,
+              "shots": 545,
+              "wilson95": [
+                0.5824500594910064,
+                0.6635226122712127
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.661121005355244,
+            "conditional_memory_pauli": 0.2477064220183487,
+            "conditional_memory_pauli_interval95": [
+              0.16490011898201273,
+              0.32704522454242535
+            ]
+          }
+        },
+        "memory_measurement_basis": "Y",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": 0.0666160529063819,
+        "mass_before_projection": 0.9999999999999998,
+        "projection_l1_change": 0.13323210581276362,
+        "maximum_single_bit_assignment_condition_number": 1.2061803029260851,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.5239290831730401,
+        "observables": {
+          "kind": "sequential_emitter_environment_joint_photon_instrument",
+          "flag_history_tv": 0.11928881319674961,
+          "histories": {
+            "00": {
+              "observed": {
+                "probability": 0.4113361868032507
+              },
+              "ideal_probability": 0.5306250000000037,
+              "conditional_memory_zero": {
+                "probability": 0.47276777217935473
+              },
+              "ideal_conditional_memory_zero": 0.4428770051685173,
+              "conditional_memory_pauli": -0.05446445564129054,
+              "conditional_memory_pauli_interval95": null
+            },
+            "10": {
+              "observed": {
+                "probability": 0.21889265274495365
+              },
+              "ideal_probability": 0.19437500000000132,
+              "conditional_memory_zero": {
+                "probability": 0.4406745194832824
+              },
+              "ideal_conditional_memory_zero": 0.4331684575857668,
+              "conditional_memory_pauli": -0.1186509610334352,
+              "conditional_memory_pauli_interval95": null
+            },
+            "01": {
+              "observed": {
+                "probability": 0.23225971735945036
+              },
+              "ideal_probability": 0.1943750000000013,
+              "conditional_memory_zero": {
+                "probability": 0.617475511372137
+              },
+              "ideal_conditional_memory_zero": 0.6559402656332108,
+              "conditional_memory_pauli": 0.23495102274427393,
+              "conditional_memory_pauli_interval95": null
+            },
+            "11": {
+              "observed": {
+                "probability": 0.1375114430923454
+              },
+              "ideal_probability": 0.08062500000000056,
+              "conditional_memory_zero": {
+                "probability": 0.6178748879455296
+              },
+              "ideal_conditional_memory_zero": 0.661121005355244,
+              "conditional_memory_pauli": 0.23574977589105917,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "Y",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    },
+    {
+      "name": "controlled_one_coherent_Z",
+      "bundle_index": 6,
+      "pub_index": 2,
+      "family": "sequential_emitter_environment_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 7,
+      "raw_full_z_tv": 0.3322030864699552,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.042620196480934756,
+      "native_two_qubit_gate_count": 62,
+      "compiled_depth": 171,
+      "circuit_duration_seconds": 8.73600000000001e-06,
+      "observables": {
+        "kind": "sequential_emitter_environment_joint_photon_instrument",
+        "flag_history_tv": 0.04897460937500056,
+        "histories": {
+          "0": {
+            "observed": {
+              "probability": 0.676025390625,
+              "successes": 2769,
+              "shots": 4096,
+              "wilson95": [
+                0.6615342811163601,
+                0.6901866365053634
+              ]
+            },
+            "ideal_probability": 0.7250000000000019,
+            "conditional_memory_zero": {
+              "probability": 0.545684362585771,
+              "successes": 1511,
+              "shots": 2769,
+              "wilson95": [
+                0.5270884144968325,
+                0.5641537296204161
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5172413793103449,
+            "conditional_memory_pauli": 0.09136872517154204,
+            "conditional_memory_pauli_interval95": [
+              0.05417682899366505,
+              0.1283074592408322
+            ]
+          },
+          "1": {
+            "observed": {
+              "probability": 0.323974609375,
+              "successes": 1327,
+              "shots": 4096,
+              "wilson95": [
+                0.3098133634946366,
+                0.33846571888363985
+              ]
+            },
+            "ideal_probability": 0.27500000000000074,
+            "conditional_memory_zero": {
+              "probability": 0.5440844009042954,
+              "successes": 722,
+              "shots": 1327,
+              "wilson95": [
+                0.5171984398577424,
+                0.5707158637015094
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.45454545454545414,
+            "conditional_memory_pauli": 0.08816880180859088,
+            "conditional_memory_pauli_interval95": [
+              0.034396879715484774,
+              0.1414317274030188
+            ]
+          }
+        },
+        "memory_measurement_basis": "Z",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": -0.0,
+        "mass_before_projection": 0.9999999999999998,
+        "projection_l1_change": 2.0334211744965636e-16,
+        "maximum_single_bit_assignment_condition_number": 1.0374300451755505,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.3266435112018803,
+        "observables": {
+          "kind": "sequential_emitter_environment_joint_photon_instrument",
+          "flag_history_tv": 0.050834363411619815,
+          "histories": {
+            "0": {
+              "observed": {
+                "probability": 0.6741656365883808
+              },
+              "ideal_probability": 0.7250000000000019,
+              "conditional_memory_zero": {
+                "probability": 0.5376571621619893
+              },
+              "ideal_conditional_memory_zero": 0.5172413793103449,
+              "conditional_memory_pauli": 0.07531432432397867,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1": {
+              "observed": {
+                "probability": 0.3258343634116193
+              },
+              "ideal_probability": 0.27500000000000074,
+              "conditional_memory_zero": {
+                "probability": 0.5360088325156338
+              },
+              "ideal_conditional_memory_zero": 0.45454545454545414,
+              "conditional_memory_pauli": 0.07201766503126761,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "Z",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    },
+    {
+      "name": "controlled_two_coherent_X",
+      "bundle_index": 12,
+      "pub_index": 4,
+      "family": "sequential_emitter_environment_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 12,
+      "raw_full_z_tv": 0.5633053146730962,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.1451557360462576,
+      "native_two_qubit_gate_count": 125,
+      "compiled_depth": 280,
+      "circuit_duration_seconds": 1.2591999999999992e-05,
+      "observables": {
+        "kind": "sequential_emitter_environment_joint_photon_instrument",
+        "flag_history_tv": 0.11290039062500017,
+        "histories": {
+          "00": {
+            "observed": {
+              "probability": 0.417724609375,
+              "successes": 1711,
+              "shots": 4096,
+              "wilson95": [
+                0.40270508835190355,
+                0.43289831076249197
+              ]
+            },
+            "ideal_probability": 0.5306250000000036,
+            "conditional_memory_zero": {
+              "probability": 0.5131502045587376,
+              "successes": 878,
+              "shots": 1711,
+              "wilson95": [
+                0.4894639360427234,
+                0.5367775568769467
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.4714385025842586,
+            "conditional_memory_pauli": 0.02630040911747522,
+            "conditional_memory_pauli_interval95": [
+              -0.02107212791455315,
+              0.07355511375389345
+            ]
+          },
+          "10": {
+            "observed": {
+              "probability": 0.2236328125,
+              "successes": 916,
+              "shots": 4096,
+              "wilson95": [
+                0.21113456136686418,
+                0.23664896325478488
+              ]
+            },
+            "ideal_probability": 0.19437500000000124,
+            "conditional_memory_zero": {
+              "probability": 0.5,
+              "successes": 458,
+              "shots": 916,
+              "wilson95": [
+                0.46768816627428367,
+                0.5323118337257163
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.46658422879288314,
+            "conditional_memory_pauli": 0.0,
+            "conditional_memory_pauli_interval95": [
+              -0.06462366745143266,
+              0.06462366745143266
+            ]
+          },
+          "01": {
+            "observed": {
+              "probability": 0.236328125,
+              "successes": 968,
+              "shots": 4096,
+              "wilson95": [
+                0.22356887185538574,
+                0.24958148732427946
+              ]
+            },
+            "ideal_probability": 0.19437500000000138,
+            "conditional_memory_zero": {
+              "probability": 0.5433884297520661,
+              "successes": 526,
+              "shots": 968,
+              "wilson95": [
+                0.511899536942426,
+                0.574534314214667
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5779701328166055,
+            "conditional_memory_pauli": 0.08677685950413228,
+            "conditional_memory_pauli_interval95": [
+              0.023799073884851918,
+              0.1490686284293341
+            ]
+          },
+          "11": {
+            "observed": {
+              "probability": 0.122314453125,
+              "successes": 501,
+              "shots": 4096,
+              "wilson95": [
+                0.11263274145840207,
+                0.1327039304406184
+              ]
+            },
+            "ideal_probability": 0.08062500000000061,
+            "conditional_memory_zero": {
+              "probability": 0.5229540918163673,
+              "successes": 262,
+              "shots": 501,
+              "wilson95": [
+                0.4792095907368942,
+                0.5663492665996802
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5805605026776224,
+            "conditional_memory_pauli": 0.045908183632734634,
+            "conditional_memory_pauli_interval95": [
+              -0.04158081852621165,
+              0.13269853319936042
+            ]
+          }
+        },
+        "memory_measurement_basis": "X",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": 0.07040254668868724,
+        "mass_before_projection": 0.9999999999999999,
+        "projection_l1_change": 0.1408050933773743,
+        "maximum_single_bit_assignment_condition_number": 1.2061803029260851,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.5701135718372212,
+        "observables": {
+          "kind": "sequential_emitter_environment_joint_photon_instrument",
+          "flag_history_tv": 0.11642292647349116,
+          "histories": {
+            "00": {
+              "observed": {
+                "probability": 0.41420207352650906
+              },
+              "ideal_probability": 0.5306250000000036,
+              "conditional_memory_zero": {
+                "probability": 0.5035219733713392
+              },
+              "ideal_conditional_memory_zero": 0.4714385025842586,
+              "conditional_memory_pauli": 0.007043946742678386,
+              "conditional_memory_pauli_interval95": null
+            },
+            "10": {
+              "observed": {
+                "probability": 0.22998042635573585
+              },
+              "ideal_probability": 0.19437500000000124,
+              "conditional_memory_zero": {
+                "probability": 0.48962503736289265
+              },
+              "ideal_conditional_memory_zero": 0.46658422879288314,
+              "conditional_memory_pauli": -0.02074992527421471,
+              "conditional_memory_pauli_interval95": null
+            },
+            "01": {
+              "observed": {
+                "probability": 0.23059224870776066
+              },
+              "ideal_probability": 0.19437500000000138,
+              "conditional_memory_zero": {
+                "probability": 0.5398537007917544
+              },
+              "ideal_conditional_memory_zero": 0.5779701328166055,
+              "conditional_memory_pauli": 0.07970740158350886,
+              "conditional_memory_pauli_interval95": null
+            },
+            "11": {
+              "observed": {
+                "probability": 0.12522525140999455
+              },
+              "ideal_probability": 0.08062500000000061,
+              "conditional_memory_zero": {
+                "probability": 0.5095997273632344
+              },
+              "ideal_conditional_memory_zero": 0.5805605026776224,
+              "conditional_memory_pauli": 0.01919945472646889,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "X",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    },
+    {
+      "name": "frozen_pair_p0.5",
+      "bundle_index": 3,
+      "pub_index": 5,
+      "family": "frozen_classical_pair_memory_benchmark",
+      "shots": 4096,
+      "logical_qubits": 5,
+      "raw_full_z_tv": 0.12306968837497981,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.02269142440606962,
+      "native_two_qubit_gate_count": 21,
+      "compiled_depth": 68,
+      "circuit_duration_seconds": 4.948000000000001e-06,
+      "observables": {
+        "kind": "frozen_classical_pair_memory_benchmark",
+        "flag_history_tv": 0.04145507812500071,
+        "histories": {
+          "0": {
+            "observed": {
+              "probability": 0.758544921875,
+              "successes": 3107,
+              "shots": 4096,
+              "wilson95": [
+                0.7452003684304953,
+                0.7714049738183328
+              ]
+            },
+            "ideal_probability": 0.8000000000000017
+          },
+          "1": {
+            "observed": {
+              "probability": 0.241455078125,
+              "successes": 989,
+              "shots": 4096,
+              "wilson95": [
+                0.22859502618166705,
+                0.25479963156950464
+              ]
+            },
+            "ideal_probability": 0.2000000000000003
+          }
+        },
+        "raw_swap_overlap_estimate": 0.51708984375,
+        "ideal_overlap": 0.6,
+        "raw_swap_overlap_interval95": [
+          0.4904007368609907,
+          0.5428099476366659
+        ],
+        "scope": "Digital two-photon overlap benchmark; no unique microscopic cause identified."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": -0.0,
+        "mass_before_projection": 1.0,
+        "projection_l1_change": 0.0,
+        "maximum_single_bit_assignment_condition_number": 1.0272768684662494,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.11014576566650267,
+        "observables": {
+          "kind": "frozen_classical_pair_memory_benchmark",
+          "flag_history_tv": 0.0451420029895373,
+          "histories": {
+            "0": {
+              "observed": {
+                "probability": 0.7548579970104634
+              },
+              "ideal_probability": 0.8000000000000017
+            },
+            "1": {
+              "observed": {
+                "probability": 0.2451420029895366
+              },
+              "ideal_probability": 0.2000000000000003
+            }
+          },
+          "raw_swap_overlap_estimate": 0.5097159940209268,
+          "ideal_overlap": 0.6,
+          "raw_swap_overlap_interval95": null,
+          "scope": "Digital two-photon overlap benchmark; no unique microscopic cause identified."
+        }
+      }
+    },
+    {
+      "name": "frozen_pair_p0",
+      "bundle_index": 0,
+      "pub_index": 6,
+      "family": "frozen_classical_pair_memory_benchmark",
+      "shots": 4096,
+      "logical_qubits": 5,
+      "raw_full_z_tv": 0.17360679774997975,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.015352294005722893,
+      "native_two_qubit_gate_count": 21,
+      "compiled_depth": 67,
+      "circuit_duration_seconds": 4.948000000000001e-06,
+      "observables": {
+        "kind": "frozen_classical_pair_memory_benchmark",
+        "flag_history_tv": 0.09716796875000089,
+        "histories": {
+          "0": {
+            "observed": {
+              "probability": 0.90283203125,
+              "successes": 3698,
+              "shots": 4096,
+              "wilson95": [
+                0.8933804434366174,
+                0.911528730038894
+              ]
+            },
+            "ideal_probability": 1.0000000000000018
+          },
+          "1": {
+            "observed": {
+              "probability": 0.09716796875,
+              "successes": 398,
+              "shots": 4096,
+              "wilson95": [
+                0.088471269961106,
+                0.10661955656338255
+              ]
+            },
+            "ideal_probability": 3.080947879668624e-32
+          }
+        },
+        "raw_swap_overlap_estimate": 0.8056640625,
+        "ideal_overlap": 1.0,
+        "raw_swap_overlap_interval95": [
+          0.7867608868732349,
+          0.823057460077788
+        ],
+        "scope": "Digital two-photon overlap benchmark; no unique microscopic cause identified."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": -0.0,
+        "mass_before_projection": 1.0,
+        "projection_l1_change": 0.0,
+        "maximum_single_bit_assignment_condition_number": 1.0272768684662494,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.1625272881156722,
+        "observables": {
+          "kind": "frozen_classical_pair_memory_benchmark",
+          "flag_history_tv": 0.09790732436472438,
+          "histories": {
+            "0": {
+              "observed": {
+                "probability": 0.9020926756352765
+              },
+              "ideal_probability": 1.0000000000000018
+            },
+            "1": {
+              "observed": {
+                "probability": 0.09790732436472348
+              },
+              "ideal_probability": 3.080947879668624e-32
+            }
+          },
+          "raw_swap_overlap_estimate": 0.804185351270553,
+          "ideal_overlap": 1.0,
+          "raw_swap_overlap_interval95": null,
+          "scope": "Digital two-photon overlap benchmark; no unique microscopic cause identified."
+        }
+      }
+    },
+    {
+      "name": "frozen_pair_p0.02",
+      "bundle_index": 1,
+      "pub_index": 9,
+      "family": "frozen_classical_pair_memory_benchmark",
+      "shots": 4096,
+      "logical_qubits": 5,
+      "raw_full_z_tv": 0.16685341179498026,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.017581497870350706,
+      "native_two_qubit_gate_count": 21,
+      "compiled_depth": 67,
+      "circuit_duration_seconds": 4.984e-06,
+      "observables": {
+        "kind": "frozen_classical_pair_memory_benchmark",
+        "flag_history_tv": 0.08697070312500099,
+        "histories": {
+          "0": {
+            "observed": {
+              "probability": 0.905029296875,
+              "successes": 3707,
+              "shots": 4096,
+              "wilson95": [
+                0.895667676917727,
+                0.9136319102312873
+              ]
+            },
+            "ideal_probability": 0.992000000000002
+          },
+          "1": {
+            "observed": {
+              "probability": 0.094970703125,
+              "successes": 389,
+              "shots": 4096,
+              "wilson95": [
+                0.0863680897687127,
+                0.10433232308227307
+              ]
+            },
+            "ideal_probability": 0.008000000000000004
+          }
+        },
+        "raw_swap_overlap_estimate": 0.81005859375,
+        "ideal_overlap": 0.984,
+        "raw_swap_overlap_interval95": [
+          0.7913353538354538,
+          0.8272638204625746
+        ],
+        "scope": "Digital two-photon overlap benchmark; no unique microscopic cause identified."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": -0.0,
+        "mass_before_projection": 0.9999999999999999,
+        "projection_l1_change": 1.4972832002024816e-16,
+        "maximum_single_bit_assignment_condition_number": 1.0272768684662494,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.15603606801741238,
+        "observables": {
+          "kind": "frozen_classical_pair_memory_benchmark",
+          "flag_history_tv": 0.08766517189835671,
+          "histories": {
+            "0": {
+              "observed": {
+                "probability": 0.9043348281016443
+              },
+              "ideal_probability": 0.992000000000002
+            },
+            "1": {
+              "observed": {
+                "probability": 0.09566517189835576
+              },
+              "ideal_probability": 0.008000000000000004
+            }
+          },
+          "raw_swap_overlap_estimate": 0.8086696562032885,
+          "ideal_overlap": 0.984,
+          "raw_swap_overlap_interval95": null,
+          "scope": "Digital two-photon overlap benchmark; no unique microscopic cause identified."
+        }
+      }
+    },
+    {
+      "name": "controlled_two_classical_Z",
+      "bundle_index": 9,
+      "pub_index": 10,
+      "family": "sequential_emitter_environment_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 15,
+      "raw_full_z_tv": 0.827709106299328,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.23522500637501487,
+      "native_two_qubit_gate_count": 156,
+      "compiled_depth": 343,
+      "circuit_duration_seconds": 1.5227999999999973e-05,
+      "observables": {
+        "kind": "sequential_emitter_environment_joint_photon_instrument",
+        "flag_history_tv": 0.16290039062500153,
+        "histories": {
+          "00": {
+            "observed": {
+              "probability": 0.363037109375,
+              "successes": 1487,
+              "shots": 4096,
+              "wilson95": [
+                0.34844524290080414,
+                0.37788563811752196
+              ]
+            },
+            "ideal_probability": 0.5259375000000062,
+            "conditional_memory_zero": {
+              "probability": 0.6946872898453261,
+              "successes": 1033,
+              "shots": 1487,
+              "wilson95": [
+                0.6708026802649519,
+                0.7175685959524457
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.4875222816399257,
+            "conditional_memory_pauli": 0.38937457969065226,
+            "conditional_memory_pauli_interval95": [
+              0.34160536052990387,
+              0.4351371919048914
+            ]
+          },
+          "10": {
+            "observed": {
+              "probability": 0.213623046875,
+              "successes": 875,
+              "shots": 4096,
+              "wilson95": [
+                0.20134254353028314,
+                0.22644020768985323
+              ]
+            },
+            "ideal_probability": 0.1990625000000017,
+            "conditional_memory_zero": {
+              "probability": 0.6948571428571428,
+              "successes": 608,
+              "shots": 875,
+              "wilson95": [
+                0.6635501680244329,
+                0.7244606575658656
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.47017268445839805,
+            "conditional_memory_pauli": 0.3897142857142857,
+            "conditional_memory_pauli_interval95": [
+              0.3271003360488658,
+              0.4489213151317313
+            ]
+          },
+          "01": {
+            "observed": {
+              "probability": 0.247802734375,
+              "successes": 1015,
+              "shots": 4096,
+              "wilson95": [
+                0.23482142860780114,
+                0.2612566464223786
+              ]
+            },
+            "ideal_probability": 0.19906250000000095,
+            "conditional_memory_zero": {
+              "probability": 0.6926108374384237,
+              "successes": 703,
+              "shots": 1015,
+              "wilson95": [
+                0.6635428859799268,
+                0.7202263419160222
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5486656200941921,
+            "conditional_memory_pauli": 0.38522167487684733,
+            "conditional_memory_pauli_interval95": [
+              0.32708577195985367,
+              0.4404526838320444
+            ]
+          },
+          "11": {
+            "observed": {
+              "probability": 0.175537109375,
+              "successes": 719,
+              "shots": 4096,
+              "wilson95": [
+                0.16419228751294787,
+                0.18748996003314014
+              ]
+            },
+            "ideal_probability": 0.07593750000000046,
+            "conditional_memory_zero": {
+              "probability": 0.7204450625869263,
+              "successes": 518,
+              "shots": 719,
+              "wilson95": [
+                0.6865365345247991,
+                0.752010530162361
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.537037037037037,
+            "conditional_memory_pauli": 0.4408901251738526,
+            "conditional_memory_pauli_interval95": [
+              0.37307306904959825,
+              0.5040210603247219
+            ]
+          }
+        },
+        "memory_measurement_basis": "Z",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": 0.18349642242723974,
+        "mass_before_projection": 1.0,
+        "projection_l1_change": 0.36699284485447947,
+        "maximum_single_bit_assignment_condition_number": 1.2061803029260851,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.8291300888835859,
+        "observables": {
+          "kind": "sequential_emitter_environment_joint_photon_instrument",
+          "flag_history_tv": 0.1741523936124374,
+          "histories": {
+            "00": {
+              "observed": {
+                "probability": 0.3517851063875637
+              },
+              "ideal_probability": 0.5259375000000062,
+              "conditional_memory_zero": {
+                "probability": 0.6527089655918379
+              },
+              "ideal_conditional_memory_zero": 0.4875222816399257,
+              "conditional_memory_pauli": 0.3054179311836758,
+              "conditional_memory_pauli_interval95": null
+            },
+            "10": {
+              "observed": {
+                "probability": 0.21675799711817698
+              },
+              "ideal_probability": 0.1990625000000017,
+              "conditional_memory_zero": {
+                "probability": 0.6578602172415292
+              },
+              "ideal_conditional_memory_zero": 0.47017268445839805,
+              "conditional_memory_pauli": 0.3157204344830584,
+              "conditional_memory_pauli_interval95": null
+            },
+            "01": {
+              "observed": {
+                "probability": 0.2484629949761097
+              },
+              "ideal_probability": 0.19906250000000095,
+              "conditional_memory_zero": {
+                "probability": 0.6521904504311751
+              },
+              "ideal_conditional_memory_zero": 0.5486656200941921,
+              "conditional_memory_pauli": 0.30438090086235015,
+              "conditional_memory_pauli_interval95": null
+            },
+            "11": {
+              "observed": {
+                "probability": 0.18299390151814873
+              },
+              "ideal_probability": 0.07593750000000046,
+              "conditional_memory_zero": {
+                "probability": 0.6876334919229412
+              },
+              "ideal_conditional_memory_zero": 0.537037037037037,
+              "conditional_memory_pauli": 0.3752669838458824,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "Z",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    },
+    {
+      "name": "controlled_one_coherent_X",
+      "bundle_index": 10,
+      "pub_index": 11,
+      "family": "sequential_emitter_environment_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 7,
+      "raw_full_z_tv": 0.30556254465577126,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.04422094510967009,
+      "native_two_qubit_gate_count": 62,
+      "compiled_depth": 171,
+      "circuit_duration_seconds": 8.73600000000001e-06,
+      "observables": {
+        "kind": "sequential_emitter_environment_joint_photon_instrument",
+        "flag_history_tv": 0.04995117187500059,
+        "histories": {
+          "0": {
+            "observed": {
+              "probability": 0.675048828125,
+              "successes": 2765,
+              "shots": 4096,
+              "wilson95": [
+                0.6605474369092633,
+                0.689222185746459
+              ]
+            },
+            "ideal_probability": 0.7250000000000021,
+            "conditional_memory_zero": {
+              "probability": 0.5623869801084991,
+              "successes": 1555,
+              "shots": 2765,
+              "wilson95": [
+                0.5438219318189633,
+                0.5807789184395208
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5298629449580842,
+            "conditional_memory_pauli": 0.12477396021699816,
+            "conditional_memory_pauli_interval95": [
+              0.08764386363792664,
+              0.16155783687904157
+            ]
+          },
+          "1": {
+            "observed": {
+              "probability": 0.324951171875,
+              "successes": 1331,
+              "shots": 4096,
+              "wilson95": [
+                0.310777814253541,
+                0.3394525630907368
+              ]
+            },
+            "ideal_probability": 0.2750000000000009,
+            "conditional_memory_zero": {
+              "probability": 0.5394440270473329,
+              "successes": 718,
+              "shots": 1331,
+              "wilson95": [
+                0.5125911192237892,
+                0.5660699077514783
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.4212704178377786,
+            "conditional_memory_pauli": 0.0788880540946657,
+            "conditional_memory_pauli_interval95": [
+              0.025182238447578387,
+              0.1321398155029565
+            ]
+          }
+        },
+        "memory_measurement_basis": "X",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": 0.00019750788713319257,
+        "mass_before_projection": 1.0,
+        "projection_l1_change": 0.0003950157742664318,
+        "maximum_single_bit_assignment_condition_number": 1.0374300451755505,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.3042290539634806,
+        "observables": {
+          "kind": "sequential_emitter_environment_joint_photon_instrument",
+          "flag_history_tv": 0.051956170030936916,
+          "histories": {
+            "0": {
+              "observed": {
+                "probability": 0.6730438299690636
+              },
+              "ideal_probability": 0.7250000000000021,
+              "conditional_memory_zero": {
+                "probability": 0.5548101841864161
+              },
+              "ideal_conditional_memory_zero": 0.5298629449580842,
+              "conditional_memory_pauli": 0.10962036837283229,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1": {
+              "observed": {
+                "probability": 0.3269561700309363
+              },
+              "ideal_probability": 0.2750000000000009,
+              "conditional_memory_zero": {
+                "probability": 0.5308527996323675
+              },
+              "ideal_conditional_memory_zero": 0.4212704178377786,
+              "conditional_memory_pauli": 0.06170559926473507,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "X",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    },
+    {
+      "name": "passive_classical_Z",
+      "bundle_index": 5,
+      "pub_index": 12,
+      "family": "sequential_emitter_environment_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 6,
+      "raw_full_z_tv": 0.25163899403125345,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.021788775350439882,
+      "native_two_qubit_gate_count": 30,
+      "compiled_depth": 75,
+      "circuit_duration_seconds": 5.396000000000001e-06,
+      "observables": {
+        "kind": "sequential_emitter_environment_joint_photon_instrument",
+        "flag_history_tv": 0.07578125000000092,
+        "histories": {
+          "0": {
+            "observed": {
+              "probability": 0.82421875,
+              "successes": 3376,
+              "shots": 4096,
+              "wilson95": [
+                0.8122597665518021,
+                0.8355701621606095
+              ]
+            },
+            "ideal_probability": 0.9000000000000019,
+            "conditional_memory_zero": {
+              "probability": 0.5539099526066351,
+              "successes": 1870,
+              "shots": 3376,
+              "wilson95": [
+                0.5370902361103999,
+                0.5706071231991722
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.4999999999999998,
+            "conditional_memory_pauli": 0.10781990521327023,
+            "conditional_memory_pauli_interval95": [
+              0.07418047222079971,
+              0.14121424639834435
+            ]
+          },
+          "1": {
+            "observed": {
+              "probability": 0.17578125,
+              "successes": 720,
+              "shots": 4096,
+              "wilson95": [
+                0.16442983783939044,
+                0.18774023344819787
+              ]
+            },
+            "ideal_probability": 0.10000000000000006,
+            "conditional_memory_zero": {
+              "probability": 0.5416666666666666,
+              "successes": 390,
+              "shots": 720,
+              "wilson95": [
+                0.5051468291064416,
+                0.5777442505199644
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.4999999999999997,
+            "conditional_memory_pauli": 0.08333333333333326,
+            "conditional_memory_pauli_interval95": [
+              0.010293658212883194,
+              0.15548850103992873
+            ]
+          }
+        },
+        "memory_measurement_basis": "Z",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": -0.0,
+        "mass_before_projection": 1.0,
+        "projection_l1_change": 0.0,
+        "maximum_single_bit_assignment_condition_number": 1.0272768684662494,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.23577567915833272,
+        "observables": {
+          "kind": "sequential_emitter_environment_joint_photon_instrument",
+          "flag_history_tv": 0.07577255871446317,
+          "histories": {
+            "0": {
+              "observed": {
+                "probability": 0.8242274412855378
+              },
+              "ideal_probability": 0.9000000000000019,
+              "conditional_memory_zero": {
+                "probability": 0.5460703076126179
+              },
+              "ideal_conditional_memory_zero": 0.4999999999999998,
+              "conditional_memory_pauli": 0.09214061522523576,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1": {
+              "observed": {
+                "probability": 0.17577255871446232
+              },
+              "ideal_probability": 0.10000000000000006,
+              "conditional_memory_zero": {
+                "probability": 0.5334188988329874
+              },
+              "ideal_conditional_memory_zero": 0.4999999999999997,
+              "conditional_memory_pauli": 0.06683779766597486,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "Z",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    },
+    {
+      "name": "controlled_one_classical_Z",
+      "bundle_index": 7,
+      "pub_index": 13,
+      "family": "sequential_emitter_environment_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 8,
+      "raw_full_z_tv": 0.41845979426170454,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.042620196480934756,
+      "native_two_qubit_gate_count": 75,
+      "compiled_depth": 193,
+      "circuit_duration_seconds": 9.70400000000001e-06,
+      "observables": {
+        "kind": "sequential_emitter_environment_joint_photon_instrument",
+        "flag_history_tv": 0.07412109375000073,
+        "histories": {
+          "0": {
+            "observed": {
+              "probability": 0.65087890625,
+              "successes": 2666,
+              "shots": 4096,
+              "wilson95": [
+                0.6361452584636264,
+                0.6653298137835651
+              ]
+            },
+            "ideal_probability": 0.7250000000000022,
+            "conditional_memory_zero": {
+              "probability": 0.5626406601650412,
+              "successes": 1500,
+              "shots": 2666,
+              "wilson95": [
+                0.5437337597918592,
+                0.5813673015076879
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5172413793103449,
+            "conditional_memory_pauli": 0.12528132033008244,
+            "conditional_memory_pauli_interval95": [
+              0.08746751958371846,
+              0.1627346030153758
+            ]
+          },
+          "1": {
+            "observed": {
+              "probability": 0.34912109375,
+              "successes": 1430,
+              "shots": 4096,
+              "wilson95": [
+                0.3346701862164348,
+                0.3638547415363737
+              ]
+            },
+            "ideal_probability": 0.27500000000000074,
+            "conditional_memory_zero": {
+              "probability": 0.5587412587412588,
+              "successes": 799,
+              "shots": 1430,
+              "wilson95": [
+                0.5328824285408398,
+                0.5842853370907781
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.45454545454545414,
+            "conditional_memory_pauli": 0.11748251748251759,
+            "conditional_memory_pauli_interval95": [
+              0.06576485708167956,
+              0.16857067418155625
+            ]
+          }
+        },
+        "memory_measurement_basis": "Z",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": 0.0005025763814380224,
+        "mass_before_projection": 1.0,
+        "projection_l1_change": 0.001005152762875937,
+        "maximum_single_bit_assignment_condition_number": 1.0374300451755505,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.40506169064664943,
+        "observables": {
+          "kind": "sequential_emitter_environment_joint_photon_instrument",
+          "flag_history_tv": 0.0762686259475954,
+          "histories": {
+            "0": {
+              "observed": {
+                "probability": 0.6487313740524054
+              },
+              "ideal_probability": 0.7250000000000022,
+              "conditional_memory_zero": {
+                "probability": 0.5551045639855651
+              },
+              "ideal_conditional_memory_zero": 0.5172413793103449,
+              "conditional_memory_pauli": 0.11020912797113014,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1": {
+              "observed": {
+                "probability": 0.3512686259475948
+              },
+              "ideal_probability": 0.27500000000000074,
+              "conditional_memory_zero": {
+                "probability": 0.5508344736385797
+              },
+              "ideal_conditional_memory_zero": 0.45454545454545414,
+              "conditional_memory_pauli": 0.10166894727715947,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "Z",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    },
+    {
+      "name": "frozen_pair_p0.1",
+      "bundle_index": 2,
+      "pub_index": 14,
+      "family": "frozen_classical_pair_memory_benchmark",
+      "shots": 4096,
+      "logical_qubits": 5,
+      "raw_full_z_tv": 0.13689064922498162,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.01993690142180768,
+      "native_two_qubit_gate_count": 21,
+      "compiled_depth": 67,
+      "circuit_duration_seconds": 4.984e-06,
+      "observables": {
+        "kind": "frozen_classical_pair_memory_benchmark",
+        "flag_history_tv": 0.07694335937500078,
+        "histories": {
+          "0": {
+            "observed": {
+              "probability": 0.883056640625,
+              "successes": 3617,
+              "shots": 4096,
+              "wilson95": [
+                0.8728545429050968,
+                0.8925409075088896
+              ]
+            },
+            "ideal_probability": 0.9600000000000016
+          },
+          "1": {
+            "observed": {
+              "probability": 0.116943359375,
+              "successes": 479,
+              "shots": 4096,
+              "wilson95": [
+                0.10745909249111046,
+                0.12714545709490319
+              ]
+            },
+            "ideal_probability": 0.04000000000000006
+          }
+        },
+        "raw_swap_overlap_estimate": 0.76611328125,
+        "ideal_overlap": 0.9199999999999999,
+        "raw_swap_overlap_interval95": [
+          0.7457090858101936,
+          0.7850818150177791
+        ],
+        "scope": "Digital two-photon overlap benchmark; no unique microscopic cause identified."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": -0.0,
+        "mass_before_projection": 1.0,
+        "projection_l1_change": 0.0,
+        "maximum_single_bit_assignment_condition_number": 1.0272768684662494,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.1268361695015786,
+        "observables": {
+          "kind": "frozen_classical_pair_memory_benchmark",
+          "flag_history_tv": 0.07808669656203371,
+          "histories": {
+            "0": {
+              "observed": {
+                "probability": 0.881913303437967
+              },
+              "ideal_probability": 0.9600000000000016
+            },
+            "1": {
+              "observed": {
+                "probability": 0.11808669656203287
+              },
+              "ideal_probability": 0.04000000000000006
+            }
+          },
+          "raw_swap_overlap_estimate": 0.7638266068759343,
+          "ideal_overlap": 0.9199999999999999,
+          "raw_swap_overlap_interval95": null,
+          "scope": "Digital two-photon overlap benchmark; no unique microscopic cause identified."
+        }
+      }
+    },
+    {
+      "name": "controlled_one_coherent_Y",
+      "bundle_index": 11,
+      "pub_index": 15,
+      "family": "sequential_emitter_environment_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 7,
+      "raw_full_z_tv": 0.2863678732102948,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.04222636835305092,
+      "native_two_qubit_gate_count": 62,
+      "compiled_depth": 170,
+      "circuit_duration_seconds": 8.73600000000001e-06,
+      "observables": {
+        "kind": "sequential_emitter_environment_joint_photon_instrument",
+        "flag_history_tv": 0.03994140625000045,
+        "histories": {
+          "0": {
+            "observed": {
+              "probability": 0.68505859375,
+              "successes": 2806,
+              "shots": 4096,
+              "wilson95": [
+                0.6706659839309195,
+                0.6991044121263155
+              ]
+            },
+            "ideal_probability": 0.7250000000000019,
+            "conditional_memory_zero": {
+              "probability": 0.5702066999287242,
+              "successes": 1600,
+              "shots": 2806,
+              "wilson95": [
+                0.551806164051445,
+                0.5884152704224289
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5597258899161681,
+            "conditional_memory_pauli": 0.14041339985744838,
+            "conditional_memory_pauli_interval95": [
+              0.10361232810289,
+              0.17683054084485783
+            ]
+          },
+          "1": {
+            "observed": {
+              "probability": 0.31494140625,
+              "successes": 1290,
+              "shots": 4096,
+              "wilson95": [
+                0.3008955878736845,
+                0.3293340160690806
+              ]
+            },
+            "ideal_probability": 0.27500000000000097,
+            "conditional_memory_zero": {
+              "probability": 0.4968992248062015,
+              "successes": 641,
+              "shots": 1290,
+              "wilson95": [
+                0.4696645336492358,
+                0.5241523285749102
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.3425408356755564,
+            "conditional_memory_pauli": -0.006201550387596955,
+            "conditional_memory_pauli_interval95": [
+              -0.060670932701528346,
+              0.04830465714982046
+            ]
+          }
+        },
+        "memory_measurement_basis": "Y",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": 0.00016105005080181348,
+        "mass_before_projection": 1.0,
+        "projection_l1_change": 0.0003221001016033963,
+        "maximum_single_bit_assignment_condition_number": 1.0374300451755505,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.27600379875688263,
+        "observables": {
+          "kind": "sequential_emitter_environment_joint_photon_instrument",
+          "flag_history_tv": 0.04179729806224111,
+          "histories": {
+            "0": {
+              "observed": {
+                "probability": 0.6832027019377594
+              },
+              "ideal_probability": 0.7250000000000019,
+              "conditional_memory_zero": {
+                "probability": 0.5630302984417058
+              },
+              "ideal_conditional_memory_zero": 0.5597258899161681,
+              "conditional_memory_pauli": 0.12606059688341165,
+              "conditional_memory_pauli_interval95": null
+            },
+            "1": {
+              "observed": {
+                "probability": 0.3167972980622408
+              },
+              "ideal_probability": 0.27500000000000097,
+              "conditional_memory_zero": {
+                "probability": 0.48751528716530423
+              },
+              "ideal_conditional_memory_zero": 0.3425408356755564,
+              "conditional_memory_pauli": -0.024969425669391532,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "Y",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    },
+    {
+      "name": "controlled_two_coherent_Z",
+      "bundle_index": 8,
+      "pub_index": 16,
+      "family": "sequential_emitter_environment_joint_photon_instrument",
+      "shots": 4096,
+      "logical_qubits": 12,
+      "raw_full_z_tv": 0.5226427250341326,
+      "ideal_multinomial_expected_full_z_tv_at_these_shots": 0.14838944936974663,
+      "native_two_qubit_gate_count": 125,
+      "compiled_depth": 280,
+      "circuit_duration_seconds": 1.2591999999999992e-05,
+      "observables": {
+        "kind": "sequential_emitter_environment_joint_photon_instrument",
+        "flag_history_tv": 0.12706054687500007,
+        "histories": {
+          "00": {
+            "observed": {
+              "probability": 0.403564453125,
+              "successes": 1653,
+              "shots": 4096,
+              "wilson95": [
+                0.3886368617885934,
+                0.41867276031878414
+              ]
+            },
+            "ideal_probability": 0.5306250000000031,
+            "conditional_memory_zero": {
+              "probability": 0.4924379915305505,
+              "successes": 814,
+              "shots": 1653,
+              "wilson95": [
+                0.4683826439370296,
+                0.5165284048136489
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.44346289752650225,
+            "conditional_memory_pauli": -0.015124016938898976,
+            "conditional_memory_pauli_interval95": [
+              -0.06323471212594078,
+              0.033056809627297845
+            ]
+          },
+          "10": {
+            "observed": {
+              "probability": 0.2314453125,
+              "successes": 948,
+              "shots": 4096,
+              "wilson95": [
+                0.21878449311800902,
+                0.24460939123165
+              ]
+            },
+            "ideal_probability": 0.19437500000000124,
+            "conditional_memory_zero": {
+              "probability": 0.5358649789029536,
+              "successes": 508,
+              "shots": 948,
+              "wilson95": [
+                0.5040376812495556,
+                0.5674027875069222
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5900321543408361,
+            "conditional_memory_pauli": 0.07172995780590719,
+            "conditional_memory_pauli_interval95": [
+              0.008075362499111227,
+              0.13480557501384438
+            ]
+          },
+          "01": {
+            "observed": {
+              "probability": 0.2353515625,
+              "successes": 964,
+              "shots": 4096,
+              "wilson95": [
+                0.22261180436978606,
+                0.24858725984387792
+              ]
+            },
+            "ideal_probability": 0.19437500000000119,
+            "conditional_memory_zero": {
+              "probability": 0.5186721991701245,
+              "successes": 500,
+              "shots": 964,
+              "wilson95": [
+                0.48711957917016147,
+                0.5500765955461664
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5257234726688099,
+            "conditional_memory_pauli": 0.03734439834024905,
+            "conditional_memory_pauli_interval95": [
+              -0.02576084165967707,
+              0.10015319109233278
+            ]
+          },
+          "11": {
+            "observed": {
+              "probability": 0.129638671875,
+              "successes": 531,
+              "shots": 4096,
+              "wilson95": [
+                0.1196977421398953,
+                0.14027364200413447
+              ]
+            },
+            "ideal_probability": 0.08062500000000059,
+            "conditional_memory_zero": {
+              "probability": 0.5386064030131826,
+              "successes": 286,
+              "shots": 531,
+              "wilson95": [
+                0.49608011383131434,
+                0.5805781169842313
+              ]
+            },
+            "ideal_conditional_memory_zero": 0.5930232558139525,
+            "conditional_memory_pauli": 0.07721280602636527,
+            "conditional_memory_pauli_interval95": [
+              -0.00783977233737132,
+              0.16115623396846268
+            ]
+          }
+        },
+        "memory_measurement_basis": "Z",
+        "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+      },
+      "secondary_independent_readout": {
+        "status": "secondary_sensitivity_only",
+        "negative_mass_before_projection": 0.06932057136198905,
+        "mass_before_projection": 0.9999999999999998,
+        "projection_l1_change": 0.13864114272397793,
+        "maximum_single_bit_assignment_condition_number": 1.2061803029260851,
+        "interval": "none; not a confidence interval or uncertainty-corrected estimator",
+        "assumptions": [
+          "Independent stationary per-bit assignment channel estimated from all-zero/all-one controls.",
+          "Calibration includes preparation errors; gate errors and correlated/context-dependent readout are not removed.",
+          "Negative entries clipped and distribution renormalized; this nonlinear projection is biased.",
+          "Calibration uncertainty and temporal drift are not propagated. Raw estimates remain primary."
+        ],
+        "full_z_tv": 0.5164057983890487,
+        "observables": {
+          "kind": "sequential_emitter_environment_joint_photon_instrument",
+          "flag_history_tv": 0.1313184952215154,
+          "histories": {
+            "00": {
+              "observed": {
+                "probability": 0.3993065047784846
+              },
+              "ideal_probability": 0.5306250000000031,
+              "conditional_memory_zero": {
+                "probability": 0.48291905876964014
+              },
+              "ideal_conditional_memory_zero": 0.44346289752650225,
+              "conditional_memory_pauli": -0.03416188246071972,
+              "conditional_memory_pauli_interval95": null
+            },
+            "10": {
+              "observed": {
+                "probability": 0.23726584808611023
+              },
+              "ideal_probability": 0.19437500000000124,
+              "conditional_memory_zero": {
+                "probability": 0.5284841038038202
+              },
+              "ideal_conditional_memory_zero": 0.5900321543408361,
+              "conditional_memory_pauli": 0.05696820760764032,
+              "conditional_memory_pauli_interval95": null
+            },
+            "01": {
+              "observed": {
+                "probability": 0.23004918247208325
+              },
+              "ideal_probability": 0.19437500000000119,
+              "conditional_memory_zero": {
+                "probability": 0.5128503724978682
+              },
+              "ideal_conditional_memory_zero": 0.5257234726688099,
+              "conditional_memory_pauli": 0.02570074499573649,
+              "conditional_memory_pauli_interval95": null
+            },
+            "11": {
+              "observed": {
+                "probability": 0.13337846466332184
+              },
+              "ideal_probability": 0.08062500000000059,
+              "conditional_memory_zero": {
+                "probability": 0.5271379062005986
+              },
+              "ideal_conditional_memory_zero": 0.5930232558139525,
+              "conditional_memory_pauli": 0.054275812401197276,
+              "conditional_memory_pauli_interval95": null
+            }
+          },
+          "memory_measurement_basis": "Z",
+          "scope": "Raw conditional single-memory-qubit Pauli measurement in the declared basis. Hardware readout noise is separate from synthetic optical acquisition noise."
+        }
+      }
+    }
+  ],
+  "raw_quantum_usage": 22,
+  "raw_job_metrics": {
+    "caller": "qiskit_ibm_runtime~sampler.py",
+    "qiskit_version": "qiskit_ibm_runtime-0.51.0,qiskit-2.6.1*,qiskit_aer-0.18.2",
+    "timestamps": {
+      "created": "2026-11-11T18:03:59.732615Z",
+      "finished": "2026-11-11T18:05:31.782069Z",
+      "running": "2026-11-11T18:04:01.394342Z"
+    },
+    "usage": {
+      "qpu_charge_time_seconds": 22,
+      "value": 0.361674,
+      "unit": "resource_units",
+      "status": "complete",
+      "details": [
+        {
+          "value": 0.361674,
+          "unit": "resource_units",
+          "metric": {
+            "id": "caffe3ca-729c-5750-8777-df63bbf8bfd9",
+            "value": 22
+          }
+        }
+      ]
+    },
+    "circuits_execution_time_ns": 19963995136
+  },
+  "interpretation": [
+    "Raw estimates are primary; every submitted science circuit is retained.",
+    "More accepted events can be produced by noise without preserving the selected answer.",
+    "Full-Z and conditional TVs include shot noise and are not quantum-state fidelities.",
+    "Expected multinomial full-Z TV is a model-based sampling benchmark, not a confidence bound.",
+    "Wilson intervals are marginal binomial intervals, not simultaneous coverage or physical-model uncertainty.",
+    "Independent readout inversion is secondary, biased after projection, and excludes calibration uncertainty.",
+    "Superconducting model execution does not validate physical optical sensors, quantum-dot devices or wafer performance."
+  ],
+  "immutable_artifacts_verified_before_analysis": true
+}

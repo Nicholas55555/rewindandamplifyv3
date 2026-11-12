@@ -1,0 +1,220 @@
+{
+  "configuration": {
+    "backend": "synthetic GenericBackendV2, not an actual IBM device",
+    "target_qubits": 10,
+    "topology": "bidirectional line",
+    "device_property_seed": 77,
+    "compilation": "target-aware level 1, seed_transpiler 13",
+    "noise": "Aer noise model generated from synthetic target properties, not observed calibrations",
+    "simulator_method": "matrix_product_state stochastic trajectories",
+    "readout_correction": false,
+    "shots_per_circuit": 256,
+    "qiskit_version": "2.6.1",
+    "qiskit_aer_version": "0.18.2",
+    "python_version": "3.12.10"
+  },
+  "rows": [
+    {
+      "sites": 5,
+      "oracle": "enumerated",
+      "logical_qubits": 5,
+      "active_physical_qubits": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "final_physical_layout_by_logical_qubit": [
+        3,
+        0,
+        2,
+        4,
+        1
+      ],
+      "compiled_cx": 565,
+      "compiled_depth": 729,
+      "simulator_seed": 5050,
+      "results": {
+        "shots": 256,
+        "accepted": 17,
+        "hit_probability": 0.06640625,
+        "hit_wilson_95_percent_interval": [
+          0.04187072285916844,
+          0.10376215263514196
+        ],
+        "accepted_counts": {
+          "00100": 1,
+          "01000": 7,
+          "00001": 3,
+          "00000": 4,
+          "00010": 2
+        },
+        "conditional_tv": 0.40896358543417366,
+        "conditional_tv_95_percent_finite_shot_bound": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "sites": 5,
+      "oracle": "counter",
+      "logical_qubits": 8,
+      "active_physical_qubits": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "final_physical_layout_by_logical_qubit": [
+        7,
+        4,
+        6,
+        8,
+        9,
+        5,
+        2,
+        3
+      ],
+      "compiled_cx": 554,
+      "compiled_depth": 710,
+      "simulator_seed": 5051,
+      "results": {
+        "shots": 256,
+        "accepted": 14,
+        "hit_probability": 0.0546875,
+        "hit_wilson_95_percent_interval": [
+          0.03285229140400938,
+          0.08968958072528235
+        ],
+        "accepted_counts": {
+          "10000": 4,
+          "00100": 4,
+          "00010": 3,
+          "00001": 1,
+          "01000": 2
+        },
+        "conditional_tv": 0.21428571428571427,
+        "conditional_tv_95_percent_finite_shot_bound": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "sites": 7,
+      "oracle": "enumerated",
+      "logical_qubits": 7,
+      "active_physical_qubits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "final_physical_layout_by_logical_qubit": [
+        1,
+        2,
+        3,
+        6,
+        4,
+        5,
+        0
+      ],
+      "compiled_cx": 2751,
+      "compiled_depth": 3047,
+      "simulator_seed": 5070,
+      "results": {
+        "shots": 256,
+        "accepted": 16,
+        "hit_probability": 0.0625,
+        "hit_wilson_95_percent_interval": [
+          0.03883364112851165,
+          0.09910223324412587
+        ],
+        "accepted_counts": {
+          "1000000": 2,
+          "0000001": 4,
+          "0000100": 1,
+          "0000000": 3,
+          "0001000": 1,
+          "0000010": 2,
+          "0010000": 2,
+          "0100000": 1
+        },
+        "conditional_tv": 0.2650862068965517,
+        "conditional_tv_95_percent_finite_shot_bound": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "sites": 7,
+      "oracle": "counter",
+      "logical_qubits": 10,
+      "active_physical_qubits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "final_physical_layout_by_logical_qubit": [
+        6,
+        8,
+        7,
+        2,
+        3,
+        1,
+        0,
+        5,
+        4,
+        9
+      ],
+      "compiled_cx": 830,
+      "compiled_depth": 1061,
+      "simulator_seed": 5071,
+      "results": {
+        "shots": 256,
+        "accepted": 4,
+        "hit_probability": 0.015625,
+        "hit_wilson_95_percent_interval": [
+          0.006092598203366294,
+          0.039479262709196654
+        ],
+        "accepted_counts": {
+          "0010000": 1,
+          "0000000": 1,
+          "0100000": 1,
+          "0000100": 1
+        },
+        "conditional_tv": 0.5517241379310345,
+        "conditional_tv_95_percent_finite_shot_bound": [
+          0,
+          1
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "The wafer model and device target are synthetic; there are no QPU or measured wafer results.",
+    "Different qubit counts and compiler-selected layouts confound any attribution of changes to oracle design.",
+    "Raw accepted outcomes include false hits from gate and readout noise; higher hit rate is not proof of better sampling.",
+    "The conditional TV bound covers finite-shot error only for independent simulator draws and a fixed reference model; it is conservative and often broad.",
+    "Noise-model fidelity to actual hardware is unvalidated; topology, calibration, drift, idle noise, and compiler settings can alter results.",
+    "Single target, one simulator seed per circuit, and a modest shot budget cannot establish general performance or a speed advantage."
+  ]
+}

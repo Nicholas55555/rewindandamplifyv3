@@ -1,0 +1,33 @@
+{
+  "schema": "full-spatial-validation-v1",
+  "status": "passed",
+  "executed_utc": "2026-11-11T05:10:14.995651+00:00",
+  "behavioral_tests": 8,
+  "source_hashes_match": true,
+  "frozen_import_hashes_match": true,
+  "explicit_clean_qpy_hashes_match": true,
+  "construction_roundtrip_records_checked": true,
+  "compact_qpy_supported": false,
+  "full_state_simulation_performed": false,
+  "full_generic_transpilation_performed": false,
+  "full_noisy_validation_performed": false,
+  "hardware_run_performed": false,
+  "resource_counts_checked": true,
+  "conditional_approximation_bounds": [
+    {
+      "dose": 1.5,
+      "conditional_history_tv_conservative_upper_bound": 0.004817168594825865,
+      "scope": "Ideal model approximation bound only; not noisy-circuit fidelity."
+    },
+    {
+      "dose": 1.8,
+      "conditional_history_tv_conservative_upper_bound": 0.007122312272743281,
+      "scope": "Ideal model approximation bound only; not noisy-circuit fidelity."
+    }
+  ],
+  "failure_records": [
+    "archive\\results.json",
+    "archive\\results_after_release.json",
+    "archive\\results_after_reused_inverse.json"
+  ]
+}

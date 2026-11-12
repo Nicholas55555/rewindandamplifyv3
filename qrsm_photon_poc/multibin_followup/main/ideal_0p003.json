@@ -1,0 +1,324 @@
+{
+  "kind": "ideal_multibin",
+  "bins": 3,
+  "instrument": {
+    "choi_absolute_cutoff": 0.003,
+    "retained_ranks": [
+      14,
+      8
+    ],
+    "choi_reports": [
+      {
+        "rank_above_cutoff": 14,
+        "minimum_choi_eigenvalue": 4.397058821575905e-11,
+        "maximum_choi_eigenvalue": 4.486076396996565,
+        "choi_hermiticity_frobenius_error": 2.624525527237796e-15,
+        "discarded_positive_choi_eigenvalue_sum": 0.012273153454531123,
+        "reconstructed_superoperator_frobenius_error": 0.004232619674624318,
+        "ranks_by_absolute_cutoff": {
+          "1e-08": 59,
+          "1e-10": 62,
+          "1e-12": 64,
+          "1e-14": 64
+        }
+      },
+      {
+        "rank_above_cutoff": 8,
+        "minimum_choi_eigenvalue": 1.0849377592244287e-12,
+        "maximum_choi_eigenvalue": 1.8397286734077123,
+        "choi_hermiticity_frobenius_error": 3.85189533185268e-15,
+        "discarded_positive_choi_eigenvalue_sum": 0.016614483523942056,
+        "reconstructed_superoperator_frobenius_error": 0.005181130167913594,
+        "ranks_by_absolute_cutoff": {
+          "1e-08": 54,
+          "1e-10": 62,
+          "1e-12": 64,
+          "1e-14": 64
+        }
+      }
+    ],
+    "normalization": {
+      "pre_normalization_completeness_spectral_error": 0.007754918752076054,
+      "right_normalization_spectral_change": 0.003900158149752904
+    },
+    "map_frobenius_errors": [
+      0.016123331273408228,
+      0.01001617223308668
+    ],
+    "isometry_completeness_spectral_error": 3.050969984997609e-15
+  },
+  "system_qubits": 3,
+  "flags": [
+    3,
+    8,
+    13
+  ],
+  "environment_qubits_per_bin": 4,
+  "one_bin_compilation": {
+    "qubits": 8,
+    "cx_gates": 2086,
+    "u_gates": 2147,
+    "depth": 4142,
+    "instructions": 4233,
+    "basis": [
+      "u",
+      "cx"
+    ],
+    "routing": "none, generic all-to-all"
+  },
+  "one_bin_synthesis_seconds": 2.8850892999980715,
+  "preparation": {
+    "qubits": 18,
+    "cx_gates": 6258,
+    "u_gates": 6441,
+    "depth": 12426,
+    "instructions": 12699,
+    "basis": [
+      "u",
+      "cx"
+    ],
+    "routing": "none, generic all-to-all"
+  },
+  "preparation_statevector_seconds": 7.104466100001446,
+  "history_branches": {
+    "000": {
+      "compiled_probability": 0.7415746212254449,
+      "retained_probability": 0.741574621225444,
+      "original_cavity2_probability": 0.7397629815454934,
+      "implementation_branch_frobenius_error": 5.203789149940476e-13,
+      "implementation_conditional_trace_distance": 5.146643863901879e-13,
+      "retained_vs_original_conditional_trace_distance": 0.0019471687793943706
+    },
+    "001": {
+      "compiled_probability": 0.15035012119508553,
+      "retained_probability": 0.1503501211950858,
+      "original_cavity2_probability": 0.15078668262542927,
+      "implementation_branch_frobenius_error": 7.810682837808476e-14,
+      "implementation_conditional_trace_distance": 3.79556242633982e-13,
+      "retained_vs_original_conditional_trace_distance": 0.005536158506502093
+    },
+    "010": {
+      "compiled_probability": 0.07852566485168758,
+      "retained_probability": 0.07852566485169159,
+      "original_cavity2_probability": 0.07904496000738649,
+      "implementation_branch_frobenius_error": 3.299722280146745e-14,
+      "implementation_conditional_trace_distance": 3.0793472654626076e-13,
+      "retained_vs_original_conditional_trace_distance": 0.005669342437079981
+    },
+    "011": {
+      "compiled_probability": 0.006976988003715666,
+      "retained_probability": 0.006976988003718477,
+      "original_cavity2_probability": 0.00710536572462759,
+      "implementation_branch_frobenius_error": 3.516856229662283e-15,
+      "implementation_conditional_trace_distance": 2.272415855562371e-13,
+      "retained_vs_original_conditional_trace_distance": 0.009551621423214095
+    },
+    "100": {
+      "compiled_probability": 0.01751635775659327,
+      "retained_probability": 0.017516357756594755,
+      "original_cavity2_probability": 0.01810958800517661,
+      "implementation_branch_frobenius_error": 1.1587891351520508e-14,
+      "implementation_conditional_trace_distance": 4.807099314766998e-13,
+      "retained_vs_original_conditional_trace_distance": 0.011211021910484783
+    },
+    "101": {
+      "compiled_probability": 0.0033189942201195103,
+      "retained_probability": 0.003318994220120096,
+      "original_cavity2_probability": 0.003405624707610417,
+      "implementation_branch_frobenius_error": 1.9518784467497727e-15,
+      "implementation_conditional_trace_distance": 4.093180187023256e-13,
+      "retained_vs_original_conditional_trace_distance": 0.008343051783483397
+    },
+    "110": {
+      "compiled_probability": 0.001595475977140457,
+      "retained_probability": 0.0015954759771414427,
+      "original_cavity2_probability": 0.0016377552103153505,
+      "implementation_branch_frobenius_error": 1.281709434843918e-15,
+      "implementation_conditional_trace_distance": 3.8779564702478445e-13,
+      "retained_vs_original_conditional_trace_distance": 0.007220514479228762
+    },
+    "111": {
+      "compiled_probability": 0.0001417767702018049,
+      "retained_probability": 0.00014177677020194194,
+      "original_cavity2_probability": 0.00014704217396022712,
+      "implementation_branch_frobenius_error": 1.4085687010621606e-16,
+      "implementation_conditional_trace_distance": 2.5413230174466923e-13,
+      "retained_vs_original_conditional_trace_distance": 0.010944405755515245
+    }
+  },
+  "events": {
+    "last": {
+      "retained_probability": 0.1607878801891263,
+      "original_cavity2_probability": 0.1614447152316275,
+      "amplified_probability": 0.8931340261265772,
+      "one_round_theory": 0.8931340261265963,
+      "selected_conditional_state_implementation_trace_distance": 3.7252472186134007e-13,
+      "retained_vs_original_selected_trace_distance": 0.005825673108637706,
+      "max_amplified_branch_scaling_frobenius_error": 4.346510038218762e-13,
+      "max_amplified_history_conditional_trace_distance": 5.230944297390719e-13,
+      "event_specific_recursion_error": 8.758427313611621e-17,
+      "compilation": {
+        "qubits": 18,
+        "cx_gates": 19858,
+        "u_gates": 20449,
+        "depth": 37611,
+        "instructions": 40307,
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "routing": "none, generic all-to-all"
+      },
+      "compilation_seconds": 0.26891210000030696,
+      "classical_statevector_simulation_seconds": 19.899148500000592,
+      "classical_event_recursion_timing": {
+        "repetitions": 21,
+        "median_seconds": 7.650000043213367e-05,
+        "minimum_seconds": 7.310000000870787e-05,
+        "maximum_seconds": 9.850000060396269e-05
+      },
+      "exact_conditional_sampler": {
+        "histories": [
+          "001",
+          "011",
+          "101",
+          "111"
+        ],
+        "probabilities": [
+          0.9350836705990331,
+          0.04339249945650015,
+          0.02064206715217675,
+          0.0008817627922899249
+        ],
+        "samples": 100000,
+        "seed": 481191,
+        "sample_frequency": [
+          0.93411,
+          0.04368,
+          0.0214,
+          0.00081
+        ],
+        "sampling_seconds": 0.0010366000024077948,
+        "empirical_tvd": 0.001045433391323051,
+        "rejections": 0,
+        "scope": "Classical samples of the exact finite-model history distribution, not physical preparation of a quantum state."
+      }
+    },
+    "all": {
+      "retained_probability": 0.00014177677020194194,
+      "original_cavity2_probability": 0.00014704217396022712,
+      "amplified_probability": 0.001275508561751459,
+      "one_round_theory": 0.0012755085617527136,
+      "selected_conditional_state_implementation_trace_distance": 2.53268294737697e-13,
+      "retained_vs_original_selected_trace_distance": 0.010944405755515245,
+      "max_amplified_branch_scaling_frobenius_error": 5.220424283807706e-13,
+      "max_amplified_history_conditional_trace_distance": 5.167727011067474e-13,
+      "event_specific_recursion_error": 1.2609301305811894e-20,
+      "compilation": {
+        "qubits": 18,
+        "cx_gates": 19864,
+        "u_gates": 20455,
+        "depth": 37618,
+        "instructions": 40319,
+        "basis": [
+          "u",
+          "cx"
+        ],
+        "routing": "none, generic all-to-all"
+      },
+      "compilation_seconds": 0.1494825999980094,
+      "classical_statevector_simulation_seconds": 20.798544799999945,
+      "classical_event_recursion_timing": {
+        "repetitions": 21,
+        "median_seconds": 1.4799999917158857e-05,
+        "minimum_seconds": 1.4299999747890979e-05,
+        "maximum_seconds": 2.3399999918183312e-05
+      },
+      "exact_conditional_sampler": {
+        "histories": [
+          "111"
+        ],
+        "probabilities": [
+          1.0
+        ],
+        "samples": 100000,
+        "seed": 481191,
+        "sample_frequency": [
+          1.0
+        ],
+        "sampling_seconds": 0.0008988000008685049,
+        "empirical_tvd": 0.0,
+        "rejections": 0,
+        "scope": "Classical samples of the exact finite-model history distribution, not physical preparation of a quantum state."
+      }
+    }
+  },
+  "register_growth": [
+    {
+      "bins": 1,
+      "qubits": 8,
+      "dense_statevector_bytes": 4096,
+      "dense_density_matrix_bytes": 1048576,
+      "note": "Storage arithmetic, not a simulated case or hardware resource lower bound."
+    },
+    {
+      "bins": 2,
+      "qubits": 13,
+      "dense_statevector_bytes": 131072,
+      "dense_density_matrix_bytes": 1073741824,
+      "note": "Storage arithmetic, not a simulated case or hardware resource lower bound."
+    },
+    {
+      "bins": 3,
+      "qubits": 18,
+      "dense_statevector_bytes": 4194304,
+      "dense_density_matrix_bytes": 1099511627776,
+      "note": "Storage arithmetic, not a simulated case or hardware resource lower bound."
+    },
+    {
+      "bins": 4,
+      "qubits": 23,
+      "dense_statevector_bytes": 134217728,
+      "dense_density_matrix_bytes": 1125899906842624,
+      "note": "Storage arithmetic, not a simulated case or hardware resource lower bound."
+    },
+    {
+      "bins": 6,
+      "qubits": 33,
+      "dense_statevector_bytes": 137438953472,
+      "dense_density_matrix_bytes": 1180591620717411303424,
+      "note": "Storage arithmetic, not a simulated case or hardware resource lower bound."
+    },
+    {
+      "bins": 8,
+      "qubits": 43,
+      "dense_statevector_bytes": 140737488355328,
+      "dense_density_matrix_bytes": 1237940039285380274899124224,
+      "note": "Storage arithmetic, not a simulated case or hardware resource lower bound."
+    },
+    {
+      "bins": 12,
+      "qubits": 63,
+      "dense_statevector_bytes": 147573952589676412928,
+      "dense_density_matrix_bytes": 1361129467683753853853498429727072845824,
+      "note": "Storage arithmetic, not a simulated case or hardware resource lower bound."
+    }
+  ],
+  "history_probability_tvd_retained_vs_original": 0.0018116396799512627,
+  "classical_complete_history_timing": {
+    "repetitions": 21,
+    "median_seconds": 4.769999941345304e-05,
+    "minimum_seconds": 4.5500000851461664e-05,
+    "maximum_seconds": 7.840000034775585e-05
+  },
+  "implementation_validation": {
+    "tolerance": 1e-08,
+    "maximum_error": 5.230944297390719e-13,
+    "passed": true
+  },
+  "elapsed_seconds": 51.455828800000745,
+  "status": "completed",
+  "branch_archive": "ideal_0p003.npz",
+  "branch_archive_sha256": "dc22bf119fb7cfa6e54e1a4aa03b3f4b65d7d807a25eae8752a825202cec1f55",
+  "memory_limit_mib": 2048
+}

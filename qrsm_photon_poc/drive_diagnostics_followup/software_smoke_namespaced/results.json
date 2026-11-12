@@ -1,0 +1,1272 @@
+{
+  "config": {
+    "seeds": [
+      729901
+    ],
+    "steps": 96,
+    "cavity": 2,
+    "response_records": 16,
+    "train_each_class": 16,
+    "null_calibration": 24,
+    "test_each_scenario": 12,
+    "efficiency_trials": 10000,
+    "dark_trials": 20000,
+    "hmm_starts": 1,
+    "hmm_iterations": 30,
+    "bootstrap": 50,
+    "alpha": 0.05
+  },
+  "cases": {
+    "stable_source": {
+      "methods": {
+        "physical_history": {
+          "record_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "no_event_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "detection_within32": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "prealarm_fraction_of_eligible_events": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "restricted_delay32_bins": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "no_event_records": 12,
+          "late_onset_records": 0
+        },
+        "classical_hmm": {
+          "record_alarm_fraction": {
+            "value": 0.16666666666666666,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.4166666666666667
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.16666666666666666
+            ]
+          },
+          "no_event_alarm_fraction": {
+            "value": 0.16666666666666666,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.4812499999999999
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.16666666666666666
+            ]
+          },
+          "detection_within32": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "prealarm_fraction_of_eligible_events": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "restricted_delay32_bins": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "no_event_records": 12,
+          "late_onset_records": 0
+        },
+        "count_contrast": {
+          "record_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "no_event_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "detection_within32": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "prealarm_fraction_of_eligible_events": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "restricted_delay32_bins": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "no_event_records": 12,
+          "late_onset_records": 0
+        }
+      },
+      "has_source_change_generator": false,
+      "physical_fraction_bias": {
+        "value": 0.09248459934237246,
+        "hierarchical_bootstrap_95": [
+          0.09004493790275277,
+          0.09412477829245051
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.09248459934237246
+        ]
+      },
+      "physical_fraction_rmse": {
+        "value": 0.09677898326243635,
+        "hierarchical_bootstrap_95": [
+          0.09416490560316587,
+          0.09900264288413932
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.09677898326243635
+        ]
+      },
+      "zero_change_fraction_rmse": {
+        "value": 0.0,
+        "hierarchical_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.0
+        ]
+      },
+      "physical_minus_hmm_predictive_nats_per_record": {
+        "value": 0.10550489442505473,
+        "hierarchical_bootstrap_95": [
+          -0.006782848755545525,
+          0.2596262881015684
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.10550489442505473
+        ]
+      },
+      "mean_binary_clicks": {
+        "value": 16.666666666666668,
+        "hierarchical_bootstrap_95": [
+          14.870833333333334,
+          18.425
+        ],
+        "records": 12,
+        "pipeline_values": [
+          16.666666666666668
+        ]
+      },
+      "paired_physical_minus_hmm_detection32": {
+        "value": null,
+        "hierarchical_bootstrap_95": [
+          null,
+          null
+        ],
+        "records": 0,
+        "pipeline_values": [
+          null
+        ]
+      }
+    },
+    "source_step_20pct": {
+      "methods": {
+        "physical_history": {
+          "record_alarm_fraction": {
+            "value": 0.08333333333333333,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.25
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.08333333333333333
+            ]
+          },
+          "no_event_alarm_fraction": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "detection_within32": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "prealarm_fraction_of_eligible_events": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "restricted_delay32_bins": {
+            "value": 32.0,
+            "hierarchical_bootstrap_95": [
+              32.0,
+              32.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              32.0
+            ]
+          },
+          "no_event_records": 0,
+          "late_onset_records": 0
+        },
+        "classical_hmm": {
+          "record_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "no_event_alarm_fraction": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "detection_within32": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "prealarm_fraction_of_eligible_events": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "restricted_delay32_bins": {
+            "value": 32.0,
+            "hierarchical_bootstrap_95": [
+              32.0,
+              32.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              32.0
+            ]
+          },
+          "no_event_records": 0,
+          "late_onset_records": 0
+        },
+        "count_contrast": {
+          "record_alarm_fraction": {
+            "value": 0.08333333333333333,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.25
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.08333333333333333
+            ]
+          },
+          "no_event_alarm_fraction": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "detection_within32": {
+            "value": 0.08333333333333333,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.23124999999999987
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.08333333333333333
+            ]
+          },
+          "prealarm_fraction_of_eligible_events": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "restricted_delay32_bins": {
+            "value": 32.0,
+            "hierarchical_bootstrap_95": [
+              32.0,
+              32.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              32.0
+            ]
+          },
+          "no_event_records": 0,
+          "late_onset_records": 0
+        }
+      },
+      "has_source_change_generator": true,
+      "physical_fraction_bias": {
+        "value": -0.05655103849390186,
+        "hierarchical_bootstrap_95": [
+          -0.06737175459958562,
+          -0.044547555105086824
+        ],
+        "records": 12,
+        "pipeline_values": [
+          -0.05655103849390186
+        ]
+      },
+      "physical_fraction_rmse": {
+        "value": 0.08394275859820392,
+        "hierarchical_bootstrap_95": [
+          0.07778240506257919,
+          0.08954262619125952
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.08394275859820392
+        ]
+      },
+      "zero_change_fraction_rmse": {
+        "value": 0.17559422921421236,
+        "hierarchical_bootstrap_95": [
+          0.17004901254246282,
+          0.18199988553109958
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.17559422921421236
+        ]
+      },
+      "physical_minus_hmm_predictive_nats_per_record": {
+        "value": 0.2306811049897005,
+        "hierarchical_bootstrap_95": [
+          0.017919118753799673,
+          0.4886458417957612
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.2306811049897005
+        ]
+      },
+      "mean_binary_clicks": {
+        "value": 19.583333333333332,
+        "hierarchical_bootstrap_95": [
+          17.65,
+          20.5
+        ],
+        "records": 12,
+        "pipeline_values": [
+          19.583333333333332
+        ]
+      },
+      "paired_physical_minus_hmm_detection32": {
+        "value": 0.0,
+        "hierarchical_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.0
+        ]
+      }
+    },
+    "stable_source_efficiency_loss": {
+      "methods": {
+        "physical_history": {
+          "record_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "no_event_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "detection_within32": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "prealarm_fraction_of_eligible_events": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "restricted_delay32_bins": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "no_event_records": 12,
+          "late_onset_records": 0
+        },
+        "classical_hmm": {
+          "record_alarm_fraction": {
+            "value": 0.16666666666666666,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.4166666666666667
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.16666666666666666
+            ]
+          },
+          "no_event_alarm_fraction": {
+            "value": 0.16666666666666666,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.4166666666666667
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.16666666666666666
+            ]
+          },
+          "detection_within32": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "prealarm_fraction_of_eligible_events": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "restricted_delay32_bins": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "no_event_records": 12,
+          "late_onset_records": 0
+        },
+        "count_contrast": {
+          "record_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "no_event_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "detection_within32": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "prealarm_fraction_of_eligible_events": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "restricted_delay32_bins": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "no_event_records": 12,
+          "late_onset_records": 0
+        }
+      },
+      "has_source_change_generator": false,
+      "physical_fraction_bias": {
+        "value": 0.0886358895479708,
+        "hierarchical_bootstrap_95": [
+          0.08704099717073782,
+          0.0920989608891828
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.0886358895479708
+        ]
+      },
+      "physical_fraction_rmse": {
+        "value": 0.0926271893561446,
+        "hierarchical_bootstrap_95": [
+          0.09059516652784372,
+          0.09469056605644864
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.0926271893561446
+        ]
+      },
+      "zero_change_fraction_rmse": {
+        "value": 0.0,
+        "hierarchical_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.0
+        ]
+      },
+      "physical_minus_hmm_predictive_nats_per_record": {
+        "value": -0.16435759808775666,
+        "hierarchical_bootstrap_95": [
+          -0.2845898771198215,
+          0.04859740222548943
+        ],
+        "records": 12,
+        "pipeline_values": [
+          -0.16435759808775666
+        ]
+      },
+      "mean_binary_clicks": {
+        "value": 14.75,
+        "hierarchical_bootstrap_95": [
+          12.697916666666666,
+          16.29583333333333
+        ],
+        "records": 12,
+        "pipeline_values": [
+          14.75
+        ]
+      },
+      "paired_physical_minus_hmm_detection32": {
+        "value": null,
+        "hierarchical_bootstrap_95": [
+          null,
+          null
+        ],
+        "records": 0,
+        "pipeline_values": [
+          null
+        ]
+      }
+    },
+    "stable_source_afterpulse": {
+      "methods": {
+        "physical_history": {
+          "record_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "no_event_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "detection_within32": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "prealarm_fraction_of_eligible_events": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "restricted_delay32_bins": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "no_event_records": 12,
+          "late_onset_records": 0
+        },
+        "classical_hmm": {
+          "record_alarm_fraction": {
+            "value": 0.16666666666666666,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.3979166666666666
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.16666666666666666
+            ]
+          },
+          "no_event_alarm_fraction": {
+            "value": 0.16666666666666666,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.4166666666666667
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.16666666666666666
+            ]
+          },
+          "detection_within32": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "prealarm_fraction_of_eligible_events": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "restricted_delay32_bins": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "no_event_records": 12,
+          "late_onset_records": 0
+        },
+        "count_contrast": {
+          "record_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "no_event_alarm_fraction": {
+            "value": 0.0,
+            "hierarchical_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "records": 12,
+            "pipeline_values": [
+              0.0
+            ]
+          },
+          "detection_within32": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "prealarm_fraction_of_eligible_events": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "restricted_delay32_bins": {
+            "value": null,
+            "hierarchical_bootstrap_95": [
+              null,
+              null
+            ],
+            "records": 0,
+            "pipeline_values": [
+              null
+            ]
+          },
+          "no_event_records": 12,
+          "late_onset_records": 0
+        }
+      },
+      "has_source_change_generator": false,
+      "physical_fraction_bias": {
+        "value": 0.0937625787099924,
+        "hierarchical_bootstrap_95": [
+          0.08956373107232188,
+          0.09610462135028881
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.0937625787099924
+        ]
+      },
+      "physical_fraction_rmse": {
+        "value": 0.09842482210879615,
+        "hierarchical_bootstrap_95": [
+          0.09558136526548663,
+          0.10152348491636011
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.09842482210879615
+        ]
+      },
+      "zero_change_fraction_rmse": {
+        "value": 0.0,
+        "hierarchical_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.0
+        ]
+      },
+      "physical_minus_hmm_predictive_nats_per_record": {
+        "value": 0.04500132022270561,
+        "hierarchical_bootstrap_95": [
+          -0.09698256829006588,
+          0.1902223053557698
+        ],
+        "records": 12,
+        "pipeline_values": [
+          0.04500132022270561
+        ]
+      },
+      "mean_binary_clicks": {
+        "value": 16.583333333333332,
+        "hierarchical_bootstrap_95": [
+          14.954166666666666,
+          18.397916666666667
+        ],
+        "records": 12,
+        "pipeline_values": [
+          16.583333333333332
+        ]
+      },
+      "paired_physical_minus_hmm_detection32": {
+        "value": null,
+        "hierarchical_bootstrap_95": [
+          null,
+          null
+        ],
+        "records": 0,
+        "pipeline_values": [
+          null
+        ]
+      }
+    }
+  },
+  "pipeline_calibrations": [
+    {
+      "seed": 729901,
+      "truth": {
+        "g_defect": 0.65,
+        "defect_detuning": 0.2,
+        "cavity_detuning": 0.0,
+        "g_cavity": 0.7,
+        "drive": 1.3,
+        "kappa": 1.4,
+        "detector_eta": 0.68,
+        "gamma_emitter": 0.07,
+        "gamma_defect": 0.025,
+        "gamma_phi_emitter": 0.035,
+        "gamma_phi_defect": 0.02,
+        "dark_rate": 0.018,
+        "dt": 1.0,
+        "n_cavity": 2
+      },
+      "calibrated_parameters": {
+        "g_defect": 0.65,
+        "defect_detuning": 0.2,
+        "cavity_detuning": 0.0,
+        "g_cavity": 0.7,
+        "drive": 1.3,
+        "kappa": 1.4,
+        "detector_eta": 0.6772822717728227,
+        "gamma_emitter": 0.07,
+        "gamma_defect": 0.025,
+        "gamma_phi_emitter": 0.035,
+        "gamma_phi_defect": 0.02,
+        "dark_rate": 0.018494049329638575,
+        "dt": 1.0,
+        "n_cavity": 2
+      },
+      "calibration": {
+        "eta_count": 6773,
+        "eta_trials": 10000,
+        "dark_count": 366,
+        "dark_trials": 20000,
+        "drive_grid": [
+          1.1,
+          1.3,
+          1.5
+        ],
+        "drive_negative_loglikelihood": [
+          729.9549777322063,
+          725.7351519145469,
+          726.6797452207982
+        ]
+      },
+      "source_training_fraction_grid": [
+        0.1,
+        0.2,
+        0.3
+      ],
+      "source_training_negative_loglikelihood": [
+        718.6003734446015,
+        718.5310563045283,
+        718.3548619343442
+      ],
+      "selected_fraction": 0.3,
+      "hmm_models": [
+        {
+          "initial": [
+            2.496196820423571e-15,
+            0.9999987889321794,
+            1.2110678181620991e-06
+          ],
+          "transition": [
+            [
+              0.17565033006359237,
+              0.5333981727985828,
+              0.2909514971378248
+            ],
+            [
+              0.036490782425182854,
+              0.5657769564075901,
+              0.39773226116722704
+            ],
+            [
+              0.6522782393630093,
+              7.167079650604011e-10,
+              0.34772175992028276
+            ]
+          ],
+          "emissions": [
+            0.5968360132182142,
+            0.06070997710845991,
+            2.0611536181902037e-09
+          ],
+          "em_fit": {
+            "initial": [
+              0.03677568464180365,
+              0.8373711259051876,
+              0.1258531894530087
+            ],
+            "transition": [
+              [
+                0.4336108713093286,
+                0.527822871901111,
+                0.03856625678956034
+              ],
+              [
+                0.13510594553164015,
+                0.6168173062484118,
+                0.24807674821994802
+              ],
+              [
+                0.25662462878453524,
+                0.17878832897408392,
+                0.5645870422413808
+              ]
+            ],
+            "emissions": [
+              0.23589450557592498,
+              0.1728119196740382,
+              0.1918066309552556
+            ],
+            "train_log_likelihood": -754.1007791914737,
+            "selected_start": 0,
+            "converged": false,
+            "iterations": 30,
+            "starts": [
+              {
+                "start": 0,
+                "train_log_likelihood": -754.1007791914737,
+                "iterations": 30,
+                "converged": false,
+                "largest_em_step_decline": 0.0
+              }
+            ]
+          },
+          "refinement": {
+            "method": "L-BFGS-B on training log likelihood with analytic forward-backward gradient",
+            "optimization_success": true,
+            "status": 0,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "iterations": 182,
+            "max_iterations": 1000,
+            "train_before": -754.1007791914737,
+            "train_candidate": -744.6998959978906,
+            "accepted_candidate": true,
+            "train_selected": -744.6998959978906,
+            "max_abs_logit_gradient": 5.8998878444072034e-05,
+            "max_abs_logit": 20.0,
+            "bounds": [
+              -20,
+              20
+            ],
+            "note": "Only the top EM restart was refined; local convergence does not establish a global optimum."
+          }
+        },
+        {
+          "initial": [
+            0.9999984829659406,
+            5.527482786930117e-10,
+            1.5164813110884951e-06
+          ],
+          "transition": [
+            [
+              0.7867625442687829,
+              0.21323739395187238,
+              6.177934474142646e-08
+            ],
+            [
+              1.099557906390373e-07,
+              2.061153391554428e-09,
+              0.999999887983056
+            ],
+            [
+              0.7960398384437292,
+              0.10144522280312475,
+              0.10251493875314602
+            ]
+          ],
+          "emissions": [
+            0.06942157872042924,
+            1.1327845876494596e-06,
+            0.7712464794257868
+          ],
+          "em_fit": {
+            "initial": [
+              0.4392348240894194,
+              0.5443108062933503,
+              0.01645436961723043
+            ],
+            "transition": [
+              [
+                0.24236433692099224,
+                0.26365262438072523,
+                0.4939830386982826
+              ],
+              [
+                0.2477788127487464,
+                0.1004022751644192,
+                0.6518189120868344
+              ],
+              [
+                0.2391283865609142,
+                0.20825083215442153,
+                0.5526207812846643
+              ]
+            ],
+            "emissions": [
+              0.17095185113088482,
+              0.09877283814120585,
+              0.2156607241053446
+            ],
+            "train_log_likelihood": -725.6933102635643,
+            "selected_start": 0,
+            "converged": false,
+            "iterations": 30,
+            "starts": [
+              {
+                "start": 0,
+                "train_log_likelihood": -725.6933102635643,
+                "iterations": 30,
+                "converged": false,
+                "largest_em_step_decline": 0.0
+              }
+            ]
+          },
+          "refinement": {
+            "method": "L-BFGS-B on training log likelihood with analytic forward-backward gradient",
+            "optimization_success": true,
+            "status": 0,
+            "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+            "iterations": 244,
+            "max_iterations": 1000,
+            "train_before": -725.6933102635643,
+            "train_candidate": -716.857026482631,
+            "accepted_candidate": true,
+            "train_selected": -716.857026482631,
+            "max_abs_logit_gradient": 4.54791558226475e-05,
+            "max_abs_logit": 20.0,
+            "bounds": [
+              -20,
+              20
+            ],
+            "note": "Only the top EM restart was refined; local convergence does not establish a global optimum."
+          }
+        }
+      ],
+      "thresholds": {
+        "physical_history": 0.6251315427730617,
+        "classical_hmm": 0.7120300464902911,
+        "count_contrast": 0.375
+      },
+      "raw_sha256": "a0df56163402f9fd6331268a01e4c8b304116baf641939ed0435c3034b422ed8",
+      "elapsed_seconds": 9.469246899996506
+    }
+  ],
+  "method_scope": "Same binary sensor records; all algorithms classical. Known quantum model structure and extra calibration are assumptions, not a matched conventional optical instrument.",
+  "interval_scope": "Hierarchical percentile bootstrap across four pipelines and records, conditional on this model family. Only four calibration clusters; coverage not calibrated.",
+  "estimation_units": "Effective-drive error divided by true baseline drive (truth used only for scoring). Constant zero-change comparator uses the fitted baseline drive, not the true baseline. Estimates are causal mixture posterior means, not uniquely identified source values.",
+  "cutoff_check": null,
+  "elapsed_seconds": 9.604838299997937,
+  "provenance_sha256": "830f3d7e6cb40408b3c6ef1a8ca6ec12cb4282e77d602e723d0d53acc5506866"
+}

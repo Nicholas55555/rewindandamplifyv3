@@ -1,0 +1,38 @@
+{
+  "schema": "independent-coverage-extensions-review-v1",
+  "all_checks_passed": true,
+  "independently_rerun_tests": 7,
+  "qpy_circuits_checked": 25,
+  "maximum_actual_qpy_reference_error": 1.1324274851176597e-14,
+  "maximum_dirty_workspace_probability": 2.29433541977113e-30,
+  "manifest_sha256": "beed7d9ccda390c3e4e3941bf5ee6a04cc0afac50a0d1e86d579845a96258c41",
+  "checked_source_sha256": {
+    "finals-lithography/viability_cost_study.py": "0b0e6ed2e486cf97d2af3af1882caf415b8715c5fb161d706c8d162b3b69997c",
+    "finals-lithography/oracle_comparison.py": "9056962eb3a8a776f65a467e398e3e1ca06d63d965a8fc3adc39906e6d8698e5",
+    "finals-lithography/lithography.py": "d7f2dd4707275769b99e8eaf4dcdb85227540a3cc8de1c1f4ce0599d9120394e",
+    "rewindandamplify-main/experiments/e6_catalog.py": "7ec6fa2f6f19d8c105ba868e395030edaa44e4bf78ca4352d3518b7dafb9d794",
+    "rewindandamplify-main/qrsm_grover/search.py": "aa64753d37312fad2c6fac8a002e2017ef521902ad15506fcd9409fe0a6275af",
+    "rewindandamplify-main/qrsm_grover/model.py": "128207689429d05c6b9fe9a78a478884dfd51af83969ad5dbdc46cc69b12b11f",
+    "rewindandamplify-main/qrsm_grover/amplify.py": "e70d46eb7fbc435647fb8016f10b4a96ce869a8ec236575a8633fcb145fac539",
+    "rewindandamplify-main/qrsm_grover/fastsim.py": "43302120b99a6e6f396d0e7facbc7ebe90a78546800cf36eef7c33b92320d730",
+    "rewindandamplify-main/qrsm_grover/predicates.py": "c02edaaad6c4207bcb62523b19f73368d93d50b773578ce3cbca6d22b8cfc602",
+    "rewindandamplify-main/experiments/e7_resilience.py": "27064b828aa8dad2e054d20667467a84bbfacf049028a195c0d442f7ec650dda",
+    "hardware_campaign/extensions/adapters.py": "0a8b7dd7ce5b110ca7dbe83e87c96389f57d7687ecca4bf11da6ae6c41744212",
+    "hardware_campaign/extensions/export_bundle.py": "dcc4b6830965356240da672c557d5e62ea761b2d48cf02ec6ae29c076c14d057",
+    "hardware_campaign/extensions/test_adapters.py": "575432a8967479d000461cf8549201389bdfeb9fce5ea3b4d6c313343e754a81",
+    "hardware_campaign/extensions/PROTOCOL.md": "f091fe58ee28ed6b5dabf472b00bd474459b7aa4116ea7fb23273980d14a3cc4"
+  },
+  "checked_artifact_sha256": {
+    "logical.qpy": "990a16d9089895f6c5ee73592dc78d4a52c18f94b5c242c989ccb5c150d16983",
+    "ideal_probabilities.npz": "ef48861890f1a92dd6959ce21d4ef0f2eff2e6e50f31e2d547915bec28a48428"
+  },
+  "scope": "Read-only mathematical/canonical-source and all-QPY audit; no hardware or account access.",
+  "findings": [
+    "Independent-site cap/count event is separate from correlated2x2/full7x7.",
+    "Counter and enumeration oracles validated on all computational basis inputs with no initially-zero input assumption.",
+    "1024entry case faithfully preserves the seeded generic diagonal cost convention; not semantic retrieval or optimized iteration count.",
+    "T8 fixed rounds do not claim full BBHT.",
+    "T10 bounded rewind exactly matches canonical finite-window rule; ideal bias relative to unsteered global conditioning retained.",
+    "All actual serialized measurement wires, generic counts, statevector targets and clean work passed."
+  ]
+}
