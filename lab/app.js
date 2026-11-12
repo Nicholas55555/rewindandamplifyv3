@@ -728,8 +728,8 @@
     ctx.save(); ctx.globalCompositeOperation = 'lighter'; glow(ctx, sx, cy, er * 2.3, C.cyan, 0.1 + 0.6 * glowing); ctx.restore();
     ctx.beginPath(); ctx.arc(sx, cy, er, 0, 2 * Math.PI); ctx.fillStyle = '#0b1a28'; ctx.fill(); ctx.strokeStyle = rgba(C.cyan, 0.8); ctx.lineWidth = 2; ctx.stroke();
     ctx.beginPath(); ctx.arc(sx, cy, (7 + 12 * glowing) * m, 0, 2 * Math.PI); ctx.fillStyle = rgba(C.cyan, 0.35 + 0.6 * glowing); ctx.fill();
-    caps(ctx, 'QUANTUM DOT', sx, cy + er + 18, { color: C.cyan, size: fs(11) });
-    if (detail) text(ctx, 'two photons per attempt', sx, cy + er + 34, { size: fs(11.5), align: 'center' });
+    caps(ctx, 'QUANTUM DOT', Math.max(sx, 56), cy + er + 18, { color: C.cyan, size: fs(11) });
+    if (detail) text(ctx, 'two photons per attempt', Math.max(sx, 76), cy + er + 34, { size: fs(11.5), align: 'center' });
     // the beam splitter
     const bh = Math.min(arm * 0.6, 72 * m);
     const meeting = p ? Math.sin(Math.PI * span(u, 0.58, 0.68)) : 0;
@@ -986,8 +986,9 @@
       i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
     }
     ctx.strokeStyle = rgba(C.ink, 0.85); ctx.lineWidth = 1.6; ctx.stroke();
-    caps(ctx, detail ? 'LIGHT ON THE RESIST · ONE 800 NM PERIOD OF THE CROSSED BEAMS' : 'LIGHT ON THE RESIST', x0, top - 10, { align: 'left', size: fs(11) });
-    text(ctx, `stripe contrast ${pct(c2 / c0, 0)}`, x0 + M * cw, top - 10, { align: 'right', size: fs(12), color: C.cyan, mono: true });
+    const narrow = W < 560;
+    caps(ctx, detail ? 'LIGHT ON THE RESIST · ONE 800 NM PERIOD OF THE CROSSED BEAMS' : narrow ? 'LIGHT' : 'LIGHT ON THE RESIST', x0, top - 10, { align: 'left', size: fs(11) });
+    text(ctx, `${narrow ? 'contrast' : 'stripe contrast'} ${pct(c2 / c0, 0)}`, x0 + M * cw, top - 10, { align: 'right', size: fs(12), color: C.cyan, mono: true });
     // the columns: events collected so far in each cell
     line(ctx, x0 - 6, yBase, x0 + M * cw + 6, yBase, C.line2, 1.2);
     for (const n of [0, 20, 40]) text(ctx, String(n), x0 - 12, yOf(n) + 4, { align: 'right', size: fs(11), mono: true });
@@ -1010,15 +1011,17 @@
       if (wrong) { line(ctx, sx - 2, r2 - 2, sx + s + 2, r2 + s + 2, C.red, 1.8); line(ctx, sx + s + 2, r2 - 2, sx - 2, r2 + s + 2, C.red, 1.8); }
     }
     ctx.setLineDash([6, 5]); line(ctx, x0 - 6, yOf(T), x0 + M * cw + 6, yOf(T), rgba(C.ink, 0.8), 1.4); ctx.setLineDash([]);
-    text(ctx, `prints at ${T}`, x0 + M * cw + 10, yOf(T) + 4, { size: fs(11.5), color: C.ink });
+    if (narrow) text(ctx, `prints at ${T}`, x0 + M * cw, yOf(T) - 5, { size: fs(11), color: C.ink, align: 'right' });
+    else text(ctx, `prints at ${T}`, x0 + M * cw + 10, yOf(T) + 4, { size: fs(11.5), color: C.ink });
     text(ctx, 'wanted', x0 - 12, yBase + 24, { align: 'right', size: fs(11) });
     text(ctx, 'printed', x0 - 12, yBase + (detail ? 48 : 42), { align: 'right', size: fs(11) });
     // the running cost, and the verdict on this exposure
     const photons = RS.chips.methods[cp.method].photons;
-    text(ctx, `${millions(photons * u)} photons`, x0 + M * cw, top + lightH + (detail ? 26 : 18), { align: 'right', size: fs(15), mono: true, color: C.soft });
+    text(ctx, `${millions(photons * u)}${narrow ? '' : ' photons'}`, x0 + M * cw, top + lightH + (detail ? 26 : 18), { align: 'right', size: fs(narrow ? 13 : 15), mono: true, color: C.soft });
     if (done) {
       const n = cp.guard.filter(Boolean).length, perfect = shot.right === n;
-      text(ctx, perfect ? `all ${n} scored cells right` : `${shot.right} of ${n} scored cells right`, x0, top + lightH + (detail ? 26 : 18), { size: fs(15), weight: 600, color: perfect ? C.green : C.red });
+      const words = narrow ? (perfect ? `all ${n} right` : `${shot.right} of ${n} right`) : perfect ? `all ${n} scored cells right` : `${shot.right} of ${n} scored cells right`;
+      text(ctx, words, x0, top + lightH + (detail ? 26 : 18), { size: fs(narrow ? 13 : 15), weight: 600, color: perfect ? C.green : C.red });
     } else text(ctx, `exposure ${comma(cp.shots + 1)}`, x0, top + lightH + (detail ? 26 : 18), { size: fs(13), mono: true });
     $('cp-note').innerHTML = cp.shots
       ? `<b>${comma(cp.shots)}</b> exposure${cp.shots === 1 ? '' : 's'} so far: <b>${pct(cp.right / cp.scored, 1)}</b> of scored cells right, <b>${comma(cp.perfect)}</b> perfect. `

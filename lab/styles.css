@@ -355,6 +355,7 @@ table.mini tr.on td { color: var(--ink); background: rgba(100, 217, 233, .08); }
   .futures { grid-template-columns: 1fr; } .speed span { display: none; }
   .lane { grid-template-columns: 1fr; } .lane-head { grid-column: auto; }
   .seg.three { grid-auto-flow: row; } .trio { grid-template-columns: 1fr; }
+  .research-main canvas { aspect-ratio: 10 / 9; }           /* a phone gives the animation a squarer stage */
   .scenes { justify-content: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) { .scene { animation: none; } .meter .track i, .switch i { transition: none; } }
