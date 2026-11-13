@@ -45,6 +45,8 @@ Raw counts, no correction, nothing pooled between runs. 8,192 shots per circuit 
 
 Plain sampling gets the order **backwards** in both runs: it says the hidden defect makes pairs more likely. Rewinding gets the order right in both runs, with a third to a half of the true gap. Records of the rare click behind those rows: 619 and 806 plain, 6,118 and 5,894 rewound (with the defect).
 
+A caution about the comparison. The machine with the defect has one more qubit and is the deeper circuit: 98 two-qubit gates against 32 when rewound, and 70 to 88 against 15 when sampled plainly. Its click is also the rarer one, 3.95% against 10.10%. Both push its answer up more than the other machine's, in both arms. Plain sampling does not survive that. Rewinding gets the order right in spite of it.
+
 **Laser reading: the same number, before and after a frequency step.** First run on hardware, 12 November.
 
 | | Before the step | After the step | After minus before |
