@@ -1,0 +1,248 @@
+{
+  "schema": "ra-contact-predictions-v1",
+  "made_before_the_job": true,
+  "device_assumed": {
+    "backend": "ibm_marrakesh",
+    "physical_qubits": [
+      18,
+      31,
+      32,
+      33
+    ],
+    "echo_qubits": [
+      18,
+      31,
+      32,
+      33,
+      39,
+      53,
+      54
+    ],
+    "calibration": "2026-11-12 18:27:35-05:00",
+    "noise_scale_from_echoes": 1.544,
+    "readout": "measured inside job dbr51dhabdes73fpaum0"
+  },
+  "model": "depolarizing gate errors at the reported rates times the echo-fitted scale, plus measured readout errors; no idle decoherence, crosstalk, leakage or drift",
+  "shots_planned": 8192,
+  "rows": {
+    "dose-plain": {
+      "two_qubit_gates": 6,
+      "depth": 22,
+      "ideal": {
+        "fail": 0.03599999999999996,
+        "cell_dark_given_fail": 1.0,
+        "neighbour_dark": 0.1799999999999999,
+        "dose_low_given_fail": 0.5555555555555557,
+        "neighbour_dark_given_fail": 0.32222222222222174
+      },
+      "calibration": {
+        "fail": 0.04090264396998792,
+        "cell_dark_given_fail": 0.9008373836584384,
+        "neighbour_dark": 0.18342254247466439,
+        "dose_low_given_fail": 0.4966144519247994,
+        "neighbour_dark_given_fail": 0.3028844866575704
+      },
+      "echo_scaled": {
+        "fail": 0.04283924731130483,
+        "cell_dark_given_fail": 0.8824500373546315,
+        "neighbour_dark": 0.1855315276405781,
+        "dose_low_given_fail": 0.4856336611365743,
+        "neighbour_dark_given_fail": 0.2986320034434708
+      }
+    },
+    "dose-steered": {
+      "two_qubit_gates": 5,
+      "depth": 20,
+      "ideal": {
+        "fail": 0.1800000000000002,
+        "cell_dark_given_fail": 1.0,
+        "neighbour_dark": 0.17999999999999988,
+        "dose_low_given_fail": 0.5555555555555548,
+        "neighbour_dark_given_fail": 0.32222222222222147
+      },
+      "calibration": {
+        "fail": 0.18351524377843192,
+        "cell_dark_given_fail": 0.9664168767796583,
+        "neighbour_dark": 0.1834225424746643,
+        "dose_low_given_fail": 0.5265772783216983,
+        "neighbour_dark_given_fail": 0.31708256013132696
+      },
+      "echo_scaled": {
+        "fail": 0.18579787338975545,
+        "cell_dark_given_fail": 0.9640411903391335,
+        "neighbour_dark": 0.18553152764057806,
+        "dose_low_given_fail": 0.5238792315724702,
+        "neighbour_dark_given_fail": 0.3167202785571362
+      }
+    },
+    "dose-rewound": {
+      "two_qubit_gates": 15,
+      "depth": 65,
+      "ideal": {
+        "fail": 0.9357119999999999,
+        "cell_dark_given_fail": 1.0,
+        "neighbour_dark": 0.31107199999999985,
+        "dose_low_given_fail": 0.555555555555556,
+        "neighbour_dark_given_fail": 0.3222222222222221
+      },
+      "calibration": {
+        "fail": 0.8999182622729073,
+        "cell_dark_given_fail": 0.9703852226838641,
+        "neighbour_dark": 0.30769845375649174,
+        "dose_low_given_fail": 0.5305204880456432,
+        "neighbour_dark_given_fail": 0.3189510748248807
+      },
+      "echo_scaled": {
+        "fail": 0.8872259368767088,
+        "cell_dark_given_fail": 0.965603624510217,
+        "neighbour_dark": 0.30741954830128115,
+        "dose_low_given_fail": 0.5282570261089817,
+        "neighbour_dark_given_fail": 0.31879076021200514
+      }
+    },
+    "clean-plain": {
+      "two_qubit_gates": 2,
+      "depth": 13,
+      "ideal": {
+        "fail": 0.035999999999999914,
+        "cell_dark_given_fail": 1.000000000000002,
+        "neighbour_dark": 0.18000000000000005,
+        "dose_low_given_fail": null,
+        "neighbour_dark_given_fail": 0.18
+      },
+      "calibration": {
+        "fail": 0.040358332558642886,
+        "cell_dark_given_fail": 0.8996092032286013,
+        "neighbour_dark": 0.18006140030391063,
+        "dose_low_given_fail": null,
+        "neighbour_dark_given_fail": 0.1800614003039102
+      },
+      "echo_scaled": {
+        "fail": 0.04200424259627862,
+        "cell_dark_given_fail": 0.8802339901399007,
+        "neighbour_dark": 0.18036155152686256,
+        "dose_low_given_fail": null,
+        "neighbour_dark_given_fail": 0.18036155152686256
+      }
+    },
+    "clean-steered": {
+      "two_qubit_gates": 1,
+      "depth": 7,
+      "ideal": {
+        "fail": 0.1799999999999997,
+        "cell_dark_given_fail": 1.0,
+        "neighbour_dark": 0.18000000000000005,
+        "dose_low_given_fail": null,
+        "neighbour_dark_given_fail": 0.18000000000000008
+      },
+      "calibration": {
+        "fail": 0.18078286981672934,
+        "cell_dark_given_fail": 0.9658113610333815,
+        "neighbour_dark": 0.1800614003039106,
+        "dose_low_given_fail": null,
+        "neighbour_dark_given_fail": 0.1800614003039106
+      },
+      "echo_scaled": {
+        "fail": 0.18159718951069503,
+        "cell_dark_given_fail": 0.9630528439303337,
+        "neighbour_dark": 0.18036155152686262,
+        "dose_low_given_fail": null,
+        "neighbour_dark_given_fail": 0.18036155152686256
+      }
+    },
+    "clean-rewound": {
+      "two_qubit_gates": 2,
+      "depth": 11,
+      "ideal": {
+        "fail": 0.935712,
+        "cell_dark_given_fail": 1.0,
+        "neighbour_dark": 0.18000000000000005,
+        "dose_low_given_fail": null,
+        "neighbour_dark_given_fail": 0.18000000000000005
+      },
+      "calibration": {
+        "fail": 0.9205392969138858,
+        "cell_dark_given_fail": 0.9777146605592489,
+        "neighbour_dark": 0.18006140030391057,
+        "dose_low_given_fail": null,
+        "neighbour_dark_given_fail": 0.18006140030391055
+      },
+      "echo_scaled": {
+        "fail": 0.9185083819519835,
+        "cell_dark_given_fail": 0.9770110303734731,
+        "neighbour_dark": 0.18036155152686262,
+        "dose_low_given_fail": null,
+        "neighbour_dark_given_fail": 0.18036155152686262
+      }
+    },
+    "echo-T3-x1": {
+      "two_qubit_gates": 43,
+      "depth": 141,
+      "ideal": {
+        "all_zero_return": 1.0000000000000013
+      },
+      "calibration": {
+        "all_zero_return": 0.7897841345735171
+      },
+      "echo_scaled": {
+        "all_zero_return": 0.7346734362249334
+      }
+    },
+    "echo-T5-x1": {
+      "two_qubit_gates": 101,
+      "depth": 233,
+      "ideal": {
+        "all_zero_return": 1.000000000000002
+      },
+      "calibration": {
+        "all_zero_return": 0.6704264685318068
+      },
+      "echo_scaled": {
+        "all_zero_return": 0.5737459398903484
+      }
+    }
+  },
+  "claims": {
+    "ideal": {
+      "records: a failure is flagged, per shot (rewound)": 0.9357119999999999,
+      "records: a failure is flagged, per shot (steered)": 0.1800000000000002,
+      "records: a failure is flagged, per shot (plain)": 0.03599999999999996,
+      "cause: the dose was low, after a failure (rewound)": 0.555555555555556,
+      "cause: the dose was low, after a failure (steered)": 0.5555555555555548,
+      "cause: the dose was low, after a failure (plain)": 0.5555555555555557,
+      "what follows: neighbour dark after a failure, shared source minus none (rewound)": 0.14222222222222203,
+      "what follows: neighbour dark after a failure, shared source minus none (steered)": 0.1422222222222214,
+      "what follows: neighbour dark after a failure, shared source minus none (plain)": 0.14222222222222175,
+      "check: the failed contact's own cell is dark (rewound)": 1.0,
+      "check: the failed contact's own cell is dark (steered)": 1.0,
+      "check: the failed contact's own cell is dark (plain)": 1.0
+    },
+    "echo_scaled": {
+      "records: a failure is flagged, per shot (rewound)": 0.8872259368767088,
+      "records: a failure is flagged, per shot (steered)": 0.18579787338975545,
+      "records: a failure is flagged, per shot (plain)": 0.04283924731130483,
+      "cause: the dose was low, after a failure (rewound)": 0.5282570261089817,
+      "cause: the dose was low, after a failure (steered)": 0.5238792315724702,
+      "cause: the dose was low, after a failure (plain)": 0.4856336611365743,
+      "what follows: neighbour dark after a failure, shared source minus none (rewound)": 0.13842920868514252,
+      "what follows: neighbour dark after a failure, shared source minus none (steered)": 0.13635872703027363,
+      "what follows: neighbour dark after a failure, shared source minus none (plain)": 0.11827045191660823,
+      "check: the failed contact's own cell is dark (rewound)": 0.965603624510217,
+      "check: the failed contact's own cell is dark (steered)": 0.9640411903391335,
+      "check: the failed contact's own cell is dark (plain)": 0.8824500373546315
+    }
+  },
+  "directions": {
+    "cause": "After a failure the dose reads low more often than its 20% prior, in the plain, the steered and the rewound record.",
+    "what follows": "After a failure the neighbour reads dark more often with the shared source than without it, in all three records.",
+    "records": "The rewound circuit flags a failure in more than half of its shots, the plain circuit in fewer than one in ten.",
+    "check": "The failed contact's own cell reads dark more often in the rewound record than in the plain one."
+  },
+  "sha256": {
+    "applied/contact/hardware_bundle/manifest.json": "8b8c8c80489b6567daa1c07d65038878dc06bb95f3e8f86ea0890d6fb72fc781",
+    "applied/contact/predictions_isa.qpy": "055dc2652a3ebeb6210433dcc04dcd46f77efaf09facf649aa7cd7bd35b2ff71",
+    "hardware_campaign/runs/applied_v1/raw.json": "9ffb5ea6a78785381e6b51de1add16ab03ec46b454037901c3ea9595976ec12b",
+    "hardware_campaign/runs/applied_v1/backend_properties.json": "e1f88794f993ff884267c33a24750c6a5de2d120d6d3ecbfadfaa9bf834e568d"
+  },
+  "caveat": "Made for the qubits and calibration the 12 November 2026 job met. The job is compiled again on the day and may land on other qubits with other error rates. On 12 November this noise model was too hopeful about the device."
+}

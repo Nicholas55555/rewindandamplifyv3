@@ -1,0 +1,234 @@
+{
+  "schema": "ra-hardware-bundle-v1",
+  "circuits": [
+    {
+      "name": "dose-plain",
+      "index": 0,
+      "num_qubits": 4,
+      "metadata": {
+        "kind": "contact",
+        "model": "dose",
+        "build": "plain",
+        "low_dose": 0.2,
+        "dark_at_normal_dose": 0.1,
+        "dark_at_low_dose": 0.5,
+        "dark_cell_fails": 0.2,
+        "hidden_source": true
+      },
+      "reference": {
+        "qubits": {
+          "neighbour": 0,
+          "source": 1,
+          "cell": 2,
+          "flag": 3
+        },
+        "truth": {
+          "fail": 0.036000000000000004,
+          "cell_dark_given_fail": 1.0,
+          "neighbour_dark": 0.18000000000000002,
+          "dose_low_given_fail": 0.5555555555555555,
+          "neighbour_dark_given_fail": 0.3222222222222222
+        }
+      },
+      "ideal_probability_key": "p000"
+    },
+    {
+      "name": "dose-steered",
+      "index": 1,
+      "num_qubits": 4,
+      "metadata": {
+        "kind": "contact",
+        "model": "dose",
+        "build": "steered",
+        "low_dose": 0.2,
+        "dark_at_normal_dose": 0.1,
+        "dark_at_low_dose": 0.5,
+        "dark_cell_fails": 0.2,
+        "hidden_source": true
+      },
+      "reference": {
+        "qubits": {
+          "neighbour": 0,
+          "source": 1,
+          "cell": 2,
+          "flag": 3
+        },
+        "truth": {
+          "fail": 0.036000000000000004,
+          "cell_dark_given_fail": 1.0,
+          "neighbour_dark": 0.18000000000000002,
+          "dose_low_given_fail": 0.5555555555555555,
+          "neighbour_dark_given_fail": 0.3222222222222222
+        }
+      },
+      "ideal_probability_key": "p001"
+    },
+    {
+      "name": "dose-rewound",
+      "index": 2,
+      "num_qubits": 4,
+      "metadata": {
+        "kind": "contact",
+        "model": "dose",
+        "build": "rewound",
+        "low_dose": 0.2,
+        "dark_at_normal_dose": 0.1,
+        "dark_at_low_dose": 0.5,
+        "dark_cell_fails": 0.2,
+        "hidden_source": true
+      },
+      "reference": {
+        "qubits": {
+          "neighbour": 0,
+          "source": 1,
+          "cell": 2,
+          "flag": 3
+        },
+        "truth": {
+          "fail": 0.036000000000000004,
+          "cell_dark_given_fail": 1.0,
+          "neighbour_dark": 0.18000000000000002,
+          "dose_low_given_fail": 0.5555555555555555,
+          "neighbour_dark_given_fail": 0.3222222222222222
+        }
+      },
+      "ideal_probability_key": "p002"
+    },
+    {
+      "name": "clean-plain",
+      "index": 3,
+      "num_qubits": 4,
+      "metadata": {
+        "kind": "contact",
+        "model": "clean",
+        "build": "plain",
+        "low_dose": 0.2,
+        "dark_at_normal_dose": 0.1,
+        "dark_at_low_dose": 0.5,
+        "dark_cell_fails": 0.2,
+        "hidden_source": false
+      },
+      "reference": {
+        "qubits": {
+          "neighbour": 0,
+          "source": 1,
+          "cell": 2,
+          "flag": 3
+        },
+        "truth": {
+          "fail": 0.036000000000000004,
+          "cell_dark_given_fail": 1.0,
+          "neighbour_dark": 0.18000000000000002,
+          "dose_low_given_fail": null,
+          "neighbour_dark_given_fail": 0.18000000000000002
+        }
+      },
+      "ideal_probability_key": "p003"
+    },
+    {
+      "name": "clean-steered",
+      "index": 4,
+      "num_qubits": 4,
+      "metadata": {
+        "kind": "contact",
+        "model": "clean",
+        "build": "steered",
+        "low_dose": 0.2,
+        "dark_at_normal_dose": 0.1,
+        "dark_at_low_dose": 0.5,
+        "dark_cell_fails": 0.2,
+        "hidden_source": false
+      },
+      "reference": {
+        "qubits": {
+          "neighbour": 0,
+          "source": 1,
+          "cell": 2,
+          "flag": 3
+        },
+        "truth": {
+          "fail": 0.036000000000000004,
+          "cell_dark_given_fail": 1.0,
+          "neighbour_dark": 0.18000000000000002,
+          "dose_low_given_fail": null,
+          "neighbour_dark_given_fail": 0.18000000000000002
+        }
+      },
+      "ideal_probability_key": "p004"
+    },
+    {
+      "name": "clean-rewound",
+      "index": 5,
+      "num_qubits": 4,
+      "metadata": {
+        "kind": "contact",
+        "model": "clean",
+        "build": "rewound",
+        "low_dose": 0.2,
+        "dark_at_normal_dose": 0.1,
+        "dark_at_low_dose": 0.5,
+        "dark_cell_fails": 0.2,
+        "hidden_source": false
+      },
+      "reference": {
+        "qubits": {
+          "neighbour": 0,
+          "source": 1,
+          "cell": 2,
+          "flag": 3
+        },
+        "truth": {
+          "fail": 0.036000000000000004,
+          "cell_dark_given_fail": 1.0,
+          "neighbour_dark": 0.18000000000000002,
+          "dose_low_given_fail": null,
+          "neighbour_dark_given_fail": 0.18000000000000002
+        }
+      },
+      "ideal_probability_key": "p005"
+    },
+    {
+      "name": "echo-T3-x1",
+      "index": 6,
+      "num_qubits": 5,
+      "metadata": {
+        "kind": "echo",
+        "k": 1,
+        "T": 3,
+        "repeats": 1
+      },
+      "reference": {},
+      "ideal_probability_key": "p006"
+    },
+    {
+      "name": "echo-T5-x1",
+      "index": 7,
+      "num_qubits": 7,
+      "metadata": {
+        "kind": "echo",
+        "k": 1,
+        "T": 5,
+        "repeats": 1
+      },
+      "reference": {},
+      "ideal_probability_key": "p007"
+    }
+  ],
+  "source_sha256": {
+    "rewindandamplify-main/qrsm_grover/__init__.py": "228acb3e0e4e06ff942fa5daade0848039492e5cef65ba51157ba3380bc829b3",
+    "rewindandamplify-main/qrsm_grover/amplify.py": "e70d46eb7fbc435647fb8016f10b4a96ce869a8ec236575a8633fcb145fac539",
+    "rewindandamplify-main/qrsm_grover/classical.py": "fc97d3b3d15e1ea98e2f82fa17e7bcb5003261d5eae3e7f31870da5cd16e1971",
+    "rewindandamplify-main/qrsm_grover/fastsim.py": "43302120b99a6e6f396d0e7facbc7ebe90a78546800cf36eef7c33b92320d730",
+    "rewindandamplify-main/qrsm_grover/hardware.py": "42065f469c3613a9eda3ad2a54d048fca25691574114062ac79145e14e7a3623",
+    "rewindandamplify-main/qrsm_grover/model.py": "128207689429d05c6b9fe9a78a478884dfd51af83969ad5dbdc46cc69b12b11f",
+    "rewindandamplify-main/qrsm_grover/predicates.py": "c02edaaad6c4207bcb62523b19f73368d93d50b773578ce3cbca6d22b8cfc602",
+    "rewindandamplify-main/qrsm_grover/queries.py": "d1f5a89f269adf3ac5e2ff179ea57a4feb42f84573bcce98a9a001035b96e2d6",
+    "rewindandamplify-main/qrsm_grover/search.py": "aa64753d37312fad2c6fac8a002e2017ef521902ad15506fcd9409fe0a6275af",
+    "applied/contact/exposure.py": "60706a89f4911d4a856a7ab5bf798f5b19dcab07473a5d6c05d6a93e1eb06e54"
+  },
+  "scope": "A four-qubit lithography toy: a hidden source dose, a contact cell, a rare printing failure and a neighbouring cell, with and without the hidden source. Programmed models; no resist or wafer.",
+  "qpy_file": "logical.qpy",
+  "ideal_probabilities_file": "ideal_probabilities.npz",
+  "logical.qpy_sha256": "d5afe360dd048d53d4ac1b877c7a787eefe7a13a103531dd3fee8b51f4983403",
+  "ideal_probabilities.npz_sha256": "6d8aedb1f2800933ecbc6ee5f6d1775179b2a6fe9507d76d603ae1c1e3bd5686"
+}

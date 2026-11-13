@@ -41,6 +41,7 @@ SUITES = (
     'hardware_campaign/extensions',
     'hardware_campaign/noise_model',
     'applied',
+    'applied/contact',
 )
 
 
