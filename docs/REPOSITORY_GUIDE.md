@@ -11,6 +11,7 @@ V3 keeps every V2 research directory byte for byte, because their results are pi
 | The Lab: a live, exact simulation of the model in the browser | [`lab/`](../lab/), and the single file [`Rewind_Amplify_Lab.html`](../Rewind_Amplify_Lab.html) | `node --test lab/test_engine.cjs lab/test_data.cjs lab/test_research.cjs`, `python lab/build.py --check`, `python lab/make_data.py --check`, `python lab/make_reference.py --check` |
 | A noise-model simulation of the circuits that ran on IBM | [`hardware_campaign/noise_model/`](../hardware_campaign/noise_model/) | its unit tests, and `python hardware_campaign/noise_model/run_study.py --check` |
 | One-command reproduction of the headline numbers | [`reproduce.py`](../reproduce.py) | run it |
+| One question, three fields: our own machine asked the follow-up studies' question on IBM, with one job predicted before it ran | [`applied/`](../applied/), and the job's files in [`hardware_campaign/runs/applied_v1/`](../hardware_campaign/runs/applied_v1/) | `python applied/study.py --check`, `python applied/predict.py --check`, its unit tests |
 | The V3 deck, with embedded video | [`finals-deck/`](../finals-deck/) | `python check_finals.py --public` |
 | Videos and screenshots | [`media/`](../media/) | `python lab/capture.py` regenerates the Lab ones |
 | An evidence map for the headline numbers | [`docs/EVIDENCE.md`](EVIDENCE.md) | |
@@ -29,7 +30,7 @@ The V2 single-file demo is now called the research explorer: [`Rewind_Amplify_Re
 | Explore the semiconductor connection | [Quantum-dot bridge](../quantum_dot_bridge/README.md): checked findings, explicit QRSM mapping and missing two-photon instrument, proposed source-qualification workflow, and external HOM reference |
 | See what remains open | The final sections of [Research findings](../RESEARCH_RESULTS.md) and the [bounded-program completion audit](../research-validation/completion_audit.json) |
 
-The V3 presentation contains **13 main slides and 26 backups**, all in one style, with a planned **9:25** main talk including a **70-second Lab demo**. The V2 presentation contained 13 main slides and 22 backups. This is a rehearsal plan, not measured delivery time. The PPTX has speaker notes and editable text/charts/tables. The PDF is a static image fallback without notes. Exported slides and package structure were checked; native PowerPoint playback still needs testing on the presentation machine.
+The V3 presentation contains **13 main slides and 28 backups**, all in one style, with a planned **9:25** main talk including a **70-second Lab demo**. The V2 presentation contained 13 main slides and 22 backups. This is a rehearsal plan, not measured delivery time. The PPTX has speaker notes and editable text/charts/tables. The PDF is a static image fallback without notes. Exported slides and package structure were checked; native PowerPoint playback still needs testing on the presentation machine.
 
 ## Current results versus historical snapshots
 

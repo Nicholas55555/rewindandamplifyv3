@@ -24,9 +24,9 @@ EXPECT = {
     "hardware": {"#hw-local-rate": "76.90%", "#hw-full-rate": "69.26%", "#hw-tv-local": "0.118", "#hw-tv-full": "0.181",
                  "#hw-nm-local": "78.4%", "#hw-nm-full": "69.7%", "#hw-plain-rate": "6.74%"},
     "rewind": {"#amp-hit": "96.10%", "#amp-tv": "0.035", "#amp-gates": "58"},
-    "photons": {"#ph-a": "0.0%", "#ph-b": "0.8%", "#ph-dead0": "0.069", "#ph-dead1": "0.706"},
-    "lasers": {"#ls-v-c": "51.4%", "#ls-v-q": "7.7%", "#ls-v-cq": "58.0%", "#ls-v-cc": "98.0%"},
-    "chips": {"#cp-qubits": "389", "#cp-branch": "50.4%"},
+    "photons": {"#ph-a": "0.0%", "#ph-b": "0.8%", "#ph-our": "0.54 vs 0.32"},
+    "lasers": {"#ls-v-c": "51.4%", "#ls-v-q": "7.7%", "#ls-v-cq": "58.0%", "#ls-v-cc": "98.0%", "#ls-our": "16.8% → 21.0%"},
+    "chips": {"#cp-qubits": "389", "#cp-our": "16.8% vs 21.0%"},
 }
 
 

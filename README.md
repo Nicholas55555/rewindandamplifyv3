@@ -56,6 +56,7 @@ Without amplification the same chip returned the click in 6.74% of shots.
 - **A simple noise model predicts the gap.** With no noise the two builds tie. A model with only gate and readout errors, with one scale factor fitted on separate echo circuits, predicts 78.4% and 69.7%. The chip gave 76.9% and 69.3%. [Details](hardware_campaign/noise_model/README.md).
 - **Error suppression did not help.** Dynamical decoupling and twirling on the identical circuits made the answer error worse.
 - **The answers on hardware are biased, and we show it.** The lighter build returned 8.79% and 11.66% for the two futures, against the exact 4.67% and 10.10%: the right order, visibly off. The noise model predicts that bias within half a point.
+- **Plain sampling got an answer backwards; rewinding got it right, twice.** Asked how often a second click follows a rare first one, plain sampling on IBM put the two machines in the wrong order in both of our runs. The rewound circuits put them in the right order in both. The second run's answers were predicted before it ran. [Details](applied/README.md).
 
 ![The Lab's hardware scene: measured hit rates beside the ideal simulator and the noise model](media/lab-6-hardware.png)
 
@@ -70,6 +71,22 @@ The follow-up studies asked whether the idea reaches beyond qubits: to photon so
 | **Chipmaking** | Light prints fine stripes on a resist that needs two photons at once, cell by cell | Entangled pairs print 95% of cells correctly and the best laser route 83%, for 18 times the photons. Our rare-event question at full size needs 389 qubits; the chip has 156. | Simulated by us with an assumed resist. The 389-qubit circuit was built and checked, not run. |
 
 ![The Lab's Chipmaking tab: one exposure, cell by cell, against the pattern that was wanted](media/lab-9-chips.png)
+
+### And asked back of our own machine, on IBM hardware
+
+Those three studies use models of their own. To tie them to the method, we asked **our** machine, the emitter with one hidden defect, the question the three fields share: *after a rare event, was it a one-off, or is something hidden remembering?* It ran twice on IBM Marrakesh, and the second run's answers were written down before it ran. Each research tab in the Lab carries its line of this table in green. [Full write-up](applied/README.md).
+
+| Field | The question, in our machine | Exact | IBM, rewound: 12 Nov · 11 Nov | IBM, plain sampling |
+|---|---|---:|---:|---:|
+| **Chipmaking** | A two-photon resist prints on pairs. After a rare first photon, how often does a second follow: with a hidden defect, and without? | 8.5% vs 17.4% | **16.8% vs 21.0%** · 19.9% vs 22.9% | 47.3% vs 34.2% · 38.6% vs 25.7% |
+| **Lasers** | The same reading, before and after the hidden defect's frequency steps | 8.5% → 14.2% | **16.8% → 21.0%** | 47.3% → 45.0% |
+| **Photons** | g⁽²⁾ right after a photon: with a hidden defect, and without | 0.24 vs 0.13 | **0.54 vs 0.32** · 0.44 vs 0.35 | needs both circuits |
+| **All three** | How often the hidden defect holds the energy at the moment of the rare event (29% at a typical moment) | 8.5% | **17.2%** · 15.9% | 24.7% · 24.6% |
+
+- **Plain sampling got the chip answer backwards, twice.** The rare click is 4% of runs and the device adds false clicks at about that rate, so half or more of the "rare events" it keeps are noise. Rewinding makes the click three shots in four, and the order comes out right in both runs, with a third to a half of the true gap.
+- **The frequency step was seen on hardware,** at +4.2 points against a true +5.8. We had predicted +3.7 before the job ran. Every predicted direction held, and three of five predicted sizes were inside the measured intervals.
+- **One reading did not repeat.** Three steps after a click, g⁽²⁾ told the two machines apart on 11 November and not on 12 November.
+- **What this is not.** The machine is a toy that a classical filter solves exactly. Rewinding runs a model inside a quantum computer: it cannot rewind a real laser, quantum dot or wafer.
 
 ## What we do not claim
 
@@ -91,12 +108,12 @@ python -m pip install -r requirements-dev.txt
 python reproduce.py
 ```
 
-It prints the exact model, the Qiskit circuits on an Aer simulator, the classical baseline, the noise-model prediction and the recounted IBM results in about ten seconds. No IBM account is needed. [Sample output](docs/reproduce_output.txt).
+It prints the exact model, the Qiskit circuits on an Aer simulator, the classical baseline, the noise-model prediction, the recounted IBM results and the three-fields recount in about ten seconds. No IBM account is needed. [Sample output](docs/reproduce_output.txt).
 
 **The tests.**
 
 ```bash
-python .github/scripts/run_tests.py          # 434 Python tests: the Qiskit package and every study
+python .github/scripts/run_tests.py          # 461 Python tests: the Qiskit package and every study
 node --test lab/test_engine.cjs lab/test_data.cjs lab/test_research.cjs laser-diagnostics-app/test_model.cjs
 python check_finals.py --public              # deck, videos, demos and hashes of every quoted result
 ```
@@ -127,13 +144,13 @@ Install it with `python -m pip install -e rewindandamplify-main`.
 |---|---|
 | A clear, meaningful problem, and who it affects | [The problem](#the-problem) above; Lab scene 1; slides 2 and 11 |
 | Why quantum might help, and honesty about limits | [What we do not claim](#what-we-do-not-claim); slides 5, 6 and 12; `reproduce.py` section 3 |
-| Does the code run; is Qiskit used appropriately | `python reproduce.py`; [`rewindandamplify-main/qrsm_grover/`](rewindandamplify-main/qrsm_grover/); 434 Python tests and 49 JavaScript tests in CI |
-| Results interpreted, against a classical baseline, expected values, simulator and hardware | [What we found](#what-we-found); [noise-model study](hardware_campaign/noise_model/README.md); [campaign results](hardware_campaign/RESULTS.md) |
+| Does the code run; is Qiskit used appropriately | `python reproduce.py`; [`rewindandamplify-main/qrsm_grover/`](rewindandamplify-main/qrsm_grover/); 461 Python tests and 51 JavaScript tests in CI |
+| Results interpreted, against a classical baseline, expected values, simulator and hardware | [What we found](#what-we-found); [noise-model study](hardware_campaign/noise_model/README.md); [campaign results](hardware_campaign/RESULTS.md); [a job predicted before it ran](applied/README.md#predicted-then-measured) |
 | Originality | Making a recurrent quantum model reversible, steering, and the local reflection: slide 7 and [the original report](rewindandamplify-main/docs/REPORT.md) |
 | Clear to technical and non-technical audiences | The Lab's plain and technical captions; [the deck](finals-deck/Rewind_Amplify_Finals_V3.pdf); [presenter guide](finals-deck/Presenter_Guide_V3.md) |
 | Questions, teamwork, what we learned, next steps | [Q&A](FINALS_QA.md); slide 13; [Team](#team-prior-work-and-ai-assistance) |
 | Bonus: simulator | Aer statevector and density-matrix runs in `reproduce.py` |
-| Bonus: real IBM hardware, with job results | Seventeen jobs across two campaigns; IDs, raw counts and compiled circuits in [`hardware_campaign/`](hardware_campaign/) and [`rewindandamplify-main/results/hardware/`](rewindandamplify-main/results/hardware/) |
+| Bonus: real IBM hardware, with job results | Eighteen jobs: two campaigns, and one job on 12 November predicted in advance; IDs, raw counts and compiled circuits in [`hardware_campaign/`](hardware_campaign/) and [`rewindandamplify-main/results/hardware/`](rewindandamplify-main/results/hardware/) |
 | Bonus: hardware compared with a simulator, noise analysed, suppression applied | [Noise-model study](hardware_campaign/noise_model/README.md); echo circuits; dynamical decoupling and twirling runs; readout calibration inside every job |
 
 ## What is new in V3
@@ -143,7 +160,8 @@ V3 is the presentation-ready version of [V2](https://github.com/Nicholas55555/re
 - **The Lab** ([`lab/`](lab/), [`Rewind_Amplify_Lab.html`](Rewind_Amplify_Lab.html)): a live, exact simulation of the model in the browser, in ten scenes. Six tell the project, three animate the follow-up studies of photon sources, laser monitoring and chipmaking, and one sums up. Its engine is a gate-for-gate port of the Qiskit package, held to Qiskit within 10⁻¹² by tests, and the research tabs are held to the studies' saved files the same way.
 - **A simulator-against-hardware study** ([`hardware_campaign/noise_model/`](hardware_campaign/noise_model/)) of the exact circuits that ran on IBM.
 - **One-command reproduction** ([`reproduce.py`](reproduce.py)).
-- **A rebuilt talk** ([`finals-deck/`](finals-deck/)): problem first, one picture per slide, with real embedded video, and 26 backups in the same style, each marked with the kind of evidence it shows. The V2 deck is kept in [`finals-deck/v2/`](finals-deck/v2/).
+- **One question, three fields** ([`applied/`](applied/)): our own machine asked what chipmaking, photon sources and laser monitoring need to know, on IBM hardware, with one job predicted before it ran.
+- **A rebuilt talk** ([`finals-deck/`](finals-deck/)): problem first, one picture per slide, with real embedded video, and 28 backups in the same style, each marked with the kind of evidence it shows. The V2 deck is kept in [`finals-deck/v2/`](finals-deck/v2/).
 - **Videos** ([`media/`](media/)): a 70-second screen recording of the Lab, a 45-second cut of it, and the team's 45-second cinematic cut.
 
 ![The thirteen slides of the main talk](finals-deck/main-slides.png)
@@ -154,7 +172,8 @@ V3 is the presentation-ready version of [V2](https://github.com/Nicholas55555/re
 |---|---|
 | [`lab/`](lab/) | The Lab: page, exact engine, tests, and the tools that record it |
 | [`rewindandamplify-main/`](rewindandamplify-main/) | The original Qiskit package `qrsm_grover`, its experiments, 114 tests, report and first IBM runs |
-| [`hardware_campaign/`](hardware_campaign/) | Ten IBM Marrakesh jobs of 11 November: plans, compiled circuits, raw counts, analysis, and the noise-model study |
+| [`hardware_campaign/`](hardware_campaign/) | Ten IBM Marrakesh jobs of 11 November: plans, compiled circuits, raw counts, analysis, and the noise-model study. The 12 November job is in `runs/applied_v1/` |
+| [`applied/`](applied/) | One question, three fields: our machine asked the follow-up studies' question on IBM, with predictions frozen before the second run |
 | [`finals-deck/`](finals-deck/) | The V3 deck, presenter guide and the script that builds them |
 | [`media/`](media/) | Videos and screenshots |
 | [`laser-diagnostics-app/`](laser-diagnostics-app/) | <a id="research-explorer"></a>The research explorer: every follow-up study and its evidence, also as the single file [`Rewind_Amplify_Research_Explorer.html`](Rewind_Amplify_Research_Explorer.html) |

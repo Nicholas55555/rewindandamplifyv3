@@ -42,6 +42,8 @@ REQUIRED = [
     'Rewind_Amplify_Lab.html', 'index.html', 'lab/index.html', 'lab/engine.js', 'lab/research.js', 'lab/data.js', 'lab/app.js',
     'lab/styles.css',
     'reproduce.py', 'hardware_campaign/noise_model/results.json',
+    'applied/README.md', 'applied/results.json', 'applied/predictions.json', 'applied/hardware_bundle/manifest.json',
+    'hardware_campaign/runs/applied_v1/raw.json',
     # the archived V2 deck and the research explorer
     'finals-deck/v2/Rewind_Amplify_Finals_Visual.pptx', 'finals-deck/v2/Rewind_Amplify_Finals_Visual.pdf',
     'finals-deck/v2/visual_manifest.json', 'finals-deck/v2/Visual_Presenter_Guide.md',

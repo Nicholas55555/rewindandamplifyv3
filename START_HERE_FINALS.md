@@ -8,7 +8,7 @@ Nothing here needs an account, a server, Wi-Fi or a live quantum processor.
 
 | | File | What it is |
 |---|---|---|
-| 1 | [`finals-deck/Rewind_Amplify_Finals_V3.pptx`](finals-deck/Rewind_Amplify_Finals_V3.pptx) | The talk: 13 main slides, planned 9:25, then 26 backups in the same style. Speaker notes are inside. Slide 10 holds a real, playable 70-second video. |
+| 1 | [`finals-deck/Rewind_Amplify_Finals_V3.pptx`](finals-deck/Rewind_Amplify_Finals_V3.pptx) | The talk: 13 main slides, planned 9:25, then 28 backups in the same style. Speaker notes are inside. Slide 10 holds a real, playable 70-second video. |
 | 2 | [`Rewind_Amplify_Lab.html`](Rewind_Amplify_Lab.html) | The Lab: one file, opens in Chrome or Edge, works offline. This is the live demo and the fallback if the video will not play. |
 | 3 | [`finals-deck/Presenter_Guide_V3.md`](finals-deck/Presenter_Guide_V3.md) | The same narration as the slide notes, with timing, cues and sources. |
 | 4 | [`FINALS_QA.md`](FINALS_QA.md) | Twelve questions to rehearse, then longer answers. |
@@ -25,7 +25,7 @@ Every speaker should be able to say this without slides.
 4. Studying a rare event the ordinary way throws most runs away, and amplitude amplification could fix that, but it must run the machine backwards and a reset cannot be undone.
 5. So we made the machine reversible, steered it, amplified with a lighter reflection, and on IBM Marrakesh the lighter build hit the click in 76.90% of shots against 69.26% for the textbook build, with 58 gates against 125.
 6. There is no speedup today, no real defect was detected, and a simple noise model explains both the gap and the bias in the answers.
-7. We asked the same question of photon sources, a laser monitor and chip printing. Those are simulations, and one of them went against us: an ordinary second reference beat our atomic sensor.
+7. We asked the same question of photon sources, a laser monitor and chip printing. Those are simulations, and one of them went against us: an ordinary second reference beat our atomic sensor. Then we asked those fields' question of our own machine on IBM: plain sampling got the chip answer backwards, and rewinding got it right, twice.
 
 ## The numbers to know cold
 
@@ -47,6 +47,11 @@ Every speaker should be able to say this without slides.
 | 51%, 58%, 98% | Laser steps caught within 32 s: ordinary reference, plus atoms, two ordinary references. Simulated. | `laser_sensor_viability/followup/main/results.json` |
 | 95% and 83% | Resist cells printed right: entangled pairs, best laser route, for 18 times the photons. Simulated. | `quantum_lithography_poc/exposure_followup/results.json` |
 | 389 and 156 | Qubits our full chipmaking question needs, and qubits on the chip. Built and checked, not run. | `finals-lithography/full_spatial_circuit/results.json` |
+| 8.5% and 17.4% | Our own machine, the chip question: how often a second photon follows a rare first, with the hidden defect and without. Exact. Pairs are 5.2 times rarer with the defect. | `applied/results.json` |
+| **16.8% and 21.0%** | **The same, measured on IBM Marrakesh on 12 November with rewinding.** Right order. On 11 November: 19.9% and 22.9%. | `hardware_campaign/runs/applied_v1/` |
+| 47.3% and 34.2% | The same by plain sampling on IBM: the order is backwards. On 11 November: 38.6% and 25.7%. | same |
+| 16.8% → 21.0% | Our machine after a frequency step inside it, on IBM (exact 8.5% → 14.2%). Predicted +3.7 points before the run; measured +4.2. | `applied/predictions.json` |
+| `dbr51dhabdes73fpaum0` | The IBM job ID of the 12 November run: 17 circuits, 8,192 shots each, 39 seconds | `hardware_campaign/runs/applied_v1/` |
 
 ## The demo, and what to do if it fails
 
@@ -73,6 +78,8 @@ Optional cold open: slide 39 holds the team's cinematic cut with music. If you o
 - That amplitude amplification is our invention.
 - That the 76.90% is an accuracy. It is how often the requested click showed up; the answer error is the separate number.
 - That the laser-sensing or quantum-dot studies are measurements. They are simulations and a reanalysis of published data.
+- That the green "our own machine" numbers measured a chip, a laser or a photon. IBM's qubits played our programmed machine; the fields only lend it their question.
+- That the 12 November predictions were preregistered. They were written twelve minutes before the job, by us, and not published first.
 
 ## Check the package
 

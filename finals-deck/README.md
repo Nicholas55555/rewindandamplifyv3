@@ -1,6 +1,6 @@
 # The finals deck
 
-**Present this file:** [`Rewind_Amplify_Finals_V3.pptx`](Rewind_Amplify_Finals_V3.pptx). Thirteen main slides planned for 9:25, then 26 backups in the same style. Speaker notes are inside, and the same text is in [`Presenter_Guide_V3.md`](Presenter_Guide_V3.md).
+**Present this file:** [`Rewind_Amplify_Finals_V3.pptx`](Rewind_Amplify_Finals_V3.pptx). Thirteen main slides planned for 9:25, then 28 backups in the same style. Speaker notes are inside, and the same text is in [`Presenter_Guide_V3.md`](Presenter_Guide_V3.md).
 
 ![The thirteen main slides](main-slides.png)
 
@@ -15,9 +15,9 @@
 
 ## The backups
 
-Slide 14 is a map of the backups, grouped by the question a judge might ask: on IBM hardware (15 to 19), method and credit (20 to 23), light (24 to 29), lasers (30 to 34), chipmaking (35 to 38), and the cinematic cut (39).
+Slide 14 is a map of the backups, grouped by the question a judge might ask: on IBM hardware (15 to 19), method and credit (20 to 23), light (24 to 29), lasers (30 to 34), chipmaking (35 to 38), the cinematic cut (39), and our own machine asked those three fields' question on IBM (40 and 41).
 
-![The 26 backup slides, from the map on slide 14 to the cinematic cut on slide 39](backup-slides.png)
+![The 28 backup slides, from the map on slide 14 to the predicted-then-measured job on slide 41](backup-slides.png)
 
 Every backup states its finding in the title, and carries a chip in the top right corner that says what kind of evidence it is: ran on IBM hardware, simulated by us, published data reanalysed, or a negative result. Its speaker note starts with **SHOW THIS WHEN**, followed by what to say and where the numbers live.
 
@@ -65,7 +65,7 @@ Only the cover comes from the V2 deck. The V2 deck itself was built with a tool 
 
 - 13 main slides, each with notes that match `v3_notes.json`
 - a contiguous talk plan that ends at 9:25, at least 30 seconds inside the limit
-- 26 backups, each carrying its note, and every slide after the cover on the one dark background
+- 28 backups, each carrying its note, and every slide after the cover on the one dark background
 - two embedded MP4 videos with their media relationships and timing nodes, not pictures of videos
 - the deck, PDF and guide have the hashes recorded in the manifest
 - every saved result that a slide quotes still has the hash it had when the deck was built

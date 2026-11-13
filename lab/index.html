@@ -315,7 +315,8 @@ qc.measure(light, click[t]); qc.reset(light)</code></pre>
           <div><small>Source A</small><b class="cyan" id="ph-a">0.0%</b><span id="ph-ma">photon overlap 1.00</span></div>
           <div><small>Source B</small><b class="amber" id="ph-b">0.8%</b><span id="ph-mb">photon overlap 0.60</span></div>
         </div>
-        <div class="fact"><small>The same two cases as circuits on IBM Marrakesh</small><b id="ph-ibm">0.81 <i>vs</i> 0.52</b><span id="ph-ibm-note">measured overlap · ideal 1.00 and 0.60</span></div>
+        <div class="fact short-hide"><small>The same two cases as circuits on IBM Marrakesh</small><b id="ph-ibm">0.81 <i>vs</i> 0.52</b><span id="ph-ibm-note">measured overlap · ideal 1.00 and 0.60</span></div>
+        <div class="fact ours"><small>Our own machine on IBM · a second photon right after a first</small><b id="ph-our">0.54 <i>vs</i> 0.32</b><span id="ph-our-note">g⁽²⁾ with a hidden defect, and without · exact 0.24, 0.13</span></div>
         <p class="hint plain">Both sources send as many photons, in the same mix of colours. Only the pairs tell them apart. It is the click record again: the memory shows in the pattern, not in the count.</p>
         <p class="hint tech">Model: lifetime 1 ns, trap offsets two linewidths apart, <span id="ph-survival">20%</span> single-photon survival, ideal g⁽²⁾(0) = 0. The environment here is classical, so a hidden-Markov model is a fair competitor.</p>
       </div>
@@ -324,7 +325,7 @@ qc.measure(light, click[t]); qc.reset(light)</code></pre>
         <p class="eyebrow">A real quantum dot · interference quality</p>
         <div class="trio" id="ph-gaas"></div>
         <p class="hint">Visibility of a GaAs quantum dot at three delays between photons. Data by Münzberg et al. (2022), CC BY 4.0. Our reanalysis of their histograms, not our measurement.</p>
-        <div class="fact"><small>Detector blind time · true coupling <span id="ph-truth">0.65</span></small><b><span class="amber" id="ph-dead0">0.069</span> → <span class="cyan" id="ph-dead1">0.706</span></b><span>fitted while ignoring it, then modelling it (simulated)</span></div>
+        <div class="fact tiny-hide"><small>Detector blind time · true coupling <span id="ph-truth">0.65</span></small><b><span class="amber" id="ph-dead0">0.069</span> → <span class="cyan" id="ph-dead1">0.706</span></b><span>fitted while ignoring it, then modelling it (simulated)</span></div>
       </div>
     </div>
   </div>
@@ -353,12 +354,13 @@ qc.measure(light, click[t]); qc.reset(light)</code></pre>
         <div class="meterline violet"><span>Atoms alone</span><div class="track"><i id="ls-m-q"></i></div><b id="ls-v-q">—</b></div>
         <div class="meterline cyan"><span>Reference + atoms</span><div class="track"><i id="ls-m-cq"></i></div><b id="ls-v-cq">—</b></div>
         <div class="meterline amber"><span>Two references</span><div class="track"><i id="ls-m-cc"></i></div><b id="ls-v-cc">—</b></div>
-        <p class="note" id="ls-fa"></p>
+        <p class="note short-hide" id="ls-fa"></p>
       </div>
       <div class="card">
         <div class="chips-row"><span class="chip measured">Ran on IBM hardware, as a circuit</span></div>
-        <p class="eyebrow">What the atoms respond to</p>
+        <p class="eyebrow tiny-hide">What the atoms respond to</p>
         <table class="mini" id="ls-atomic"><thead><tr><th>Laser offset</th><th>Atoms excited, model</th><th>IBM Marrakesh</th></tr></thead><tbody></tbody></table>
+        <div class="fact ours"><small id="ls-our-label">Our own machine on IBM · a frequency step inside it</small><b id="ls-our">16.8% → 21.0%</b><span id="ls-our-note">a second click follows a first · exact 8.5% → 14.2%</span></div>
         <p class="hint plain">The atomic channel as a 4-qubit circuit. Superconducting qubits played the atoms: no atoms and no laser were measured.</p>
         <p class="hint tech">Task and time are matched, not total apparatus: reference lasers, cooling and trapping are uncounted. Qubits emulated the atomic channel; a sensing benefit would not be a computing speedup.</p>
       </div>
@@ -390,7 +392,7 @@ qc.measure(light, click[t]); qc.reset(light)</code></pre>
       </div>
       <div class="card">
         <div class="chips-row"><span class="chip proposed">Built and checked · too large to run</span></div>
-        <p class="eyebrow">Our rare-event question, at full size</p>
+        <p class="eyebrow tiny-hide">Our rare-event question, at full size</p>
         <div class="duo">
           <div><small>Qubits needed</small><b class="amber" id="cp-qubits">389</b><span id="cp-device">the chip we used has 156</span></div>
           <div><small>Two-qubit gates</small><b id="cp-gates">3.4 M</b><span id="cp-gates-note">upper bound · our best run used 58</span></div>
@@ -398,8 +400,8 @@ qc.measure(light, click[t]); qc.reset(light)</code></pre>
         <p class="hint" id="cp-event"></p>
       </div>
       <div class="card">
-        <div class="fact"><small>Reading a phase instead · pairs alone pick the wrong half-turn</small><b class="amber" id="cp-branch">50.4%</b><span>of the time (simulated)</span></div>
-        <p class="hint" id="cp-phase"></p>
+        <div class="fact ours"><small>Our own machine on IBM · a second photon after a rare first</small><b id="cp-our">16.8% <i>vs</i> 21.0%</b><span id="cp-our-note">with a hidden defect, and without · exact 8.5%, 17.4%</span></div>
+        <p class="hint" id="cp-our-hint"></p>
       </div>
     </div>
   </div>

@@ -17,7 +17,7 @@ No. At this size an exact classical sampler answers in a fraction of a milliseco
 The recurrent model as a circuit. A reversible version with a fresh qubit per step. A one-gate oracle for "a click at this step". The inverse preparation and an ancilla-assisted reflection. Steering. Transpilation to IBM's CZ basis on a fixed layout, with readout-calibration circuits in every job. The package has 114 tests.
 
 **5. What ran on real hardware?**
-Seventeen jobs on IBM Kingston and Marrakesh. The featured run is 8,192 shots per circuit on Marrakesh, job `dbqb1ifv5hds73dfo310`. The lighter build hit the click 6,300 times, 76.90%, with 58 two-qubit gates. The textbook build hit it 5,674 times, 69.26%, with 125.
+Eighteen jobs on IBM Kingston and Marrakesh. The featured run is 8,192 shots per circuit on Marrakesh, job `dbqb1ifv5hds73dfo310`. The lighter build hit the click 6,300 times, 76.90%, with 58 two-qubit gates. The textbook build hit it 5,674 times, 69.26%, with 125.
 
 **6. Is that 7.6-point gap real?**
 Within the run, yes: the 95% interval is 6.3 to 9.0 points. Across the three runs that day the lighter build led every time, by 7.6 to 14.5 points. The interval covers shot noise only, not drift between runs.
@@ -44,7 +44,11 @@ More hits is not more truth. On today's hardware the lighter circuit wins. And o
 
 **What does your noise model leave out?** Idle decoherence, crosstalk, leakage and drift. One scale factor, 1.54, stands in for all of them. It under-predicts the damage to our deepest circuit, 182 gates, so depolarizing noise is too kind to long circuits.
 
-**Why did plain sampling give the wrong order on hardware?** Because the event is rare. The click should appear in 3.95% of shots and appeared in 7.6%, so about half of the accepted shots were false clicks. Our noise model predicts this. Amplifying the event first lifts it above that floor.
+**Why did plain sampling give the wrong order on hardware?** Because the event is rare. The click should appear in 3.95% of shots and appeared in 7.6%, so about half of the accepted shots were false clicks. Our noise model predicts this. Amplifying the event first lifts it above that floor. It happened again on 12 November, as predicted (slide 41).
+
+**What do the photon, laser and chipmaking studies have to do with your method?** They share one question: after a rare event, was it a one-off, or is something hidden remembering? We asked it of our own machine on IBM (slide 40). A two-photon resist prints on pairs, so the chip version is how often a second photon follows a rare first: exactly 8.5% with the hidden defect and 17.4% without. Rewound, IBM gave 16.8% and 21.0%: the right order, about half the gap. Plain sampling gave 47% and 34%: backwards. For lasers we stepped the hidden defect's frequency and the reading moved from 16.8% to 21.0%. Our qubits played a programmed machine. Nothing here measured a chip, a laser or a photon.
+
+**Did you predict anything before running it?** Yes, once. Before the 12 November job we froze its circuits and wrote down what a noise model said IBM would return. Every direction held, and three of five sizes were inside the measured intervals. It was written twelve minutes before the job, by us, and not published first, so we call it our own record and not a preregistration.
 
 **Is steering cheating?** It is classical importance reweighting, and we say so. It changes one emission angle, which scales every history containing that click by the same factor, so conditional answers are unchanged. It needs a rough value of the click probability.
 

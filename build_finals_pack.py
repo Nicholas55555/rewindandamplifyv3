@@ -28,7 +28,7 @@ DECKS = ["finals-deck/Rewind_Amplify_Finals_V3.pptx", "finals-deck/Rewind_Amplif
          ".finals-deck-build/visual_finish.py", ".finals-deck-build/visual_notes.json"]
 TREES = ["finals-lithography", "photon_reference", "qrsm_photon_poc", "rewindandamplify-main", "external_data", "quantum_lithography_poc", "laser_sensor_poc",
          "laser_sensor_viability", "laser-diagnostics-app", "animations", "research-validation", "finals-deck/assets", "finals-deck/v2",
-         "quantum_dot_bridge", "hardware_campaign", "lab", "media", "docs"]
+         "quantum_dot_bridge", "hardware_campaign", "applied", "lab", "media", "docs"]
 EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".git", ".venv", "node_modules"}
 PRIVATE_DOCUMENTS = {"results.csv", "Qiskit_Fall_Fest_Judging_Rubric.xlsx", "WORKSPACE_AUDIT.md"}
 PUBLIC_DOCUMENTS = ["README.md", "Rewind_Amplify_Lab.html", "Rewind_Amplify_Research_Explorer.html", "index.html", "LICENSE",
@@ -38,7 +38,7 @@ PUBLIC_DOCUMENTS = ["README.md", "Rewind_Amplify_Lab.html", "Rewind_Amplify_Rese
                     ".github/scripts/run_tests.py", ".github/scripts/check_publication.py"]
 INTRO = """# Rewind & Amplify — portable finals pack
 
-1. Open `finals-deck/Rewind_Amplify_Finals_V3.pptx` for thirteen main slides followed by 26 backups in the same style. It holds two embedded videos. The PDF is a static fallback without speaker notes or video. Use Presenter_Guide_V3.md for the 9:25 planned talk.
+1. Open `finals-deck/Rewind_Amplify_Finals_V3.pptx` for thirteen main slides followed by 28 backups in the same style. It holds two embedded videos. The PDF is a static fallback without speaker notes or video. Use Presenter_Guide_V3.md for the 9:25 planned talk.
 2. Open `Rewind_Amplify_Lab.html` directly: this single file is the live demo and needs nothing else. Its last three tabs animate the follow-up research on photon sources, laser monitoring and chipmaking. For the follow-up studies, open `Rewind_Amplify_Research_Explorer.html`, which includes its videos and downloadable evidence. Or open `laser-diagnostics-app/index.html` with its folder intact. Choose Focus view for the original QRSM demo. Current research contains the new comparisons; Earlier sensor study preserves the known-time experiment. Both work offline.
 3. The two 12-second MP4 videos and PNG fallbacks are in `animations/`. They are conceptual illustrations from the earlier optical/sensing extensions, not current performance evidence. The app has playback controls.
 4. Read `START_HERE_FINALS.md`, `FINALS_RUBRIC.md`, `FINALS_EVIDENCE.md`, and `RESEARCH_CURRENT.md`. The earlier `RESEARCH_RESULTS.md` remains the frozen research snapshot. Run `python check_finals.py` for package checks. Rehearse on the presentation computer.
@@ -63,6 +63,8 @@ amplitude-diagnosis result, a prior-only control, conditional phase inspection,
 detector-aware inference and full spatial circuit construction. The source
 models remain synthetic; the separately attributed GaAs measurements come from
 the cited authors. No industrial validation or quantum advantage is claimed.
+`applied/` asks the follow-up studies' shared question of the main project's own
+machine on IBM hardware; one of its two runs was predicted before it ran.
 Canonical full-grid QPYs are included as construction artifacts; do not attempt
 a desktop statevector simulation of their 389 qubits. Failed and superseded QPY
 binaries are omitted, while bounded-attempt reports remain.

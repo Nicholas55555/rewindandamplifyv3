@@ -66,6 +66,28 @@ IBM Kingston, 5 November 2026, 4,096 shots per circuit. Kept as it was reported,
 
 The two campaigns used different compilation settings, so the same logical pair is 40 and 85 gates on Kingston and 58 and 125 on Marrakesh. Do not put the two on one chart without that label.
 
+## Our own machine, asked three fields' question
+
+Programmed models on IBM's superconducting qubits. No photon, laser, resist or wafer was measured. Full account: [`applied/README.md`](../applied/README.md).
+
+| Claim | Value | Kind | Source | Check |
+|---|---|---|---|---|
+| A second click within three steps of a rare first, with the hidden defect and without | 8.50% and 17.37% | Exact | [`applied/results.json`](../applied/results.json), `machines.*.truth.another` | `python applied/study.py --check`; the Lab's own engine in `node --test lab/test_data.cjs` |
+| The hidden defect makes such pairs rarer | 5.2 times (once in 298 runs against once in 57) | Exact | same, `readings.chipmaking` | same |
+| The same reading after the defect's frequency steps from 0.3 to 0.6 | 14.22% | Exact | same, `machines.stepped` | same |
+| Defect holds the energy after the click, and at a typical moment | 8.46% and 29.27% | Exact | same, `machines.defect.truth` | same |
+| IBM, rewound, 12 November: defect, nothing hidden, stepped | 16.8%, 21.0%, 21.0% | Measured | [`hardware_campaign/runs/applied_v1/raw.json`](../hardware_campaign/runs/applied_v1/raw.json); `new_job.rows` | `python -m unittest discover -s applied -p "test_*.py"` |
+| IBM, rewound, 11 November: defect, nothing hidden | 19.9% and 22.9% | Measured, recounted | `hardware_campaign/runs/original_precision_v1/raw.json`; `ibm.rows` | same; agrees count for count with the campaign's analysis |
+| IBM, plain sampling: defect, nothing hidden | 47.3% and 34.2% (12 Nov); 38.6% and 25.7% (11 Nov) | Measured | same two files | same |
+| Nothing hidden minus defect, rewound | +4.2 points [+2.8, +5.6] and +3.0 [+1.6, +4.4]; exact +8.9 | Measured | `new_job.comparisons`, `ibm.clean_minus_defect_another` | same |
+| Nothing hidden minus defect, plain sampling | −13.1 points [−17.4, −8.8] and −12.9 [−17.6, −8.2] | Measured | same | same |
+| Frequency step, rewound: after minus before | +4.2 points [+2.8, +5.6]; exact +5.8; predicted +3.7 | Measured, predicted first | `new_job.comparisons`; [`applied/predictions.json`](../applied/predictions.json) | `python applied/predict.py --check` |
+| Defect holds the energy after the click: rewound, plain | 17.2% and 24.7% (12 Nov); 15.9% and 24.6% (11 Nov) | Measured | `new_job.cause`, `ibm.rows` | same |
+| g⁽²⁾ right after a click, defect and nothing hidden | 0.54 and 0.32 (12 Nov); 0.44 and 0.35 (11 Nov); exact 0.24 and 0.13 | Measured | `new_job.g2`, `ibm.g2` | same |
+| g⁽²⁾ three steps on: told apart on 11 November, not on 12 November | 0.57 and 0.75; then 0.69 and 0.71; exact 0.58 and 0.70 | Measured; did not repeat | same | pinned as not repeating by `test_what_did_not_replicate_is_on_record` |
+| Predicted directions that held | all five; three of five sizes inside the measured interval | Predicted first | `applied/predictions.json`, hash-tied to `applied/hardware_bundle/` | tests in `applied/` and `lab/test_data.cjs` |
+| The 12 November job | `dbr51dhabdes73fpaum0`, 13 science and 4 calibration circuits, 8,192 shots each, 39 seconds | Record | `hardware_campaign/runs/applied_v1/` | |
+
 ## Follow-up studies
 
 These are simulations, or a reanalysis of data published by others. None is a measurement by our team.

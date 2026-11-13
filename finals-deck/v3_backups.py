@@ -849,6 +849,131 @@ def backup_transfer(prs, e, b, n, index):
 # ---------------------------------------------------------------------------- the order, and the build
 
 # key, heading on the map, short title on the map, builder
+def applied_evidence() -> dict:
+    """Our own machine asked three fields' question: both IBM runs, and the predictions written before the second."""
+    r = load("applied/results.json")
+    predicted = load("applied/predictions.json")
+    job = r["new_job"]
+    assert job["source_sha256"]["applied/predictions.json"]              # the job was read against a hashed prediction
+    truth = {name: machine["truth"] for name, machine in r["machines"].items()}
+    old = r["ibm"]["rows"]
+    new = job["rows"]
+    out = {"truth": truth, "old": old, "new": new, "job": job, "predicted": predicted,
+           "jobs": sorted({row["job_id"] for row in old.values()}) + [job["job_id"]],
+           "old_g2": r["ibm"]["g2"], "old_difference": r["ibm"]["clean_minus_defect_another"]}
+    # the claims these two slides make, checked against the numbers they print
+    chips, plain = (job["comparisons"][f"chipmaking: second event, clean minus defect ({how})"] for how in ("rewound", "plain"))
+    assert chips["interval95"][0] > 0 and plain["interval95"][1] < 0 and chips["exact"] > 0
+    assert out["old_difference"]["rewound"]["interval95"][0] > 0 and out["old_difference"]["plain"]["interval95"][1] < 0
+    step = job["comparisons"]["lasers: second event, stepped minus defect (rewound)"]
+    assert step["interval95"][0] > 0 and step["interval95"][0] < step["predicted"] < step["interval95"][1]
+    return out
+
+
+def two_line(s, x, y, w, main, sub, color=CREAM, size=24, align=LEFT, sub_color=MUTED):
+    text(s, x, y + 8, w, 34, main, size=size, bold=True, color=color, anchor=MIDDLE, align=align)
+    if sub:
+        text(s, x, y + 44, w, 36, sub, size=14.5, color=sub_color, align=align, line=1.1)
+
+
+def backup_applied(prs, e, b, n, index):
+    a = applied_evidence()
+    t, old, new, job = a["truth"], a["old"], a["new"], a["job"]
+    vs = lambda x, y, d=1: f"{pct(x, d)} vs {pct(y, d)}"  # noqa: E731
+    to = lambda x, y, d=1: f"{pct(x, d)} → {pct(y, d)}"  # noqa: E731
+    p = lambda row, key="another": row[key]["probability"]  # noqa: E731
+    s = backup(prs, n, "on IBM hardware", "Our machine, ", "asked three fields’ question.",
+               "After a rare click: does a second follow within three steps, and where was the hidden defect? "
+               "Two runs on IBM Marrakesh, 8,192 shots per circuit, raw counts.",
+               f"applied/results.json. Jobs {a['jobs'][0]} and {a['jobs'][1]} (11 November), {a['jobs'][2]} (12 November). Programmed models on "
+               "superconducting qubits: no photon, laser, resist or wafer was measured.", IBM)
+    columns = ((64, 400, "READ AS", LEFT), (480, 190, "EXACT", LEFT), (690, 250, "IBM, PLAIN SAMPLING", LEFT), (956, 260, "IBM, REWOUND", LEFT))
+    for x, w, label, align in columns:
+        text(s, x, 196, w, 22, label, size=13, bold=True, color=MUTED, tracking=1.2, align=align)
+    step_gain = job["comparisons"]["lasers: second event, stepped minus defect (rewound)"]
+    g_new, g_old = job["g2"], a["old_g2"]
+    rows = [
+        ("Chipmaking", "a second photon follows a rare first: with a hidden defect vs without",
+         vs(t["defect"]["another"], t["clean"]["another"]),
+         (vs(p(new["window-defect-plain"]), p(new["window-clean-plain"])), AMBER,
+          f"backwards · 11 Nov {vs(p(old['window/defect/plain']), p(old['window/clean/plain']))}"),
+         (vs(p(new["window-defect-rewound"]), p(new["window-clean-rewound"])), GREEN,
+          f"right order · 11 Nov {vs(p(old['window/defect/rewound']), p(old['window/clean/rewound']))}")),
+        ("Laser monitoring", "the same reading, before → after a frequency step inside the machine",
+         to(t["defect"]["another"], t["stepped"]["another"]),
+         (to(p(new["window-defect-plain"]), p(new["window-stepped-plain"])), AMBER, "the step is not seen"),
+         (to(p(new["window-defect-rewound"]), p(new["window-stepped-rewound"])), GREEN,
+          f"gain predicted +{points(step_gain['predicted'])} points, measured +{points(step_gain['difference'])}")),
+        ("Photon sources", "g2 right after a photon: with a hidden defect vs without",
+         f"{t['defect']['g2'][0]:.2f} vs {t['clean']['g2'][0]:.2f}",
+         ("—", MUTED, "needs both circuits"),
+         (f"{g_new['defect'][0]['ratio']:.2f} vs {g_new['clean'][0]['ratio']:.2f}", GREEN,
+          f"right order, about twice too high · 11 Nov {g_old['defect'][0]['ratio']:.2f} vs {g_old['clean'][0]['ratio']:.2f}")),
+        ("The hidden cause", f"how often the defect holds the energy after the click ({pct(t['defect']['defect_typical'], 0)} at a typical moment)",
+         pct(t["defect"]["defect_after_event"], 1),
+         (pct(p(new["site-defect-plain"], "defect_after_event"), 1), AMBER, f"11 Nov {pct(p(old['cause/defect/plain'], 'defect_after_event'), 1)}"),
+         (pct(p(new["site-defect-rewound"], "defect_after_event"), 1), GREEN, f"11 Nov {pct(p(old['cause/defect/rewound'], 'defect_after_event'), 1)}")),
+    ]
+    for i, (name, what, exact, plain, rewound) in enumerate(rows):
+        y = 226 + i * 88
+        rule(s, 64, y, 1216, y)
+        two_line(s, 64, y, 400, name, what, size=22)
+        two_line(s, 480, y, 190, exact, None, color=SOFT)
+        two_line(s, 690, y, 250, plain[0], plain[2], color=plain[1])
+        two_line(s, 956, y, 260, rewound[0], rewound[2], color=rewound[1])
+    rule(s, 64, 226 + 4 * 88, 1216, 226 + 4 * 88)
+    takeaway(s, 590, "Plain sampling had the chip answer backwards in both runs. Rewinding had it right in both.", size=23)
+    text(s, 64, 630, 1152, 26, "The answers keep their order and lose about half their gap to noise. A classical filter still solves this model exactly.",
+         size=16, color=SOFT)
+    return s
+
+
+def backup_predicted(prs, e, b, n, index):
+    a = applied_evidence()
+    job, predicted = a["job"], a["predicted"]
+    s = backup(prs, n, "on IBM hardware", "Written down first: ", "every direction held.",
+               "Before the 12 November job, a noise model fitted only to 11 November’s echo circuits said what IBM would return. "
+               "The predictions are tied by hash to the frozen circuits.",
+               "applied/predictions.json, written 12 minutes before submission and not published beforehand: our own record, not an independent "
+               f"registration. Made for qubits {predicted['device_assumed']['physical_qubits'][0]} to {predicted['device_assumed']['physical_qubits'][-1]}; "
+               f"the job ran on qubits {job['physical_qubits'][0]} to {job['physical_qubits'][-1]}. hardware_campaign/runs/applied_v1/", IBM)
+    for x, w, label, align in ((64, 470, "QUESTION", LEFT), (548, 120, "EXACT", RIGHT), (682, 150, "PREDICTED", RIGHT),
+                               (846, 150, "MEASURED", RIGHT), (1010, 206, "95% INTERVAL", RIGHT)):
+        text(s, x, 196, w, 22, label, size=13, bold=True, color=MUTED, tracking=1.2, align=align)
+    signed = lambda v: f"{'+' if v >= 0 else '−'}{abs(100 * v):.1f}"  # noqa: E731
+    rows = []
+    for label, key in (("Chipmaking, rewound: nothing hidden minus defect", "chipmaking: second event, clean minus defect (rewound)"),
+                       ("Chipmaking, plain sampling", "chipmaking: second event, clean minus defect (plain)"),
+                       ("Frequency step, rewound: after minus before", "lasers: second event, stepped minus defect (rewound)"),
+                       ("Frequency step, plain sampling", "lasers: second event, stepped minus defect (plain)")):
+        c = job["comparisons"][key]
+        inside = c["interval95"][0] <= c["predicted"] <= c["interval95"][1]
+        rows.append((label, signed(c["exact"]), signed(c["predicted"]), signed(c["difference"]),
+                     f"{signed(c['interval95'][0])} to {signed(c['interval95'][1])}", inside, c["predicted"] * c["difference"] > 0 or inside))
+    cause = job["cause"]["rewound"]
+    low, high = cause["measured"]["wilson95"]
+    rows.append(("Defect holds the energy after the click, rewound", pct(a["truth"]["defect"]["defect_after_event"], 1), pct(cause["predicted"], 1),
+                 pct(cause["measured"]["probability"], 1), f"{pct(low, 1)} to {pct(high, 1)}", low <= cause["predicted"] <= high, True))
+    for i, (label, exact, pred, measured, interval, inside, direction) in enumerate(rows):
+        y = 226 + i * 66
+        rule(s, 64, y, 1216, y)
+        text(s, 64, y + 6, 470, 54, label, size=19, color=CREAM, anchor=MIDDLE, line=1.1)
+        text(s, 548, y + 6, 120, 54, exact, size=22, color=SOFT, anchor=MIDDLE, align=RIGHT, font="Consolas")
+        text(s, 682, y + 6, 150, 54, pred, size=24, bold=True, color=CYAN, anchor=MIDDLE, align=RIGHT, font="Consolas")
+        text(s, 846, y + 6, 150, 54, measured, size=24, bold=True, color=GREEN if inside else AMBER, anchor=MIDDLE, align=RIGHT, font="Consolas")
+        text(s, 1010, y + 6, 206, 54, interval, size=16, color=MUTED, anchor=MIDDLE, align=RIGHT)
+        assert direction, f"a predicted direction failed: {label}"
+    bottom = 226 + len(rows) * 66
+    rule(s, 64, bottom, 1216, bottom)
+    held = sum(1 for row in rows if row[5])
+    text(s, 64, bottom + 8, 1152, 24, "Differences are in percentage points. Green: the prediction is inside the measured interval.", size=14.5, color=MUTED)
+    takeaway(s, bottom + 40, f"Plain sampling came out backwards, as predicted. {held} of {len(rows)} predicted sizes are inside the interval.", size=23)
+    hit = job["rows"]["site-defect-rewound"]["event"]["probability"]
+    text(s, 64, bottom + 84, 1152, 30, f"The model was too hopeful about the device: it predicted the rare click in {pct(predicted['rows']['site-defect-rewound']['echo_scaled']['event'], 1)} "
+         f"of rewound shots, and IBM returned {pct(hit, 1)}.", size=16, color=SOFT)
+    return s
+
+
 BACKUPS = [
     ("map", None, None, backup_map),
     ("ladder", "On IBM hardware", "What each move bought", backup_ladder),
@@ -856,10 +981,10 @@ BACKUPS = [
     ("noise", "On IBM hardware", "Noise model, circuit by circuit", backup_noise),
     ("deep", "On IBM hardware", "Deeper circuits that failed", backup_deep),
     ("coverage", "On IBM hardware", "What ran, and where it stops", backup_coverage),
-    ("step", "Method and credit", "One step, in maths", backup_step),
-    ("reproduce", "Method and credit", "Rerun it: one command", backup_reproduce),
-    ("rubric", "Method and credit", "Rubric map", backup_rubric),
-    ("credit", "Method and credit", "Ours, prior work, AI", backup_credit),
+    ("step", "Method, credit, video", "One step, in maths", backup_step),
+    ("reproduce", "Method, credit, video", "Rerun it: one command", backup_reproduce),
+    ("rubric", "Method, credit, video", "Rubric map", backup_rubric),
+    ("credit", "Method, credit, video", "Ours, prior work, AI", backup_credit),
     ("pairs", "Light: photons and detectors", "Equally bright, not equally good", backup_pairs),
     ("gaas", "Light: photons and detectors", "A real quantum dot, reanalysed", backup_gaas),
     ("deadtime", "Light: photons and detectors", "The detector's blind time", backup_deadtime),
@@ -875,9 +1000,11 @@ BACKUPS = [
     ("spatial", "Chipmaking", "The 389-qubit question", backup_spatial),
     ("phase", "Chipmaking", "Reading a phase", backup_phase),
     ("transfer", "Chipmaking", "Real lithography light", backup_transfer),
-    ("cinematic", "Video", "The cinematic cut", backup_cinematic),
+    ("cinematic", "Method, credit, video", "The cinematic cut", backup_cinematic),
+    ("applied", "Our machine, three fields", "One question, three fields", backup_applied),
+    ("predicted", "Our machine, three fields", "Predicted, then measured", backup_predicted),
 ]
-MAP_ORDER = ["On IBM hardware", "Method and credit", "Light: photons and detectors", "Lasers", "Chipmaking", "Video"]
+MAP_ORDER = ["On IBM hardware", "Method, credit, video", "Light: photons and detectors", "Lasers", "Chipmaking", "Our machine, three fields"]
 
 
 def backup_index(first: int) -> dict:

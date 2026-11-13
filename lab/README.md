@@ -21,6 +21,8 @@ A live, exact simulation of the Rewind & Amplify model, in a browser, followed b
 
 Every scene has plain and technical captions. Press **T** to switch.
 
+Each of the three research tabs ends with one line in green: **our own machine**, the emitter with a hidden defect, asked that tab's question on IBM hardware. The numbers come from [`../applied/`](../applied/), and `test_data.cjs` recomputes the exact ones with the Lab's own engine.
+
 ![The Chipmaking tab](../media/lab-9-chips.png)
 
 ## Controls

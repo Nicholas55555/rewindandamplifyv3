@@ -71,8 +71,11 @@ Slide 14 is this map, inside the deck. Every backup's speaker note starts with t
 | 30–34 | Lasers | Monitors under stress (30), what the monitor assumes (31), the atomic channel on IBM (32), drive amplitude: a negative result (33), where the quantum part enters (34) |
 | 35–38 | Chipmaking | Sharper lines for more photons (35), the 389-qubit question (36), reading a phase (37), real lithography light (38) |
 | 39 | Video | The cinematic cut |
+| 40–41 | Our machine, three fields | Our own machine asked the chipmaking, laser and photon question on IBM, plain sampling against rewound, both runs (40); the 12 November job, predicted and then measured (41) |
 
 In PowerPoint's slide show, type a slide number and press Enter to jump to it.
+
+**If a judge asks what the three follow-up studies have to do with the method**, go to slide 40. One sentence is enough on slide 11, where each card now ends with a green line: "And we asked each field's question of our own machine on IBM: plain sampling got the chip answer backwards, rewinding got it right." Say it only if rehearsal shows the 20 seconds on slide 11 can hold it.
 
 ## On the day
 

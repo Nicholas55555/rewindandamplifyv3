@@ -696,6 +696,11 @@
       g.append(d);
     }
     $('ph-dead0').textContent = P.dead_time.ignored.toFixed(3); $('ph-dead1').textContent = P.dead_time.modelled.toFixed(3);
+    // our own machine: g2 one step after a click. The fresh run when there is one, the 11 November run beside it.
+    const G = DATA.applied.g2, first = G.ibm, latest = DATA.applied.new_job ? DATA.applied.new_job.g2 : first;
+    $('ph-our').innerHTML = `${latest.defect[0].ratio.toFixed(2)} <i>vs</i> ${latest.clean[0].ratio.toFixed(2)}`;
+    $('ph-our-note').textContent = `g⁽²⁾ with a hidden defect, and without · exact ${G.exact.defect[0].toFixed(2)}, ${G.exact.clean[0].toFixed(2)}`
+      + (latest === first ? '' : ` · 11 Nov ${first.defect[0].ratio.toFixed(2)}, ${first.clean[0].ratio.toFixed(2)}`);
     $('ph-truth').textContent = P.dead_time.truth.toFixed(2);
   }
   function drawPhotons(now) {
@@ -814,6 +819,17 @@
     note.textContent = ls.scenario === 'nominal' ? `Of ${comma(S.records)} records with a ${L.step_hz} Hz step. False alarms on quiet records, in the same order: ${fa}.`
       : ls.scenario === 'short_coherence' ? `With atoms that lose coherence sooner, adding them hurt: ${pct(S.monitors.classical_quantum.caught, 1)} against ${pct(S.monitors.classical.caught, 1)} for the ordinary reference alone (${pct(nominal.classical_quantum.caught, 1)} when calibrated).`
       : `When only the shared path stepped and the laser was fine, the monitors still raised a laser alarm: ${fa} of quiet records.`;
+    const F = DATA.applied.frequency_step, fresh = DATA.applied.new_job;   // our own machine, its hidden partner's frequency stepped
+    if (fresh) {
+      const a = fresh.another.rewound, gain = fresh.comparisons['lasers: second event, stepped minus defect (rewound)'];
+      $('ls-our-label').textContent = 'Our own machine on IBM · a frequency step inside it';
+      $('ls-our').textContent = `${pct(a.defect.probability, 1)} → ${pct(a.stepped.probability, 1)}`;
+      $('ls-our-note').textContent = `a second click follows a first · exact ${pct(F.before, 1)} → ${pct(F.after, 1)} · predicted +${(100 * gain.predicted).toFixed(1)} points, got +${(100 * gain.difference).toFixed(1)}`;
+    } else {
+      $('ls-our-label').textContent = 'Our own machine · a frequency step inside it';
+      $('ls-our').textContent = `${pct(F.before, 1)} → ${pct(F.after, 1)}`;
+      $('ls-our-note').textContent = `a second click follows a first (exact) · IBM job frozen, not yet run`;
+    }
     const body = document.querySelector('#ls-atomic tbody'); body.replaceChildren();
     for (const row of L.atomic_on_ibm) {
       const tr = document.createElement('tr');
@@ -961,8 +977,15 @@
     $('cp-gates-note').textContent = `an upper bound · our best run used ${DATA.hero.precision.local.two_qubit_gates}`;
     $('cp-event').textContent = `The rare event: a contact fails to print in ${pct(q.event_probability.floor, 2)} of exposures of a ${q.cells}-cell model. `
       + `Amplifying it takes ${q.count_qubits} counting qubits, ${q.score_qubits} for the score and ${q.clean_qubits} spare. A classical computer already solves this model.`;
-    $('cp-branch').textContent = pct(D.phase.noon.wrong_branch, 1);
-    $('cp-phase').textContent = `Adding a 10% laser pilot fixes it: error ${D.phase.hybrid.rmse_rad.toFixed(4)} rad, against ${D.phase.coherent.rmse_rad.toFixed(4)} for laser light alone.`;
+    // our own machine, asked the chip question on IBM: the fresh run when there is one, the 11 November run beside it
+    const A = DATA.applied.another, old = A.ibm, now = DATA.applied.new_job ? DATA.applied.new_job.another : old;
+    const versus = (run, how) => `${pct(run[how].defect.probability, 1)} vs ${pct(run[how].clean.probability, 1)}`;
+    $('cp-our').innerHTML = versus(now, 'rewound').replace(' vs ', ' <i>vs</i> ');
+    $('cp-our-note').textContent = `with a hidden defect, and without · exact ${pct(A.exact.defect, 1)}, ${pct(A.exact.clean, 1)}`
+      + (now === old ? '' : ` · 11 Nov ${pct(old.rewound.defect.probability, 1)}, ${pct(old.rewound.clean.probability, 1)}`);
+    $('cp-our-hint').textContent = (now === old ? `Plain sampling had the order backwards (${versus(old, 'plain')}).`
+      : `Plain sampling had the order backwards in both runs (${versus(now, 'plain')}, and ${versus(old, 'plain')}).`)
+      + ` Half or more of its rare events were noise. Rewinding had the order right. Pairs are ${DATA.applied.pairs.rarer_by.toFixed(1)} times rarer with the defect.`;
   }
   function drawChips() {
     const { ctx, W, H, m, detail } = stage($('chips-canvas'));

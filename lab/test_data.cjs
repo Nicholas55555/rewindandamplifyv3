@@ -135,6 +135,80 @@ test('Campaign totals and job list match the campaign summary', () => {
   for (const run of Object.values(D.hero)) assert.ok(D.jobs.some(j => j.job_id === run.job_id));
 });
 
+test('Our own machine asked the three fields\' question: copied from applied/, and the engine agrees', () => {
+  const A = D.applied, saved = json('applied/results.json');
+  // an independent recomputation: the Lab's engine, not the Python package the study used
+  const record = options => {
+    const p = E.historyProbabilities(E.makeModel(options), 6);
+    let first = 0, pair = 0;
+    for (let y = 0; y < p.length; y++) if ((y >> 2) & 1) { first += p[y]; if ((y >> 3) & 7) pair += p[y]; }
+    return { first, another: pair / first };
+  };
+  const machines = { defect: {}, clean: { defect: false }, stepped: { zeta: 0.6 } };
+  for (const [name, options] of Object.entries(machines)) {
+    const mine = record(options), theirs = saved.machines[name].truth;
+    near(mine.first, theirs.event, 1e-12, `${name} first event`);
+    near(mine.another, theirs.another, 1e-12, `${name} second event`);
+    near(A.another.exact[name], theirs.another, 0);
+  }
+  near(A.event, record({}).first, 1e-12);
+  near(A.frequency_step.before, record({}).another, 1e-12); near(A.frequency_step.after, record({ zeta: 0.6 }).another, 1e-12);
+  // the measured rows are the study's recount of the saved counts
+  for (const how of ['plain', 'rewound']) for (const machine of ['defect', 'clean']) {
+    const row = saved.ibm.rows[`window/${machine}/${how}`];
+    assert.equal(A.another.ibm[how][machine].successes, row.another.successes);
+    assert.equal(A.another.ibm[how][machine].of, row.event.successes);
+    assert.equal(A.another.records[how][machine], row.event.successes);
+  }
+  assert.deepEqual(A.jobs, [D.hero.first.job_id, D.hero.precision.job_id].sort());
+  // what the three tabs print
+  assert.equal(`${(100 * A.another.ibm.rewound.defect.probability).toFixed(1)} vs ${(100 * A.another.ibm.rewound.clean.probability).toFixed(1)}`, '19.9 vs 22.9');
+  assert.equal(`${(100 * A.another.ibm.plain.defect.probability).toFixed(1)} vs ${(100 * A.another.ibm.plain.clean.probability).toFixed(1)}`, '38.6 vs 25.7');
+  assert.equal(`${(100 * A.another.exact.defect).toFixed(1)} ${(100 * A.another.exact.clean).toFixed(1)} ${(100 * A.another.exact.stepped).toFixed(1)}`, '8.5 17.4 14.2');
+  assert.equal(`${A.g2.ibm.defect[0].ratio.toFixed(2)} ${A.g2.ibm.clean[0].ratio.toFixed(2)}`, '0.44 0.35');
+  assert.equal(`${A.g2.exact.defect[0].toFixed(2)} ${A.g2.exact.clean[0].toFixed(2)}`, '0.24 0.13');
+  assert.equal(A.pairs.rarer_by.toFixed(1), '5.2');
+  // the claims on screen: plain sampling has the order backwards, rewinding has it right, both beyond their intervals
+  assert.ok(A.another.clean_minus_defect.exact > 0);
+  assert.ok(A.another.clean_minus_defect.plain.interval95[1] < 0);
+  assert.ok(A.another.clean_minus_defect.rewound.interval95[0] > 0);
+  // nothing claims a hardware run of the frequency step until its counts exist
+  assert.equal(A.new_job === null, !('new_job' in saved));
+});
+
+test('The job predicted in advance: what the tabs print is its recount, and every predicted direction held', () => {
+  const J = D.applied.new_job, saved = json('applied/results.json').new_job, predicted = json('applied/predictions.json');
+  assert.ok(J && saved, 'the predicted job has run and its counts are saved');
+  assert.equal(J.job_id, json('hardware_campaign/runs/applied_v1/job.json').job_id);
+  // the predictions were written for this bundle before the job existed
+  const crypto = require('node:crypto');
+  for (const [rel, want] of Object.entries(predicted.sha256)) {
+    assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(ROOT, rel))).digest('hex'), want, rel);
+  }
+  assert.ok(Date.parse(json('hardware_campaign/runs/applied_v1/job.json').submitted_utc) > 0);
+  for (const how of ['plain', 'rewound']) for (const machine of ['defect', 'clean', 'stepped']) {
+    const row = saved.rows[`window-${machine}-${how}`];
+    assert.equal(J.another[how][machine].successes, row.another.successes);
+    assert.equal(J.another[how][machine].of, row.event.successes);
+  }
+  const show = (how, a, b) => `${(100 * J.another[how][a].probability).toFixed(1)} ${(100 * J.another[how][b].probability).toFixed(1)}`;
+  assert.equal(show('rewound', 'defect', 'clean'), '16.8 21.0');
+  assert.equal(show('rewound', 'defect', 'stepped'), '16.8 21.0');
+  assert.equal(show('plain', 'defect', 'clean'), '47.3 34.2');
+  assert.equal(`${J.g2.defect[0].ratio.toFixed(2)} ${J.g2.clean[0].ratio.toFixed(2)}`, '0.54 0.32');
+  // predicted direction, measured direction, and an interval that excludes zero where the claim needs one
+  const chips = J.comparisons['chipmaking: second event, clean minus defect (rewound)'];
+  const plain = J.comparisons['chipmaking: second event, clean minus defect (plain)'];
+  const step = J.comparisons['lasers: second event, stepped minus defect (rewound)'];
+  assert.ok(chips.predicted > 0 && chips.interval95[0] > 0 && chips.exact > 0);
+  assert.ok(plain.predicted < 0 && plain.interval95[1] < 0 && plain.exact > 0, 'plain sampling: backwards, as predicted');
+  assert.ok(step.predicted > 0 && step.interval95[0] > 0 && step.exact > 0);
+  assert.ok(step.interval95[0] < step.predicted && step.predicted < step.interval95[1], 'the frequency-step prediction is inside the interval');
+  assert.equal((100 * step.predicted).toFixed(1), '3.7'); assert.equal((100 * step.difference).toFixed(1), '4.2');
+  // g2 stays below 1 at every step, in both runs: after a photon, another is less likely than usual
+  for (const run of [D.applied.g2.ibm, J.g2]) for (const machine of ['defect', 'clean']) for (const g of run[machine]) assert.ok(g.interval95[1] < 1);
+});
+
 test('The single-file Lab embeds exactly the current sources', () => {
   const single = path.join(ROOT, 'Rewind_Amplify_Lab.html');
   if (!fs.existsSync(single)) return;       // not built yet in a fresh checkout before lab/build.py runs

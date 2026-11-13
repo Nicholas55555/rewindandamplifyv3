@@ -6,11 +6,11 @@ Updated 12 November 2026. The ten items below are the judging criteria published
 |---:|---|---:|---|---|
 | 1 | Is there a clear, meaningful problem? Does the team explain who it affects and why it matters? | 15 | Slides 2, 4, 11 | README, "The problem"; Lab scenes 1 and 10 |
 | 2 | Does the team understand WHY quantum might help here, and are they honest about today's limits (noise, qubit counts, no guaranteed speedup)? | 20 | Slides 5, 6, 9, 12 | README, "What we do not claim"; `reproduce.py` section 3 |
-| 3 | Does the code run? Is Qiskit used appropriately (circuits, primitives, transpilation, algorithms)? | 20 | Slides 3, 7, 8, 10; backups 20, 21 | `python reproduce.py`; `rewindandamplify-main/qrsm_grover/`; 434 Python and 49 JavaScript tests |
-| 4 | Are results shown and interpreted? Is there a comparison to a classical baseline, expected values, or simulator vs. hardware? | 10 | Slides 4, 8, 9; backups 15 to 17 | README, "What we found"; `hardware_campaign/noise_model/`; `docs/EVIDENCE.md` |
+| 3 | Does the code run? Is Qiskit used appropriately (circuits, primitives, transpilation, algorithms)? | 20 | Slides 3, 7, 8, 10; backups 20, 21 | `python reproduce.py`; `rewindandamplify-main/qrsm_grover/`; 461 Python and 51 JavaScript tests |
+| 4 | Are results shown and interpreted? Is there a comparison to a classical baseline, expected values, or simulator vs. hardware? | 10 | Slides 4, 8, 9, 11; backups 15 to 17, 40, 41 | README, "What we found"; `hardware_campaign/noise_model/`; `applied/` (a job predicted before it ran); `docs/EVIDENCE.md` |
 | 5 | Is the idea or approach original, or a fresh take on a known problem? | 10 | Slides 7, 13; backup 23 | `rewindandamplify-main/docs/REPORT.md` |
 | 6 | Can the team clearly articulate the problem, the solution and the results to both technical and non-technical audiences? | 15 | The whole deck; slide 10 | The Lab's plain and technical captions |
-| 7 | Can the team answer questions? Do all members contribute? Can they describe what they learned and next steps? | 10 | Slides 12, 13; backups 14 to 39 | `FINALS_QA.md` |
+| 7 | Can the team answer questions? Do all members contribute? Can they describe what they learned and next steps? | 10 | Slides 12, 13; backups 14 to 41 | `FINALS_QA.md` |
 | 8 | Bonus: ran on a local or cloud simulator (e.g. Aer, statevector) | 1 | Slides 7, 9 | `reproduce.py` sections 2 and 4 |
 | 9 | Bonus: circuit executed on real IBM Quantum hardware; job results shown | 3 | Slide 8 | `hardware_campaign/RESULTS.md`, with job IDs |
 | 10 | Bonus: ran on real hardware AND compared to simulator, analysed noise, or applied error suppression/mitigation | 5 | Slide 9; backups 16, 17 | `hardware_campaign/noise_model/README.md` |

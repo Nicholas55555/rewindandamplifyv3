@@ -184,6 +184,8 @@ Nicholas led the model and the Grover fusion. Timofey, the research and the sear
 | 37 | Reading a phase: the benefit depends on the budget. |
 | 38 | Lithography light is not our laboratory laser. |
 | 39 | The cinematic cut. 45 seconds. |
+| 40 | Our machine, asked three fields’ question. |
+| 41 | Written down first: every direction held. |
 
 ### 14. Backups, by the question asked.
 
@@ -392,3 +394,19 @@ Not directly, and we should say so. In an EUV machine a carbon-dioxide laser hea
 The team's problem-first video with original music. It is a cinematic explainer, not a screen recording of the product. Click once to play. If you open the talk with it, stop the Lab video on slide 10 at 41 seconds, or use the 45-second version.
 
 **Sources.** media/cinematic-45s.mp4, from the team's cinematic kit. Numbers shown match hardware_campaign/RESULTS.md.
+
+### 40. Our machine, asked three fields’ question.
+
+**Show this when.** “What do the three follow-up studies have to do with your method?” or “Did anything about chipmaking run on real hardware?”
+
+We asked our own machine the question those fields share: after a rare event, is it a one-off, or is something hidden remembering? In the machine that is two readings after a rare click: does a second click follow within three steps, and where was the hidden defect. A two-photon resist prints on pairs of photons, so the first reading is its pair dose: exactly 8.5 percent with the hidden defect and 17.4 without, which makes pairs 5.2 times rarer. On IBM, plain sampling of the rare click got that order backwards in both runs, 47 against 34 percent on 12 November, because half or more of its rare events were noise. Rewinding made the click three shots in four and got the order right in both runs: 16.8 against 21.0 percent. The gap is about half the true one. For lasers we stepped the hidden defect’s frequency: the second click rose from 16.8 to 21.0 percent, against an exact 8.5 to 14.2. For photons, g2 right after a photon read 0.54 against 0.32: the right order, about twice too high. Be straight about the limits: this is a toy with two memory qubits that a classical filter solves exactly, rewinding runs a model inside a quantum computer and cannot rewind a real laser or wafer, and the photon g2 three steps on told the machines apart on 11 November but not on 12 November.
+
+**Sources.** applied/results.json and applied/README.md. Raw counts in hardware_campaign/runs/original_precision_v1, original_plain_v2 and applied_v1. Tests: applied/test_applied.py.
+
+### 41. Written down first: every direction held.
+
+**Show this when.** “How do you know the hardware bias is noise and not your method?” or “Did you predict anything before you ran it?”
+
+Before the 12 November job we froze its thirteen circuits and wrote down what IBM should return, using a noise model fitted only to two echo circuits from 11 November. Every predicted direction held, including the uncomfortable one: plain sampling would get the chip answer backwards. We predicted minus 8.3 points and measured minus 13.1. For the frequency step we predicted plus 3.7 points and measured plus 4.2, inside the interval. For the rewound chip gap we predicted plus 1.3 and measured plus 4.2: right direction, too cautious. Three of the five predicted sizes are inside their intervals. Two honest caveats. The predictions assumed the qubits and calibration of 11 November, and the job ran on different qubits. And they were written twelve minutes before submission in the same working session, not published anywhere first, so this is our own record and not an independent preregistration.
+
+**Sources.** applied/predictions.json (hash-tied to applied/hardware_bundle and predictions_isa.qpy), hardware_campaign/runs/applied_v1/, applied/results.json under new_job.

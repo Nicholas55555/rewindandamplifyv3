@@ -6,8 +6,8 @@
  "contact_sheet": "main-slides.png",
  "backup_contact_sheet": "backup-slides.png",
  "main_slide_count": 13,
- "total_slide_count": 39,
- "notes_count": 39,
+ "total_slide_count": 41,
+ "notes_count": 41,
  "talk_timing_seconds": 565,
  "demo_seconds": 71,
  "time_limit_seconds": 600,
@@ -26,7 +26,7 @@
  "powerpoint_check": {
   "powerpoint_version": "16.0",
   "opened_without_repair": true,
-  "slides": 39,
+  "slides": 41,
   "embedded_videos": [
    {
     "slide": 10,
@@ -41,13 +41,14 @@
   ]
  },
  "sha256": {
-  "Rewind_Amplify_Finals_V3.pptx": "a1557f0715c93862cb2d22f7030ab0d6f8c4878a3092ee95ae86ac6867fc2cd5",
-  "Rewind_Amplify_Finals_V3.pdf": "977b918e3a646ae7f768d44f04671135d171e2c3e91d9510c3b2ebae71e9260c",
-  "Presenter_Guide_V3.md": "9f791936e10dfe69019e218236a680c30ea27ec87a905d6de37c0316918a6a8d"
+  "Rewind_Amplify_Finals_V3.pptx": "1aacdc79b71a31e373f1d8d9c905ba29e7b0fde3b0dca9db8805209de2fc9eb9",
+  "Rewind_Amplify_Finals_V3.pdf": "26ca01136cd14bf1a33b3684824b818a4e12edf5eb79a0d5ff332fd11d82d5d8",
+  "Presenter_Guide_V3.md": "33008f6202b72dcd8ee421a499699cc5771dca1efa83e1f07a5d4ea94c63d149"
  },
  "source_sha256": {
+  "applied/results.json": "7c3d395e521893271cc4de091967cbeb928df37ec9286d19a607d201a6dc596a",
   "finals-deck/v2/Rewind_Amplify_Finals_Visual.pptx": "cde68fee746f3abde22e2318729ea362c873833688e2327d81ece859e0594db7",
-  "finals-deck/v3_notes.json": "134b60d5b83de596357f8522fc33dff394a026697883bdc2f8146367207aec8d",
+  "finals-deck/v3_notes.json": "1ec2b9187bf66cc3d829bcb3270e8f12ff21eab94483e30d99578eacf36c0547",
   "finals-lithography/full_spatial_circuit/results.json": "62769c7a89be87aab019d911d9bc6f7b778c9a73a7f1f4c044b0d43328ce3ba6",
   "hardware_campaign/coverage.json": "19f66dbe6098b9b5703f1403ee1796e385073865f7373e3b37d7260370482cfb",
   "hardware_campaign/noise_model/results.json": "64d7a778c0591e6bcedceced18897d47730452ac40f033088e186aac2c2f364e",
@@ -62,7 +63,7 @@
   "laser_sensor_viability/followup/main/results.json": "c9c1821e404af0fb74c384ba82cfadb38d49be5a3d15fb8a0cfb7a9a1e445da9",
   "laser_sensor_viability/results.json": "7a35b25be3c998b14c439dc6a705db2489463484fe1743b00d5d7af96e9293ac",
   "media/cinematic-45s.mp4": "415dbe5a49095219bd1c5e2110a6630546dc79d47ddc8ce6cb41bf0fe1724ee6",
-  "media/lab-tour.mp4": "4113fe45ee3dd0a53f760ae9739d22dd548e198f55ec231dae416ecf19c8b9e4",
+  "media/lab-tour.mp4": "cb9ea5136a68a539c13964cba486edb1361ea8f2959730dc33fde6f297c8c8b9",
   "qrsm_photon_poc/drive_diagnostics_followup/main/prior_only_estimation_control.json": "932e745a5f8107bbf37a05c97e7d53bfff8257a2d2b30c84405079b5c920a572",
   "qrsm_photon_poc/drive_diagnostics_followup/main/results.json": "74847bbee9cbaf6fbd41d72ab2566839919de73d218e2690ad383c135495a069",
   "qrsm_photon_poc/followup/dynamics_results.json": "b9b055fbc251b044d6ded0629f80980e17a3382a39f676a36d835e1c1e243c9b",

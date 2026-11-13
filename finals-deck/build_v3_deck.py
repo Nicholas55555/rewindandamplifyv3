@@ -27,7 +27,7 @@ from pptx import Presentation
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.opc.packuri import PackURI
 
-from deck_kit import (AMBER, ASSETS, CREAM, CYAN, HERE, MEDIA, MUTED, PANEL_2, ROOT, SLATE, SOFT, TRACK, VIOLET,
+from deck_kit import (AMBER, ASSETS, CREAM, CYAN, GREEN, HERE, MEDIA, MUTED, PANEL_2, ROOT, SLATE, SOFT, TRACK, VIOLET,
                       base, chip, load, notes, panel, pct, picture, px, qr_png, rule, text, two_tone)
 from v3_backups import backup_index, build_backups
 
@@ -333,37 +333,51 @@ def slide_impact_sources() -> None:
     """The files slide 11 reads directly (for the manifest)."""
     load("quantum_lithography_poc/exposure_followup/results.json")
     load("quantum_dot_bridge/results.json")
+    load("applied/results.json")
 
 
 def slide_impact(prs, e):
     s = base(prs, 11, "The same question, asked of other light", two_tone("Beyond qubits: three tests. ", "Honestly scored."),
-             footer="All three are our simulations, plus one reanalysis of published data. No photons, lasers or wafers were measured by our team. "
-                    "Pictures are the Lab’s three research tabs.")
+             footer="The three studies are our simulations, plus one reanalysis of published data: no photons, lasers or wafers were measured. "
+                    "Green lines: our own machine asked each field’s question on IBM Marrakesh, 12 November (backups 40 and 41).")
+    ours = load("applied/results.json")
+    fresh, truth = ours["new_job"], {name: machine["truth"] for name, machine in ours["machines"].items()}
+    second = lambda machine: fresh["rows"][f"window-{machine}-rewound"]["another"]["probability"]  # noqa: E731
+    g2 = fresh["g2"]
     chips = load("quantum_lithography_poc/exposure_followup/results.json")["cases"][1]["methods"]
     best = lambda key: chips[key]["best_threshold_accuracy"]  # noqa: E731
     dot = load("quantum_dot_bridge/results.json")["classical_trap_pair_comparison"]
     cards = [("Simulated · published data reanalysed", CYAN, "photons.png", "Photon sources",
               "Two sources, equally bright. Only the pairs show which one has a hidden memory.",
               f"{pct(dot[0]['coincidence_probability_per_excitation_pair'], 1)} vs {pct(dot[-1]['coincidence_probability_per_excitation_pair'], 1)}",
-              "of attempts split the pair, at identical brightness"),
+              "of attempts split the pair, at identical brightness",
+              f"Right after a photon, g2 is {g2['defect'][0]['ratio']:.2f} with a hidden defect and {g2['clean'][0]['ratio']:.2f} without "
+              f"(exact {truth['defect']['g2'][0]:.2f}, {truth['clean']['g2'][0]:.2f})."),
              ("Simulated · negative result", AMBER, "lasers.png", "Laser monitoring",
               "Adding an atomic sensor helped a little. A second ordinary reference helped far more.",
               f"{pct(e['monitor']['classical_quantum'], 0)} vs {pct(e['monitor']['two_classical'], 0)}",
-              "of frequency steps caught within 32 seconds"),
+              "of frequency steps caught within 32 seconds",
+              f"A frequency step inside it lifts the second click from {pct(second('defect'), 1)} to {pct(second('stepped'), 1)} "
+              f"(exact {pct(truth['defect']['another'], 1)} to {pct(truth['stepped']['another'], 1)})."),
              ("Simulated · an assumed resist", CYAN, "chips.png", "Chipmaking",
               "Entangled pairs print cleaner stripes, and use more light to do it.",
               f"{pct(best('noon')['guard_cell_accuracy'], 0)} vs {pct(best('phase_cycled_burst')['guard_cell_accuracy'], 0)}",
-              f"of cells right, for {best('noon')['sample_incident_photons'] / best('phase_cycled_burst')['sample_incident_photons']:.0f} times the photons")]
-    for i, (status, color, shot, who, body, big, small) in enumerate(cards):
+              f"of cells right, for {best('noon')['sample_incident_photons'] / best('phase_cycled_burst')['sample_incident_photons']:.0f} times the photons",
+              f"A second photon follows a rare first {pct(second('defect'), 1)} of the time with a hidden defect, {pct(second('clean'), 1)} without "
+              f"(exact {pct(truth['defect']['another'], 1)}, {pct(truth['clean']['another'], 1)}).")]
+    for i, (status, color, shot, who, body, big, small, machine) in enumerate(cards):
         x = 64 + i * 392
         panel(s, x, 132, 368, 506)
         chip(s, x + 20, 146, status, color)
-        picture(s, shot, x + 20, 182, w=328, h=184)
-        text(s, x + 20, 376, 328, 34, who, size=24, bold=True, color=CREAM, anchor=MSO_ANCHOR.MIDDLE)
-        text(s, x + 20, 414, 328, 74, body, size=16.5, color=SOFT, line=1.18)
-        rule(s, x + 20, 496, x + 348, 496)
-        text(s, x + 20, 504, 328, 54, big, size=36, bold=True, color=color, anchor=MSO_ANCHOR.MIDDLE)
-        text(s, x + 20, 560, 328, 66, small, size=15.5, color=SOFT, line=1.16)
+        picture(s, shot, x + 34, 180, w=300, h=150)                      # centred in the card
+        text(s, x + 20, 336, 328, 32, who, size=23, bold=True, color=CREAM, anchor=MSO_ANCHOR.MIDDLE)
+        text(s, x + 20, 370, 328, 62, body, size=16, color=SOFT, line=1.16)
+        rule(s, x + 20, 438, x + 348, 438)
+        text(s, x + 20, 442, 328, 46, big, size=34, bold=True, color=color, anchor=MSO_ANCHOR.MIDDLE)
+        text(s, x + 20, 488, 328, 40, small, size=15, color=SOFT, line=1.14)
+        rule(s, x + 20, 534, x + 348, 534, color=GREEN)
+        text(s, x + 20, 541, 328, 18, "OUR OWN MACHINE · RAN ON IBM", size=11.5, bold=True, color=GREEN, tracking=1.2)
+        text(s, x + 20, 561, 328, 70, machine, size=15, color=CREAM, line=1.14)
     return s
 
 
