@@ -12,9 +12,10 @@ V3 keeps every V2 result and adds:
 
 - **The Lab**, a live simulation of the model that shows the laser, the emitter, the hidden defect and the detector, and then the rewind-and-amplify steps on real amplitudes. Three more tabs animate the follow-up research: photons at a beam splitter, a laser monitor with an atomic sensor, and light printing stripes on a resist.
 - **A rebuilt main talk** in the order the rubric asks its questions, one picture per slide, with a playable 70-second video.
-- **Backups in the same style**: 26 of them, grouped by question, each marked with the kind of evidence it shows.
+- **Backups in the same style**: 28 of them, grouped by question, each marked with the kind of evidence it shows.
 - **A simulator-against-hardware study** of the exact circuits that ran on IBM, which answers "why did the lighter build win?" with a number.
 - **`python reproduce.py`**, so "does the code run?" has a ten-second answer.
+- **One question, three fields** ([`applied/`](applied/)): our own machine asked what chipmaking, lasers and photon sources need to know, on IBM hardware, with one job predicted before it ran. It is the green line on each research tab and on slide 11, and backups 40 and 41.
 
 The follow-up research (detector dead time, quantum dots, laser monitoring, phase inspection, circuit costs) is in the last 29 seconds of the demo, on slide 11 and in the backups. It is still all here, in the Lab's research tabs, the research explorer and [`RESEARCH_CURRENT.md`](RESEARCH_CURRENT.md).
 
@@ -27,6 +28,7 @@ The follow-up research (detector dead time, quantum dots, laser monitoring, phas
 - [x] Repository public, CI green, and the Lab live at https://nicholas55555.github.io/rewindandamplifyv3/
 - [x] Presenter guide, Q&A, rubric map and evidence map rewritten for V3
 - [x] All V2 checks still pass: 114 core tests, 311 research tests, artifact hashes, hardware verification
+- [x] Our own machine asked the three fields' question on IBM Marrakesh (12 November, job `dbr51dhabdes73fpaum0`), with predictions written before the run; 27 more tests
 
 ## To do before Saturday (the team)
 
@@ -37,6 +39,7 @@ The follow-up research (detector dead time, quantum dots, laser monitoring, phas
 5. **Confirm with the organizers**: start time, Q&A length, submission format, any rubric change, and what must be disclosed about AI assistance.
 6. **Each member**: prepare one sentence on what you learned and one limitation you can explain.
 7. **Try the QR code** on slides 10 and 13 with a phone: it opens the repository, whose first link opens the live Lab.
+8. **Read backups 40 and 41 together**, and decide whether slide 11's speaker adds one sentence about the green lines: "we asked each field's question of our own machine on IBM; plain sampling got the chip answer backwards and rewinding got it right." Add it only if the timer allows. Read [`applied/README.md`](applied/README.md) for what did not repeat.
 
 ## If something breaks on the day
 
