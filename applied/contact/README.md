@@ -88,7 +88,7 @@ The rewound difference is the hand answer to within its interval. Each of its tw
 Read this with three cautions.
 
 - The prediction assumed the qubits and calibration that the 12 November job met (qubits 18, 31, 32, 33). On the day the campaign tool chose qubits 35, 34, 33 and 39.
-- Run again afterwards with the job's own qubits, calibration and echo circuits, the same model puts eight of the twelve inside. It now explains the plain record (5.7% flagged against 5.9% measured; 70.6% passing the check against 74.4%). It is still too hopeful about the cause in the rewound record, 54.0% against 50.6%. A model with only gate and readout errors does not capture everything.
+- Run again afterwards with the job's own qubits, calibration and echo circuits, the same model puts eight of the twelve inside, some only just. It now explains the plain record (5.7% flagged against 5.9% measured; 70.6% passing the check against 74.4%). It is still too hopeful about the cause in the rewound record, 54.0% against 50.6%. A model with only gate and readout errors does not capture everything.
 - The prediction was committed at 18:10:46 UTC (commit `4e000f4`) and the job was submitted at 18:11:23 UTC, in one working session. It was not published anywhere first. This is our own record, not an independent preregistration.
 
 ## Looked at afterwards: the check as a filter
