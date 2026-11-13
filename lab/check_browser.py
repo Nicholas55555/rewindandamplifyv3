@@ -4,6 +4,11 @@ Loads the folder app and the single-file build from disk, visits all ten scenes 
 every control once, and checks that the numbers on screen are the ones the evidence supports. Any console error,
 uncaught exception or request to the network is a failure.
 
+It then resizes the window through 45 sizes, from a small laptop to a 2560-pixel monitor, and fails if any scene
+has something cut off: a card below the bottom bar, a control squeezed smaller than its label, text clipped inside
+its box, or the scene tabs wrapping onto a second row. On phone and tablet widths, where the page scrolls down, it
+fails if a scene scrolls sideways or clips its content.
+
     python lab/check_browser.py
 
 Needs an installed Chrome or Edge and:  pip install playwright
@@ -132,6 +137,103 @@ def check_page(context, label: str, path: Path) -> list[str]:
     return problems
 
 
+# window sizes the desktop layout must fit without scrolling or cutting anything: small laptops and scaled displays,
+# a browser on a 1080p screen (about 950 lines), full screen, and a wide monitor
+FIT_WIDTHS = (1280, 1366, 1514, 1920, 2560)
+FIT_HEIGHTS = (641, 700, 720, 768, 800, 864, 950, 1040, 1080)
+MEASURE_FIT = """
+() => {
+  const scene = document.getElementById(LAB.state.scene);
+  const limit = document.querySelector('.bottom').getBoundingClientRect().top;
+  const name = el => el.id ? '#' + el.id : '.' + String(el.className).trim().split(/\\s+/).join('.');
+  const found = [];
+  for (const el of scene.querySelectorAll('.card, canvas, h1, .lede, .scene-foot, .bench-slot')) {
+    if (el.offsetParent === null) continue;
+    const r = el.getBoundingClientRect();
+    if (r.bottom > limit + 1 || r.right > innerWidth + 1) found.push(name(el) + ' runs ' + Math.round(Math.max(r.bottom - limit, r.right - innerWidth)) + ' px off screen');
+  }
+  for (const el of scene.querySelectorAll('*')) {
+    if (el.offsetParent === null || el.tagName === 'CANVAS' || el.closest('svg')) continue;
+    const style = getComputedStyle(el);
+    if (style.overflowY !== 'visible' && el.scrollHeight - el.clientHeight > 2) found.push(name(el) + ' cuts ' + (el.scrollHeight - el.clientHeight) + ' px of its content');
+    else if (style.overflowX !== 'visible' && el.scrollWidth - el.clientWidth > 2) found.push(name(el) + ' cuts ' + (el.scrollWidth - el.clientWidth) + ' px of its width');
+  }
+  for (const el of scene.querySelectorAll('button, .chip, .pill')) {
+    if (el.offsetParent === null) continue;
+    const r = el.getBoundingClientRect();
+    for (let a = el.parentElement; a && a !== scene; a = a.parentElement) {
+      if (getComputedStyle(a).overflowY === 'visible') continue;
+      const box = a.getBoundingClientRect();
+      if (r.bottom > box.bottom + 2 || r.top < box.top - 2) { found.push(name(el) + ' is squeezed inside ' + name(a)); break; }
+    }
+  }
+  const rows = new Set([...document.querySelectorAll('.scenes button')].map(b => Math.round(b.getBoundingClientRect().top))).size;
+  if (rows > 1) found.push('the scene tabs take ' + rows + ' rows');
+  const main = document.querySelector('main');
+  if (main.scrollHeight - main.clientHeight > 2) found.push('the scene is ' + (main.scrollHeight - main.clientHeight) + ' px taller than the window');
+  return [...new Set(found)];
+}
+"""
+
+
+def check_fit(browser, path: Path) -> tuple[list[str], int]:
+    """Every scene, at both caption levels, at every size in the grid: nothing cut off, nothing squeezed."""
+    problems: list[str] = []
+    page = browser.new_context(viewport={"width": FIT_WIDTHS[0], "height": FIT_HEIGHTS[0]}).new_page()
+    page.goto(path.as_uri() + "?capture=1&seed=7")
+    page.wait_for_function("window.LAB !== undefined")
+    page.evaluate("LAB.manual()")
+    for width in FIT_WIDTHS:
+        for height in FIT_HEIGHTS:
+            page.set_viewport_size({"width": width, "height": height})
+            for level in ("plain", "tech"):
+                page.click(f"#level-{level}")
+                for scene in SCENES:
+                    page.evaluate(f"LAB.show('{scene}')")
+                    page.evaluate("for (let i = 0; i < 20; i++) LAB.tick(1000 / 30)")
+                    for found in page.evaluate(MEASURE_FIT):
+                        problems.append(f"fit at {width}x{height}, {level} captions, {scene}: {found}")
+    page.context.close()
+    return problems, len(FIT_WIDTHS) * len(FIT_HEIGHTS)
+
+
+NARROW = ((320, 640), (360, 740), (390, 844), (430, 932), (768, 1024), (1024, 768), (1279, 800))
+MEASURE_NARROW = """
+() => {
+  const scene = document.getElementById(LAB.state.scene), found = [];
+  const sideways = document.documentElement.scrollWidth - innerWidth;
+  if (sideways > 1) found.push('the page scrolls ' + sideways + ' px sideways');
+  for (const el of scene.querySelectorAll('*')) {
+    if (el.offsetParent === null || el.tagName === 'CANVAS' || el.closest('svg')) continue;
+    const style = getComputedStyle(el);
+    const name = el.id ? '#' + el.id : '.' + String(el.className).trim().split(/\\s+/).join('.');
+    if (style.overflowY !== 'visible' && el.scrollHeight - el.clientHeight > 2) found.push(name + ' cuts ' + (el.scrollHeight - el.clientHeight) + ' px of its content');
+    else if (style.overflowX !== 'visible' && el.scrollWidth - el.clientWidth > 2) found.push(name + ' cuts ' + (el.scrollWidth - el.clientWidth) + ' px of its width');
+  }
+  return [...new Set(found)];
+}
+"""
+
+
+def check_narrow(browser, path: Path) -> list[str]:
+    """Phones and tablets: the page may scroll down, never sideways, and nothing is clipped."""
+    problems: list[str] = []
+    for width, height in NARROW:
+        page = browser.new_context(viewport={"width": width, "height": height}).new_page()
+        page.goto(path.as_uri() + "?capture=1&seed=7")
+        page.wait_for_function("window.LAB !== undefined")
+        page.evaluate("LAB.manual()")
+        for level in ("plain", "tech"):
+            page.click(f"#level-{level}")
+            for scene in SCENES:
+                page.evaluate(f"LAB.show('{scene}')")
+                page.evaluate("for (let i = 0; i < 10; i++) LAB.tick(1000 / 30)")
+                for found in page.evaluate(MEASURE_NARROW):
+                    problems.append(f"narrow screen {width}x{height}, {level} captions, {scene}: {found}")
+        page.context.close()
+    return problems
+
+
 def main() -> None:
     try:
         from playwright.sync_api import sync_playwright
@@ -154,9 +256,12 @@ def main() -> None:
                 if path.is_file():
                     problems += check_page(context, f"{label} at {width}x{height}", path)
             context.close()
+        fit_problems, fit_sizes = check_fit(browser, PAGES["folder app"])
+        problems += fit_problems + check_narrow(browser, PAGES["folder app"])
         browser.close()
     print(json.dumps({"status": "failed" if problems else "passed", "pages": len(PAGES), "viewports": 3,
-                      "scenes": len(SCENES), "problems": problems}, indent=1))
+                      "scenes": len(SCENES), "window_sizes_checked_for_fit": fit_sizes, "narrow_screens_checked": len(NARROW), "problems": problems[:40],
+                      "problem_count": len(problems)}, indent=1))
     if problems:
         sys.exit(1)
 

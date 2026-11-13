@@ -38,6 +38,8 @@ Each of the three research tabs ends with one line in green: **our own machine**
 
 The tour button plays all ten scenes in 70 seconds, for a presenter to talk over. `?tour=core` plays the 45-second version without the three research tabs.
 
+**Window sizes.** From 1280 pixels wide and 641 tall upward, every scene fits its window: nothing scrolls and nothing is cut. Shorter windows get tighter type in steps (at 1040, 800, 780, 740 and 700 lines), and at the smallest ones a few secondary lines step aside. Narrower or shorter windows than that, including phones down to 320 pixels wide, get one column that scrolls down and never sideways. Browser zoom works the same way as a smaller window.
+
 Address-bar options, for setting up a screenshot or a demo: `?level=tech`, `?reveal=1`, `?speed=4`, `?runs=2000`, `?stage=3`, `?seed=7`, `?tour=1`, and for the research tabs `?source=independent`, `?scenario=shared_path` (or `short_coherence`), `?light=phase_cycled` (or `phase_cycled_burst`). Follow them with `#scene`, for example `index.html?level=tech&reveal=1#machine`.
 
 ## Why it can be trusted
@@ -76,7 +78,7 @@ The measured numbers are raw counts from real IBM jobs. The research tabs show s
 | `make_data.py`, `make_reference.py` | The generators, each with a `--check` mode |
 | `build.py` | Writes `../Rewind_Amplify_Lab.html`, with a `--check` mode |
 | `capture.py` | Records stills, slide panels, a README loop and the tour (70 seconds, or `--kind core` for 45) |
-| `check_browser.py` | Opens every scene in a real browser, presses every control and fails on any error |
+| `check_browser.py` | Opens every scene in a real browser, presses every control and fails on any error. Then resizes the window through 45 desktop sizes and 7 phone and tablet sizes, and fails if anything is cut off, squeezed or scrolls sideways. |
 
 ## Changing it
 
@@ -84,7 +86,7 @@ The measured numbers are raw counts from real IBM jobs. The research tabs show s
 python lab/build.py                 # after editing the page: rebuild the single file
 python lab/make_data.py             # after a saved hardware or research result changes
 python lab/make_reference.py        # after the Qiskit package changes (it should not)
-python lab/check_browser.py         # every scene, both caption levels, folder app and single file
+python lab/check_browser.py         # every scene, both caption levels, folder app and single file, 52 window sizes
 python lab/capture.py stills        # media/lab-*.png
 python lab/capture.py tour          # media/lab-tour.mp4
 ```
