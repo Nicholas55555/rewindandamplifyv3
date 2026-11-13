@@ -12,6 +12,7 @@ V3 keeps every V2 research directory byte for byte, because their results are pi
 | A noise-model simulation of the circuits that ran on IBM | [`hardware_campaign/noise_model/`](../hardware_campaign/noise_model/) | its unit tests, and `python hardware_campaign/noise_model/run_study.py --check` |
 | One-command reproduction of the headline numbers | [`reproduce.py`](../reproduce.py) | run it |
 | One question, three fields: our own machine asked the follow-up studies' question on IBM, with one job predicted before it ran | [`applied/`](../applied/), and the job's files in [`hardware_campaign/runs/applied_v1/`](../hardware_campaign/runs/applied_v1/) | `python applied/study.py --check`, `python applied/predict.py --check`, its unit tests |
+| A four-qubit chipmaking toy asked with the same four moves, with its IBM job predicted before it ran | [`applied/contact/`](../applied/contact/), and the job's files in [`hardware_campaign/runs/contact_v1/`](../hardware_campaign/runs/contact_v1/) | `python applied/contact/analysis.py --check`, `python applied/contact/forecast.py --check`, its unit tests |
 | The V3 deck, with embedded video | [`finals-deck/`](../finals-deck/) | `python check_finals.py --public` |
 | Videos and screenshots | [`media/`](../media/) | `python lab/capture.py` regenerates the Lab ones |
 | An evidence map for the headline numbers | [`docs/EVIDENCE.md`](EVIDENCE.md) | |

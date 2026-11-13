@@ -16,6 +16,8 @@ import json
 import sys
 from pathlib import Path
 
+import numpy as np
+
 HERE = Path(__file__).resolve().parent
 APPLIED = HERE.parent
 ROOT = APPLIED.parent
@@ -46,6 +48,20 @@ def counted(weights, model_name: str) -> dict:
             "neighbour_dark": study.rate(t["neighbour_dark"], t["all"]),
             "dose_low_given_fail": study.rate(t["fail_and_dose_low"], t["fail"]) if hidden else None,
             "neighbour_dark_given_fail": study.rate(t["fail_and_neighbour_dark"], t["fail"])}
+
+
+def checked(weights: np.ndarray, model_name: str) -> dict:
+    """The same answers among shots that also pass the model's own check: the flag is set AND the cell reads dark.
+
+    Not part of the prediction. Looked at after the job, because the check turned out to matter.
+    """
+    index = np.arange(weights.size)
+    bit = lambda q: ((index >> q) & 1) == 1  # noqa: E731
+    kept = bit(exposure.FLAG) & bit(exposure.CELL)
+    hidden = exposure.MODELS[model_name]["hidden_source"]
+    return {"kept": study.rate(weights[kept].sum(), weights.sum()),
+            "dose_low": study.rate(weights[kept & bit(exposure.SOURCE)].sum(), weights[kept].sum()) if hidden else None,
+            "neighbour_dark": study.rate(weights[kept & bit(exposure.NEIGHBOUR)].sum(), weights[kept].sum())}
 
 
 def scored(rows: dict, predictions: dict) -> dict:
@@ -97,7 +113,7 @@ def job(folder: Path | None = None) -> dict | None:
     raw, plan = study.read_json(folder / "raw.json"), study.read_json(folder / "plan.json")
     manifest = {c["name"]: c for c in study.read_json(forecast.BUNDLE / "manifest.json")["circuits"]}
     predictions = study.read_json(forecast.OUT)
-    rows = {}
+    rows, filtered = {}, {}
     for row in raw["rows"]:
         if row["kind"] != "science":
             continue
@@ -108,6 +124,7 @@ def job(folder: Path | None = None) -> dict | None:
             rows[row["name"]] = {**base, "all_zero_return": study.rate(counts[0], row["shots"])}
         else:
             rows[row["name"]] = {**base, **counted(counts, meta["model"])}
+            filtered[row["name"]] = checked(counts, meta["model"])
     more = study.ratio(rows["dose-rewound"]["fail"], rows["dose-plain"]["fail"])
     claims = predictions["claims"]
     more["predicted"], more["exact"] = (
@@ -118,6 +135,12 @@ def job(folder: Path | None = None) -> dict | None:
             "predictions_assumed_qubits": predictions["device_assumed"]["physical_qubits"],
             "rows": rows, "claims": scored(rows, predictions), "directions": directions(rows),
             "flagged_shots_rewound_over_plain": more,
+            "filtered_by_the_check": {
+                "scope": "Not predicted. Looked at after the job: the same answers among shots where the flag is set and "
+                         "the cell also reads dark, which the model requires of every real failure.",
+                "rows": filtered,
+                "neighbour_gap": {build: study.difference(filtered[f"dose-{build}"]["neighbour_dark"], filtered[f"clean-{build}"]["neighbour_dark"])
+                                  for build in exposure.BUILDS}},
             "scope": "One job. Predictions were written and committed before it was submitted, for the qubits and "
                      "calibration the 12 November job met. Programmed models on superconducting qubits: no resist, "
                      "mask or wafer was measured.",
@@ -160,10 +183,12 @@ def build(noise: bool = True) -> dict:
         "The cells are dark or bright. No photon counts, no blur, no resist chemistry, no mask, no wafer. Nothing here "
         "describes a real scanner.",
         "Rewinding runs a MODEL inside a quantum computer. It cannot rewind a real exposure.",
+        "With the model's own check bit used as a filter, plain sampling's answers come back close to the rewound "
+        "ones in this toy. What rewinding then adds on hardware is records per shot, not a different answer.",
         "A model worth asking this way is one too large to compute classically. The repository's 49-cell lithography "
-        "circuit needs 389 qubits and about 3.4 million two-qubit gates per round; this job's largest toy circuit has "
-        "about 15. Closing that gap needs many qubits with far lower error rates, most likely error-corrected ones. "
-        "That hardware does not exist today.",
+        "circuit needs 389 qubits and, as built, up to about 3.4 million two-qubit gates per round; this job's largest "
+        "toy circuit has 15. Closing that gap needs many qubits with far lower error rates, most likely "
+        "error-corrected ones. That hardware does not exist today.",
         "One job on one device. The intervals are shot noise only.",
     ]
     return out

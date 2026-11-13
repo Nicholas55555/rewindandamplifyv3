@@ -86,6 +86,7 @@ Those three studies use models of their own. To tie them to the method, we asked
 - **Plain sampling got the chip answer backwards, twice.** The rare click is 4% of runs and the device adds false clicks at about that rate, so half or more of the "rare events" it keeps are noise. Rewinding makes the click three shots in four, and the order comes out right in both runs, with a third to a half of the true gap.
 - **The frequency step was seen on hardware,** at +4.2 points against a true +5.8. We had predicted +3.7 before the job ran. Every predicted direction held, and three of five predicted sizes were inside the measured intervals.
 - **One reading did not repeat.** Three steps after a click, g⁽²⁾ told the two machines apart on 11 November and not on 12 November.
+- **A smaller chipmaking toy, 13 November.** A hidden dose, a contact that rarely fails to print, and its neighbour, on four qubits: [`applied/contact/`](applied/contact/). All four directions stated before the job held; four of twelve predicted sizes did. It is solved by hand, and with its own check bit as a filter plain sampling does nearly as well. It is not in the talk.
 - **What this is not.** The machine is a toy that a classical filter solves exactly. Rewinding runs a model inside a quantum computer: it cannot rewind a real laser, quantum dot or wafer.
 
 ## What we do not claim
@@ -113,7 +114,7 @@ It prints the exact model, the Qiskit circuits on an Aer simulator, the classica
 **The tests.**
 
 ```bash
-python .github/scripts/run_tests.py          # 461 Python tests: the Qiskit package and every study
+python .github/scripts/run_tests.py          # 484 Python tests: the Qiskit package and every study
 node --test lab/test_engine.cjs lab/test_data.cjs lab/test_research.cjs laser-diagnostics-app/test_model.cjs
 python check_finals.py --public              # deck, videos, demos and hashes of every quoted result
 ```
@@ -144,13 +145,13 @@ Install it with `python -m pip install -e rewindandamplify-main`.
 |---|---|
 | A clear, meaningful problem, and who it affects | [The problem](#the-problem) above; Lab scene 1; slides 2 and 11 |
 | Why quantum might help, and honesty about limits | [What we do not claim](#what-we-do-not-claim); slides 5, 6 and 12; `reproduce.py` section 3 |
-| Does the code run; is Qiskit used appropriately | `python reproduce.py`; [`rewindandamplify-main/qrsm_grover/`](rewindandamplify-main/qrsm_grover/); 461 Python tests and 51 JavaScript tests in CI |
+| Does the code run; is Qiskit used appropriately | `python reproduce.py`; [`rewindandamplify-main/qrsm_grover/`](rewindandamplify-main/qrsm_grover/); 484 Python tests and 51 JavaScript tests in CI |
 | Results interpreted, against a classical baseline, expected values, simulator and hardware | [What we found](#what-we-found); [noise-model study](hardware_campaign/noise_model/README.md); [campaign results](hardware_campaign/RESULTS.md); [a job predicted before it ran](applied/README.md#predicted-then-measured) |
 | Originality | Making a recurrent quantum model reversible, steering, and the local reflection: slide 7 and [the original report](rewindandamplify-main/docs/REPORT.md) |
 | Clear to technical and non-technical audiences | The Lab's plain and technical captions; [the deck](finals-deck/Rewind_Amplify_Finals_V3.pdf); [presenter guide](finals-deck/Presenter_Guide_V3.md) |
 | Questions, teamwork, what we learned, next steps | [Q&A](FINALS_QA.md); slide 13; [Team](#team-prior-work-and-ai-assistance) |
 | Bonus: simulator | Aer statevector and density-matrix runs in `reproduce.py` |
-| Bonus: real IBM hardware, with job results | Eighteen jobs: two campaigns, and one job on 12 November predicted in advance; IDs, raw counts and compiled circuits in [`hardware_campaign/`](hardware_campaign/) and [`rewindandamplify-main/results/hardware/`](rewindandamplify-main/results/hardware/) |
+| Bonus: real IBM hardware, with job results | Nineteen jobs: two campaigns, and one job each on 12 and 13 November predicted in advance; IDs, raw counts and compiled circuits in [`hardware_campaign/`](hardware_campaign/) and [`rewindandamplify-main/results/hardware/`](rewindandamplify-main/results/hardware/) |
 | Bonus: hardware compared with a simulator, noise analysed, suppression applied | [Noise-model study](hardware_campaign/noise_model/README.md); echo circuits; dynamical decoupling and twirling runs; readout calibration inside every job |
 
 ## What is new in V3
@@ -172,8 +173,8 @@ V3 is the presentation-ready version of [V2](https://github.com/Nicholas55555/re
 |---|---|
 | [`lab/`](lab/) | The Lab: page, exact engine, tests, and the tools that record it |
 | [`rewindandamplify-main/`](rewindandamplify-main/) | The original Qiskit package `qrsm_grover`, its experiments, 114 tests, report and first IBM runs |
-| [`hardware_campaign/`](hardware_campaign/) | Ten IBM Marrakesh jobs of 11 November: plans, compiled circuits, raw counts, analysis, and the noise-model study. The 12 November job is in `runs/applied_v1/` |
-| [`applied/`](applied/) | One question, three fields: our machine asked the follow-up studies' question on IBM, with predictions frozen before the second run |
+| [`hardware_campaign/`](hardware_campaign/) | Ten IBM Marrakesh jobs of 11 November: plans, compiled circuits, raw counts, analysis, and the noise-model study. The 12 and 13 November jobs are in `runs/applied_v1/` and `runs/contact_v1/` |
+| [`applied/`](applied/) | One question, three fields: our machine asked the follow-up studies' question on IBM, with predictions frozen before the second run. [`applied/contact/`](applied/contact/) is a four-qubit chipmaking toy run the same way |
 | [`finals-deck/`](finals-deck/) | The V3 deck, presenter guide and the script that builds them |
 | [`media/`](media/) | Videos and screenshots |
 | [`laser-diagnostics-app/`](laser-diagnostics-app/) | <a id="research-explorer"></a>The research explorer: every follow-up study and its evidence, also as the single file [`Rewind_Amplify_Research_Explorer.html`](Rewind_Amplify_Research_Explorer.html) |

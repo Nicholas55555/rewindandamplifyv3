@@ -114,6 +114,10 @@ Read this with three cautions.
 - The model was too hopeful about the device. It predicted the rare click in 78.4% of rewound shots; IBM returned 74.3%. Re-running the same model afterwards with the job's own qubits, calibration and echo circuits gives almost the same scale (1.544 against 1.542) and does not close that gap: it says +1.8, −15.8, +4.0 and +1.1 points for the four differences. A model with only gate and readout errors does not capture everything about those qubits.
 - The predictions were written at 23:38 UTC and the job was submitted at 23:50 UTC, in one working session. They were not published anywhere first. This is our own record, not an independent preregistration.
 
+## A smaller toy on the chipmaking side
+
+On 13 November a four-qubit toy closer to the chipmaking question (a hidden dose, a contact that rarely fails to print, and its neighbour) was frozen, predicted and run the same way: [`contact/`](contact/). All four directions stated beforehand held and four of twelve predicted sizes did. One result there cuts against the method: with the model's own check used as a filter, plain sampling gets nearly the same answers, from fewer records.
+
 ## How the job was run
 
 ```bash

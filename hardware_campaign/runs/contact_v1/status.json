@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-11-13T18:13:45.679487+00:00",
+  "job_id": "dbrl5iujjaos73aj81r0",
+  "status": "DONE",
+  "quota": {
+    "usage_consumed_seconds": 404,
+    "usage_limit_seconds": 600,
+    "usage_remaining_seconds": 196,
+    "usage_limit_reached": false,
+    "usage_period": {
+      "start_time": "2026-10-16T18:13:46.485Z",
+      "end_time": "2026-11-13T18:13:46.485Z"
+    }
+  }
+}

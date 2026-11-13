@@ -6,7 +6,7 @@ Updated 12 November 2026. The ten items below are the judging criteria published
 |---:|---|---:|---|---|
 | 1 | Is there a clear, meaningful problem? Does the team explain who it affects and why it matters? | 15 | Slides 2, 4, 11 | README, "The problem"; Lab scenes 1 and 10 |
 | 2 | Does the team understand WHY quantum might help here, and are they honest about today's limits (noise, qubit counts, no guaranteed speedup)? | 20 | Slides 5, 6, 9, 12 | README, "What we do not claim"; `reproduce.py` section 3 |
-| 3 | Does the code run? Is Qiskit used appropriately (circuits, primitives, transpilation, algorithms)? | 20 | Slides 3, 7, 8, 10; backups 20, 21 | `python reproduce.py`; `rewindandamplify-main/qrsm_grover/`; 461 Python and 51 JavaScript tests |
+| 3 | Does the code run? Is Qiskit used appropriately (circuits, primitives, transpilation, algorithms)? | 20 | Slides 3, 7, 8, 10; backups 20, 21 | `python reproduce.py`; `rewindandamplify-main/qrsm_grover/`; 484 Python and 51 JavaScript tests |
 | 4 | Are results shown and interpreted? Is there a comparison to a classical baseline, expected values, or simulator vs. hardware? | 10 | Slides 4, 8, 9, 11; backups 15 to 17, 40, 41 | README, "What we found"; `hardware_campaign/noise_model/`; `applied/` (a job predicted before it ran); `docs/EVIDENCE.md` |
 | 5 | Is the idea or approach original, or a fresh take on a known problem? | 10 | Slides 7, 13; backup 23 | `rewindandamplify-main/docs/REPORT.md` |
 | 6 | Can the team clearly articulate the problem, the solution and the results to both technical and non-technical audiences? | 15 | The whole deck; slide 10 | The Lab's plain and technical captions |
@@ -31,7 +31,7 @@ Updated 12 November 2026. The ten items below are the judging criteria published
 
 **7. Q&A and teamwork.** Every member presents a slide with a result on it and can defend it. Each should have one sentence ready on what they learned. `FINALS_QA.md` starts with twelve questions to rehearse.
 
-**Bonus.** The three bonus items are separate lines on the published form. We have evidence for all three: Aer simulations, seventeen real IBM jobs with saved IDs and counts, and a noise analysis that includes a simulator comparison, echo circuits and a suppression test that did not help.
+**Bonus.** The three bonus items are separate lines on the published form. We have evidence for all three: Aer simulations, nineteen real IBM jobs with saved IDs and counts, and a noise analysis that includes a simulator comparison, echo circuits and a suppression test that did not help.
 
 ## Claims and their evidence
 

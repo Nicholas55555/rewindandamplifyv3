@@ -191,5 +191,93 @@ class TheFrozenBundle(unittest.TestCase):
         self.assertIsNone(analysis.job(Path("nowhere")))
 
 
+class TheJobThatRan(unittest.TestCase):
+    """The frozen job ran on IBM Marrakesh on 13 November 2026. These read its saved counts; nothing contacts IBM."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.job = analysis.job()
+        cls.predictions = saved("predictions.json")
+
+    def test_the_counts_are_the_frozen_plan(self):
+        folder = ROOT / "hardware_campaign" / "runs" / analysis.RUN
+        plan, raw, job = (json.loads((folder / name).read_text(encoding="utf-8")) for name in ("plan.json", "raw.json", "job.json"))
+        self.assertEqual(plan["bundle"], "applied/contact/hardware_bundle")
+        self.assertEqual(raw["job_id"], job["job_id"])
+        self.assertEqual(raw["status"], "DONE")
+        self.assertFalse(raw["submitted_dry_run"])
+        self.assertEqual(raw["plan_sha256"], hashlib.sha256((folder / "plan.json").read_bytes()).hexdigest())
+        self.assertEqual(plan["manifest_sha256"], self.predictions["sha256"]["applied/contact/hardware_bundle/manifest.json"])
+        self.assertEqual(len([row for row in raw["rows"] if row["kind"] == "science"]), 8)
+        self.assertEqual(len([row for row in raw["rows"] if row["kind"] == "calibration"]), 4)
+        self.assertTrue(all(row["shots"] == 8192 for row in raw["rows"]))
+        self.assertGreater(job["submitted_utc"], plan["created_utc"])
+        self.assertEqual(self.job["physical_qubits"][:4], plan["physical_patch"][:4])
+
+    def test_every_stated_direction_held(self):
+        self.assertEqual({key: direction["held"] for key, direction in self.job["directions"].items()},
+                         {"cause": True, "what follows": True, "records": True, "check": True})
+
+    def test_most_predicted_sizes_missed_and_always_on_the_noisy_side(self):
+        """Four of twelve predicted sizes are inside the measured intervals. Every miss is further from the truth than predicted."""
+        claims = self.job["claims"]
+        inside = [key for key, claim in claims.items() if claim["prediction_inside_interval"]]
+        self.assertEqual(len(inside), 4)
+        self.assertEqual(sum(key.startswith("what follows") for key in inside), 3)
+        self.assertIn("check: the failed contact's own cell is dark (rewound)", inside)
+        for key, claim in claims.items():
+            if key not in inside:
+                self.assertGreater(abs(claim["measured"] - claim["exact"]), abs(claim["predicted"] - claim["exact"]), key)
+
+    def test_rewinding_reads_the_cause_closest_to_the_truth_and_still_short_of_it(self):
+        cause = {build: self.job["rows"][f"dose-{build}"]["dose_low_given_fail"]["wilson95"] for build in exposure.BUILDS}
+        self.assertGreater(cause["plain"][0], 0.2)                     # every record beats the 20% prior
+        self.assertLess(cause["plain"][1], cause["steered"][0])
+        self.assertLess(cause["steered"][1], cause["rewound"][0])
+        self.assertLess(cause["rewound"][1], 5 / 9)                    # still biased: say so
+
+    def test_the_neighbour_gap_comes_back_whole_while_each_level_reads_low(self):
+        gap = self.job["claims"]["what follows: neighbour dark after a failure, shared source minus none (rewound)"]
+        self.assertTrue(gap["exact_inside_interval"])
+        self.assertGreater(gap["interval95"][0], 0.12)
+        rows = self.job["rows"]
+        self.assertLess(rows["dose-rewound"]["neighbour_dark_given_fail"]["wilson95"][1], 29 / 90)
+        self.assertLess(rows["clean-rewound"]["neighbour_dark_given_fail"]["wilson95"][1], 0.18)
+
+    def test_a_quarter_of_plain_failures_fail_the_models_own_check(self):
+        rows = self.job["rows"]
+        self.assertLess(rows["dose-plain"]["cell_dark_given_fail"]["wilson95"][1], 0.80)
+        self.assertGreater(rows["dose-rewound"]["cell_dark_given_fail"]["wilson95"][0], 0.95)
+        self.assertGreater(rows["dose-plain"]["fail"]["wilson95"][0], 0.05)        # flagged in over 5% of shots; the true rate is 3.6%
+        self.assertGreater(rows["dose-rewound"]["fail"]["successes"], 14 * rows["dose-plain"]["fail"]["successes"])
+
+    def test_the_check_bit_rescues_most_of_plain_sampling(self):
+        """Looked at afterwards, and it cuts against the method: with the check as a filter, plain sampling's answer is
+        no longer told apart from the rewound one. What is left is the number of records."""
+        rows = self.job["filtered_by_the_check"]["rows"]
+        plain, rewound = rows["dose-plain"]["dose_low"], rows["dose-rewound"]["dose_low"]
+        self.assertGreater(plain["wilson95"][1], rewound["wilson95"][0])
+        self.assertGreater(plain["probability"], self.job["rows"]["dose-plain"]["dose_low_given_fail"]["wilson95"][1])
+        self.assertGreater(rewound["of"], 19 * plain["of"])
+
+    def test_the_days_own_qubits_explain_plain_sampling_better_than_the_prediction_did(self):
+        """Made after the job, so an explanation and not a prediction. It is still too hopeful about the rewound cause."""
+        after = saved("results.json")["job"]["explained_afterwards"]
+        self.assertTrue(after["made_after_the_job"])
+        for key in ("records: a failure is flagged, per shot (plain)", "cause: the dose was low, after a failure (plain)",
+                    "check: the failed contact's own cell is dark (plain)"):
+            claim = self.job["claims"][key]
+            self.assertLess(abs(after["claims"][key] - claim["measured"]), abs(claim["predicted"] - claim["measured"]), key)
+        key = "cause: the dose was low, after a failure (rewound)"
+        self.assertGreater(after["claims"][key], self.job["claims"][key]["interval95"][1])
+
+
+class TheSavedResults(unittest.TestCase):
+    def test_results_reproduce(self):
+        gap, where, noisy_gap, noisy_where = analysis.compare(analysis.build(), saved("results.json"))
+        self.assertLess(gap, 1e-9, where)
+        self.assertLess(noisy_gap, 2e-3, noisy_where)
+
+
 if __name__ == "__main__":
     unittest.main()

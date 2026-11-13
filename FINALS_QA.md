@@ -17,7 +17,7 @@ No. At this size an exact classical sampler answers in a fraction of a milliseco
 The recurrent model as a circuit. A reversible version with a fresh qubit per step. A one-gate oracle for "a click at this step". The inverse preparation and an ancilla-assisted reflection. Steering. Transpilation to IBM's CZ basis on a fixed layout, with readout-calibration circuits in every job. The package has 114 tests.
 
 **5. What ran on real hardware?**
-Eighteen jobs on IBM Kingston and Marrakesh. The featured run is 8,192 shots per circuit on Marrakesh, job `dbqb1ifv5hds73dfo310`. The lighter build hit the click 6,300 times, 76.90%, with 58 two-qubit gates. The textbook build hit it 5,674 times, 69.26%, with 125.
+Nineteen jobs on IBM Kingston and Marrakesh. The featured run is 8,192 shots per circuit on Marrakesh, job `dbqb1ifv5hds73dfo310`. The lighter build hit the click 6,300 times, 76.90%, with 58 two-qubit gates. The textbook build hit it 5,674 times, 69.26%, with 125.
 
 **6. Is that 7.6-point gap real?**
 Within the run, yes: the 95% interval is 6.3 to 9.0 points. Across the three runs that day the lighter build led every time, by 7.6 to 14.5 points. The interval covers shot noise only, not drift between runs.

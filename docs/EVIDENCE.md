@@ -88,6 +88,21 @@ Programmed models on IBM's superconducting qubits. No photon, laser, resist or w
 | Predicted directions that held | all five; three of five sizes inside the measured interval | Predicted first | `applied/predictions.json`, hash-tied to `applied/hardware_bundle/` | tests in `applied/` and `lab/test_data.cjs` |
 | The 12 November job | `dbr51dhabdes73fpaum0`, 13 science and 4 calibration circuits, 8,192 shots each, 39 seconds | Record | `hardware_campaign/runs/applied_v1/` | |
 
+## A four-qubit chipmaking toy
+
+A toy that Bayes' rule solves by hand, run on four of IBM's qubits: a hidden dose, a contact that rarely fails to print, and its neighbour. No speedup, and no resist, mask or wafer. It is not in the talk. Full account: [`applied/contact/README.md`](../applied/contact/README.md).
+
+| Claim | Value | Kind | Source | Check |
+|---|---|---|---|---|
+| A contact fails; after a failure the dose was low; the neighbour is dark, with a shared source and without | 3.6%; 55.6%; 32.2% and 18.0% | Exact, by hand | [`applied/contact/results.json`](../applied/contact/results.json), `models.*.truth` | `python applied/contact/analysis.py --check` |
+| IBM, 13 November: shots flagged as failures, plain, steered, rewound | 5.9%, 21.0% and 87.9% of 8,192 | Measured | [`hardware_campaign/runs/contact_v1/raw.json`](../hardware_campaign/runs/contact_v1/raw.json); `job.rows` | `python -m unittest discover -s applied/contact -p "test_*.py"` |
+| Flagged shots that pass the model's own check (the cell reads dark): plain, rewound | 74.4% [70.3, 78.1] and 96.4% [96.0, 96.8]; predicted 88.2% and 96.6% | Measured | `job.claims` | same |
+| Dose was low after a failure: plain, steered, rewound | 37.6% [33.4, 42.0], 45.9% [43.5, 48.2], 50.6% [49.5, 51.8]; by hand 55.6%, prior 20% | Measured | `job.claims` | same |
+| Neighbour dark after a failure, shared source minus none, rewound | +14.0 points [12.7, 15.4]; by hand +14.2; predicted +13.8 | Measured, predicted first | `job.claims`; [`applied/contact/predictions.json`](../applied/contact/predictions.json) | `python applied/contact/forecast.py --check` |
+| Stated directions that held; predicted sizes inside the measured interval | four of four; four of twelve, every miss on the noisy side | Predicted first | `job.directions`, `job.claims`; predictions hash-tied to `applied/contact/hardware_bundle/` | tests in `applied/contact/` |
+| With the check used as a filter, dose was low: plain, rewound | 46.6% [41.5, 51.8] from 358 records; 51.2% [50.0, 52.3] from 6,939 | Measured; looked at afterwards, and against the method | `job.filtered_by_the_check` | `test_the_check_bit_rescues_most_of_plain_sampling` |
+| The 13 November job | `dbrl5iujjaos73aj81r0`, 8 science and 4 calibration circuits, 8,192 shots each, 28 seconds | Record | `hardware_campaign/runs/contact_v1/` | |
+
 ## Follow-up studies
 
 These are simulations, or a reanalysis of data published by others. None is a measurement by our team.
