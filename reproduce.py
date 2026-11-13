@@ -136,6 +136,33 @@ def hardware(quick: bool) -> None:
     print("   Right order, visibly biased. These are raw counts with no error mitigation.")
 
 
+def three_fields() -> None:
+    rule("5. One question, three fields: our own machine on IBM (applied/README.md)")
+    sys.path.insert(0, str(ROOT / "applied"))
+    import study
+
+    truth = {name: machine["truth"] for name, machine in study.exact().items()}
+    print("   After a rare click at step 3, how often does another follow within three steps?")
+    print(f"   Exact: {pct(truth['defect']['another'])} with the defect, {pct(truth['clean']['another'])} with nothing hidden, "
+          f"{pct(truth['stepped']['another'])} after the defect's frequency steps.")
+    print("   A two-photon resist prints on such pairs; the ratio to the plain click rate is g2; the step is a laser-style change.")
+    old, new = study.ibm()["rows"], study.new_job()
+    runs = [("11 Nov", lambda machine, how: old[f"window/{machine}/{how}"]["another"])]
+    if new is not None:
+        runs.append(("12 Nov", lambda machine, how: new["rows"][f"window-{machine}-{how}"]["another"]))
+    print(f"   {'IBM Marrakesh, raw counts':30s}{'defect':>9s}{'nothing':>9s}{'kept shots':>13s}")
+    for day, row in runs:
+        for how in ("plain", "rewound"):
+            d, c = row("defect", how), row("clean", how)
+            order = "right order" if c["probability"] > d["probability"] else "BACKWARDS"
+            print(f"   {day + ', ' + how:30s}{pct(d['probability'], 1):>9s}{pct(c['probability'], 1):>9s}{d['of']:>8,d} of 8,192   {order}")
+    if new is not None:
+        step = new["comparisons"]["lasers: second event, stepped minus defect (rewound)"]
+        print(f"   Frequency step, rewound, 12 Nov: {100 * step['difference']:+.1f} points measured, {100 * step['predicted']:+.1f} predicted before the job, "
+              f"{100 * step['exact']:+.1f} exact.")
+        print(f"   Job {new['job_id']}: every direction predicted in advance held. No photon, laser or wafer was measured.")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--quick", action="store_true", help="skip the noise-model simulation (saves about 20 seconds)")
@@ -146,6 +173,7 @@ def main() -> None:
     ideal_circuits(numbers["p_click"])
     classical_baseline(numbers["p_click"])
     hardware(args.quick)
+    three_fields()
     print(f"\nDone in {time.perf_counter() - started:.0f} s. Nothing above claims a quantum speedup: "
           "at this size the classical sampler is faster.")
 

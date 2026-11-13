@@ -16,12 +16,12 @@ REWIND & AMPLIFY: reproduce the headline numbers (no IBM account, no network)
    textbook: full reflection, 1 round          7    31.93%        0.0000          6,356 hits
    steer + full reflection, 1 round            7    96.49%        0.0000         19,298 hits
    steer + local reflection, 1 round           5    96.10%        0.0353         19,222 hits
-   Full reflection leaves the conditional answer untouched: worst error 7.5e-17.
+   Full reflection leaves the conditional answer untouched: worst error 1.0e-16.
    Local reflection trades a small bias for about half the gates.
 
 3. The classical baseline we must beat (and do not, at this size)
 -----------------------------------------------------------------
-   Exact conditional sampler, no rejection: P(click at 3) = 3.95%, 0.05 ms per sample in Python.
+   Exact conditional sampler, no rejection: P(click at 3) = 3.95%, 0.06 ms per sample in Python.
    Rejection sampling: 25.3 model runs per kept sample.  Amplified: 3 calls, hit rate 96%.
    So today the classical sampler wins. Its cost grew about 6x per added hidden qubit in our tests;
    amplification instead costs about 1/sqrt(p) calls of the machine, whatever the memory size.
@@ -35,4 +35,17 @@ REWIND & AMPLIFY: reproduce the headline numbers (no IBM account, no network)
    After-click answer at step 6, local build: 8.79% with the defect, 11.66% without (exact 4.67% and 10.10%).
    Right order, visibly biased. These are raw counts with no error mitigation.
 
-Done in about 10 s. Nothing above claims a quantum speedup: at this size the classical sampler is faster.
+5. One question, three fields: our own machine on IBM (applied/README.md)
+-------------------------------------------------------------------------
+   After a rare click at step 3, how often does another follow within three steps?
+   Exact: 8.50% with the defect, 17.37% with nothing hidden, 14.22% after the defect's frequency steps.
+   A two-photon resist prints on such pairs; the ratio to the plain click rate is g2; the step is a laser-style change.
+   IBM Marrakesh, raw counts        defect  nothing   kept shots
+   11 Nov, plain                     38.6%    25.7%     619 of 8,192   BACKWARDS
+   11 Nov, rewound                   19.9%    22.9%   6,118 of 8,192   right order
+   12 Nov, plain                     47.3%    34.2%     806 of 8,192   BACKWARDS
+   12 Nov, rewound                   16.8%    21.0%   5,894 of 8,192   right order
+   Frequency step, rewound, 12 Nov: +4.2 points measured, +3.7 predicted before the job, +5.8 exact.
+   Job dbr51dhabdes73fpaum0: every direction predicted in advance held. No photon, laser or wafer was measured.
+
+Done in 10 s. Nothing above claims a quantum speedup: at this size the classical sampler is faster.

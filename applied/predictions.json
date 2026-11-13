@@ -1,0 +1,477 @@
+{
+  "schema": "ra-applied-predictions-v1",
+  "made_before_the_job": true,
+  "device_assumed": {
+    "backend": "ibm_marrakesh",
+    "physical_qubits": [
+      112,
+      111,
+      110,
+      109,
+      118,
+      129,
+      128,
+      127
+    ],
+    "calibration": "2026-11-11 05:07:21-05:00",
+    "noise_scale_from_echoes": 1.5423,
+    "readout": "measured inside job dbqb1ifv5hds73dfo310"
+  },
+  "model": "depolarizing gate errors at the reported rates times the echo-fitted scale, plus measured readout errors; no idle decoherence, crosstalk, leakage or drift",
+  "shots_planned": 8192,
+  "rows": {
+    "site-defect-plain": {
+      "two_qubit_gates": 22,
+      "depth": 71,
+      "ideal": {
+        "event": 0.03954181605860497,
+        "emitter_after_event": -3.526035781364989e-16,
+        "defect_after_event": 0.08464271131791665,
+        "defect_typical": 0.292706496473114
+      },
+      "calibration": {
+        "event": 0.055306941828393526,
+        "emitter_after_event": 0.12397950717884898,
+        "defect_after_event": 0.16874530801519674,
+        "defect_typical": 0.2982382261018238
+      },
+      "echo_scaled": {
+        "event": 0.0612639771735297,
+        "emitter_after_event": 0.156834252075323,
+        "defect_after_event": 0.18889099365454867,
+        "defect_typical": 0.30078701167668226
+      }
+    },
+    "site-defect-steered": {
+      "two_qubit_gates": 22,
+      "depth": 68,
+      "ideal": {
+        "event": 0.19770908029302478,
+        "emitter_after_event": -3.509648567290424e-17,
+        "defect_after_event": 0.08464271131791727,
+        "defect_typical": 0.29270649647311414
+      },
+      "calibration": {
+        "event": 0.21963780221793122,
+        "emitter_after_event": 0.03722297035869646,
+        "defect_after_event": 0.1337429317172433,
+        "defect_typical": 0.2982382261018236
+      },
+      "echo_scaled": {
+        "event": 0.2305848344377173,
+        "emitter_after_event": 0.046025265166173654,
+        "defect_after_event": 0.15008322257905102,
+        "defect_typical": 0.3007870116766823
+      }
+    },
+    "site-defect-rewound": {
+      "two_qubit_gates": 58,
+      "depth": 189,
+      "ideal": {
+        "event": 0.9610172483426279,
+        "emitter_after_event": -3.008631708160254e-17,
+        "defect_after_event": 0.0864283481980007,
+        "defect_typical": 0.0959955959041632
+      },
+      "calibration": {
+        "event": 0.8314956750124293,
+        "emitter_after_event": 0.028199690192795793,
+        "defect_after_event": 0.1410007110003456,
+        "defect_typical": 0.1878662475979407
+      },
+      "echo_scaled": {
+        "event": 0.7839728951660828,
+        "emitter_after_event": 0.039446234045867945,
+        "defect_after_event": 0.16302776443792003,
+        "defect_typical": 0.22275956235713087
+      }
+    },
+    "site-stepped-plain": {
+      "two_qubit_gates": 22,
+      "depth": 72,
+      "ideal": {
+        "event": 0.04758136496776896,
+        "emitter_after_event": -3.601049569401582e-16,
+        "defect_after_event": 0.06567727404063409,
+        "defect_typical": 0.2527443762049837
+      },
+      "calibration": {
+        "event": 0.06248669402966781,
+        "emitter_after_event": 0.11254178947040347,
+        "defect_after_event": 0.1386665423399142,
+        "defect_typical": 0.26167556961766875
+      },
+      "echo_scaled": {
+        "event": 0.06810852327488866,
+        "emitter_after_event": 0.14270771886458478,
+        "defect_after_event": 0.1577351022748993,
+        "defect_typical": 0.26531814854397195
+      }
+    },
+    "site-stepped-rewound": {
+      "two_qubit_gates": 58,
+      "depth": 190,
+      "ideal": {
+        "event": 0.99470013654035,
+        "emitter_after_event": -4.257985588387282e-17,
+        "defect_after_event": 0.06756776783751285,
+        "defect_typical": 0.07013088773565689
+      },
+      "calibration": {
+        "event": 0.8585756084186824,
+        "emitter_after_event": 0.027410043650117087,
+        "defect_after_event": 0.12508351231961928,
+        "defect_typical": 0.16842677045308108
+      },
+      "echo_scaled": {
+        "event": 0.8084335099266984,
+        "emitter_after_event": 0.03824822984307974,
+        "defect_after_event": 0.14834327998542635,
+        "defect_typical": 0.20586268079755113
+      }
+    },
+    "window-defect-plain": {
+      "two_qubit_gates": 70,
+      "depth": 137,
+      "ideal": {
+        "event": 0.03954181605860486,
+        "after": [
+          0.009744391336228371,
+          0.03017519959596736,
+          0.046674963429852924
+        ],
+        "later_alone": [
+          0.0406652112031236,
+          0.05428401072566292,
+          0.08019929646261001
+        ],
+        "another": 0.0849951728453337,
+        "pair": 0.0033608634905195117
+      },
+      "calibration": {
+        "event": 0.06906916116911851,
+        "after": [
+          0.10991566021878708,
+          0.10642547165662167,
+          0.10944484375645816
+        ],
+        "later_alone": [
+          0.08845701224671842,
+          0.09353388903971266,
+          0.10049764473051045
+        ],
+        "another": 0.28706630055210053,
+        "pair": 0.019827428579055645
+      },
+      "echo_scaled": {
+        "event": 0.08341064063720185,
+        "after": [
+          0.135486811134978,
+          0.12883408978775562,
+          0.12820317578009
+        ],
+        "later_alone": [
+          0.10420879970523447,
+          0.10934760324001405,
+          0.11086294673045405
+        ],
+        "another": 0.3391934067996333,
+        "pair": 0.028292339361072432
+      }
+    },
+    "window-defect-rewound": {
+      "two_qubit_gates": 98,
+      "depth": 265,
+      "ideal": {
+        "event": 0.9610172483426267,
+        "after": [
+          0.009678655720122758,
+          0.030091841675669636,
+          0.0467297083440669
+        ],
+        "later_alone": [
+          0.009650591978724518,
+          0.030211812118114415,
+          0.047230609201074844
+        ],
+        "another": 0.08489337647122011,
+        "pair": 0.08158399905888665
+      },
+      "calibration": {
+        "event": 0.8314956750124292,
+        "after": [
+          0.0398362195517044,
+          0.0786749931501054,
+          0.07225019913317993
+        ],
+        "later_alone": [
+          0.043223423675618676,
+          0.08300701801618043,
+          0.07635678485029308
+        ],
+        "another": 0.17613146089680234,
+        "pair": 0.14645254796931195
+      },
+      "echo_scaled": {
+        "event": 0.7839728951660826,
+        "after": [
+          0.05300853764900729,
+          0.09465085010785268,
+          0.0842887570236923
+        ],
+        "later_alone": [
+          0.05747843802285368,
+          0.10011261154810588,
+          0.08925907529898137
+        ],
+        "another": 0.21050549896392845,
+        "pair": 0.1650306054711318
+      }
+    },
+    "window-clean-plain": {
+      "two_qubit_gates": 15,
+      "depth": 49,
+      "ideal": {
+        "event": 0.10102428336359551,
+        "after": [
+          0.01746643850903201,
+          0.057515205649054754,
+          0.10102428336359569
+        ],
+        "later_alone": [
+          0.1332139064290123,
+          0.1470976025200764,
+          0.14348053105998185
+        ],
+        "another": 0.1736970080413626,
+        "pair": 0.017547615759779343
+      },
+      "calibration": {
+        "event": 0.12102284338809967,
+        "after": [
+          0.04613758038716486,
+          0.09841926011634528,
+          0.11550147078247248
+        ],
+        "later_alone": [
+          0.13624904301866372,
+          0.16438782758150652,
+          0.14881518749845116
+        ],
+        "another": 0.2468787604062824,
+        "pair": 0.029877969556497696
+      },
+      "echo_scaled": {
+        "event": 0.12362805829535073,
+        "after": [
+          0.04932267784015523,
+          0.10346990734495606,
+          0.11943538912077163
+        ],
+        "later_alone": [
+          0.13677607548227683,
+          0.16711113773528996,
+          0.1517249010217818
+        ],
+        "another": 0.25622958394077366,
+        "pair": 0.03167716594042343
+      }
+    },
+    "window-clean-rewound": {
+      "two_qubit_gates": 32,
+      "depth": 112,
+      "ideal": {
+        "event": 0.9808166205401587,
+        "after": [
+          0.017466438509031904,
+          0.057515205649054324,
+          0.10102428336359548
+        ],
+        "later_alone": [
+          0.020794597360108646,
+          0.05909895632859954,
+          0.10085767631269094
+        ],
+        "another": 0.17369700804136184,
+        "pair": 0.1703649124250653
+      },
+      "calibration": {
+        "event": 0.9208866571814109,
+        "after": [
+          0.02927965839359478,
+          0.08588244563427301,
+          0.10898307368671666
+        ],
+        "later_alone": [
+          0.03562829763895619,
+          0.08815837659014923,
+          0.10785922631159876
+        ],
+        "another": 0.21339898817522784,
+        "pair": 0.19651628086658102
+      },
+      "echo_scaled": {
+        "event": 0.8962026445363577,
+        "after": [
+          0.03295275214810922,
+          0.09121166811173598,
+          0.11288781623636533
+        ],
+        "later_alone": [
+          0.04069311344034458,
+          0.09383108327070272,
+          0.11135558352397829
+        ],
+        "another": 0.2235968700391449,
+        "pair": 0.20038810623913395
+      }
+    },
+    "window-stepped-plain": {
+      "two_qubit_gates": 70,
+      "depth": 138,
+      "ideal": {
+        "event": 0.047581364967768935,
+        "after": [
+          0.01854026302323719,
+          0.054240009421635545,
+          0.07253535801867768
+        ],
+        "later_alone": [
+          0.06118210372831826,
+          0.08266668383141641,
+          0.10057540089908933
+        ],
+        "another": 0.14219276882685883,
+        "pair": 0.0067657260293283675
+      },
+      "calibration": {
+        "event": 0.0761296014235985,
+        "after": [
+          0.11171440656900565,
+          0.11724465004906151,
+          0.11809086855768149
+        ],
+        "later_alone": [
+          0.10562820406867254,
+          0.11631354482894452,
+          0.11585271539206629
+        ],
+        "another": 0.30602298306555015,
+        "pair": 0.023297407727240965
+      },
+      "echo_scaled": {
+        "event": 0.09004939472250614,
+        "after": [
+          0.13675270720417818,
+          0.13720098036868275,
+          0.13376822858429593
+        ],
+        "later_alone": [
+          0.12004917822091184,
+          0.12991016087793972,
+          0.12423156241330796
+        ],
+        "another": 0.3519901052456721,
+        "pair": 0.03169649592568401
+      }
+    },
+    "window-stepped-rewound": {
+      "two_qubit_gates": 98,
+      "depth": 263,
+      "ideal": {
+        "event": 0.9947001365403488,
+        "after": [
+          0.018494266259900992,
+          0.05432894279212351,
+          0.07286873584586263
+        ],
+        "later_alone": [
+          0.01853602317637129,
+          0.05446154140854422,
+          0.07305648739596754
+        ],
+        "another": 0.142544688653102,
+        "pair": 0.14178922126634205
+      },
+      "calibration": {
+        "event": 0.8567291688225985,
+        "after": [
+          0.0469696731874877,
+          0.09736722881116426,
+          0.09178286421133552
+        ],
+        "later_alone": [
+          0.049807897259013766,
+          0.09984134259518349,
+          0.09376984093595636
+        ],
+        "another": 0.21899865344330957,
+        "pair": 0.18762253433775491
+      },
+      "echo_scaled": {
+        "event": 0.8059720687710675,
+        "after": [
+          0.05940136236194209,
+          0.11100874857613956,
+          0.10098069269216281
+        ],
+        "later_alone": [
+          0.06315127472234244,
+          0.1141286118498327,
+          0.10343456016714368
+        ],
+        "another": 0.24749411742519772,
+        "pair": 0.19947334582985612
+      }
+    },
+    "echo-T3-x1": {
+      "two_qubit_gates": 43,
+      "depth": 141,
+      "ideal": {
+        "all_zero_return": 1.000000000000001
+      },
+      "calibration": {
+        "all_zero_return": 0.8287643930565449
+      },
+      "echo_scaled": {
+        "all_zero_return": 0.7681154384085959
+      }
+    },
+    "echo-T5-x1": {
+      "two_qubit_gates": 101,
+      "depth": 231,
+      "ideal": {
+        "all_zero_return": 1.000000000000002
+      },
+      "calibration": {
+        "all_zero_return": 0.6861980911215934
+      },
+      "echo_scaled": {
+        "all_zero_return": 0.5831464198554283
+      }
+    }
+  },
+  "comparisons": {
+    "ideal": {
+      "chipmaking: second event, clean minus defect (rewound)": 0.08880363157014173,
+      "chipmaking: second event, clean minus defect (plain)": 0.0887018351960289,
+      "lasers: second event, stepped minus defect (rewound)": 0.05765131218188188,
+      "lasers: second event, stepped minus defect (plain)": 0.05719759598152513,
+      "cause: defect holds the energy after the event (rewound)": 0.0864283481980007,
+      "cause: defect holds the energy after the event (plain)": 0.08464271131791665
+    },
+    "echo_scaled": {
+      "chipmaking: second event, clean minus defect (rewound)": 0.013091371075216462,
+      "chipmaking: second event, clean minus defect (plain)": -0.08296382285885961,
+      "lasers: second event, stepped minus defect (rewound)": 0.036988618461269274,
+      "lasers: second event, stepped minus defect (plain)": 0.012796698446038812,
+      "cause: defect holds the energy after the event (rewound)": 0.16302776443792003,
+      "cause: defect holds the energy after the event (plain)": 0.18889099365454867
+    }
+  },
+  "sha256": {
+    "applied/hardware_bundle/manifest.json": "dd65f903f60cf92c759fb6f6321519ee5194b067aff3ffd73f1bef331090ecca",
+    "applied/predictions_isa.qpy": "7eafd9e0cef3b023ae670caa610226918d8d8f9887dfe6be1863a6376c2119c8"
+  },
+  "caveat": "Made for the qubits and calibration of 11 November 2026. The job is compiled again on the day and may land on other qubits with other error rates."
+}

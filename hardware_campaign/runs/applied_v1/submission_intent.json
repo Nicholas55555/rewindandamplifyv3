@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-11-12T23:50:11.885563+00:00",
+  "unique_tag": "ra26-7baae620c4f84893bf31",
+  "plan_sha256": "2cee3afd77e62ff45dabcebb177b7aa5b6eb105a74b4f4dcba5568aba04254a4",
+  "quota_before": {
+    "usage_consumed_seconds": 337,
+    "usage_limit_seconds": 600,
+    "usage_remaining_seconds": 263,
+    "usage_limit_reached": false,
+    "usage_period": {
+      "start_time": "2026-10-15T23:50:12.629Z",
+      "end_time": "2026-11-12T23:50:12.629Z"
+    }
+  },
+  "reserved_other_jobs_seconds": 0,
+  "real_hardware": true,
+  "dry_run": false
+}

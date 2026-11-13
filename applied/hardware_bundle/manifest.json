@@ -1,0 +1,388 @@
+{
+  "schema": "ra-hardware-bundle-v1",
+  "circuits": [
+    {
+      "name": "site-defect-plain",
+      "index": 0,
+      "num_qubits": 5,
+      "metadata": {
+        "kind": "applied",
+        "reading": "cause",
+        "machine": "defect",
+        "how": "plain",
+        "t0": 3,
+        "tau": 0,
+        "theta": 0.6,
+        "gamma": 0.2,
+        "phi": [
+          0.45
+        ],
+        "zeta": [
+          0.3
+        ]
+      },
+      "reference": {
+        "memory_qubits": 2,
+        "chronological_history_qubits": [
+          2,
+          3,
+          4
+        ]
+      },
+      "ideal_probability_key": "p000"
+    },
+    {
+      "name": "site-defect-steered",
+      "index": 1,
+      "num_qubits": 5,
+      "metadata": {
+        "kind": "applied",
+        "reading": "cause",
+        "machine": "defect",
+        "how": "steered",
+        "t0": 3,
+        "tau": 0,
+        "theta": 0.6,
+        "gamma": 0.2,
+        "phi": [
+          0.45
+        ],
+        "zeta": [
+          0.3
+        ]
+      },
+      "reference": {
+        "memory_qubits": 2,
+        "chronological_history_qubits": [
+          2,
+          3,
+          4
+        ]
+      },
+      "ideal_probability_key": "p001"
+    },
+    {
+      "name": "site-defect-rewound",
+      "index": 2,
+      "num_qubits": 5,
+      "metadata": {
+        "kind": "applied",
+        "reading": "cause",
+        "machine": "defect",
+        "how": "rewound",
+        "t0": 3,
+        "tau": 0,
+        "theta": 0.6,
+        "gamma": 0.2,
+        "phi": [
+          0.45
+        ],
+        "zeta": [
+          0.3
+        ]
+      },
+      "reference": {
+        "memory_qubits": 2,
+        "chronological_history_qubits": [
+          2,
+          3,
+          4
+        ]
+      },
+      "ideal_probability_key": "p002"
+    },
+    {
+      "name": "site-stepped-plain",
+      "index": 3,
+      "num_qubits": 5,
+      "metadata": {
+        "kind": "applied",
+        "reading": "cause",
+        "machine": "stepped",
+        "how": "plain",
+        "t0": 3,
+        "tau": 0,
+        "theta": 0.6,
+        "gamma": 0.2,
+        "phi": [
+          0.45
+        ],
+        "zeta": [
+          0.6
+        ]
+      },
+      "reference": {
+        "memory_qubits": 2,
+        "chronological_history_qubits": [
+          2,
+          3,
+          4
+        ]
+      },
+      "ideal_probability_key": "p003"
+    },
+    {
+      "name": "site-stepped-rewound",
+      "index": 4,
+      "num_qubits": 5,
+      "metadata": {
+        "kind": "applied",
+        "reading": "cause",
+        "machine": "stepped",
+        "how": "rewound",
+        "t0": 3,
+        "tau": 0,
+        "theta": 0.6,
+        "gamma": 0.2,
+        "phi": [
+          0.45
+        ],
+        "zeta": [
+          0.6
+        ]
+      },
+      "reference": {
+        "memory_qubits": 2,
+        "chronological_history_qubits": [
+          2,
+          3,
+          4
+        ]
+      },
+      "ideal_probability_key": "p004"
+    },
+    {
+      "name": "window-defect-plain",
+      "index": 5,
+      "num_qubits": 8,
+      "metadata": {
+        "kind": "applied",
+        "reading": "window",
+        "machine": "defect",
+        "how": "plain",
+        "t0": 3,
+        "tau": 3,
+        "theta": 0.6,
+        "gamma": 0.2,
+        "phi": [
+          0.45
+        ],
+        "zeta": [
+          0.3
+        ]
+      },
+      "reference": {
+        "memory_qubits": 2,
+        "chronological_history_qubits": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "ideal_probability_key": "p005"
+    },
+    {
+      "name": "window-defect-rewound",
+      "index": 6,
+      "num_qubits": 8,
+      "metadata": {
+        "kind": "applied",
+        "reading": "window",
+        "machine": "defect",
+        "how": "rewound",
+        "t0": 3,
+        "tau": 3,
+        "theta": 0.6,
+        "gamma": 0.2,
+        "phi": [
+          0.45
+        ],
+        "zeta": [
+          0.3
+        ]
+      },
+      "reference": {
+        "memory_qubits": 2,
+        "chronological_history_qubits": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "ideal_probability_key": "p006"
+    },
+    {
+      "name": "window-clean-plain",
+      "index": 7,
+      "num_qubits": 7,
+      "metadata": {
+        "kind": "applied",
+        "reading": "window",
+        "machine": "clean",
+        "how": "plain",
+        "t0": 3,
+        "tau": 3,
+        "theta": 0.6,
+        "gamma": 0.2,
+        "phi": [],
+        "zeta": []
+      },
+      "reference": {
+        "memory_qubits": 1,
+        "chronological_history_qubits": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "ideal_probability_key": "p007"
+    },
+    {
+      "name": "window-clean-rewound",
+      "index": 8,
+      "num_qubits": 7,
+      "metadata": {
+        "kind": "applied",
+        "reading": "window",
+        "machine": "clean",
+        "how": "rewound",
+        "t0": 3,
+        "tau": 3,
+        "theta": 0.6,
+        "gamma": 0.2,
+        "phi": [],
+        "zeta": []
+      },
+      "reference": {
+        "memory_qubits": 1,
+        "chronological_history_qubits": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "ideal_probability_key": "p008"
+    },
+    {
+      "name": "window-stepped-plain",
+      "index": 9,
+      "num_qubits": 8,
+      "metadata": {
+        "kind": "applied",
+        "reading": "window",
+        "machine": "stepped",
+        "how": "plain",
+        "t0": 3,
+        "tau": 3,
+        "theta": 0.6,
+        "gamma": 0.2,
+        "phi": [
+          0.45
+        ],
+        "zeta": [
+          0.6
+        ]
+      },
+      "reference": {
+        "memory_qubits": 2,
+        "chronological_history_qubits": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "ideal_probability_key": "p009"
+    },
+    {
+      "name": "window-stepped-rewound",
+      "index": 10,
+      "num_qubits": 8,
+      "metadata": {
+        "kind": "applied",
+        "reading": "window",
+        "machine": "stepped",
+        "how": "rewound",
+        "t0": 3,
+        "tau": 3,
+        "theta": 0.6,
+        "gamma": 0.2,
+        "phi": [
+          0.45
+        ],
+        "zeta": [
+          0.6
+        ]
+      },
+      "reference": {
+        "memory_qubits": 2,
+        "chronological_history_qubits": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "ideal_probability_key": "p010"
+    },
+    {
+      "name": "echo-T3-x1",
+      "index": 11,
+      "num_qubits": 5,
+      "metadata": {
+        "kind": "echo",
+        "k": 1,
+        "T": 3,
+        "repeats": 1
+      },
+      "reference": {},
+      "ideal_probability_key": "p011"
+    },
+    {
+      "name": "echo-T5-x1",
+      "index": 12,
+      "num_qubits": 7,
+      "metadata": {
+        "kind": "echo",
+        "k": 1,
+        "T": 5,
+        "repeats": 1
+      },
+      "reference": {},
+      "ideal_probability_key": "p012"
+    }
+  ],
+  "source_sha256": {
+    "rewindandamplify-main/qrsm_grover/__init__.py": "228acb3e0e4e06ff942fa5daade0848039492e5cef65ba51157ba3380bc829b3",
+    "rewindandamplify-main/qrsm_grover/amplify.py": "e70d46eb7fbc435647fb8016f10b4a96ce869a8ec236575a8633fcb145fac539",
+    "rewindandamplify-main/qrsm_grover/classical.py": "fc97d3b3d15e1ea98e2f82fa17e7bcb5003261d5eae3e7f31870da5cd16e1971",
+    "rewindandamplify-main/qrsm_grover/fastsim.py": "43302120b99a6e6f396d0e7facbc7ebe90a78546800cf36eef7c33b92320d730",
+    "rewindandamplify-main/qrsm_grover/hardware.py": "42065f469c3613a9eda3ad2a54d048fca25691574114062ac79145e14e7a3623",
+    "rewindandamplify-main/qrsm_grover/model.py": "128207689429d05c6b9fe9a78a478884dfd51af83969ad5dbdc46cc69b12b11f",
+    "rewindandamplify-main/qrsm_grover/predicates.py": "c02edaaad6c4207bcb62523b19f73368d93d50b773578ce3cbca6d22b8cfc602",
+    "rewindandamplify-main/qrsm_grover/queries.py": "d1f5a89f269adf3ac5e2ff179ea57a4feb42f84573bcce98a9a001035b96e2d6",
+    "rewindandamplify-main/qrsm_grover/search.py": "aa64753d37312fad2c6fac8a002e2017ef521902ad15506fcd9409fe0a6275af",
+    "applied/bundle.py": "cff21f325de5ae9ab82095fe47ed036758dcb0b1a06f220e516ad39c924bbc4e"
+  },
+  "scope": "The main project's machine asked three fields' questions: with a hidden defect, without one, and with the defect's frequency stepped. Programmed models; no photon, laser, resist or wafer.",
+  "qpy_file": "logical.qpy",
+  "ideal_probabilities_file": "ideal_probabilities.npz",
+  "logical.qpy_sha256": "43fc380b8313252313de9fd03b85ea84583cfa7de825fb8f8820909172aee3e3",
+  "ideal_probabilities.npz_sha256": "64e41fed27409de589da7d8254ac9e8d44e6ba9328edd939891182d27e82203b"
+}

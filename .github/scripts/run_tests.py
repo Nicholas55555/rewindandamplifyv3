@@ -40,6 +40,7 @@ SUITES = (
     'hardware_campaign/optical_controls',
     'hardware_campaign/extensions',
     'hardware_campaign/noise_model',
+    'applied',
 )
 
 

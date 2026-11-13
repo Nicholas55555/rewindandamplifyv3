@@ -1,0 +1,2325 @@
+{
+  "schema": "ra-applied-v1",
+  "question": "A rare event has just happened. Was it a one-off, or is something hidden remembering?",
+  "event": "a click at step 3",
+  "window_steps": 3,
+  "machines": {
+    "defect": {
+      "role": "the main project's machine, with one hidden defect",
+      "theta": 0.6,
+      "gamma": 0.2,
+      "phi": [
+        0.45
+      ],
+      "zeta": [
+        0.3
+      ],
+      "steered_gamma": 1.0,
+      "truth": {
+        "event": 0.03954181605860482,
+        "after": [
+          0.009744391336227691,
+          0.030175199595966665,
+          0.04667496342985301
+        ],
+        "later_alone": [
+          0.04066521120312361,
+          0.05428401072566308,
+          0.0801992964626101
+        ],
+        "another": 0.0849951728453333,
+        "pair": 0.0033608634905194926,
+        "g2": [
+          0.2396247565899571,
+          0.5558763840878317,
+          0.5819871930125153
+        ],
+        "emitter_after_event": 0.0,
+        "defect_after_event": 0.08464271131791785,
+        "defect_typical": 0.2927064964731148
+      },
+      "curve": {
+        "event": 0.03954181605860483,
+        "after": [
+          0.009744391336227697,
+          0.03017519959596668,
+          0.046674963429853014,
+          0.05373128131511077,
+          0.057432047502368556,
+          0.06545284938456163,
+          0.07797518704549561,
+          0.0890530391275194
+        ],
+        "later_alone": [
+          0.04066521120312362,
+          0.0542840107256631,
+          0.08019929646261015,
+          0.1026456929595694,
+          0.11002397204897901,
+          0.10514947170805962,
+          0.09730922303553358,
+          0.09099636687016581
+        ],
+        "another": 0.3536784337811079,
+        "pair": 0.013985087572468018,
+        "g2": [
+          0.23962475658995716,
+          0.5558763840878317,
+          0.5819871930125151,
+          0.5234635742220057,
+          0.5219957654028499,
+          0.6224743531407083,
+          0.8013134275773847,
+          0.9786438974490139
+        ],
+        "emitter_after_event": 0.0,
+        "defect_after_event": 0.08464271131791785,
+        "defect_typical": 0.2927064964731148
+      },
+      "ideal_circuits": {
+        "cause": {
+          "plain": {
+            "event": 0.03954181605860484,
+            "emitter_after_event": 0.0,
+            "defect_after_event": 0.08464271131791785,
+            "defect_typical": 0.2927064964731149
+          },
+          "steered": {
+            "event": 0.19770908029302417,
+            "emitter_after_event": 0.0,
+            "defect_after_event": 0.08464271131791788,
+            "defect_typical": 0.292706496473115
+          },
+          "rewound": {
+            "event": 0.9610172483426257,
+            "emitter_after_event": 6.535328645831937e-65,
+            "defect_after_event": 0.0864283481980027,
+            "defect_typical": 0.09599559590416565
+          }
+        },
+        "window": {
+          "plain": {
+            "event": 0.039541816058604816,
+            "after": [
+              0.009744391336227697,
+              0.030175199595966685,
+              0.04667496342985303
+            ],
+            "later_alone": [
+              0.04066521120312362,
+              0.0542840107256631,
+              0.0801992964626101
+            ],
+            "another": 0.08499517284533334,
+            "pair": 0.0033608634905194943
+          },
+          "rewound": {
+            "event": 0.9610172483426256,
+            "after": [
+              0.009678655720122989,
+              0.030091841675670104,
+              0.04672970834406724
+            ],
+            "later_alone": [
+              0.00965059197872473,
+              0.03021181211811483,
+              0.04723060920107513
+            ],
+            "another": 0.08489337647122108,
+            "pair": 0.08158399905888748
+          }
+        }
+      }
+    },
+    "clean": {
+      "role": "the same emitter with nothing hidden behind it",
+      "theta": 0.6,
+      "gamma": 0.2,
+      "phi": [],
+      "zeta": [],
+      "steered_gamma": 0.49493050913358544,
+      "truth": {
+        "event": 0.10102428336359566,
+        "after": [
+          0.01746643850903218,
+          0.057515205649054886,
+          0.10102428336359573
+        ],
+        "later_alone": [
+          0.13321390642901235,
+          0.1470976025200767,
+          0.1434805310599818
+        ],
+        "another": 0.17369700804136284,
+        "pair": 0.017547615759779395,
+        "g2": [
+          0.13111572941027577,
+          0.3910002927559944,
+          0.7040975010147035
+        ],
+        "emitter_after_event": 0.0
+      },
+      "curve": {
+        "event": 0.10102428336359569,
+        "after": [
+          0.017466438509032168,
+          0.05751520564905487,
+          0.10102428336359577,
+          0.13321390642901235,
+          0.1470976025200767,
+          0.14348053105998185,
+          0.12848779689255982,
+          0.11010905698799779
+        ],
+        "later_alone": [
+          0.1332139064290124,
+          0.1470976025200767,
+          0.14348053105998182,
+          0.12848779689255985,
+          0.11010905698799783,
+          0.09513484752272716,
+          0.08734460399190626,
+          0.08716484558043053
+        ],
+        "another": 0.6740473861660531,
+        "pair": 0.06809515414053036,
+        "g2": [
+          0.13111572941027563,
+          0.3910002927559943,
+          0.7040975010147037,
+          1.03678255562592,
+          1.3359264582214223,
+          1.5081805962395134,
+          1.4710444723576293,
+          1.263227809959185
+        ],
+        "emitter_after_event": 0.0
+      },
+      "ideal_circuits": {
+        "cause": {
+          "plain": {
+            "event": 0.10102428336359572,
+            "emitter_after_event": 0.0
+          },
+          "steered": {
+            "event": 0.2500000000000002,
+            "emitter_after_event": 0.0
+          },
+          "rewound": {
+            "event": 0.9808166205401583,
+            "emitter_after_event": 1.1245755042726362e-32
+          }
+        },
+        "window": {
+          "plain": {
+            "event": 0.10102428336359569,
+            "after": [
+              0.017466438509032182,
+              0.05751520564905488,
+              0.10102428336359573
+            ],
+            "later_alone": [
+              0.13321390642901237,
+              0.14709760252007673,
+              0.14348053105998182
+            ],
+            "another": 0.17369700804136287,
+            "pair": 0.0175476157597794
+          },
+          "rewound": {
+            "event": 0.9808166205401582,
+            "after": [
+              0.017466438509032175,
+              0.057515205649054865,
+              0.10102428336359572
+            ],
+            "later_alone": [
+              0.020794597360108948,
+              0.059098956328600065,
+              0.10085767631269114
+            ],
+            "another": 0.1736970080413628,
+            "pair": 0.17036491242506613
+          }
+        }
+      }
+    },
+    "stepped": {
+      "role": "the hidden defect's own frequency doubled, from 0.3 to 0.6 radians per step",
+      "theta": 0.6,
+      "gamma": 0.2,
+      "phi": [
+        0.45
+      ],
+      "zeta": [
+        0.6
+      ],
+      "steered_gamma": 1.0,
+      "truth": {
+        "event": 0.04758136496776881,
+        "after": [
+          0.018540263023238603,
+          0.054240009421636086,
+          0.07253535801867726
+        ],
+        "later_alone": [
+          0.06118210372831824,
+          0.08266668383141645,
+          0.10057540089908922
+        ],
+        "another": 0.1421927688268595,
+        "pair": 0.006765726029328381,
+        "g2": [
+          0.3030340882943064,
+          0.6561290099920863,
+          0.7212037672258895
+        ],
+        "emitter_after_event": 0.0,
+        "defect_after_event": 0.06567727404063446,
+        "defect_typical": 0.2527443762049838
+      },
+      "curve": {
+        "event": 0.047581364967768824,
+        "after": [
+          0.018540263023238596,
+          0.054240009421636086,
+          0.0725353580186772,
+          0.0689131119185176,
+          0.0667136813291956,
+          0.07821354514867669,
+          0.09062197063744956,
+          0.08920684477149037
+        ],
+        "later_alone": [
+          0.06118210372831822,
+          0.08266668383141641,
+          0.10057540089908919,
+          0.10166147049066757,
+          0.08801169908893658,
+          0.0713938143695585,
+          0.05951568578336538,
+          0.05382316945189789
+        ],
+        "another": 0.451065880819247,
+        "pair": 0.021462330299768708,
+        "g2": [
+          0.3030340882943064,
+          0.6561290099920867,
+          0.7212037672258892,
+          0.6778685335349715,
+          0.758009242177916,
+          1.0955227121472593,
+          1.5226569171581046,
+          1.6574060145457448
+        ],
+        "emitter_after_event": 0.0,
+        "defect_after_event": 0.06567727404063446,
+        "defect_typical": 0.2527443762049838
+      },
+      "ideal_circuits": {
+        "cause": {
+          "plain": {
+            "event": 0.04758136496776881,
+            "emitter_after_event": 0.0,
+            "defect_after_event": 0.06567727404063445,
+            "defect_typical": 0.25274437620498397
+          },
+          "steered": {
+            "event": 0.2379068248388441,
+            "emitter_after_event": 0.0,
+            "defect_after_event": 0.06567727404063443,
+            "defect_typical": 0.25274437620498397
+          },
+          "rewound": {
+            "event": 0.9947001365403487,
+            "emitter_after_event": 1.117540933211561e-64,
+            "defect_after_event": 0.06756776783751274,
+            "defect_typical": 0.07013088773565732
+          }
+        },
+        "window": {
+          "plain": {
+            "event": 0.04758136496776883,
+            "after": [
+              0.018540263023238603,
+              0.05424000942163608,
+              0.07253535801867726
+            ],
+            "later_alone": [
+              0.06118210372831824,
+              0.08266668383141645,
+              0.10057540089908924
+            ],
+            "another": 0.1421927688268595,
+            "pair": 0.006765726029328384
+          },
+          "rewound": {
+            "event": 0.9947001365403487,
+            "after": [
+              0.01849426625990111,
+              0.05432894279212357,
+              0.07286873584586258
+            ],
+            "later_alone": [
+              0.0185360231763714,
+              0.05446154140854425,
+              0.07305648739596748
+            ],
+            "another": 0.14254468865310208,
+            "pair": 0.14178922126634214
+          }
+        }
+      }
+    }
+  },
+  "readings": {
+    "chipmaking": {
+      "reads": "pair dose for a two-photon resist: P(first photon) x P(a second within three steps | the first)",
+      "second_given_first": {
+        "defect": 0.0849951728453333,
+        "clean": 0.17369700804136284
+      },
+      "pair_per_run": {
+        "defect": 0.0033608634905194926,
+        "clean": 0.017547615759779395
+      },
+      "one_pair_in_runs": {
+        "defect": 297.54258178615544,
+        "clean": 56.987799008688334
+      },
+      "defect_makes_pairs_rarer_by": 5.221162897356191,
+      "defect_holds_the_energy": {
+        "after_a_photon": 0.08464271131791785,
+        "typically": 0.2927064964731148
+      }
+    },
+    "photons": {
+      "reads": "g2(tau) = P(click at 3 + tau | click at 3) / P(click at 3 + tau)",
+      "g2": {
+        "defect": [
+          0.2396247565899571,
+          0.5558763840878317,
+          0.5819871930125153
+        ],
+        "clean": [
+          0.13111572941027577,
+          0.3910002927559944,
+          0.7040975010147035
+        ]
+      },
+      "g2_longer": {
+        "defect": [
+          0.23962475658995716,
+          0.5558763840878317,
+          0.5819871930125151,
+          0.5234635742220057,
+          0.5219957654028499,
+          0.6224743531407083,
+          0.8013134275773847,
+          0.9786438974490139
+        ],
+        "clean": [
+          0.13111572941027563,
+          0.3910002927559943,
+          0.7040975010147037,
+          1.03678255562592,
+          1.3359264582214223,
+          1.5081805962395134,
+          1.4710444723576293,
+          1.263227809959185
+        ]
+      }
+    },
+    "lasers": {
+      "reads": "a frequency step of the hidden partner (0.3 to 0.6 radians per step) moves the after-click record",
+      "second_given_first": {
+        "before": 0.0849951728453333,
+        "after": 0.1421927688268595
+      },
+      "first_event": {
+        "before": 0.03954181605860482,
+        "after": 0.04758136496776881
+      },
+      "defect_after_event": {
+        "before": 0.08464271131791785,
+        "after": 0.06567727404063446
+      },
+      "records_needed_per_side": 797,
+      "model_runs_needed": {
+        "plain": 20156,
+        "rewound": 830
+      },
+      "sweep": [
+        {
+          "zeta": 0.0,
+          "event": 0.03662751408919909,
+          "another": 0.0455155474356486,
+          "defect_after_event": 0.0934589052661342
+        },
+        {
+          "zeta": 0.15,
+          "event": 0.03736752840472759,
+          "another": 0.05680731597901937,
+          "defect_after_event": 0.09109512150652532
+        },
+        {
+          "zeta": 0.3,
+          "event": 0.03954181605860482,
+          "another": 0.0849951728453333,
+          "defect_after_event": 0.08464271131791785
+        },
+        {
+          "zeta": 0.45,
+          "event": 0.043016741384921314,
+          "another": 0.11730284346021391,
+          "defect_after_event": 0.07562706856078273
+        },
+        {
+          "zeta": 0.6,
+          "event": 0.04758136496776881,
+          "another": 0.1421927688268595,
+          "defect_after_event": 0.06567727404063446
+        },
+        {
+          "zeta": 0.75,
+          "event": 0.05296405245450872,
+          "another": 0.1544879788077861,
+          "defect_after_event": 0.05598436526701657
+        },
+        {
+          "zeta": 0.9,
+          "event": 0.05885368210908597,
+          "another": 0.15531883142863717,
+          "defect_after_event": 0.04718912219819068
+        },
+        {
+          "zeta": 1.05,
+          "event": 0.06492362534547944,
+          "another": 0.14930923298910917,
+          "defect_after_event": 0.03951594653436055
+        },
+        {
+          "zeta": 1.2,
+          "event": 0.07085644371949962,
+          "another": 0.14161521341663916,
+          "defect_after_event": 0.032949843133941024
+        }
+      ]
+    },
+    "cost": {
+      "shots": 8192,
+      "records_of_the_event": {
+        "plain": 323.9265571520907,
+        "rewound": 7872.65329842279
+      },
+      "more_records_per_shot": 24.303821729338495,
+      "scope": "Records per run of the model on a perfect device. A rewound run uses about three times the gates."
+    }
+  },
+  "ibm": {
+    "backend": "ibm_marrakesh",
+    "scope": "Recount of raw counts saved on 11 November 2026. Programmed models on superconducting qubits: no photon, laser, resist or wafer was measured, and no unknown defect was diagnosed.",
+    "rows": {
+      "window/defect/plain": {
+        "run": "original_precision_v1",
+        "job_id": "dbqb1ifv5hds73dfo310",
+        "circuit": "loop-defect-r0",
+        "shots": 8192,
+        "two_qubit_gates": 88,
+        "event": {
+          "successes": 619,
+          "of": 8192,
+          "probability": 0.0755615234375,
+          "wilson95": [
+            0.0700350985686263,
+            0.0814858239699831
+          ]
+        },
+        "after": [
+          {
+            "successes": 109,
+            "of": 619,
+            "probability": 0.17609046849757673,
+            "wilson95": [
+              0.14810810329966106,
+              0.2080683452635657
+            ]
+          },
+          {
+            "successes": 118,
+            "of": 619,
+            "probability": 0.19063004846526657,
+            "wilson95": [
+              0.16163106511117994,
+              0.22344519374097935
+            ]
+          },
+          {
+            "successes": 83,
+            "of": 619,
+            "probability": 0.13408723747980614,
+            "wilson95": [
+              0.1094888110160282,
+              0.16319929671250483
+            ]
+          }
+        ],
+        "later_alone": [
+          {
+            "successes": 935,
+            "of": 8192,
+            "probability": 0.1141357421875,
+            "wilson95": [
+              0.1074301473078601,
+              0.12120305261866976
+            ]
+          },
+          {
+            "successes": 971,
+            "of": 8192,
+            "probability": 0.1185302734375,
+            "wilson95": [
+              0.11170885660492388,
+              0.12570928631516654
+            ]
+          },
+          {
+            "successes": 1257,
+            "of": 8192,
+            "probability": 0.1534423828125,
+            "wilson95": [
+              0.14580029490695873,
+              0.16140933957308506
+            ]
+          }
+        ],
+        "another": {
+          "successes": 239,
+          "of": 619,
+          "probability": 0.3861066235864297,
+          "wilson95": [
+            0.3485677703395198,
+            0.42505038239717596
+          ]
+        },
+        "pair": {
+          "successes": 239,
+          "of": 8192,
+          "probability": 0.0291748046875,
+          "wilson95": [
+            0.02574524844736018,
+            0.03304572027033226
+          ]
+        }
+      },
+      "window/defect/rewound": {
+        "run": "original_precision_v1",
+        "job_id": "dbqb1ifv5hds73dfo310",
+        "circuit": "loop-defect-r1",
+        "shots": 8192,
+        "two_qubit_gates": 98,
+        "event": {
+          "successes": 6118,
+          "of": 8192,
+          "probability": 0.746826171875,
+          "wilson95": [
+            0.7372958519538777,
+            0.7561251128511071
+          ]
+        },
+        "after": [
+          {
+            "successes": 310,
+            "of": 6118,
+            "probability": 0.05067015364498202,
+            "wilson95": [
+              0.045450839249567485,
+              0.056453377482773445
+            ]
+          },
+          {
+            "successes": 557,
+            "of": 6118,
+            "probability": 0.09104282445243543,
+            "wilson95": [
+              0.08408875519060244,
+              0.0985101354111862
+            ]
+          },
+          {
+            "successes": 538,
+            "of": 6118,
+            "probability": 0.08793723439032364,
+            "wilson95": [
+              0.08109685439369971,
+              0.0952947536027468
+            ]
+          }
+        ],
+        "later_alone": [
+          {
+            "successes": 484,
+            "of": 8192,
+            "probability": 0.05908203125,
+            "wilson95": [
+              0.054179991440649,
+              0.06439739487210834
+            ]
+          },
+          {
+            "successes": 864,
+            "of": 8192,
+            "probability": 0.10546875,
+            "wilson95": [
+              0.09900126280577719,
+              0.11230607732789714
+            ]
+          },
+          {
+            "successes": 761,
+            "of": 8192,
+            "probability": 0.0928955078125,
+            "wilson95": [
+              0.08679882946010657,
+              0.09937381266421393
+            ]
+          }
+        ],
+        "another": {
+          "successes": 1218,
+          "of": 6118,
+          "probability": 0.19908466819221968,
+          "wilson95": [
+            0.18926896411938132,
+            0.2092780213314152
+          ]
+        },
+        "pair": {
+          "successes": 1218,
+          "of": 8192,
+          "probability": 0.148681640625,
+          "wilson95": [
+            0.14114214791517818,
+            0.1565504649885083
+          ]
+        }
+      },
+      "window/clean/plain": {
+        "run": "original_precision_v1",
+        "job_id": "dbqb1ifv5hds73dfo310",
+        "circuit": "loop-nodefect-r0",
+        "shots": 8192,
+        "two_qubit_gates": 15,
+        "event": {
+          "successes": 1034,
+          "of": 8192,
+          "probability": 0.126220703125,
+          "wilson95": [
+            0.1192039511823038,
+            0.13358784197651766
+          ]
+        },
+        "after": [
+          {
+            "successes": 84,
+            "of": 1034,
+            "probability": 0.08123791102514506,
+            "wilson95": [
+              0.06609455550481891,
+              0.09948127244096258
+            ]
+          },
+          {
+            "successes": 98,
+            "of": 1034,
+            "probability": 0.09477756286266925,
+            "wilson95": [
+              0.07839422281701106,
+              0.11416067766632026
+            ]
+          },
+          {
+            "successes": 104,
+            "of": 1034,
+            "probability": 0.10058027079303675,
+            "wilson95": [
+              0.08370035660201706,
+              0.12041700354026415
+            ]
+          }
+        ],
+        "later_alone": [
+          {
+            "successes": 1117,
+            "of": 8192,
+            "probability": 0.1363525390625,
+            "wilson95": [
+              0.12909167251548825,
+              0.1439542947673756
+            ]
+          },
+          {
+            "successes": 1228,
+            "of": 8192,
+            "probability": 0.14990234375,
+            "wilson95": [
+              0.1423362894034916,
+              0.1577965854428506
+            ]
+          },
+          {
+            "successes": 1276,
+            "of": 8192,
+            "probability": 0.15576171875,
+            "wilson95": [
+              0.1480706030613904,
+              0.16377552910969925
+            ]
+          }
+        ],
+        "another": {
+          "successes": 266,
+          "of": 1034,
+          "probability": 0.2572533849129594,
+          "wilson95": [
+            0.2315427232248401,
+            0.28476104770908867
+          ]
+        },
+        "pair": {
+          "successes": 266,
+          "of": 8192,
+          "probability": 0.032470703125,
+          "wilson95": [
+            0.028846255434854313,
+            0.03653342052800853
+          ]
+        }
+      },
+      "window/clean/rewound": {
+        "run": "original_precision_v1",
+        "job_id": "dbqb1ifv5hds73dfo310",
+        "circuit": "loop-nodefect-r1",
+        "shots": 8192,
+        "two_qubit_gates": 32,
+        "event": {
+          "successes": 7152,
+          "of": 8192,
+          "probability": 0.873046875,
+          "wilson95": [
+            0.8656622857281064,
+            0.8800817639474787
+          ]
+        },
+        "after": [
+          {
+            "successes": 340,
+            "of": 7152,
+            "probability": 0.04753914988814318,
+            "wilson95": [
+              0.04284583605678693,
+              0.05271825137527216
+            ]
+          },
+          {
+            "successes": 561,
+            "of": 7152,
+            "probability": 0.07843959731543625,
+            "wilson95": [
+              0.07243237783372575,
+              0.08489942797828234
+            ]
+          },
+          {
+            "successes": 834,
+            "of": 7152,
+            "probability": 0.11661073825503356,
+            "wilson95": [
+              0.1093772993719258,
+              0.12425580561531338
+            ]
+          }
+        ],
+        "later_alone": [
+          {
+            "successes": 452,
+            "of": 8192,
+            "probability": 0.05517578125,
+            "wilson95": [
+              0.05043675999972726,
+              0.06033178809653181
+            ]
+          },
+          {
+            "successes": 673,
+            "of": 8192,
+            "probability": 0.0821533203125,
+            "wilson95": [
+              0.07640098327396884,
+              0.08829735375498142
+            ]
+          },
+          {
+            "successes": 964,
+            "of": 8192,
+            "probability": 0.11767578125,
+            "wilson95": [
+              0.11087663856312223,
+              0.12483332099710921
+            ]
+          }
+        ],
+        "another": {
+          "successes": 1636,
+          "of": 7152,
+          "probability": 0.22874720357941836,
+          "wilson95": [
+            0.21915991174228666,
+            0.23862572781834207
+          ]
+        },
+        "pair": {
+          "successes": 1636,
+          "of": 8192,
+          "probability": 0.19970703125,
+          "wilson95": [
+            0.1911915286157075,
+            0.2085040334909877
+          ]
+        }
+      },
+      "cause/defect/rewound": {
+        "run": "original_precision_v1",
+        "job_id": "dbqb1ifv5hds73dfo310",
+        "circuit": "click3-steered-memory+last-1-r1",
+        "shots": 8192,
+        "two_qubit_gates": 58,
+        "event": {
+          "successes": 6300,
+          "of": 8192,
+          "probability": 0.76904296875,
+          "wilson95": [
+            0.7597918489622243,
+            0.7780418831990944
+          ]
+        },
+        "emitter_after_event": {
+          "successes": 245,
+          "of": 6300,
+          "probability": 0.03888888888888889,
+          "wilson95": [
+            0.03438912765899402,
+            0.043950637394849945
+          ]
+        },
+        "defect_after_event": {
+          "successes": 1000,
+          "of": 6300,
+          "probability": 0.15873015873015872,
+          "wilson95": [
+            0.14991497224506126,
+            0.1679612738360969
+          ]
+        },
+        "defect_typical": {
+          "successes": 1860,
+          "of": 8192,
+          "probability": 0.22705078125,
+          "wilson95": [
+            0.2181082091195965,
+            0.23624922050258662
+          ]
+        }
+      },
+      "cause/defect/plain": {
+        "run": "original_plain_v2",
+        "job_id": "dbqarvmjjaos73agv2u0",
+        "circuit": "click3-full-r0",
+        "shots": 2048,
+        "two_qubit_gates": 22,
+        "event": {
+          "successes": 138,
+          "of": 2048,
+          "probability": 0.0673828125,
+          "wilson95": [
+            0.0573157400339048,
+            0.07906977728649009
+          ]
+        },
+        "emitter_after_event": {
+          "successes": 38,
+          "of": 138,
+          "probability": 0.2753623188405797,
+          "wilson95": [
+            0.20768264802332714,
+            0.3552096084756984
+          ]
+        },
+        "defect_after_event": {
+          "successes": 34,
+          "of": 138,
+          "probability": 0.2463768115942029,
+          "wilson95": [
+            0.1820011167583363,
+            0.3244901405792733
+          ]
+        },
+        "defect_typical": {
+          "successes": 610,
+          "of": 2048,
+          "probability": 0.2978515625,
+          "wilson95": [
+            0.2784389209455755,
+            0.3180211289084239
+          ]
+        }
+      },
+      "cause/defect/steered": {
+        "run": "original_plain_v2",
+        "job_id": "dbqarvmjjaos73agv2u0",
+        "circuit": "click3-steered-full-r0",
+        "shots": 2048,
+        "two_qubit_gates": 22,
+        "event": {
+          "successes": 493,
+          "of": 2048,
+          "probability": 0.24072265625,
+          "wilson95": [
+            0.22270327655001537,
+            0.2597128743496795
+          ]
+        },
+        "emitter_after_event": {
+          "successes": 29,
+          "of": 493,
+          "probability": 0.058823529411764705,
+          "wilson95": [
+            0.04126578239546688,
+            0.08320341743234416
+          ]
+        },
+        "defect_after_event": {
+          "successes": 90,
+          "of": 493,
+          "probability": 0.18255578093306288,
+          "wilson95": [
+            0.15095393326152387,
+            0.21906643351113095
+          ]
+        },
+        "defect_typical": {
+          "successes": 631,
+          "of": 2048,
+          "probability": 0.30810546875,
+          "wilson95": [
+            0.2884837873123979,
+            0.32844568030263044
+          ]
+        }
+      },
+      "cause/defect/rewound, first run": {
+        "run": "original_plain_v2",
+        "job_id": "dbqarvmjjaos73agv2u0",
+        "circuit": "click3-steered-memory+last-1-r1",
+        "shots": 2048,
+        "two_qubit_gates": 58,
+        "event": {
+          "successes": 1585,
+          "of": 2048,
+          "probability": 0.77392578125,
+          "wilson95": [
+            0.7553068066942152,
+            0.7915190677789885
+          ]
+        },
+        "emitter_after_event": {
+          "successes": 80,
+          "of": 1585,
+          "probability": 0.050473186119873815,
+          "wilson95": [
+            0.04074086254169497,
+            0.06237921776027816
+          ]
+        },
+        "defect_after_event": {
+          "successes": 241,
+          "of": 1585,
+          "probability": 0.15205047318611986,
+          "wilson95": [
+            0.13521593398069984,
+            0.1705675387021607
+          ]
+        },
+        "defect_typical": {
+          "successes": 425,
+          "of": 2048,
+          "probability": 0.20751953125,
+          "wilson95": [
+            0.19051168898355708,
+            0.22562253773756769
+          ]
+        }
+      }
+    },
+    "clean_minus_defect_another": {
+      "rewound": {
+        "difference": 0.02966253538719868,
+        "interval95": [
+          0.01566894353268615,
+          0.04358852862231619
+        ]
+      },
+      "plain": {
+        "difference": -0.12885323867347032,
+        "interval95": [
+          -0.17551858421757296,
+          -0.0823146845962475
+        ]
+      }
+    },
+    "g2": {
+      "defect": [
+        {
+          "ratio": 0.44394641567881576,
+          "interval95": [
+            0.39212986134720795,
+            0.5026100774803214
+          ]
+        },
+        {
+          "ratio": 0.7680976497573131,
+          "interval95": [
+            0.6958569468008221,
+            0.8478380538918132
+          ]
+        },
+        {
+          "ratio": 0.5730961210226979,
+          "interval95": [
+            0.5209542435700124,
+            0.6304568356724077
+          ]
+        }
+      ],
+      "clean": [
+        {
+          "ratio": 0.34864880562548695,
+          "interval95": [
+            0.3100965998024589,
+            0.39199394556894035
+          ]
+        },
+        {
+          "ratio": 0.5232713202019982,
+          "interval95": [
+            0.47598750812661716,
+            0.5752522279914651
+          ]
+        },
+        {
+          "ratio": 0.7486482506153879,
+          "interval95": [
+            0.6901878760364685,
+            0.8120603427114763
+          ]
+        }
+      ]
+    },
+    "g2_scope": "After-click rate from the rewound circuit over the plain click rate from the plain circuit, at steps 4, 5 and 6. Two different circuits of one job, so drift between them is not in the interval.",
+    "source_sha256": {
+      "hardware_campaign/runs/original_precision_v1/raw.json": "0b083d0f98ee00abfb0de641c8e4c17cdd1e3db3359b9050cc6168226204f22c",
+      "hardware_campaign/runs/original_plain_v2/raw.json": "fa8b31f6156ba8b8ba4ff036806c5978ccef4f8ff545ad3cec39025f6b79b6d7"
+    }
+  },
+  "noise_model": {
+    "model": "depolarizing gate errors at the reported rates times one echo-fitted scale, and this job's own readout errors; no idle decoherence, crosstalk or drift",
+    "echo_scale": 1.5423,
+    "rows": {
+      "window/defect/plain": {
+        "event": 0.08339871352812403,
+        "after": [
+          0.14135552652081626,
+          0.1490300458161178,
+          0.12524430528538202
+        ],
+        "later_alone": [
+          0.11143383214434242,
+          0.13064964922044398,
+          0.13363987826774681
+        ],
+        "another": 0.35570501399442206,
+        "pair": 0.029665340562638157
+      },
+      "window/defect/rewound": {
+        "event": 0.784023697261171,
+        "after": [
+          0.053020413409923625,
+          0.09552813961331479,
+          0.08438163956351699
+        ],
+        "later_alone": [
+          0.05752249505618229,
+          0.101006023833417,
+          0.08936120092280386
+        ],
+        "another": 0.21128851345060812,
+        "pair": 0.16565520150436244
+      },
+      "window/clean/plain": {
+        "event": 0.12362805829535051,
+        "after": [
+          0.04806511647779932,
+          0.0819414758128086,
+          0.12112242304096589
+        ],
+        "later_alone": [
+          0.134041300420722,
+          0.14917432501692118,
+          0.15214774193876482
+        ],
+        "another": 0.2412937832412326,
+        "pair": 0.029830681900852772
+      },
+      "window/clean/rewound": {
+        "event": 0.896202644536358,
+        "after": [
+          0.03301938587891939,
+          0.09123095944861989,
+          0.11286987906017208
+        ],
+        "later_alone": [
+          0.040752713439841215,
+          0.09384799432303262,
+          0.11133903870051925
+        ],
+        "another": 0.2236568332396821,
+        "pair": 0.2004418454180303
+      },
+      "cause/defect/rewound": {
+        "event": 0.7840236972611713,
+        "emitter_after_event": 0.039549286908454884,
+        "defect_after_event": 0.16303017205668324,
+        "defect_typical": 0.2228924371725144
+      },
+      "cause/defect/plain": {
+        "event": 0.05759968514070823,
+        "emitter_after_event": 0.15235547249538076,
+        "defect_after_event": 0.18206481437726554,
+        "defect_typical": 0.30280450856763685
+      },
+      "cause/defect/steered": {
+        "event": 0.22759961657160066,
+        "emitter_after_event": 0.04449275574785729,
+        "defect_after_event": 0.14791081071731815,
+        "defect_typical": 0.3028045085676368
+      },
+      "cause/defect/rewound, first run": {
+        "event": 0.7909537013149625,
+        "emitter_after_event": 0.03428082000990665,
+        "defect_after_event": 0.16157794007641335,
+        "defect_typical": 0.2217631473899
+      }
+    }
+  },
+  "new_job": {
+    "run": "applied_v1",
+    "job_id": "dbr51dhabdes73fpaum0",
+    "backend": "ibm_marrakesh",
+    "retrieved_utc": "2026-11-12T23:51:28.429040+00:00",
+    "quantum_seconds": 39,
+    "physical_qubits": [
+      18,
+      31,
+      32,
+      33,
+      39,
+      53,
+      54,
+      55
+    ],
+    "predictions_assumed_qubits": [
+      112,
+      111,
+      110,
+      109,
+      118,
+      129,
+      128,
+      127
+    ],
+    "rows": {
+      "site-stepped-rewound": {
+        "shots": 8192,
+        "two_qubit_gates": 58,
+        "event": {
+          "successes": 6310,
+          "of": 8192,
+          "probability": 0.770263671875,
+          "wilson95": [
+            0.7610288953966224,
+            0.7792450987073518
+          ]
+        },
+        "emitter_after_event": {
+          "successes": 545,
+          "of": 6310,
+          "probability": 0.08637083993660856,
+          "wilson95": [
+            0.07968894312119423,
+            0.09355605613239854
+          ]
+        },
+        "defect_after_event": {
+          "successes": 995,
+          "of": 6310,
+          "probability": 0.1576862123613312,
+          "wilson95": [
+            0.14890257980917024,
+            0.16688638509035478
+          ]
+        },
+        "defect_typical": {
+          "successes": 1836,
+          "of": 8192,
+          "probability": 0.22412109375,
+          "wilson95": [
+            0.21522151388914718,
+            0.23327928707066226
+          ]
+        }
+      },
+      "echo-T5-x1": {
+        "shots": 8192,
+        "two_qubit_gates": 101,
+        "all_zero_return": {
+          "successes": 4819,
+          "of": 8192,
+          "probability": 0.5882568359375,
+          "wilson95": [
+            0.5775605225693031,
+            0.5988704158847048
+          ]
+        }
+      },
+      "site-stepped-plain": {
+        "shots": 8192,
+        "two_qubit_gates": 22,
+        "event": {
+          "successes": 655,
+          "of": 8192,
+          "probability": 0.0799560546875,
+          "wilson95": [
+            0.07427769760835058,
+            0.08602816792381938
+          ]
+        },
+        "emitter_after_event": {
+          "successes": 167,
+          "of": 655,
+          "probability": 0.2549618320610687,
+          "wilson95": [
+            0.22307981559668613,
+            0.2897013008579765
+          ]
+        },
+        "defect_after_event": {
+          "successes": 134,
+          "of": 655,
+          "probability": 0.20458015267175572,
+          "wilson95": [
+            0.1754518972759566,
+            0.23715337396377675
+          ]
+        },
+        "defect_typical": {
+          "successes": 2287,
+          "of": 8192,
+          "probability": 0.2791748046875,
+          "wilson95": [
+            0.26956585120506193,
+            0.28899076336852003
+          ]
+        }
+      },
+      "echo-T3-x1": {
+        "shots": 8192,
+        "two_qubit_gates": 43,
+        "all_zero_return": {
+          "successes": 5825,
+          "of": 8192,
+          "probability": 0.7110595703125,
+          "wilson95": [
+            0.7011469956612518,
+            0.7207742942239205
+          ]
+        }
+      },
+      "site-defect-plain": {
+        "shots": 8192,
+        "two_qubit_gates": 22,
+        "event": {
+          "successes": 644,
+          "of": 8192,
+          "probability": 0.07861328125,
+          "wilson95": [
+            0.07298077446402337,
+            0.0846408029312253
+          ]
+        },
+        "emitter_after_event": {
+          "successes": 172,
+          "of": 644,
+          "probability": 0.2670807453416149,
+          "wilson95": [
+            0.23436459727705217,
+            0.3025591424507069
+          ]
+        },
+        "defect_after_event": {
+          "successes": 159,
+          "of": 644,
+          "probability": 0.2468944099378882,
+          "wilson95": [
+            0.21515680504855927,
+            0.2816336587889389
+          ]
+        },
+        "defect_typical": {
+          "successes": 2475,
+          "of": 8192,
+          "probability": 0.3021240234375,
+          "wilson95": [
+            0.2922752683151847,
+            0.31215827078032465
+          ]
+        }
+      },
+      "window-defect-rewound": {
+        "shots": 8192,
+        "two_qubit_gates": 98,
+        "event": {
+          "successes": 5894,
+          "of": 8192,
+          "probability": 0.719482421875,
+          "wilson95": [
+            0.7096528436921445,
+            0.7291062535973523
+          ]
+        },
+        "after": [
+          {
+            "successes": 299,
+            "of": 5894,
+            "probability": 0.050729555480149305,
+            "wilson95": [
+              0.04541403735307095,
+              0.056630322947695017
+            ]
+          },
+          {
+            "successes": 422,
+            "of": 5894,
+            "probability": 0.07159823549372243,
+            "wilson95": [
+              0.06529143291050177,
+              0.0784631024971395
+            ]
+          },
+          {
+            "successes": 441,
+            "of": 5894,
+            "probability": 0.07482185273159145,
+            "wilson95": [
+              0.06837834853549468,
+              0.08181922205125741
+            ]
+          }
+        ],
+        "later_alone": [
+          {
+            "successes": 542,
+            "of": 8192,
+            "probability": 0.066162109375,
+            "wilson95": [
+              0.060980256198608154,
+              0.0717506493815523
+            ]
+          },
+          {
+            "successes": 715,
+            "of": 8192,
+            "probability": 0.0872802734375,
+            "wilson95": [
+              0.08136013854903786,
+              0.09358729863906638
+            ]
+          },
+          {
+            "successes": 673,
+            "of": 8192,
+            "probability": 0.0821533203125,
+            "wilson95": [
+              0.07640098327396884,
+              0.08829735375498142
+            ]
+          }
+        ],
+        "another": {
+          "successes": 991,
+          "of": 5894,
+          "probability": 0.16813708856464202,
+          "wilson95": [
+            0.1588061626281168,
+            0.17790032103815895
+          ]
+        },
+        "pair": {
+          "successes": 991,
+          "of": 8192,
+          "probability": 0.1209716796875,
+          "wilson95": [
+            0.11408726262792977,
+            0.12821140417747207
+          ]
+        }
+      },
+      "site-defect-steered": {
+        "shots": 8192,
+        "two_qubit_gates": 22,
+        "event": {
+          "successes": 2058,
+          "of": 8192,
+          "probability": 0.251220703125,
+          "wilson95": [
+            0.24194679266057714,
+            0.2607278234261891
+          ]
+        },
+        "emitter_after_event": {
+          "successes": 131,
+          "of": 2058,
+          "probability": 0.06365403304178814,
+          "wilson95": [
+            0.05389784583083207,
+            0.07503615037115854
+          ]
+        },
+        "defect_after_event": {
+          "successes": 449,
+          "of": 2058,
+          "probability": 0.21817298347910594,
+          "wilson95": [
+            0.20086341143399067,
+            0.23653271083455568
+          ]
+        },
+        "defect_typical": {
+          "successes": 2525,
+          "of": 8192,
+          "probability": 0.3082275390625,
+          "wilson95": [
+            0.2983200438368294,
+            0.3183148049719584
+          ]
+        }
+      },
+      "window-stepped-plain": {
+        "shots": 8192,
+        "two_qubit_gates": 70,
+        "event": {
+          "successes": 763,
+          "of": 8192,
+          "probability": 0.0931396484375,
+          "wilson95": [
+            0.08703545650407285,
+            0.09962523800877879
+          ]
+        },
+        "after": [
+          {
+            "successes": 153,
+            "of": 763,
+            "probability": 0.20052424639580602,
+            "wilson95": [
+              0.1736459795959897,
+              0.23040293463093708
+            ]
+          },
+          {
+            "successes": 183,
+            "of": 763,
+            "probability": 0.2398427260812582,
+            "wilson95": [
+              0.21089678282459834,
+              0.2713951623572177
+            ]
+          },
+          {
+            "successes": 126,
+            "of": 763,
+            "probability": 0.1651376146788991,
+            "wilson95": [
+              0.14048158658250504,
+              0.19314859978502147
+            ]
+          }
+        ],
+        "later_alone": [
+          {
+            "successes": 880,
+            "of": 8192,
+            "probability": 0.107421875,
+            "wilson95": [
+              0.10089955867223903,
+              0.11431220056968443
+            ]
+          },
+          {
+            "successes": 1423,
+            "of": 8192,
+            "probability": 0.1737060546875,
+            "wilson95": [
+              0.1656554463923381,
+              0.1820625363357905
+            ]
+          },
+          {
+            "successes": 1009,
+            "of": 8192,
+            "probability": 0.1231689453125,
+            "wilson95": [
+              0.11622862313075571,
+              0.1304625151714264
+            ]
+          }
+        ],
+        "another": {
+          "successes": 343,
+          "of": 763,
+          "probability": 0.44954128440366975,
+          "wilson95": [
+            0.41458505776823446,
+            0.4850030525063243
+          ]
+        },
+        "pair": {
+          "successes": 343,
+          "of": 8192,
+          "probability": 0.0418701171875,
+          "wilson95": [
+            0.03774327025279585,
+            0.046426422668515974
+          ]
+        }
+      },
+      "window-stepped-rewound": {
+        "shots": 8192,
+        "two_qubit_gates": 98,
+        "event": {
+          "successes": 6056,
+          "of": 8192,
+          "probability": 0.7392578125,
+          "wilson95": [
+            0.7296399473855545,
+            0.7486513933749647
+          ]
+        },
+        "after": [
+          {
+            "successes": 332,
+            "of": 6056,
+            "probability": 0.0548216644649934,
+            "wilson95": [
+              0.049365664013745855,
+              0.06084208042296467
+            ]
+          },
+          {
+            "successes": 609,
+            "of": 6056,
+            "probability": 0.10056142668428006,
+            "wilson95": [
+              0.09323826143134477,
+              0.10839101668156427
+            ]
+          },
+          {
+            "successes": 498,
+            "of": 6056,
+            "probability": 0.0822324966974901,
+            "wilson95": [
+              0.07557545500155563,
+              0.08941920131330997
+            ]
+          }
+        ],
+        "later_alone": [
+          {
+            "successes": 579,
+            "of": 8192,
+            "probability": 0.0706787109375,
+            "wilson95": [
+              0.06532775162196788,
+              0.07643212314601869
+            ]
+          },
+          {
+            "successes": 937,
+            "of": 8192,
+            "probability": 0.1143798828125,
+            "wilson95": [
+              0.10766776968720689,
+              0.12145348262785412
+            ]
+          },
+          {
+            "successes": 742,
+            "of": 8192,
+            "probability": 0.090576171875,
+            "wilson95": [
+              0.08455153577705106,
+              0.09698460865622359
+            ]
+          }
+        ],
+        "another": {
+          "successes": 1273,
+          "of": 6056,
+          "probability": 0.21020475561426685,
+          "wilson95": [
+            0.20012803173260096,
+            0.22064889389292835
+          ]
+        },
+        "pair": {
+          "successes": 1273,
+          "of": 8192,
+          "probability": 0.1553955078125,
+          "wilson95": [
+            0.14771209251859313,
+            0.16340196106969979
+          ]
+        }
+      },
+      "window-clean-plain": {
+        "shots": 8192,
+        "two_qubit_gates": 15,
+        "event": {
+          "successes": 1303,
+          "of": 8192,
+          "probability": 0.1590576171875,
+          "wilson95": [
+            0.15129787699798605,
+            0.167136962418274
+          ]
+        },
+        "after": [
+          {
+            "successes": 190,
+            "of": 1303,
+            "probability": 0.14581734458940906,
+            "wilson95": [
+              0.12769568356021704,
+              0.16602124455673778
+            ]
+          },
+          {
+            "successes": 139,
+            "of": 1303,
+            "probability": 0.10667689946277821,
+            "wilson95": [
+              0.09105624396663684,
+              0.12460990047526851
+            ]
+          },
+          {
+            "successes": 186,
+            "of": 1303,
+            "probability": 0.1427475057559478,
+            "wilson95": [
+              0.12480261839886712,
+              0.16279267962592686
+            ]
+          }
+        ],
+        "later_alone": [
+          {
+            "successes": 1275,
+            "of": 8192,
+            "probability": 0.1556396484375,
+            "wilson95": [
+              0.14795109785551855,
+              0.16365100812130548
+            ]
+          },
+          {
+            "successes": 1231,
+            "of": 8192,
+            "probability": 0.1502685546875,
+            "wilson95": [
+              0.14269456646433792,
+              0.158170386964801
+            ]
+          },
+          {
+            "successes": 1304,
+            "of": 8192,
+            "probability": 0.1591796875,
+            "wilson95": [
+              0.1514174289074025,
+              0.1672614367031231
+            ]
+          }
+        ],
+        "another": {
+          "successes": 445,
+          "of": 1303,
+          "probability": 0.3415195702225633,
+          "wilson95": [
+            0.31627038646825245,
+            0.3677004600239494
+          ]
+        },
+        "pair": {
+          "successes": 445,
+          "of": 8192,
+          "probability": 0.0543212890625,
+          "wilson95": [
+            0.04961882723335804,
+            0.059441537503042034
+          ]
+        }
+      },
+      "site-defect-rewound": {
+        "shots": 8192,
+        "two_qubit_gates": 58,
+        "event": {
+          "successes": 6090,
+          "of": 8192,
+          "probability": 0.743408203125,
+          "wilson95": [
+            0.7338378865882338,
+            0.752750344777315
+          ]
+        },
+        "emitter_after_event": {
+          "successes": 550,
+          "of": 6090,
+          "probability": 0.090311986863711,
+          "wilson95": [
+            0.08336911294486088,
+            0.09777138214020722
+          ]
+        },
+        "defect_after_event": {
+          "successes": 1047,
+          "of": 6090,
+          "probability": 0.17192118226600986,
+          "wilson95": [
+            0.16265240224585456,
+            0.1816035934174585
+          ]
+        },
+        "defect_typical": {
+          "successes": 1983,
+          "of": 8192,
+          "probability": 0.2420654296875,
+          "wilson95": [
+            0.23291225373967728,
+            0.2514603977771711
+          ]
+        }
+      },
+      "window-defect-plain": {
+        "shots": 8192,
+        "two_qubit_gates": 70,
+        "event": {
+          "successes": 806,
+          "of": 8192,
+          "probability": 0.098388671875,
+          "wilson95": [
+            0.09212603696725298,
+            0.10502778389901822
+          ]
+        },
+        "after": [
+          {
+            "successes": 155,
+            "of": 806,
+            "probability": 0.19230769230769232,
+            "wilson95": [
+              0.16658428874432446,
+              0.220950154451157
+            ]
+          },
+          {
+            "successes": 200,
+            "of": 806,
+            "probability": 0.24813895781637718,
+            "wilson95": [
+              0.21956122245695595,
+              0.27910608386837776
+            ]
+          },
+          {
+            "successes": 172,
+            "of": 806,
+            "probability": 0.21339950372208435,
+            "wilson95": [
+              0.18650853627136244,
+              0.24300943299539646
+            ]
+          }
+        ],
+        "later_alone": [
+          {
+            "successes": 774,
+            "of": 8192,
+            "probability": 0.094482421875,
+            "wilson95": [
+              0.08833713849670842,
+              0.1010078441530645
+            ]
+          },
+          {
+            "successes": 1249,
+            "of": 8192,
+            "probability": 0.1524658203125,
+            "wilson95": [
+              0.1448445608701135,
+              0.16041286405580574
+            ]
+          },
+          {
+            "successes": 882,
+            "of": 8192,
+            "probability": 0.107666015625,
+            "wilson95": [
+              0.10113689481881581,
+              0.11456291681163878
+            ]
+          }
+        ],
+        "another": {
+          "successes": 381,
+          "of": 806,
+          "probability": 0.47270471464019853,
+          "wilson95": [
+            0.4384488684262492,
+            0.5072195095991565
+          ]
+        },
+        "pair": {
+          "successes": 381,
+          "of": 8192,
+          "probability": 0.0465087890625,
+          "wilson95": [
+            0.04215731227975478,
+            0.05128537602364874
+          ]
+        }
+      },
+      "window-clean-rewound": {
+        "shots": 8192,
+        "two_qubit_gates": 32,
+        "event": {
+          "successes": 6751,
+          "of": 8192,
+          "probability": 0.8240966796875,
+          "wilson95": [
+            0.8157005228765422,
+            0.8321890228985489
+          ]
+        },
+        "after": [
+          {
+            "successes": 334,
+            "of": 6751,
+            "probability": 0.049474151977484816,
+            "wilson95": [
+              0.04455257976965229,
+              0.0549081496814263
+            ]
+          },
+          {
+            "successes": 464,
+            "of": 6751,
+            "probability": 0.06873055843578729,
+            "wilson95": [
+              0.0629375620205383,
+              0.07501407822171563
+            ]
+          },
+          {
+            "successes": 767,
+            "of": 6751,
+            "probability": 0.1136127981039846,
+            "wilson95": [
+              0.10626161158066705,
+              0.12140345919794171
+            ]
+          }
+        ],
+        "later_alone": [
+          {
+            "successes": 577,
+            "of": 8192,
+            "probability": 0.0704345703125,
+            "wilson95": [
+              0.06509257918053916,
+              0.07617924319891627
+            ]
+          },
+          {
+            "successes": 591,
+            "of": 8192,
+            "probability": 0.0721435546875,
+            "wilson95": [
+              0.06673918458102886,
+              0.07794900451814456
+            ]
+          },
+          {
+            "successes": 945,
+            "of": 8192,
+            "probability": 0.1153564453125,
+            "wilson95": [
+              0.1086183588413942,
+              0.12245510302779139
+            ]
+          }
+        ],
+        "another": {
+          "successes": 1419,
+          "of": 6751,
+          "probability": 0.21019108280254778,
+          "wilson95": [
+            0.20063802508086365,
+            0.22007376751194757
+          ]
+        },
+        "pair": {
+          "successes": 1419,
+          "of": 8192,
+          "probability": 0.1732177734375,
+          "wilson95": [
+            0.1651765045114493,
+            0.181565373439617
+          ]
+        }
+      }
+    },
+    "comparisons": {
+      "chipmaking: second event, clean minus defect (rewound)": {
+        "difference": 0.04205399423790576,
+        "interval95": [
+          0.028394505954453694,
+          0.05564566948043283
+        ],
+        "predicted": 0.013091371075216462,
+        "exact": 0.08880363157014173
+      },
+      "chipmaking: second event, clean minus defect (plain)": {
+        "difference": -0.13118514441763524,
+        "interval95": [
+          -0.17394952622443638,
+          -0.0880701587325388
+        ],
+        "predicted": -0.08296382285885961,
+        "exact": 0.0887018351960289
+      },
+      "lasers: second event, stepped minus defect (rewound)": {
+        "difference": 0.042067667049624835,
+        "interval95": [
+          0.02803694816143984,
+          0.05607288761970945
+        ],
+        "predicted": 0.036988618461269274,
+        "exact": 0.05765131218188188
+      },
+      "lasers: second event, stepped minus defect (plain)": {
+        "difference": -0.02316343023652878,
+        "interval95": [
+          -0.07228785238729639,
+          0.026141741873506437
+        ],
+        "predicted": 0.012796698446038812,
+        "exact": 0.05719759598152513
+      }
+    },
+    "cause": {
+      "plain": {
+        "measured": {
+          "successes": 159,
+          "of": 644,
+          "probability": 0.2468944099378882,
+          "wilson95": [
+            0.21515680504855927,
+            0.2816336587889389
+          ]
+        },
+        "predicted": 0.18889099365454867
+      },
+      "steered": {
+        "measured": {
+          "successes": 449,
+          "of": 2058,
+          "probability": 0.21817298347910594,
+          "wilson95": [
+            0.20086341143399067,
+            0.23653271083455568
+          ]
+        },
+        "predicted": 0.15008322257905102
+      },
+      "rewound": {
+        "measured": {
+          "successes": 1047,
+          "of": 6090,
+          "probability": 0.17192118226600986,
+          "wilson95": [
+            0.16265240224585456,
+            0.1816035934174585
+          ]
+        },
+        "predicted": 0.16302776443792003
+      }
+    },
+    "g2": {
+      "defect": [
+        {
+          "ratio": 0.5369205665289187,
+          "interval95": [
+            0.47184940857444563,
+            0.6109654680562163
+          ]
+        },
+        {
+          "ratio": 0.4696018776337664,
+          "interval95": [
+            0.4227278529238581,
+            0.521673511579281
+          ]
+        },
+        {
+          "ratio": 0.6949440108585002,
+          "interval95": [
+            0.6229933268119903,
+            0.7752044162326079
+          ]
+        }
+      ],
+      "clean": [
+        {
+          "ratio": 0.31787627686239656,
+          "interval95": [
+            0.28303614999502213,
+            0.35700502354090147
+          ]
+        },
+        {
+          "ratio": 0.45738483729160806,
+          "interval95": [
+            0.413117850396649,
+            0.5063951828356233
+          ]
+        },
+        {
+          "ratio": 0.7137392960642959,
+          "interval95": [
+            0.6567825642959347,
+            0.7756353631166422
+          ]
+        }
+      ],
+      "stepped": [
+        {
+          "ratio": 0.5103398582923022,
+          "interval95": [
+            0.45182155422464854,
+            0.5764372428153601
+          ]
+        },
+        {
+          "ratio": 0.5789172223454829,
+          "interval95": [
+            0.529670133859745,
+            0.632743152584387
+          ]
+        },
+        {
+          "ratio": 0.6676398542575211,
+          "interval95": [
+            0.6028579971066267,
+            0.7393830340350717
+          ]
+        }
+      ]
+    },
+    "scope": "A fresh job. Predictions were written before it ran, for the qubits and calibration of 11 November.",
+    "source_sha256": {
+      "hardware_campaign/runs/applied_v1/raw.json": "9ffb5ea6a78785381e6b51de1add16ab03ec46b454037901c3ea9595976ec12b",
+      "applied/predictions.json": "10aa2d6f7d527c6cfbbd4156446ea3e5da41192a6460be7bff9fd5f21c30ceac"
+    },
+    "explained_afterwards": {
+      "made_after_the_job": true,
+      "echo_scale": 1.544,
+      "echoes": [
+        {
+          "circuit": "echo-T3-x1",
+          "two_qubit_gates": 43,
+          "measured_return": 0.7110595703125,
+          "calibration_return": 0.7897841345735176,
+          "echo_scaled_return": 0.7346734362249336
+        },
+        {
+          "circuit": "echo-T5-x1",
+          "two_qubit_gates": 101,
+          "measured_return": 0.5882568359375,
+          "calibration_return": 0.6707485312027188,
+          "echo_scaled_return": 0.5741684186171906
+        }
+      ],
+      "calibration": "2026-11-12 18:27:35-05:00",
+      "rows": {
+        "site-defect-plain": {
+          "event": 0.05768100301953817,
+          "emitter_after_event": 0.14941858154868384,
+          "defect_after_event": 0.17688510083161715,
+          "defect_typical": 0.29707629253132045
+        },
+        "site-defect-steered": {
+          "event": 0.22919622475117174,
+          "emitter_after_event": 0.03761006954862198,
+          "defect_after_event": 0.14518418792409407,
+          "defect_typical": 0.29707629253132023
+        },
+        "site-defect-rewound": {
+          "event": 0.8023535917073458,
+          "emitter_after_event": 0.10145281579582069,
+          "defect_after_event": 0.14267906277820497,
+          "defect_typical": 0.1975304574070075
+        },
+        "site-stepped-plain": {
+          "event": 0.06461261100119296,
+          "emitter_after_event": 0.1307995258658382,
+          "defect_after_event": 0.14608741368937325,
+          "defect_typical": 0.26106094620888204
+        },
+        "site-stepped-rewound": {
+          "event": 0.8267807280149879,
+          "emitter_after_event": 0.10052156047612876,
+          "defect_after_event": 0.12789039847308936,
+          "defect_typical": 0.1805631841272055
+        },
+        "window-defect-plain": {
+          "event": 0.08516093433688239,
+          "after": [
+            0.1195557031895807,
+            0.17913451434935446,
+            0.1328219292510197
+          ],
+          "later_alone": [
+            0.08699030238206776,
+            0.1569060588286287,
+            0.1177815719588973
+          ],
+          "another": 0.3695877688172605,
+          "pair": 0.031474439711961594
+        },
+        "window-defect-rewound": {
+          "event": 0.8023535917073471,
+          "after": [
+            0.05264461150041652,
+            0.0736951719955526,
+            0.07871520242805914
+          ],
+          "later_alone": [
+            0.05728172026987229,
+            0.0788596677743663,
+            0.08330659279340175
+          ],
+          "another": 0.18624239188387595,
+          "pair": 0.14943225205619515
+        },
+        "window-clean-plain": {
+          "event": 0.10680361807200524,
+          "after": [
+            0.0331879194818225,
+            0.0751326707701572,
+            0.11233297507507954
+          ],
+          "later_alone": [
+            0.13572045955376658,
+            0.15348116195441544,
+            0.1496050471663636
+          ],
+          "another": 0.21160050265594127,
+          "pair": 0.022599699269509478
+        },
+        "window-clean-rewound": {
+          "event": 0.9007352523263756,
+          "after": [
+            0.029607124207806527,
+            0.07219494139462246,
+            0.11075321569203805
+          ],
+          "later_alone": [
+            0.03678549387095853,
+            0.07494577033348318,
+            0.1095894222498201
+          ],
+          "another": 0.20394702978227922,
+          "pair": 0.1837022793321561
+        },
+        "window-stepped-plain": {
+          "event": 0.0918118229183661,
+          "after": [
+            0.12071779937849784,
+            0.18542232584546117,
+            0.13855048034587494
+          ],
+          "later_alone": [
+            0.10297185011826133,
+            0.17455565045670396,
+            0.13123829262049125
+          ],
+          "another": 0.38054803054715036,
+          "pair": 0.03493880839252794
+        },
+        "window-stepped-rewound": {
+          "event": 0.8267847501763549,
+          "after": [
+            0.0591464699744508,
+            0.09091908837225053,
+            0.096612586919753
+          ],
+          "later_alone": [
+            0.06310186438868491,
+            0.09378247604562537,
+            0.09870040784413639
+          ],
+          "another": 0.2258352309765235,
+          "pair": 0.18671712502394439
+        }
+      },
+      "comparisons": {
+        "chipmaking: second event, clean minus defect (rewound)": 0.017704637898403264,
+        "chipmaking: second event, clean minus defect (plain)": -0.15798726616131925,
+        "lasers: second event, stepped minus defect (rewound)": 0.03959283909264755,
+        "lasers: second event, stepped minus defect (plain)": 0.010960261729889842
+      },
+      "cause": {
+        "plain": 0.17688510083161715,
+        "steered": 0.14518418792409407,
+        "rewound": 0.14267906277820497
+      }
+    }
+  },
+  "limits": [
+    "The machine is a toy with two memory qubits. An exact classical filter answers every question here, and is the reference the circuits are checked against.",
+    "Rewinding runs a MODEL inside a quantum computer. It cannot rewind a real laser, quantum dot or wafer.",
+    "No speedup is claimed. A rewound run uses about three times the gates of a plain run.",
+    "On IBM hardware the answers keep their order and lose most of their gap; see ibm and noise_model."
+  ]
+}
